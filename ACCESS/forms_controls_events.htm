@@ -1,0 +1,3466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Access's Forms, Control and Events</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<STYLE TYPE="text/css">
+<!--
+#dek {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style5 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style25 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style27 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 13pt;
+}
+.auto-style28 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.auto-style29 {
+	font-weight: bold;
+}
+.auto-style30 {
+	font-size: 10.5pt;
+}
+.auto-style31 {
+	font-size: 10.5pt;
+	font-style: italic;
+}
+.auto-style32 {
+	font-size: 11pt;
+}
+.auto-style33 {
+	font-family: Verdana;
+}
+.auto-style34 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+}
+.auto-style35 {
+	font-family: Verdana;
+	font-style: italic;
+	font-size: 11pt;
+}
+.auto-style36 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11pt;
+}
+.auto-style37 {
+	font-size: 11pt;
+	font-style: italic;
+}
+.auto-style38 {
+	font-size: 11pt;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style39 {
+	font-size: 10.5pt;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style40 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style41 {
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+}
+.auto-style42 {
+	font-size: 12pt;
+}
+.auto-style43 {
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+}
+.auto-style44 {
+	border-collapse: collapse;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}
+.auto-style45 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+}
+.auto-style48 {
+	font-size: 10.5pt;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.auto-style49 {
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+.auto-style51 {
+	border-top-width: 0px;
+}
+.auto-style54 {
+	border-bottom-style: none;
+	border-bottom-width: medium;
+}
+.auto-style55 {
+	border-bottom-width: 0px;
+}
+.auto-style57 {
+	border-top-style: none;
+	border-top-width: medium;
+}
+.auto-style58 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-align: center;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style60 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style61 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style62 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style50 {
+	margin-left: 0px;
+}
+.auto-style63 {
+	color: #0045C3;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+</STYLE>
+</head>
+
+
+
+<body background="YellowTexture.gif">
+<table border="0" cellspacing="0" cellpadding="0" id="table63" style="width: 100%; height: 12px">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="table64" style="width: 59%">
+	<tr>
+		<td>
+	<p align="center" style="width: 989px; height: 39px">
+	<font class="auto-style32">
+	<a class="type3" href="../index.htm"><span class="auto-style25">Home</span></a><span class="auto-style25"> |
+	<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a>&nbsp;|
+	</span>
+	<a class="type1" href="../GUESTBOOK/gbook.html"><span class="auto-style25">Guestbook</span></a></font>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1" class="auto-style50" style="width: 992px; height: -13px"></td>
+	</tr>
+</table>
+
+
+
+<div align="left">
+
+
+
+<TABLE border="0" cellspacing="0" width="985" height="22186" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style5">
+						<font class="auto-style61"><strong>Access Programming</strong></font></font><span class="auto-style5">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+		<font face>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style60" href="beginner_basic_Acc.htm">Access 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style60" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp;Methods</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style60" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style63" href="forms_controls_events.htm">
+						Forms, Control and Events</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style60" href="ADO.htm">
+					ADO (ActiveX Data Objects)</a></font><span class="auto-style25"><span class="auto-style30"></font></font></font></span></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style60" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style60" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style60" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style5">
+						<font face="Verdana">
+						<a rel="internal" class="auto-style60" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style62" href="SQL_Examples.htm">
+						<span class="auto-style25">Jet SQL examples</span></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style60" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style60" href="Integrating_Access_Excel.htm">
+						Integrating Access/Excel</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style60" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						&nbsp;</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>		
+<td valign="top" height="22168">&nbsp;</td>
+<td valign="top" height="22168" width="8">&nbsp;</td>
+<td bgcolor="#ffffff" valign="top" width="1%" align="center" height="22168" background="YellowTexture.gif"></font>
+
+
+
+<DIV ID="dek"></DIV>
+<SCRIPT TYPE="text/javascript">
+<!--
+//Pop up information box II (Mike McGrath (mike_mcgrath@lineone.net))
+//Permission granted to Dynamicdrive.com to include script in archive
+Xoffset=-200;    // modify these values to ...
+Yoffset=30;    // change the popup position.
+
+var old,skn,iex=(document.all),yyy=-1000;
+
+var ns4=document.layers
+var ns6=document.getElementById&&!document.all
+var ie4=document.all
+
+if (ns4)
+skn=document.dek
+else if (ns6)
+skn=document.getElementById("dek").style
+else if (ie4)
+skn=document.all.dek.style
+if(ns4)document.captureEvents(Event.MOUSEMOVE);
+else{
+skn.visibility="visible"
+skn.display="none"
+}
+document.onmousemove=get_mouse;
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=250 BORDER=1 BORDERCOLOR=red CELLPADDING=2 CELLSPACING=0 "+
+"BGCOLOR="+bak+"><TD ALIGN=left><FONT TYPE=arial COLOR=black SIZE=2>"+msg+"</FONT></TD></TABLE>";
+yyy=Yoffset;
+ if(ns4){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(ns6){document.getElementById("dek").innerHTML=content;skn.display=''}
+ if(ie4){document.all("dek").innerHTML=content;skn.display=''}
+}
+
+function get_mouse(e){
+var x=(ns4||ns6)?e.pageX:event.x+document.body.scrollLeft;
+skn.left=x+Xoffset;
+var y=(ns4||ns6)?e.pageY:event.y+document.body.scrollTop;
+skn.top=y+yyy;
+}
+
+function kill(){
+yyy=-1000;
+if(ns4){skn.visibility="hidden";}
+else if (ns6||ie4)
+skn.display="none"
+}
+//-->
+</SCRIPT>
+
+
+
+<td width="180%" height="22168" style="font-size: 10px; font-family: Arial" align="left" valign="top" class="auto-style43">
+      <!-- Start Page Content -->
+		<div align="left">
+			<font face="">
+		<font face="Tahoma" style="font-size: 20pt">
+        <p align="left">
+        <a name="properties"></a>
+        <b>Examples of Forms, Controls and Events</b></font>
+		</font>
+			<div align="left">
+
+			<table border="1" cellpadding="0" style="border-collapse: collapse; width: 527px" bordercolor="#C0C0C0">
+				<tr>
+					<td colspan="3" bgcolor="#99CCFF" align="center" class="auto-style27">
+					Events:</font></td>
+				</tr>
+				<tr>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Activate">Activate</a></td>
+					<td width="150" class="auto-style5">
+					CommandExecute</td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#MouseDown">MouseDown</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#AfterDelConfirm">AfterDelConfirm</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Current">Current</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#MouseMove">MouseMove</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">AfterFinalRender</td>
+					<td width="150" class="auto-style5">
+					DataChange</td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#MouseUp">MouseUp</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#BeforeInsert">AfterInsert</a></td>
+					<td width="150" class="auto-style5">
+					DataSetChange</td>
+					<td width="150" class="auto-style30">MouseWheel</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">AfterLayout</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#DblClick">DblClick</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#NoData">NoData</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">AfterRender</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Deactivate">Deactivate</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#NotInList">NotInList</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#BeforeInsert">AfterUpdate</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Delete">Delete</a></td>
+					<td width="150" class="auto-style30">OnConnect</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#ApplyFilter">ApplyFilter</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Dirty">Dirty</a></td>
+					<td width="150" class="auto-style30">OnDisconnect</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#BeforeDelConfirm">BeforeDelConfirm</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Enter">Enter</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Open">Open</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#BeforeInsert">BeforeInsert</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Error">Error</a></td>
+					<td width="150" class="auto-style30">Page</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">BeforeQuery</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Error">Exit</a></td>
+					<td width="150" class="auto-style30">PivotTableChange</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">BeforeRender</td>
+					<td width="150" class="auto-style5">
+					Filter</td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Query">Query</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">BeforeScreenTip</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#GotFocus">GotFocus</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Resize">Resize</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#BeforeInsert">BeforeUpdate</a></td>
+					<td width="150" class="auto-style5">
+					ItemAdded</td>
+					<td width="150" class="auto-style30">SelectionChange</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#Change">Change</a></td>
+					<td width="150" class="auto-style5">
+					ItemRemoved</td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Timer">Timer</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#click">Click</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#KeyDown">KeyDown</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Undo">Undo</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">
+					<a class="type1" href="#Close">Close</a></td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#KeyPress">KeyPress</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Unload">Unload</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">CommandBeforeExecute</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#KeyUp">KeyUp</a></td>
+					<td width="150" class="auto-style30">
+					<a class="type1" href="#Updated">Updated</a></span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">CommandChecked</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#Load">Load</a></td>
+					<td width="150" class="auto-style30">ViewChange</span></td>
+				</tr>
+				<tr>
+					<td height="17" width="150" class="auto-style5">CommandEnabled</td>
+					<td width="150" class="auto-style5">
+					<a class="type1" href="#LostFocus">LostFocus</a></td>
+					<td width="150" class="auto-style1"></span></td>
+				</tr>
+			</table>
+			<table border="0" width="87%" cellspacing="0" cellpadding="0" height="60">
+				<tr>
+					<td><font size="2"><br>
+					<br>
+					</font><b><font size="4">Form and Controls Techniques:</font></b><ul type="circle">
+						<li>
+						<span class="auto-style25">
+						<a class="type1" href="#filtering_form_control">
+						<span class="auto-style30">Filtering form's Controls</span></a><span class="auto-style30">.</span></li>
+						<li>
+						<a class="type1" href="#Bound_list_control">
+						<span class="auto-style30">Combo box - Bound list control</span></a><span class="auto-style30">&nbsp;&nbsp;[<a href="Forms_Events/filtering_BoundControl.mdb">example</a>]</span></span></li>
+						<li><font size="2" face class="auto-style30">
+						<a class="type1" href="#UnBound_list_control">
+						<span class="auto-style25">Combo box - UnBound list control</span></a><span class="auto-style25">; 
+					set LimitToList but using NotInList event. 
+					[<a href="Forms_Events/filtering_UnBoundControl.mdb">example</a>]
+						</span>
+						</font></li>
+						<li><font size="2" face class="auto-style30">
+						<a class="type1" href="#Unbound_TextBox">
+						<span class="auto-style25">UnBound Text 
+						Box</span></a><span class="auto-style25">.&nbsp; [<a href="Forms_Events/Unbound_TextBox.mdb">example</a>]</span></font></li>
+						<li><font size="2" face class="auto-style30">
+						<a class="type1" href="#MultiSelect_Controls">
+						<span class="auto-style25">List Box MultiSelect 
+						Control</span></a><span class="auto-style25">. </span>[<span class="auto-style25"><a href="Forms_Events/ListBox_MultiSelect.mdb">example</a>]</span></font></li>
+						<li><span class="auto-style5">
+						<a class="type1" href="#OptionGroups">Option Group Controls</a></span><font size="2" face class="auto-style30"><span class="auto-style25">.&nbsp; 
+						[<a href="Forms_Events/OptionGroups.mdb">example</a>]</span></font><br class="auto-style5">&nbsp;</li>
+					</ul>
+					</td>
+				</tr>
+		</table>
+			<table border="0" width="87%" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="30">
+					<p align="left"><b><font size="4">Sequence of 
+					commonly used form and control events.</font></b></td>
+				</tr>
+				<tr>
+					<td class="auto-style25">
+					<font size="2" class="auto-style30">When a form is opened: <br>Open -&gt;Load -&gt;Resize -&gt;Activate -&gt;Current</font><p>
+					<font size="2" class="auto-style5">When a Focus is moved to a control as 
+					the form is opened:<br>
+					Open (form) -&gt;Load (form) -&gt;Resize (form) -&gt;Activate (form) 
+					-&gt;Current (form) -&gt;Enter (control) -&gt;GotFocus (control)</font></p>
+					<p>
+					<font size="2" class="auto-style30">When a form is close:<br>
+					Unload -&gt;Deactivate -&gt;Close</font></p>
+					<p><font size="2" class="auto-style30">When a form is minimized:<br>
+					Resize -&gt;Deactivate</font></p>
+					<p><font size="2" class="auto-style30">When a form is restored from minimized:<br>
+					Activate -&gt;Resize</font></p>
+					<p><font size="2" class="auto-style30">When keys are pressed:<br>
+					KeyDown -&gt;KeyPress -&gt;Dirty -&gt;KeyUp</font></p>
+					<p><font size="2" class="auto-style30">When a mouse is clicked:<br>
+					MouseDown -&gt;MouseUp -&gt;Click</font></p>
+					<p><font size="2" class="auto-style30">When Focus shifts from one form to 
+					another:<br>
+					Deactivate (1st form)&nbsp; -&gt;Activate (2nd form)</font><p>
+					<font size="2" class="auto-style30">When Focus leaves a control and the form is 
+					closed:<br>
+					Exit (control) -&gt;LostFocus (control) -&gt;Unload (form) 
+					-&gt;Deactivate (form)</font><p>
+					<font size="2" class="auto-style30">After characters 
+					are typed in text/combo box, and before Focus moves to 
+					another control:<br>
+					KeyDown -&gt;KeyPress -&gt;Change -&gt;KeyUp</font><p>
+					<font size="2" class="auto-style30">
+					After data are changed and committed to the form, and Focus 
+					moves to another control:<br>
+					BeforeUpdate -&gt;AfterUpdate -&gt;Exit -&gt;LostFocus</font><p>
+					<font size="2" class="auto-style30">For each key you press in a text box or in 
+					the text box portion of a combo box:<br>
+					KeyDown -&gt;KeyPress -&gt;Dirty -&gt;Change -&gt;KeyUp</font></td>
+				</tr>
+			</table>
+			<p class="auto-style5"><br>
+			It is also good to understand how data buffering works on the background when 
+			each time we edit data on the form. 
+			<a target="_blank" href="../ACCESS/Forms_Events/data_buffering.htm" style="text-decoration:none" 
+  onclick="NewWindow(this.href,'Code_Window','700','380','yes');return false">[read 
+			more...]</a></p><hr color="#C0C0C0" width="96%" size="1">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table69" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Me></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		<p>
+
+			<b><font size="3">The </font><font size="4" face="Verdana">Me</font><font size="3"> keyword</font></b><br>
+			<span class="auto-style25">
+			<font size="2" class="auto-style30">When writing code with a form's module, use the
+			<b>Me</b> keyword to refer to that form and its controls. The <b>Me</b> 
+			keyword refers to the form itself, or form/report that has this 
+			code. For example, if the form frmOrders is open, me refers to that. 
+			The <b>Me</b> object is available to every procedure in a Form or Report 
+			module.</font></p>
+				</span>
+			<span class="auto-style33">
+			<p>
+
+			</span>
+
+			<font size="2" class="auto-style30">
+			<span class="auto-style25">
+			When writing code behind the form, for example, you can 
+			assign the record source and change the form's 
+			caption with this code using Me keyword as follow: <br>
+			</span>
+			</font>
+			<span class="auto-style25">
+			<font color="#000080" size="2"><b><br class="auto-style30">
+			<span class="auto-style30">Me</span></b><span class="auto-style30">.RecordSource = &quot;</span></font></span><font face="" color="#000080"><span class="auto-style5">Qry_SalesQ3</span></font><font color="#000080" size="2">&quot;<span class="auto-style25"><span class="auto-style30"><br>
+			</span>
+			<b><span class="auto-style30">Me</span></b><span class="auto-style30">.Caption = &quot;Q3 Customer Orders&quot;</span></span></font><span class="auto-style25"></p>
+		<p class="auto-style30">
+
+			If you are writing code in a code module outside the 
+			form, you need to explicitly reference the form through the Forms 
+			collection; and must&nbsp; make sure that the form is loaded, or 
+			else you will encounter runtime error. For example: </p>
+		<p>
+
+			<font color="#000080">
+			<span class="auto-style30">Forms!Form1.RecordSource = </span> </font>
+			</span>
+			<font color="#000080"><span class="auto-style5">&quot;Qry_SalesQ3&quot;</span></font></p>
+		<p>
+
+			<font size="2" class="auto-style5">It is useful to pass <b>Me</b> 
+			(the current form or report) to a </font>
+			<font face="Arial"><span class="auto-style5">procedure module as in this Call 
+			example: </span> </font></p>
+		<p>
+
+			<font size="2" color="#000080" class="auto-style5">Call 
+			SerializeUDF(<b>Me</b>)</font></p>
+			<p class="auto-style5">Example: changing the focus to the control<p>
+				<span class="auto-style25"><table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table72" height="167">
+					<tr>
+						<td class="auto-style30">
+
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_Open(Cancel As Integer)<br>
+						&nbsp;
+						Dim strCustomerID As String<br>
+						&nbsp;
+						strCustomerID = InputBox(&quot;enter the CustomerID:&quot;)<br>
+						</font><font color="#800000">&nbsp; ' 
+						DoCmd.GoToControl &quot;ctlCustomerID&quot;&nbsp;&nbsp;&nbsp;&nbsp;
+						</font>
+						<font size="2" color="#008000" class="auto-style30">' substituted by 
+						the Me statement on the next line below.<br>
+<br>
+						&nbsp;
+						' this line sets focus on the control, substitutes for 
+						the line above. Both lines give the same result.</font><font size="2" color="#000080"><span class="auto-style30"><br>
+						</span>
+						<b><span class="auto-style30">&nbsp; Me.</span></b><span class="auto-style30">ctlCustomerID.SetFocus&nbsp;&nbsp; 
+						</span> </font>
+						<font size="2" color="#008000" class="auto-style30">' the control is already 
+						listed as a member in dropdown list.
+						<a style="color: #0033CC" target="_blank" href="Forms_Events/changing_focus_to_control.htm">
+						See diagram</a></font><font size="2" color="#000080"><span class="auto-style30"><br>
+						<br>
+&nbsp;
+						DoCmd.FindRecord strCustomerID<br>
+						End Sub</span></font></span></td>
+					</tr>
+			</table>
+<font face="">
+			<p>&nbsp;</font><font size="2"><br class="auto-style25">
+			</font>
+
+			<span class="auto-style25">
+			<span class="auto-style30">Example: Update ShipTo controls based on 
+			the value selected in CustomerID combo box.</span></span><p><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table73" height="150">
+					<tr>
+						<td>
+						<font color="#008000"><span class="auto-style30">' The AfterUpdate event 
+is fired after the changes are committed to the form.</span></font><font color="#000080"><br class="auto-style30">
+</font>
+						<span class="auto-style30">
+			</font>
+						</span>
+			<font color="#000080" size="2" class="auto-style30">
+Private Sub 
+						CustomerID_AfterUpdate()<br>
+						&nbsp;
+						Me!ShipName = Me![CustomerID].Column(1)<br>
+						&nbsp;
+						Me!ShipAddress = Me!Address<br>
+						&nbsp;
+						Me!ShipCity = Me!City<br>
+						&nbsp;
+						Me!ShipRegion = Me!Region<br>
+						&nbsp;
+						Me!ShipPostalCode = Me!PostalCode<br>
+						&nbsp;
+						Me!ShipCountry = Me!Country<br>
+						End Sub</span></td>
+					</tr>
+			</table>
+<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table71" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=click></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			<p>
+
+			<b><font size="3">Opening forms and Errors-handling</font></b><font size="2"><br>
+			</font>
+			<span class="auto-style5">You can capture and handle errors when executing the event 
+			procedures, using the simple example below. It uses <i>On 
+			Error Goto</i> statement to identify a label where errors will be 
+			trapped. Then a labeled <i>Exit Sub</i> statement is used to finish 
+			the procedure without going into error-handler. Within the 
+			error-handler, MsgBox displays property and description of the 
+			built-in Err object, on the errors occurred. Refer to another
+			<a target="_blank" href="../VBA/errors_handling.htm#Runtime_Errors_Handlers">
+			VBA page</a> in more detail on Runtime Errors Handlers (<i>On 
+			Error Resume Next</i>, </span> <span class="auto-style25">
+			<span class="auto-style31">On Error GoTo 0</span><span class="auto-style30">, etc).</span></p>
+			<p><font size="2" class="auto-style30">Example: create a On-Click event procedure to open a 
+			form and handle errors. <br>
+			You can either create your code using 
+			example below, or following
+			<a target="_blank" href="Forms_Events/create_event_wizard.htm">these 
+			steps</a> using the create events wizard.</font><p>
+				<font size="2" class="auto-style30">&nbsp;&nbsp;</font><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000"  height="158">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						cmdCustomerOrders_Click()<br>
+						</font>
+						<span class="auto-style30">
+						</span>
+						</span>
+<font face="">
+						<code><font color="#000080">
+						<span class="auto-style5">&nbsp;&nbsp;&nbsp;</span></font></code></font><span class="auto-style25"><font size="2" color="#000080" class="auto-style30">On Error GoTo 
+						HandleErr<br>
+						</font>
+						</span>
+<font face="">
+						<code><font color="#000080">
+						<span class="auto-style5">&nbsp;&nbsp;&nbsp;</span></font></code></font><span class="auto-style25"><font size="2" color="#000080" class="auto-style30">DoCmd.OpenForm 
+						&quot;Orders&quot;<br>
+						ExitHere:<br>
+						</font>
+						</span>
+<font face="">
+						<code><font color="#000080">
+						<span class="auto-style5">&nbsp;&nbsp;&nbsp;</span></font></code></font><span class="auto-style25"><font size="2" color="#000080" class="auto-style30">Exit Sub<br>
+						HandleErr:<br>
+						</font>
+						</span>
+<font face="">
+						<code><font color="#000080">
+						<span class="auto-style5">&nbsp;&nbsp;&nbsp;</span></font></code></font><span class="auto-style25"><font size="2" color="#000080" class="auto-style30">MsgBox &quot;Error &quot; &amp; 
+						Err.Number &amp; &quot;: &quot; &amp; Err.Description &amp; &quot; in 
+						cmdOrders_Click&quot;<br>
+						</font>
+						</span>
+<font face="">
+						<code><font color="#000080">
+						<span class="auto-style5">&nbsp;&nbsp;&nbsp;</span></font></code></font><font size="2" color="#000080" class="auto-style30"><span class="auto-style25">Resume ExitHere<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+
+<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table75" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Open></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			</font>
+
+			<p>
+
+			<b><font size="3">Open event</font></b><font size="2"><br>
+			</font>
+			<span class="auto-style5">Occurs when a form is opened, but before the 
+			first record is displayed. For reports, the event occurs before a 
+			report is previewed or printed. Setting the Cancel argument to True 
+			(&#8211;1) cancels the opening of the form or report. To run a macro or 
+			event procedure when these events occur, set the OnOpen property to 
+			the name of the macro or to [Event Procedure]. </span> 
+			<span class="auto-style25"></p>
+			<p><font size="2" color="#800000" class="auto-style30">Private Sub <i>object_</i><b>Open
+			</b>(Cancel As Integer)</font><p class="auto-style30">Example: to populate 
+		the form with OpenArgs argument, using the form's Open event. The 
+		RecordSource property is set with a SQL statement and a query. Note that 
+		as the RecordSource code is in the form's Open event, so the records are 
+		not loaded yet; whereas if we use the form's Load event procedure, it 
+		will then be too late to change the RecordSource.<p></span><font class="auto-style25"><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table74" height="170">
+					<tr>
+						<td>
+
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_Open(Cancel As Integer)<br>
+</font><font color="#008000"><span class="auto-style30">' set the data source depending on how the 
+						form was called</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">Select Case Me.OpenArgs<br>
+&nbsp;&nbsp; Case &quot;A&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.RecordSource = &quot;SELECT Orders.* FROM 
+						Orders WHERE Orders.ShipCountry=&quot;UK&quot;;&quot;<br>
+&nbsp;&nbsp; Case &quot;B&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.RecordSource = &quot;qry_OrdersByDate&quot;<br>
+&nbsp;&nbsp; Case Else<br>
+						End Select<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+
+			</font>
+			<p>
+
+			<span class="auto-style25">
+
+			<font size="2" class="auto-style30">You can evaluate the code in the immediate window by 
+			entering this code:&nbsp; <font color="#000080">DoCmd.OpenForm 
+			&quot;Orders&quot;, OpenArgs:=&quot;B&quot;<br>
+			</font>Another way is to use DoCmd.ApplyFilter method to assign the 
+			query or SQL clause to a CommandButton's OnClick event such as 
+			below.</font></p>
+			<p>
+
+			<font size="2" color="#000080" class="auto-style30">Sub Command1_Click()<br>
+&nbsp;&nbsp; DoCmd.ApplyFilter &quot;</font></span><font class="auto-style25"><font size="2" color="#000080" class="auto-style30">qry_OrdersByDate&quot;<br>
+			End Sub</font></p>
+
+			</font>
+<font face="" size="2">
+			<table border="0" cellspacing="0" cellpadding="0" id="table75" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Load></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+<font size="3">
+		<p><b>Load event</b></font><font size="2"><br>
+
+			</font>
+
+			<span class="auto-style5">Happens when a form opens, and the first record is displayed. 
+		It occurs after the Open event. A form's Open event can cancel the 
+		opening of the form, but the Load event can't.</span><span class="auto-style25"></p>
+		<p><font size="2" color="#800000" class="auto-style30">Private Sub <i>object_</i><b>Load
+			</b>()</font></p>
+			<p><span class="auto-style30">Example:</span><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table73" height="122">
+					<tr>
+						<td>
+
+						<span class="auto-style30">
+
+						</font>
+						</font>
+						</span>
+<font size="2" color="#000080" class="auto-style30">
+						Private Sub Form_Load()<br>
+		&nbsp;&nbsp;
+		Dim obj As AccessObject<br>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp; ' loop through all queries in the current database, 
+		and adding the name of each query to the list box.</span></font><font color="#000080" size="2"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;
+		For Each obj In CurrentData.AllQueries<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Me.lstTables.AddItem obj.Name<br>
+		&nbsp;&nbsp;
+		Next obj<br>
+		End Sub</span></font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+<font face="">
+			<p>
+
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Resize></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			<font size="3">
+		<p><b>Resize event</b></font><font size="2"><br>
+		<span class="auto-style25">T</span></font><span class="auto-style25"><span class="auto-style30">he 
+		Resize event occurs when a form is opened and whenever the size of a 
+		form changes.</span></p>
+				<font size="2">
+		<p><font color="#800000"><span class="auto-style30">Private Sub Form_<b>Resize</b>()</span></font></font></span><font size="2"><span class="auto-style30"></p>
+			<p></span><span class="auto-style25"><span class="auto-style30">Example: shows how a Resize event procedure can be used to 
+			repaint a form when it is maximized.</span><font size="2"><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table73" height="121">
+					<tr>
+						<td>
+
+						<font size="2" color="#000080" class="auto-style30">Private Sub Maximize_Click()<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Maximize<br>
+		End Sub<br>
+						<br>
+		Private Sub Form_Resize()<br>
+&nbsp;&nbsp;&nbsp; Forms!frmContacts.Repaint<br>
+		End Sub</font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+		<font face="arial">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Activate></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		<font face="arial" font size="3">
+		<p><b>Activate event</b></font><font size="2"><br>
+		I</font></font></font><span class="auto-style5">t occurs when a form or report receives the focus and becomes the 
+		active window.</p>
+				</span>
+		<p class="auto-style30"><font color="#800000">Private Sub <i>object</i>_<b>Activate</b>()</font></p>
+<font face="" size="2">
+			<p><span class="auto-style5">Example:</span><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table73" height="94">
+					<tr>
+						<td>
+
+						<font size="2" class="auto-style5"><font color="#000080">Private Sub Form_Activate()<br>
+						</font><font color="#008000">&nbsp;&nbsp; ' requery the 
+						subform form when it becomes active. (ensures that 
+						changes made are immediately <br>
+&nbsp;&nbsp; ' reflected in the subform)</font><font color="#000080"><br>
+						Me.fsubOrders.Requery<br>
+		End Sub</font></font></td>
+					</tr>
+			</table>
+
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Current></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			</span>
+
+			</font>
+			<span class="auto-style25">
+		</font>
+		<font size="3">
+		<p><b>Current event</b></font><font size="2"><br>
+		I</font><span class="auto-style25"><span class="auto-style30">t occurs when the focus moves to a record, making it 
+		the current record, or when the form is refreshed or requeried.</span></p>
+				<font size="2">
+		<p class="signature"><font color="#800000"><span class="auto-style32">Private Sub <i>object</i>_<b>Current</b>()</span></font><span class="auto-style30"></p>
+			<p>Example: to show if the OrderID text box is null, move the focus 
+			to the CustomerName control.</span><font size="2"><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table73" height="90">
+					<tr>
+						<td>
+
+						<font size="2" color="#000080" class="auto-style30">Private Sub Form_Current()<br>
+		&nbsp;&nbsp;
+		If IsNull(Me.txtOrderID) Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Me.txtCustomerName.SetFocus<br>
+		&nbsp;&nbsp;
+		End If<br>
+		End Sub</font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table97">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=BeforeInsert></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+		</font>
+			<p>
+		<font size="3"><b>BeforeInsert event</b></font><font size="2"><br>
+		<span class="auto-style25">T</span></font><span class="auto-style25"><span class="auto-style30">he BeforeInsert occurs when the user types the first character in a new 
+		record, but before the record is actually created.
+
+			<br>
+		It applies to textboxes, combo boxes, list boxes, command buttons, 
+			option groups, bound object frames. <br>
+
+			Setting the Cancel argument to True (-1) cancels the 
+		BeforeUpdate event.
+
+			</span>
+
+			</p>
+				<font size="2">
+		<p class="auto-style30">
+		<font color="#800000"><span class="auto-style32">Private Sub <i><!----></i>Form_<b>BeforeInsert</b>(Cancel 
+		As Integer)</span></font></font></span><font size="2"></p>
+		<font size="2" class="auto-style5"><p>The BeforeInsert and AfterInsert events are 
+		similar to the BeforeUpdate and AfterUpdate events. These events occur 
+		in the following order:&nbsp; <b>BeforeInsert</b> &#8594; <b>BeforeUpdate</b> 
+		&#8594; <b>AfterUpdate</b> &#8594; <b>AfterInsert</b>. <br>
+&nbsp;&nbsp;&nbsp; BeforeInsert -- user types the first character in a new 
+		record.<br>
+&nbsp;&nbsp;&nbsp; BeforeUpdate -- user updates the record. <br>
+&nbsp;&nbsp;&nbsp; AfterUpdate -- record is updated. <br>
+&nbsp;&nbsp;&nbsp; AfterInsert -- record updated is a new record.</font></p>
+
+			</font>
+
+			</font>
+		<p><b><font size="3">BeforeUpdate event</font></b><font size="2"><br>
+
+			</font>
+		<span class="auto-style25"><span class="auto-style30">The BeforeUpdate event occurs before changed data in a control or record 
+		is updated. It occurs when you try to move to a different record (even a 
+		record on a subform) or when the Records|Save Record command is 
+		executed. This event can be used to cancel the update process when you 
+		want to execute complex validations before the update.</span></p>
+				<font size="2">
+		<p class="auto-style30"><font color="#800000">
+		<span class="auto-style32">Private Sub object_<b>BeforeUpdate</b>(Cancel 
+		As Integer)</span></font></font></span><font size="2"></p>
+
+			</font><font size="3">
+		<p><b>AfterInsert event</b></font><font size="2"><br>
+		</font><span class="auto-style30">T</span><span class="auto-style25"><span class="auto-style30">he AfterInsert event occurs after a new record is added. 
+			You can use an AfterInsert event procedure or macro to requery a 
+			recordset whenever a new record is added.
+
+			It applies to textboxes, combo boxes, list boxes, command buttons, 
+			option groups, bound object frames.</span></p>
+		<p></span><font size="2" class="auto-style30"><span class="auto-style25"><font color="#800000">Private Sub <i><!----></i>Form_<b>AfterInsert</b>()</font></span></p>
+		</font><font size="3">
+		<p><b>AfterUpdate event</b></font><font size="2"><br>
+
+			</font>
+
+		<span class="auto-style25"><span class="auto-style30">The AfterUpdate event occurs after changed data in a control or record 
+		is updated. It applies only to controls on a form, <i>Not</i> controls 
+		on a report; <i>Not</i> applies to option buttons, check boxes, or 
+		toggle buttons in an option group. It applies only to the option group 
+		itself.</span></p>
+				<font size="2">
+		<p class="signature"><font color="#800000"><span class="auto-style32">Private Sub object_<b>AfterUpdate</b>()</span></font></p>
+
+			</font>
+
+				<span class="auto-style32">
+			<p>Example:
+			to verify that the user wants to create a new record.</span><p>
+				<font size="2"><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000"  height="85">
+					<tr>
+						<td>
+
+						<font color="#000080" size="2" class="auto-style30">Private Sub Form_<b>BeforeInsert</b>(Cancel As Integer)<br>
+&nbsp;&nbsp;&nbsp; If MsgBox(&quot;Insert a new record here?&quot;, vbOKCancel) = vbCancel Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = True<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+			<p><br>
+
+			</font>
+
+			<span class="auto-style30">Example: to check whether 
+		an product name has already been entered in the database. After the user 
+		types a product name in the Product Name text box, BeforeInsert  event compared to 
+		the ProductName field in the Products table. If there is a matching 
+		value in the Products table, a message is displayed that informs the 
+		user that the product name has already been created.</span><font size="2"><br>
+			<br><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table99" height="137">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						txtProductName_<b>BeforeUpdate</b>(Cancel As Integer)<br>
+&nbsp;&nbsp; If (Not IsNull(DLookup(&quot;[ProductName]&quot;, _<br>
+&nbsp;&nbsp; &quot;Products&quot;, &quot;[ProductName] ='&quot;
+						&amp; Me!txtProductName &amp; &quot;'&quot;))) 
+						Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;Product has already been 
+						entered in the database.&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me!txtProductName.Undo<br>
+&nbsp;&nbsp; End If<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+			<p><br class="auto-style30">
+			<font size="2"><span class="auto-style30">Example: to requery the fsubProductList subform when the 
+			ProductName field is updated.</span></font><p><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table101" height="86">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_<b>AfterUpdate</b>()<br>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;
+		' requery the subform when the required date changes</span></font><font color="#000080" size="2"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; DoCmd.RunCommand acCmdSaveRecord<br>
+&nbsp;&nbsp; fsubProductList.Requery<br>
+		End Sub</span></font></td>
+					</tr>
+			</table>
+			<p><br class="auto-style30">
+			<font size="2"><span class="auto-style30">Example:
+			requery the record source for the frmProduct form after a new record 
+			(product name) has been added.</span></font><p><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000"  height="54" id="table102">
+					<tr>
+						<td>
+
+						<font color="#000080" size="2" class="auto-style30">Private Sub Form_<b>AfterInsert</b>()<br>
+&nbsp;&nbsp;&nbsp; Forms!frmProducts.Requery<br>
+						End Sub</font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+
+			</font>
+
+		<font face="Courier New" size="2">
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Unload></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			</font>
+		<font size="3">
+
+			<p><b>UnLoad event</b></font><font size="2"><br>
+			<span class="auto-style25">Occurs after a form is closed but before it's removed from the 
+			screen; i.e. before the Close event. It is triggered when you choose Close from the File Menu, 
+			quits Access by choosing End Task from the task list, quits Windows, 
+			or when your code closes the form.
+
+			</span>
+
+			</font><span class="auto-style25"></p>
+		<p class="auto-style30"><font color="#800000">Private Sub Form_Unload()</font></p>
+			<p class="auto-style30">Example: checks if the Save button is enabled. If it is, the form 
+			is in dirty state, and user is asked if he wants to save changes to 
+			record. if he responds Yes, the code saves the changes, and form is 
+			unloaded. If he responds No, the code cancels any changes to the 
+			record and the form is unloaded. If he opts to cancel, the Cancel 
+			parameter is set to True, and the form is not unloaded.<p></span>
+				<font face="arial" size="2"><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table92" height="378">
+					<tr>
+						<td class="auto-style25">
+
+						<font size="2" color="#000080" class="auto-style30">
+			Private Sub Form_Unload(Cancel As Integer)<br>
+						</font>
+
+						<font color="#008000">
+						<span class="auto-style30">' determine if the the Save button is enabled.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">If Me.cmdSave.Enabled Then<br>
+						</span>
+						</font>
+
+						<font color="#008000">
+						<span class="auto-style30">&nbsp;&nbsp;
+		' if form is dirty, ask user if wants to save</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;
+		Select Case MsgBox(&quot;Do you want to save?&quot;, vbYesNoCancel + vbQuestion,
+		&quot;Attention&quot;)<br>
+		<br>
+						</span>
+						</font>
+
+						<font color="#008000">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' If user responds yes, save record and allow unload</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case vbYes<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.RunCommand Command:=acCmdSaveRecord<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = False<br>
+		<br>
+						</span>
+						</font>
+
+						<font color="#008000">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		' if user responds no, undo changes to record and allow unload</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Case vbNo<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		On Error Resume Next<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		DoCmd.RunCommand Command:=acCmdUndo<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Cancel = False<br>
+		<br>
+						</span>
+						</font>
+
+						<font color="#008000">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		' if user clicks cancel, cancel unloading of form</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Case vbCancel<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Cancel = True<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		End Select<br>
+		End If<br>
+		End Sub</span></font></td>
+					</tr>
+			</table>
+
+			<p>
+
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table93">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Deactivate></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		<font size="3">
+		<p><b>Deactivate event</b></font><font size="2"><br>
+
+			</font>
+
+			<span class="auto-style25"><span class="auto-style30">It occurs when a form or report loses the focus to a Table, Query, Form, 
+		Report, Macro, or Module window, or to the Database window.</span></p>
+				<font size="2" class="auto-style30">
+		<p class="signature"><font color="#800000">Private Sub <i>object</i>_<b>Deactivate</b>()</font></font></span><font size="2"></p>
+<font face="" size="2">
+			<p><span class="auto-style25">E<span class="auto-style30">xample:</span></span><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table94" height="62">
+					<tr>
+						<td>
+
+						<font size="2" class="auto-style5"><font color="#000080">Private Sub Form_Deactivate()</font><br>
+						<font color="#000080">&nbsp;&nbsp;
+		DoCmd.RunCommand acCmdSave&nbsp;&nbsp; </font>
+
+			</font><font color="#008000"><span class="auto-style5">&nbsp;&nbsp;
+		' save record when the form deactivates</span></font><font color="#000080" size="2" face class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">End Sub</span></font></td>
+					</tr>
+			</table>
+
+			</font>
+
+			</font>
+
+			</font>
+
+			</font>
+
+	        <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Close></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+
+		<font size="3">
+		<p>
+			<b>Close event</b></font><font size="2"><br>
+			</font>
+			<span class="auto-style5">Occurs after the UnLoad event, when a form or report is closed 
+			and removed from the screen. Remember this, the Unload event can be 
+		canceled, but the Close event can't.</span><span class="auto-style25"></p>
+		<p>
+		<font color="#800000"><span class="auto-style30">Private Sub <i>object</i>_<b>Close</b>()</span></font></p>
+			<p><span class="auto-style30">Example:</span><font size="2"><table border="1" width="77%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table90" height="106">
+					<tr>
+						<td>
+
+						<font size="2" color="#000080" class="auto-style30">
+						Private Sub Form_Close()<br>
+
+			</font>
+						<font color="#008000">
+						<span class="auto-style30">&nbsp;&nbsp;
+		' If the frmOrders form is loaded, unload it</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;
+		If IsLoaded(&quot;frmOrders&quot;) Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		DoCmd.Close acForm, &quot;frmOrders&quot;<br>
+		&nbsp;&nbsp;
+		End If<br>
+		End Sub</span></font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+<font face="" size="2">
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Dirty></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			</font>
+<font size="3">
+		<p>
+<b>Dirty event</b></font><font size="2"><br>
+		</font>
+		<span class="auto-style5">Occurs when the contents of a form or the text portion of a combo box changes.
+
+			(then the
+<a target="_blank" href="Forms_Events/pencil.gif">editing pencil</a> appears in 
+the form's record selector).
+
+			It also occurs when you move from one page to another 
+page in a tab control . After the control is dirty, it won't get dirty again 
+until the value is saved.</span></p>
+		</span>
+
+				</span>
+			</span></span></span></span></span>
+				<span class="auto-style33">
+		<p>
+		</span>
+		<span class="auto-style30"><span class="auto-style33">Setting the Cancel argument to True cancels the 
+Dirty event. You can also use the <b class="bterm">CancelEvent</b> method of the 
+DoCmd object to cancel the event.</span><span class="auto-style25"><br>
+<br>
+		</span></span>
+<font color="#800000"><span class="auto-style34">Private Sub <i>Form</i>_<b>Dirty</b>(<i>Cancel</i> 
+		As Integer)</span></font></p>
+				<span class="auto-style25">
+<font size="2" class="auto-style30">
+			<p>Example: enables the btnUndo button when data is changed. The 
+			Undo subroutine is called from the Dirty event of text box controls. 
+			Clicking the enabled btnUndo button restores the original value of 
+			the control by using the <b>OldValue</b> property.</font><span class="auto-style25"><font face="" size="2"><br>
+			<br><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="267">
+					<tr>
+						<td>
+<font color="#000080" size="2" class="auto-style5">Private Sub Form_Dirty()<br>
+&nbsp;&nbsp; If Me.Dirty Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me!btnUndo.Enabled = True&nbsp;&nbsp;&nbsp;&nbsp;
+</font><font color="#008000"><span class="auto-style5">' enable button.</span></font><font color="#000080" size="2" face="Arial" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me!btnUndo.Enabled = False&nbsp;&nbsp;&nbsp;
+						</span>
+</font><font color="#008000"><span class="auto-style5">' disable button.</span></font><font color="#000080" size="2" face="Arial" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp; End If<br>
+						End Sub<br>
+						<br>
+						Sub btnUndo_Click()<br>
+						Dim ctl As Control<br>
+&nbsp;&nbsp;&nbsp; For Each ctl in Me.Controls<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If ctl.ControlType = acTextBox Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctl.Value = 
+						ctl.OldValue&nbsp;&nbsp;&nbsp; </span> </font>
+						<span class="auto-style25"><span class="auto-style30"></font>
+</font>
+						</span>
+						</span>
+<font color="#008000"><span class="auto-style5">' restore Old Value.</span></font>
+						<span class="auto-style5">
+						</font></span>
+						<font size="2" face="Arial" color="#000080" class="auto-style30">
+						<br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp; Next ctl<br>
+						End Sub</span></font><span class="auto-style5"></font></span></td>
+					</tr>
+			</table>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=KeyDown></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+
+		<font size="3">
+
+		<p><b>KeyDown event</b></font><font size="2"><br>
+
+			</font>
+		<span class="auto-style25"><span class="auto-style30">Occurred every time a key is pressed while a form or control has the 
+		focus. This event also occurs if you send a keystroke to a form or 
+		control by using the <b>SendKeys</b> action in a macro or the SendKeys 
+		statement in Visual Basic. </span> </p>
+				<font size="2">
+		<p><font color="#000080"><span class="auto-style30">Private Sub <i>object</i>_<b>KeyDown</b>(KeyCode 
+		As Integer, Shift As Integer)</span></font><span class="auto-style30"></p>
+				</span>
+
+			</font>
+				</span></span></span>
+		<span class="auto-style35">
+		<p><strong>KeyCode</strong></span><font size="2"><span class="auto-style30"><span class="auto-style33">
+		</span></span>
+
+			</font>
+		<span class="auto-style36">- tell you the ASCII code of the key</span><span class="auto-style30"><span class="auto-style33"><font size="2"><br>
+
+			</font>
+		</span><span class="auto-style37"><strong>Shift</strong></span><font size="2"> -</font></span><span class="auto-style25"><span class="auto-style32"> tell you which, if any, of the Ctrl, Alt, and 
+		Shift keys were being pressed at the same time. </p>
+
+				</span><span class="auto-style30"><font size="2">
+
+			<p>E</font></span><span class="auto-style32">xample:</span><span class="auto-style25"><font face="" size="2"><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table83" height="138">
+					<tr>
+						<td class="auto-style25">
+<font size="2" color="#000080" class="auto-style30">Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)<br>
+
+			</font>
+<font color="#008000"><span class="auto-style30">&nbsp;
+		' If the form is dirty and the user presses page up or page down, ignore the keystroke</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;
+		If Me.Dirty Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		If KeyCode = vbKeyPageDown Or
+		KeyCode = vbKeyPageUp Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		KeyCode = 0<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		End If<br>
+		&nbsp;
+		End If<br>
+		End Sub</span></font></td>
+					</tr>
+			</table>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table84" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=KeyPress></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+
+		<font size="3">
+		<p><b>KeyPress event<br>
+		</b></font><span class="auto-style5">Occurs when you press and release a key or key 
+		combination that corresponds to an ANSI code while a form or control has 
+		the focus. The keyAscii returns a numeric ANSI key code.
+
+			KeyPress</span><span class="auto-style25"><span class="auto-style30"> 
+		event also occurs if you send an ANSI keystroke to a form or control by 
+		using the <b>SendKeys</b> action in a macro or the SendKeys statement in 
+		Visual Basic. Refer to a
+		</span>
+		<a target="_blank" href="Forms_Events/ANSI_characters.htm">
+		<span class="auto-style30">table of the ANSI codes</span></a><font size="2">.</font></p>
+		<p class="auto-style30">
+		<font size="2" color="#800000" class="auto-style32">Private Sub <i>object</i>_<b>KeyPress</b>(KeyAscii 
+		As Integer)</font></p>
+
+			<p><font size="2">E</font><span class="auto-style30">xample: shows 
+			that if you press anything other than alphabetical characters (upper 
+			or lowercase, and no space), the statement will cancel the keys 
+			input, then displays a message.</span></span><font face=""><br><br><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table85" height="176">
+					<tr>
+						<td>
+<font size="2" color="#000080" class="auto-style5">Private Sub Form_KeyPress(KeyAscii As 
+		Integer)<br>
+&nbsp;&nbsp;&nbsp; Select Case KeyAscii<br>
+</font><font color="#008000"><span class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' 65 To 90 and 97 To 122: These are 
+		all alphas, upper and lowercase</span></font><font face="Arial" size="2" color="#000080" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp;&nbsp; Case 65 To 90, 97 To 122<br>
+&nbsp;&nbsp;&nbsp; Case Else<br>
+						</span>
+</font><font color="#008000"><span class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' 
+setting KeyAscii to zero cancels the 
+		keystrokes</span></font><font face="Arial" size="2" color="#000080" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KeyAscii = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox (&quot;Only alphabetical characters 
+		allowed, and no space in between&quot;)<br>
+&nbsp;&nbsp;&nbsp; End Select<br>
+		End Sub</span></font></td>
+					</tr>
+			</table>
+		<font size="2" face>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table84" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Change></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			</font></font>
+
+<font size="2">
+		<p><font size="3"><b>Change event</b></font><br>
+		</font>
+		<span class="auto-style25"><span class="auto-style30">Occurs when the content of a text box or the text portion of a combo box 
+		changes. It also occurs when you move from one page to another page in a 
+		tab control.</span></p>
+
+<font size="2">
+		<p class="auto-style30">
+		<font size="2" color="#800000" class="auto-style32">Private Sub <i>object</i>_<b>Change</b>()</font></p>
+
+				</font>
+
+			<p><span class="auto-style30">Example: display value of a field called &quot;CustomerName&quot; in the 
+			title bar while you are typing in a text box bound to that field.</span><br class="auto-style30">
+			<span class="auto-style30">Note: you must use the control's Text property to refer to the text 
+			in the field before it is committed.</span><p><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table85" height="55">
+					<tr>
+						<td>
+
+						<br>
+
+<font size="2" color="#000080" class="auto-style30">
+			Sub txtCustomerName_Change 
+()<br>
+&nbsp;&nbsp; Me.Caption = Me!txtCustomerName.Text<br>
+End Sub</font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+            	<font face="Courier New">
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table86" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=KeyUp></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+
+		<font size="3">
+		<p><b>KeyUp event</b></font><font size="2"><br>
+		</font>
+		<span class="auto-style25"><span class="auto-style30">Occurs when the user releases a key while a form or control has the 
+		focus. This event also occurs if you send a keystroke to a form or 
+		control by using the <b>SendKeys</b> action in a macro or the
+		SendKeys statement in Visual Basic.</span></p>
+				<font size="2" class="auto-style32">
+		<p><font color="#800000">Private Sub <i>object</i>_<b>KeyUp</b>(KeyCode As Integer, Shift As Integer)</font></font></p>
+		<p><span class="auto-style38">KeyCode</span><span class="auto-style30"> - such as vbKeyF1 (F1 key) 
+		or vbKeyHome (HOME key).<br>
+		Note: you can prevent an object from receiving a 
+		keystroke by setting KeyCode to 0.<br>
+		</span><span class="auto-style38">Shift</span><span class="auto-style30"> - the state of the SHIFT, CTRL, and ALT keys at the 
+		time of the event.</span></p>
+			<p><span class="auto-style30">Example</span><font size="2">: &nbsp;</font></span><font size="2" face><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000"  height="121">
+					<tr>
+						<td class="auto-style30">
+<font color="#000080"><span class="auto-style25">Private 
+</span> 
+</font><span class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">
+			Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)<br>
+&nbsp;&nbsp;
+If (KeyCode = 27) OR </font></span><font color="#000080">
+						<span class="auto-style25">(KeyCode = 127) </span> </font>
+						<span class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">
+Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Me.txtCustomerName.Visible = Not Me.</font></span><font color="#000080"><span class="auto-style25">CustomerName</span></font><span class="auto-style25"><font size="2" color="#000080" class="auto-style30">.Visible<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+KeyCode = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;KeyCode &quot; &amp; CStr(KeyCode) &amp; &quot;is not 
+allowed&quot;<br>
+&nbsp;&nbsp;
+End If<br>
+End Sub</font></span></td>
+					</tr>
+			</table>
+			</font>
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=NotInList></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+
+		<font size="3">
+		<p>
+
+			<b>NotInList event</b></font>
+		<br>
+		<font size="2" class="auto-style30">O<span class="auto-style25">ccurs when the user enters a value in the 
+		text box portion of a combo box that isn't in the combo box list. This 
+			is a special property that applies only to combo box that list box 
+			lacks.</span></font><span class="auto-style25"></p>
+		<p><font color="#800000" size="2" class="auto-style32">Private Sub <i>object</i>_<b>NotInList</b>(NewData 
+		As String, Response As Integer)</font></p>
+		<p><span class="auto-style39">NewData</span><font size="2" class="auto-style30">&nbsp;- 
+		a string Access uses to pass the text the user entered in the text box 
+		portion of the combo box to the event procedure.<b class="runinhead"><i><br>
+		Response</i></b>&nbsp;- indicates how the NotInList event was handled. This 
+		argument can be one of the following constants: <br>
+		&nbsp;&nbsp; <b>acDataErrContinue</b> - ignore the default Access error message. You 
+			can supply a custom error message.<br>
+&nbsp;&nbsp; <b>acDataErrDisplay</b> - Default. Display the default Access error 
+		message.<br>
+&nbsp;&nbsp; <b>acDataErrAdded</b> - doesn't 
+		display a message but enables you to add the entry to the combo box list 
+		in the NotInList event procedure. <br>
+		After the entry is added, Access updates the list by requerying the 
+		combo box. Access then rechecks the string against the combo box list, 
+		and saves the value in the NewData argument in the field the combo box 
+		is bound to. If the string is not in the list, it displays an error 
+		message.</font></p>
+			<p><span class="auto-style30">Example</span><font size="2">.</font></span><font face=""><table border="1" width="85%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table77" height="263">
+					<tr>
+						<td><font color="#000080">
+						<font size="2" class="auto-style5">Private 
+						Sub cboCustomerID_NotInList(NewData As String, Response 
+						As Integer)</code></font></font></font><span class="auto-style30"></font></span><span class="auto-style25"><span class="auto-style30"></span><font color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; Dim ctl As Control 
+						</span> </font> <span class="auto-style30"> <br>
+						<font color="#008000">&nbsp;&nbsp; ' return Control 
+						object that points to combo box.</font><br>
+&nbsp;<font color="#000080">&nbsp; Set ctl = Me!CustomerID</font><br>
+&nbsp;<font color="#008000">&nbsp; ' prompt user to verify they wish to add new 
+						value.</font><br>
+						<font color="#000080">&nbsp;&nbsp; If MsgBox(&quot;CustomerID is not in the list. Add it?</code>&quot;,
+		vbYesNo + vbQuestion, &quot;Please Respond&quot;) = vbYes Then</font><br>
+						<font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' 
+						set Response argument to indicate that data is being 
+						added.</font><br>
+						<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response = acDataErrAdded</font><br>
+&nbsp;<font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' add string in the NewData 
+						argument to row source.</font><br>
+						<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctl.RowSource = ctl.RowSource &amp; &quot;;&quot; &amp; NewData<br>
+&nbsp;&nbsp; Else</font><br>
+&nbsp;<font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' If user chooses Cancel, 
+						suppress error message and undo changes.</font><br>
+						</span>
+						<font color="#000080"><span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response = acDataErrContinue<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctl.Undo<br>
+&nbsp;&nbsp; End If<br>
+						End Sub</span></font></span></td>
+					</tr>
+			</table>
+            	<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Enter></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			<p>
+
+			<font size="3">
+
+			<b class="bterm">Enter event<font face=""><br>
+
+			</font>
+			</b></font>
+
+			<font face="">
+			<font size="2" class="auto-style30">I<span class="auto-style25">t occurs just <i>before</i> a control receives focus 
+			from another control on the same form and <i>before</i> the GotFocus 
+			event. 
+			It applies to textboxes, combo boxes, list boxes, command buttons, 
+			option groups, object frames, subforms.</span></font><span class="auto-style25"></p>
+		<p>
+
+			<font size="2" color="#800000" class="auto-style30">Private Sub <i>object</i>_<b>Enter</b>()</font></p>
+			<p><span class="auto-style30">Example</span><font size="2">: </font>
+		<table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table70" height="133">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						OrdersForm_Enter()<br>
+						</font>
+						<font size="2" color="#008000" class="auto-style30">&nbsp;&nbsp; ' If 
+						the user clicks to enter qty orCurrent d the OrderID is 
+						null, display a message and set focus <br>
+&nbsp;&nbsp; ' back to the cboOrderID combo box</font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; If IsNull(Me.OrderID) Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;Enter Order ID before entering other 
+						orders detail&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.cboOrderID.SetFocus<br>
+&nbsp;&nbsp; End If<br>
+						End Sub</span></font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" id="table71" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Exit></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			<p>
+
+			<font size="3">
+
+			<b>Exit event<br>
+			</b></font><font size="2" class="auto-style30">I<span class="auto-style25">t occurs just <i>before</i> a control 
+			loses focus to another control on the same form and <i>before</i> 
+			the LostFocus event. <br>
+			It applies to tlist boxes, command buttons, 
+			option groups, object frames.</span></font><span class="auto-style25"></p>
+		<p>
+
+			<font size="2" color="#800000" class="auto-style30">Private Sub <i>object</i>_<b>Exit</b>()</font></p>
+			<p><span class="auto-style30">Example</span><font size="2">: </font>
+
+			</span></span>
+
+			</font>
+			<span class="auto-style25">
+		<table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table70" height="133">
+					<tr>
+						<td></span>
+						<font size="2" color="#000080" class="auto-style30">
+						<span class="auto-style25">Private Sub 
+						OrdersForm_Exit(Cancel As Integer)<br>
+&nbsp;&nbsp; Dim strMsg As String<br>
+&nbsp;&nbsp; strMsg = &quot;You entered '&quot; &amp; 
+						Me!OrderID &amp; &quot;'. Is this 
+						correct?&quot;<br>
+&nbsp;&nbsp; If MsgBox(strMsg, vbYesNo) = vbNo Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = True&nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+						</font><span class="auto-style25"><font color="#008000">
+						<span class="auto-style30">' cancel exit.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub&nbsp;&nbsp;&nbsp;&nbsp;</span></font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;' save 
+						changes and exit.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; End If<br>
+						End Sub</span></font></span></td>
+					</tr>
+			</table>
+            &nbsp;<font face=""><table border="0" cellspacing="0" cellpadding="0" id="table140" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=GotFocus></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+		<p><b><font size="3">GotFocus event</font></b><font size="2"><br>
+		</font>
+		<span class="auto-style5">The GotFocus event occurs when a form or control receives the focus in 
+		response to a user action, or when your code issues the SetFocus, 
+		SelectObject, GoToRecord, GotoControl, or GoToPage methods. This event 
+		is rarely used.</span><span class="auto-style25"></p>
+		<p class="signature">
+		<font size="2" color="#800000" class="auto-style30">Private Sub <i>
+		object</i>_<b>GotFocus</b>()</font></span></p>
+			<p><span class="auto-style25"><span class="auto-style30">Example</span><font size="2">: </font>
+			</span> 
+            <table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table139" height="74">
+					<tr>
+						<td><font color="#000080" size="2" class="auto-style30">
+						<span class="auto-style25">Private Sub 
+						SearchText_GotFocus()<br>
+						&nbsp; &nbsp; Me!txtSearch = Null<br>
+						&nbsp; &nbsp; Me!btnFind.Caption = 
+						&quot;Search&quot;<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+            <br>
+		<table border="0" cellspacing="0" cellpadding="0" id="table141" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=LostFocus></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		<p><font size="3">
+					<b>LostFocus event</b></font><font face=""><br>
+
+			</font>
+
+			<span class="auto-style30">T</span><span class="auto-style25"><span class="auto-style30">he LostFocus event occurs when a form or control loses the focus 
+			in response to a user action, or when your code issues the SetFocus, 
+			SelectObject, GoToRecord, GotoControl, or GoToPage methods.</span></p>
+
+			<font size="2" class="auto-style30">
+		<p><font color="#800000">Private Sub <i>object</i>_<b>LostFocus</b>()</font></font></span></p>
+			<p class="auto-style5">Example: displays a message in a label when the focus moves to 
+			an option button.<p><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table96" height="115">
+					<tr>
+						<td><font size="2" face class="auto-style30">
+						<font color="#000080" class="auto-style25">Private Sub optYes_<b>GotFocus</b>()<br>
+&nbsp;&nbsp;&nbsp; Me!Yes.Caption = &quot;Option button 'Yes' receives the focus.&quot;<br>
+						End Sub<br>
+						<br>
+						Private Sub OptionYes_<b>LostFocus</b>()<br>
+&nbsp;&nbsp;&nbsp; Me!Yes.Caption = &quot;&quot;&nbsp;&nbsp;&nbsp; </font>
+						<font color="#008000" class="auto-style25">' clear caption as 
+						Option button 'Yes' loses focus.<br>
+						</font>
+						<font color="#000080"><span class="auto-style25">End Sub</span></font></font></td>
+					</tr>
+			</table>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Error></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			<p><font size="3"><b>Error Event</b></font><font size="2"><br>
+			</font>
+			<span class="auto-style5">Error event occurs when a Jet run-time error is produced during data 
+			entry when a form or report has the focus. See here for the
+			<a target="_blank" href="Forms_Events/Access_And_JetErrorCodes.htm">
+			list of error codes reserved by Microsoft Access and the Jet 
+			Database Engine</a>. Here is the function
+			<a target="_blank" href="Forms_Events/generate_table_Access2003AndJetErrors.htm">
+			example</a> to generate a table of the error codes .</span><span class="auto-style25"></p>
+			<p><span class="auto-style30">In the form's property sheet, s</span></span><span class="auto-style5">et 
+			the OnError property to the name of the macro or to [Event 
+			Procedure]. Access Error event doesn't include run-time errors in 
+			Visual Basic or errors from ADO. </span> </p>
+			<p><span class="auto-style25">
+			<font size="2" color="#800000" class="auto-style30">Private Sub <i>object_</i><b>Error
+			</b>(DataErr As Integer, Response As Integer)</font></p>
+				</span></span></span></span>
+			<p><span class="auto-style39">Object</span><span class="auto-style30"> - name of a Form or Report.
+			<br>
+			<b><i>DataErr</i></b> - error code returned by the Err object when 
+			an error occurs.<br>
+			<b><i>Response</i></b> - can be one of the following intrinsic 
+			constants. <br>
+&nbsp;&nbsp; <b>acDataErrContinue</b> - ignore the default Access error message. You 
+			can supply a custom error message.<br>
+&nbsp;&nbsp; <b>acDataErrDisplay</b> - Default. Display the default Access error 
+			message. </span><font size="2"> <br>
+&nbsp;</font></p>
+			<table border="1" width="80%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table72" height="140">
+					<tr>
+						<td>
+
+						<font color="#008000"><span class="auto-style30"><br>' to replace a default 
+error message with a custom error message. </span> </font>
+<font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">Private Sub OrdersForm_Error(DataErr As Integer, Response As Integer)<br>
+Const conDuplicateKey = 3022<br>
+Dim strMsg As String<br>
+<br>
+If DataErr = conDuplicateKey Then<br>
+&nbsp;&nbsp; Response = acDataErrContinue<br>
+&nbsp;&nbsp; strMsg = &quot;Each Orders record must have a unique Order ID. Please 
+re-enter your data.&quot;<br>
+&nbsp;&nbsp; MsgBox strMsg<br>
+End If<br>
+End Sub<br>
+&nbsp;</span></font><p><span class="auto-style30">Here is another example:</span><font size="2" color="#000080"><span class="auto-style30"><br>
+<br>
+Private Sub Form_Error(DataErr As Integer, Response As Integer)<br>
+						</span>
+</font><font color="#008000"><span class="auto-style30">' Respond to Jet errors</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">Select Case DataErr<br>
+&nbsp;&nbsp; Case </span> </font><span class="auto-style30"></span></span>
+						<font color="#000080">
+						<span class="auto-style5">3022</span></font><span class="auto-style25"><font color="#000080"><br class="auto-style30">
+</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Data 
+isn't right for the field</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;</span></font></span><font color="#000080"><span class="auto-style5">Each 
+Orders record must have a unique Order ID. Please re-enter your data</span></font><span class="auto-style25"><font size="2" color="#000080" class="auto-style30">&quot;, 
+vbInformation<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#008000">
+						<span class="auto-style30">' Suppress 
+the default Access message</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response = acDataErrContinue<br>
+&nbsp;&nbsp; Case Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </font><font color="#008000">
+						<span class="auto-style30">' Let 
+Access handle other errors</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response = acDataErrDisplay<br>
+End Select<br>
+End Sub</span></font></span></td>
+					</tr>
+			</table>
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Undo></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font><font size="3">
+		<p><b>Undo event</b></font><font size="2"><br>
+		</font>
+		<span class="auto-style5">Occurs when you undo a change to a combo box control, a form, or a text 
+		box control. It is triggered by clicking the Undo button, pressing the 
+		ESC key, or calling the Undo method of the specified form.</span><span class="auto-style25"></p>
+		<p><font size="2" color="#800000" class="auto-style30">Private Sub <i>object</i>_<b>Undo</b>(<i>Cancel</i> 
+		As Integer)</font></span></p>
+			<p><span class="auto-style5">Example:</span><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table103" height="128">
+					<tr>
+						<td><span class="auto-style5"><font color="#000080">
+						Private Sub Form_Undo(Cancel As Integer)</font></span><font face=""><code><font face="Arial" size="2" color="#000080" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp; Dim intResponse As Integer<br>
+&nbsp;&nbsp; Dim strPrompt As String<br>
+						</span>
+						</font>
+						<font color="#008000">
+						<span class="auto-style5">&nbsp;&nbsp; </span> </font></code>
+						</font><span class="auto-style5">
+						<font color="#008000">
+		' ask user if they meant to undo changes</font></span><font face=""><font color="#000080"><code><font face="Arial" size="2" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp; strPrompt = &quot;You have attempted to cancel the undo operation. Do 
+						you want to proceed?&quot;<br>
+&nbsp;&nbsp; intResponse = MsgBox(strPrompt, vbYesNo)<br>
+						<br>
+&nbsp;&nbsp; If intResponse = vbYes Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = True<br>
+&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = False&nbsp;&nbsp;&nbsp; </span> </font>
+						</code></font><span class="auto-style5">
+						<font color="#008000">
+		' if they respond no, cancel the undo</font></span><font color="#000080"><code><font face="Arial" size="2" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp; End If<br>
+						End Sub</span></font></code></font></td>
+					</tr>
+			</table>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table104">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Updated></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+		<p><font size="3">
+		<b>Updated event</b></font><font size="2"><br>
+		</font>
+		<span class="auto-style5">Applies to a bound object frame only. It occurs when the OLE object's 
+		data is modified.</span></p>
+			<p class="auto-style5">Example: to show a dialog box modal form in 
+			response to an Updated event. Enable a timer control in the Updated 
+			event and then have the Timer's Timer event show the form.<p>
+				<font face=""><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table105" height="134">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style5">Private Sub OLE1_Updated(Code As Integer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timer1.Enabled = True<br>
+&nbsp;End Sub<br>
+		<br>
+&nbsp;Private Sub Timer1_Timer()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timer1.Enabled = False<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyForm.Show vbModal<br>
+		End Sub</font></td>
+					</tr>
+			</table>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Timer></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+		<font size="3">
+		<p><b>Timer event</b></font><font size="2" face><br>
+		<span class="auto-style5">The Timer event occurs for a form at regular intervals as specified by 
+		the form's TimerInterval property in milliseconds.</span></font></p>
+		<p class="auto-style25">
+		<font size="2" color="#800000" class="auto-style30">Private Sub Form_<b>Timer</b>()</font></p>
+			<p><span class="auto-style5">Example: to create a digital clock you can display 
+			on a form. Set your</span><font face><span class="auto-style5">
+			label name as Clock.
+
+			</span>
+
+			</font>
+			<span class="auto-style5">The label control displays the current time according 
+			to your computer's system clock. 
+		</font>
+			</span> 
+				<p>
+		<table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table106" height="126">
+					<tr>
+						<td><br class="auto-style30">
+						<font size="2" color="#000080" class="auto-style5">Private Sub Form_Timer()<br>
+&nbsp;&nbsp;&nbsp; Clock.Caption = Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</font><font color="#008000">
+						<span class="auto-style5">' update 
+						digital time display.</span></font><font face="Arial" size="2" color="#000080" class="auto-style30"><br class="auto-style25">
+						<span class="auto-style25">End Sub<br>
+						</span>
+						</font>
+		<p><font size="2" color="#000080" class="auto-style5">Sub Form_Load()<br>
+&nbsp;&nbsp;&nbsp; Me.TimerInterval = 1000<br>
+				End Sub</font></td>
+					</tr>
+			</table>
+            <p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table107">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=NoData></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		<p><font size="3"><b>NoData event</b></font><font size="2"><br>
+		</font>
+		<span class="auto-style5">Occurs after Access formats a report for printing that has no data (the 
+		report is bound to an empty recordset or a 
+		blank report</span><span class="auto-style25"><span class="auto-style30">), but before the report is printed. 
+		</span></p>
+			<p><span class="auto-style30">Example:</span><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table108" height="89">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub Report_NoData(Cancel As Integer)<br>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;
+			' if no data, display message and cancel report</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;
+			MsgBox &quot;There is no data for this report.Canceling report...&quot;<br>
+			&nbsp;&nbsp;
+			Cancel = True<br>
+			End Sub</span></font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+
+				</div>
+			<p>	
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=Delete></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+		</font>
+
+			<p><font size="3"><b>Delete event</b></font><font size="2"><br>
+			</font>
+			<span class="auto-style25"><span class="auto-style30">Occurs when the user performs some action, such as pressing the 
+			DEL key, to delete a record, but before the record is actually 
+			deleted.</span></p>
+			<font size="2">
+			<p class="auto-style30"><font color="#800000">Private Sub <i><!----></i>
+			Form_<b>Delete</b>(Cancel As Integer)</font></font></span></p>
+
+			<p><span class="auto-style5">Example:</span><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table109" height="74">
+					<tr>
+						<td class="auto-style25">
+						<font size="2" class="auto-style30"><font color="#000080">Private Sub Form_Delete(Cancel As 
+						Integer)<br>
+&nbsp;&nbsp;&nbsp; Cancel = True&nbsp;&nbsp;&nbsp;</font> <font color="#008000">' 
+						setting Cancel argument to True (&#8211;1) cancels the Delete 
+						event.</font><br>
+						<font color="#000080">&nbsp;&nbsp;&nbsp; MsgBox &quot;This record can't be deleted.&quot;<br>
+						End Sub</font></font></td>
+					</tr>
+			</table>
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table110">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=BeforeDelConfirm></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			<p><b><font size="3">BeforeDelConfirm event</font></b><br>
+			<span class="auto-style25">
+			<span class="auto-style30">Occurs after the Delete event, but before Access displays a 
+			dialog box asking the user to confirm the deletions.</span></p>
+			<font size="2" class="auto-style30">
+			<p class="signature"><font color="#800000">Private Sub <i><!----></i>
+			Form_<b>BeforeDelConfirm</b>(Cancel As Integer, Response As Integer)</font></font></p>
+			<p><span class="auto-style39">Cancel</span><span class="auto-style30"> - set to 
+			True cancels the BeforeDelConfirm event and prevents the Delete 
+			Confirm dialog box from being displayed<br>
+			<b><i>Response</i></b> -can be set to one of the following intrinsic 
+			constants:<br>
+&nbsp;&nbsp; <b>acDataErrContinue</b> - continues without displaying the Delete 
+			Confirm dialog box.<br>
+&nbsp;&nbsp; <b>acDataErrDisplay</b> (Default)&nbsp; - displays the Delete 
+			Confirm dialog box.</span></span></p>
+			<p class="auto-style25"><span class="auto-style30">Example:</span><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table111" height="134">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_BeforeDelConfirm(Cancel As Integer, Response As 
+						Integer)<br>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' suppress default Delete Confirm dialog box.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; Response = acDataErrContinue<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' display a custom dialog box.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; If MsgBox(&quot;Delete this record?&quot;, vbOKCancel) = vbCancel Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancel = True<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+			<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table112">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=AfterDelConfirm></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			<p><font size="3"><b>After</b></font><b><font size="3">DelConfirm 
+			event<br>
+			</font></b></font>
+			<span class="auto-style25"><span class="auto-style30">Occurs after the record is actually 
+			deleted. If the code does not cancel the 
+			BeforeDelConfirm event, the AfterDelConfirm event takes place after Access displays 
+			the Confirmation 
+			dialog box.</span></p>
+			<p class="auto-style30"><font color="#800000">Private Sub <i><!----></i>
+			Form_<b>AfterDelConfirm</b>(Status As Integer)</font></p>
+			<p><b class="runinhead"><span class="auto-style31">Status</span></b><span class="auto-style30">&nbsp;- indicates whether a 
+			record has been deleted, and can be any of the following constants: 
+			</span></span><font size="2" class="auto-style30"><br class="auto-style25">
+			<span class="auto-style25">&nbsp;&nbsp; <b>acDeleteOK</b> - indicates the deletion was successful. <br>
+&nbsp;&nbsp; <b>acDeleteCancel</b> - indicates the deletion was canceled in 
+			Visual Basic.<br>
+&nbsp;&nbsp; <b>acDeleteUserCancel</b> - indicates the deletion was canceled by 
+			the user. </span> </font></p>
+			<p class="auto-style25"><font size="2" class="auto-style30">Example: display a message indicating whether the 
+			deletion was successful in the usual way, or <br>
+			whether it was canceled in Visual Basic, or by the user.</font><p class="auto-style25"><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table113" height="168">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_AfterDelConfirm(Status As Integer)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>
+&nbsp;&nbsp;&nbsp; Select Case Status<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case <b>acDeleteOK</b>&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;Your 
+						deletion is confirmed.&quot;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case <b>acDeleteCancel</b>&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;You 
+						IT support canceled the deletion.&quot;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case <b>acDeleteUserCancel</b>&nbsp;
+						<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;User 
+						canceled the deletion.&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; End Select <br>
+						End Sub</font></td>
+					</tr>
+			</table>
+			<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table115">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=DblClick></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			<p><b><font size="3">DblClick event</font></b><font size="2"><br>
+			</font>
+			<span class="auto-style5">Occurs when the left mouse button was 
+			pressed and released </span> <span class="auto-style25">
+			<span class="auto-style30">twice over an object 
+			within the double-click time limit.</span></p>
+			<font size="2" class="auto-style30">
+			<p class="signature"><font color="#800000">Private Sub <i>object</i>_<b>DblClick</b>(Cancel 
+			As Integer)</font></font></span></p>
+			<p class="auto-style5">Example: to show how you can use a DblClick event 
+			on one form to open another form that displays records from the table that is the row 
+			source of a combo box on the first form. When the user double-clicks the combo box in 
+			an Orders form (first form), the Customers form is displayed, showing the record 
+			for the customer selected in the combo box on the first form.
+			<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" height="13" class="auto-style41" style="width: 602px">
+			<tr>
+				<td height="13" valign="top" class="auto-style40" style="width: 734px">
+<font face="">
+				<span class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						CustomerID_DblClick(Cancel As Integer)<br>
+&nbsp;&nbsp;&nbsp; DoCmd.OpenForm &quot;</font><span class="auto-style30"></span></span><font color="#000080" face><span class="auto-style5">Customers</span></font><span class="auto-style5"><font color="#000080">&quot;, 
+						, , &quot;</font></span><font color="#000080"><span class="auto-style5">Customer</span></font><span class="auto-style5"><font color="#000080">ID 
+						= Forms!Orders!</font></span><font color="#000080"><span class="auto-style5">Customer</span></font><font size="2" color="#000080" class="auto-style30">ID&quot;<br>
+						End Sub</font></span></td>
+			</tr>
+		</table>
+
+			</font>
+
+			</font>
+
+			<p><font size="3"><b>Query event</b></font><font size="2"><br>
+			</font>
+			<span class="auto-style5">Occurs whenever the specified PivotTable view query becomes 
+			necessary.</span><span class="auto-style25"></p>
+			<p class="auto-style30">Example: to demonstrate the syntax for a 
+			subroutine that traps the Query event.<p></span><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table116" height="57">
+					<tr>
+						<td class="auto-style25" style="width: 640px">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_Query()<br>
+&nbsp;&nbsp;&nbsp; MsgBox &quot;A PivotTable view query has become necessary.&quot;<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+			<font face="">
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table117">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=ApplyFilter></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			<p><b><font size="3">ApplyFilter event</font></b><font size="2"><br>
+			</font>
+			<span class="auto-style25"><span class="auto-style30">The event occurs when a filter is applied to a form.</span></p>
+			<p class="auto-style30"><font color="#800000">Private Sub Form_<b>ApplyFilter</b>(ByVal
+			<i>Cancel</i> As Integer, ByVal <i>ApplyType</i> As Integer)</font></p>
+			<p><b class="bterm"><span class="auto-style31">Cancel</span></b><span class="auto-style30"> - setting Cancel argument to 
+			True cancels the event.<i><b class="bterm"><br>
+			ApplyType</b></i> - returns the type of filter that was applied.</span></p>
+			<font size="2" class="auto-style30">
+			<p>ApplyFilter event doesn't occur when the user does one of the 
+			following: </p>
+			<ul>
+				<li>Applies or removes a filter by using the ApplyFilter, 
+				OpenForm, or ShowAllRecords actions in a macro, or their 
+				corresponding methods of the DoCmd object in Visual Basic.</li>
+				<li>Uses the Close action or the Close method of the DoCmd 
+				object to close the Advanced Filter/Sort, Filter By Form. </li>
+				<li>Sets 
+			</font>
+				</span> <span class="auto-style5">the Filter property or FilterOn 
+				property in a macro or Visual Basic (although you can set these 
+				properties in an ApplyFilter macro or event procedure).</span></li>
+			</ul>
+			<p class="auto-style5">Example: Here a 
+			sample code by Alex Dybenko, which changes border of ActiveControl 
+			to red and other controls to default color. When you remove the 
+			filter, it will change all controls border color back to default.<p><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table118" height="333">
+					<tr>
+						<td class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_ApplyFilter(Cancel As Integer, ApplyType As 
+						Integer)<br>
+						Dim ctl As Access.Control, strActiveControl As String<br>
+						<br>
+						If ApplyType = 1 Then&nbsp;&nbsp;&nbsp; </font>
+						<font color="#008000"><span class="auto-style30">' apply filter</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; strActiveControl = Screen.ActiveControl.Name<br>
+						End If<br>
+						<br>
+						If Len(strActiveControl) &gt; 0 Then<br>
+&nbsp;&nbsp;&nbsp; Me(strActiveControl).BorderColor = vbRed<br>
+						End If<br>
+						<br>
+						For Each ctl In Me.Controls<br>
+&nbsp;&nbsp;&nbsp; Select Case TypeName(ctl)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case &quot;TextBox&quot;, &quot;Combobox&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If ctl.Name &lt;&gt; strActiveControl Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						ctl.BorderColor = 8421504<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp; End Select<br>
+						Next ctl<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+			<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=MouseMove></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			<p><b><font size="3">MouseMove event</font></b><font size="2"><br>
+			</font> 
+			<span class="auto-style25"><span class="auto-style30">Occurs when you moves the mouse.</span></p>
+			<p class="auto-style32"><font color="#800000">Private Sub <i>object</i>_<b>MouseMove</b>(Button As 
+			Integer, Shift As Integer, X As Single, Y As Single)</font></p>
+			</span> </span></span>
+			<p class="auto-style25"><b class="runinhead">
+			<span class="auto-style31">Button</span></b><span class="auto-style30">&nbsp;&nbsp;- the button that was 
+			pressed (MouseDown) or released (MouseUp) to trigger the event. If 
+			you need to test for the Button argument, you can use one of the 
+			following intrinsic constants as bit masks:<br>
+&nbsp;&nbsp;&nbsp; <b>acLeftButton</b> - The bit mask for the left mouse button.<br>
+&nbsp;&nbsp;&nbsp; <b>acRightButton</b> - The bit mask for the right mouse button. <br>
+&nbsp;&nbsp;&nbsp; <b>acMiddleButton</b> - The bit mask for the middle mouse button. <b class="runinhead"><i><br>
+			Shift </i></b>- the state of the SHIFT, CTRL, and ALT keys when the 
+			button specified by the Button argument was pressed or released. If 
+			you need to test for the Shift argument, you can use one of the 
+			following intrinsic constants as bit masks:<br>
+&nbsp;&nbsp;&nbsp; <b>acShiftMask</b> - The bit mask for the SHIFT key. <br>
+&nbsp;&nbsp;&nbsp; <b>acCtrlMask</b> - The bit mask for the CTRL key. <br>
+&nbsp;&nbsp;&nbsp; <b>acAltMask</b> - The bit mask for the ALT key.<br>
+			<b class="runinhead"><i>X, Y</i></b>&nbsp;- the x and y coordinates for 
+			the current location of the mouse pointer. The X and Y arguments are 
+			always expressed in twips. </span> </p>
+			<span class="auto-style25">
+			<p class="auto-style30">Example: On the form, Label1 forecolor starts out 
+			as Black. When the mouse moves over the Label1, the forecolor 
+			changes to red; and when you click the mouse at the details section, 
+			it changes to font size 10, and returns to font size 8 when you 
+			released it.<p><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table119" height="93">
+					<tr>
+						<td class="auto-style30">
+						<font size="2" color="#000080" class="auto-style5">Private Sub 
+						txtDetail_<b>MouseMove</b>(Button As Integer, Shift As 
+						Integer, X As Single, Y As Single)<br>
+&nbsp; Dim Ctrl As Control<br>
+&nbsp; For Each Ctrl In Me.Controls<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If Ctrl.ControlType = acLabel And Ctrl.ForeColor 
+						= vbBlack Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ctrl.ForeColor = vbRed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp; Next Ctrl<br>
+						End Sub<br>
+						<br>
+						Private Sub Form_<b>MouseDown</b>(Button As Integer, 
+						Shift As Integer, X As Single, Y As Single)<br>
+&nbsp;&nbsp; Me.Label1.FontSize = 10<br>
+						End Sub<br>
+						<br>
+						Private Sub Form_<b>MouseUp</b>(Button As Integer, Shift 
+						As Integer, X As Single, Y As Single)<br>
+&nbsp;&nbsp; Me.Label1.FontSize = 8<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table120">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=MouseDown></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			<p><b><font size="3">MouseDown event</font></b><font size="2"><br>
+			</font>
+			<span class="auto-style25"><span class="auto-style30">Occurs when you press a mouse button. This event does not apply to a 
+			label attached to another control, such as the label for a text box. 
+			It applies only to &quot;freestanding&quot; labels. Pressing and releasing a 
+			mouse button in an attached label has the same effect as pressing 
+			and releasing the button in the associated control.</span></p>
+			<font size="2" class="auto-style32">
+			<p><font color="#800000">Private Sub <i>object</i>_<b>MouseDown</b>(Button As 
+			Integer, Shift As Integer, X As Single, Y As Single)</font></font></p>
+			<p><font size="2" class="auto-style30">The 1st example display a count message each time 
+			you click a mouse on the screen. <br>
+			The 2nd example shows how you can find out which mouse button caused 
+			a MouseDown event.</font><p><table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table121" height="107">
+					<tr>
+						<td class="auto-style30">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_MouseDown(Button As Integer, Shift As Integer, X As 
+						Single, Y As Single)<br>
+&nbsp;&nbsp; Static c As Long<br>
+&nbsp;&nbsp; c = c + 1<br>
+&nbsp;&nbsp; MsgBox &quot;Mousedown count: &quot; &amp; c, X, Y<br>
+						End Sub</font><p><font size="2" color="#000080">
+						<br class="auto-style30">
+						<span class="auto-style30">Private Sub Form_MouseDown(Button As Integer, Shift As 
+						Integer, X As Single, Y As Single)<br>
+&nbsp;&nbsp;&nbsp; If Button = <b>acLeftButton</b> Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;You pressed the left button.&quot;<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp; If Button = <b>acRightButton</b> Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;You pressed the right 
+						button.&quot;<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp; If Button = <b>acMiddleButton</b> Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;You pressed the middle 
+						button.&quot;<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+						End Sub</span></font></span></td>
+					</tr>
+			</table>
+<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table122">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=MouseUp></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			<p><b><font size="3">MouseUp event</font><font size="2"><br>
+			</font></b><span class="auto-style25"><span class="auto-style30">Occurs when the user releases a mouse 
+			button.</span></p>
+			<p><font color="#800000" size="2" class="auto-style30">Private Sub <i>object</i>_<b>MouseUp</b>(Button As 
+			Integer, Shift As Integer, X As Single, Y As Single)</font></p>
+			<p><span class="auto-style30">Example: </span></span>
+			<span class="auto-style5">display a 
+			count message each time you release a left or right mouse click. 
+			</span>
+			<p>
+			<table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table123" height="138">
+					<tr>
+						<td class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_MouseUp(Button As Integer, Shift As Integer, X As 
+						Single, Y As Single)<br>
+&nbsp;&nbsp; Static c As Long<br>
+&nbsp;&nbsp; c = c + 1<br>
+&nbsp;&nbsp; Select Case Button<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case 1: MsgBox &quot;MouseUp LeftButton count: &quot; 
+						&amp; c, X, Y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case 2: MsgBox &quot;MouseUp RightButton count: 
+						&quot; &amp; c, X, Y<br>
+&nbsp;&nbsp; End Select<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+			<font face="">
+			<p>&nbsp;
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table122">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><a name=filtering_form_control></a><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			<hr color="#C0C0C0" width="96%" size="1">
+		<p><b><font size="5" face="Verdana">Working with Form Controls</font></b></p>
+			</font>
+		<p class="auto-style5">This section will show you how to program in the 
+		various types of form controls including list box, combo box, checkbox, 
+		option groups, and command button. Both List box and Combo box have two 
+		common properties as follow: </p>
+		<p><font size="2" class="auto-style30">&#9632; Row Source Type &#8213; specify whether the list is based 
+		on a table/query, a list of values, or a list of table or query field 
+		names.<br>
+		</font>
+<font face="">
+		<span class="auto-style5">&#9632; Row Source &#8213; depends on Row Source Type 
+		setting to determine the data type displayed by the control.</span></p>
+		<p><span class="auto-style25"><font size="2" class="auto-style30">There are three types of Row Source Type settings: <br>
+		</font></span>
+<font face="">
+		<font size="2" class="auto-style5">&#9632; when Row Source Type is <b>Table/Query</b>, Row Source settings must be a table, query or SQL 
+		statement. [
+		<a target="_blank" href="Forms_Events/Row_Source_Type.htm">see diagrams</a> 
+		]. <br>
+		&#9632; when Row Source Type is <b>Value List</b>, Row 
+		Source settings must be an explicit list of items separated by 
+		semicolons. [ <a target="_blank" href="Forms_Events/Value_List.gif" style="" 
+  onclick="NewWindow(this.href,'Code_Window','500','280','yes');return false">see diagram</a> ]<br>
+		&#9632; when Row Source Type is <b>Field List</b>, Row Source settings must be a table, query or SQL statement.</font></p>
+			<p><br>
+		</font>
+		</font><b><font size="3">Filtering form's Control</font></b>
+			<p><span class="auto-style25"><font size="2" class="auto-style30">Let's do a simple example by creating a new form. 
+			Open the form's header and insert a combo box control into the 
+			header. Name the combo box control as cboSearch and its label's 
+			caption as Search. Next will insert the various fields from a table 
+			called tblCustomers into the form's Detail section. Finally insert the 
+			following codes for the combox box control's Click event and the 
+			form's Open event. [
+			<a target="_blank" href="Forms_Events/filtering_list_control.htm">
+			see diagrams</a> which explain in more detail]. You can also
+			<a href="Forms_Events/filtering_BoundControl.mdb">download</a> this 
+			database example.</font></p>
+			<p><span class="auto-style30">Code for the </span></span>
+			<span class="auto-style5">Table/Query RowSource Type.</span><p><table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="212">
+					<tr>
+						<td class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_Open(Cancel As Integer)<br>
+&nbsp;&nbsp; cboSearch.RowSourceType = &quot;<b>Table/Query</b>&quot;<br>
+&nbsp;&nbsp; cboSearch.RowSource = &quot;tblCustomers&quot;<br>
+&nbsp;&nbsp; cboSearch.ColumnCount = 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+						<font color="#008000"><span class="auto-style30">' specify the number of 
+						columns displayed in the combo box.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; cboSearch.ColumnWidths = &quot;0.5 in;1 in&quot;&nbsp;&nbsp;&nbsp; 
+						</span> </font>
+						<font color="#008000"><span class="auto-style30">' in inches or 
+						centimeters, depending on your system setting.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">End Sub<br>
+						<br>
+						<br>
+						Private Sub cboSearch_Click()<br>
+&nbsp;&nbsp; Dim strSQL As String<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp; ' 
+						Column(0) refers to the first column of the table where 
+						the filter is based on.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp; strSQL = &quot;SELECT * FROM tblCustomers WHERE CustomerID = &quot; &amp; 
+						cboSearch.Column(0)<br>
+&nbsp;&nbsp; Forms!frmCustomers.RecordSource = strSQL<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+			<p><font size="2"><br>
+			</font><span class="auto-style30">Code below for the Value List type is rather cumbersome as each time 
+			you have to update <br>the RowSource property to update the list.</span><p><table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="82">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_Open(Cancel As Integer)<br>
+&nbsp;&nbsp; cboSearch.RowSourceType = &quot;<b>Value List</b>&quot;<br>
+&nbsp;&nbsp; cboSearch.RowSource = &quot;London;Bern;Berlin;Barcelona;Milan;Moscow;Singapore&quot;<br>
+&nbsp;&nbsp; cboSearch.ColumnCount = 1<br>
+						End Sub</font><span class="auto-style30"></span></span></td>
+					</tr>
+			</table>
+			<p><span class="auto-style25"><br>
+			<span class="auto-style30">Code for the Field List RowSource Type.</span></span><font face=""><span class="auto-style25">
+			</span>
+			</font>
+			<p>
+			<table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="69">
+					<tr>
+						<td class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">Private Sub 
+						Form_Open(Cancel As Integer)<br>
+&nbsp;&nbsp; cboSearch.RowSourceType = &quot;<b>Field List</b>&quot;<br>
+&nbsp;&nbsp; cboSearch.RowSource = &quot;tblCustomers&quot;<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+<font face="">
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b><a name="Bound_list_control"></a>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			<p><b><font size="3">Combo box - Bound list control</font></b></p>
+			<p><span class="auto-style5">Form controls can be bound or Unbound to a 
+			table or a query</span><span class="auto-style25"><font size="2" class="auto-style30">. Using the earlier 
+			table/query List example, let's first try out a Bound control. Go&nbsp; to 
+			the control cboSearch property sheet, set the <b>ControlSource</b> property 
+			to CustomerID, and also set the <b>Limit To List</b> property to No.&nbsp; 
+			[<a target="_blank" href="Forms_Events/Limit_To_List.gif" style="" 
+  onclick="NewWindow(this.href,'Code_Window','360','360','yes');return false">see 
+			diagram</a>]. Doing this will bound the control and allow to add a 
+			non-list item to the underlying table. Go to VBE, add the following 
+			code to the AfterUpdate event procedure. This is to control saving 
+			the input when the new customer ID is added and then requery the 
+			control.</font></p>
+			</span></span></span>
+			<p class="auto-style5">Often it is easy to add a new item from the combo 
+			box list, and accidentally overwrite the existing data form that 
+			record. So use Bound list control with wisely than be sorry.</p>
+			<span class="auto-style25">
+			<p class="auto-style30">
+			<font size="2" color="#000080" class="auto-style30">Private Sub cboFilter_AfterUpdate()<br>
+&nbsp;&nbsp;&nbsp; DoCmd.RunCommand acCmdSaveRecord<br>
+&nbsp;&nbsp;&nbsp; cboFilter.Requery<br>
+			End Sub</font></p>
+<font face="">
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table126">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b><a name="UnBound_list_control"></a>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			<p><font size="3"><span class="auto-style28">Combo box - UnBound list control</span></font></p>
+			<p class="auto-style30"><span class="auto-style25"><font size="2">Y</font>ou 
+			have seen the above Bound control. Now we do an example on UnBound 
+			list control. Use the same form that we had done with table/query 
+			List, but change the label caption to UnBound, denoting an unbound 
+			control. This time </span>
+			<font size="2" class="auto-style5">set the 
+			<b>Limit To List</b> property to Yes; the purpose is to enter a 
+			non-list item (a new customer ID) that would trigger the combo box's
+			<a class="type1" href="#NotInList">NotInList 
+			event</a> action. NotInList event passes two arguments, Newdata and 
+			Response, that you can use to add a new value to the list, and hence 
+			the underlying data source. This way you won't accidentally change 
+			the existing data. Unbound control also allows use of lookup tables 
+			as opposed to actual stored values.</font></p>
+			<p class="auto-style30"><span class="auto-style25"><font size="2">I</font>nsert 
+			the following codes into the NotInList event, form's Open event, control's Click 
+			event, <font size="2" class="auto-style30">and the AfterUpdate event procedures. 
+			Open the form and enter a new value into the combo box control's 
+			text box. This trigger control's NotInList event, displays the 
+			message box, and stores your response in the byteResponse variable. 
+			Click Yes and the If statement executes the INSERT INTO SQL 
+			statement, which then insert all your entries into the list's data 
+			source. Open table tblCustomers, you will find your entries are 
+			updated there. <br>
+			[ </font></span><font size="2" face class="auto-style30">
+			<a href="Forms_Events/filtering_UnBoundControl.mdb">
+			<span class="auto-style25">download</span></a><span class="auto-style25"> this 
+			database example. You must reference to Microsoft ActiveX Data 
+			Object 2.x Library for the code to work]. </span> </font></p>
+			<p class="auto-style5">
+			Code for the UnBound list control, where you you can 
+			add new item to the list.<p>
+			<table border="1" width="89%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="69" id="table124">
+					<tr>
+						<td class="auto-style30">
+						<font size="2" color="#000080">
+						<span class="auto-style25">Private Sub cboSearch_NotInList(NewData As String, Response As 
+			Integer)<br>
+			&nbsp; &nbsp;
+			Dim cnn As New ADODB.Connection<br>
+			&nbsp; &nbsp;
+			Dim strSQL As String, byteResponse As Byte<br>
+			&nbsp;&nbsp;&nbsp;
+			Set cnn = CurrentProject.Connection<br>
+			<br>
+&nbsp;&nbsp;&nbsp; byteResponse = MsgBox(&quot;Do you want to add this new 
+						item to the list?&quot;, vbYesNo, &quot;New item&quot;)<br>
+			&nbsp; &nbsp;
+			If byteResponse = vbYes Then<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; strSQL = &quot;INSERT INTO tblCustomers (CustomerID) VALUES ('&quot; &amp; NewData 
+			&amp; &quot;')&quot;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; cnn.Execute strSQL<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Response = acDataErrAdded&nbsp;&nbsp;&nbsp; </span> </font>
+						<span class="auto-style25">
+						<font size="2" color="#008000">' resets the Response 
+						argument so that new input can be processed internally.</font><font size="2" color="#000080"><br>
+			&nbsp; &nbsp; ElseIf byteResponse = vbNo Then<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Response = acDataErrContinue&nbsp;&nbsp; '</font></span><font face=""><font color="#008000" size="2"><span class="auto-style25"> 
+						if you click No, error message</span></font><span class="auto-style25"><font size="2" color="#008000"> 
+						is </font></span><font color="#008000" size="2">
+						<span class="auto-style25">suppressed</span></font><font size="2" color="#000080">.<br class="auto-style25">
+						<span class="auto-style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me!cboSearch.Undo&nbsp;&nbsp;&nbsp; 
+						</span> </font>
+						<span class="auto-style25">
+						<font size="2" color="#008000">' the Undo method deletes 
+						the entry from the control's text box.</font><font size="2" color="#000080"><br>
+			&nbsp;&nbsp;&nbsp; End If<br>
+			End Sub</font><p><font color="#000080" size="2">Private Sub Form_Open(Cancel As Integer)<br>
+			&nbsp;&nbsp;&nbsp; cboSearch.RowSourceType = &quot;Table/Query&quot;<br>
+			&nbsp;&nbsp;&nbsp; cboSearch.RowSource = &quot;tblCustomers&quot;<br>
+						&nbsp;&nbsp;&nbsp; Me.cboUnbound.SetFocus<br>
+			End Sub<br>
+			<br>
+			Private Sub cboSearch_Click()<br>
+			&nbsp;&nbsp;&nbsp; Dim strSQL As String<br>
+</font><font color="#008000" size="2">&nbsp;&nbsp;&nbsp; ' Column(0) refers to the first column 
+of the table where the filter is based on.</font><font color="#000080" size="2"><br>
+			&nbsp;&nbsp;&nbsp; strSQL = &quot;SELECT * FROM tblCustomers WHERE CustomerID = &quot; &amp; 
+			cboSearch.Column(0)<br>
+			&nbsp;&nbsp;&nbsp; Forms!frmCustomers.RecordSource = strSQL<br>
+			End Sub<br>
+			<br>
+			Private Sub cboSearch_AfterUpdate()<br>
+			&nbsp;&nbsp;&nbsp; DoCmd.RunCommand acCmdSaveRecord<br>
+			&nbsp;&nbsp;&nbsp; cboSearch.Requery<br>
+			End Sub</font></span></p></td>
+					</tr>
+			</table>
+<font face="">
+			<br>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table134">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b><a name="Unbound_TextBox"></a>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			</font>
+
+			<p><b><font size="3">UnBound Text Box</font></b></p>
+			<p><span class="auto-style30">I</span><span class="auto-style25"><span class="auto-style30">t means the Text box's control that is not connected to any field 
+			in a table. Unbound text book is more useful in the sense that you 
+			can ask user to input data, and use that input to become the 
+			expression criteria in your query. Consider the following example, 
+			on a form there is a combo box list with a predefined customer names 
+			list for user to select, a text box to input on a reference date (&lt; or =&gt;) 
+			thereafter products were shipped, and a second text box to type in 
+			the lower limit invoiced sum. A click on the command button will 
+			open the report on the filtered result. [</span></span><font size="2"><font size="2" face class="auto-style30"><a href="Forms_Events/Unbound_TextBox.mdb"><span class="auto-style25">download</span></a><span class="auto-style25"> 
+			this database example]</span></font></font></p>
+			<p class="auto-style5">Code and the Control names.<p><table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="212" id="table135">
+					<tr>
+						<td class="auto-style30"><u>Combo box</u><br>
+						Control name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<b>: </b>cboSelect<p><u>Text boxes</u><br>
+						Min. ShipDate Control name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<b>:</b> txtShipDate<br>
+						Min. InvoicedSum Control name&nbsp; <b>:</b> txtWhere</p>
+						<p><u>Command Button name</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<b>:</b> cmdOpenReport</p>
+						<p><u>Report</u><br>
+						Record Source to query name&nbsp;&nbsp;&nbsp;&nbsp; <b>:</b> 
+						Qry_CustomersPurchase</p>
+						<p><font size="2" class="auto-style30">Expression criteria in the query for 
+						the combo box's control (to select customer name):<br>
+						<font color="#000080">[Forms]![frmCustomerSales]![cboSelect]</font></font></p>
+						<p><font size="2" class="auto-style30">Expression criteria in the query (to 
+						select a baseline ship date): <br>
+						</font><font color="#000080">
+						&gt;[Forms]![frmCustomerSales]![txtShipDate]</font></span></p>
+						<p><span class="auto-style25">Expression criteria in the query 
+						(to select a minimum invoiced sum): 
+						<font size="2" class="auto-style30"><br>
+						<font color="#000080">&gt;[Forms]![frmCustomerSales]![txtWhere]</font></font></p>
+						<p><font color="#008000">' Code to handle the 
+						click event. Place it in the form's module.</font><br>
+						<font color="#000080" size="2" class="auto-style30">Private Sub 
+						cmdOpenReport_Click()<br>
+						On Error GoTo HandleErr<br>
+						DoCmd.OpenReport &quot;CustomersReport&quot;, acViewPreview, 
+						WhereCondition:=txtWhere.Value<br>
+						<br>
+						ExitHere:<br>
+&nbsp;&nbsp;&nbsp; Exit Sub<br>
+						HandleErr:<br>
+&nbsp;&nbsp;&nbsp; MsgBox &quot;Error &quot; &amp; Err.Number &amp; &quot;: &quot; &amp; Err.Description &amp; &quot; in 
+						cmdOpenReport_Click&quot;<br>
+&nbsp;&nbsp;&nbsp; Resume ExitHere<br>
+						End Sub</font></span></td>
+					</tr>
+			</table>
+			<font face="">
+			<p>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table125">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b><a name="MultiSelect_Controls"></a>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+			<p><font size="3"><b>List box - MultiSelect Controls</b></font></p>
+			<p class="auto-style30"><font size="2" class="auto-style5">Using the ListBox control in MultiSelect view 
+			is very useful for generating reports. You can select multiple items in a List box 
+			which the Combo Box can't do. To do that, you have set the list box's 
+			control property to Simple or Extended. My following example shows 
+			you a list box which obtains its content from a table, the result of 
+			which is executed by running a query. Two tables with outer left 
+			join that make up the query. The form allows you to make multiple 
+			selection of rows of data, and view them in a report that it will 
+			generate. Another form with combo boxes that accompanies the report, 
+			allow you to be able to sort the data in multiple columns. Here is a 
+			quick look of the forms. [<a target="_blank" href="Forms_Events/ListBox_control_in_MultiSelect_view.htm">see 
+			diagrams</a> ].</font></p>
+			<p class="auto-style5">The following are the specific 
+			controls and properties to the form 'frmMultiSelect'.<p>&nbsp;<table border="1" width="69%" cellspacing="1" cellpadding="0" id="table129" bordercolor="#C0C0C0" class="auto-style44">
+				<tr>
+					<td class="auto-style43">
+<font class="auto-style25">
+					<table border="0" cellspacing="1" cellpadding="0" id="table130" class="auto-style51" style="width: 100%">
+						<tr>
+							<td colspan="3" height="22" class="auto-style45"><u><font size="2">List 
+							Box</font></u></td>
+						</tr>
+						<tr>
+							<td width="23%" class="auto-style48">
+							<font size="2" class="auto-style30">Name<br>
+							Row Source Type<br>
+							Row Source<br>
+							Column Count<br>
+							Column width<br>
+							Bound Column<br>
+							Multi Select<br>
+							Width<br>
+							Height</font></td>
+							<td width="3%" align="center" valign="top" class="auto-style49"><b>
+							<font size="2">:</font><span class="auto-style30"><br>
+							:<br>
+							:<br>
+							:<br>
+							:<br>
+							:<br>
+							:<br>
+							:<br>
+							</span>
+							<font size="2"><span class="auto-style30">:</span></font></b></td>
+							<td class="auto-style49" style="width: 99%">
+							<font size="2" class="auto-style30">lstMultiSelect<br>
+							Table/Query<br>
+							tbl_CustomersPurchase<br>
+							9<br>
+							0.25&quot;;0.7&quot;;0.9&quot;;0.7&quot;;0.5&quot;;0.8&quot;;0.6&quot;;0.65&quot;;0.5&quot;<br>
+							1<br>
+							Simple<br>
+							3.5&quot;<br>
+							0.75&quot;</font></td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+			<p><font size="2">&nbsp;<br>
+			</font><span class="auto-style32">The <a href="Forms_Events/ListBox_MultiSelect.mdb">Sample database</a> 
+			download is here (all codes supplied).</span><p>
+			<span class="auto-style42"><strong>Codes for the form frmMultiSelect:</strong></span></span><table border="1" width="85%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table131" height="263">
+					<tr>
+						<td class="auto-style25">
+						<font size="2" color="#000080" class="auto-style30">Option Compare 
+						Database<br>
+						Option Explicit<br>
+						<br>
+						Private Sub RunQuery_Click()<br>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Run the query</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; DoCmd.OpenQuery &quot;Qry_tblCustomersPurchase&quot;<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub txtHead_AfterUpdate()<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Make column headings visible</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; Me.lstMultiSelect.ColumnHeads = Me.txtHead<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdReport_Click()<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Open the customized report</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; DoCmd.OpenReport &quot;rptMultiSelect&quot;, acViewPreview, , 
+						SQL_Criteria<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Maximize<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdSelectAll_Click()<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Select All values in a listbox</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; Dim lngCounter As Long<br>
+&nbsp;&nbsp;&nbsp; Dim ctl As Control<br>
+						<br>
+&nbsp;&nbsp;&nbsp; Set ctl = Me.lstMultiSelect<br>
+						<br>
+&nbsp;&nbsp;&nbsp; For lngCounter = Abs(ctl.ColumnHeads) To ctl.ListCount<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctl.Selected(lngCounter) = True<br>
+&nbsp;&nbsp;&nbsp; Next lngCounter<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdUndo_Click()<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Undo all values selection in a listbox</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; Dim varItm As Variant<br>
+&nbsp;&nbsp;&nbsp; Dim ctl As Control<br>
+						<br>
+&nbsp;&nbsp;&nbsp; Set ctl = Me.lstMultiSelect<br>
+						<br>
+&nbsp;&nbsp;&nbsp; For Each varItm In ctl.ItemsSelected<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctl.Selected(varItm) = False<br>
+&nbsp;&nbsp;&nbsp; Next varItm<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdUnSelectAll_Click()<br>
+&nbsp;&nbsp;&nbsp; Dim i As Integer<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Loop through each of the items in the ListBox control</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; For i = 0 To Me![lstMultiSelect].ListCount - 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me![lstMultiSelect].Selected(i) = 
+						False<br>
+&nbsp;&nbsp;&nbsp; Next i<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdExit_Click()<br>
+						On Error GoTo Err_cmdExit_Click<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Quit&nbsp;&nbsp; </span> </font>
+						<font size="2" color="#008000" class="auto-style30">
+						' exit Access database<br>
+						</font><font size="2" color="#000080">
+						<br class="auto-style30">
+						<span class="auto-style30">Exit_cmdExit_Click:<br>
+&nbsp;&nbsp;&nbsp; Exit Sub<br>
+						Err_cmdExit_Click:<br>
+&nbsp;&nbsp;&nbsp; MsgBox Err.Description<br>
+&nbsp;&nbsp;&nbsp; Resume Exit_cmdExit_Click<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdClose_Click()<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' close form without saving changes</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; DoCmd.Close acForm, Me.Form.Name <br>
+&nbsp;&nbsp;&nbsp; </span> </font><font color="#008000">
+						<span class="auto-style30">' Unload Me</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdSaveClose_Click()<br>
+						On Error GoTo Err_cmdSaveClose_Click<br>
+						<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Save any changes before close</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; DoCmd.RunCommand acCmdSaveRecord<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Close<br>
+						<br>
+						Exit_cmdSaveClose_Click:<br>
+&nbsp;&nbsp;&nbsp; Exit Sub<br>
+						Err_cmdSaveClose_Click:<br>
+&nbsp;&nbsp;&nbsp; MsgBox Err.Description<br>
+&nbsp;&nbsp;&nbsp; Resume Exit_cmdSaveClose_Click<br>
+						End Sub<br>
+						<br>
+						<br>
+						Function SQL_Criteria() As String<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' determine SQL statement (Bound Column to use numerical 
+						data type)</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; Dim ctl As Control, strCriteria As String, varItm As Variant<br>
+&nbsp;&nbsp;&nbsp; Set ctl = Me.lstMultiSelect<br>
+						<br>
+&nbsp;&nbsp;&nbsp; For Each varItm In ctl.ItemsSelected<br>
+						</span>
+						</font>
+						<font size="2" color="#008000" class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						' Use ItemData Property to select the Bound Column.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' In other cases, use Column 
+						Property to identify the column &amp; row.</font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strCriteria = strCriteria + 
+						ctl.ItemData(varItm) &amp; &quot;,&quot;<br>
+&nbsp;&nbsp;&nbsp; Next varItm<br>
+						<br>
+&nbsp;&nbsp;&nbsp; If strCriteria = &quot;&quot; Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL_Criteria = &quot; SN Like 
+						'*' &quot;<br>
+&nbsp;&nbsp;&nbsp; Else<br>
+						</span>
+						</font>
+						<font size="2" color="#008000" class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						' Remove the last comma. [<a target="_blank" href="Forms_Events/SQL_Criteria_Filter.gif">See 
+						example</a>]</font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL_Criteria = &quot; SN IN(&quot; &amp; 
+						left(strCriteria, Len(strCriteria) - 1) &amp; &quot;)&quot;<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+						End Function</span></font></td>
+					</tr>
+			</table>
+			<span class="auto-style25">
+			<p>&nbsp;</p>
+			<p class="auto-style30">Codes for the form with combo boxes 
+			(frmSortBy) to operate on the report (rptMultiSelect):
+			<p>
+<font class="auto-style25">
+			<table border="1" width="85%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table132" height="263">
+					<tr>
+						<td class="auto-style30">
+						<font size="2" color="#000080" class="auto-style30">Option Compare 
+						Database<br>
+						Option Explicit<br>
+						<br>
+						Private Sub cmdSetSort_Click()<br>
+&nbsp;&nbsp;&nbsp; Dim strSQL As String, intCounter As Integer<br>
+						</font><font color="#008000">&nbsp;&nbsp;&nbsp; 
+						' Build strSQL String</font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; For intCounter = 1 To 4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If Me(&quot;cboSort&quot; &amp; intCounter) &lt;&gt; &quot;&quot; 
+						Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strSQL 
+						= strSQL &amp; &quot;[&quot; &amp; Me(&quot;cboSort&quot; &amp; intCounter) &amp; &quot;]&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If 
+						Me(&quot;Chk&quot; &amp; intCounter) = True Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						strSQL = strSQL &amp; &quot; DESC&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strSQL 
+						= strSQL &amp; &quot;, &quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp; Next<br>
+						<br>
+&nbsp;&nbsp;&nbsp; If strSQL &lt;&gt; &quot;&quot; Then<br>
+						</span>
+						</font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						' Strip Last Comma &amp; Space</font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strSQL = left(strSQL, (Len(strSQL) - 
+						2))<br>
+						</span>
+						</font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						' Set the OrderBy property</font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reports![rptMultiSelect].OrderBy = 
+						strSQL<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reports![rptMultiSelect].OrderByOn = 
+						True<br>
+&nbsp;&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reports![rptMultiSelect].OrderByOn = 
+						False<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdClear_Click()<br>
+&nbsp;&nbsp;&nbsp; Dim intCounter As Integer<br>
+&nbsp;&nbsp;&nbsp; For intCounter = 1 To 4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me(&quot;cboSort&quot; &amp; intCounter) = &quot;&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me(&quot;Chk&quot; &amp; intCounter) = &quot;&quot;<br>
+&nbsp;&nbsp;&nbsp; Next<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub cmdClose_Click()<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Close acForm, Me.Form.Name<br>
+						End Sub<br>
+						<br>
+						<br>
+						Private Sub Form_Close()<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Close acReport, &quot;rptMultiSelect&quot;<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Restore<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+			</font>
+			<p>&nbsp;</p>
+			<p class="auto-style30">Codes behind the Report Module (rptMultiSelect):
+			<p>
+
+			<table border="1" width="85%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" id="table133" height="162">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style30">Private Sub 
+						Report_Open(Cancel As Integer)<br>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Fires up a form upon the report opening</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; DoCmd.OpenForm &quot;frmSortBy&quot;<br>
+						End Sub<br>
+						<br>
+						Private Sub Report_Close()<br>
+						</span>
+						</font><font color="#008000"><span class="auto-style30">&nbsp;&nbsp;&nbsp; 
+						' Upon report closing, also closes the form that it had 
+						opened up</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">&nbsp;&nbsp;&nbsp; DoCmd.Close acReport, &quot;frmSortBy&quot;<br>
+&nbsp;&nbsp;&nbsp; DoCmd.Restore<br>
+						End Sub</span></font></td>
+					</tr>
+			</table>
+<font face="">
+			<br>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" id="table137">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b><a name="CallbackUDF"></a>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+
+			</font>
+
+			</span>
+			<span class="auto-style29">
+			<p class="auto-style28"><font size="3">Option Group Controls</font></p>
+			</span>
+			<p class="auto-style33">
+<font size="2" class="auto-style30">
+			Option groups are themselves controls but can also contain controls 
+			from text box, combo box, list box, toggle button. However, only one 
+			control within an option group can be selected at a time, which 
+			means when one control becomes selected, all the other controls 
+			becomes deselected. The Value property of the option group is 
+			equivalence of the option value of the selected control, which means 
+			each control has a default property. 
+			(see <a target="_blank" href="Forms_Events/option-value.gif">diagram</a>). The Change event code below explains this relationship between the 
+			text box's control within the option group and the option group 
+			itself.&nbsp; [<a href="Forms_Events/OptionGroups.mdb">download</a> 
+			database sample]</font></p>
+			<p class="auto-style25"><font size="2" color="#000080" class="auto-style30">Private Sub txtValue_Change()<br>
+&nbsp;&nbsp;&nbsp; grpOption = CInt(txtValue.Text)<br>
+			End Sub</font></p>
+			<span class="auto-style25">
+			<p class="auto-style30">This code deselects the option button when you 
+			double-click on it.<p><font face=""><table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="53" id="table138">
+					<tr>
+						<td><font size="2" color="#000080" class="auto-style5">Private Sub 
+						grpOption_DblClick(Cancel As Integer)<br>
+&nbsp;&nbsp;&nbsp; Me.grpOption = &quot;&quot;<br>
+						End Sub</font></td>
+					</tr>
+			</table>
+			</font>
+			<p><font size="2"><br>
+			</font>
+			<span class="auto-style30">Here is another technique that disable all the 
+			option buttons at once, which is useful either for a click event. 
+			For example, if user selects gender option as Female, you will want 
+			all the option buttons in another option group to be disabled.</span><p>
+			<font face="">
+			
+			&nbsp;<table border="1" width="81%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="119" id="table136">
+					<tr>
+						<td><font size="2" color="#008000">&nbsp;</font></font><font color="#008000"><span class="auto-style30"> ' Code to 
+						disable the entire option group.</span></font><font size="2" color="#000080"><br class="auto-style30">
+						<span class="auto-style30">Dim ctl As Control<br>
+						&nbsp;&nbsp;&nbsp;
+		Callback ctl In grpOption.Controls<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						If ctl.ControlType = acOptionButton Then<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						ctl.Enabled = False<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						End If<br>
+						&nbsp;&nbsp;&nbsp;
+						Next ctl</span></font></td>
+					</tr>
+			</table>
+			</font>
+			</font>
+			<table border="0" cellspacing="0" cellpadding="0" width="753" height="13" class="auto-style55">
+			<tr>
+				<td width="753" height="13" valign="top" class="auto-style54">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+			<tr>
+				<td width="753" height="13" valign="top" class="auto-style54">
+				&nbsp;</td>
+			</tr>
+		</table>
+
+		</font>
+
+		</font>
+
+		</td>
+       </tr>
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center" class="auto-style57">
+		&nbsp;<td valign="top" height="18" class="auto-style57">&nbsp;</td>
+<td valign="top" height="18" width="8" class="auto-style57">&nbsp;</td>
+<td bgcolor="#ffffff" valign="top" align="center" height="18" background="YellowTexture.gif" style="width: 1%" class="auto-style57">
+&nbsp;<td width="180%" height="18" valign="top" class="auto-style58">
+      This site was created in February 2007 <br>by William Tan</td>
+       </tr>
+</table>
+				
+				
+			</div>
+				
+				
+			</table>
+			</div>
+
+       </td>
+       </tr>
+</tbody></table>
+
+
+</body>
+</html>

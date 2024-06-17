@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO AbsolutePage and AbsolutePosition Property</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;
+	<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+	<h1><font size="6">ADO AbsolutePage and AbsolutePosition Property</font></h1>
+	<h3>AbsolutePage</h3>
+	<p>The AbsolutePage property sets or returns a long value that specifies the 
+	page number in the Recordset object. It sets or returns a value from 1 to 
+	the number of pages in the Recordset. 
+	The value is 1 when the current record is the first record in the Recordset. 
+	You must also be pointing to a valid record when attempting to use this 
+	property. If you are not pointing to a valid record, this property will 
+	return one of the PositionEnum constants (either BOF, EOF, or empty) which 
+	specify the current position of the record pointer in the Recordset. </p>
+	<p>The first page is always numbered one. You use the <b>PageSize</b> 
+	property to set how many records are on a page. You use the <b>PageCount</b> 
+	property to determine how many pages are in the Recordset. </p>
+	<p><b>Note:</b> This property can only be used if the AbsolutePage, 
+	PageCount, and PageSize properties are supported by the provider (i.e., 
+	bookmarks are supported).</p>
+	<h3>AbsolutePosition</h3>
+	<p>The AbsolutePosition property sets or returns a long value that specifies 
+	the ordinal (numeric) position of the current record in the Recordset 
+	object or the ordinal position of the cursor. It sets or returns a value from 1 to the number of records in the Recordset, or it returns a PositionEnum value. The value is 1 when the 
+	current record is the first record in the Recordset. Note that you cannot 
+	set this property to any of the <b>PositionEnum</b> constants.</p>
+	<p>When you set this property to a number, you will be moved to the record 
+	at the numeric position.</p>
+	<p>This property only points to a position and should not be used to 
+	uniquely identify a record, since additions, deletions, sorts and other 
+	operations can easily rearrange the contents of a recordset. <br>
+	<br>
+	When you set this property to a position number, you will be moved to the 
+	record at the position you have specified. In addition, the Recordset cache 
+	is reloaded. The records in the cache will now start at the numeric position 
+	in the Recordset you have specified. The total number of records that can be 
+	stored in the cache is set by the <b>CacheSize</b> property. <br>
+	<br>
+	The first record is always numbered one. You can use the RecordCount 
+	property to determine the total number of records in the Recordset. <br>
+	<br>
+	You can only use this property if it is supported by the provider. You must 
+	also be pointing to a valid record when attempting to use this property. If 
+	you are not pointing to a valid record, this property will return one of the 
+	PositionEnum constants which specify the current position of the record 
+	pointer in the Recordset. You may also need the set the <b>CursorLocation</b> 
+	property to <b>adUseClient</b> since the default for this property is <b>
+	adUseServer</b>. </p>
+	<h3>Syntax</h3>
+	<table class="ex" width="35%" border="1" cellpadding="3" cellspacing="0" id="table11">
+		<tr>
+			<td valign="top">
+			<pre><font color="#800000">objRecordset.AbsolutePage</font></pre>
+			<pre><font color="#800000">objRecordset.AbsolutePosition</font></pre>
+			</td>
+		</tr>
+	</table>
+&nbsp;<h3><font size="4">Example</font></h3>
+	<table class="ex" width="46%" border="1" cellpadding="3" cellspacing="0" id="table12">
+		<tr>
+			<td valign="top">
+			Code<code class="CodeSample"><font color="#0066CC"><br>
+			objRecordset.PageSize 
+			= intPageSize<br>
+			objRecordset.</font><b><font color="#FF6600">AbsolutePage</font></b><font color="#0066CC"> 
+			= 1 </font></code>
+			<p><br>
+			Code<br>
+			<code class="CodeSample"><font color="#0066CC">If objRecordset.</font><b><font color="#FF6600">AbsolutePosition</font></b><font color="#0066CC"> 
+			= adPosBOF<br>
+			&nbsp;&nbsp;&nbsp;objRecordset.MoveFirst<br>
+			End If </font></code>
+			</td>
+		</tr>
+	</table>
+	<a name="PositionEnum">
+	<h3>PositionEnum Values</h3>
+	</a>
+	<table class="ex" width="95%" border="1" cellpadding="3" cellspacing="0" id="table13">
+		<tr valign="top" align="left">
+			<th width="14%">Constant</th>
+			<th width="4%">Value</th>
+			<th width="78%">
+			<p align="center">Description</th>
+		</tr>
+		<tr valign="top">
+			<td><b>adPosUnknown</b></td>
+			<td align="center">-1</td>
+			<td>Indicates that the Recordset is empty, the current position is 
+			unknown, or the provider does not support the AbsolutePage or 
+			AbsolutePosition property</td>
+		</tr>
+		<tr valign="top">
+			<td><b>adPosBOF</b></td>
+			<td align="center">-2</td>
+			<td>Indicates that the current record pointer is before the first 
+			record (BOF)</td>
+		</tr>
+		<tr valign="top">
+			<td><b>adPosEOF</b></td>
+			<td align="center">-3</td>
+			<td>Indicates that the current record pointer is after the last 
+			record (EOF)</td>
+		</tr>
+	</table>
+					</td>
+				</tr>
+			</table>
+			</div>
+			<p>&nbsp;</div>
+		&nbsp;</td>
+	</tr>
+</table>
+</body>
+</head>		
+</html>

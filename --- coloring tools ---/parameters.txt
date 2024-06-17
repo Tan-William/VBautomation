@@ -1,0 +1,47 @@
+THIS SCRIPT IS BROUGHT TO YOU BY JAVAFILE.COM
+
+
+THE CODE...
+=============
+
+The following code can be cut and pasted into an HTML document.  Make 
+sure that the ColorChart.jar file is placed within the same directory 
+as the HTML document that contains this code.
+
+
+<APPLET CODE="ColorChart.class" 
+   ARCHIVE="ColorChart.jar" 
+   WIDTH="260" 
+   HEIGHT="268">
+Make sure that your browser is Java enabled...
+</APPLET>
+
+----------------------------------------------------------------
+
+
+CONFIGURATION:
+==============
+
+Width and Height should be set to parameters specified at the top of 
+the page.
+
+
+How to use...
+
+Colors can be selected by using the scrollbars (red, green and blue),
+or by entering hexadecimal or decimal code into the appropriate text
+box and pressing the enter key to accept it.
+Whichever way the color is selected, it will be automatically 
+displayed in the box at the top-left corner of the screen, and will 
+also be displayed both in decimal and hexadecimal code in the 
+respective text boxes.
+
+You can set the selected color to be displayed within the example box
+to either the text color (foreground), or the background color.  This
+can help find the best matching combination for use with HTML 
+documents, or applets.  To set either text or background color, click 
+on the "Set Foreground" and "Set Background" buttons.
+Also, you can obtain the current color shade, hex, and decimal code
+for either foreground or background so that you can alter it.  To 
+retreive either text or background color, click on the "Get Foreground"
+and "Get Background" buttons.

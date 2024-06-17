@@ -1,0 +1,389 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+
+<title>Free Color Picker Script at Javafile.com</title>
+<meta name="keywords" content="Arachnophilia 4.0">
+<meta name="description" content="Arachnophilia 4.0">
+</head><body onload="initializer()" text="#000000" bgcolor="#ffffff" link="darkblue">
+<div align="center">
+<table width="468" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td valign="top"><!-- adpointer tag start -->
+<script src="colors_convert2RGB,hex_files/AdPointer.htm" language="javascript"></script>
+<!-- adpointer tag stop -->
+<!-- NO ADS TO DISPLAY -->			</td>
+			
+		</tr>
+	</tbody></table>
+
+</div>
+
+<script>
+
+<!--
+
+function initializer()
+
+{
+
+        hexidec=new makeArray(1);
+
+}
+
+function makeArray(n)
+
+{
+
+        this.length = n;
+
+        for (var i=1; i<=n;i++)
+
+                this[i]=0;
+
+        return this;
+
+}
+
+
+
+function getColor(form){
+
+
+        form.hexadecimal.value=document.bgColor;
+
+        rgb=form.hexadecimal.value;
+
+        c="0123456789abcdef";
+
+        red=c.indexOf(rgb.substring(1,2))*16+c.indexOf(rgb.substring(2,3));
+
+        green=c.indexOf(rgb.substring(3,4))*16+c.indexOf(rgb.substring(4,5));
+
+        blue=c.indexOf(rgb.substring(5,6))*16+c.indexOf(rgb.substring(6,7));
+
+        form.red.value=red;
+
+        form.green.value=green;
+
+        form.blue.value=blue;
+
+        form.hexadecimal.focus();
+
+        form.hexadecimal.select();
+
+
+}
+
+
+
+function getHex(form)
+
+{
+
+
+        var c="0123456789abcdef";
+
+        if ((form.red.value >255) || (form.green.value > 255) || (form.blue.value > 255))
+
+        {window.alert("What colors are you trying to convert? Value: 0 to 255!")}else
+
+        {
+
+        red=form.red.value;
+
+        green=form.green.value;
+
+        blue=form.blue.value;
+
+
+        with (Math) {
+
+                numOne=c.substring(floor(red/16),floor(red/16)+1);
+
+                numTwo=c.substring(red%16,(red%16)+1);
+
+                numThree=c.substring(floor(green/16),floor(green/16)+1);
+
+                numFour=c.substring(green%16,(green%16)+1);
+
+                numFive=c.substring(floor(blue/16),floor(blue/16)+1);
+
+                numSix=c.substring(blue%16,(blue%16)+1);        
+
+
+        }
+
+                     
+        form.hexadecimal.value="#"+numOne+""+numTwo+""+numThree+""+numFour+""+numFive+""+numSix;
+
+        form.red.focus();
+
+        form.red.select();
+
+        document.bgColor=form.hexadecimal.value;
+
+        form.hexadecimal.focus();
+
+        form.hexadecimal.select();
+
+        
+
+}}
+
+function getRGB(form)
+
+{
+
+        
+
+        hex=form.hexadecimal.value;
+
+
+        pound=0;
+
+        for (i=0;i<7;i++){
+
+        hexidec[i]=hex.charAt(i);
+
+        temp=hexidec[i];
+
+        if (temp=='#')
+
+        pound++;
+
+        if ((temp=='a')||(temp=='A'))
+
+        hexidec[i]=10;
+
+        if ((temp=='b')||(temp=='B'))
+
+        hexidec[i]=11;
+
+        if ((temp=='c')||(temp=='C'))
+
+        hexidec[i]=12;
+
+        if ((temp=='d')||(temp=='D'))
+
+        hexidec[i]=13;
+
+        if ((temp=='e')||(temp=='E'))
+
+        hexidec[i]=14;
+
+        if ((temp=='f')||(temp=='F'))
+
+        hexidec[i]=15;
+
+        
+
+        }
+
+        
+
+        form.red.value=((hexidec[0+pound]*16)- -hexidec[1+pound]);
+
+        form.green.value=((hexidec[2+pound]*16)- -hexidec[3+pound]);
+
+        form.blue.value=((hexidec[4+pound]*16)- -hexidec[5+pound]);
+
+        document.bgColor=form.hexadecimal.value;
+
+        
+
+}
+
+
+
+//-->
+
+</script>
+
+<div align="center">
+<font size="5" color="#000000" face="verdana"><b>EASY COLOR PICKER</b></font>
+
+</div><form>
+  <div align="center"><center><table>
+    <tbody><tr>
+      <td align="center"><div align="left"><p><b>Color:</b> <select name="colors" onchange="document.bgColor = form.colors.options[colors.selectedIndex].value" size="1">
+        <option value="white" defaultselected="true"> White </option>
+        <option value="aliceblue"> Alice Blue </option>
+        <option value="antiquewhite"> Antique White </option>
+        <option value="aqua"> Aqua </option>
+        <option value="aquamarine"> Aquamarine </option>
+        <option value="azure"> Azure </option>
+        <option value="beige"> Beige </option>
+        <option value="bisque"> Bisque </option>
+        <option value="black"> Black </option>
+        <option value="blanchedalmond"> Blanchedalmond </option>
+        <option value="blue"> Blue </option>
+        <option value="blueviolet"> Blue-Violet </option>
+        <option value="brown"> Brown </option>
+        <option value="burlywood"> Burlywood </option>
+        <option value="cadetblue"> Cadet Blue </option>
+        <option value="chartreuse"> Chartreuse </option>
+        <option value="chocolate"> Chocolate </option>
+        <option value="coral"> Coral </option>
+        <option value="cornflowerblue"> Cornflower Blue </option>
+        <option value="cornsilk"> Cornsilk </option>
+        <option value="crimson"> Crimson </option>
+        <option value="cyan"> Cyan </option>
+        <option value="darkblue"> Dark Blue </option>
+        <option value="darkcyan"> Dark Cyan </option>
+        <option value="darkgoldenrod"> Dark Goldenrod </option>
+        <option value="darkgray"> Dark Gray </option>
+        <option value="darkgreen"> Dark Green </option>
+        <option value="darkkhaki"> Dark Khaki </option>
+        <option value="darkmagenta"> Dark Magenta </option>
+        <option value="darkolivegreen"> Dark Olive-Green </option>
+        <option value="darkorange"> Dark Orange </option>
+        <option value="darkorchid"> Dark Orchid </option>
+        <option value="darkred"> Dark Red </option>
+        <option value="darksalmon"> Dark Salmon </option>
+        <option value="darkseagreen"> Dark Sea Green </option>
+        <option value="darkslateblue"> Dark Slate Blue </option>
+        <option value="darkslategray"> Dark Slate Gray </option>
+        <option value="darkturquoise"> Dark Turquoise </option>
+        <option value="darkviolet"> Dark Violet </option>
+        <option value="deeppink"> Deep Pink </option>
+        <option value="deepskyblue"> Deep Sky Blue </option>
+        <option value="dimgray"> Dim Gray </option>
+        <option value="dodgerblue"> Dodger Blue </option>
+        <option value="firebrick"> Firebrick </option>
+        <option value="floralwhite"> Floral White </option>
+        <option value="forestgreen"> Forest Green </option>
+        <option value="fuchsia"> Fuchsia </option>
+        <option value="gainsboro"> Gainsboro </option>
+        <option value="ghostwhite"> Ghost White </option>
+        <option value="gold"> Gold </option>
+        <option value="goldenrod"> Goldenrod </option>
+        <option value="gray"> Gray </option>
+        <option value="green"> Green </option>
+        <option value="greenyellow"> Green-Yellow </option>
+        <option value="honeydew"> Honeydew </option>
+        <option value="hotpink"> Hot Pink </option>
+        <option value="indianred"> Indian Red </option>
+        <option value="indigo"> Indigo </option>
+        <option value="ivory"> Ivory </option>
+        <option value="khaki"> Khaki </option>
+        <option value="lavender"> Lavender </option>
+        <option value="lavenderblush"> Lavender-Blush </option>
+        <option value="lawngreen"> Lawn Green </option>
+        <option value="lemonchiffon"> Lemon Chiffon </option>
+        <option value="lightblue"> Light Blue </option>
+        <option value="lightcoral"> Light Coral </option>
+        <option value="lightcyan"> Light Cyan </option>
+        <option value="lightgoldenrodyellow"> Light Goldenrod Yellow </option>
+        <option value="lightgreen"> Light Green </option>
+        <option value="lightgrey"> Light Grey </option>
+        <option value="lightpink"> Light Pink </option>
+        <option value="lightsalmon"> Light Salmon </option>
+        <option value="lightseagreen"> Light Sea Green </option>
+        <option value="lightskyblue"> Light Sky Blue </option>
+        <option value="lightslategray"> Light Slate Gray </option>
+        <option value="lightsteelblue"> Light Steel Blue </option>
+        <option value="lightyellow"> Light Yellow </option>
+        <option value="lime"> Lime </option>
+        <option value="limegreen"> Lime-Green </option>
+        <option value="linen"> Linen </option>
+        <option value="magenta"> Magenta </option>
+        <option value="maroon"> Maroon </option>
+        <option value="mediumaquamarine"> Medium Aquamarine </option>
+        <option value="mediumblue"> Medium Blue </option>
+        <option value="mediumorchid"> Medium Orchid </option>
+        <option value="mediumpurple"> Medium Purple </option>
+        <option value="mediumseagreen"> Medium Sea Green </option>
+        <option value="mediumslateblue"> Medium Slate Blue </option>
+        <option value="mediumspringgreen"> Medium Spring Green </option>
+        <option value="mediumturquoise"> Medium Turquoise </option>
+        <option value="mediumvioletred"> Medium Violet-Red </option>
+        <option value="midnightblue"> Midnight Blue </option>
+        <option value="mintcream"> Mint Cream </option>
+        <option value="mistyrose"> Misty Rose </option>
+        <option value="moccasin"> Moccasin </option>
+        <option value="navajowhite"> Navajo White </option>
+        <option value="navy"> Navy </option>
+        <option value="oldlace"> Old Lace </option>
+        <option value="olive"> Olive </option>
+        <option value="olivedrab"> Olive Drab </option>
+        <option value="orange"> Orange </option>
+        <option value="orangered"> Orange-Red </option>
+        <option value="orchid"> Orchid </option>
+        <option value="palegoldenrod"> Pale Goldenrod </option>
+        <option value="palegreen"> Pale Green </option>
+        <option value="paleturquoise"> Pale Turquoise </option>
+        <option value="palevioletred"> Pale Violet-Red </option>
+        <option value="papayawhip"> Papaya Whip </option>
+        <option value="peachpuff"> Peach Puff </option>
+        <option value="peru"> Peru </option>
+        <option value="pink"> Pink </option>
+        <option value="plum"> Plum </option>
+        <option value="powderblue"> Powder Blue </option>
+        <option value="purple"> Purple </option>
+        <option value="red"> Red </option>
+        <option value="rosybrown"> Rosy Brown </option>
+        <option value="royalblue"> Royal Blue </option>
+        <option value="saddlebrown"> Saddle Brown </option>
+        <option value="salmon"> Salmon </option>
+        <option value="sandybrown"> Sandy Brown </option>
+        <option value="seagreen"> Sea Green </option>
+        <option value="seashell"> Seashell </option>
+        <option value="sienna"> Sienna </option>
+        <option value="silver"> Silver </option>
+        <option value="skyblue"> Sky Blue </option>
+        <option value="slateblue"> Slate Blue </option>
+        <option value="slategray"> Slate Gray </option>
+        <option value="snow"> Snow </option>
+        <option value="springgreen"> Spring Green </option>
+        <option value="steelblue"> Steel Blue </option>
+        <option value="tan"> Tan </option>
+        <option value="teal"> Teal </option>
+        <option value="thistle"> Thistle </option>
+        <option value="tomato"> Tomato </option>
+        <option value="turquoise"> Turquoise </option>
+        <option value="violet"> Violet </option>
+        <option value="wheat"> Wheat </option>
+        <option value="white"> White </option>
+        <option value="whitesmoke"> White Smoke </option>
+        <option value="yellow"> Yellow </option>
+        <option value="yellowgreen"> Yellow-Green </option>
+      </select> <input size="3" name="color" value="Convert to RGB/Hex" onclick="getColor(this.form)" type="button"> </p></div></td>
+    </tr>
+  </tbody></table>
+  </center></div>
+  <div align="center"><center><p><br>
+  <b>RGB:</b> <font color="red">
+  <b>Red</b> <input size="4" name="red" value="255" type="text">
+  <font color="green"><b>Green</b> <input size="3" name="green" value="255" type="text">
+  <font color="blue"><b>Blue</b></font> <input size="4" name="blue" value="255" type="text">
+  </font></font></p></center></div>
+<font color="red"><font color="green">  </font></font><p><font color="red"><font color="green"><br></font></font></p>
+<font color="red"><font color="green">  </font></font><div align="center"><center><table>
+    <tbody><tr>
+      <td align="center"><b>HEX:</b> </td>
+      <td align="center"><input size="8" name="hexadecimal" value="#ffffff" type="text"></td>
+    </tr>
+  </tbody></table>
+<font color="red"><font color="green">  </font></font></center></div>
+</form>
+<font color="red"><font color="green"></font></font>
+
+<p align="center"><b>BLACK TEXT&nbsp;&nbsp;
+<font color="#ffffff">WHITE TEXT&nbsp;&nbsp;
+</font><font color="#0000ff">BLUE TEXT&nbsp;&nbsp;
+</font><font color="#ff0000">RED TEXT<br><br>
+</font><font color="#ffd700">GOLD TEXT&nbsp;&nbsp;
+</font><font color="#a52a2a">BROWN TEXT&nbsp;&nbsp;
+</font><font color="#ffa500">ORANGE TEXT&nbsp;&nbsp;
+</font><font color="#bebebe">GREY TEXT<br><br>
+</font><font color="#00ffff">CAYAN TEXT&nbsp;&nbsp;
+</font><font color="#00ff00">GREEN TEXT&nbsp;&nbsp;
+</font><font color="#ffff80">YELLOW TEXT</font></b></p>
+
+
+
+</body></html>

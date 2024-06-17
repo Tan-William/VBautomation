@@ -1,0 +1,92 @@
+VB Color Picker 
+
+from JSWare
+www.jsware.net
+jsware@jsware.net
+__________________________________________________________________________
+
+  This is a simple color picker to find color codes, for use in
+HTML or VB.
+_______________________________________________________
+Operation:
+_______________________________________________________
+
+To choose a color:
+
+Click CHOOSE COLOR and the color selector will open.
+When you select a color you'll get:
+ -The code for HTML.
+ -The hex code and long rgb for Visual Basic.
+ (Since the VB rgb code is actually bgr, the numbers are reversed.)
+ - a box showing a sample of the color.
+ -Sample text in that color on white background.
+
+To adjust a color:
+
+Enter a valid 6-character hex code and click APPLY.
+The color selector will open with that color displayed so that 
+adjustments can be made to the hue or shade.
+
+_______________________________________________________
+Requirements:
+_______________________________________________________
+
+The VB color Picker was written in Visual Basic 6. It requires that
+the VB6 runtime be installed (MSVBVM60.DLL). This file is pre-installed
+in Win98SE and later. In earlier versions of Windows the VB6 runtime file
+may need to be installed. See the JSWare download sections on the 
+Tweak Revisited or WEB-ED page for links to download the VB6 runtime.
+
+_______________________________________________________
+Installation:
+_______________________________________________________
+
+  The VB Color Picker does not need to be installed. You can just run
+Colfind.exe. If you prefer to have it set up like an installed program, the
+INSTALL.vbs script file can be used. It will create a folder for the Color
+Picker in Program Files and make a shortcut on the Desktop.
+_________________________________________________________________
+
+Terms of Use:
+
+The VB Color Picker is freeware.
+There is no tech. support for it. Use at your own risk.
+____________________________________________________________________
+
+DISTRIBUTION :
+
+VB Color Picker 2 may be distributed singly or by any mass distribution medium 
+provided that there is no fee charged for the program other than reasonable
+charges for cost of distribution and that all original files are included without 
+change to any of them.
+____________________________________________________________________
+
+ COPYRIGHT :
+
+VB Color Picker 2 is copyrighted software. Use of the program 
+does not constitute ownership of the program.
+Ownership is retained by JSWare.
+
+DISCLAIMER OF WARRANTY :
+____________________________________________________________________
+
+THE  SOFTWARE  IS  PROVIDED  AS IS WITHOUT WARRANTY OF ANY KIND. TO THE 
+MAXIMUM EXTENT  PERMITTED  BY  APPLICABLE  LAW,   THE   AUTHOR  FURTHER 
+DISCLAIMS ALL WARRANTIES,  INCLUDING   WITHOUT  LIMITATION  ANY IMPLIED 
+WARRANTIES  OF MERCHANTABILITY,  FITNESS  FOR A PARTICULAR PURPOSE, AND 
+NONINFRINGEMENT.  THE  ENTIRE  RISK   ARISING   OUT   OF   THE  USE  OR 
+PERFORMANCE OF THE PRODUCT AND DOCUMENTATION  REMAINS  WITH  RECIPIENT. 
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE  LAW,  IN  NO EVENT SHALL  
+THE  AUTHOR  BE  LIABLE  FOR  ANY  CONSEQUENTIAL,  INCIDENTAL,  DIRECT,
+INDIRECT, SPECIAL, PUNITIVE, OR OTHER DAMAGES   WHATSOEVER  (INCLUDING,  
+WITHOUT   LIMITATION,  DAMAGES FOR LOSS OF BUSINESS  PROFITS,  BUSINESS
+INTERRUPTION,  LOSS  OF  BUSINESS INFORMATION, OR OTHER PECUNIARY LOSS)
+ARISING OUT  OF  THIS AGREEMENT  OR  THE USE OF OR INABILITY TO USE THE
+PRODUCT, EVEN  IF  THE  AUTHOR  HAS  BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES. 
+_____________________________________________________________________
+_____________________________________________________
+
+JSWare
+www.jsware.net
+email : jsware@jsware.net

@@ -1,0 +1,2358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Integrating Access & Excel Programming Examples</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<style type="text/css">
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 1px solid black;
+padding: 4px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+font-type: courier;
+font-size: 14;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+</style>
+
+
+<body background="../YellowTexture.gif">
+<div id="dhtmltooltip"></div>
+<table border="0" cellspacing="0" cellpadding="0" id="table63" style="width: 73%; height: 8px">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="table64" style="width: 69%; height: 69px">
+	<tr>
+		<td>
+	<p align="center" style="width: 992px; height: 39px">
+	<font class="auto-style5">
+	<a class="type3" href="../index.htm"><span class="auto-style4">Home</span></a><span class="auto-style4"> |
+	<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> |&nbsp;<a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a>&nbsp;|
+	</span>
+	<a class="type1" href="../GUESTBOOK/gbook.html"><span class="auto-style4">Guestbook</span></a></font>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1" style="height: -15px; width: 988px;" class="auto-style13"></td>
+	</tr>
+</table>
+
+
+<script type="text/javascript">
+/************************************************************
+* Cool DHTML tooltip script provided by www.dynamicdrive.com
+*************************************************************/
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+document.onmousemove=positiontip
+</script>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style3 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style4 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style5 {
+	font-size: 11pt;
+}
+.auto-style7 {
+	font-family: Verdana;
+	font-size: 11pt;
+}
+.auto-style8 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style9 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 13pt;
+}
+.auto-style10 {
+	font-size: 12pt;
+}
+.auto-style11 {
+	font-size: 11pt;
+	margin-bottom: 0px;
+}
+.auto-style12 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style13 {
+	text-align: left;
+	margin-left: 0px;
+}
+.auto-style14 {
+	font-size: 15pt;
+}
+.auto-style15 {
+	font-family: Verdana;
+}
+.auto-style16 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style17 {
+	color: #0045C3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+-->
+</style>
+</head>
+
+
+
+
+<TABLE border="0" cellspacing="0" width="986" height="3101" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center" width="170">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825" id="table58">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033" id="table59">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style1">
+						<font class="auto-style3"><strong>Access Programming</strong></font><span class="auto-style1">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="beginner_basic_Acc.htm">Access 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp;Methods</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="access_under_construction.htm">
+						Forms, Control and Events</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style2" href="ADO.htm">
+					ADO (ActiveX Data Objects)</a></font><span class="auto-style1"></font></font></font></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style2" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style1">
+						<font face="Verdana">
+						<a rel="internal" class="auto-style2" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="SQL_Examples.htm">
+		                <font face="Verdana">
+						Jet SQL examples</font></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style17" href="Integrating_Access_Excel.htm">
+						Integrating Access &amp; Excel</a></font></td>
+					</tr>
+					<tr>
+		<font face>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+		</font>		
+					</tr>
+					<tr>
+		<font face>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						&nbsp;</td>
+		</font>		
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>		
+<td valign="top" height="3101">
+      &nbsp;</td>
+<td valign="top" height="3101" style="width: 8px">
+      &nbsp;</td>
+<td valign="top" height="3101" align="left" style="padding: 1px" width="798">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<p>
+		<font face="" size="5"><span class="auto-style12">Automating Import &amp; Export of Excel 
+Workbooks, Worksheets, Range , and Text Files</span></font></p><font face="Arial" size="2">
+				       
+<p align="left" style="margin-top: 0; margin-bottom: 0" class="auto-style14">
+<strong>Codes For Importing EXCEL Files</strong></p>
+
+		<p style="margin-bottom: 0;margin-top:0" align="left">
+		<a href="#ImpFolderFiles"><span class="auto-style7">I</span><span class="auto-style16">mport Data from All EXCEL Files in a single Folder via TransferSpreadsheet</span></a></p>
+		<span class="auto-style15">
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ImpFldWrkFiles">Import Data from Specific Worksheets in All EXCEL Files in a single Folder 
+		via TransferSpreadsheet</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ImpAllWkshts">Import Data from 
+		All Worksheets in a single EXCEL File into One Table via TransferSpreadsheet</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">
+		<font size="2" class="auto-style1">
+		<a href="#ImpAllWktsSepTbl">Import Data from All Worksheets in a single EXCEL File into Separate 
+		Tables via TransferSpreadsheet</a><br>
+		<a href="#ImpWktFilesSepTbls">Import Data from A Specific Worksheet in All EXCEL Files in a single 
+		Folder into Separate Tables via </a><br>&nbsp;<a href="#ImpWktFilesSepTbls"> TransferSpreadsheet</a></font></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ImpBrowseFile">Browse to a single EXCEL File and Import Data from that EXCEL File via 
+		TransferSpreadsheet</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">
+		<a href="#ImpBrsFldFiles"><span class="auto-style1">Browse to a single Folder and Import Data from All EXCEL Files in that 
+		Folder via TransferSpreadsheet</span></a><br class="auto-style1">
+		</span><a href="#integrating_Excel_Access"><span class="auto-style16">Integrating values and calculation between Access 
+		Table and Excel Worksheet</span></a><span class="auto-style15"><span class="auto-style1"><br>
+		</span>
+		<a href="#integrating_AccessQueries_UpdateExcel">
+		<span class="auto-style1">Integrating Access queries update to modify data in Excel workbook which 
+		refresh the charts</span></a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ImpSQL">Read Data from EXCEL File via Query (SQL Statement)</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#WriteFileRst">Write Data From an EXCEL Worksheet into a Recordset using 
+Automation</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#DataTypeErr">Avoid DataType Mismatch Errors when Importing Data from an EXCEL File or 
+		when Linking to an EXCEL File</a></span></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">&nbsp;</p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style14">
+		<strong>Codes For Exporting EXCEL Files</strong></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style16">
+		<a href="#CreateExportParam">Create and 
+		Export a 
+		Parameter Query to EXCEL file via TransferSpreadsheet</a></p>
+		<span class="auto-style15">
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#WriteRstFile">Write Data From a Recordset into an EXCEL Worksheet using 
+Automation</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ExpCopyFromRst">Write Data From a Recordset into an EXCEL 
+		Worksheet using EXCEL's CopyFromRecordset</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ExpBrowseFile">Browse to a single EXCEL File and 
+		Export Data to that EXCEL File via TransferSpreadsheet</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#ExpBrowseFolder">Browse to a single Folder and 
+		Export Data to a New EXCEL File in that 
+		Folder via TransferSpreadsheet</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#FilterExportSepFiles">Create Query and Export multiple "filtered" versions of a Query to separate 
+		XL files via TransferSpreadsheet</a></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style1">
+		<a href="#FilterExportSameFile">Create Query and Export multiple 
+		&quot;filtered&quot; versions of a Query to separate Worksheets within one EXCEL file via</a><br>
+		<a href="#FilterExportSameFile">&nbsp; TransferSpreadsheet</a></span></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">&nbsp;</p>
+		<p style="margin-bottom: 0;margin-top:0" align="left" class="auto-style14">
+		<strong>Codes For Importing and Exporting TEXT Files</strong></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">
+		<font size="2" face><a href="#fso1"><span class="auto-style16">Export Access table as a text-delimited file 
+		(FSO)</span></a></font><span class="auto-style16"><br>
+		<a href="#fso2">Import a Text File to populate an Access Table (FSO)</a></span></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">
+		&nbsp;</p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">
+		&nbsp;</p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">&nbsp;</p>
+<font face="">
+		<font size="2" class="auto-style8">
+		<p>Access provides a set of macro actions that you can use to transfer 
+		data to and from an Access database, an Excel worksheet, Word file, a 
+		text file or the different databases. Another option is to invoke these 
+		transfer actions through the <b>DoCmd</b> objects.</p>
+		<p>You use the <b>TransferSpreadsheet</b> and method to import or export 
+		data between the current Access database and a spreadsheet file. The 
+		syntax is:</p>
+		<p class="signature"><font color="#800000"><b><i style="font-weight: normal;">expression</i>.TransferSpreadsheet(<i>TransferType</i>,
+		<i>SpreadsheetType</i>, <i>TableName</i>, <i>FileName</i>, <i>
+		HasFieldNames</i>, <i>Range</i>)</b></font></p>
+		<p><i style="font-weight: normal;">expression</i>&nbsp;&nbsp;is a variable that 
+		represents a DoCmd object.</p>
+		<p>Example: 
+		</font>
+			</font>
+		<span class="auto-style4"><font size="2" class="auto-style1">
+		<br>
+		<font color="#000080">DoCmd.TransferSpreadsheet acExport, acSpreadsheetTypeExcel9, &quot;tbl_MaterialList&quot;,&quot;C:\MyList.xls&quot;, 
+		True, &quot;A2:F200&quot;</font></font></span></p>
+				       
+		<p><span class="auto-style4"></p>
+		<p><span class="auto-style1">You use the <b>TransferText</b> method to import or export data 
+		between the current Access database and a text file, in either delimited 
+		or fixed-width format. TransferText method relies on import/export 
+		specification. The syntax is:</p>
+		<p></span><font color="#800000"><b><span class="auto-style1"><i style="font-weight: normal;">expression</i>.TransferText(<i>TransferType</i>,
+		<i>SpecificationName</i>, <i>TableName</i>, <i>FileName</i>, <i>
+		HasFieldNames</i>, <i>HTMLTableName</i>, <i>CodePage</i>)</span></b></font></span></p>
+		<p>
+		<span class="auto-style8">Example: 
+		</span><font color="#000080"><span class="auto-style1">
+		<br class="auto-style4">
+		</span><span class="auto-style4"><span class="auto-style1">DoCmd.TransferText acExportDelim, &quot;material_Import_Specification&quot;, _ &quot;tbl_materialstatus&quot;, 
+		&quot;D:\material_status.csv&quot;, True</span></span></font></p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">&nbsp;</p>
+		<p style="margin-bottom: 0;margin-top:0" align="left">&nbsp;</p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table65" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpFolderFiles"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Import Data from All EXCEL Files in a Single Folder via TransferSpreadsheet</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to import the data from the first (or only) worksheet in all EXCEL 
+files that are located within a single folder. All of the EXCEL files' 
+worksheets must have the data in the same layout and format.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim strPathFile As String, strFile As String, strPath As String, strTable As String<br>Dim blnHasFieldNames As Boolean</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Change this next line to <i>True</i> if the first row in EXCEL 
+worksheet has field names</font><br><font color="#000080">blnHasFieldNames = False</font><br><br>
+		<font color="#008000">' Replace <i>C:\Documents\</i> with the real path to the folder that contains the EXCEL files</font><br>
+		<font color="#000080">strPath = "C:\Documents\"</font><br>
+		<br><font color="#008000">' Replace <i>tablename</i> with the real name of the table into which the data are to be imported</font><br>
+		<font color="#000080">strTable = "tablename"</font><br>
+		<br><font color="#000080">strFile = Dir(strPath &amp; "*.xls")<br>Do While Len(strFile) &gt; 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strPathFile = strPath &amp; strFile<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable, 
+strPathFile, blnHasFieldNames<br></font><br><font color="#008000">' Uncomment out the next code step if you want to delete the EXCEL file after it's been imported<br>'&nbsp;Kill strPathFile</font><br>
+		<br><font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strFile = Dir()<br>Loop</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table66" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpFldWrkFiles"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Import Data from Specific Worksheets in All EXCEL Files in a Single Folder via TransferSpreadsheet</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to import the data from specific worksheets in all EXCEL 
+files (worksheet names are the same in all files) that are located within a single folder. All of the EXCEL files' 
+worksheets with the same worksheet names must have the data in the same layout and format.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">Dim strPathFile As String, strFile As String, strPath As String<br>Dim blnHasFieldNames As Boolean<br>Dim intWorksheets As Integer</font><br>
+		<br><font color="#008000">' Replace <i>3</i> with the number of worksheets to be imported from each EXCEL file</font><br>
+		<font color="#000080">Dim strWorksheets(1 To 3) As String</font><br>
+		<br><font color="#008000">' Replace <i>3</i> with the number of worksheets to be imported 
+		from each EXCEL file (this code assumes that each worksheet with the same name is being imported into a separate table for that specific worksheet name)</font><br>
+		<font color="#000080">Dim strTables(1 To 3) As String</font><br>
+		<br><font color="#008000">' Replace generic worksheet names with the real worksheet 
+names; <br>
+		' Add / delete code lines so that there is one code line for each worksheet that is to be imported from each workbook file.</font><br>
+		<font color="#000080">strWorksheets(1) = "WorksheetName1"<br>strWorksheets(2) = "WorksheetName2"<br>strWorksheets(3) = "WorksheetName3"</font><br>
+		<br><font color="#008000">' Replace <i>generic table names</i> with the real table names</font><br>
+		<font color="#000080">strTables(1) = "TableName1"<br>strTables(2) = "TableName2"<br>strTables(3) = "TableName3"</font><br>
+		<br><font color="#008000">' Change this next line to <i>True</i> if the first row in EXCEL worksheet has field names</font><br>
+		<font color="#000080">blnHasFieldNames = False</font><br>
+		<br><font color="#008000">' Replace <i>C:\Documents\</i> with the real path to the folder that contains the EXCEL files</font><br>
+		<font color="#000080">strPath = "C:\Documents\"</font><br>
+		<br><font color="#008000">' Replace <i>3</i> with the number of worksheets to be imported from each EXCEL file</font><br>
+		<font color="#000080">For intWorksheets = 1 To 3<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strFile = Dir(strPath &amp; "*.xls")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do While Len(strFile) &gt; 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strPathFile = 
+strPath &amp; strFile<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, strTables(intWorksheets), _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+strPathFile, blnHasFieldNames, strWorksheets(intWorksheets) &amp; "$"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strFile = 
+Dir()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loop<br><br>Next intWorksheets</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table67" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpAllWkshts"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Import Data from All Worksheets in a Single EXCEL Workbook into One Table via TransferSpreadsheet</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to import the data from all worksheets in a single EXCEL 
+file. Because all of the worksheets' data will be imported into the same table, 
+all of the EXCEL files' 
+worksheets must have the data in the same layout and format.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">Dim blnHasFieldNames As Boolean, blnEXCEL As Boolean, blnReadOnly 
+As Boolean<br>Dim lngCount As Long<br>Dim objExcel As Object, objWorkbook As Object<br>Dim colWorksheets As Collection<br>Dim strPathFile as String, strTable as String<br>Dim strPassword As String</font><br>
+		<br><font color="#008000">' Establish an EXCEL application object</font><br>
+		<font color="#000080">On Error Resume Next<br>Set objExcel = GetObject(, "Excel.Application")<br>If Err.Number &lt;&gt; 0 Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set objExcel = CreateObject("Excel.Application")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blnEXCEL = True<br>End If<br>Err.Clear<br>On Error GoTo 0</font><br>
+		<br><font color="#008000">' Change this next line to <i>True</i> if the first row in EXCEL worksheet has field names</font><br>
+		<font color="#000080">blnHasFieldNames = False<br>
+		</font>
+		<br><font color="#008000">' Replace <i>C:\Filename.xls</i> with the actual path and filename</font><br>
+		<font color="#000080">strPathFile = "C:\Filename.xls"<br>
+		</font>
+		<br><font color="#008000">' Replace <i>tablename</i> with the real name of the table into which the data are to be imported</font><br>
+		<font color="#000080">strTable = "tablename"<br>
+		</font>
+		<br><font color="#008000">' Replace <i>passwordtext</i> with the real password;<br>' if there is no password, replace it with 
+		<i>vbNullString</i> constant (<i>e.g., strPassword = vbNullString</i>)</font><br>
+		<font color="#000080">strPassword = "passwordtext"</font><br>
+		<br><font color="#000080">blnReadOnly = True&nbsp;&nbsp; </font> <font color="#008000">' open EXCEL file in read-only 
+mode</font><br><br><font color="#008000">' Open the EXCEL file and read the worksheet names into a collection</font><br>
+		<font color="#000080">Set colWorksheets = New Collection<br>Set objWorkbook = objExcel.Workbooks.Open(strPathFile, , blnReadOnly, 
+		, strPassword)<br>For lngCount = 1 To objWorkbook.Worksheets.Count<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; colWorksheets.Add 
+objWorkbook.Worksheets(lngCount).Name<br>Next lngCount</font><br><br>
+		<font color="#008000">' Close the EXCEL file without saving the file, and clean up the EXCEL objects</font><br>
+		<font color="#000080">objWorkbook.Close False<br>Set objWorkbook = Nothing<br>If blnEXCEL = True Then objExcel.Quit<br>Set objExcel = Nothing<br>
+		</font>
+		<br><font color="#008000">' Import the data from each worksheet into the table</font><br>
+		<font color="#000080">For lngCount = colWorksheets.Count To 1 Step -1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable, 
+strPathFile, blnHasFieldNames, colWorksheets(lngCount) &amp; "$"<br>Next lngCount</font><br>
+		<br><font color="#008000">' Delete the collection</font><br>
+		<font color="#000080">Set colWorksheets = Nothing<br>
+		</font>
+		<br><font color="#008000">' Uncomment out the next code step if you want to delete the EXCEL file after it's been imported<br>' Kill strPathFile</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table68" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpAllWktsSepTbl"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4">
+<b>
+Import Data from All Worksheets in a Single EXCEL Workbook into Separate Tables via TransferSpreadsheet</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to import the data from all worksheets in a single EXCEL 
+		workbook. Each worksheet's data will be imported into a separate table whose name is 
+'tbl' plus the worksheet name <i>(</i>e.g<i>.</i>, "tblSheet1")<i>.</i></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">Dim blnHasFieldNames As Boolean, blnEXCEL As Boolean, blnReadOnly 
+As Boolean<br>Dim lngCount As Long<br>Dim objExcel As Object, objWorkbook As Object<br>Dim colWorksheets As Collection<br>Dim strPathFile As String<br>Dim strPassword As String</font><br>
+		<br><font color="#008000">' Establish an EXCEL application object</font><br>
+		<font color="#000080">On Error Resume Next<br>Set objExcel = GetObject(, "Excel.Application")<br>If Err.Number &lt;&gt; 0 Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set objExcel = CreateObject("Excel.Application")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blnEXCEL = True<br>End If<br>Err.Clear<br>On Error GoTo 0</font><br>
+		<br><font color="#008000">' Change this next line to <i>True</i> if the first row in EXCEL worksheet has field names</font><br>
+		<font color="#000080">blnHasFieldNames = False</font><br>
+		<br><font color="#008000">' Replace <i>C:\Filename.xls</i> with the actual path and filename</font><br>
+		<font color="#000080">strPathFile = "C:\Filename.xls"<br>
+		</font>
+		<br><font color="#008000">' Replace <i>passwordtext</i> with the real password;<br>' if there is no password, replace it with 
+		<i>vbNullString</i> constant (<i>e.g., strPassword = vbNullString</i>)</font><br>
+		<font color="#000080">strPassword = "passwordtext"</font><br>
+		<br><font color="#000080">blnReadOnly = True</font> <font color="#008000">&nbsp;&nbsp;&nbsp; ' open EXCEL file in read-only 
+mode</font><br><br><font color="#008000">' Open the EXCEL file and read the worksheet names into a collection</font><br>
+		<font color="#000080">Set colWorksheets = New Collection<br>Set objWorkbook = objExcel.Workbooks.Open(strPathFile, , blnReadOnly, 
+		, strPassword)<br>For lngCount = 1 To objWorkbook.Worksheets.Count<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; colWorksheets.Add 
+objWorkbook.Worksheets(lngCount).Name<br>Next lngCount</font><br><br>
+		<font color="#008000">' Close the EXCEL file without saving the file, and clean up the EXCEL objects</font><br>
+		<font color="#000080">objWorkbook.Close False<br>Set objWorkbook = Nothing<br>If blnEXCEL = True Then objExcel.Quit<br>Set objExcel = Nothing</font><br>
+		<br><font color="#008000">' Import the data from each worksheet into a separate table</font><br>
+		<font color="#000080">For lngCount = colWorksheets.Count To 1 Step -1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "tbl" &amp; 
+colWorksheets(lngCount), strPathFile, blnHasFieldNames, colWorksheets(lngCount) &amp; "$"<br>Next lngCount</font><br>
+		<br><font color="#008000">' Delete the collection</font><br>
+		<font color="#000080">Set colWorksheets = Nothing</font><br>
+		<br><font color="#008000">' Uncomment out the next code step if you want to delete the EXCEL file after it's been imported<br>' Kill strPathFile</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table69" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpWktFilesSepTbls"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4">
+<b>
+Import Data from A Specific Worksheet in All EXCEL Files in a Single Folder into Separate Tables via TransferSpreadsheet</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to import the data from a specific worksheet in all EXCEL 
+files in a single folder. Each worksheet's data will be imported into a separate table whose name is 
+'tbl_' plus the workbook name without the ".xls" file extension (<i>e.g.</i>, "tbl_NameOfFile")<i>.</i></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">Dim blnHasFieldNames as Boolean<br>Dim strWorksheet As String, strTable As String<br>Dim strPath As String, strPathFile As String</font><br>
+		<br><font color="#008000">' Change this next line to <i>True</i> if the first row in 
+EXCEL worksheet has field names</font><br><font color="#000080">blnHasFieldNames = False</font><br><br>
+		<font color="#008000">' Replace <i>C:\Documents\</i> with the real path to the 
+folder that contains the EXCEL files</font><br><font color="#000080">strPath = "C:\Documents\"</font><br><br>
+		<font color="#008000">' Replace <i>worksheetname</i> with the real name of the 
+worksheet that is to be imported from each file</font><br><font color="#000080">strWorksheet = "worksheetname"</font><br>
+		<br><font color="#008000">' Import the data from each workbook file in the folder</font><br>
+		<font color="#000080">strFile = Dir(strPath &amp; "*.xls")<br>Do While Len(strFile) &gt; 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strPathFile = strPath &amp; strFile<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable = "tbl_" &amp; Left(strFile, 
+InStrRev(strFile, ".xls") - 1)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, strTable, strPathFile, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+blnHasFieldNames, strWorksheet &amp; "$"</font><br><br><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Uncomment out the next code step if you want to delete the EXCEL file after it's been imported<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+' Kill strPathFile</font><br><br><font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strFile = Dir()<br>Loop</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table70" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpBrowseFile"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Browse to a Single EXCEL File and
+Import Data from that EXCEL File via TransferSpreadsheet </b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left"><span class="auto-style4">
+		<span class="auto-style1">Generic code to browse to a 
+		single EXCEL file, and then to import the data from the first (or only) 
+		worksheet in that EXCEL file. This generic method uses the Windows API 
+		to browse to a single file the code for this API (was written by Getz).</p>
+		</span></span><span class="auto-style9">
+	  <p style="margin-bottom: -5px;" align="left">First step is to paste all 
+	  the </span><span class="auto-style4">
+	  <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="auto-style5">
+		<a target="_blank" href="http://www.mvps.org/access/api/api0001.htm">Getz's code</a></span><span class="auto-style5"> 
+	  into a new module in your database. Be sure to give the module a unique 
+	  name (i.e., it cannot have the same name as any other module, any other 
+	  function, or any other subroutine in the database). Then use this generic 
+	  code to allow the user to select the EXCEL file that is to be imported.</p>
+	  </span>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim strPathFile As String<br>Dim strTable As String, strBrowseMsg As String<br>Dim strFilter As String<br>Dim blnHasFieldNames As Boolean</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Change this next line to <i>True</i> if the first row in EXCEL 
+worksheet has field names</font><br><font color="#000080">blnHasFieldNames = False</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">strBrowseMsg = "Select the EXCEL file:"<br>
+		<br>strFilter = ahtAddFilterItem(strFilter, "Excel Files (*.xls)", "*.xls")<br>strPathFile = ahtCommonFileOpenSave(Filter:=strFilter, OpenFile:=False, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DialogTitle:=strBrowseMsg, Flags:=ahtOFN_HIDEREADONLY)</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">If strPathFile = "" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "No file was selected.", vbOK, "No 
+Selection"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>End If</font><br><br>
+		<font color="#008000">' Replace <i>tablename</i> with the real name of the table into which the data are to be imported</font><br>
+		<font color="#000080">strTable = "tablename"<br>
+		<br>DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable, 
+strPathFile, blnHasFieldNames</font><br><br><font color="#008000">' Uncomment out the next code step if you want to delete the EXCEL file after it's been imported<br>'&nbsp;Kill strPathFile</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table71" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpBrsFldFiles"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Browse to a Single Folder and
+Import Data from All EXCEL Files in that Folder via TransferSpreadsheet </b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left"><span class="auto-style1">
+		<span class="auto-style4">Generic code to browse to a single folder, and then to import the data from the first (or only) worksheet in all EXCEL 
+files that are located within that folder. All of the EXCEL files' 
+worksheets must have the data in the same layout and format. This generic method 
+uses the Windows API to browse to a single folder; the code for this API (was written by Terry Kreft).</p>
+		</span></span>
+	  <p style="margin-bottom: -5px;" align="left" class="auto-style10">
+	  <font face="">
+	  <span id="dnn_ctr436_HtmlModule_HtmlHolder2" class="Normal">
+		<font face="Arial" size="2">
+				       
+	  <span class="auto-style1"><span class="auto-style4">First step is to paste all the 
+		</span></span>
+		</font>
+			</span>
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font face="Arial" size="2">
+				       
+	  <span class="auto-style1"><span class="auto-style4"> 
+		<a target="_blank" href="http://www.mvps.org/access/api/api0002.htm">Kreft's code</a> into a new module in 
+your database. Be sure to give the module a unique name (<i>i.e.</i>, it cannot 
+have the same name as any other module, any other function, or any other 
+subroutine in the database). Then use this generic code to allow the user to 
+select the folder in which the EXCEL files are located.</span></span></font></span></font></p>
+		<span class="auto-style4">
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim strPathFile As String, strFile As String, strPath As String<br>Dim strTable As String, strBrowseMsg As String<br>Dim blnHasFieldNames as Boolean</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Change this next line to <i>True</i> if the first row in EXCEL 
+worksheet has field names</font><br><font color="#000080">blnHasFieldNames = False<br><br>strBrowseMsg = "Select the folder that contains the EXCEL files:"<br>strPath = BrowseFolder(strBrowseMsg)</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">If strPath = "" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "No folder was selected.", vbOK, "No 
+Selection"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>End If</font><br><br>
+		<font color="#008000">' Replace <i>tablename</i> with the real name of the table into which the data are to be imported</font><br>
+		<font color="#000080">strTable = "tablename"<br>
+		<br>strFile = Dir(strPath &amp; "\*.xls")<br>Do While Len(strFile) &gt; 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strPathFile = strPath &amp; strFile<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.TransferSpreadsheet acImport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable, 
+strPathFile, blnHasFieldNames</font><br><br><font color="#008000">' Uncomment out the next code step if you want to delete the EXCEL file after it's been imported<br>'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kill strPathFile</font><br>
+		<br><font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strFile = Dir()<br>Loop</font></font></span><br>
+		<br>
+		<br>
+&nbsp;</p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table89" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="integrating_Excel_Access"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<p align="left"></p>
+		<font size="4" face="Arial"><u><b>Integrating calculation 
+		&amp; values input between Access Table and Excel Worksheet</b></u></font><font face=""><span id="dnn_ctr436_HtmlModule_HtmlHolder1"><font face="Arial" size="2"><span><br>
+		<br>L<span class="auto-style4"><span class="auto-style1">et's say you have multiple values in an Access 
+		table, and you want to input them into a calculation model in Excel 
+		sheet and
+		then store the calculated result back to Access table. Normally this is time-consuming, but by 
+		this VBA example or by some code modification, you can do it rather
+		easily. </span></span>
+		</span>
+		<span class="auto-style4"><span class="auto-style1">
+		<p></span><span>
+		<span class="auto-style1">In the Access table there are 3 fields: Sales, SalesRep and Contribution. 
+		For every record value in the </span> </span>
+
+		</span>
+
+		<font face="">
+		<span class="auto-style8">
+		Sales field and SalesRep field </span></font>
+		<span class="auto-style4">
+		<span>
+		<span class="auto-style1">of the Access table (called tbl_ContributionModel), the code puts them 
+		in two cells in the Excel worksheet (B5 and B5 in Sheet1) to calculate a 
+		Contribution profit 
+		number. The code then take the resulting Contribution number, one by one 
+		after each computation, and stores the result back into the table. You can use this code 
+		to suit your situation by changing file's path, cell ranges, names of 
+		the sheet, table and fields.</span></span><span class="auto-style1"></p>
+		</p>
+		<p><a href="examples/Sales.zip">Download the 2 files</a>, store them 
+		under the directory C:\Sales\<br>
+		Remember also to reference to Microsoft Excel 11.0 Object Library.</p>
+		<p></span></span><font color="#000080"><span class="auto-style4">
+		<span class="auto-style1"><br>
+		Sub IntegratingExcelAccess()<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Dim xlApp As Excel.Application<br>
+
+		</span></span><span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp; 
+		Dim Wb As Excel.Workbook<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Dim Ws As Excel.Worksheet<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Dim rs As ADODB.Recordset<br>
+		<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Set xlApp = New Excel.Application<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		xlApp.Visible = True<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Set Wb = xlApp.Workbooks.Open(&quot;C:\Sales\ContributionModel.xls&quot;)<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Set Ws = Wb.Sheets(&quot;Sheet1&quot;)<br>
+		<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Set rs = New ADODB.Recordset<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		rs.Open &quot;tbl_ContributionModel&quot;, CurrentProject.Connection, 
+		adOpenDynamic, adLockOptimistic<br>
+		<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		rs.MoveFirst<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		While Not rs.EOF<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ws.Range(&quot;B9&quot;).Value = rs.Fields(&quot;Sales&quot;).Value<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ws.Range(&quot;B5&quot;).Value = rs.Fields(&quot;SalesRep&quot;).Value<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		rs.Fields(&quot;Contribution&quot;).Value = Ws.Range(&quot;B17&quot;).Value<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+		rs.MoveNext<br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Wend<br>
+		<br>
+		rs.Close<br>
+		Wb.Close False<br>
+		<br>
+		Set Ws = Nothing<br>
+		Set Wb = Nothing<br>
+		xlApp.Quit<br>
+		Set xlApp = Nothing<br>
+		Set rs = Nothing<br>
+		End Sub</span></font><br>
+		<br>
+		<br>
+&nbsp;</p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table90" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="integrating_AccessQueries_UpdateExcel"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</font>
+
+			</span></font>
+		</font><br>
+		</font><font size="4" face="Arial"><u><b>Integrating Access Queries update to 
+		put data in Excel file which 
+		refreshes the charts</b></u></font><font size="4" face="Arial"><u><b><br align="left">
+
+		</b></u></font>
+		<font face="Arial" size="2">
+				       
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="">
+		<span>
+		<font face="Arial" size="2"><br><span class="auto-style8">There are 2 charts in Excel worksheet that need data update from Access 
+		Queries. It is easier to build a worksheet like this thru the Excel GUI 
+		and modify the data from Visual Basic code. In below example, you first 
+		have to obtain your sales data after every month end in order to run the 
+		2 queries. It is easy to only open up the workbook
+		(instead of using Add method) using <b>CopyFromRecordset</b> method to input 
+		the data into the
+		workbook. The template workbook will be preserved, instead the code uses the SaveAs method to save 
+		the workbook under another name. </span> </font></span></font></span><font face=""><span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+		<span class="auto-style8">
+		You can use this code to suit your situation by changing file's path, 
+		cell range, names of the sheets and queries.</span></span></font></font><p>
+		<font face="" size="2"><span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+		<font face="Arial" size="2" class="auto-style1">
+		<a href="examples/SalesByCategories.zip"><span class="auto-style4">Download the 2 files</span></a><span class="auto-style4">, store them 
+		under the directory C:\Sales\<br>
+		Remember also to reference to Microsoft Excel 11.0 Object Library.</span></font></span></font></p>
+		<p>
+		<font face="Arial" size="2">
+				       
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="">
+		<span>
+		<font size="2" class="auto-style8">
+		<br>
+		<font color="#000080">Sub AccessToUpdateExcelData()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim xlApp As Excel.Application<br>
+		</font></font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Dim Wb As Excel.Workbook<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Dim Ws As Excel.Worksheet<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Dim Rng As Excel.Range<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Dim rs As ADODB.Recordset<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Dim xlFile As String<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Dim xlSaveFile As 
+		String<br>
+		<br>
+		</font></span>
+
+		<font face="" color="#000080">
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">xlFile = &quot;C:\Sales\MonthlySalesTemplate.xls&quot;<br>
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<span class="auto-style8">xlSaveFile = 
+		&quot;C:\Sales\MonthlySalesCharts.xls&quot;&nbsp; </span>
+		</span>
+
+		</font></font><font color="#000080">
+
+		<span>
+		<span class="auto-style8"><font color="#008000">' 
+		save as a new file name to preserve template workbook</font><br>
+		<br>
+		<br>
+		</span>
+		</span>
+
+		<font face="">
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font></font>
+
+		<font face="">
+		<span>
+		<font color="#000080" size="2" class="auto-style8">Set xlApp = New 
+		Excel.Application<br>
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">xlApp.Visible = True<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Set Wb = xlApp.Workbooks.Open(xlFile)<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Set Ws = Wb.Sheets(&quot;Sheet1&quot;)<br>
+		<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Set rs = New 
+		ADODB.Recordset<br>
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">rs.Open &quot;select * from qry_SalesByWeek&quot;, 
+		CurrentProject.Connection<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Set Rng = Ws.Range(&quot;A5&quot;)<br>
+		</font></span>
+
+		<font face="" color="#000080">
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Rng.<b>CopyFromRecordset</b> 
+		rs<br>
+		</font></span>
+
+		<font face="" color="#000080">
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">rs.Close<br>
+		<br>
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">rs.Open &quot;select * from qry_SalesByBranch&quot;, 
+		CurrentProject.Connection<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Set Rng = Ws.Range(&quot;A19&quot;)<br>
+		</font></span>
+
+		<font face="" color="#000080">
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Rng.CopyFromRecordset 
+		rs<br>
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">rs.Close<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Set rs = Nothing<br>
+		<br>
+		</font></span>
+
+		<font face="" color="#000080">
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span class="auto-style8">
+		<font color="#000080">Wb.SaveAs xlSaveFile&nbsp;&nbsp;&nbsp;
+		</font>
+		<font color="#008000">' save as a new file name</font></span><span><font color="#000080"><br class="auto-style8">
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Wb.Close<br>
+		<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Set Rng = Nothing<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">Set Ws = Nothing<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font><span>
+		<font color="#000080" size="2" class="auto-style8">Set Wb = Nothing<br>
+		</font></span><font color="#000080">
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		<span>
+		<font size="2" class="auto-style8">xlApp.Quit<br>
+		</font></span>
+
+		<span class="auto-style8">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+		</font>
+		<font size="2" class="auto-style8"><span>
+		<font color="#000080">Set xlApp = Nothing<br>
+		End Sub</font></span></font></font></span></p>
+		</p>
+		<p style="margin-bottom: -5px;" align="left"><br>
+&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table72" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ImpSQL"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<align="left">
+		<u><font size="4"><b>Read Data from EXCEL File via Query (SQL Statement)</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic SQL statement that reads data from an EXCEL file. Replace
+		<i>C:\MyFolder\MyFile.xls</i> with the 
+real path and filename of the EXCEL file. Replace <i>WorksheetName</i> with the real 
+name of the worksheet -- NOTE that the name cannot be longer than 30 characters 
+(one less than EXCEL's limit for a worksheet name) or else ACCESS / Jet will 
+give you an error stating that the file cannot be found. In this SQL statement,
+		<font color="#000080">
+		<i>HDR=YES</i></font> means that the first row of data are header names (change to 
+		<font color="#000080"> 
+		<i>NO</i></font> if the 
+first row does not contain header names); <font color="#000080"> <i>IMEX=1</i></font> alllows "mixed formatting" 
+within a column (alpha characters and numbers, for example) so that errors will 
+not be raised when importing mixed formats; the <i>$</i> character must be immediately 
+after the worksheet name; and <i>A2:U66536</i> is the range of data to be imported 
+(these cell references can be changed to any contiguous range of cells in the 
+worksheet).</p>
+		<blockquote>
+			<p style="margin-bottom: -5px;" align="left"><font color="#000080">S<font size="2" class="auto-style1">ELECT T1.*, 1 AS SheetSource<br>FROM [Excel 8.0;HDR=YES;IMEX=1;Database=C:\MyFolder\MyFile.xls].[WorksheetName$A2:U65536] 
+as T1;</font></font></span></p>
+		</blockquote>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table73" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="WriteFileRst"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>Write Data From an EXCEL Worksheet into a Recordset using 
+Automation (VBA)</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to open a recordset (based on an existing table) for the data that 
+are to be imported from a worksheet in an EXCEL file, and then to loop through 
+the recordset and write each cell's value into a field in the recordset, with 
+each row in the worksheet being written into a separate record. The starting 
+cell for the EXCEL worksheet is specified in the code; after that, the data are 
+read from contiguous cells and rows. This code example uses "late binding" for 
+the EXCEL automation, and this code assumes that the EXCEL worksheet DOES NOT 
+contain header information in the first row of data being read.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim lngColumn As Long<br>Dim xlx As Object, xlw As Object, xls As Object, xlc As Object<br>Dim dbs As DAO.Database<br>Dim rst As DAO.Recordset<br>Dim blnEXCEL As Boolean</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">blnEXCEL = False</font><br>
+		<br><font color="#008000">' Establish an EXCEL application object</font><br>
+		<font color="#000080">On Error Resume Next<br>Set xlx = GetObject(, "Excel.Application")<br>If Err.Number &lt;&gt; 0 Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Set xlx = CreateObject("Excel.Application")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blnEXCEL = True<br>End If<br>Err.Clear<br>On Error GoTo 0</font><br><br>
+		<font color="#008000">' Change <i>True</i> to <i>False</i> if you do not want 
+the workbook to be visible when the code is running</font><br>
+		<font color="#000080">xlx.Visible = True</font><br>
+		<br><font color="#008000">' Replace <i>C:\Filename.xls</i> with the actual path and filename of the EXCEL file from which you will read the data</font><br>
+		<font color="#000080">Set xlw = xlx.Workbooks.Open(&quot;C:\Filename.xls", , True)
+		</font>&nbsp;<font color="#008000">&nbsp;&nbsp;&nbsp; ' opens in read-only 
+mode</font><br><br><font color="#008000">' Replace <i>WorksheetName</i> with the actual name of the worksheet in the EXCEL file</font><br>
+		<font color="#000080">Set xls = xlw.Worksheets("WorksheetName")</font><br>
+		<br><font color="#008000">' Replace <i>A1</i> with the cell reference from which the first data value (non-header information) is to be read</font><br>
+		<font color="#000080">Set xlc = xls.Range("A1")</font>
+		<font color="#008000">&nbsp;&nbsp;&nbsp; ' this is the first cell that contains data</font><br>
+		<br><font color="#000080">Set dbs = CurrentDb()</font><br><br><font color="#008000">' Replace <i>QueryOrTableName</i> with the real name of the table or query that is to receive the data from the worksheet</font><br>
+		<font color="#000080">Set rst = dbs.OpenRecordset("QueryOrTableName", dbOpenDynaset, dbAppendOnly)</font><br>
+		<br><font color="#008000">' write data to the recordset</font><br>
+		<font color="#000080">Do While xlc.Value &lt;&gt; ""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rst.AddNew<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+For lngColumn = 0 To rst.Fields.Count - 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rst.Fields(lngColumn).Value = xlc.Offset(0, lngColumn).Value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Next lngColumn<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rst.Update<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Set xlc = xlc.Offset(1,0)<br>Loop<br><br>rst.Close<br>Set rst = Nothing<br><br>dbs.Close<br>Set dbs = Nothing</font><br>
+		<br><font color="#008000">' Close the EXCEL file without saving the file, and clean 
+up the EXCEL objects</font><br><font color="#000080">Set xlc = Nothing<br>Set xls = Nothing<br>xlw.Close False<br>Set xlw = Nothing<br>If blnEXCEL = True Then xlx.Quit<br>Set xlx = Nothing</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table74" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="DataTypeErr"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Avoid DataType Mismatch Errors when Importing Data from an EXCEL File or when 
+Linking to an EXCEL File</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left"><span class="auto-style8">When importing data from an EXCEL spreadsheet into an ACCESS table via the 
+TransferSpreadsheet action, or when linking to an EXCEL spreadsheet as a linked 
+ACCESS table, often you will see the "#Num!" error code for the value in a field 
+in the ACCESS table; or you will see that leading zeroes are lost from text 
+strings that contain only number characters; or you will see that text strings longer than 255 
+characters are truncated in a field in the ACCESS table.</p>
+		</span><span class="auto-style1">
+		<p style="margin-bottom: -5px;" align="left" class="auto-style4">The "#Num!" error code that you see is because Jet (ACCESS) sees only numeric 
+values in the first 8 - 25 rows of data in the EXCEL sheet, even though you have 
+formatted the EXCEL column as "Text". In EXCEL, if you change the format from 
+"General" or a numeric format to "Text", the previous numeric format for a cell 
+will "stick" to numeric values. </p>
+		</span><span class="auto-style8">
+		<p style="margin-bottom: -5px;" align="left">What ACCESS and Jet are doing is assuming that the "text" data actually are 
+numeric data, and thus all your non-numeric text strings are "not matching" to a 
+numeric data type. One of these suggestions should fix the problem:</p>
+		<blockquote>
+			<p style="margin-bottom: -5px;" align="left">1) Insert a ' (apostrophe) 
+character at the beginning of each cell's value for that column in the EXCEL 
+file -- that should let Jet (ACCESS) treat that column's values as text and not 
+numeric.</p>
+			<p style="margin-bottom: -5px;" align="left">2) Insert a dummy row of data as the first row, where 
+the dummy row contains nonnumeric characters in the cell in that column -- that 
+should let Jet (ACCESS) treat that column's values as text and not numeric.</p>
+			<p style="margin-bottom: -5px;" align="left">3) Double-click into the EXCEL 
+cell that has the "numeric" data, then click on any other cell -- that will "update" the cell to 
+the "Text" format.</p>
+			<p style="margin-bottom: -5px;" align="left">4) Create a blank table into which 
+	you will import the spreadsheet's data. For the field that will receive the 
+	numeric data, make its data type "Text". Jet (ACCESS) then will "honor" the 
+	field's datatype when it does the import.</p>
+		</blockquote>
+		<p style="margin-bottom: -5px;" align="left">The loss of leading zeroes from text strings that contain only number characters 
+is a symptom of the same problem noted above for the <font color="#800000">"#Num!"</font> error code. One of 
+the these suggestions should fix the problem:</p>
+		<blockquote>
+			<p style="margin-bottom: -5px;" align="left">1) Insert a ' (apostrophe) 
+character at the beginning of each cell's value for that column in the EXCEL 
+file -- that should let Jet (ACCESS) treat that column's values as text and not 
+numeric.</p>
+			<p style="margin-bottom: -5px;" align="left">2) Insert a dummy row of data as the first row, where 
+the dummy row contains nonnumeric characters in the cell in that column -- that 
+should let Jet (ACCESS) treat that column's values as text and not numeric.</p>
+			<p style="margin-bottom: -5px;" align="left">3) Create a blank table into which 
+	you will import the spreadsheet's data. For the field that will receive the 
+	numeric data, make its data type "Text". Jet (ACCESS) then will "honor" the 
+	field's datatype when it does the import.</p>
+		</blockquote>
+		<p style="margin-bottom: -5px;" align="left">The truncated text string that you see is because Jet (ACCESS) sees only "short 
+text" (text strings no longer than 255 characters) values in the first 8 - 25 
+rows of data in the EXCEL sheet, even though you have longer text farther down 
+the rows. What ACCESS and Jet are doing is assuming that the "text" data 
+actually are Text data type, not Memo data type. One of these suggestions should 
+fix the problem:</p>
+		<blockquote>
+			<p style="margin-bottom: -5px;" align="left">1) Insert a dummy row of data as the first row, where the dummy row contains a 
+text string longer than 255 characters in the cell in that column -- that should 
+let Jet (ACCESS) treat that column's values as memo and not text.</p>
+			<p style="margin-bottom: -5px;" align="left">2) Create a blank table into which 
+	you will import the spreadsheet's data. For the field that will receive the 
+	"memo" data, make its data type "Memo". Jet (ACCESS) then will "honor" the 
+	field's datatype when it does the import.</p>
+		</blockquote>
+		<p style="margin-bottom: -5px;" align="left">It's possible to force Jet to scan all the rows and not guess the data type 
+based on just the first few rows. See this 
+		<a target="_blank" href="supp/External%20Data%20-%20Mixed%20Data%20Types.htm">article</a> for information about the 
+registry key (see TypeGuessRows and MaxScanRows information). There are some 
+		reports by others that this registry key may not work as expected when 
+		using Windows XP SP3 or when using ACCESS 2007.</span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table75" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<b><font face="Arial" size="2">
+				       
+				<font size="4"><a name="CreateExportParam"></a></font>
+		</font>
+				</b>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<hr color="#0443FF" size="1">
+
+<p style="margin-bottom: -5px;" align="left">
+<u><b><font size="4">Create and Export a 
+Parameter Query to EXCEL file via TransferSpreadsheet</font></b></u></p>
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to generate "on the fly" a query that uses one or more controls on 
+an open form as parameters, and then export that query to an EXCEL file. This 
+example concatenates the parameter values into the generated SQL statement and 
+then saves the query so that it can be exported. The query then is deleted after 
+the export is completed.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim dbs As DAO.Database<br>Dim qdfTemp As DAO.QueryDef<br>Dim strSQL As String, strQDF As String<br>Set dbs = CurrentDb</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Replace <i>NameOfTableOrQuery</i> with the real name of the table or 
+query, replace <i>NameOfForm</i> with the <br>
+		' real name of the form, and replace <i>ADateControlOnForm</i> and <i>AnotherDateControlOnForm</i> with the real 
+		<br>
+		' names of the controls on that form</font><br><font color="#000080">strSQL = "SELECT NameOfTableOrQuery.* FROM NameOfTableOrQuery " &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"WHERE NameOfTableOrQuery.FieldName &gt;= " &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Format(Forms!NameOfForm!ADateControlOnForm.Value,"\#mm\/dd\/yyyy\#") &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+" And NameOfTableOrQuery.FieldName &lt;=" &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Format(Forms!NameOfForm!AnotherDateControlOnForm.Value,"\#mm\/dd\/yyyy\#") &amp; 
+"';"</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">strQDF = "_TempQuery_"<br>Set qdfTemp = dbs.CreateQueryDef(strQDF, strSQL)<br>qdfTemp.Close<br>Set qdfTemp = Nothing</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Replace <i>C:\MyFolderName\MyFileName.xls</i> with the real path and 
+filename for the EXCEL file that is to contain the exported data</font><br>
+		<font color="#000080">DoCmd.TransferSpreadsheet acExport, acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strQDF,"C:\MyFolderName\MyFileName.xls"</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">dbs.QueryDefs.Delete strQDF<br>dbs.Close<br>Set dbs = Nothing</font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table76" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<b><font face="Arial" size="2">
+				       
+				<font size="4"><a name="FilterExportSepFiles"></a></font>
+		</font>
+				</b>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><b><font size="4">Create a Query and 
+Export multiple "filtered" versions of a Query (based on data in another 
+table) to separate EXCEL files via TransferSpreadsheet (DAO method)</font></b></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to create a temporary query, get list of filtering values, and then 
+loop through the list to filter various data and export each filtered query to 
+separate EXCEL files. In this sample code, the employees assigned to each 
+manager are exported to separate EXCEL files, one file for each manager.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">Dim qdf As DAO.QueryDef<br>Dim dbs As DAO.Database<br>Dim rstMgr As DAO.Recordset<br>Dim strSQL As String, strTemp As String, strMgr As String<br>
+		<br>Const strQName As String = "zExportQuery"<br><br>Set dbs = CurrentDb</font><br>
+		<br><font color="#008000">' Create temporary query that will be used for exporting data; we give it a dummy SQL statement initially 
+		<br>
+		' (this name will be changed by the code to conform to each manager's identification)</font><br>
+		<font color="#000080">strTemp = dbs.TableDefs(0).Name<br>strSQL = "SELECT * FROM [" &amp; strTemp &amp; "] WHERE 1=0;"<br>Set qdf = dbs.CreateQueryDef(strQName, strSQL)<br>qdf.Close<br>strTemp = strQName<br>
+		</font>
+		<br><font color="#008000">' Code to set strSQL needs to be changed to conform to your database design --
+		<i>ManagerID</i> and <i>EmployeesTable</i> <br>
+		' need to be changed to your table and field names. Get list of ManagerID values -- note: replace my generic table 
+		<br>
+		' and field names ' with the real names of the <i>EmployeesTable</i> table and the 
+		<i>ManagerID</i> field </font><br>
+		<font color="#000080">strSQL = "SELECT DISTINCT ManagerID FROM EmployeesTable;"<br>Set rstMgr = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbReadOnly)</font><br>
+		<br><font color="#008000">' Now loop through list of ManagerID values and create a query for each ManagerID so that the data can be 
+		<br>
+		' exported -- the code assumes that the actual names of the managers are in a lookup table -- again, replace 
+		<br>
+		' generic names with real names of tables and fields</font><br>
+		<font color="#000080">If rstMgr.EOF = False And rstMgr.BOF = False Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rstMgr.MoveFirst<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do While rstMgr.EOF = False</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Code to set strMgr needs to be changed to conform to your database design --
+		<i>ManagerNameField</i>, <i>ManagersTable</i>, <br>
+		' and <i>ManagerID</i> need to be changed to your table and field names 
+		to be changed to your table and field names</font><br>
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strMgr = 
+DLookup("ManagerNameField", "ManagersTable", _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+"ManagerID = " &amp; rstMgr!ManagerID.Value)</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Code to set strSQL needs to be changed to conform to your database design --
+		<i>ManagerID</i> and <i>EmployeesTable</i> <br>
+		' need to be changed to your table and field names.</font><br>
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strSQL = 
+"SELECT * FROM EmployeesTable WHERE " &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+"ManagerID = " &amp; rstMgr!ManagerID.Value &amp; ";"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set qdf = 
+dbs.QueryDefs(strTemp)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qdf.Name = 
+"q_" &amp; strMgr<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTemp = 
+qdf.Name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qdf.SQL = 
+strSQL<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qdf.Close<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set qdf = 
+Nothing</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Replace <i>C:\FolderName\</i> with actual path</font><br>
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+DoCmd.TranferSpreadsheet acExport, acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+strTemp, "C:\FolderName\" &amp; strMgr &amp; Format(Now(), _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+"ddMMMyyy_hhnn") &amp; ".xls"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rstMgr.MoveNext<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loop<br>End If<br><br>rstMgr.Close<br>Set rstMgr = Nothing<br>
+		<br>dbs.QueryDefs.Delete strTemp<br>dbs.Close<br>Set dbs = Nothing</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table77" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<b><font face="Arial" size="2">
+				       
+				<font size="4"><a name="FilterExportSameFile"></a></font>
+		</font>
+				</b>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><b><font size="4">Create a Query and 
+Export multiple "filtered" versions of a Query (based on data in another 
+table) to separate Worksheets within one EXCEL file via TransferSpreadsheet</font></b></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to create a temporary query, get list of filtering values, and then 
+loop through the list to filter various data and export each filtered query to 
+separate EXCEL files. In this sample code, the employees assigned to each 
+manager are exported to separate worksheets within the same EXCEL file, one 
+worksheet for each manager.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">Dim qdf As DAO.QueryDef<br>Dim dbs As DAO.Database<br>Dim rstMgr As DAO.Recordset<br>Dim strSQL As String, strTemp As String, strMgr As String</font><br>
+		<br><font color="#008000">' Replace <i>PutEXCELFileNameHereWithoutdotxls</i> with actual EXCEL filename without the .xls extension<br>' (for example, MyEXCELFileName, BUT NOT MyEXCELFileName.xls)</font><br>
+		<font color="#000080">Const strFileName As String = "PutEXCELFileNameHereWithoutdotxls"<br>
+		Const strQName As String = "zExportQuery"<br><br>Set dbs = CurrentDb</font><br>
+		<br><font color="#008000">' Create temporary query that will be used for exporting data; we give it a dummy SQL statement 
+		<br>
+		' initially (this name will be changed by the code to conform to each manager's identification)</font><br>
+		<font color="#000080">strTemp = dbs.TableDefs(0).Name<br>strSQL = "SELECT * FROM [" &amp; strTemp &amp; "] WHERE 1=0;"<br>Set qdf = dbs.CreateQueryDef(strQName, strSQL)<br>qdf.Close<br>strTemp = strQName<br>
+		</font>
+		<br><font color="#008000">' Code to set strSQL needs to be changed to conform to your database design --
+		<i>ManagerID</i> and <i><br>
+		' EmployeesTable</i> need to be changed to your table and field names. Get list of ManagerID
+		<br>
+		' values -- note: replace my generic table and field names with the real names of the
+		<i>EmployeesTable</i> <br>
+		' table and the <i>ManagerID</i> field</font><br><font color="#000080">strSQL = "SELECT DISTINCT ManagerID FROM EmployeesTable;"<br>Set rstMgr = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbReadOnly)</font><br>
+		<br><font color="#008000">' Now loop through list of ManagerID values and create a query for each ManagerID so that the data can 
+		<br>
+		' be exported -- the code assumes that the actual names of the managers are in a lookup table -- again, 
+		<br>
+		' replace generic names with real names of tables and fields</font><br>
+		<font color="#000080">If rstMgr.EOF = False And rstMgr.BOF = False Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rstMgr.MoveFirst<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do While rstMgr.EOF = False</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Code to set strMgr needs to be changed to conform to your database design --
+		<i>ManagerNameField</i>, <i><br>
+		' ManagersTable</i>, and <i>ManagerID</i> need to be changed to your table and field names be changed to 
+		<br>
+		' your table and field names</font><br><font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strMgr = 
+DLookup("ManagerNameField", "ManagersTable", _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+"ManagerID = " &amp; rstMgr!ManagerID.Value)</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Code to set strSQL needs to be changed to conform to your database design -- ManagerID, 
+		<br>
+		' EmployeesTable need to be changed to your table and field names</font><br>
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strSQL = 
+"SELECT * FROM EmployeesTable WHERE " &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+"ManagerID = " &amp; rstMgr!ManagerID.Value &amp; ";"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set qdf = 
+dbs.QueryDefs(strTemp)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qdf.Name = 
+"q_" &amp; strMgr<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTemp = 
+qdf.Name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qdf.SQL = 
+strSQL<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qdf.Close<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set qdf = 
+Nothing</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Replace <i>C:\FolderName\</i> with actual path</font><br>
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+DoCmd.TranferSpreadsheet acExport, acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+strTemp, "C:\FolderName\" &amp; strFileName &amp; ".xls"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rstMgr.MoveNext<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loop<br>End If<br><br>rstMgr.Close<br>Set rstMgr = Nothing<br>
+		<br>dbs.QueryDefs.Delete strTemp<br>dbs.Close<br>Set dbs = Nothing</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table78" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="WriteRstFile"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>Write Data From a Recordset into an EXCEL Worksheet using 
+Automation</b></font></u></p>
+
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to open a recordset for the data that are to be written into a 
+worksheet in an EXCEL file (for this example, the EXCEL file must already exist, 
+and the worksheet must already exist in the EXCEL file), and then to loop 
+through the recordset and write each field's value into a cell in the worksheet, 
+with each record being written into a separate row in the worksheet. The 
+starting cell for the EXCEL worksheet is specified in the code; after that, the 
+data are written into contiguous cells and rows. This code example uses "late 
+binding" for the EXCEL automation.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim lngColumn As Long<br>Dim xlx As Object, xlw As Object, xls As Object, xlc As Object<br>Dim dbs As DAO.Database<br>Dim rst As DAO.Recordset<br>Dim blnEXCEL As Boolean, blnHeaderRow As Boolean<br>
+		<br>blnEXCEL = False</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' 
+Replace <i>True</i> with <i>False</i> if you do not want the first row of the worksheet to be a header 
+		<br>
+		' row (the names of the fields from the recordset)</font><br>
+		<font color="#000080">blnHeaderRow = True<br>
+		</font>
+		<br><font color="#008000">' Establish an EXCEL application object</font><br>
+		<font color="#000080">On Error Resume Next<br>Set xlx = GetObject(, "Excel.Application")<br>If Err.Number &lt;&gt; 0 Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set xlx = CreateObject("Excel.Application")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blnEXCEL = True<br>End If<br>Err.Clear<br>On Error GoTo 0</font><br>
+		<br><font color="#008000">' Change <i>True</i> to <i>False</i> if you do not want 
+the workbook to be visible when the code is running</font><br>
+		<font color="#000080">xlx.Visible = True<br>
+		</font>
+		<br><font color="#008000">' Replace <i>C:\Filename.xls</i> with the actual path and filename of the EXCEL file into which you will write the data</font><br>
+		<font color="#000080">Set xlw = xlx.Workbooks.Open("C:\Filename.xls")</font><br>
+		<br><font color="#008000">' Replace <i>WorksheetName</i> with the actual name of the worksheet in the EXCEL file<br>' (note that the worksheet must already be in the EXCEL file).</font><br>
+		<font color="#000080">Set xls = xlw.Worksheets("WorksheetName")</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Replace <i>A1</i> with the cell reference into which the first data value is to be written</font><br>
+		<font color="#000080">Set xlc = xls.Range("A1") ' this is the first cell into which data go<br>
+		<br>Set dbs = CurrentDb()<br></font><br><font color="#008000">' Replace <i>QueryOrTableName</i> with the real name of the table or query whose data are to be written into the worksheet</font><br>
+		<font color="#000080">Set rst = dbs.OpenRecordset("QueryOrTableName", dbOpenDynaset, dbReadOnly)<br>
+		<br>If rst.EOF = False And rst.BOF = False Then</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rst.MoveFirst<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If blnHeaderRow = True Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For lngColumn 
+= 0 To rst.Fields.Count - 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xlc.Offset(0, lngColumn).Value = rst.Fields(lngColumn).Name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next 
+lngColumn <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set xlc = 
+xlc.Offset(1,0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If</font><br><br>
+		<font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' write data to worksheet</font><br>
+		<font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do While rst.EOF = False<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For lngColumn 
+= 0 To rst.Fields.Count - 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xlc.Offset(0, lngColumn).Value = rst.Fields(lngColumn).Value<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next 
+lngColumn<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rst.MoveNext<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set xlc = 
+xlc.Offset(1,0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loop</font></font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">End If<br>
+		<br>rst.Close<br>Set rst = Nothing</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">dbs.Close<br>Set dbs = Nothing</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#008000">' Close the EXCEL file 
+while saving the file, and clean up the EXCEL objects</font><br>
+		<font color="#000080">Set xlc = Nothing<br>Set xls = Nothing<br>xlw.Close True&nbsp;&nbsp; ' close the EXCEL file and save the new data<br>Set xlw = Nothing<br>If blnEXCEL = True Then xlx.Quit<br>Set xlx = Nothing</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table79" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<b><font face="Arial" size="2">
+				       
+<font size="4"><a name="ExpCopyFromRst"></a></font>
+		</font>
+				</b>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u>
+<font size="4"><b>Write Data From a Recordset into an EXCEL Worksheet using 
+EXCEL's CopyFromRecordset</b></font></u></p>
+		<p style="margin-bottom: -5px;" align="left" class="auto-style1">
+		<span class="auto-style4">Generic code to open a recordset for the data that are to be written into a 
+worksheet in an EXCEL file (for this example, the EXCEL file does not already exist), 
+and then to use EXCEL's CopyFromRecordset method to copy the data from the 
+recordset into the first worksheet in that EXCEL file, 
+with each record being written into a separate row in the worksheet. The code 
+allows for a header row to be created in the worksheet if this is desired. This code example uses "late 
+binding" for the EXCEL automation.</p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font color="#000080"><span class="auto-style1">Dim lngColumn As Long<br>Dim xlx As Object, xlw As Object, xls As Object, xlc As Object<br>Dim dbs As DAO.Database<br>Dim rst As DAO.Recordset<br>Dim strPathFileName As String, strWorksheetName As String<br>Dim strRecordsetDataSource As String<br>Dim blnEXCEL As Boolean, blnHeaderRow As Boolean<br>
+		<br>blnEXCEL = False<br></span></font><span class="auto-style1"><br><font color="#008000">' Replace <i>C:\Filename.xls</i> with the actual path and 
+filename that will be used to save the <br>
+		' new EXCEL file into which you will write the data</font><br>
+		<font color="#000080">strPathFileName = "C:\Filename.xls"<br>
+		</font>
+		<br><font color="#008000">' Replace <i>QueryOrTableName</i> with the real name of 
+the table or query whose data are to be written into the worksheet</font><br>
+		<font color="#000080">strRecordsetDataSource = "QueryOrTableName"</font><br>
+		<br><font color="#008000">' Replace <i>True</i> with <i>False</i> if you do not want 
+the first row of&nbsp; the worksheet to be a header <br>
+		' row (the names of the fields from the recordset)</font><br>
+		<font color="#000080">blnHeaderRow = True</font><br>
+		<br><font color="#008000">' Establish an EXCEL application object</font><br>
+		<font color="#000080">On Error Resume Next<br>Set xlx = GetObject(, "Excel.Application")<br>If Err.Number &lt;&gt; 0 Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set xlx = CreateObject("Excel.Application")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blnEXCEL = True<br>End If<br>Err.Clear<br>On Error GoTo 0<br>
+		</font>
+		<br><font color="#008000">' Change <i>True</i> to <i>False</i> if you do not want 
+the workbook to be visible when the code is running</font><br>
+		<font color="#000080">xlx.Visible = True</font><br>
+		<br><font color="#008000">' Create a new EXCEL workbook</font><br>
+		<font color="#000080">Set xlw = xlx.Workbooks.Add</font><br>
+		<br><font color="#008000">' Rename the first worksheet in the EXCEL file to be the 
+first 31characters of the string in <br>
+		' the strRecordsetDataSource variable</font><br><font color="#000080">Set xls = xlw.Worksheets(1)<br>xls.Name = Trim(Left(strRecordsetDataSource, 31))<br>
+		</font>
+		<br><font color="#008000">' Replace <i>A1</i> with the cell reference of the first 
+cell into which the headers will be written <br>
+		' (<i>blnHeaderRow = True</i>), or into which the data
+		values will be written (<i>blnHeaderRow = False</i>)</font><br>
+		<font color="#000080">Set xlc = xls.Range("A1")<br>
+		<br>Set dbs = CurrentDb()<br><br>Set rst = dbs.OpenRecordset(strRecordsetDataSource, dbOpenDynaset, dbReadOnly)<br>
+		<br>If rst.EOF = False And rst.BOF = False Then</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<font color="#008000">' Write the header row to 
+worksheet</font><br><font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If blnHeaderRow = True Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For lngColumn 
+= 0 To rst.Fields.Count - 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xlc.Offset(0, lngColumn).Value = rst.Fields(lngColumn).Name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next 
+lngColumn<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set xlc = 
+xlc.Offset(1,0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If</font><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<font color="#008000">' copy the recordset's data 
+to worksheet</font><br><font color="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xlc.CopyFromRecordset rst<br>End If<br>
+		<br>rst.Close<br>Set rst = Nothing<br>dbs.Close<br>Set dbs = Nothing<br>
+		</font>
+		<br><font color="#008000">' Save and close the EXCEL file, and clean up the EXCEL 
+objects</font><br></span><font color="#000080"><span class="auto-style1">Set xlc = Nothing<br>Set xls = Nothing<br>xlw.SaveAs strPathFileName<br>xlw.Close False<br>Set xlw = Nothing<br>If blnEXCEL = True Then xlx.Quit<br>Set xlx = Nothing</span></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table80" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ExpBrowseFile"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Browse to a single EXCEL File and
+Export Data to that EXCEL File via TransferSpreadshee</b></font><b><font size="4">t</font></b></u></p>
+
+		<p style="margin-bottom: -5px;" align="left"><span class="auto-style4">
+		<span class="auto-style1">Generic code to browse to a single EXCEL file, and then to export the data to 
+that EXCEL 
+file. This generic method uses the Windows API to browse to a single file the 
+code for this API (was written by Ken Getz).</p>
+		<p style="margin-bottom: -5px;" align="left">First step is to paste all 
+		the <a target="_blank" href="http://www.mvps.org/access/api/api0001.htm">Getz's code</a> into a new 
+		module in your database. Be sure to give the module a unique name (<i>i.e.</i>, it cannot 
+have the same name as any other module, any other function, or any other 
+subroutine in the database). Then use this generic code to allow the user to 
+select the EXCEL file to which the data are to be exported.</span></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">Dim strPathFile As String<br>Dim strTable As String, strBrowseMsg As String<br>Dim strFilter As String<br>Dim blnHasFieldNames As Boolean</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style1">strBrowseMsg = "Select the EXCEL file:"<br>
+		<br>strFilter = ahtAddFilterItem(strFilter, "Excel Files (*.xls)", "*.xls")<br>strPathFile = ahtCommonFileOpenSave( _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Filter:=strFilter, OpenFile:=False, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DialogTitle:=strBrowseMsg, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flags:=ahtOFN_HIDEREADONLY)</font></p>
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" class="auto-style1">
+		<font color="#000080">If strPathFile = "" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "No file was selected.", vbOK, "No 
+Selection"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>End If<br></font><br>
+		<font color="#008000">' Replace <i>tablename</i> with the real name of the table 
+from which the data are to be exported</font><br><font color="#000080">strTable = "tablename"<br><br>DoCmd.TransferSpreadsheet acExport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable, 
+strPathFile</font></font></span></p>
+		<p style="margin-bottom: -5px;" align="left">&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table81" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2">
+				       
+				<b><font size="4"><a name="ExpBrowseFolder"></a></font></b>
+		</font>
+			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+<p style="margin-bottom: -5px;" align="left">
+<u><font size="4"><b>
+Browse to a single Folder and
+Export Data to a New EXCEL File in that Folder via TransferSpreadsheet</b></font></u></p>
+		<p style="margin-bottom: -5px;" align="left"><span class="auto-style4">
+		<span class="auto-style1">Generic code to browse to a single folder, and then to import the data from the first (or only) worksheet in all EXCEL 
+files that are located within that folder. All of the EXCEL files' 
+worksheets must have the data in the same layout and format. This generic method 
+uses the Windows API to browse to a single folder; the code for this API (was written by Terry Kreft).</p>
+		</span></span>
+		<p align="left" class="auto-style11"><font size="3"><br></font>
+		<span class="auto-style4">
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font face="Arial" size="3">First step is to paste all the 
+		<a target="_blank" href="http://www.mvps.org/access/api/api0002.htm">Kreft's code</a>&nbsp; into a new 
+		module in your database. Be sure to give the module a unique name (<i>i.e.</i>, it cannot 
+have the same name as any other module, any other function, or any other 
+subroutine in the database). Then use this generic code to allow the user to 
+select the folder in which the EXCEL files are located.</font></span></font><font size="3"><br>
+		<br></font></p>
+		</span>
+		<p style="margin-bottom: -5px;" align="left" class="auto-style4">
+		<font size="2" color="#000080" class="auto-style1">
+		<span class="auto-style5">D</span><font class="auto-style5" size="3">im strPathFile As String, strFile As String, strPath As String<br>Dim strTable As String, strBrowseMsg As String<br>Dim blnHasFieldNames As Boolean<br>
+		<br>strBrowseMsg = "Select the folder where the new EXCEL file will be created:"<br>strPath = BrowseFolder(strBrowseMsg)</font></font></p>
+		<p style="margin-bottom: -5px;" align="left" class="auto-style4">
+		<font size="2" class="auto-style5">
+		<font color="#000080">If strPath = "" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox "No folder was selected.", vbOK, "No 
+Selection"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>End If</font><br><br>
+		<font color="#008000">' Replace <i>filename.xls</i> with the real name of the 
+EXCEL file that is to be created and into which the data are to be exported.</font><br>
+		<font color="#000080">strFile = "filename.xls"</font><br>
+		<br><font color="#008000">' Replace <i>tablename</i> with the real name of the table 
+from which the data are to be exported.<br>
+		</font><font color="#000080">strTable = "tablename"</font></font></p>
+		<span class="auto-style4">
+		<p style="margin-bottom: -5px;" align="left">
+		<font size="2" color="#000080" class="auto-style5">strPathFile = strPath &amp; "\" &amp; strFile<br>
+		<br>DoCmd.TransferSpreadsheet acExport, 
+acSpreadsheetTypeExcel9, _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strTable, 
+strPathFile</font></span></p>
+		<p style="margin-bottom: -5px;" align="left"><br>
+&nbsp;</p>
+
+		<hr color="#0443FF" size="1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table91" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<b><font size="4" face="Arial"><a name="fso1"></a></font></b>			</span></font></u><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="">
+		<br>
+
+		</font>
+
+			</span>
+		</font>
+			</span>
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font face="">
+				       
+		<font size="4" face="Arial">
+		<u><b>Exporting Access table as a text-delimited file (FSO method)</b></u></font></p>
+				       
+		<p><span class="auto-style8">The 2 example below de</span></font><span class="auto-style4"><font size="2" class="auto-style1">monstrate the use of <b>FSO</b> and 
+		<b>DoCmd</b> objects to export Access table as a 
+		text-delimited file. <br>
+		</font></span><font face="">
+				       
+        <span class="auto-style8">You need to reference Micro`soft Scripting Runtime library in order to 
+		run the FileSystemObject (FSO) and its related objects. FSO provides a 
+		simpler way for us to deal with text-oriented data.</span></p>
+		<p><font face="Arial" size="2">
+				       
+		<font size="2" color="#000080" class="auto-style1">
+		<span class="auto-style4">Dim fso As FileSystemObject<br>
+		Set fso = New FileSystemObject<br>
+		<br>
+		</span>
+		</font>
+		<span class="auto-style8">
+		<font color="#008000">' delete output file 
+		if it already exists</font></span><font size="2" color="#000080" class="auto-style1"><br class="auto-style4">
+		<span class="auto-style4">If fso.FileExists(&quot;D:\MyData\material_status.csv&quot;) Then<br>
+&nbsp;&nbsp;&nbsp; fso.DeleteFile &quot;D:\MyData\material_status.csv&quot;<br>
+		End If<br>
+		<br>
+		On Error Resume Next<br>
+		DoCmd.<b>TransferText</b> acExportDelim, &quot;material_Import_Specification&quot;, 
+		_<br>
+&nbsp;&nbsp; &quot;tbl_materialstatus&quot;, 
+		&quot;D:\MyData\material_status.csv&quot;, 
+		True<br>
+		If Err.Number &lt;&gt; 0 Then<br>
+&nbsp;&nbsp;&nbsp; MsgBox &quot;An Error occured during the transfer (&quot; &amp; Err.Description &amp; 
+		&quot;)&quot;<br>
+		End If<br>
+		<br>
+		On Error GoTo 0 </span> </font><span class="auto-style8">
+		<font color="#008000">&nbsp; ' resume 
+		normal error handling</font></span><font face=""><font size="2" color="#000080"><br>
+		&nbsp;</font></p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table84" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<p>
+		<span class="auto-style8">For this second example, you need to reference 
+		both Microsoft Scripting Runtime library (to run FSO 
+		and its related objects), and
+		&nbsp;Microsoft ActiveX Data Objects 
+		2.x Library. Its p</span></font><span class="auto-style4"><span class="auto-style1">urpose 
+		is to use FSO 
+		and ADO objects to export Access table as a text-delimited file.</span></p>
+		</span>
+		<p>
+		<font size="2" color="#000080" class="auto-style1">
+		<span class="auto-style4">Dim fso As FileSystemObject<br>
+		Dim txt As TextStream<br>
+		Dim rs As ADODB.Recordset<br>
+		Dim str As String<br>
+		<br>
+		Set fso = New FileSystemObject&nbsp;&nbsp;
+		</span>
+		</font><font face=""><font color="#008000"><span class="auto-style8">' new FSO object to 
+		create TextStream file for writing data to external disk file</span></font><font size="2" color="#000080" class="auto-style1"><br class="auto-style4">
+		<span class="auto-style4">Set txt = fso.CreateTextFile(&quot;D:\MyData\material_stockstatus.txt&quot;, True)<br>
+		Set rs = New ADODB.Recordset<br>
+		<br>
+		rs.ActiveConnection = CurrentProject.Connection<br>
+		rs.Open &quot;Select [PartNumber], [StandardCost], [QtyOnHand] From 
+		tbl_MaterialList&quot;, , _&nbsp; <br>
+&nbsp;&nbsp; adOpenForwardOnly, adLockReadOnly<br>
+		<br>
+		txt.WriteLine &quot;PartNumber, StandardCost, QtyOnHand&quot;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style8">' TextStream's 
+		WriteLIne to write column headers</span></font><font size="2" color="#000080"><span class="auto-style4"><span class="auto-style1"><br>
+		<br>
+		Do While Not rs.EOF<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		str = rs(&quot;PartNumber&quot;) &amp; &quot; &quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		str = str &amp; FormatCurrency(rs(&quot;StandardCost&quot;), , vbUseDefault) &amp; &quot; &quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		str = str &amp; FormatNumber(rs(&quot;QtyOnHand&quot;), 0, vbTrue, vbFalse, 
+		vbUseDefault)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		txt.WriteLine str&nbsp;
+		</span></span>
+		</font><font color="#008000"><span class="auto-style8">' TextStream's 
+		WriteLIne to output selected columns data to the text file</span></font><font size="2" color="#000080" class="auto-style1"><br class="auto-style4">
+		<span class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;
+		rs.MoveNext<br>
+		Loop<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style8">' clean up objects</span></font><font size="2" color="#000080" class="auto-style1"><br class="auto-style4">
+		<span class="auto-style4">rs.Close<br>
+		txt.Close</span></font></p>
+		<p>
+		&nbsp;</p><font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table83" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right">
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<font face="Arial" size="2" color="#800000">
+<u>
+<font face="">
+				       
+				<b><font size="4" face="Arial"><a name="fso2"></a></font></b>			</font></u>
+				</font>
+			</span></font><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</font>
+		</font>
+		<align="left"><font size="4" face="Arial">
+		<u><b><br>
+		Importing a Text File to populate an Access Table (FSO method)</b></u></font></p>
+		<font size="2" class="auto-style4">
+				       
+		<p><font size="2" class="auto-style1"><font color="#000080">Dim fso As FileSystemObject<br>
+		Dim txt As TextStream<br>
+		Dim rs As ADODB.Recordset<br>
+		Dim Fields() As String, Table As String, Types() As String<br>
+		Dim s As String, x() As String<br>
+		Dim i As Integer<br>
+		<br>
+		Set fso = New FileSystemObject<br>
+		Set txt = fso.OpenTextFile(&quot;D:\AccessData\material_stockstatus.txt&quot;,
+		ForReading, False)<br>
+		</font>
+		<br>
+		<font color="#008000">' get table name</font><br>
+		<font color="#000080">Table = txt.ReadLine<br>
+		<br>
+		Set rs = New ADODB.Recordset<br>
+		rs.ActiveConnection = CurrentProject.Connection<br>
+		rs.Open &quot;[tbl_weekly_materialstatus]&quot;, , adOpenDynamic, adLockOptimistic<br>
+		</font>
+		<br>
+		<font color="#008000">' get field names</font><br>
+		<font color="#000080">s = txt.ReadLine<br>
+		x = Split(s, &quot;,&quot;)<br>
+		ReDim Fields(UBound(x))<br>
+		<br>
+		For i = 0 To UBound(x)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Fields(i) = GetString(x(i))<br>
+		Next i</font><br>
+		<br>
+		<font color="#008000">' get field types</font><br>
+		<font color="#000080">s = txt.ReadLine<br>
+		x = Split(s, &quot;,&quot;)<br>
+		ReDim Types(UBound(x))<br>
+		<br>
+		For i = 0 To UBound(x)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Types(i) = GetString(x(i))<br>
+		Next i<br>
+		</font>
+		<br>
+		<font color="#008000">' load data</font><br>
+		<font color="#000080">Do While Not txt.AtEndOfStream<br>
+		s = txt.ReadLine<br>
+		x = Split(s, &quot;,&quot;)<br>
+		rs.AddNew<br>
+		<br>
+		For i = 0 To UBound(Fields)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Select Case Types(i)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Case &quot;PartNumber&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		rs.Fields(Fields(i)) = GetDate(x(i))<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Case &quot;ReleaseDate&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		rs.Fields(Fields(i)) = GetDouble(x(i))<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Case &quot;StandardCost&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		rs.Fields(Fields(i)) = GetString(x(i))<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Case &quot;QtyOnHand&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		rs.Fields(Fields(i)) = GetString(x(i))<br>
+		&nbsp;&nbsp;&nbsp;
+		End Select<br>
+		Next i<br>
+		<br>
+		rs.Update<br>
+		Loop<br>
+		<br>
+		rs.Close<br>
+		txt.Close</font></font></p>
+		</font>
+			</span>
+	  <font face="">
+				       
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table62" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</td>
+       </tr>
+</table>
+
+
+<table border="0" width="990" id="table5" cellspacing="0" cellpadding="2" height="53">
+<tr>
+<td align="center" width="986">
+
+<p>
+<br>
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  --> 
+
+
+<br><br>
+	<span class="auto-style8">This site  
+	was created in February 2007<br>by William&nbsp;Tan</span></td>	
+</tr>
+</table>
+</body>
+</html>
