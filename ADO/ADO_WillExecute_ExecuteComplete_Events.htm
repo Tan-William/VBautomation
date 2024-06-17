@@ -1,0 +1,475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO WillExecute and ExecuteComplete Events</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO WillExecute and ExecuteComplete Events</font></h1>
+		<p>An event is a subroutine that can be called automatically after a 
+		specific operation has occurred. </p>
+		<ul>
+			<li>The <b>WillExecute</b> event can be fired just before a call to 
+			objcomm.Execute, objconn.Execute, or objrs.Open.</li>
+			<li>The <b>ExecuteComplete</b> event can be fired after a call to 
+			objcomm.Execute, objconn.Execute, objrs.Open, objrs.Requery, or 
+			objrs.NextRecordset is completed.</li>
+		</ul>
+		<h3>Syntax </h3>
+		<table class="ex" id="table15" width="63%" border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td valign="top">
+				<pre>WillExecute src,cursortyp,locktyp,options,status,objcomm,objrs,objconn</pre>
+				<pre>ExecuteComplete recaffected,objerror,status,objcomm,objrs,objconn</pre>
+				</td>
+			</tr>
+		</table>
+		&nbsp;<h2>Example: WillExecute</h2>
+		<div class="Entity_CodeExample">
+			<code class="CodeSample"><font color="green">' Use the WithEvents 
+			keyword to designate that events<br>
+			' can be handled by this Connection object<br>
+			</font><font color="#0066cc">Dim WithEvents objConn As 
+			ADODB.Connection</font><br>
+			<br>
+			<font color="green">' Note how the object name, objConn, is 
+			incorporated into the event Sub name<br>
+			</font><font color="#0066cc">Private Sub </font><b>
+			<font color="#FF6600">objConn_WillExecute</font></b><font color="#0066cc">(&nbsp;Source 
+			As String, _<br>
+			&nbsp;&nbsp;&nbsp;CursorType As ADODB.CursorTypeEnum, _<br>
+			&nbsp;&nbsp;&nbsp;LockType As ADODB.LockTypeEnum, _<br>
+			&nbsp;&nbsp;&nbsp;Options As Long _<br>
+			&nbsp;&nbsp;&nbsp;adStatus As ADODB.EventStatusEnum, _<br>
+			&nbsp;&nbsp;&nbsp;ByVal pCommand As ADODB.Command&nbsp;, _<br>
+			&nbsp;&nbsp;&nbsp;ByVal pRecordset As ADODB.Recordset&nbsp;, _<br>
+			&nbsp;&nbsp;&nbsp;ByVal pConnection As ADODB.Connection&nbsp;)</font><br>
+			<br>
+			<font color="green">' place any code you desire here, for example<br>
+			</font><font color="#0066cc">If LockType = adLockReadOnly Then<br>
+			&nbsp;&nbsp;&nbsp;Print &quot;The Lock Type is read-only&quot;<br>
+			End If<br>
+			End Sub</font></code></div>
+		<h2>Example: ExecuteComplete</h2>
+		<p><code class="CodeSample"><font color="green">' Use the WithEvents 
+		keyword to designate that events<br>
+		' can be handled by this Connection object<br>
+		</font><font color="#0066cc">Dim WithEvents objConn As ADODB.Connection</font><br>
+		<br>
+		<font color="green">' Note how the object name, objConn, is incorporated 
+		into the event Sub name<br>
+		</font><font color="#0066cc">Private Sub </font><font color="#FF6600">
+		<b>objConn_ExecuteComplete</b></font><font color="#0066cc">(&nbsp;RecordsAffected 
+		As Long, _<br>
+		&nbsp;&nbsp;&nbsp;ByVal pError As ADODB.Error, _<br>
+		&nbsp;&nbsp;&nbsp;adStatus As ADODB.EventStatusEnum, _<br>
+		&nbsp;&nbsp;&nbsp;ByVal pCommand As ADODB.Command, _<br>
+		&nbsp;&nbsp;&nbsp;ByVal pRecordset As ADODB.Recordset, _<br>
+		&nbsp;&nbsp;&nbsp;ByVal pConnection As ADODB.Connection&nbsp;)</font><br>
+		<br>
+		<font color="green">' place any code you desire here, for example<br>
+		</font><font color="#0066cc">If adStatus = adStatusOK Then<br>
+		&nbsp;&nbsp;&nbsp;Print &quot;Records affected = &quot; &amp; RecordAffected<br>
+		Else<br>
+		&nbsp;&nbsp;&nbsp;Print &quot;ExecuteComplete Status = &quot; &amp; adStatus<br>
+		End If<br>
+		End Sub </font></code></p>
+		<p>&nbsp;</p>
+		<table class="ex" id="table16" width="87%" border="1" cellpadding="5">
+			<tr>
+				<th valign="top" width="10%" align="left">
+				<p align="center">Parameter</th>
+				<th valign="top" width="84%" align="left">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">src </td>
+				<td valign="top">A string that contains an SQL command or a 
+				stored procedure name      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">cursortyp </td>
+				<td valign="top">Specifies the type of cursor to be used. One of 
+				the <font color="#0066cc">CursorTypeEnum</font> values      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">locktyp </td>
+				<td valign="top">Specifies the type of lock to be used. One of 
+				the <font color="#0066cc">LockTypeEnum</font> values      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">options </td>
+				<td valign="top">One or more of the <font color="#0066cc">
+				CommandTypeEnum</font> or <font color="#0066cc">
+				ExecuteOptionEnum</font> values      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">recaffected </td>
+				<td valign="top">The number of records affected by the execution      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">objerror </td>
+				<td valign="top">An Error object that contains the errors that 
+				occurred
+      			<p><b>Note:</b> The EventStatusEnum value must be set to 
+				adStatusErrorsOccurred to create the Error object </td>
+			</tr>
+			<tr>
+				<td valign="top">status </td>
+				<td valign="top">An <font color="#0066cc">EventStatusEnum</font> 
+				value      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">objcomm </td>
+				<td valign="top">For <b>WillExecute</b>: Set to the Command 
+				object that was executed or to Nothing
+      			<p>For <b>ExecuteComplete</b>: The Command object that was 
+				executed</td>
+			</tr>
+			<tr>
+				<td valign="top">objrs </td>
+				<td valign="top">For <b>WillExecute</b>: Set to the Recordset 
+				object that resulted from the execution of the command or to 
+				Nothing
+      			<p>For <b>ExecuteComplete</b>: The Recordset object that is the 
+				result of the executed command</td>
+			</tr>
+			<tr>
+				<td valign="top">objconn </td>
+				<td valign="top">The Connection object that is associated with 
+				the execution of the command      
+    			</td>
+			</tr>
+		</table>
+		&nbsp;<a name="cursortypeenum"><h3>CursorTypeEnum Values</h3>
+		</a>
+		<p>Specifies the type of cursor used in a Recordset object.</p>
+		<table class="ex" id="table17" width="96%" border="1" cellpadding="5">
+			<tr valign="top" align="left">
+				<th width="19%">
+				<p align="center">Constant</th>
+				<th width="7%">Value</th>
+				<th width="69%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adOpenUnspecified</td>
+				<td align="center">-1</td>
+				<td>Does not specify the type of cursor.</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenForwardOnly</td>
+				<td align="center">0</td>
+				<td>Default. Uses a forward-only cursor. Identical to a static 
+				cursor, except that you can only scroll forward through records. 
+				This improves performance when you need to make only one pass 
+				through a Recordset.</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenKeyset</td>
+				<td align="center">1</td>
+				<td>Uses a keyset cursor. Like a dynamic cursor, except that you 
+				can't see records that other users add, although records that 
+				other users delete are inaccessible from your Recordset. Data 
+				changes by other users are still visible.</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenDynamic</td>
+				<td align="center">2</td>
+				<td>Uses a dynamic cursor. Additions, changes, and deletions by 
+				other users are visible, and all types of movement through the 
+				Recordset are allowed, except for bookmarks, if the provider 
+				doesn't support them.</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenStatic</td>
+				<td align="center">3</td>
+				<td>Uses a static cursor. A static copy of a set of records that 
+				you can use to find data or generate reports. Additions, 
+				changes, or deletions by other users are not visible.</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<a name="locktypeenum">
+		<h3>LockTypeEnum Values</h3>
+		</a>
+		<table class="ex" id="table18" width="96%" border="1" cellpadding="5">
+			<tr valign="top" align="left">
+				<th width="19%">Constant</th>
+				<th width="7%">Value</th>
+				<th width="70%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adLockUnspecified</td>
+				<td align="center">-1</td>
+				<td>Does not specify a type of lock. For clones, the clone is 
+				created with the same lock type as the original.</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockReadOnly</td>
+				<td align="center">1</td>
+				<td>Indicates read-only records. You cannot alter the data.</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockPessimistic</td>
+				<td align="center">2</td>
+				<td>Indicates pessimistic locking, record by record. The 
+				provider does what is necessary to ensure successful editing of 
+				the records, usually by locking records at the data source 
+				immediately after editing.</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockOptimistic</td>
+				<td align="center">3</td>
+				<td>Indicates optimistic locking, record by record. The provider 
+				uses optimistic locking, locking records only when you call the 
+				Update method.</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockBatchOptimistic</td>
+				<td align="center">4</td>
+				<td>Indicates optimistic batch updates. Required for batch 
+				update mode.</td>
+			</tr>
+		</table>
+		<br>
+		&nbsp;<a name="commandtypeenum"><h3>CommandTypeEnum Values</h3>
+		</a>
+		<table class="ex" id="table19" width="96%" border="1" cellpadding="5">
+			<tr valign="top" align="left">
+				<th width="19%">Constant</th>
+				<th width="7%">Value</th>
+				<th width="68%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adCmdUnspecified</td>
+				<td align="center">-1</td>
+				<td>Does not specify the command type argument.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdText</td>
+				<td align="center">1</td>
+				<td>Evaluates CommandText as a textual definition of a command 
+				or stored procedure call.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdTable</td>
+				<td align="center">2</td>
+				<td>Evaluates CommandText as a table name whose columns are all 
+				returned by an internally generated SQL query.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdStoredProc</td>
+				<td align="center">4</td>
+				<td>Evaluates CommandText as a stored procedure name.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdUnknown</td>
+				<td align="center">8</td>
+				<td>Indicates that the type of command in the CommandText 
+				property is not known.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdFile</td>
+				<td align="center">256</td>
+				<td>Evaluates CommandText as the file name of a persistently 
+				stored Recordset. Used with Recordset.Open or Requery only.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdTableDirect</td>
+				<td align="center">512</td>
+				<td>Evaluates CommandText as a table name whose columns are all 
+				returned. Used with Recordset.Open or Requery only. To use the 
+				Seek method, the Recordset must be opened with adCmdTableDirect. 
+				This value cannot be combined with the ExecuteOptionEnum value 
+				adAsyncExecute.</td>
+			</tr>
+		</table>
+		<br>
+		&nbsp;<a name="executeoptionenum"><h3>ExecuteOptionEnum Values</h3>
+		</a>
+		<table class="ex" id="table20" width="96%" border="1" cellpadding="5">
+			<tr valign="top" align="left">
+				<th width="15%">Constant</th>
+				<th width="6%">Value</th>
+				<th width="70%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adOptionUnspecified</td>
+				<td align="center">-1</td>
+				<td>Indicates that the command is unspecified.</td>
+			</tr>
+			<tr valign="top">
+				<td>adAsyncExecute</td>
+				<td align="center">16</td>
+				<td>Indicates that the command should execute asynchronously. 
+				This value cannot be combined with the CommandTypeEnum value 
+				adCmdTableDirect.</td>
+			</tr>
+			<tr valign="top">
+				<td>adAsyncFetch</td>
+				<td align="center">32</td>
+				<td>Indicates that the remaining rows after the initial quantity 
+				specified in the CacheSize property should be retrieved 
+				asynchronously.</td>
+			</tr>
+			<tr valign="top">
+				<td>adAsyncFetchNonBlocking</td>
+				<td align="center">64</td>
+				<td>Indicates that the main thread never blocks while 
+				retrieving. If the requested row has not been retrieved, the 
+				current row automatically moves to the end of the file. If you 
+				open a Recordset from a Stream containing a persistently stored 
+				Recordset, adAsyncFetchNonBlocking will not have an effect; the 
+				operation will be synchronous and blocking. 
+				adAsynchFetchNonBlocking has no effect when the adCmdTableDirect 
+				option is used to open the Recordset.</td>
+			</tr>
+			<tr valign="top">
+				<td>adExecuteNoRecords</td>
+				<td align="center">128</td>
+				<td>Indicates that the command text is a command or stored 
+				procedure that does not return rows (for example, a command that 
+				only inserts data). If any rows are retrieved, they are 
+				discarded and not returned. adExecuteNoRecords can only be 
+				passed as an optional parameter to the Command or Connection 
+				Execute method.</td>
+			</tr>
+			<tr valign="top">
+				<td>adExecuteStream</td>
+				<td align="center">256</td>
+				<td>Indicates that the results of a command execution should be 
+				returned as a stream. adExecuteStream can only be passed as an 
+				optional parameter to the Command Execute method.</td>
+			</tr>
+			<tr valign="top">
+				<td>adExecuteRecord</td>
+				<td align="center">512</td>
+				<td>Indicates that the CommandText is a command or stored 
+				procedure that returns a single row which should be returned as 
+				a Record object.</td>
+			</tr>
+		</table>
+		<br>
+		&nbsp;<a name="eventstatusenum"><h3>EventStatusEnum Values</h3>
+		</a>
+		<table class="ex" id="table21" width="96%" border="1" cellpadding="5">
+			<tr valign="top" align="left">
+				<th valign="top" width="21%">Constant</th>
+				<th valign="top" width="7%">Value</th>
+				<th valign="top" width="69%">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">adStatusOK</td>
+				<td valign="top" align="center">1</td>
+				<td valign="top">The operation that fired the event was 
+				successful</td>
+			</tr>
+			<tr>
+				<td valign="top">adStatusErrorsOccurred</td>
+				<td valign="top" align="center">2</td>
+				<td valign="top">The operation that fired the event failed</td>
+			</tr>
+			<tr>
+				<td valign="top">adStatusCantDeny</td>
+				<td valign="top" align="center">3</td>
+				<td valign="top">Cannot cancel the pending operation</td>
+			</tr>
+			<tr valign="top">
+				<td valign="top">adStatusCancel</td>
+				<td valign="top" align="center">4</td>
+				<td valign="top">Cancels the operation that fired the event</td>
+			</tr>
+			<tr>
+				<td valign="top">adStatusUnwantedEvent</td>
+				<td valign="top" align="center">5</td>
+				<td valign="top">Prevents subsequent notifications before the 
+				event method has finished executing</td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Property Object</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Property Object</font></h1>
+<p>The ADO <b>Property</b> object contains a provider-specific property. </p>
+<p>Each provider that talks (connect) with ADO has different ways of interacting 
+with ADO. Therefore, ADO needs to store information about the provider in some 
+way. The solution is that the provider gives specific information called dynamic 
+properties, to ADO. ADO stores each provider property in a Property object and 
+then stores each object in the Properties Collection that is assigned to the ADO 
+object. The Collection is assigned to either a Command object, Connection 
+object, Field object, or a Recordset object. These are the four ADO objects that 
+have a <b>Properties Collection</b>. </p>
+<h3>Properties</h3>
+<table class="ex" width="83%" border="1" cellpadding="3" cellspacing="0" id="table7">
+	<tr valign="top">
+		<th valign="top" width="16%" align="left">Property</th>
+		<th valign="top" width="69%" align="left">
+		<p align="center">Description</th>
+	</tr>
+	<tr valign="top">
+		<td valign="top">
+		<a style="color: #0066FF" target="_blank" href="ADO_Attributes_Property.htm">
+		Attributes</a></td>
+		<td valign="top">Returns the attributes of a Property object</td>
+	</tr>
+	<tr>
+		<td valign="top">
+		<a style="color: #0066FF" target="_blank" href="ADO_Name_Property.htm">
+		Name</a></td>
+		<td valign="top">Sets or returns the name of a Property object</td>
+	</tr>
+	<tr>
+		<td valign="top">
+		<a style="color: #0066FF" target="_blank" href="ADO_Type_Property.htm">
+		Type</a></td>
+		<td valign="top">Returns the type of a Property object</td>
+	</tr>
+	<tr>
+		<td valign="top">
+		<a style="color: #0066FF" target="_blank" href="ADO_Value_Property.htm">
+		Value</a></td>
+		<td valign="top">Sets or returns the value of a Property object </td>
+	</tr>
+</table>
+<h1><font color="#FF6600">Attributes</font></h1>
+<p class="Entity_DetailDescription">Syntax:&nbsp; <font color="#808080"><i>long 
+= propertyobject.Attributes</i></font></p>
+<p class="Entity_DetailDescription">The <b>Attributes</b> property returns a 
+long value that is the sum of one or more of the <b>ParameterAttributesEnum</b> 
+constants that indicate the characteristics of a <b>Property</b> object. <br>
+&nbsp;<br>
+Not all providers support this property. <br>
+&nbsp;<br>
+<b>PropertyAttributesEnum Constants</b> </p>
+<table border="1" id="table8" cellspacing="0" width="807">
+	<tr>
+		<td width="151">
+		<p align="center"><b>Constant</b></td>
+		<td align="center" width="50"><b>Value</b></td>
+		<td align="center"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td width="151">adPropNotSupported</td>
+		<td align="center" width="50">0</td>
+		<td>Not supported by provider</td>
+	</tr>
+	<tr>
+		<td width="151">adPropRequired</td>
+		<td align="center" width="50">1</td>
+		<td>Property must be specified before data source is initialized</td>
+	</tr>
+	<tr>
+		<td width="151">adPropOptional</td>
+		<td align="center" width="50">2</td>
+		<td>Property does not have to be specified before data source is 
+		initialized</td>
+	</tr>
+	<tr>
+		<td width="151">adPropRead</td>
+		<td align="center" width="50">512</td>
+		<td>User can read property</td>
+	</tr>
+	<tr>
+		<td width="151">adPropWrite</td>
+		<td align="center" width="50">1024</td>
+		<td>User can set property</td>
+	</tr>
+</table>
+<h2><span style="font-weight: 400"><font size="4">Example:</font></span></h2>
+<div class="Entity_CodeExample">
+	<code class="CodeSample">
+	<font color="#0066FF">If (objConnection.Properties(strName)</font><font color="#FF6600"><b>.Attributes</b></font><font color="#0066FF"> 
+	= adPropNotSupported) Then<br>
+	&nbsp;&nbsp;&nbsp;debug.print &quot;WARNING: Not supported by provider&quot;<br>
+	End If </font></code></div>
+<h1><font color="#FF6600">Name</font></h1>
+<p>Syntax:&nbsp; <font color="#808080"><i>string = fieldobject.Name</i></font></p>
+<p class="Entity_BriefDescription">Sets or returns a string value that is the 
+name of the <b>Property</b> object.</p>
+<p class="Entity_DetailDescription">The <b>Name</b> property returns a string 
+that is the name of the <b>Property</b> object. The name can also be obtained 
+from the <b>Properties Collection</b>. <br>
+&nbsp;<br>
+The <b>Name</b> property is also used by the <b>Command, Field</b>, and <b>
+Parameter</b> objects.</p>
+<h2><span style="font-weight: 400"><font size="4">Example:</font></span></h2>
+<div class="Entity_CodeExample">
+	<code class="CodeSample"><font color="#0066FF">For Each objProperty In 
+	objConnection.Properties<br>
+	&nbsp;&nbsp;&nbsp;</font></code><font color="#0066FF"><code class="CodeSample">debug.print</code></font><code class="CodeSample"><font color="#0066FF"> 
+	&quot;Name = &quot; &amp; objProperty</font><font color="#FF6600"><b>.Name</b></font><font color="#0066FF"> 
+	&amp; VbCrLf<br>
+	&nbsp;&nbsp;&nbsp;</font></code><font color="#0066FF"><code class="CodeSample">debug.print</code></font><code class="CodeSample"><font color="#0066FF"> 
+	&quot;Type = &quot; &amp; objProperty.Type &amp; VbCrLf<br>
+	&nbsp;&nbsp;&nbsp;</font></code><font color="#0066FF"><code class="CodeSample">debug.print</code></font><code class="CodeSample"><font color="#0066FF"> 
+	&quot;Value = &quot; &amp; objProperty.Value &amp; VbCrLf<br>
+	Next </font></code></div>
+<h1><font color="#FF6600">Type</font></h1>
+<p>Syntax:&nbsp; <font color="#808080"><i>DataTypeEnum = propertyobject.Type</i></font></p>
+<p class="Entity_BriefDescription">Sets or returns a <b>DataTypeEnum</b> value 
+that specifies the data type.</p>
+<p class="Entity_DetailDescription">The <b>Type</b> property returns a <b>
+DataTypeEnum</b> value which is the data type or operational type of the <b>
+Property</b> object. <br>
+&nbsp;<br>
+Unfortunately, some providers may not support all of the possible data types. If 
+a provider encounters a data type that it does not recognize, it will usually 
+change it to a data type that it does recognize. </p>
+<p class="Entity_DetailDescription"><span style="font-weight: 400">
+<font size="4">Example:</font></span></p>
+<p><code class="CodeSample"><font color="#0066FF">For Each objProperty In 
+objConnection.Properties<br>
+&nbsp;&nbsp;&nbsp;debug.print &quot;Name = &quot; &amp; objProperty.Name &amp; VbCrLf <br>
+&nbsp;&nbsp;&nbsp;debug.print &quot;Type = &quot; &amp; objProperty</font><font color="#FF6600"><b>.Type</b></font><font color="#0066FF"> 
+&amp; VbCrLf<br>
+&nbsp;&nbsp;&nbsp;debug.print &quot;Value = &quot; &amp; objProperty.Value &amp; VbCrLf<br>
+Next </font></code></p>
+<p class="Entity_DetailDescription"><b>DataTypeEnum Constants</b> </p>
+<table border="1" id="table9" cellspacing="0" width="810">
+	<tr>
+		<td width="155">
+		<p align="left"><b>Constant</b></td>
+		<td align="center"><b>Value</b></td>
+		<td align="center"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td width="155">adArray</td>
+		<td align="center">0x2000</td>
+		<td>Combine with another data type to indicate that the other data type 
+		is an array</td>
+	</tr>
+	<tr>
+		<td width="155">adBigInt</td>
+		<td align="center">20</td>
+		<td>8-byte signed integer</td>
+	</tr>
+	<tr>
+		<td width="155">adBinary</td>
+		<td align="center">128</td>
+		<td>Binary</td>
+	</tr>
+	<tr>
+		<td width="155">adBoolean</td>
+		<td align="center">11</td>
+		<td>True or false Boolean</td>
+	</tr>
+	<tr>
+		<td width="155">adBSTR</td>
+		<td align="center">8</td>
+		<td>Null-terminated character string</td>
+	</tr>
+	<tr>
+		<td width="155">adChapter</td>
+		<td align="center">136</td>
+		<td>4-byte chapter value for a child recordset</td>
+	</tr>
+	<tr>
+		<td width="155">adChar</td>
+		<td align="center">129</td>
+		<td>String</td>
+	</tr>
+	<tr>
+		<td width="155">adCurrency</td>
+		<td align="center">6</td>
+		<td>Currency format</td>
+	</tr>
+	<tr>
+		<td width="155">adDate</td>
+		<td align="center">7</td>
+		<td>Number of days since 12/30/1899</td>
+	</tr>
+	<tr>
+		<td width="155">adDBDate</td>
+		<td align="center">133</td>
+		<td>YYYYMMDD date format</td>
+	</tr>
+	<tr>
+		<td width="155">adDBFileTime</td>
+		<td align="center">137</td>
+		<td>Database file time</td>
+	</tr>
+	<tr>
+		<td width="155">adDBTime</td>
+		<td align="center">134</td>
+		<td>HHMMSS time format</td>
+	</tr>
+	<tr>
+		<td width="155">adDBTimeStamp</td>
+		<td align="center">135</td>
+		<td>YYYYMMDDHHMMSS date/time format</td>
+	</tr>
+	<tr>
+		<td width="155">adDecimal</td>
+		<td align="center">14</td>
+		<td>Number with fixed precision and scale</td>
+	</tr>
+	<tr>
+		<td width="155">adDouble</td>
+		<td align="center">5</td>
+		<td>Double precision floating-point</td>
+	</tr>
+	<tr>
+		<td width="155">adEmpty</td>
+		<td align="center">0</td>
+		<td>no value</td>
+	</tr>
+	<tr>
+		<td width="155">adError</td>
+		<td align="center">10</td>
+		<td>32-bit error code</td>
+	</tr>
+	<tr>
+		<td width="155">adFileTime</td>
+		<td align="center">64</td>
+		<td>Number of 100-nanosecond intervals since 1/1/1601</td>
+	</tr>
+	<tr>
+		<td width="155">adGUID</td>
+		<td align="center">72</td>
+		<td>Globally Unique identifier</td>
+	</tr>
+	<tr>
+		<td width="155">adIDispatch</td>
+		<td align="center">9</td>
+		<td>Currently not supported by ADO</td>
+	</tr>
+	<tr>
+		<td width="155">adInteger</td>
+		<td align="center">3</td>
+		<td>4-byte signed integer</td>
+	</tr>
+	<tr>
+		<td width="155">adIUnknown</td>
+		<td align="center">13</td>
+		<td>Currently not supported by ADO</td>
+	</tr>
+	<tr>
+		<td width="155">adNumeric</td>
+		<td align="center">131</td>
+		<td>Number with fixed precision and scale</td>
+	</tr>
+	<tr>
+		<td width="155">adPropVariant</td>
+		<td align="center">138</td>
+		<td>PROPVARIANT automation</td>
+	</tr>
+	<tr>
+		<td width="155">adSingle</td>
+		<td align="center">4</td>
+		<td>Single-precision floating-point value</td>
+	</tr>
+	<tr>
+		<td width="155">adSmallInt</td>
+		<td align="center">2</td>
+		<td>2-byte signed integer</td>
+	</tr>
+	<tr>
+		<td width="155">adTinyInt</td>
+		<td align="center">16</td>
+		<td>1-byte signed integer</td>
+	</tr>
+	<tr>
+		<td width="155">adUnsignedBigInt</td>
+		<td align="center">21</td>
+		<td>8-byte unsigned integer</td>
+	</tr>
+	<tr>
+		<td width="155">adUnsignedInt</td>
+		<td align="center">19</td>
+		<td>4-byte unsigned integer</td>
+	</tr>
+	<tr>
+		<td width="155">adUnsignedSmallInt</td>
+		<td align="center">18</td>
+		<td>2-byte unsigned integer</td>
+	</tr>
+	<tr>
+		<td width="155">adUnsignedTinyInt</td>
+		<td align="center">17</td>
+		<td>1-byte unsigned integer</td>
+	</tr>
+	<tr>
+		<td width="155">adUserDefined</td>
+		<td align="center">132</td>
+		<td>User-defined variable</td>
+	</tr>
+	<tr>
+		<td width="155">adVariant</td>
+		<td align="center">12</td>
+		<td>Automation variant</td>
+	</tr>
+	<tr>
+		<td width="155">adWChar</td>
+		<td align="center">130</td>
+		<td>Null-terminated Unicode character string</td>
+	</tr>
+</table>
+<h1>&nbsp;</h1>
+<h1><font color="#FF6600">Value</font></h1>
+<p class="Entity_BriefDescription">Syntax:<i><font color="#808080"><br>variant = propertyobject.Value</font><br>
+<font color="#808080">propertyobject.Value = variant</font></i></p>
+<p class="Entity_BriefDescription">Sets or returns a variant that is the value 
+of the <b>Property</b> object.</p>
+<p class="Entity_DetailDescription">The <b>Value</b> property sets or returns a 
+variant that is the current value of the <b>Property</b> object. <br>
+&nbsp;<br>
+Properties can be set to read or write by using the <b>Attributes</b> property. 
+You will not be able to set the <b>Value</b> for properties that are read-only.</p>
+<h2><span style="font-weight: 400"><font size="4">Example:</font></span></h2>
+<div class="Entity_CodeExample">
+	<code class="CodeSample"><font color="#0066FF">If (objConnection.Properties(strName).Attributes 
+	= adPropWrite) Then<br>
+	&nbsp;&nbsp;&nbsp;objConnection.Properties(strName)</font><b><font color="#FF6600">.Value</font></b><font color="#0066FF"> 
+	= intCount<br>
+	Else<br>
+	&nbsp;&nbsp;&nbsp;debug.print &quot;WARNING: Cannot set value for &quot; &amp; strName &amp; VBCRLF<br>
+	End If</font></code></div>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

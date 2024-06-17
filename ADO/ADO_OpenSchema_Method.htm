@@ -1,0 +1,596 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO OpenSchema Method</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO OpenSchema Method</font></h1>
+		<p>The OpenSchema method returns a Recordset object with schema 
+		information from the provider about the data source. For example, schema 
+		information can include the names of the tables, names of the columns in 
+		the tables, and the data type of each column. The Recordset will be 
+		opened as a read-only recordset. </p>
+		<h3>Syntax </h3>
+		<table class="ex" id="table7" width="56%" border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td valign="top">
+				<pre>Set rs=objconn.OpenSchema(querytype,criteria,schemaid)</pre>
+				</td>
+			</tr>
+		</table>
+		<h3>Examples</h3>
+		<div class="Entity_CodeExample">
+			<code class="CodeSample"><font color="#0066cc">Set objRecordset = 
+			objConnection.</font><b><font color="#FF6600">OpenSchema</font></b><font color="#0066cc">(adSchemaTables) </font></code></div>
+		<br>
+		&nbsp;<table class="ex" id="table8" width="94%" border="1" cellpadding="5">
+			<tr>
+				<th valign="top" width="10%" align="left">
+				<p align="center">Parameter</th>
+				<th valign="top" width="86%" align="left">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">querytype </td>
+				<td valign="top">Required. A SchemaEnum value that represents 
+				the type of schema query to run<p><b>Note:</b> The OLEDB 
+				specification only require 3 of the SchemaEnum values to be 
+				supported. These are adSchemaTables, adSchemaColumns, and the 
+				adSchemaProviderTypes </td>
+			</tr>
+			<tr>
+				<td valign="top">criteria </td>
+				<td valign="top">Optional. An array of query constraints for 
+				each querytype option, as listed in SchemaEnum      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">schemaid </td>
+				<td valign="top">The GUID for a provider-schema query not 
+				defined by the OLE DB specification. Required if querytype is 
+				set to adSchemaProviderSpecific      
+    			</td>
+			</tr>
+		</table>
+		&nbsp;<a name="schemaenum"><h3>SchemaEnum Values</h3>
+		</a>
+		<table class="ex" id="table9" width="94%" border="1" cellpadding="5">
+			<tr>
+				<th valign="top" width="228" align="left">
+				<p align="center">Constant</th>
+				<th valign="top" width="41">Value</th>
+				<th valign="top" width="210" align="left">
+				<p align="center">Description</th>
+				<th valign="top" align="left">
+				<p align="center">Constraint Columns</th>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaProviderSpecific</td>
+				<td valign="top" width="41" align="center">-1</td>
+				<td valign="top" width="210">Used if the provider defines its 
+				own nonstandard schema queries</td>
+				<td valign="top">Provider specific</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaAsserts</td>
+				<td valign="top" width="41" align="center">0</td>
+				<td valign="top" width="210">Returns the assertions defined in 
+				the catalog
+        		</td>
+				<td valign="top">CONSTRAINT_CATALOG<br>
+				CONSTRAINT_SCHEMA<br>
+				CONSTRAINT_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaCatalogs</td>
+				<td valign="top" width="41" align="center">1</td>
+				<td valign="top" width="210">Returns the physical attributes 
+				associated with catalogs accessible from the DBMS
+        		</td>
+				<td valign="top">CATALOG_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaCharacterSets</td>
+				<td valign="top" width="41" align="center">2</td>
+				<td valign="top" width="210">Returns the character sets defined 
+				in the catalog
+        		</td>
+				<td valign="top">CHARACTER_SET_CATALOG<br>
+				CHARACTER_SET_SCHEMA<br>
+				CHARACTER_SET_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaCollations</td>
+				<td valign="top" width="41" align="center">3</td>
+				<td valign="top" width="210">Returns the character collations 
+				defined in the catalog
+        		</td>
+				<td valign="top">COLLATION_CATALOG<br>
+				COLLATION_SCHEMA<br>
+				COLLATION_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaColumns</td>
+				<td valign="top" width="41" align="center">4</td>
+				<td valign="top" width="210">Returns the columns of tables 
+				defined in the catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				COLUMN_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaCheckConstraints</td>
+				<td valign="top" width="41" align="center">5</td>
+				<td valign="top" width="210">Returns the check constraints 
+				defined in the catalog
+        		</td>
+				<td valign="top">CONSTRAINT_CATALOG<br>
+				CONSTRAINT_SCHEMA<br>
+				CONSTRAINT_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaConstraintColumnUsage</td>
+				<td valign="top" width="41" align="center">6</td>
+				<td valign="top" width="210">Returns the columns used by 
+				referential constraints, unique constraints, check constraints, 
+				and assertions, defined in the catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				COLUMN_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaConstraintTableUsage</td>
+				<td valign="top" width="41" align="center">7</td>
+				<td valign="top" width="210">Returns the tables that are used by 
+				referential constraints, unique constraints, check constraints, 
+				and assertions defined in the catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaKeyColumnUsage</td>
+				<td valign="top" width="41" align="center">8</td>
+				<td valign="top" width="210">Returns the columns defined in the 
+				catalog that are constrained as keys
+        		</td>
+				<td valign="top">CONSTRAINT_CATALOG<br>
+				CONSTRAINT_SCHEMA<br>
+				CONSTRAINT_NAME<br>
+				TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				COLUMN_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">AdSchemaReferentialConstraints</td>
+				<td valign="top" width="41" align="center">9</td>
+				<td valign="top" width="210">Returns the referential constraints 
+				defined in the catalog
+        		</td>
+				<td valign="top">CONSTRAINT_CATALOG<br>
+				CONSTRAINT_SCHEMA<br>
+				CONSTRAINT_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaTableConstraints</td>
+				<td valign="top" width="41" align="center">10</td>
+				<td valign="top" width="210">Returns the table constraints 
+				defined in the catalog
+        		</td>
+				<td valign="top">CONSTRAINT_CATALOG<br>
+				CONSTRAINT_SCHEMA<br>
+				CONSTRAINT_NAME<br>
+				TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				CONSTRAINT_TYPE</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaColumnsDomainUsage</td>
+				<td valign="top" width="41" align="center">11</td>
+				<td valign="top" width="210">Returns the columns defined in the 
+				catalog that are dependent on a domain defined in the catalog
+        		</td>
+				<td valign="top">DOMAIN_CATALOG<br>
+				DOMAIN_SCHEMA<br>
+				DOMAIN_NAME<br>
+				COLUMN_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaIndexes</td>
+				<td valign="top" width="41" align="center">12</td>
+				<td valign="top" width="210">Returns the indexes defined in the 
+				catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				INDEX_NAME<br>
+				TYPE<br>
+				TABLE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaColumnPrivileges</td>
+				<td valign="top" width="41" align="center">13</td>
+				<td valign="top" width="210">Returns the privileges on columns 
+				of tables defined in the catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				COLUMN_NAME<br>
+				GRANTOR<br>
+				GRANTEE</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaTablePrivileges</td>
+				<td valign="top" width="41" align="center">14</td>
+				<td valign="top" width="210">Returns the privileges on tables 
+				defined in the catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				GRANTOR<br>
+				GRANTEE</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaUsagePrivileges</td>
+				<td valign="top" width="41" align="center">15</td>
+				<td valign="top" width="210">Returns the USAGE privileges on 
+				objects defined in the catalog
+        		</td>
+				<td valign="top">OBJECT_CATALOG<br>
+				OBJECT_SCHEMA<br>
+				OBJECT_NAME<br>
+				OBJECT_TYPE<br>
+				GRANTOR<br>
+				GRANTEE</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaProcedures</td>
+				<td valign="top" width="41" align="center">16</td>
+				<td valign="top" width="210">Returns the procedures defined in 
+				the catalog
+        		</td>
+				<td valign="top">PROCEDURE_CATALOG<br>
+				PROCEDURE_SCHEMA<br>
+				PROCEDURE_NAME<br>
+				PROCEDURE_TYPE</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaSchemata</td>
+				<td valign="top" width="41" align="center">17</td>
+				<td valign="top" width="210">Returns the schemas (database 
+				objects)
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				SCHEMA_OWNER</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaSQLLanguages</td>
+				<td valign="top" width="41" align="center">18</td>
+				<td valign="top" width="210">Returns the conformance levels, 
+				options, and dialects supported by the SQL-implementation 
+				processing data defined in the catalog.
+        		</td>
+				<td valign="top">None</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaStatistics</td>
+				<td valign="top" width="41" align="center">19</td>
+				<td valign="top" width="210">Returns the statistics defined in 
+				the catalog
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaTables</td>
+				<td valign="top" width="41" align="center">20</td>
+				<td valign="top" width="210">Returns the tables defined in the 
+				catalog that are accessible
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME<br>
+				TABLE_TYPE</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaTranslations</td>
+				<td valign="top" width="41" align="center">21</td>
+				<td valign="top" width="210">Returns the character translations 
+				defined in the catalog that are accessible
+        		</td>
+				<td valign="top">TRANSLATION_CATALOG<br>
+				TRANSLATION_SCHEMA<br>
+				TRANSLATION_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaProviderTypes</td>
+				<td valign="top" width="41" align="center">22</td>
+				<td valign="top" width="210">Returns the data types supported by 
+				the data provider
+        		</td>
+				<td valign="top">DATA_TYPE<br>
+				BEST_MATCH</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaViews</td>
+				<td valign="top" width="41" align="center">23</td>
+				<td valign="top" width="210">Returns the views defined in the 
+				catalog that are accessible
+        		</td>
+				<td valign="top">TABLE_CATALOG<br>
+				TABLE_SCHEMA<br>
+				TABLE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaViewColumnUsage</td>
+				<td valign="top" width="41" align="center">24</td>
+				<td valign="top" width="210">Returns the columns on which viewed 
+				tables, are dependent
+        		</td>
+				<td valign="top">VIEW_CATALOG<br>
+				VIEW_SCHEMA<br>
+				VIEW_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaViewTableUsage</td>
+				<td valign="top" width="41" align="center">25</td>
+				<td valign="top" width="210">Returns the tables on which viewed 
+				tables, are dependent
+        		</td>
+				<td valign="top">VIEW_CATALOG<br>
+				VIEW_SCHEMA<br>
+				VIEW_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaProcedureParameters</td>
+				<td valign="top" width="41" align="center">26</td>
+				<td valign="top" width="210">Returns info about the parameters 
+				and return codes of procedures
+        		</td>
+				<td valign="top">PROCEDURE_CATALOG<br>
+				PROCEDURE_SCHEMA<br>
+				PROCEDURE_NAME<br>
+				PARAMETER_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaForeignKeys</td>
+				<td valign="top" width="41" align="center">27</td>
+				<td valign="top" width="210">Returns the foreign key columns 
+				defined in the catalog
+        		</td>
+				<td valign="top">PK_TABLE_CATALOG<br>
+				PK_TABLE_SCHEMA<br>
+				PK_TABLE_NAME<br>
+				FK_TABLE_CATALOG<br>
+				FK_TABLE_SCHEMA<br>
+				FK_TABLE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaPrimaryKeys</td>
+				<td valign="top" width="41" align="center">28</td>
+				<td valign="top" width="210">Returns the primary key columns 
+				defined in the catalog
+        		</td>
+				<td valign="top">PK_TABLE_CATALOG<br>
+				PK_TABLE_SCHEMA<br>
+				PK_TABLE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaProcedureColumns</td>
+				<td valign="top" width="41" align="center">29</td>
+				<td valign="top" width="210">Returns info about the columns of 
+				rowsets returned by procedures
+        		</td>
+				<td valign="top">PROCEDURE_CATALOG<br>
+				PROCEDURE_SCHEMA<br>
+				PROCEDURE_NAME<br>
+				COLUMN_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaDBInfoKeywords</td>
+				<td valign="top" width="41" align="center">30</td>
+				<td valign="top" width="210">Returns a list of provider-specific 
+				keywords
+        		</td>
+				<td valign="top">None</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaDBInfoLiterals</td>
+				<td valign="top" width="41" align="center">31</td>
+				<td valign="top" width="210">Returns a list of provider-specific 
+				literals used in text commands
+        		</td>
+				<td valign="top">None</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaCubes</td>
+				<td valign="top" width="41" align="center">32</td>
+				<td valign="top" width="210">Returns info about the available 
+				cubes in a schema
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaDimensions</td>
+				<td valign="top" width="41" align="center">33</td>
+				<td valign="top" width="210">Returns info about the dimensions 
+				in a given cube
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME<br>
+				DIMENSION_NAME<br>
+				DIMENSION_UNIQUE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaHierarchies</td>
+				<td valign="top" width="41" align="center">34</td>
+				<td valign="top" width="210">Returns info about the hierarchies 
+				available in a dimension
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME<br>
+				DIMENSION_UNIQUE_NAME<br>
+				HIERARCHY_NAME<br>
+				HIERARCHY_UNIQUE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaLevels</td>
+				<td valign="top" width="41" align="center">35</td>
+				<td valign="top" width="210">Returns info about the levels 
+				available in a dimension
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME<br>
+				DIMENSION_UNIQUE_NAME<br>
+				HIERARCHY_UNIQUE_NAME<br>
+				LEVEL_NAME<br>
+				LEVEL_UNIQUE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaMeasures</td>
+				<td valign="top" width="41" align="center">36</td>
+				<td valign="top" width="210">Returns info about the available 
+				measures
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME<br>
+				MEASURE_NAME<br>
+				MEASURE_UNIQUE_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaProperties</td>
+				<td valign="top" width="41" align="center">37</td>
+				<td valign="top" width="210">Returns info about the available 
+				properties for each level of the dimension
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME<br>
+				DIMENSION_UNIQUE_NAME<br>
+				HIERARCHY_UNIQUE_NAME<br>
+				LEVEL_UNIQUE_NAME<br>
+				MEMBER_UNIQUE_NAME<br>
+				PROPERTY_TYPE<br>
+				PROPERTY_NAME</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaMembers</td>
+				<td valign="top" width="41" align="center">38</td>
+				<td valign="top" width="210">Returns info about the available 
+				members
+        		</td>
+				<td valign="top">CATALOG_NAME<br>
+				SCHEMA_NAME<br>
+				CUBE_NAME<br>
+				DIMENSION_UNIQUE_NAME<br>
+				HIERARCHY_UNIQUE_NAME<br>
+				LEVEL_UNIQUE_NAME<br>
+				LEVEL_NUMBER<br>
+				MEMBER_NAME<br>
+				MEMBER_UNIQUE_NAME<br>
+				MEMBER_CAPTION<br>
+				MEMBER_TYPE<br>
+				TREE OPERATOR</td>
+			</tr>
+			<tr>
+				<td valign="top" width="228">adSchemaTrustees</td>
+				<td valign="top" width="41" align="center">39</td>
+				<td valign="top" width="210">For future use</td>
+				<td valign="top">None</td>
+			</tr>
+		</table>
+
+<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

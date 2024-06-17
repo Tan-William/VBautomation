@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Move Method</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+		<h1><font size="6">ADO Move Method</font></h1>
+<p>The <b>Move</b> method is called to move the position of the current 
+		record pointer. As required, the current cache of records is 
+		automatically updated in concert with the move. If the current record 
+		has been modified and an <b>Update</b> has not been performed, then when 
+		you call <b>MoveFirst</b>, there will also be an implicit call to <b>
+		Update</b> for the current record. If you do not wish to keep the 
+		changes to the current record, then you should call <b>CancelUpdate</b> 
+		before you call <b>MoveFirst</b>. <br>
+		<br>
+		There is one mandatory parameter and one optional parameter. <br>
+		<br>
+		If a Recordset is using a forward moving cursor, then you can only go 
+		backwards as far as the first record in the current cache of records. 
+		Therefore, how far you can move backwards will be determined by the <b>
+		CacheSize</b> property. However, you can go forward to as far as the 
+		last record or <b>EOF</b>. 
+		</p> 
+		<h3>Syntax </h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="42%" id="table6">
+			<tr>
+				<td valign="top">
+				<pre>objRecordset.Move numRecords,start</pre>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="80%" id="table7">
+			<tr>
+				<th align="left" valign="top" width="15%">Parameter</th>
+				<th align="left" valign="top" width="73%">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">numRecords</td>
+				<td valign="top">Required. Specifies how many records the record 
+				pointer will move.<p>Example<b>:</b> If this parameter is set to 
+				3, the record pointer moves 3 records forward.</p>
+				<p>Example<b>:</b> If this parameter is set to -3, the record 
+				pointer moves 3 records backward </td>
+			</tr>
+			<tr>
+				<td valign="top">start</td>
+				<td valign="top">Optional. Where to start. Can be a bookmark or 
+				a BookmarkEnum value</td>
+			</tr>
+		</table>
+		<h3>Example </h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="41%" id="table8">
+			<tr>
+				<td valign="top">
+				<pre><code class="CodeSample">
+<font color="#0066FF">varBookMark = objRecordset.Bookmark
+objRecorset.</font><b><font color="#FF6600">Move</font></b><font color="#0066FF"> lngMoveNum
+If objRecordset.EOF = True
+&nbsp;&nbsp;&nbsp;objRecordset.Bookmark = varBookMark
+End If</font></code></pre>
+				</td>
+			</tr>
+		</table>
+		&nbsp;<a name="bookmarkenum"><h3>BookmarkEnum</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="50%" id="table9">
+			<tr valign="top">
+				<th align="left" width="176">Constant</th>
+				<th width="48">Value</th>
+				<th align="left">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td width="176">adBookmarkCurrent</td>
+				<td width="48" align="center">0</td>
+				<td>Starts at the current record</td>
+			</tr>
+			<tr valign="top">
+				<td width="176">adBookmarkFirst</td>
+				<td width="48" align="center">1</td>
+				<td>Starts at the first record</td>
+			</tr>
+			<tr valign="top">
+				<td width="176">adBookmarkLast</td>
+				<td width="48" align="center">2</td>
+				<td>Starts at the last record</td>
+			</tr>
+		</table>
+
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

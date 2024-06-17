@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO InfoMessage Event</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO InfoMessage Event</font></h1>
+<p>An event is a subroutine that can be called automatically after a specific 
+operation has occurred. </p>
+<p>The InfoMessage event can be fired if a warning occurs in a connection 
+operation. </p>
+<h3>Syntax </h3>
+<table class="ex" width="40%" border="1" cellpadding="3" cellspacing="0" id="table7">
+	<tr>
+		<td valign="top">
+		<pre>InfoMessage objerror,status,objconn</pre>
+		</td>
+	</tr>
+</table>
+<h3>Example </h3>
+<p><code class="CodeSample"><font color="green">' Use the WithEvents keyword to 
+designate that events<br>
+' can be handled by this Connection object<br>
+</font><font color="#0066CC">Dim WithEvents objConn As ADODB.Connection</font><br>
+<br>
+<font color="green">' Note how the object name, objConn, is incorporated into 
+the event Sub name<br>
+</font><font color="#0066CC">Private Sub </font><b><font color="#FF6600">objConn_InfoMessage</font></b><font color="#0066CC">(ByVal 
+pError As ADODB.Error, _<br>
+&nbsp;&nbsp;&nbsp;adStatus As ADODB.EventStatusEnum, ByVal pConnection As ADODB.Connection)<br>
+</font><br>
+<font color="green">' place any code you desire here, for example<br>
+</font><font color="#0066CC">If adStatus = adStatusErrorsOccurred Then<br>
+&nbsp;&nbsp;&nbsp;Dim objError As ADODB.Error<br>
+&nbsp;&nbsp;&nbsp;For Each objError in pConnection.Errors<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Debug.Print vbTab objError.Description<br>
+&nbsp;&nbsp;&nbsp;Next<br>
+End If<br>
+<br>
+End Sub </font></code></p>
+		<p>&nbsp;</p>
+		<table class="ex" width="97%" border="1" cellpadding="5" id="table8">
+	<tr>
+		<th valign="top" width="23%" align="left">Parameter</th>
+		<th valign="top" width="75%" align="left">
+		<p align="center">Description</th>
+	</tr>
+	<tr>
+		<td valign="top">objerror </td>
+		<td valign="top">An Error object that contains the errors that are 
+		returned      
+    	</td>
+	</tr>
+	<tr>
+		<td valign="top">status </td>
+		<td valign="top">An EventStatusEnum value. If a warning occurs, status 
+		is set to adStatusOK and the objerror contains the warning      
+    	</td>
+	</tr>
+	<tr>
+		<td valign="top">objconn </td>
+		<td valign="top">A Connection object. The connection for which the 
+		warning occurred      
+    	</td>
+	</tr>
+</table>
+		<a name="eventstatusenum"><h3>EventStatusEnum Values</h3>
+</a>
+<table class="ex" width="97%" border="1" cellpadding="5" id="table9">
+	<tr valign="top" align="left">
+		<th valign="top" width="22%">Constant</th>
+		<th valign="top" width="7%">Value</th>
+		<th valign="top" width="65%">
+		<p align="center">Description</th>
+	</tr>
+	<tr>
+		<td valign="top">adStatusOK</td>
+		<td valign="top" align="center">1</td>
+		<td valign="top">The operation that fired the event was successful</td>
+	</tr>
+	<tr>
+		<td valign="top">adStatusErrorsOccurred</td>
+		<td valign="top" align="center">2</td>
+		<td valign="top">The operation that fired the event failed</td>
+	</tr>
+	<tr>
+		<td valign="top">adStatusCantDeny</td>
+		<td valign="top" align="center">3</td>
+		<td valign="top">Cannot cancel the pending operation</td>
+	</tr>
+	<tr valign="top">
+		<td valign="top">adStatusCancel</td>
+		<td valign="top" align="center">4</td>
+		<td valign="top">Cancels the operation that fired the event</td>
+	</tr>
+	<tr>
+		<td valign="top">adStatusUnwantedEvent</td>
+		<td valign="top" align="center">5</td>
+		<td valign="top">Prevents subsequent notifications before the event 
+		method has finished executing</td>
+	</tr>
+</table>
+
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

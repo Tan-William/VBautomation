@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Refresh Method (ADO)</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<div class="title">
+	<b><font size="6">ADO Refresh Method</font></b><p>
+	<font face="Arial" size="2">The Refresh method accomplishes different tasks 
+	depending on the collection from which you call it.<br>
+	<br>
+	</font><font face="Arial"><b>Parameters</b></font><font face="Arial" size="2"><br>
+	Using the Refresh method on the Parameters collection of a Command object 
+	retrieves provider-side parameter information for the stored procedure or 
+	parameterized query specified in the Command object. The collection will be 
+	empty for providers that do not support stored procedure calls or 
+	parameterized queries.<br>
+	<br>
+	You should set the ActiveConnection property of the Command object to a 
+	valid Connection object, the CommandText property to a valid command, and 
+	the CommandType property to adCmdStoredProc before calling the Refresh 
+	method.<br>
+	<br>
+	If you access the Parameters collection before calling the Refresh method, 
+	ADO will automatically call the method and populate the collection for you.<br>
+	<br>
+	</font><font face="Arial"><b>Fields</b></font><font face="Arial" size="2"><br>
+	Using the Refresh method on the Fields collection has no visible effect. To 
+	retrieve changes from the underlying database structure, you must use either 
+	the Requery method or, if the Recordset object does not support bookmarks, 
+	the MoveFirst method.<br>
+	<br>
+	</font><font face="Arial"><b>Properties</b></font><font face="Arial" size="2"><br>
+	Using the Refresh method on a Properties collection of some objects 
+	populates the collection with the dynamic properties that the provider 
+	exposes. These properties provide information about functionality specific 
+	to the provider, beyond the built-in properties ADO supports.</font></p>
+	<table border="0" width="72%" cellspacing="0" cellpadding="0" id="table4">
+		<tr>
+			<td height="30" colspan="3" align="left" valign="top">
+			<font face="Arial" size="2">The Refresh<b> </b>Method applies to:</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">Axes 
+			Collection (ADO MD)</font></td>
+			<td width="35%"><font face="Arial" size="2" color="#0066CC">Columns 
+			Collection (ADOX)</font></td>
+			<td width="28%"><font face="Arial" size="2" color="#0066CC">CubeDefs 
+			Collection (ADO MD)</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">
+			Dimensions Collection (ADO MD)</font></td>
+			<td width="35%"><font face="Arial" size="2" color="#0066CC">Errors 
+			Collection (ADO)</font></td>
+			<td width="28%"><font face="Arial" size="2" color="#0066CC">Fields 
+			Collection (ADO)</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">Groups 
+			Collection (ADOX)</font></td>
+			<td width="35%"><font face="Arial" size="2" color="#0066CC">
+			Hierarchies Collection (ADO MD)</font></td>
+			<td width="28%"><font face="Arial" size="2" color="#0066CC">Indexes 
+			Collection (ADOX)</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">Keys 
+			Collection (ADOX)</font></td>
+			<td width="35%"><font face="Arial" size="2" color="#0066CC">Levels 
+			Collection (ADO MD)</font></td>
+			<td width="28%"><font face="Arial" size="2" color="#0066CC">Members 
+			Collection (ADO MD)</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">
+			Parameters Collection (ADO)</font></td>
+			<td width="35%"><font face="Arial" size="2" color="#0066CC">
+			Positions Collection (ADO MD)</font></td>
+			<td width="28%"><font face="Arial" size="2" color="#0066CC">
+			Procedures Collection (ADOX)</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">
+			Properties Collection (ADO)</font></td>
+			<td width="35%"><font face="Arial" size="2" color="#0066CC">Tables 
+			Collection (ADOX)</font></td>
+			<td width="28%"><font face="Arial" size="2" color="#0066CC">Users 
+			Collection (ADOX)</font></td>
+		</tr>
+		<tr>
+			<td width="33%"><font face="Arial" size="2" color="#0066CC">Views 
+			Collection (ADOX) </font></td>
+			<td width="35%">&nbsp;</td>
+			<td width="28%">&nbsp;</td>
+		</tr>
+	</table>
+	<h3><font size="3">Syntax:</font></h3>
+	<table class="ex" id="table5" width="21%" border="1" cellpadding="3" cellspacing="0">
+		<tr>
+			<td valign="top">
+			<pre><font size="2" color="#800000">collection.</font><b><font size="2" color="#F06000">Refresh</font></b></pre>
+			</td>
+		</tr>
+	</table>
+	<p><b>Example:</b></p>
+	<pre class="libCScode" style="white-space: pre-wrap;" space="preserve"><font color="#0066ff">Dim cat As ADODB.Command
+Dim cat As New ADOX.Catalog</font></pre>
+	<pre class="libCScode" style="white-space: pre-wrap;" space="preserve"><font color="#0066ff">Set cmd = New ADODB.Command
+Set cmd.ActiveConnection = conn
+cmd.CommandText = &quot;Select * From Customers&quot;
+cmd.CommandType = adCmdStoredProc
+cmd.Parameters.</font><font color="#F06000"><b>Refresh</b></font><font color="#800000">
+</font><font color="#0066ff">cmd.Properties.</font><font color="#F06000"><b>Refresh
+</b></font><font color="#008000">
+</font><font face="Arial">  ' process further....</font><font color="#800000">
+</font><font color="#0066ff">cat.Procedures.</font><font color="#F06000"><b>Refresh</b></font></pre>
+	<p>&nbsp;</div>
+	</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
