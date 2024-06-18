@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO AbsolutePage and AbsolutePosition Property</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;
+	<a style="text-decoration: none" href="../../GUESTBOOK/gbook.php">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<p><b><font size="5">StrComp Function</font></b></p>
+<p><font face="Arial" size="2">Returns a <b>Variant</b> (<b>Integer</b>) 
+indicating the result of a string comparison.</font></p>
+<p class="label"><font face="Arial" size="2"><b>Syntax</b></font></p>
+<p><font face="Arial" size="2" color="#800000"><b>StrComp</b>(<b><i>string1</i></b>,
+<b><i>string2</i></b>[, <b><i>compare</i></b>])</font></p>
+<p><font face="Arial" size="2">The <b>StrComp</b> function syntax has these 
+named arguments:</font></p>
+<table cols="2" id="table7" width="781" cellspacing="1" style="border-collapse: collapse" border="1">
+	<tr vAlign="top">
+		<td class="label" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>Part</b></font></td>
+		<td class="label" width="689" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>Description</b></font></td>
+	</tr>
+	<tr vAlign="top">
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>string1</i></b></font></td>
+		<td width="689" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Required. Any valid string expression.</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>string2</i></b></font></td>
+		<td width="689" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Required. Any valid string expression.</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>compare</i></b></font></td>
+		<td width="689" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Optional. Specifies the type of string 
+		comparison. If the <b><i>compare</i></b> argument is Null, an error 
+		occurs. If <b><i>compare</i></b> is omitted, the <b>Option Compare</b> 
+		setting determines the type of comparison.</font></td>
+	</tr>
+</table>
+<font face="Arial" size="2"><br>
+&nbsp;</font><p class="label"><font face="Arial" size="2"><b>Settings</b></font></p>
+<p><font face="Arial" size="2">The <b>compare</b> argument settings are:</font></p>
+<table cols="3" id="table8" width="778" cellspacing="1" style="border-collapse: collapse" border="1">
+	<tr vAlign="top">
+		<td class="label" width="159" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>Constant</b></font></td>
+		<td class="label" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>Value</b></font></td>
+		<td class="label" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>Description</b></font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="159" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>vbUseCompareOption</b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">-1</font></td>
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Performs a comparison using the setting of 
+		the <b>Option Compare</b> statement.</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="159" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>vbBinaryCompare</b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">0</font></td>
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Performs a binary comparison.</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="159" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>vbTextCompare</b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">1</font></td>
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Performs a textual comparison.</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="159" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>vbDatabaseCompare</b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">2</font></td>
+		<td style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">Microsoft Access only. Performs a comparison 
+		based on information in your database.</font></td>
+	</tr>
+</table>
+<font face="Arial" size="2"><br>
+&nbsp;</font><p class="label"><font face="Arial" size="2"><b>Return Values</b></font></p>
+<p><font face="Arial" size="2">The <b>StrComp</b> function has the following 
+return values:</font></p>
+<table cols="2" id="table9" width="354" cellspacing="1" style="border-collapse: collapse" border="1">
+	<tr vAlign="top">
+		<td class="label" width="212" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>If</b></font></td>
+		<td class="label" align="center" bgcolor="#CCCCCC" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>StrComp returns</b></font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="212" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>string1</i></b> is less than <b><i>
+		string2</i></b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">-1</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="212" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>string1</i></b> is equal to <b><i>
+		string2</i></b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">0</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="212" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>string1</i></b> is greater than <b><i>
+		string2</i></b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2">1</font></td>
+	</tr>
+	<tr vAlign="top">
+		<td width="212" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b><i>string1</i></b> or <b><i>string2</i></b> 
+		is <b>Null</b></font></td>
+		<td align="center" style="border: 1px solid #C0C0C0; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+		<font face="Arial" size="2"><b>Null</b></font></td>
+	</tr>
+</table>
+</body>
+</head>		
+</html>
