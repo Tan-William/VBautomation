@@ -1,0 +1,248 @@
+<html>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/OpenForm%20Action.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:46 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>OpenForm Action</title>
+<style>
+<!--
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+
+
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/OpenForm%20Action.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:46 GMT -->
+<head>
+<style type="text/css">
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 1px solid black;
+padding: 2px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+font-type: arial;
+font-size: 14;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+</style>
+</head>
+<body></body>
+<div id="dhtmltooltip"></div>
+<script type="text/javascript">
+/************************************************************
+* Cool DHTML tooltip script provided by www.dynamicdrive.com
+*************************************************************/
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+document.onmousemove=positiontip
+</script>
+
+
+
+
+
+
+
+<table border="0" width="85%" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="43">&nbsp;</td>
+		<td>
+		<h1><font size="5" face="Arial" color="#800000">OpenForm Action</font></h1>
+		<p><font face="Arial" size="2">You can use the <b>OpenForm</b> action to 
+		open a form in Form view, form Design view, Print Preview, or Datasheet 
+		view. You can select data entry and window modes for the form and 
+		restrict the records that the form displays. This action is similar to 
+		clicking the <b class="ui">Open</b> button or <b class="ui">Design</b> 
+		button after clicking <b class="ui">Forms</b> under <b class="ui">
+		Objects</b>, and then selecting a form in the Database window.</font></p>
+		<p><font face="Arial" size="2">The <b>OpenForm</b> action has the 
+		following arguments.</font></p>
+		<table id="table2" cellspacing="1" border="1" bordercolor="#C0C0C0">
+			<tr>
+				<th bgcolor="#C0C0C0"><font face="Arial" size="2">Action argument</font></th>
+				<th width="671"><font face="Arial" size="2">Description</font></th>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font face="Arial" size="2" color="#800000">Form Name</font></td>
+				<td width="671"><font face="Arial" size="2">The name of the form to open. 
+				The <b class="ui">Form Name</b> box in the <b class="ui">Action 
+				Arguments</b> section of the Macro window shows all forms in the 
+				current database. This is a required argument. </font>
+				<p><font face="Arial" size="2">If you run a macro containing the 
+				OpenForm action in a library database, Microsoft Access looks 
+				for the form with this name first in the library database, then 
+				in the current database.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font face="Arial" size="2" color="#800000">View</font></td>
+				<td width="671"><font face="Arial" size="2">The view in which the form will 
+				open. Click <b class="ui">Form</b>, <b class="ui">Design</b>,
+				<b class="ui">Print Preview</b>, <b class="ui">Datasheet</b>,
+				<b class="ui">PivotTable</b>, or <b class="ui">PivotChart</b> in 
+				the <b class="ui">View</b> box. The default is <b class="ui">
+				Form</b>. </font>
+				<p><font face="Arial" size="2"><b>Note</b>&nbsp;&nbsp;The View argument 
+				setting overrides the settings of the form's <b class="ui">
+				DefaultView</b> and <b class="ui">ViewsAllowed</b> properties. 
+				For example, if a form's <b class="ui">ViewsAllowed</b> property 
+				is set to <b class="ui">Datasheet</b>, you can still use the 
+				OpenForm action to open the form in Form view.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font face="Arial" size="2" color="#800000">Filter Name</font></td>
+				<td width="671"><font face="Arial" size="2">A filter that restricts or sorts 
+				the form's records. You can enter the name of either an existing 
+				query or a filter that was saved as a query. However, the query 
+				must include all the fields in the form you are opening or have 
+				its <b class="ui">OutputAllFields</b> property set to
+				<b class="ui">Yes</b>.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font face="Arial" size="2" color="#800000">Where Condition</font></td>
+				<td width="671"><font face="Arial" size="2">A valid SQL
+				<font color="#0066CC" onMouseover="ddrivetip('WHERE clause: The part of an SQL statement that specifies which records to retrieve.','yellow', 500)"; onMouseout="hideddrivetip()"><b>WHERE</b> </font>
+				clause (without the word <b>WHERE</b>) or 
+				<font color="#0066CC" onMouseover="ddrivetip('Any combination of mathematical or logical operators, constants, functions, and names of fields, controls, and properties that evaluates to a single value. Expressions can perform calculations, manipulate characters, or test data.','yellow', 500)"; onMouseout="hideddrivetip()"> 
+				<b>expression</b> </font>
+				that Access uses to select records from the form's underlying table or query. If you 
+				select a filter with the Filter Name argument, Access applies 
+				this <b>WHERE</b> clause to the results of the filter. </font>
+				<p><font face="Arial" size="2">To open a form and restrict its 
+				records to those specified by the value of a control on another 
+				form, use the following expression:</font></p>
+				<p><font face="Arial" color="#800000" size="2"><b class="ui">[</b><i>fieldname</i><b class="ui">] 
+				= Forms![</b><i>formname</i><b class="ui">]![</b><i>controlname 
+				on other form</i><b class="ui">]</b></font></p>
+				<p><font face="Arial" size="2">The <i>fieldname</i> argument is 
+				the name of a field in the underlying table or query of the form 
+				you want to open. The <i>controlname on other form</i> argument 
+				is the name of the control on the other form that contains the 
+				value you want records in the first form to match.</font></p>
+				<p><font face="Arial" size="2"><b>Note</b>&nbsp;&nbsp;The maximum length 
+				of the <b>Where</b> Condition argument is 255 characters. If you need 
+				to enter a more complex SQL <b>WHERE</b> clause longer than this, use 
+				the <b class="ui">OpenForm</b> method of the <b class="ui">DoCmd</b> 
+				object in Microsoft Visual Basic instead. You can enter SQL 
+				<b>WHERE</b> clause statements of up to 32,768 characters in Visual 
+				Basic.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font face="Arial" size="2" color="#800000">Data Mode</font></td>
+				<td width="671"><font face="Arial" size="2">The data entry mode for the 
+				form. This applies only to forms opened in Form view or 
+				Datasheet view. Click <b class="ui">Add</b> (the user can add 
+				new records but can't edit existing records), <b class="ui">Edit</b> 
+				(the user can edit existing records and add new records), or
+				<b class="ui">Read Only</b> (the user can only view records). 
+				The default is <b class="ui">Edit</b>. </font>
+				<p><font face="Arial" size="2"><b class="ui">Notes</b></font></p>
+				<ul>
+					<li><font face="Arial" size="2">The Data Mode argument 
+					setting overrides the settings of the form's <b class="ui">
+					AllowEdits</b>, <b class="ui">AllowDeletions</b>,
+					<b class="ui">AllowAdditions</b>, and <b class="ui">
+					DataEntry</b> properties. For example, if a form's
+					<b class="ui">AllowEdits</b> property is set to
+					<b class="ui">No</b>, you can still use the OpenForm action 
+					to open the form in Edit mode. </font></li>
+					<li><font face="Arial" size="2">If you leave this argument 
+					blank, Access opens the form in the data entry mode set by 
+					the form's <b class="ui">AllowEdits</b>, <b class="ui">
+					AllowDeletions</b>, <b class="ui">AllowAdditions</b>, and
+					<b class="ui">DataEntry</b> properties. </font></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font face="Arial" size="2" color="#800000">Window Mode</font></td>
+				<td width="671"><font face="Arial" size="2">The window mode in which the 
+				form opens. Click <b class="ui">Normal</b> so the form is in the 
+				mode set by its properties, <b class="ui">Hidden</b> (the form 
+				is hidden), <b class="ui">Icon</b> (the form opens minimized as 
+				a small title bar at the bottom of the screen), or <b class="ui">
+				Dialog</b> (the form's <b class="ui">
+				<font color="#0066CC" onMouseover="ddrivetip('modal: A window or dialog box that requires the user to take some action before the focus can switch to another form or dialog box. Dialog boxes and messages are usually modal.','yellow', 500)"; onMouseout="hideddrivetip()"> Modal </font>
+				</b> and <b class="ui">
+				PopUp</b> properties are set to <b class="ui">Yes</b>). The 
+				default is <b class="ui">Normal</b>.</font></td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/OpenForm%20Action.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:46 GMT -->
+</html>
