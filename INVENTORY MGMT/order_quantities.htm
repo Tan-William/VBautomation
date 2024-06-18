@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material Management, Material Control, Production Planning and Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+<title>Economic Order Quantities</title>
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	font-size: 11pt;
+}
+.auto-style3 {
+	font-family: Arial;
+	font-size: 10.5pt;
+	margin-top: 0pt;
+	margin-bottom: 3px;
+}
+.auto-style4 {
+	font-size: 11pt;
+	line-height: 1.3; /* This only affects Firefox 1.0, not IE6 */
+}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="85%" height="777">
+<tbody><tr valign="top">
+<td class="menu" style="width: 287px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(VB6)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2003)</span></a><br>
+&nbsp;<p><br>
+<a href="index_inv_mgmt.htm">Material Management</a><span class="menu2"><br>
+<img src="images/menu1.gif" alt="" height="9" width="18">Economic Order 
+Quantities</span><p><font color="#800000"><a href="production_planning.htm">
+Master Scheduling, Capacity &amp; <br>
+Production Planning</a></font><p>
+<font color="#800000"><a href="../FORECASTING/forecasting_fundamental.htm">
+Business Forecasting Methods</a></font></td>
+
+
+<td class="body" style="width: 4px">
+
+
+&nbsp;</td>
+
+
+<td class="body" width="1410">
+
+
+<p align="center"><font size="5"><b><span style="font-family: Arial">Economic 
+Order Quantities </span></b></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font size="2" face="Arial" class="auto-style1">To 
+determine<span> the right Economic Order Quantities </span>(EOQ, also known as 
+lot sizing) and related&nbsp;cost-based lot sizing methods is actually rather simple 
+calculation with an Excel spreadsheet. <span>Many ERP packages come with built 
+in calculations for EOQ which calculate automatically. Often the users do not 
+understand how it is calculated and therefore do not understand the data inputs 
+and system setup which controls the output. </span>Once you understand the 
+workings of cost-based lot sizing, you can use that knowledge to put together 
+your own system that meets your specific business needs.&nbsp;But note that <span>
+often time, these built-in EOQ calculations are inadequate, and in need of 
+modifications to deal with the diversity of multi product groups and processes.
+</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">EOQ is essentially an accounting formula that determines&nbsp;the point 
+at which the combination of&nbsp;order costs and inventory carrying costs are the 
+least.&nbsp;The result is the most cost effective quantity to order. In purchasing 
+this is known as the order quantity, in manufacturing it is known as the 
+production lot size.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">While EOQ may not apply to every inventory situation, most 
+organizations will find it beneficial in at least some aspect of their 
+operation. Anytime you have repetitive purchasing or planning of an item, EOQ 
+should be considered. Obvious applications for EOQ are purchase-to-stock 
+distributors and make-to-stock manufacturers, however, make-to-order 
+manufacturers should also consider EOQ when they have multiple orders or release 
+dates for the same items and when planning components and sub-assemblies. 
+Repetitive buy maintenance, repair, and operating (MRO) inventory is also a good 
+application for EOQ. Though EOQ is generally recommended in operations where 
+demand is relatively steady, items with demand variability such as seasonality 
+can still use the model by going to shorter time periods for the EOQ 
+calculation. Just make sure the usage and carrying costs are based on the same 
+time period. </span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">The basic Economic Order Quantity (EOQ) formula is:&nbsp;</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<img border="0" src="images/EOQ.gif" width="298" height="51"></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">&nbsp;</font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial"><b>
+<font size="5">The Inputs</font></b></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><span style><font face="Arial">
+<span class="auto-style1">Exaggerated order costs and carrying costs are 
+common mistakes made in EOQ calculations. Using all costs associated with your 
+purchasing and receiving departments to calculate order cost or using all costs 
+associated with storage and material handling to calculate carrying cost will 
+give you highly inflated costs resulting in inaccurate results from your EOQ 
+calculation.&nbsp;Note of caution if you are using benchmarks or published industry 
+standards in calculations - the average purchase order costs can be untruly 
+high.&nbsp;True that some operations may have higher purchase costs, especially if 
+they are frequently re-sourcing, re-quoting, and buying from overseas vendors. 
+However if the operation is primarily involved with repetitive buying from 
+domestic vendors </span><font face="Times New Roman"><span class="auto-style1">&#8212; 
+</span> </font>
+<span class="auto-style1">purchase order costs should be relatively lower, $10 
+to $50 range. </span></font></span></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">The following breaks down the data inputs in more detail and gives 
+insight into the aspects of each components.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span class="auto-style1">&nbsp;</span></font><span class="auto-style1"></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"></span><font face="Arial"><span style>
+<font color="#0000ff"><b style><span class="auto-style2">Annual Usage</span></b></font></span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">You simply input your forecasted annual usage in units.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span class="auto-style1">&nbsp;</span></font><span class="auto-style1"></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"></span><font face="Arial"><span style>
+<font color="#0000ff"><b style><span class="auto-style2">Order Cost</span></b></font></span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">Also known as purchase cost or set up cost,&nbsp;this is the sum of the 
+fixed costs that are incurred each time an item is ordered. These costs are not 
+associated with the quantity ordered but primarily with physical activities 
+required to process the order. </span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font size="2" face="Arial" class="auto-style1">
+<span style>For <b style>purchased items,</b>&nbsp;these would include the cost to 
+enter the purchase order and/or requisition, any approval steps, the cost to 
+process the receipt, incoming inspection, invoice processing and vendor payment, 
+and in some cases a portion of the inbound freight may also be included in order 
+cost. It is important to understand that these are costs associated with the 
+frequency of the orders and not the quantities ordered. For example, in your 
+receiving department the time spent checking in the receipt, entering the 
+receipt, and doing any other related paperwork would be included, while the time 
+spent repacking materials, unloading trucks, and delivery to other departments 
+would likely not be included. If you have inbound quality inspection where you 
+inspect a percentage of the quantity received you would include the time to get 
+the specs and process the paperwork and not include time spent actually 
+inspecting, however if you inspect a fixed quantity per receipt you would then 
+include the entire time including inspecting, repacking, etc. In the purchasing 
+department you would include all time associated with creating the purchase 
+order, approval steps, contacting the vendor, expediting, and reviewing order 
+reports, you would not include time spent reviewing forecasts, sourcing, getting 
+quotes (unless you get quotes each time you order), and setting up new items. 
+All time spent dealing with vendor invoices would be included in order cost.
+</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">Associating actual costs to the activities associated with order 
+cost is where many an EOQ formula runs afoul. Do not make a list of all of the 
+activities and then ask the people performing the activities &quot;how long does it 
+take you to do this?&quot;&nbsp;The results of this type of measurement are rarely even 
+close to accurate. I have found it to be more effective to determine the 
+percentage of time within the department consumed performing the specific 
+activities and multiplying this by the total labor costs for a certain time 
+period (usually a month) and then dividing by the line items processed during 
+that same period.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font size="2" face="Arial" class="auto-style1">
+<span style>It is extremely difficult to associate inbound freight costs with 
+order costs in an automated EOQ program and I suggest it only if the inbound 
+freight cost has a significant effect on unit cost <u>and</u> its effect on unit 
+cost varies significantly based upon the order quantity.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font size="2" face="Arial" class="auto-style1">
+<span style>In <b style>manufacturing,</b> the order cost would include the time 
+to initiate the work order, time associated with picking and issuing components 
+excluding time associated with counting and handling specific quantities, all 
+production scheduling time, machine set up time, and inspection time. Production 
+scrap directly associated with the machine setup should also be included in 
+order cost as would be any tooling that is discarded after each production 
+run.&nbsp;There may be times when you want to artificially inflate or deflate set-up 
+costs. If you lack the capacity to meet the production schedule using the EOQ, 
+you may want to artificially increase set-up costs to increase lot sizes and 
+reduce overall set up time. If you have excess capacity you may want to 
+artificially decrease set up costs, this will increase overall set up time and 
+reduce inventory investment.&nbsp;The idea being that if you are paying for the labor 
+and machine overhead anyway it would make sense to take advantage of the savings 
+in reduced inventories.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">For the most part, order cost is primarily the labor associated with 
+processing the order, however, you can include the other costs such as the costs 
+of phone calls, faxes, postage, envelopes, etc.&nbsp;</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">&nbsp;</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style2">
+<font color="#0000ff"><b style>Annual Carrying cost</b></font></span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">C<font face="Arial"><span style class="auto-style1">arrying 
+cost (also called Holding cost), is the cost associated with having inventory on 
+hand. It is primarily made up of the costs associated with the inventory 
+investment and storage cost. For the purpose of the EOQ calculation, if the cost 
+does not change based upon the quantity of inventory on hand it should not be 
+included in carrying cost. In the EOQ formula, carrying cost is represented as 
+the annual cost per average on hand inventory unit. Below are the primary 
+components of carrying cost.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font size="2" face="Arial">
+<span style><b style><span class="auto-style2">Interest</span></b><span class="auto-style1">. If you had to borrow money to pay for your 
+inventory, the interest rate would be part of the carrying cost.&nbsp;If you did not 
+borrow on the inventory, but have loans on other capital items, you can use the 
+interest rate on those loans since a reduction in inventory would free up money 
+that could be used to pay these loans.</span></span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font size="2" face="Arial">
+<span style><b style><span class="auto-style2">Insurance</span></b><span class="auto-style1">. S</span></span><span class="auto-style1"><span>hould include this as part of 
+carrying cost s</span></span><span style><span class="auto-style1">ince insurance costs are directly related to 
+the total value of the inventory.</span></span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font size="2" face="Arial">
+<span style><b style><span class="auto-style2">Taxes</span><span class="auto-style1">.</span></b><span class="auto-style1"> If you are required to pay any taxes on the 
+value of your inventory they would also be included.</span></span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font size="2" face="Arial">
+<span style><b style><span class="auto-style2">Storage Costs</span></b><span class="auto-style1">. Mistakes in calculating storage costs 
+are common in EOQ implementations. Generally companies take all costs associated 
+with the warehouse and divide it by the average inventory to determine a storage 
+cost percentage for the EOQ calculation. This tends to include costs that are 
+not directly affected by the inventory levels and does not compensate for 
+storage characteristics. Carrying costs for the purpose of the EOQ calculation 
+should only include costs that are variable based upon inventory levels. </span> </span>
+</font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">If you are running a packing operation where you have fixed picking 
+locations assigned to each item where the locations are sized for picking 
+efficiency and are not designed to hold the entire inventory, this portion of 
+the warehouse should not be included in carrying cost since changes to inventory 
+levels do not effect costs here. Your overflow storage areas would be included 
+in carrying cost. Operations that use purely random storage for their product 
+would include the entire storage area in the calculation. Areas such as 
+shipping/receiving and staging areas are usually not included in the storage 
+calculations. However. if you have to add an additional warehouse just for 
+overflow inventory then you would include all areas of the second warehouse as 
+well as freight and labor costs associated with moving the material between the 
+warehouses.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font size="2" face="Arial" class="auto-style1">
+<span style>Since storage costs are generally applied as a percentage of the 
+inventory value you may need to classify your inventory based upon a ratio of 
+storage space requirements to value in order to assess storage costs accurately. 
+For example, annual storage costs are 5% of the average inventory value of
+</span><span>$10,000</span><span style>, equal to $500. The EOQ formula apply a 
+$500 storage cost to the average quantity of each of the category A items even 
+though they actually took up only 1 pallet-size while the others take up 30 
+pallets space. Categorizing these items would place category items A with 
+minimal storage costs (say 3% or less) and the other categorized items with 
+higher storage costs (4-10%, 11-20%, etc). This would then allow the EOQ formula 
+to work correctly. </span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">There are situations where you may not want to include any storage 
+costs in your EOQ calculation. If your operation has excess storage space of 
+which it has no other uses you may decide not to include storage costs since 
+reducing your inventory does not provide any actual savings in storage costs. As 
+your operation grows near a point at which you would need to expand your 
+physical operations you may then start including storage in the calculation.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">A portion of the time spent on cycle counting should also be 
+included in carrying cost, remember to apply costs which change based upon 
+changes to the average inventory level. So with cycle counting, you would 
+include the time spent physically counting and not the time spent filling out 
+paperwork, data entry, and travel time between locations.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1">Other costs that can be included in carrying cost are risk 
+factors&nbsp;associated with obsolescence, damage, and theft. Do not factor in these 
+costs unless they are a direct result of the inventory levels and are 
+significant enough to change the results of the EOQ equation.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">&nbsp;</font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial"><b>
+<font size="4" color="#0000ff">Variations</font></b></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+<span style class="auto-style1"><br>There are many variations on the basic EOQ model. Below are the most 
+useful ones.</span></font></p>
+<ul>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">
+	<font face="Arial">
+	Quantity discount logic can be programmed to work in conjunction with the 
+	EOQ formula to determine optimum order quantities. Most systems will require 
+	this additional programming.</font></li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">
+	<font face="Arial">
+	Additional logic can be programmed to determine max quantities for items 
+	subject to spoilage or to prevent obsolescence on items reaching the end of 
+	their product life cycle.</font></li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">
+	<font face="Arial">
+	When used in manufacturing to determine lot sizes where production runs are 
+	very long (weeks or months) and finished product is being released to stock 
+	and consumed/sold throughout the production run you may need to take into 
+	account the ratio of production to consumption to more accurately represent 
+	the average inventory level.</font></li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial">
+	<span class="auto-style1">Your safety stock calculation may take into account the order 
+	cycle time that is driven by the EOQ. If so, you may need to tie the cost of 
+	the change in safety stock levels into the formula.</span><br>
+	&nbsp;</font></li>
+</ul>
+<p style="margin-top: 0pt; margin-bottom: 3px;"><font face="Arial"><b>
+<font size="4" color="#0000ff">Implementing EOQ</font></b></font></p>
+<p class="auto-style3">
+<font face="Arial"><br>There are 
+primarily two ways to implement EOQ. Both methods obviously require that you 
+have already determined the associated costs.<span style> </span>The simplest 
+method is to set up your calculation in a spreadsheet program, manually 
+calculate EOQ one item at a time, and then manually enter the order quantity 
+into your inventory system.<span style> </span>If your inventory has fairly 
+steady demand and costs and you have less than one or two thousand SKUs you can 
+probably get by using this method once per year.<span style> </span>If you have 
+more than a couple thousand SKUs and/or higher variability in demand and costs 
+you will need to program the EOQ formula into your existing inventory system.<span style>
+</span>This allows you to quickly re-calculate EOQ automatically as often as 
+needed.<span style> </span>You can also use a hybrid of the two systems by 
+downloading your data to a spreadsheet or database program, perform the 
+calculations and then update your inventory system either manually or through a 
+batch program.<span style> </span>Whichever method you use you should make sure 
+to follow the following steps:<br></font></p>
+<ul>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">
+	<font face="Arial">
+	Test the formula. Prior to final implementation you must test the 
+	programming and setup. Run the EOQ program and then manually check the 
+	results using sample items that are representative of the variations of your 
+	inventory base.</font></li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">
+	<font face="Arial">
+	Project results. You'll need to run a simulation or use a representative 
+	sampling of items to determine the overall short-term and long-term effects 
+	the EOQ calculation will have on warehouse space, cash flow, and operations. 
+	Dramatic increases in inventory levels may not be immediately feasible, if 
+	this is the case you may temporarily adjust the formula until arrangements 
+	can be made to handle the additional storage requirements and compensate for 
+	the effects on cash flow. If the projection shows inventory levels dropping 
+	and order frequency increasing, you may need to evaluate staffing, 
+	equipment, and process changes to handle the increased activity.</font></li>
+	<li>
+	<p style="margin-top: 0pt; margin-bottom: 3px;" class="auto-style1">
+	<font face="Arial">
+	Maintain EOQ. The values for Order cost and Carrying cost should be 
+	evaluated at least once per year taking into account any changes in interest 
+	rates, storage costs, and operational costs.</font></li>
+</ul>
+<p style="margin-top: 0pt; margin-bottom: 3px;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font face="Arial" color="#0000ff" size="4"><b>Total Annual Cost </b></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<font face="Arial">
+<span style="font-family: Arial; font-size: 10pt"><br></span>
+<span style="font-family: Arial; " class="auto-style1">Total 
+Annual Cost calculation - a</span></font><span style="font-family: Arial; " class="auto-style1"><font face="Arial"> 
+related calculation that can be used to prove the EOQ calculation.<span style>
+</span></font></span>
+<font face="Arial"><span style="font-family: Arial; ">
+<span style class="auto-style1">&nbsp;</span></span><span style="font-family: Arial; " class="auto-style1">This formula is also very useful 
+when comparing quotes where vendors offer different minimum order quantities, 
+price breaks, lead times, transportation costs. </span> </font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<img border="0" src="images/TotalAnnualCost.gif" width="693" height="43"></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">
+<span style="font-family: Arial" class="auto-style1">I</span><font face="Arial"><span style="font-family: Arial; " class="auto-style1">f 
+you have accurate inputs the output is the most cost-effective quantity to order 
+based upon your current operational costs.<span style> </span>To further 
+increase inventory turns you will need to reduce the order costs. E-procurement, 
+vendor-managed inventories, bar coding, and vendor certification programs can 
+reduce the costs associated with processing an order. Equipment enhancements and 
+process changes can reduce costs associated with manufacturing set up. 
+Increasing forecast accuracy and reducing lead times which result in the ability 
+to operate with reduced safety stock can also reduce inventory levels</span><span style="font-family: Arial; font-size: 10pt;">.</span></font></p>
+<p style="margin-top: 0pt; margin-bottom: 3px;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 3px;" align="right">
+<font face="Arial"><span class="auto-style2">Next Page &gt;&gt; </span><a style="color: #0000FF" href="pareto.htm">
+<span class="auto-style4">
+Pareto &quot;80/20&quot; Rule 
+Analysis</span><span class="menu2"><font size="2"> </font> </a></span> </font><br>
+&nbsp;</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,1083 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/exp_smoothing.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:22 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material Management, Material Control, Production Planning and Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Poh, http://vbautomation.110mb.com">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+</head>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(../../../www.newmail.ru/pics/channels/a1.gif); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/exp_smoothing.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:22 GMT -->
+<head>
+<style type="text/css">
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 1px solid black;
+padding: 2px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+font-type: arial;
+font-size: 14;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+</style>
+</head>
+
+<body>
+<div id="dhtmltooltip"></div>
+<script type="text/javascript">
+/************************************************************
+* Cool DHTML tooltip script provided by www.dynamicdrive.com
+*************************************************************/
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+document.onmousemove=positiontip
+</script>
+
+
+
+
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="../vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('../images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<tbody><tr valign="top">
+<td class="menu" width="185" style="width: 241px">
+
+
+
+<a href="../../index.htm">Home</a><br>
+<a href="../../AboutMe/Me.htm">About Me</a><br>
+<a href="../../VBA/beginner_basic.htm">Excel VBA (XL97-2003)</a><br>
+<a href="../../EXCEL/excel_worksheet_functions.htm">Excel spreadsheet formula</a>
+<a href="../../EXCEL/excel_under_construction.htm">Excel VB.NET (XL2007)</a><br>
+<a href="../../ACCESS/beginner_basic_Acc.htm">Access VBA</a><br>
+&nbsp;<p>
+<a href="../index_inv_mgmt.htm">Material Management &amp; Demand Forecasting</a>
+<span class="menu2">
+<br>
+<br>
+<img src="../images/menu1.gif" alt="" height="9" width="18"><span style="font-weight: 400"><a href="../SS.htm"><b>More 
+on Safety Stock</b></a></span><br>
+&nbsp;
+<img src="../images/menu1.gif" alt="" height="9" width="18">Exponential 
+Smoothing<br>
+&nbsp;</span></td>
+
+
+<td class="menu" style="width: 7px">
+
+
+
+&nbsp;</td>
+
+
+<td class="body">
+
+
+<p align="center"><font style="font-size: 18pt"><b>
+<span style="font-family: Arial">Weighting the averages using Exponential 
+Smoothing technique</span></b></font></p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">The technique of 
+exponential smoothing has many advantages over the moving average technique - it 
+responds well to all sporadic demand changes. It takes more notice of the recent 
+historical demand and less notice of the older demand data. Exponential 
+smoothing technique provides a weighted average which improves the historical 
+forecasting. It also doesn't need to have a very long periods of historical data 
+as does the case in the moving average technique. The later gives equal 
+importance to all the periods you want to evaluate, and also needs many 
+recalculation each time.</span></font></p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">You use 
+exponential smoothing to derive a new forecast demand (which is in fact a 
+historical &quot;average&quot;). The calculation is:</span></font></p>
+<p align="left"><font color="#880000"><span style="font-family: Arial">
+<font size="3"><b>New Forecast</b> = &#945; x Demand in last period + (1-&#945;) x 
+Forecast for last period</font></span></font></p>
+<p align="left"><span style="font-family: Arial"><font style="font-size: 11pt">&#945; 
+is the smoothing factor or constant.</font></span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">In Table 4.1, 
+the calculation of new forecast using </span></font>
+<span style="font-family: Arial"><font style="font-size: 11pt">&#945; =0.1 and
+&#945; =0.3 respectively, analyses the 
+last period's demand to give a historical average plus the remainder which we 
+treated it as &quot;statistical forecast fluctuation&quot;. The smoothing factor, &#945;, defines the amount of notice which is 
+taken of the each period's demand. The forecasts using </font></span>
+<font style="font-size: 11pt"><span style="font-family: Arial">exponential smoothing with
+</span></font><span style="font-family: Arial"><font style="font-size: 11pt">&#945; 
+=0.1 and &#945; =0.3 respectively, are 
+calculated using the previous period's forecast. The MAD calculated in each case 
+is 2.7 and 2.9 respectively, and this indicates that the statistical forecast 
+using smoothing &#945; =0.1 yields a 
+better result. The chart on the right also indicates that the yellow line 
+forecast with &#945; =0.1 gives a much 
+better smooth. [<a href="exp_smoothing_const_01.xls"><font color="#0066CC">Download</font></a> 
+this worksheet]</font></span></p>
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 734px" id="table1">
+	<colgroup>
+		<col width="52" style="width: 39pt"><col width="61" style="width: 46pt">
+		<col width="60" style="width: 45pt"><col width="56" style="width: 42pt">
+		<col width="60" span="2" style="width: 45pt">
+	</colgroup>
+	<tr height="33" style="height: 24.75pt">
+		<td height="33" style="height: 24.75pt; width: 62px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px" bordercolor="#999999">
+		Month</td>
+		<td style="width: 73px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px" bordercolor="#999999">
+		Last period<br>
+		demand</td>
+		<td style="width: 71px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px" bordercolor="#999999">
+		Forecast <br>
+		&#945; = 0.1</td>
+		<td style="width: 65px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px" bordercolor="#999999">
+		Forecast<br>
+		Error1</td>
+		<td style="width: 64px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px" bordercolor="#999999">
+		Forecast <br>
+		&#945; = 0.3</td>
+		<td style="width: 66px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px" bordercolor="#999999">
+		Forecast<br>
+		Error2</td>
+		<td style="width: 11px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-left-style: solid; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; padding: 0px" rowspan="15">&nbsp;</td>
+		<td style="width: 316px; font-size: 9.0pt; text-align: right; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-left-style: solid; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; padding: 0px" rowspan="15">
+		<table border="0" cellspacing="0" cellpadding="0" width="312" height="222">
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_01_1.gif" height="74" width="156"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_01_2.gif" height="74" width="156"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_01_3.gif" height="74" width="156"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_01_4.gif" height="74" width="156"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_01_5.gif" height="74" width="156"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_01_6.gif" height="74" width="156"></td>
+			</tr>
+		</table>
+		<p style="text-align: center">Figure 4.1</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38353" bordercolor="#999999" width="62">
+		Jan-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		10</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.0</td>
+		<td align="right" x:fmla="=B2-C2" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		0.0</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		10.0</td>
+		<td align="right" x:fmla="=B2-E2" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		0.0</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38384" bordercolor="#999999" width="62">
+		Feb-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		14</td>
+		<td align="right" x:num="10.4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.4</td>
+		<td align="right" x:fmla="=B3-C3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		3.6</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		10.0</td>
+		<td align="right" x:fmla="=B3-E3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		4.0</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38412" bordercolor="#999999" width="62">
+		Mar-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		6</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.5</td>
+		<td align="right" x:fmla="=B4-C4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		-4.5</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		11.2</td>
+		<td align="right" x:fmla="=B4-E4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		-5.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38443" bordercolor="#999999" width="62">
+		Apr-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		8</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		9.8</td>
+		<td align="right" x:fmla="=B5-C5" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		-1.8</td>
+		<td align="right" x:num="9.64" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		9.6</td>
+		<td align="right" x:num="-1.64" x:fmla="=B5-E5" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		-1.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38473" bordercolor="#999999" width="62">
+		May-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		16</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		9.7</td>
+		<td align="right" x:fmla="=B6-C6" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		6.3</td>
+		<td align="right" x:num="9.15" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		9.2</td>
+		<td align="right" x:num="6.85" x:fmla="=B6-E6" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		6.9</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38504" bordercolor="#999999" width="62">
+		Jun-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		12</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.2</td>
+		<td align="right" x:fmla="=B7-C7" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		1.8</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		11.2</td>
+		<td align="right" x:num="0.80000000000000071" x:fmla="=B7-E7" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		0.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38534" bordercolor="#999999" width="62">
+		Jul-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		7</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.6</td>
+		<td align="right" x:fmla="=B8-C8" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		-3.6</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		11.4</td>
+		<td align="right" x:fmla="=B8-E8" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		-4.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38565" bordercolor="#999999" width="62">
+		Aug-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		11</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.1</td>
+		<td align="right" x:fmla="=B9-C9" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		0.9</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		10.1</td>
+		<td align="right" x:fmla="=B9-E9" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		0.9</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38596" bordercolor="#999999" width="62">
+		Sep-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		13</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		10.3</td>
+		<td align="right" x:fmla="=B10-C10" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		2.7</td>
+		<td align="right" x:num="10.38" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		10.4</td>
+		<td align="right" x:num="2.62" x:fmla="=B10-E10" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		2.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38626" bordercolor="#999999" width="62">
+		Oct-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		5</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		9.5</td>
+		<td align="right" x:fmla="=B11-C11" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		-4.5</td>
+		<td align="right" x:num="11.16" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		11.2</td>
+		<td align="right" x:num="-6.16" x:fmla="=B11-E11" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		-6.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38657" bordercolor="#999999" width="62">
+		Nov-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		10</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		9.1</td>
+		<td align="right" x:fmla="=B12-C12" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		0.9</td>
+		<td align="right" x:num="9.31" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		9.3</td>
+		<td align="right" x:num="0.6899999999999995" x:fmla="=B12-E12" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		0.7</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38687" bordercolor="#999999" width="62">
+		Dec-05</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="73" bordercolor="#999999">
+		8</td>
+		<td align="right" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="71" bordercolor="#999999">
+		9.8</td>
+		<td align="right" x:fmla="=B13-C13" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="65" bordercolor="#999999">
+		-1.8</td>
+		<td align="right" x:num="9.52" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="64" bordercolor="#999999">
+		9.5</td>
+		<td align="right" x:num="-1.52" x:fmla="=B13-E13" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="66" bordercolor="#999999">
+		-1.5</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" colspan="3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" bordercolor="#999999" align="left">
+		Sum of Absolute Forecast Error:</td>
+		<td x:arrayrange="D14" x:fmla="=(SUM(ABS(D2:D13)))" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" width="57" bordercolor="#999999">
+		32.4</td>
+		<td style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" width="56" bordercolor="#999999">&nbsp;</td>
+		<td x:num="34.78" x:arrayrange="F14" x:fmla="=(SUM(ABS(F2:F13)))" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" width="58" bordercolor="#999999">
+		34.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" colspan="3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" bordercolor="#999999" align="left">
+		Mean Absolute Deviation (MAD):</td>
+		<td x:fmla="=D14/12" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" width="57" bordercolor="#999999">
+		2.7</td>
+		<td style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" width="56" bordercolor="#999999">&nbsp;</td>
+		<td x:num="2.8983333333333321" x:fmla="=F14/12" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px" width="58" bordercolor="#999999">
+		2.9</td>
+	</tr>
+</table>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">Table 4.1 
+Exponential Smoothing technique</span></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">You can 
+fine-tune the statistical forecast by altering the value of the smoothing 
+constant (</span></font><span style="font-family: Arial"><font style="font-size: 11pt">&#945;). For 
+effective exponential forecasting, the range of the smoothing constant which you 
+can chose from are from 0.1 to 0.4. If the historical demand data varies slowly 
+without sporadic changes, then &#945; value of 0.1 or 0.15 is recommended. If there are 
+understandable variable changes in average past demand level to which you want 
+the forecast to smooth down the variability, a higher value of &#945;, say, 0.4, 
+should be chosen. In Figure 4.2 and Figure 4.3 below, which shows the much 
+unstable variable demand and the increasing trend demand pattern, you see that 
+the exponential smoothing with &#945; 
+=0.4 (the red curve lines) give a more reliable forecast in both cases. Remember 
+this as the rule of thumb - low values of &#945; make the forecast consistent; higher 
+values of &#945; make the forecast reactive to the variability of historical demand. 
+However, smoothing with a higher value of &#945; making your forecast rely too 
+heavily upon demand in the last period.</font></span></p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">In Figure 4.3, 
+the variability of the demand was high from month to month and display an upward 
+linear trend, using a low </span></font><span style="font-family: Arial">
+<font style="font-size: 11pt">value of &#945; smooth it to a more stable average as the yellow curve 
+shows. However, if you have the more challenging customer service level goal to 
+meet, you should use a higher</font></span><font style="font-size: 11pt"><span style="font-family: Arial">
+</span></font><span style="font-family: Arial"><font style="font-size: 11pt">value of &#945;, 
+say=0.4, as it reacts more rapidly to the trends in the past demand average 
+level. MAD value of 4.1 shows that exponential smoothing using &#945;=0.4 
+gives better forecast. If you have little knowledge or no idea of what caused the historical 
+demand pattern of the part, then it is recommended to initially use a median 
+value of &#945;=0.2 or 0.25, then review the 
+value of &#945; again at regular periods on an on-going basis, and change the &#945; value 
+where necessary.</font></span></p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">
+<a href="exp_smoothing_const_02.xls"><font color="#0066CC">Download</font></a> 
+the following example worksheet.</span></font></p>
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 734px" id="table3">
+	<colgroup>
+		<col width="52" style="width: 39pt">
+		<col width="63" span="6" style="width: 47pt">
+	</colgroup>
+	<tr height="41" style="height: 30.75pt">
+		<td height="41" style="height: 30.75pt; width: 46px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Month</td>
+		<td style="width: 62px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Historical<br>
+		Demand</td>
+		<td style="width: 58px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Previous Forecast</td>
+		<td style="width: 57px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast <br>
+		&#945; = 0.1</td>
+		<td style="width: 59px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast<br>
+		Error1</td>
+		<td style="width: 60px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast <br>
+		&#945; = 0.4</td>
+		<td style="width: 57px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast<br>
+		Error2</td>
+		<td style="width: 4px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: medium none; padding: 0px" rowspan="15">&nbsp;</td>
+		<td style="width: 324px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: medium none; padding: 0px" rowspan="15">
+		<table border="0" cellspacing="0" cellpadding="0" width="324" height="196">
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02a_1.gif" height="65" width="162"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02a_2.gif" height="65" width="162"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02a_3.gif" height="66" width="162"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02a_4.gif" height="66" width="162"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02a_5.gif" height="65" width="162"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02a_6.gif" height="65" width="162"></td>
+			</tr>
+		</table>
+		<p>Figure 4.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38718" width="46">
+		Jan-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		10</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		12</td>
+		<td align="right" x:num="11.8" x:fmla="=(0.1*B2)+(1-0.1)*C2" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		11.8</td>
+		<td align="right" x:num x:fmla="=B2-D2" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		-1.8</td>
+		<td align="right" x:num x:fmla="=(0.4*B2)+(1-0.4)*C2" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		11.2</td>
+		<td align="right" x:num x:fmla="=B2-F2" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		-1.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38749" width="46">
+		Feb-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		14</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		10</td>
+		<td align="right" x:num="10.4" x:fmla="=(0.1*B3)+(1-0.1)*C3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		10.4</td>
+		<td align="right" x:num x:fmla="=B3-D3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		3.6</td>
+		<td align="right" x:num x:fmla="=(0.4*B3)+(1-0.4)*C3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		11.6</td>
+		<td align="right" x:num x:fmla="=B3-F3" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		2.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38777" width="46">
+		Mar-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		5</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		9</td>
+		<td align="right" x:num x:fmla="=(0.1*B4)+(1-0.1)*C4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		8.6</td>
+		<td align="right" x:num x:fmla="=B4-D4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		-3.6</td>
+		<td align="right" x:num x:fmla="=(0.4*B4)+(1-0.4)*C4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		7.4</td>
+		<td align="right" x:num x:fmla="=B4-F4" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		-2.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38808" width="46">
+		Apr-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		8</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		9</td>
+		<td align="right" x:num x:fmla="=(0.1*B5)+(1-0.1)*C5" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		8.9</td>
+		<td align="right" x:num x:fmla="=B5-D5" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		-0.9</td>
+		<td align="right" x:num x:fmla="=(0.4*B5)+(1-0.4)*C5" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		8.6</td>
+		<td align="right" x:num x:fmla="=B5-F5" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		-0.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38838" width="46">
+		May-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		17</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		9</td>
+		<td align="right" x:num x:fmla="=(0.1*B6)+(1-0.1)*C6" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		9.8</td>
+		<td align="right" x:num x:fmla="=B6-D6" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		7.2</td>
+		<td align="right" x:num x:fmla="=(0.4*B6)+(1-0.4)*C6" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		12.2</td>
+		<td align="right" x:num x:fmla="=B6-F6" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		4.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38869" width="46">
+		Jun-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		12</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		10</td>
+		<td align="right" x:num x:fmla="=(0.1*B7)+(1-0.1)*C7" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		10.2</td>
+		<td align="right" x:num x:fmla="=B7-D7" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		1.8</td>
+		<td align="right" x:num x:fmla="=(0.4*B7)+(1-0.4)*C7" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		10.8</td>
+		<td align="right" x:num x:fmla="=B7-F7" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		1.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38899" width="46">
+		Jul-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		7</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		11</td>
+		<td align="right" x:num x:fmla="=(0.1*B8)+(1-0.1)*C8" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		10.6</td>
+		<td align="right" x:num x:fmla="=B8-D8" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		-3.6</td>
+		<td align="right" x:num x:fmla="=(0.4*B8)+(1-0.4)*C8" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		9.4</td>
+		<td align="right" x:num x:fmla="=B8-F8" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		-2.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38930" width="46">
+		Aug-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		11</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		10</td>
+		<td align="right" x:num x:fmla="=(0.1*B9)+(1-0.1)*C9" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		10.1</td>
+		<td align="right" x:num x:fmla="=B9-D9" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		0.9</td>
+		<td align="right" x:num x:fmla="=(0.4*B9)+(1-0.4)*C9" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		10.4</td>
+		<td align="right" x:num x:fmla="=B9-F9" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		0.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38961" width="46">
+		Sep-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		15</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		10</td>
+		<td align="right" x:num x:fmla="=(0.1*B10)+(1-0.1)*C10" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		10.5</td>
+		<td align="right" x:num x:fmla="=B10-D10" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		4.5</td>
+		<td align="right" x:num x:fmla="=(0.4*B10)+(1-0.4)*C10" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		12.0</td>
+		<td align="right" x:num x:fmla="=B10-F10" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		3.0</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="38991" width="46">
+		Oct-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		5</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		11</td>
+		<td align="right" x:num x:fmla="=(0.1*B11)+(1-0.1)*C11" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		10.4</td>
+		<td align="right" x:num x:fmla="=B11-D11" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		-5.4</td>
+		<td align="right" x:num x:fmla="=(0.4*B11)+(1-0.4)*C11" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		8.6</td>
+		<td align="right" x:num x:fmla="=B11-F11" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		-3.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39022" width="46">
+		Nov-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		12</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		8</td>
+		<td align="right" x:num x:fmla="=(0.1*B12)+(1-0.1)*C12" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		8.4</td>
+		<td align="right" x:num x:fmla="=B12-D12" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		3.6</td>
+		<td align="right" x:num x:fmla="=(0.4*B12)+(1-0.4)*C12" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		9.6</td>
+		<td align="right" x:num x:fmla="=B12-F12" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		2.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39052" width="46">
+		Dec-06</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		7</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		10</td>
+		<td align="right" x:num x:fmla="=(0.1*B13)+(1-0.1)*C13" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		9.7</td>
+		<td align="right" x:num x:fmla="=B13-D13" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59">
+		-2.7</td>
+		<td align="right" x:num x:fmla="=(0.4*B13)+(1-0.4)*C13" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60">
+		8.8</td>
+		<td align="right" x:num x:fmla="=B13-F13" style="font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		-1.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" colspan="4" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px">
+		Sum of Absolute Forecast Error:</td>
+		<td x:arrayrange="E14" x:fmla="=(SUM(ABS(E2:E13)))" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59" align="right">
+		39.6</td>
+		<td style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60" align="right">&nbsp;</td>
+		<td x:arrayrange="G14" x:fmla="=(SUM(ABS(G2:G13)))" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57" align="right">
+		26.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" colspan="4" style="height: 12.75pt; font-size: 9.0pt; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px">
+		Mean Absolute Deviation (MAD):</td>
+		<td x:fmla="=E14/12" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="59" align="right">
+		3.3</td>
+		<td style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="60" align="right">&nbsp;</td>
+		<td x:fmla="=G14/12" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57" align="right">
+		2.2</td>
+	</tr>
+</table>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">Table 4.2 
+exponential smoothing on a variable demand pattern</span></font></p>
+<p align="left">&nbsp;</p>
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 733px" id="table4">
+	<colgroup>
+		<col width="52" style="width: 39pt">
+		<col width="63" span="6" style="width: 47pt">
+	</colgroup>
+	<tr height="43" style="height: 32.25pt">
+		<td height="43" style="height: 32.25pt; width: 45px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Month</td>
+		<td style="width: 62px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Historical<br>
+		Demand</td>
+		<td style="width: 58px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Previous Forecast</td>
+		<td style="width: 57px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast <br>
+		&#945; = 0.1</td>
+		<td style="width: 58px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast<br>
+		Error1</td>
+		<td style="width: 61px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast <br>
+		&#945; = 0.4</td>
+		<td style="width: 52px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: 1px solid #808080; padding: 0px">
+		Forecast<br>
+		Error2</td>
+		<td style="width: 8px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: medium none; padding: 0px" rowspan="15">&nbsp;</td>
+		<td style="width: 324px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border: medium none; padding: 0px" rowspan="15">
+		<table border="0" cellspacing="0" cellpadding="0" width="321" height="204">
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02b_1.gif" height="68" width="161"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02b_2.gif" height="68" width="160"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02b_3.gif" height="68" width="161"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02b_4.gif" height="68" width="160"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02b_5.gif" height="68" width="161"></td>
+				<td>
+				<img border="0" src="../images/exp_smoothing_02b_6.gif" height="68" width="160"></td>
+			</tr>
+		</table>
+		<p>Figure 4.3</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39083" width="45">
+		Jan-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		6</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		7</td>
+		<td align="right" x:num="6.9" x:fmla="=(0.1*B2)+(1-0.1)*C2" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		6.9</td>
+		<td align="right" x:num x:fmla="=B2-D2" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		-0.9</td>
+		<td align="right" x:num x:fmla="=(0.4*B2)+(1-0.4)*C2" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		6.6</td>
+		<td align="right" x:num="-0.60000000000000053" x:fmla="=B2-F2" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		-0.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39114" width="45">
+		Feb-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		8</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		6</td>
+		<td align="right" x:num="6.2" x:fmla="=(0.1*B3)+(1-0.1)*C3" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		6.2</td>
+		<td align="right" x:num x:fmla="=B3-D3" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		1.8</td>
+		<td align="right" x:num x:fmla="=(0.4*B3)+(1-0.4)*C3" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		6.8</td>
+		<td align="right" x:num x:fmla="=B3-F3" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		1.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39142" width="45">
+		Mar-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		3</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		7</td>
+		<td align="right" x:num x:fmla="=(0.1*B4)+(1-0.1)*C4" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		6.6</td>
+		<td align="right" x:num x:fmla="=B4-D4" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		-3.6</td>
+		<td align="right" x:num x:fmla="=(0.4*B4)+(1-0.4)*C4" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		5.4</td>
+		<td align="right" x:num x:fmla="=B4-F4" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		-2.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39173" width="45">
+		Apr-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		11</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		8</td>
+		<td align="right" x:num x:fmla="=(0.1*B5)+(1-0.1)*C5" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		8.3</td>
+		<td align="right" x:num x:fmla="=B5-D5" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		2.7</td>
+		<td align="right" x:num x:fmla="=(0.4*B5)+(1-0.4)*C5" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		9.2</td>
+		<td align="right" x:num x:fmla="=B5-F5" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		1.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39203" width="45">
+		May-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		14</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		9</td>
+		<td align="right" x:num x:fmla="=(0.1*B6)+(1-0.1)*C6" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		9.5</td>
+		<td align="right" x:num x:fmla="=B6-D6" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		4.5</td>
+		<td align="right" x:num x:fmla="=(0.4*B6)+(1-0.4)*C6" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		11.0</td>
+		<td align="right" x:num x:fmla="=B6-F6" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		3.0</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39234" width="45">
+		Jun-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		19</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		11</td>
+		<td align="right" x:num x:fmla="=(0.1*B7)+(1-0.1)*C7" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		11.8</td>
+		<td align="right" x:num x:fmla="=B7-D7" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		7.2</td>
+		<td align="right" x:num x:fmla="=(0.4*B7)+(1-0.4)*C7" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		14.2</td>
+		<td align="right" x:num x:fmla="=B7-F7" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		4.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39264" width="45">
+		Jul-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		11</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		15</td>
+		<td align="right" x:num x:fmla="=(0.1*B8)+(1-0.1)*C8" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		14.6</td>
+		<td align="right" x:num x:fmla="=B8-D8" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		-3.6</td>
+		<td align="right" x:num x:fmla="=(0.4*B8)+(1-0.4)*C8" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		13.4</td>
+		<td align="right" x:num x:fmla="=B8-F8" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		-2.4</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39295" width="45">
+		Aug-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		17</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		14</td>
+		<td align="right" x:num x:fmla="=(0.1*B9)+(1-0.1)*C9" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		14.3</td>
+		<td align="right" x:num x:fmla="=B9-D9" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		2.7</td>
+		<td align="right" x:num x:fmla="=(0.4*B9)+(1-0.4)*C9" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		15.2</td>
+		<td align="right" x:num x:fmla="=B9-F9" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		1.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39326" width="45">
+		Sep-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		23</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		12</td>
+		<td align="right" x:num x:fmla="=(0.1*B10)+(1-0.1)*C10" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		13.1</td>
+		<td align="right" x:num x:fmla="=B10-D10" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		9.9</td>
+		<td align="right" x:num x:fmla="=(0.4*B10)+(1-0.4)*C10" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		16.4</td>
+		<td align="right" x:num x:fmla="=B10-F10" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		6.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39356" width="45">
+		Oct-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		19</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		12</td>
+		<td align="right" x:num x:fmla="=(0.1*B11)+(1-0.1)*C11" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		12.7</td>
+		<td align="right" x:num x:fmla="=B11-D11" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		6.3</td>
+		<td align="right" x:num x:fmla="=(0.4*B11)+(1-0.4)*C11" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		14.8</td>
+		<td align="right" x:num x:fmla="=B11-F11" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		4.2</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39387" width="45">
+		Nov-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		26</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		13</td>
+		<td align="right" x:num x:fmla="=(0.1*B12)+(1-0.1)*C12" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		14.3</td>
+		<td align="right" x:num x:fmla="=B12-D12" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		11.7</td>
+		<td align="right" x:num x:fmla="=(0.4*B12)+(1-0.4)*C12" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		18.2</td>
+		<td align="right" x:num x:fmla="=B12-F12" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		7.8</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" align="right" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" x:num="39417" width="45">
+		Dec-07</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="62">
+		33</td>
+		<td align="right" x:num style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		13</td>
+		<td align="right" x:num x:fmla="=(0.1*B13)+(1-0.1)*C13" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="57">
+		15.0</td>
+		<td align="right" x:num x:fmla="=B13-D13" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		18.0</td>
+		<td align="right" x:num x:fmla="=(0.4*B13)+(1-0.4)*C13" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">
+		21.0</td>
+		<td align="right" x:num x:fmla="=B13-F13" style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		12.0</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" colspan="4" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px">
+		Sum of Absolute Forecast Error:</td>
+		<td align="right" x:num x:arrayrange="E14" x:fmla="=(SUM(ABS(E2:E13)))" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		72.9</td>
+		<td style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">&nbsp;</td>
+		<td align="right" x:num x:arrayrange="G14" x:fmla="=(SUM(ABS(G2:G13)))" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		48.6</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" colspan="4" style="height: 12.75pt; font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px">
+		Mean Absolute Deviation (MAD):</td>
+		<td align="right" x:num="6.0750000000000002" x:fmla="=E14/12" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="58">
+		6.1</td>
+		<td style="font-size: 9.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="61">&nbsp;</td>
+		<td align="right" x:num="4.05" x:fmla="=G14/12" style="color: red; font-size: 9.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #808080; padding: 0px" width="52">
+		4.1</td>
+	</tr>
+</table>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">Table 4.3 
+exponential smoothing on a increasing trend demand pattern</span></font></p>
+<p align="center"><font face="Arial" size="2"><br>
+&nbsp;</font></p>
+
+
+
+</td>
+</tr>
+	<tr valign="top">
+<td class="menu" width="185" style="width: 190px">
+
+
+
+&nbsp;</td>
+
+
+<td class="menu" style="width: 7px">
+
+
+
+&nbsp;</td>
+
+
+<td class="body">
+
+
+&nbsp;</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+
+</body>
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/exp_smoothing.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:36 GMT -->
+</html>

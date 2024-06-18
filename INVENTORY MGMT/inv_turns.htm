@@ -1,0 +1,474 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material nventory Turns</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" height="777" style="width: 75%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 300px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(97-2003)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2000-2003)</span></a><br>
+&nbsp;<p><br>
+<a href="index_inv_mgmt.htm">Material Management</a><span class="menu2"><br>
+<img src="images/menu1.gif" alt="" height="9" width="18">Problems with Inventory 
+Turns<br>
+&nbsp;</span><p><a href="production_planning.htm">Master Scheduling, Capacity &amp;</a><br><a href="production_planning.htm">&nbsp;Production Planning</a><br><br><br>
+
+<a href="../FORECASTING/forecasting_fundamental.htm">Business Forecasting 
+Methods</a></font></td>
+
+
+<td class="body" style="width: 4px">
+
+
+&nbsp;</td>
+
+
+<td class="body" width="1391">
+
+
+<p align="center"><font size="5"><b><span style="font-family: Arial">Attributes 
+of Inventory Turnover</span></b></font></p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">
+Inventory Turnover or &quot;Turn&quot; in short, is one of the critical pieces of the 
+business metric that serve many purposes - measuring inventory productivity, 
+evaluating operational efficiencies, driving inventory reduction and therefore 
+freeing up cashflow for investment in other business opportunities. High 
+inventory levels are unhealthy because they represent an investment with a low 
+or zero return of investment (ROI). It also opens the company up to trouble 
+should sales demand and material prices continue to fall.</span></font></p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial">
+Inventory Turns is a ratio showing how many times a company's inventory is sold 
+and replaced over a period. Let me give you a simple illustration as shown in 
+the table below. Considering the three options all have a fixed annual cost of 
+goods sold. If you bought $100,000 worth of products at one time and sold all at 
+the end of the year for a profit, you had only turnaround your inventory once in 
+a year. In the second option you first bought $50,000 worth of products by 
+implementing a Reorder trigger stock replenishment strategy so that 
+replenishment would happen just before your inventories dip into safety stock 
+level. The subsequent $50,000 replenishment investment you were able to finance 
+from the revenue you received from selling the first $50,000 worth of products. 
+You sold everything at end of the year and you were able to turnaround your 
+inventory investment with only half of the amount of COGS. In the third option 
+supplier was able to reduce lead time from 6 months to 3 months. You initially 
+purchased $25,000 worth of products, and replenished your stock in every three 
+months from the proceeds you received from selling the previous stock. When you 
+later sold everything within a year, it means you were able to replace your 
+inventory 4 times within a year, but with only a much lower capital outlay of 
+$25,000, and that's it! The last option with a Turns ratio of 4 provides you a 
+more profitable business result because you were able to achieve the same gross 
+profit but with much smaller investment sum, and most of all, you can make use 
+of your other $75,000 to be invested in other businesses.</span></font></p>
+<div align="left">
+	<table class="MsoNormalTable" border="1" cellpadding="0" style="border: 2.5pt outset" id="table4" width="532" bordercolor="#C0C0C0">
+		<tr>
+			<td valign="top" style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="129">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt"><b>
+			<span style="color:red">Annual Cost of&nbsp; Goods Sold</span></b></font></td>
+			<td valign="top" style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt"><b>
+			<span style="color:red">Inventory Investment</span></b></font></td>
+			<td valign="top" style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="72">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt"><b>
+			<span style="color:red">Inventory Turns</span></b></font></td>
+		</tr>
+		<tr>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="129">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">$100,000</font></td>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">$100,000 (bulk purchase 
+			outlay)</font></td>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="72">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">1</font></td>
+		</tr>
+		<tr>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="129">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">$100,000</font></td>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">$50,000 (reducing 
+			investment with Reorder Point stock replenishment)</font></td>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="72">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">2</font></td>
+		</tr>
+		<tr>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="129">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">$100,000</font></td>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">$25,000 (reducing 
+			investment with supplier cuts short lead time)</font></td>
+			<td style="padding:3.0pt 3.0pt 3.0pt 3.0pt" width="72">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			<font face="Arial" style="font-size: 11pt">4</font></td>
+		</tr>
+	</table>
+</div>
+<p align="left">&nbsp;</p>
+<p align="left"><font style="font-size: 11pt"><span style="font-family: Arial"><a name=costofgoodssold></a>
+The cost of goods sold is an integral component of the inventory turn formula. 
+Important here to note that COGS appears on the income statement, while ending 
+inventory appears on the balance sheet under current assets.</span></font></p>
+<table border="0" width="85%" cellspacing="0" cellpadding="0" id="table2">
+	<tr>
+		<td width="244"><b><font color="#800000" size="2">Goods Available For 
+		Sale</font></b></td>
+		<td width="14"><font color="#800000" size="2">=</font></td>
+		<td><font color="#800000" size="2">(Beginning inventory + Purchase 
+		Receipts)</font></td>
+	</tr>
+	<tr>
+		<td width="244">&nbsp;</td>
+		<td width="14">&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="244"><font color="#800000" size="2"><b>Cost of Goods Sold</b> 
+		(COGS)</font></td>
+		<td width="14"><font color="#800000" size="2">=</font></td>
+		<td><font color="#800000" size="2">(Beginning inventory + Purchase 
+		Receipts) - Ending Inventory</font></td>
+	</tr>
+	<tr>
+		<td width="244">&nbsp;</td>
+		<td width="14">&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="244">Alternatively,</td>
+		<td width="14">&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table border="0" width="85%" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="243"><b><font color="#800000" size="2">Ending Inventory</font></b></td>
+		<td width="15"><font color="#800000" size="2">=</font></td>
+		<td><font color="#800000" size="2">(Beginning inventory + Purchase 
+		Receipts) - COGS</font></td>
+	</tr>
+	<tr>
+		<td width="243">&nbsp;</td>
+		<td width="15">&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="243">&nbsp;</td>
+		<td width="15">&nbsp;</td>
+		<td><u><font color="#800000" size="2">&nbsp;&nbsp;&nbsp; Cost of Goods 
+		Sold during the past 12 months&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></u>
+		</td>
+	</tr>
+	<tr>
+		<td width="243"><font color="#800000" size="2"><b>Inventory Turn</b></font>
+		</td>
+		<td width="15"><font color="#800000" size="2">=</font></td>
+		<td><font color="#800000" size="2">Average Inventory at Cost during the 
+		past 12 months</font></td>
+	</tr>
+</table>
+<p><br>
+<font face="Arial" style="font-size: 11pt">I want to point out a few important 
+notes when you are applying the above Inventory Turns formula:</font></p>
+<p>
+		<font face="Arial" style="font-size: 11pt">1) Average inventory at cost 
+		is usually calculated by averaging the ending inventories for the past 
+		12 months. However, if inventory fluctuates greatly from month to month, 
+		or even within months, it may be necessary to calculate the average 
+		inventory using weekly or bi-weekly ending inventory values, or 
+		calculating your total inventory value on the first and fifteenth of 
+		every month, instead of using a 12-month averaging.</font></p>
+<p>
+		<font face="Arial" style="font-size: 11pt">2) The use of average 
+		inventory is primarily to minimize seasonal factors. If you have an 
+		insignificant season for the period, you can choose to use the average 
+		inventory value. Sometimes people do use an average inventory figure in 
+		the denominator in order to avoid sudden changes in the inventory level 
+		that are likely to occur on any period-end date where inventories are 
+		kept unusually low, for example, to meet some corporate inventory 
+		targets when the month-end closing coincides with the quarterly closing 
+		calendar.</font></p>
+		<p><font face="Arial" style="font-size: 11pt">3) Inventory turnover is 
+		stated as an annual turnover. However, the period being measured does 
+		not necessarily have to be a 12 month period. In certain situations, 
+		particularly for seasonal items, inventory turn may be measured for a 
+		period of a few months, with the result being &#8220;annualized&#8221; for 
+		comparison purposes. &quot;Annualize&quot; means taking the period-end inventory, 
+		multiply by 12 months.</font></p>
+<p><font face="Arial" style="font-size: 11pt">4) Inventory turn is a dynamic 
+metric. As sales (and thus, cost of goods sold) and inventory levels fluctuate 
+so does inventory turn. It is not enough to measure inventory turn for each year 
+or quarter. At a minimum, in order to properly utilize inventory turn as a tool 
+it is necessary to measure it monthly on a rolling basis. When you measure it 
+monthly, make sure that you are consistently taking inventory value on the same 
+day of every month. Also, you have to be consistent in using the same cost basis 
+(standard cost, average cost, last cost, or replacement cost) in calculating 
+both the cost of goods sold and average inventory investment. Otherwise, you 
+won't be sure whether you have made effective comparison from period to period.</font></p>
+		<p><font face="Arial" style="font-size: 11pt">5) Inventory turnover is a 
+		measure of inventory productivity, and you should include only cost of 
+		goods sold from stock sales which are filled from warehouse inventory. 
+		Non-stock items such as direct shipments from supplier to customer 
+		should be excluded from the calculation.</font></p>
+<p><font face="Arial" style="font-size: 11pt">6) COGS should also include those 
+internal orders charging to departmental cost centers, or stock transferred to 
+other branches whether it is for production, repairs or re-distributing to other 
+depots.</font></p>
+<p>&nbsp;</p>
+<p class="MsoNormal"><font face="Arial" style="font-size: 11pt">Below is another 
+Inventory Turns formula that is based on Net Sales for the period instead of 
+using COGS. I have seen managers using this formula to evaluate the turnovers 
+for a contractual list of parts stocked for some customers. However, the 
+previous formula using COGS is preferred because in this formula sales are 
+recorded at &quot;Market Value&quot;, whereas inventories are recorded at &quot;Cost&quot;. This 
+formula is misleading and can not be used to effectively gauge the healthiness 
+of your inventories, but at best, is only to measure the industry averages. A 
+low ratio would means low turnover which implies poor sales, whereas a high 
+ratio implies strong sales. Is it really strong sales? You have to think it 
+twice because you are overstating the nominator value which is selling prices, 
+but with your denominator's average inventory value are at costs. </font></p>
+<table border="0" width="88%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+		<td width="230" rowspan="2"><font color="#800000" size="2"><b>Cost of 
+		Goods Sold</b> 
+		(COGS)</font></td>
+		<td width="19" rowspan="2">=</td>
+		<td><u><font color="#800000" size="2">&nbsp; Sales turnover</font><font size="2">&nbsp;</font><font color="#800000" size="2">for 
+		the period&nbsp;&nbsp; </font></u></td>
+	</tr>
+	<tr>
+		<td><font color="#800000" size="2">Average stock at cost for period</font></td>
+	</tr>
+	<tr>
+		<td width="230">&nbsp;</td>
+		<td width="19">&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<p><font style="font-size: 11pt" face="Arial">After understanding from the above 
+attributes of inventory turns, you know that you may be able to expand the 
+inventory turns formula to evaluate on the many important areas of your 
+inventory. In deed you can use it to measure the turns of your specific 
+customer's lists of parts where company had signed a contractual agreement to 
+keep the stock for a specified period and renew contract thereafter; or measure 
+the turns of the specific product lines; or you can use it to measure the 
+productivity of inventory being kept in the different depots (then transfer the 
+slow-moving stock items to other depot or DC where there are more volume 
+consumption); or use it to measure the productivity of inventory being 
+differentiated by material classes, based up &quot;80/20&quot; rule pareto analysis or 
+some other ratio of your choice. See my other <a href="pareto.htm#turnsbymc">
+<font color="#0066CC">example</font></a> 
+of measuring inventory turns by the top 80% of the inventory total value, using 
+pareto analysis and ABC material classification codes, with a target of 5.0 
+Turns. Pareto analysis effectively shows you where the under-performing material 
+classes are, so that planners can evaluate whether forecasted demand has been 
+too aggressive or whether the safety stock level and re-order point are being 
+set too high, and then take 
+concrete action plans. The other end result is that you can also liquidate or 
+eliminate overstocks of the non-performing inventory.</font></p>
+<p>&nbsp;</p>
+<p align="center"><font style="font-family: Arial" size="5"><b>Problems with 
+setting Target Inventory Turns</b></font></p>
+<p align="left"><font style="font-size: 11pt" face="Arial">When reviewing your 
+inventory plans, service levels agreement and setting inventory turns targets, 
+there are some critical questions you must always continuously evaluate and 
+making comparisons for. More often, I have seen managers continuously using the 
+same turns targets for the same customer throughout the periods. They failed to 
+evaluate on external economic factors like when customers are reducing corporate 
+spending in certain quarters, which would credibly impact on the turns 
+performance. You should never fail to answer these following questions before 
+setting your inventory goals:</font></p>
+<ul type="square">
+	<li>
+	<p align="left"><font style="font-size: 11pt" face="Arial">Is your Turns 
+	target realistic? How do your planned inventories compare to last period&#8217;s 
+	actual performance?</font></p></li>
+	<li>
+	<p align="left"><font style="font-size: 11pt" face="Arial">Were the last 
+	period&#8217;s inventories too little, too much, or just about right?</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Were there 
+	difference in the costing method or standard costs used in your current 
+	inventories compared to last period's?</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Are there stock 
+	items that have safety stock levels set excessively high because of global 
+	constrain factors, longer supply lead times, product high failure rates and 
+	other interim issues?</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Are there slow or 
+	average-moving stock items that should not even have been stocked in this 
+	period in the first place?</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Is the existing 
+	guideline and method for reviewing and setting safety stock levels efficient 
+	or too conservative in approach? </font></p></li>
+	<li>
+	<p align="left"><font style="font-size: 11pt" face="Arial">Are there 
+	opportunities in this period to reduce supplier lead times, which would 
+	enable your inventories to be reduced compared to last period's?</font></p>
+	</li>
+	<li>
+	<p align="left"><font style="font-size: 11pt" face="Arial">Are customers 
+	production plan or sales forecast likely to be softened in this quarter, 
+	which would enable a reduction in your safety stocks investment? </font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Are you able to 
+	reduce some inventories by cutting back 3% or 4% in certain product lines, 
+	in expensive material categories, in certain depots or distribution outlets 
+	without negatively impacting sales volume in this period?</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Did you do a 
+	simulation program by taking in all the mentioned factors as above, base 
+	upon the best approximate sales forecast for the next period, to ascertain 
+	the appropriate yet realistic inventory turn target?</font></p></li>
+</ul>
+<p align="left"><font face="Arial" style="font-size: 11pt">There must be a sense 
+of urgency about identifying slow moving and non-performing inventory as quickly 
+as possible and taking measures necessary to liquidate it. Slow moving and 
+non-performing inventory add little to the bottom lines, and tie up valuable 
+cash that could be used for other important business purposes.</font></p>
+<p align="left">&nbsp;</p>
+<p align="center"><font style="font-family:Arial" size="5"><b>Some words of 
+caution with Cost of Goods Sold </b></font></p>
+<p align="left"><font style="font-size: 11pt" face="Arial">The turnover ratio 
+can be skewed by changes in the underlying costing methods used to allocate 
+direct labor and especially overhead cost pools to the inventory. For example, 
+if additional categories of costs are added to the overhead cost pool, then the 
+allocation to inventory will increase, which will reduce the reported level of 
+inventory turnover &#8211; even though the turnover level under the original 
+calculation method has not changed at all. The problem can also arise if the 
+method of allocating costs is changed; for example, it may be shifted from an 
+allocation based on labor hours worked to one based on machine hours worked, 
+which can alter the total amount of overhead costs assigned to inventory. The 
+problem can also arise if the inventory valuation is based on standard costs, 
+and the underlying standards are altered. In all three cases, the amount of 
+inventory on hand has not changed, but the costing systems used have altered the 
+reported level of inventory costs, which impacts the reported level of turnover 
+ratio.</font></p>
+<p align="left"><font style="font-size: 11pt" face="Arial">A separate issue is 
+that the basic inventory turnover figure may not be sufficient evidence of 
+exactly where an inventory overage problem may lie. Accordingly, you can 
+subdivide the measurement, so that there are separate inventory value 
+calculations for raw materials, work-in-process, finished goods in different 
+product lines, and perhaps subdivide it further by storage locations or 
+production factories. This approach allows for more precise management of 
+inventory-related problems in cases where inventory turnover ratios have been 
+consistently low and without success in improvement despite that different 
+inventory control measures were being implemented.</font></p>
+<p align="left">&nbsp;</p>
+<p align="center"><font style="font-family:Arial" size="5"><b>Your next 
+challenge</b></font></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">Lastly, here is a 
+challenge for you. How do you combine Inventory Turns formula with your Customer 
+Service Level Percentage monthly performance, differentiated by orders delivery 
+according to the different customers' requirement, within 4 hours, &gt;4&lt;12 hours, 
+&gt;12&lt;24 hours, &gt;24&lt;48 hours and so on? Try whether you can provide such hybrid 
+performance analysis and work this out. I already have the answer. Write to me 
+if you need help on this. I would be pleased to help.&nbsp; </font></p>
+<p align="right">&nbsp;&nbsp;<font size="3"><br>
+</font><font style="font-size: 11pt">Next Page &gt;&gt;
+<a style="color: #000080" href="customer_service.htm">Measuring Customer Service</a></font></p>
+
+
+<p align="center">
+
+
+<br>
+<a href="http://s05.flagcounter.com/more/RvMZ"><img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a>	
+
+
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>

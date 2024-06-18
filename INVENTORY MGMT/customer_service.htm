@@ -1,0 +1,991 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material Management, Material Control, Production Planning and Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+<title>Customer Service</title>
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+.auto-style1 {
+	font-size: 11pt;
+}
+.auto-style2 {
+	font-size: 9.5pt;
+	line-height: 1.3; /* This only affects Firefox 1.0, not IE6 */
+}
+.auto-style3 {
+	line-height: 1.3; /* This only affects Firefox 1.0, not IE6 */
+}
+.auto-style4 {
+	font-size: 9.5pt;
+}
+.auto-style5 {
+	font-size: 10pt;
+	text-align: center;
+}
+.auto-style6 {
+	text-align: center;
+	vertical-align: top;
+	white-space: normal;
+	color: windowtext;
+	font-size: 10pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Arial;
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right: .5pt solid windowtext;
+	border-top: .5pt solid windowtext;
+	border-bottom: .5pt solid windowtext;
+	padding: 0px;
+}
+.auto-style7 {
+	text-align: center;
+}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="85%" height="777">
+<tbody><tr valign="top">
+<td class="menu" style="width: 147px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(VB6)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2003)</span></a><br>
+&nbsp;<p><br>
+<a href="index_inv_mgmt.htm">Material Management</a><span class="menu2"><br>
+</span><span class="auto-style3">
+<img src="images/menu1.gif" alt="" height="9" width="18" class="auto-style4"></span><span class="menu2"><span class="auto-style2">Customer relationship 
+and <br>measuring customer service</span><br>
+&nbsp;</span><p><font color="#800000"><a href="production_planning.htm">Master 
+Scheduling, Capacity &amp; <br>
+Production Planning</a></font><p>
+<font color="#800000"><a href="../FORECASTING/forecasting_fundamental.htm">
+Business Forecasting Methods</a></font></td>
+
+
+<td class="body" style="width: 6px">
+
+
+&nbsp;</td>
+
+
+<td class="body" width="745">
+
+
+<p align="center"><font size="5"><b><span style="font-family: Arial">Customer 
+Service</span></b></font></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">Customer service is 
+complex subject of its own, but basically it has two aspects &#8211; customer 
+relations and availability of service or items. Customer relations is about 
+having the right interpersonal skills with customers, and company maintaining 
+good reputation with customers with regards to the product quality, service and 
+expectations of customers, and making sure customers are happy with their 
+purchase so that there is a potential for repeat business and more sales 
+subsequently. To the customers it doesn&#8217;t matter whether the supplier is good or 
+bad, what does matter sometimes is what the customer thinks about the suppliers, 
+and customers can provide good-will spread of words to friends and business 
+associates, or for a very dissatisfied customer to sometimes having deliberate 
+intention to disrepute and discredit the image of the company.</font></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">Customer service 
+through the availability of service or items is a technical management of 
+inventory control. The risk of material stockout can be reduced by increasing 
+the inventory levels of stock items, but there must be an optimal tradeoff 
+between service level and inventory dollars investment, where inventory are 
+scrutinized by performance measures such as inventory turns, cost of goods sold, 
+gross margin, etc.</font></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">The overall Service 
+Level to external customers or internal customers can be measured by adding the 
+demand provided on all the individual stock items (categorized into buckets of 
+time issue frequencies) and divide it by total stock items demand. On-time 
+availability can be measured in the time issue frequencies of hourly, 4 hourly, 
+12 hourly, daily, within 36 hours, 48 hours, weekly or monthly, depend on your 
+customer's requirement. Below is an example.</font></p>
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:807px" id="table4">
+	<colgroup>
+		<col width="191" style="width: 143pt">
+		<col width="117" style="width: 88pt">
+		<col width="47" span="9" style="width: 35pt">
+		<col width="64" style="width:48pt">
+	</colgroup>
+	<tr height="34" style="height:25.5pt">
+		<td height="34" style="height: 25.5pt; width: 180px; text-align: center; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; white-space: nowrap; border: .5pt solid windowtext; padding: 0px" u1:num="1" bgcolor="#C0C0C0">
+		Order Type:</td>
+		<td style="width: 110px; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" bgcolor="#C0C0C0">
+		Data</td>
+		<td style="width: 40px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 4 HR</td>
+		<td style="width: 40px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 8 HR</td>
+		<td style="width: 40px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 12 HR</td>
+		<td style="width: 40px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 24 HR</td>
+		<td style="width: 40px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 48 HR</td>
+		<td style="width: 38px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 72 HR</td>
+		<td style="width: 38px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		By 96 HR</td>
+		<td style="width: 43px; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" bgcolor="#C0C0C0" class="auto-style7">
+		Above 96 HR</td>
+		<td style="width: 42px; " bgcolor="#C0C0C0" class="auto-style6">
+		Back<br>
+		-Order</td>
+		<td style="width: 48px; text-align: right; vertical-align: top; white-space: normal; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" bgcolor="#C0C0C0">
+		Grand Total</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		Contract Service Agreement</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Qty Delivered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		1600</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		9</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		3</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="38" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="38" class="auto-style7">
+		2</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="43" class="auto-style7">
+		20</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		1636</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Qty Ordered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		1622</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="38" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="38" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="43" class="auto-style7">
+		14</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="42" class="auto-style7">
+		5</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		1641</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Lines Delivered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		99.38</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		0.45</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		0.33</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		0.38</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="38" class="auto-style7">
+		0.2</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="38" class="auto-style7">
+		0.43</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="43" class="auto-style7">
+		5.83</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		107</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="110">
+		Lines Ordered</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" align="right" width="40">
+		102</td>
+		<td style="color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="40" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="40" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="40" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="38" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="38" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="43" class="auto-style7">
+		5</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="42" class="auto-style7">
+		2</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" align="right" width="48">
+		109</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: .5pt solid windowtext; border-bottom: medium none; padding: 0px" width="180">
+		Direct Sales</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Qty Delivered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		1093</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		17</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		2</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="38" class="auto-style7">
+		5</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="43" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		1119</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Qty Ordered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		1134</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		15</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="38" class="auto-style7">
+		3</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="43" class="auto-style7">
+		0</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="42" class="auto-style7">
+		7</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		1160</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Lines Delivered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num="81.9666" width="40">
+		81.97</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		7.5</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		0.83</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="38" class="auto-style7">
+		2</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="43" class="auto-style7">
+		0.33</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" x:num="93.626599999999996" width="48">
+		93.63</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="110">
+		Lines Ordered</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" align="right" width="40">
+		85</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="40" class="auto-style7">
+		7</td>
+		<td style="color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="40" class="auto-style7">
+		1</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="40" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="38" class="auto-style7">
+		1</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="43" class="auto-style7">
+		0</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" width="42" class="auto-style7">
+		4</td>
+		<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top-width: medium; border-bottom: 3px double #000000; padding: 0px" align="right" width="48">
+		98</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: .5pt solid windowtext; border-bottom: medium none; padding: 0px" width="180">
+		Installation &amp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Qty Delivered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		6</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="43" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		7</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		Warranty Programs</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Qty Ordered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		6</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="43" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		7</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: medium none; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Lines Delivered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		6</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="43" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		7</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="180">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="110">
+		Lines Ordered</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40">
+		6</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="40" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="40" class="auto-style7">
+		1</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="38" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="43" class="auto-style5">
+		&nbsp;</td>
+		<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-right: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" width="42" class="auto-style5">
+		&nbsp;</td>
+		<td align="right" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		7</td>
+	</tr>
+</table>
+<p align="left">&nbsp;</p>
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:810px" id="table5">
+	<colgroup>
+		<col width="191" style="width: 143pt">
+		<col width="117" style="width: 88pt">
+		<col width="56" span="8" style="width: 42pt">
+		<col width="52" style="width: 39pt">
+	</colgroup>
+	<tr height="22" style="height:16.5pt">
+		<td height="22" style="height: 16.5pt; width: 160px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		&nbsp;</td>
+		<td style="width: 105px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		&nbsp;</td>
+		<td colspan="5" style="width: 260px; color: blue; font-size: 12.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		Service Level % by Order Types</td>
+		<td style="width: 52px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		&nbsp;</td>
+		<td style="width: 54px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		&nbsp;</td>
+		<td style="width: 50px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		&nbsp;</td>
+		<td style="width: 46px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		&nbsp;</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td height="18" style="height: 13.5pt; font-family: Arial, sans-serif; text-align: center; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border: .5pt solid windowtext; padding: 0px" width="158">
+		<font face="Arial">Order Type:</font></td>
+		<td align="center" style="font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="103">
+		<font face="Arial">Qty and Lines:</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: 2.0pt double windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="48">
+		<font face="Arial">&lt;4 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: 2.0pt double windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="50">
+		<font face="Arial">&lt;8 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: 2.0pt double windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="49">
+		<font face="Arial">&lt;12 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="52">
+		<font face="Arial">&lt;24 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="54">
+		<font face="Arial">&lt;48 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="51">
+		<font face="Arial">&lt;72 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="53">
+		<font face="Arial">&lt;96 HR&gt;</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="49">
+		<font face="Arial">&gt;96 HR</font></td>
+		<td align="center" style="font-weight: 700; font-family: Arial, sans-serif; text-align: center-across; vertical-align: middle; color: windowtext; font-size: 10.0pt; font-style: normal; text-decoration: none; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: .5pt solid windowtext; padding: 0px" width="45">
+		<font face="Arial">Total</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: medium none; padding: 0px" width="158">
+		<font face="Arial">Contract Service Agreement</font></td>
+		<td style="font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="103">
+		<font face="Arial">By Qty Ordered</font></td>
+		<td x:num="0.97499999999999998" u1:num="0.97501523461304085" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="48">
+		<font face="Arial">97.50%</font></td>
+		<td u1:num="0.97501523461304085" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="50">
+		<font face="Arial">-</font></td>
+		<td x:num="0.98" u1:num="0.98049969530773917" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="49">
+		<font face="Arial">98.00%</font></td>
+		<td x:num="0.98099999999999998" u1:num="0.98110907982937234" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="52">
+		<font face="Arial">98.10%</font></td>
+		<td x:num="0.98299999999999998" u1:num="0.98293723339427175" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="54">
+		<font face="Arial">98.30%</font></td>
+		<td x:num="0.98399999999999999" u1:num="0.98354661791590492" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="51">
+		<font face="Arial">98.40%</font></td>
+		<td x:num="0.98499999999999999" u1:num="0.98476538695917126" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="53">
+		<font face="Arial">98.50%</font></td>
+		<td x:num="0.997" u1:num="0.99695307739183425" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="49">
+		<font face="Arial">99.70%</font></td>
+		<td style="text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" x:num="0.99695307739183425" width="45">
+		99.7%</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: medium none; padding: 0px" width="158">
+		<font face="Arial">&nbsp;</font></td>
+		<td style="font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="103">
+		<font face="Arial">By Lines Ordered</font></td>
+		<td x:num="0.91200000000000003" u1:num="0.911743119266055" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="48">
+		<font face="Arial">91.20%</font></td>
+		<td u1:num="0.911743119266055" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="50">
+		<font face="Arial">-</font></td>
+		<td x:num="0.91600000000000004" u1:num="0.91587155963302747" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="49">
+		<font face="Arial">91.60%</font></td>
+		<td x:num="0.91900000000000004" u1:num="0.91889908256880726" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="52">
+		<font face="Arial">91.90%</font></td>
+		<td x:num="0.92200000000000004" u1:num="0.92238532110091731" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="54">
+		<font face="Arial">92.20%</font></td>
+		<td x:num="0.92400000000000004" u1:num="0.92422018348623847" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="51">
+		<font face="Arial">92.40%</font></td>
+		<td x:num="0.92800000000000005" u1:num="0.92816513761467889" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="53">
+		<font face="Arial">92.80%</font></td>
+		<td x:num="0.98199999999999998" u1:num="0.98165137614678899" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="49">
+		<font face="Arial">98.20%</font></td>
+		<td style="text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" x:num="0.98165137614678899" width="45">
+		98.2%</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: .5pt solid windowtext; border-bottom: medium none; padding: 0px" width="158">
+		<font face="Arial">Direct Sales</font></td>
+		<td style="font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="103">
+		<font face="Arial">By Qty Ordered</font></td>
+		<td x:num="0.94199999999999995" u1:num="0.9422413793103448" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="48">
+		<font face="Arial">94.20%</font></td>
+		<td x:num="0.95699999999999996" u1:num="0.9568965517241379" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="50">
+		<font face="Arial">95.70%</font></td>
+		<td u1:num="0.9568965517241379" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="49">
+		<font face="Arial">-</font></td>
+		<td x:num="0.95799999999999996" u1:num="0.95775862068965523" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="52">
+		<font face="Arial">95.80%</font></td>
+		<td x:num="0.95899999999999996" u1:num="0.95948275862068966" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="54">
+		<font face="Arial">95.90%</font></td>
+		<td u1:num="0.95948275862068966" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="51">
+		<font face="Arial">-</font></td>
+		<td x:num="0.96399999999999997" u1:num="0.96379310344827585" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="53">
+		<font face="Arial">96.40%</font></td>
+		<td x:num="0.96499999999999997" u1:num="0.96465517241379306" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="49">
+		<font face="Arial">96.50%</font></td>
+		<td style="text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" x:num="0.96465517241379306" width="45">
+		96.5%</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="158">
+		<font face="Arial">&nbsp;</font></td>
+		<td style="font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="103">
+		<font face="Arial">By Lines Ordered</font></td>
+		<td x:num="0.83599999999999997" u1:num="0.83639387755102046" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="48">
+		<font face="Arial">83.60%</font></td>
+		<td x:num="0.91300000000000003" u1:num="0.91292448979591834" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="50">
+		<font face="Arial">91.30%</font></td>
+		<td u1:num="0.91292448979591834" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="49">
+		<font face="Arial">-</font></td>
+		<td x:num="0.92300000000000004" u1:num="0.92312857142857141" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="52">
+		<font face="Arial">92.30%</font></td>
+		<td u1:num="0.9315979591836735" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="54">
+		<font face="Arial">-</font></td>
+		<td x:num="0.93200000000000005" u1:num="0.9315979591836735" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="51">
+		<font face="Arial">93.20%</font></td>
+		<td x:num="0.95199999999999996" u1:num="0.95200612244897953" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="53">
+		<font face="Arial">95.20%</font></td>
+		<td x:num="0.95499999999999996" u1:num="0.95537346938775503" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="49">
+		<font face="Arial">95.50%</font></td>
+		<td style="text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" x:num="0.95537346938775503" width="45">
+		95.5%</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: medium none; padding: 0px" width="158">
+		<font face="Arial">Installation &amp;</font></td>
+		<td style="font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="103">
+		<font face="Arial">By Qty Ordered</font></td>
+		<td x:num="0.85699999999999998" u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="48">
+		<font face="Arial">85.70%</font></td>
+		<td u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="50">
+		<font face="Arial">-</font></td>
+		<td u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="49">
+		<font face="Arial">-</font></td>
+		<td u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="51">
+		<font face="Arial">-</font></td>
+		<td x:num="1" u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="53">
+		<font face="Arial">100%</font></td>
+		<td u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="51">
+		<font face="Arial">-</font></td>
+		<td u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="53">
+		<font face="Arial">-</font></td>
+		<td u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" width="49">
+		<font face="Arial">-</font></td>
+		<td style="text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: #99CC00" x:num="1" width="45">
+		100%</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td height="18" style="height: 13.5pt; font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: .5pt solid windowtext; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px" width="158">
+		<font face="Arial">Warranty Programs</font></td>
+		<td style="font-family: Arial, sans-serif; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: medium none; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="103">
+		<font face="Arial">By Lines Ordered</font></td>
+		<td x:num="0.85699999999999998" u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: medium none; border-top: medium none; border-bottom: 2.0pt double windowtext; padding: 0px; background: yellow" width="48">
+		<font face="Arial">85.70%</font></td>
+		<td u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: 2.0pt double windowtext; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: 2.0pt double windowtext; padding: 0px; background: yellow" width="50">
+		<font face="Arial">-</font></td>
+		<td u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: 2.0pt double windowtext; border-top: medium none; border-bottom: 2.0pt double windowtext; padding: 0px; background: yellow" width="49">
+		<font face="Arial">-</font></td>
+		<td u1:num="0.8571428571428571" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="52">
+		<font face="Arial">-</font></td>
+		<td x:num="1" u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="54">
+		<font face="Arial">100%</font></td>
+		<td u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="51">
+		<font face="Arial">-</font></td>
+		<td u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="53">
+		<font face="Arial">-</font></td>
+		<td u1:num="1" style="font-family: Arial, sans-serif; text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" width="49">
+		<font face="Arial">-</font></td>
+		<td style="text-align: center; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-left: medium none; border-right: .5pt solid windowtext; border-top: medium none; border-bottom: .5pt solid windowtext; padding: 0px; background: yellow" x:num="1" width="45">
+		100%</td>
+	</tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial" style="font-size: 11pt">For companies 
+supplying individual stock items and finished products, <b>Availability</b> or 
+commonly known as <b>Customer Service Level</b> will have the following formula:</font></p>
+<table border="0" width="83%" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="367" rowspan="2">
+		<font face="Verdana" style="font-weight: 700" color="#800000" size="2">
+		Customer Service Level (or Availability)</font></td>
+		<td rowspan="2"><font color="#800000" face="Verdana" size="2">=</font></td>
+		<td width="411"><font face="Verdana" color="#800000" size="2">&nbsp;</font><font face="Verdana" style="text-decoration: underline" color="#800000" size="2">[Total 
+		no. of items supplied on-time]</font></td>
+	</tr>
+	<tr>
+		<td width="411"><font face="Verdana" size="2" color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		[Total no. of items ordered]</font></td>
+	</tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial" style="font-size: 11pt">For companies 
+supplying large export orders, such as using bank&#8217;s &#8220;letter of credit&#8221; or the 
+whole shipment must be sent in one crate or in a whole steel container, Service 
+Level measurement should be: [Total no. of complete orders supplied 
+on-time/Total no. of orders]</font></p>
+<table border="0" width="83%" cellspacing="0" cellpadding="0" id="table2">
+	<tr>
+		<td width="367" rowspan="2">
+		<font face="Verdana" style="font-weight: 700" color="#800000" size="2">
+		Customer Service Level (or Availability)</font></td>
+		<td rowspan="2"><font color="#800000" face="Verdana" size="2">=</font></td>
+		<td width="411"><font face="Verdana" color="#800000" size="2">&nbsp;</font><font face="Verdana" style="text-decoration: underline" color="#800000" size="2">[</font><u><font face="Verdana" size="2" color="#800000">Total 
+		no. of complete orders supplied on-time</font></u><font face="Verdana" style="text-decoration: underline" color="#800000" size="2">]</font></td>
+	</tr>
+	<tr>
+		<td width="411"><font face="Verdana" size="2" color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		[Total no. of orders]</font></td>
+	</tr>
+</table>
+<p align="left"><font face="Arial" style="font-size: 11pt"><br>
+The definition of &quot;on-time&quot; delivery has the same meaning as measuring the 
+&quot;ship-to-promised&quot; date to customer, which really should be the date and time 
+the customer receives the Goods as the required date they specified in their 
+Purchase Order. It should not be the date and time when the Goods leaves the 
+store or the issued-out date in company's system.</font></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">You will have the 
+different measurement of service level depending on the requirement and wishes 
+of your customers. For example, if your customer requires 20 pieces but your 
+stock on-hand is only 16. What customer service level will it be when you 
+deliver with 4 pieces short? Is it 80% because only 16 out of 20 can be 
+delivered? Is it 0% because customer demanded a full delivery of 20 but the 
+delivery was not complete? Or should it be 100% because you argue that the 
+balance 4 pieces can be delivered a few days later before the customer actually 
+needs them, since it is also not an urgent order? Different customer situations 
+will determine the order of priorities of their purchases. It all depends on the 
+company's order fulfillment policy and the agreement that company had reached 
+with the customers.</font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial" style="font-weight: 700; font-size: 16pt">
+Customer's Back-Order measurement</font></p>
+<p align="left"><span style="font-size: 11pt"><font face="Arial">Once an item 
+has missed its delivery date, it is considered as a non-hit item and then become 
+a back-order. Consider a situation where there are two demands for a stock item 
+- one non-hit item as mentioned above which is already past a delivery due date, 
+and a new order from another customer which has to be delivered on time. When 
+the stock is later replenished, the priority should be given to satisfy the back 
+order or fulfill the new order? In such circumstances, there is a tendency for 
+the planner to fulfill the current new order, not the back-order, since 
+fulfilling the current order will improve the service level whereas the 
+back-order has already failed in service level. In practice, there is normally a 
+need to give precedence to the customer whose order is already overdue. There 
+should be a system to measure how many orders are overdue and how late they are 
+in terms of hours or days aging.</font></span></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">However, back-orders 
+viewed on the system may not be all true demand or needed urgently because of 
+the following reasons:</font></p>
+<ul>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">back-orders even 
+	though long overdue, but customer has no urgency to use the stock item any 
+	time soon.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">customer does not 
+	really want and they are buying in parallel from an alternate source.</font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">customer does not 
+	want and they had not cancel the order.</font></p></li>
+</ul>
+<p align="left"><font face="Arial" style="font-size: 11pt">Outstanding customer 
+back-orders need regular review to ensure the non-urgent items are either 
+rescheduled or cancelled. If back-orders arrears continue to build up, they will 
+give a distorting signal or false alarm to internal purchasing department which 
+will make more stock purchases to fulfill the virtual arrears.</font></p>
+<p align="left">&nbsp;</p>
+<p align="left">
+<font face="Arial" style="font-weight: 700; font-size: 16pt" size="4">Customer 
+service best practices </font></p>
+<p align="left"><font face="Arial" style="font-size: 11pt">Below are a list of 
+best practices and useful pointers for providing a good customer service:</font></p>
+<ul type="square">
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Voice of 
+	Customer</b>. VOC methods as one of Six Sigma tools. Company must focus 
+	products on meeting customer needs rather than delivering the next great 
+	technology. Company representatives must understand what customers really 
+	want and not what they think or assume what customers want. It is even more 
+	crucial to identify the unstated or unspoken customer needs, needs not 
+	traditionally associated with the products, or needs that would provide an 
+	opportunity for further business growth if addressed. By properly collecting 
+	and investigating Voice of the Customer, a company can deliver a product 
+	that will provide superior added value by addressing what is of priority to 
+	the customer.<br>
+	<br>
+	VOC method in Six Sigma is intended to better understand the customer needs 
+	and prioritize how important each of those needs are to the customer. VOC 
+	goes beyond traditional market research, surveys, focus groups, user group 
+	feedback, interviews and database complaint logs to better understand the 
+	customer needs and uncover the unstated needs. VOC attempts to find how 
+	customers value the various functions and features of a product or service, 
+	and their worth to the customer. A well-executed Voice of the Customer 
+	investigation will result in fundamental insights into customer needs that 
+	lead to products and services that provide superior value to the customer.</font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Customers' 
+	expectations</b>. Customers want cost-effective products or services that 
+	deliver required benefits to them, and to have their needs satisfied 
+	including bending the orders processing procedure to their requirements, 
+	advance buy list before they give the firm PO only weeks later, a longer 
+	term of credit, and the way that communications are handled. </font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Changing 
+	customers' expectations</b>. Customers normally become delighted when they 
+	under-forecast and a supplier still over-delivers with the actual demand 
+	happened higher than the forecast. Even then we cannot assume that we know 
+	what customer's expectations are, but we must always ask. Customer 
+	expectations will constantly change due to economic situation, competitor 
+	products and their experience learned, so they must be determined on an 
+	on-going basis.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Managing 
+	customers</b>. Customers are also an exceptional source of information. A 
+	company need to know what customers want and need (which enables us to focus 
+	our production and service efforts), know which products or customers have 
+	most growth potential (which enables us to focus on developing highest 
+	potential), know which products or customers are most or least profitable 
+	(which enables us to focus on maximizing profit), and know which customers 
+	will be supporters (which enables a company to provide references, case 
+	studies, and to safely test new products and services).</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Pareto&#8217;s 80:20 
+	rule</b>. Pareto 80/20 rule is very useful in problems analysis such as: 20% 
+	of customers account for 80% of your turnover, or 20% of customers account 
+	for 80% of your profits, or 20% of customers account for 80% of your service 
+	and supply problems. It is important to know which customers fit into which 
+	category and then manage them accordingly.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Focus on 
+	building customer relationships</b>. The company&#8217;s focus of developing core 
+	competencies must associate closely with an overall strategy of building 
+	customer relationships. In this way, all efforts in the organization can be 
+	aligned to customers and the culture of 'going the extra mile' to exceed 
+	customer expectation, service being seen as a value-adding activity, 
+	customers being treated as partners, reward and recognition being based on 
+	customer focus.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Managing 
+	quality service</b>. If a company delivers 100% ship-to promise without 
+	quality failure, the customers will see that they are important to the 
+	company. Put things right and we will be seen as a supplier who knows how to 
+	manage quality product and service. An organization that fails to put things 
+	right in ship-to-promise and quality literally has the same effect of 
+	saying, &quot;this customer is not important to us&quot;. Failing to manage quality 
+	service and to prevent reoccurrence, will soon drive away an existing 
+	customer. To customers, a single mistake could be forgivable. Remedial 
+	action to prevent repetition is crucial but a repeat is totally unacceptable 
+	to customers.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Customers' 
+	complaint</b>. Effectively handling customers with their complaints is 
+	critical to the company&#8217;s reputations as well as their bottom lines. When 
+	customers complain and they are satisfied with the way their complaint is 
+	handled, they are more likely to purchase another product or service from 
+	the same company. By making it easy for customers to complain, more 
+	customers will come forward with their problems, giving the company greater 
+	opportunity to correct service delivery or production processes.</font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Anticipation</b>. 
+	Most customers don't expect the company to anticipate ahead, assessing their 
+	needs and perception. However, thinking about and talking with the customers 
+	will increase their trust in the attention we have for his/her needs.</font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt">Explanation. Some 
+	customers like to know the reasons behind the company&#8217;s decisions. Being 
+	transparent and explain it the customer also means that we act as an 
+	interpreter, translating processes and technical terminology in a way that 
+	makes your customer comfortable, feel trusted and involved.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Attention</b>. 
+	Giving the customer attention has to do with interest, consideration and 
+	involvement. Giving attention means listening closely when customer talks, 
+	and provide answers and solutions by focusing on the needs and wishes of the 
+	customer. Careful listening motivates the customer to continue talking.</font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Creating 
+	win-win solutions</b>. Show a &quot;customer-orientation&quot; attitude by resolving 
+	priority issues in favor of some important and strategic customers, and 
+	where possible, give in, compromise and add value in customer service. 
+	Enhance long-term customer satisfaction by giving reliable after-sales spare 
+	parts support, pricing discount, or better term of credit. The cost of 
+	keeping existing customers is a only small fraction of the cost of acquiring 
+	new customers.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Availability</b>. 
+	When a customer asks a question, no matter how trivial that question may 
+	look like, they expect a prompt answer whether that is going to face-to-face 
+	meet up, by email or by telephone. If you don't have the required 
+	information at hand, just confirm you have received the email and then 
+	approximate a response time. If you can't be reached by email, make sure 
+	senders get an automatic reply mail with alternative contact information.</font></p>
+	</li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Highly 
+	satisfied and dissatisfied customers</b>. Highly satisfied customers who 
+	perceive a high value in your products and services usually make excellent 
+	advocates for the organization - nurture these customers and give them 
+	special treatment. Dissatisfied customers who perceive a low value in your 
+	products and services are potential saboteurs. These dissatisfied customers 
+	could have little or no loyalty, and company should seek to rebuild 
+	relationships and trust, and a new basis for a future relationship, or 
+	manage the separation with professionalism.</font></p></li>
+	<li>
+	<p align="left"><font face="Arial" style="font-size: 11pt"><b>Customer 
+	survey</b>. Ask your customers what is important to them. Find out why the 
+	customers do business with the company by giving them a predefined list for 
+	selecting answers in areas such as &#8211; quality, price, product range, systems 
+	compatibility, technical support, location, customer service, etc.</font></p>
+	</li>
+</ul>
+<p align="right"><span class="auto-style1">&nbsp;</span><font size="2" class="auto-style1">Next Page &gt;&gt;
+<a href="managing_suppliers.htm"><font color="#0000FF">Managing Suppliers</font></a></font><br class="auto-style1">
+<font size="3">&nbsp;</font></p>
+
+</td>
+</tr>
+
+
+
+<tr valign="top">
+<td class="menu" style="width: 147px">
+&nbsp;</td>
+<td class="menu" style="width: 6px">
+&nbsp;</td>
+<td class="body">
+<p align="center">
+<font face="Arial" size="2"><br>
+    
+<a href="http://s05.flagcounter.com/more/RvMZ">
+<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a></font>
+
+
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+</tbody></table>
+</body>
+</html>
