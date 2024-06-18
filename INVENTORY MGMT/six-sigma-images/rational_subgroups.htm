@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Rational Subgroups 
+</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Tahoma" size="5"><b>Rational Subgroups </b></font>
+</p>
+<p><font face="Verdana" size="2">Most control charts, including the X-bar and 
+Individual-X charts, rely upon Rational Subgroups to estimate the short term 
+variation in the process. This short-term variation is then used to predict the 
+longer-term variation defined by the control limits. But what is a Rational 
+Subgroup? </font></p>
+<p><font face="Verdana" size="2">A Rational Subgroup is simply &quot;a sample in 
+which all of the items are produced under conditions in which only random 
+effects are responsible for the observed variation.&quot; [Nelson, Lloyd S. &quot;Control 
+Charts: Rational Subgroups and Effective Applications,&quot; Journal of Quality 
+Technology. Vol. 20, No. 1, January 1988). As such, it has the following 
+properties. </font></p>
+<ol>
+	<li><font face="Verdana" size="2">The observations comprising the subgroup 
+	are <b>independent</b>. Two observations are independent if neither 
+	observation influences, or results from, the other. When observations are 
+	dependent on one another, we say the process has Autocorrelation, or Serial 
+	Correlation. (These terms mean the same thing). Many processes are subject 
+	to Autocorrelation. Examples include: </font>
+	<ul>
+		<li><font face="Verdana" size="2">Chemical Processes: When dealing with 
+		liquids, particularly in large baths, samples taken close together in 
+		time are influenced by one another. The liquid retains the effect of the 
+		first observation, such as temperature, which carries over into 
+		subsequent temperature observations for a period of time. Subgroups 
+		formed over a small time frame from these types of processes are 
+		sometimes called <b>homogenous subgroups</b>, since the observations 
+		within the subgroups are often nearly identical (except for the effect 
+		of measurement variation). </font></li>
+		<li><font face="Verdana" size="2">Service Processes: Consider the wait 
+		time at a bank. The wait time of any person in the line is influenced by 
+		the wait time of the person in front of him/her. </font></li>
+		<li><font face="Verdana" size="2">Discrete part manufacturing: Although 
+		this is the &quot;classic&quot; case of independent subgroups, when feedback 
+		control is used to change a process based upon past observations, the 
+		observations become inherently dependent. </font></li>
+	</ul>
+	</li>
+</ol>
+<p><font face="Verdana" size="2">When observations within a subgroup are 
+auto-correlated, the within subgroup variation is often quite small, and not a 
+reflection of the between subgroup process variation. The small within subgroup 
+variation forces the control limits to be too narrow, resulting in frequent out 
+of control conditions. This leads to Tampering.</font></p>
+<ol start="2">
+	<li><font face="Verdana" size="2">The observations within a subgroup are 
+	from a single, stable process. If subgroups contain the elements of multiple 
+	process streams, or if other special causes occur frequently within 
+	subgroups, then the within subgroup variation will be large relative to the 
+	variation between subgroup averages. This large within subgroup variation 
+	forces the control limits to be too far apart, resulting in a lack of 
+	sensitivity to process shifts. Run Test 7 (15 successive points within one 
+	sigma of center line) is helpful in detecting this condition. </font></li>
+	<li><font face="Verdana" size="2">The subgroups are formed from observations 
+	taken in a time-ordered sequence. In other words, subgroups cannot be 
+	randomly formed from a set of data (or a box of parts); instead, the data 
+	comprising a subgroup must be a &quot;snapshot&quot; of the process over a small 
+	window of time, and the order of the subgroups would show how those 
+	snapshots vary in time (like a &quot;movie&quot;). The size of the &quot;small window of 
+	time&quot; is determined on an individual process basis to minimize the chance of 
+	a special cause occurring in the subgroup. </font></li>
+</ol>
+<p align="right"><small><em><small>Copyright © 1995-2008 Quality America Inc. 
+All Rights Reserved</small></em></small></p>
+
+</body>
+
+</html>
