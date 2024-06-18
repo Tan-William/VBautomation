@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Function to generate a table of Access 2003 And JetEngine Errors</title>
+</head>
+
+<body>
+
+<table border="1" width="54%">
+	<tr>
+		<td align="left"><font size="2" face="Arial">Function 
+		AccessAndJetErrorsTable() As Boolean<br>
+		<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim tbl As New ADOX.Table<br>
+		Dim cnn As ADODB.Connection<br>
+		Dim rst As New ADODB.Recordset, lngCode As Long<br>
+		Dim strAccessErr As String<br>
+		<br>
+		Const conAppObjectError = &quot;Application-defined or object-defined error&quot;<br>
+		On Error GoTo Error_AccessAndJetErrorsTable<br>
+		<br>
+		Set cnn = CurrentProject.Connection<br>
+		<font color="#008000">' Create Errors table with ErrorNumber and 
+		ErrorDescription fields.</font><br>
+		tbl.Name = &quot;AccessAndJetErrors&quot;<br>
+		tbl.Columns.Append &quot;ErrorCode&quot;, adInteger<br>
+		tbl.Columns.Append &quot;ErrorString&quot;, adLongVarWChar<br>
+		<br>
+		Set cat.ActiveConnection = cnn<br>
+		cat.Tables.Append tbl<br>
+		<font color="#008000">' Open recordset on Errors table.</font><br>
+		rst.Open &quot;AccessAndJetErrors&quot;, cnn, adOpenStatic, adLockOptimistic<br>
+		<font color="#008000">' Loop through error codes.</font><br>
+		For lngCode = 0 To 3500<br>
+		On Error Resume Next<br>
+		<font color="#008000">' Raise each error.</font><br>
+		strAccessErr = AccessError(lngCode)<br>
+		DoCmd.Hourglass True<br>
+		<font color="#008000">' Skip error numbers without associated strings.</font><br>
+		If strAccessErr &lt;&gt; &quot;&quot; Then<br>
+		<font color="#008000">' Skip codes that generate application or 
+		object-defined errors.</font><br>
+		If strAccessErr &lt;&gt; conAppObjectError Then<br>
+		<font color="#008000">' Add each error code and string to Errors table.</font><br>
+		rst.AddNew<br>
+		rst!ErrorCode = lngCode<br>
+		<font color="#008000">' Append string to memo field.</font><br>
+		rst!ErrorString = strAccessErr<br>
+		rst.Update<br>
+		End If<br>
+		End If<br>
+		Next lngCode<br>
+		<font color="#008000">' Close recordset.</font><br>
+		rst.Close<br>
+		DoCmd.Hourglass False<br>
+		RefreshDatabaseWindow<br>
+		MsgBox &quot;Access and Jet errors table created.&quot;<br>
+		AccessAndJetErrorsTable = True<br>
+		<br>
+		Exit_AccessAndJetErrorsTable:<br>
+		Exit Function<br>
+		<br>
+		Error_AccessAndJetErrorsTable:<br>
+		MsgBox Err &amp; &quot;: &quot; &amp; Err.Description<br>
+		AccessAndJetErrorsTable = False<br>
+		Resume Exit_AccessAndJetErrorsTable<br>
+		<br>
+		End Function</font></td>
+	</tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Filtering List Control</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<STYLE TYPE="text/css">
+<!--
+#dek {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+</head>
+
+
+
+<body background="YellowTexture.gif">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table63">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table64">
+	<tr>
+		<td>
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a class="type3" href="../../index.htm">Home</a>&nbsp;|
+	<a class="type3" href="../../AboutMe/Me.htm">About me</a> |
+	<a class="type1" href="../../VBA/beginner_basic.htm">EXCEL VB Programming 
+	(XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../../EXCEL/excel_under_construction.htm">EXCEL VB.Net 
+	Programming</a>&nbsp;|
+	<a class="type1" href="../../EXCEL/excel_worksheet_functions.htm">EXCEL 
+	Spreadsheet Functions</a> |&nbsp;
+	<a class="type1" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; 
+	Management</a>&nbsp;|
+	<a class="type1" href="../../GUESTBOOK/gbook.php">Guestbook</a></font>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1"></td>
+	</tr>
+</table>
+
+
+<table border="0" width="99%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="23">&nbsp;</td>
+		<td><b><font size="5" face="Arial">Filtering List Control</font></b><p><font size="2" face="Arial">1.0&nbsp;Right-click on the Detail area, then 
+select&nbsp; Form Header/Footer.</font></p>
+<p><font size="2">
+<img border="0" src="filtering_list_control1.gif" width="443" height="325"></font></p>
+<p><font size="2"><br>
+<font face="Arial">2.0 Right-click on the upper left square button, that would 
+bring out the Form properties sheet as shown on the right.<br>
+At the Record Source field, click the dropdown list to select your table/query. 
+For this example, let's select the table called tblCustomers.</font></font></p>
+<p><img border="0" src="filtering_list_control2.gif" width="784" height="371"></p>
+<p>
+<font face="Arial" size="2"><br>
+3.0 Click on the members of the Fields List, one at a time, drag it to place on 
+the form's Detail section, in the appropriate position you want.</font></p>
+<p><img border="0" src="filtering_list_control3.gif" width="678" height="332"></p>
+
+<p><br>
+<font face="Arial" size="2">4.0 After you have done, the form in Design View now 
+should look something like this.</font></p>
+<p><img border="0" src="filtering_list_control4.gif" width="444" height="370"></p>
+<p>
+<font face="Arial" size="2"><br>
+5.0 Click on the Combo Box icon, drag to place it in the form's Header, for the 
+purpose of filtering on the contents of the table tblCustomers.</font></p>
+<p><img border="0" src="filtering_list_control5.gif" width="506" height="373"></p>
+<p><br>
+<font face="Arial" size="2">6.0 Choose the second option &quot;I will type in the 
+values that I want&quot;</font></p>
+<p><img border="0" src="filtering_list_control6.gif" width="483" height="335"></p>
+<p><br>
+<font face="Arial" size="2">7.0 Just ignore the 'Number of columns' as you will 
+later code it programmatically. Click Finish.</font></p>
+<p><img border="0" src="filtering_list_control7.gif" width="486" height="341"></p>
+<p><br>
+<font size="2" face="Arial">8.0 Double-click on the combo box Unbound control to 
+bring up the Property dialog box.<br>
+Click on the dropdown to select the Label and change it's name to 'Search'; then 
+select Combo1 and change it's name to 'cboSearch'.<br>
+Ignore the properties of Row Source Type, Row Source, Column Count and Column 
+Width as we will write the code to take over them.</font></p>
+<p><img border="0" src="filtering_list_control8.gif" width="587" height="374"></p>
+<p><br>
+<font size="2" face="Arial">9.0 Now save Form1 to another name 'frmCustomers', a 
+name that logically make sense. frm denotes as form.</font></p>
+<p><img border="0" src="filtering_list_control9.gif" width="351" height="162"></p>
+<p><br>
+<font size="2" face="Arial">10.0&nbsp; Open the Form module, follow these 6 
+steps to program the code for the form's OnOpen event and combo box control's 
+OnClick event.<br>
+Close the form module when you are done.</font></p>
+<p><img border="0" src="filtering_list_control10.gif" width="577" height="524"></p>
+<p><font size="2" face="Arial"><br>
+11.0 Open the form frmCustomers and now you will 
+see Customer ID 1125 with all the corresponding details displayed.<br>
+Next click on the Search control filter for any Customer ID you like to see, 
+together with all its associated details which <br>
+are all the fields that are bound to the table tblCustomers.</font></p>
+<p><img border="0" src="filtering_list_control11.gif" width="637" height="286">&nbsp;
+</p>
+<p><font size="2" face="Arial"><br>
+12.0 Finally, this what the combo box filtering result look likes. <br>
+Select the search for, say, Customer ID 1142, you are able to see all its 
+corresponding detail in one page.</font></p>
+<p><img border="0" src="filtering_list_control12.gif" width="341" height="288"></p>
+
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

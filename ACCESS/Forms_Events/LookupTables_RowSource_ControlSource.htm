@@ -1,0 +1,372 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="description" content="Using lookup tables in Microsoft Access to create quick data entry applications">
+<meta name="keywords" content="Lookup Tables, Microsoft Access, Row Source Type, Row Source, Control Source">
+<title>Lookup table in Microsoft ACCESS</title>
+
+</head><body>
+
+<div align="center">
+  <center>
+
+<table width="644" border="0" cellpadding="8" cellspacing="8">
+  <tbody><tr>
+    <td valign="top" width="100%" align="left">
+  <h1>Lookup Tables in Access</h1>
+
+  <p>When we say that a table is a <i>lookup table</i> for another <i>main</i> table, it means that
+  the lookup table contains values that will be used as the contents of a field
+  located in the main table. Usually the lookup
+  table has at least two fields – Id and Description. The main table stores
+  only the values from the Id field, but since there is a relationship between the
+  lookup
+  and the main table, the value of the associated Description field is also associated
+  with the record in the main table. On the level of the user interface, lookup
+  tables are often implemented as list boxes or combo boxes.</p>
+  
+  <h2>Linking tables</h2>
+
+  <p>We can demonstrate this concept using tables which contain
+  information about companies and cities. First, we will link the tables on
+  the table level. The link will be implemented as a list box on the user
+  interface level.</p>
+  
+  <p>Create following tables:</p>
+
+      <table width="67%" border="1" cellpadding="2" cellspacing="0">
+        <tbody><tr>
+          <td width="23%" bgcolor="#000000"><font color="#ffffff"><b>CITY</b></font></td>
+          <td width="77%" bgcolor="#000000">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="23%">CityId</td>
+          <td width="77%">identification number of a city</td>
+        </tr>
+        <tr>
+          <td width="23%">CityName</td>
+          <td width="77%">name of a city</td>
+        </tr>
+      </tbody></table>
+      <p>&nbsp;</p>
+      <table width="85%" border="1" cellpadding="2" cellspacing="0">
+        <tbody><tr>
+          <td width="28%" bgcolor="#000000"><font color="#ffffff"><b>COMPANY</b></font></td>
+          <td width="72%" bgcolor="#000000">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="28%">CompanyId</td>
+          <td width="72%">identification number of a company</td>
+        </tr>
+        <tr>
+          <td width="28%">CompanyName</td>
+          <td width="72%">name of a company</td>
+        </tr>
+        <tr>
+          <td width="28%">CityId</td>
+          <td width="72%">identification number of a city</td>
+        </tr>
+      </tbody></table>
+  
+  <p>The
+CityId field links the tables. They are in a 1:n relationship, which
+means that: a company can be situated only in one city, but a city can
+have many companies. A record in the Company table has only one record
+in the table City, but a record in the City table can have more than
+one record in the Company table.</p>
+  
+  <p>It is possible to display a list box to select a city
+  instead of a text box in which to enter a CityId into the Company table. Behind the scene
+  Access will operate with the CityId field. An identifier, which corresponds to a
+  selected city, will be stored in the CityId field of the Company table. Another result
+  of such a link is that the user is prevented from entering a value which does
+  not exist in the City table. You can accomplish this feat in following way:</p>
+  
+  <p>First, you create the City table in the standard way:</p>
+  
+  <p>
+  <img src="image003.gif" width="516" border="0" height="390">
+  </p>
+  
+  <p>Note that the Data Type of the CityId field in this table is set
+  to AutoNumber.</p>
+  
+  <p>When creating the Company table, you should include the CityId field as
+  well. Usually, we would set the Data Type to Number (Long Integer). That type
+  corresponds to AutoNumber. In this case we will select another one.</p>
+  
+  <p>
+	<img src="image004.gif" width="516" border="0" height="422"></p>
+  
+  <p>Select Lookup Wizard from the Data Type drop-down list.</p>
+  
+  <p>
+	<img src="image005.gif" width="486" border="0" height="335"></p>
+  
+  <p>Since we want to use values from a
+  lookup table, select the first option, then click <u>N</u>ext.</p>
+  
+  <p>Select the City table as the source of values for your lookup column then click <u>N</u>ext.</p>
+  
+  <p>
+	<img src="image006.gif" width="486" border="0" height="335"></p>
+  
+  <p>Select the fields that will appear in the lookup (list
+  box).</p>
+  
+  <p>
+	<img src="image007.gif" width="486" border="0" height="335"></p>
+  
+  <p>Click <u>N</u>ext. The Lookup Wizard shows your lookup column.</p>
+  
+  <p>
+	<img src="image008.gif" width="486" border="0" height="335"></p>
+  
+  <p>Usually, you do not need to display the key column (CityId).
+  Click <u>N</u>ext to continue. Name the lookup column and click <u>F</u>inish.</p>
+  
+  <p>
+	<img src="image009.gif" width="486" border="0" height="335"></p>
+  
+  <p>If you open the table definition, you will notice that the CityId field's properties
+  are set as follows:</p>
+  
+      <table width="98%" border="1" cellpadding="2" cellspacing="0">
+        <tbody><tr>
+          <td width="29%">Row source type</td>
+          <td width="71%">table/query</td>
+        </tr>
+        <tr>
+          <td width="29%">Row source</td>
+          <td width="71%">SQL query</td>
+        </tr>
+        <tr>
+          <td width="29%">Bound column</td>
+          <td width="71%">The property tells Microsoft Access which column values to use
+          as the value of the control. If the control is bound to a
+          field, the value in the column specified by the bound column property
+          is stored in the field named in the Control Source property.</td>
+        </tr>
+        <tr>
+          <td width="29%">Column widths</td>
+          <td width="71%">specify the width of each
+          column in a multiple-column list box.</td>
+        </tr>
+      </tbody></table>
+  
+  <p>
+	<img src="image010.gif" width="516" border="0" height="422"></p>
+  
+  <p>
+	<img src="image011.gif" width="520" border="0" height="384"></p>
+  
+  <p>It is also interesting to see how a lookup table is affected by linking. Open
+  the City table and notice the '+' boxes along the left
+  border. When you click on a '+' in one record, Access opens the section of the
+  main table with the records associated with the selected lookup record.</p>
+  
+  <p>
+	<img src="image012.gif" width="520" border="0" height="384"></p>
+  
+  <p>
+	<img src="image013.gif" width="520" border="0" height="384"></p>
+  
+  <h2 class="clsHeading2">Linking forms</h2>
+  
+  <p>Tables in Access can also be linked on the form level. We
+  can do this on top of linked tables, but it isn't necessary. Forms can be
+  linked even when the tables are not linked. In fact, that is what we recommend. It
+  is better to link forms rather than tables.</p>
+  
+  <p>Create the City and Company tables as you would usually. Now we want to
+  use forms to view and edit the content of these tables. We should have a list box to
+  display cities on the form that displays Company information. Again, users will be prevented
+  from adding a city for which there is not already a record in the City table.</p>
+  
+  <p>Create a form to show the Company table in following manner:</p>
+  
+      <ul>
+        <li>In Design mode, put text box controls CompanyId and CompanyName and
+          a combo box to show CityName
+  from City table.</li>
+      </ul>
+  
+  <p>
+	<img src="image015.gif" width="520" border="0" height="384"></p>
+  
+  <p>As soon as you create the combo, Access opens the Combo Box
+  Wizard. Specify that the combo box will look up the values from a table. Click
+  <u>N</u>ext.</p>
+  
+  <p>
+	<img src="image016.gif" width="486" border="0" height="335"></p>
+  
+  <p>The wizard opens a window where you select a table to provide the values for your combo box. Click <u>N</u>ext.</p>
+  
+  <p>
+	<img src="image017.gif" width="486" border="0" height="335"></p>
+  
+  <p>Select the fields that contain the values you want included
+  in your combo box. Click <u>N</u>ext.</p>
+  
+  <p>
+	<img src="image018.gif" width="486" border="0" height="335"></p>
+  
+  <p>The wizard displays a window with a preview of the combo box.
+  Usually, you will not display the key column as a part of your combo. You
+  can also adjust the width of the column(s). Click <u>N</u>ext.</p>
+  
+  <p>
+	<img src="image019.gif" width="486" border="0" height="335"></p>
+  
+  <p>The wizard prompts you for the field that this column
+  will be bound to. Select CityId and then click <u>N</u>ext.</p>
+  
+  <p>
+	<img src="image020.gif" width="486" border="0" height="335"></p>
+  
+  <p>Name the combo box and then click <u>F</u>inish.</p>
+  
+  <p>
+	<img src="image021.gif" width="486" border="0" height="335"></p>
+  
+  <p>Now, on your form you have a combo box.</p>
+  
+  <p>
+	<img src="image022.gif" width="520" border="0" height="384"></p>
+  
+  <p>If you view the Properties of the combo box, you will notice
+  that the wizard has changed the following properties:</p>
+  
+      <table width="100%" border="1" cellpadding="2" cellspacing="0">
+        <tbody><tr>
+          <td width="50%">Control source</td>
+          <td width="50%">Specify what data appears in a control (CityId)</td>
+        </tr>
+        <tr>
+          <td width="50%">Row source type</td>
+          <td width="50%">table/query</td>
+        </tr>
+        <tr>
+          <td width="50%">Row source</td>
+          <td width="50%">SQL query</td>
+        </tr>
+        <tr>
+          <td width="50%">Bound column</td>
+          <td width="50%">The property tells
+          Microsoft Access which column values to use as the value of the
+          control. If the control is bound to a field, the value in the column
+          specified by the bound column property is stored in the field named in
+          the Control Source property.</td>
+        </tr>
+        <tr>
+          <td width="50%">Column widths</td>
+          <td width="50%">width of each column in a
+          multiple-column list box To hide first column set its width to zero
+          (0";1").</td>
+        </tr>
+      </tbody></table>
+  
+  <p>
+	<img src="image023.gif" width="483" border="0" height="250"></p>
+  
+  <p>When you activate the new form, you see the following:</p>
+  
+  <p>
+	<img src="image024.gif" width="520" border="0" height="384"></p>
+  
+  <p>When you add a new record, it is enough to type the first
+  character of the name of the city (if the record is in table City), or to select CityName
+  in combo box and it will be added.</p>
+  
+  <p>
+	<img src="image025.gif" width="520" border="0" height="384"></p>
+  
+  <h2 class="clsHeading2">Linking forms manually</h2>
+  
+  <p>This whole process can be performed manually as well. You need to create a
+  form that shows the Company table and
+  add text boxes for all fields. Then you need to change the text box for displaying
+  CityName field into a list box. Right click the field and select Change Type
+  from the menu. Select List Box. Then view the properties of the CityName field. Change
+  the following parameters:</p>
+  
+      <table width="520" border="1" cellpadding="2" cellspacing="0">
+        <tbody><tr>
+          <td width="109" bgcolor="#000000"><font color="#ffffff"><b>Property</b></font></td>
+          <td width="242" bgcolor="#000000"><font color="#ffffff"><b>Description</b></font></td>
+          <td width="149" bgcolor="#000000"><font color="#ffffff"><b>New value</b></font></td>
+        </tr>
+        <tr>
+        <td valign="top" width="109">
+          <p>Row source</p>
+        </td>
+        <td valign="top" width="242">
+          <p>to define rule how to load combo box or list box.</p>
+        </td>
+        <td valign="top" width="149">
+          <p>Select CityId, CityName from City</p>
+        </td>
+        </tr>
+        <tr>
+        <td valign="top" width="109">
+          <p>ColumnCount</p>
+        </td>
+        <td valign="top" width="242">
+          <p>specifies a number of
+          columns displayed in a list box or in the list box portion of a combo
+          box</p>
+        </td>
+        <td valign="top" width="149">
+          <p>2</p>
+        </td>
+        </tr>
+        <tr>
+        <td valign="top" width="109">
+          <p>ColumnWidths</p>
+        </td>
+        <td valign="top" width="242">
+          <p>specifies the width of each column in a
+          multiple-column combo box or list box. You can also use this property
+          to hide one or more columns.</p>
+        </td>
+        <td valign="top" width="149">
+          <p>0";1"</p>
+        </td>
+        </tr>
+        <tr>
+        <td valign="top" width="109">
+          <p>Control Source</p>
+        </td>
+        <td valign="top" width="242">
+          <p>specifies what data appears in a control</p>
+        </td>
+        <td valign="top" width="149">
+          <p>CityId</p>
+        </td>
+        </tr>
+        <tr>
+        <td valign="top" width="109">
+          <p>Bound column</p>
+        </td>
+        <td valign="top" width="242">
+          <p>which column values to use as the value of the
+          control. If the control is bound to a field, the value in the column
+          specified by the bound column property is stored in the field named in
+          the Control Source property</p>
+        </td>
+        <td valign="top" width="149">
+          <p>1</p>
+        </td>
+        </tr>
+      </tbody></table>
+      <p>After everything is set, the combo box displays only
+  CityName, but your program will use CityId behind the scenes.
+    </p></td>
+  </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+</body></html>
