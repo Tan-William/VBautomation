@@ -1,0 +1,549 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Status Property (Field Object)</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Field Object &gt;&gt;<font color="#F06000">Status Property</font></font></h1>
+		<p>The Status property returns a FieldStatusEnum value that indicates 
+		the status of a Field object. Default value is adFieldOK. </p>
+		<p>If any updates fail then an error is returned and the Status property 
+		indicates the combined values of the operation and error status code. 
+		The Status property for each Field can be used to determine why the 
+		Field was not added, modified, or deleted. </p>
+		<p>Problems with adding, modifying, or deleting a Field are reported 
+		through this property. For example, if a user deletes a Field, it will 
+		be marked for deletion in the Fields collection. If the Update call 
+		returns an error because the user tried to delete a Field for which he 
+		does not have permission, the Status for this field will be 
+		adFieldPermissionDenied or adFieldPendingDelete. </p>
+		<h3>Syntax</h3>
+		<table class="ex" width="40%" border="1" cellpadding="3" cellspacing="0" id="table7">
+			<tr>
+				<td valign="top">
+				<pre><font size="3" color="#800000">objfield.Status</font></pre>
+				</td>
+			</tr>
+		</table>
+		<h3>Example</h3>
+		<table class="ex" width="49%" border="1" cellpadding="3" cellspacing="0" id="table8">
+			<tr>
+				<td valign="top">
+				<pre>
+<font color="#0066CC">set conn=New ADODB.Connection
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;</font><font color="#0066cc">
+conn.Open &quot;F:\MaterialMaster\Material_Master.mdb&quot;</font></pre>
+				<pre><font color="#0066cc">set rs = New ADODB.Recordset
+rs.open &quot;SELECT * FROM tblAMSEA&quot;, conn</font></pre>
+				<pre><font color="#0066CC">debug.print(rs.Fields(0)<b>.</b></font><b><font color="#FF6600">Status</font></b><font color="#0066CC">)</font></pre>
+				<pre><font color="#0066CC">rs.Close
+conn.close</font></pre>
+				</td>
+			</tr>
+		</table>
+&nbsp;<a name="fieldstatusenum"><h3>FieldStatusEnum Values</h3>
+		</a>
+		<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table9">
+			<tr>
+				<th valign="top" align="left">
+				<p align="center">Constant</th>
+				<th valign="top" width="77">Value</th>
+				<th valign="top" align="left" width="629">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">adFieldOK</td>
+				<td valign="top" align="center" width="77">0</td>
+				<td valign="top" width="629">Default. The field was successfully 
+				added or deleted</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCantConvertValue</td>
+				<td valign="top" align="center" width="77">2</td>
+				<td valign="top" width="629">The field cannot be retrieved or 
+				stored without loss of data</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldIsNull</td>
+				<td valign="top" align="center" width="77">3</td>
+				<td valign="top" width="629">The provider returned a null value</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldTruncated</td>
+				<td valign="top" align="center" width="77">4</td>
+				<td valign="top" width="629">Variable-length data was truncated 
+				when reading from the data source</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldSignMismatch</td>
+				<td valign="top" align="center" width="77">5</td>
+				<td valign="top" width="629">The data value returned by the 
+				provider was signed, but the data type of the ADO field value 
+				was unsigned</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldDataOverflow</td>
+				<td valign="top" align="center" width="77">6</td>
+				<td valign="top" width="629">The data returned from the provider 
+				overflowed the data type of the field</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCantCreate</td>
+				<td valign="top" align="center" width="77">7</td>
+				<td valign="top" width="629">The field could not be added 
+				because the provider exceeded a limitation</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldUnavailable</td>
+				<td valign="top" align="center" width="77">8</td>
+				<td valign="top" width="629">The provider could not determine 
+				the value when reading from the data source</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPermissionDenied</td>
+				<td valign="top" align="center" width="77">9</td>
+				<td valign="top" width="629">The field cannot be modified 
+				because it is read-only</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldIntegrityViolation</td>
+				<td valign="top" align="center" width="77">10</td>
+				<td valign="top" width="629">The field cannot be modified 
+				because it is a calculated or derived entity</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldSchemaViolation</td>
+				<td valign="top" align="center" width="77">11</td>
+				<td valign="top" width="629">The value violated the data source 
+				schema constraint for the field</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldBadStatus</td>
+				<td valign="top" align="center" width="77">12</td>
+				<td valign="top" width="629">An invalid status value was sent 
+				from ADO to the OLE DB provider</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldDefault</td>
+				<td valign="top" align="center" width="77">13</td>
+				<td valign="top" width="629">The default value for the field was 
+				used when setting data</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldIgnore</td>
+				<td valign="top" align="center" width="77">15</td>
+				<td valign="top" width="629">This field was skipped when setting 
+				data values in the source</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldDoesNotExist</td>
+				<td valign="top" align="center" width="77">16</td>
+				<td valign="top" width="629">The field does not exist</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldInvalidURL</td>
+				<td valign="top" align="center" width="77">17</td>
+				<td valign="top" width="629">The data source URL contains 
+				invalid characters</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldResourceLocked</td>
+				<td valign="top" align="center" width="77">18</td>
+				<td valign="top" width="629">The provider cannot perform the 
+				operation because the data source is locked</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldResourceExists</td>
+				<td valign="top" align="center" width="77">19</td>
+				<td valign="top" width="629">The provider cannot perform the 
+				operation because an object already exists at the destination 
+				URL and it is not able to overwrite the object</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCannotComplete</td>
+				<td valign="top" align="center" width="77">20</td>
+				<td valign="top" width="629">The server of the URL specified by 
+				Source could not complete the operation</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldVolumeNotFound</td>
+				<td valign="top" align="center" width="77">21</td>
+				<td valign="top" width="629">The provider is unable to locate 
+				the storage volume indicated by the URL</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldOutOfSpace</td>
+				<td valign="top" align="center" width="77">22</td>
+				<td valign="top" width="629">The provider is unable to obtain 
+				enough storage space to complete a move or copy operation</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCannotDeleteSource</td>
+				<td valign="top" align="center" width="77">23</td>
+				<td valign="top" width="629">During a move operation, a tree or 
+				subtree was moved to a new location, but the source could not be 
+				deleted</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldReadOnly</td>
+				<td valign="top" align="center" width="77">24</td>
+				<td valign="top" width="629">The field in the data source is 
+				read-only</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldResourceOutOfScope</td>
+				<td valign="top" align="center" width="77">25</td>
+				<td valign="top" width="629">A source or destination URL is 
+				outside the scope of the current record</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldAlreadyExists</td>
+				<td valign="top" align="center" width="77">26</td>
+				<td valign="top" width="629">The specified field already exists</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingInsert</td>
+				<td valign="top" align="center" width="77">0x10000</td>
+				<td valign="top" width="629">The Append operation caused the 
+				status to be set. The field has been marked to be added to the 
+				Fields collection after the Update method is called</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingDelete</td>
+				<td valign="top" align="center" width="77">0x20000</td>
+				<td valign="top" width="629">The Delete operation caused the 
+				status to be set. The field has been marked for deletion from 
+				the Fields collection after the Update method is called</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingChange</td>
+				<td valign="top" align="center" width="77">0x40000</td>
+				<td valign="top" width="629">The field has been deleted and then 
+				re-added or the value of the field which previously had a status 
+				of adFieldOK has changed</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingUnknown</td>
+				<td valign="top" align="center" width="77">0x80000</td>
+				<td valign="top" width="629">The provider cannot determine what 
+				operation caused field status to be set</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingUnknownDelete</td>
+				<td valign="top" align="center" width="77">0x100000</td>
+				<td valign="top" width="629">The provider cannot determine what 
+				operation caused field status to be set, and that the field will 
+				be deleted from the Fields collection after the Update method is 
+				called.</td>
+			</tr>
+		</table>
+		<p>&nbsp;<h1>ADO Status Property (Field Object)</h1>
+		<p>The Status property returns a FieldStatusEnum value that indicates 
+		the status of a Field object. Default value is adFieldOK. </p>
+		<p>If any updates fail then an error is returned and the Status property 
+		indicates the combined values of the operation and error status code. 
+		The Status property for each Field can be used to determine why the 
+		Field was not added, modified, or deleted. </p>
+		<p>Problems with adding, modifying, or deleting a Field are reported 
+		through this property. For example, if a user deletes a Field, it will 
+		be marked for deletion in the Fields collection. If the Update call 
+		returns an error because the user tried to delete a Field for which he 
+		does not have permission, the Status for this field will be 
+		adFieldPermissionDenied or adFieldPendingDelete. </p>
+		<h3>Syntax</h3>
+		<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table10">
+			<tr>
+				<td valign="top">
+				<pre>objfield.Status</pre>
+				</td>
+			</tr>
+		</table>
+		<h3>Example</h3>
+		<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table11">
+			<tr>
+				<td valign="top">
+				<pre>
+<font color="#0066CC">set conn=New ADODB.Connection
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;</font><font color="#0066cc">
+conn.Open &quot;F:\MaterialMaster\Material_Master.mdb&quot;</font></pre>
+				<pre><font color="#0066cc">set rs = New ADODB.Recordset
+rs.open &quot;SELECT * FROM tblAMSEA&quot;, conn</font></pre>
+				<pre><font color="#0066CC">debug.print(rs.Fields(0)<b>.</b></font><b><font color="#FF6600">Status</font></b><font color="#0066CC">)</font></pre>
+				<pre><font color="#0066CC">rs.Close
+conn.close</font></pre>
+				</td>
+			</tr>
+		</table>
+&nbsp;<a name="fieldstatusenum0"><h3>FieldStatusEnum Values</h3>
+		</a>
+		<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table12">
+			<tr>
+				<th valign="top" align="left">
+				<p align="center">Constant</th>
+				<th valign="top" width="77">Value</th>
+				<th valign="top" align="left" width="629">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">adFieldOK</td>
+				<td valign="top" align="center" width="77">0</td>
+				<td valign="top" width="629">Default. The field was successfully 
+				added or deleted</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCantConvertValue</td>
+				<td valign="top" align="center" width="77">2</td>
+				<td valign="top" width="629">The field cannot be retrieved or 
+				stored without loss of data</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldIsNull</td>
+				<td valign="top" align="center" width="77">3</td>
+				<td valign="top" width="629">The provider returned a null value</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldTruncated</td>
+				<td valign="top" align="center" width="77">4</td>
+				<td valign="top" width="629">Variable-length data was truncated 
+				when reading from the data source</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldSignMismatch</td>
+				<td valign="top" align="center" width="77">5</td>
+				<td valign="top" width="629">The data value returned by the 
+				provider was signed, but the data type of the ADO field value 
+				was unsigned</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldDataOverflow</td>
+				<td valign="top" align="center" width="77">6</td>
+				<td valign="top" width="629">The data returned from the provider 
+				overflowed the data type of the field</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCantCreate</td>
+				<td valign="top" align="center" width="77">7</td>
+				<td valign="top" width="629">The field could not be added 
+				because the provider exceeded a limitation</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldUnavailable</td>
+				<td valign="top" align="center" width="77">8</td>
+				<td valign="top" width="629">The provider could not determine 
+				the value when reading from the data source</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPermissionDenied</td>
+				<td valign="top" align="center" width="77">9</td>
+				<td valign="top" width="629">The field cannot be modified 
+				because it is read-only</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldIntegrityViolation</td>
+				<td valign="top" align="center" width="77">10</td>
+				<td valign="top" width="629">The field cannot be modified 
+				because it is a calculated or derived entity</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldSchemaViolation</td>
+				<td valign="top" align="center" width="77">11</td>
+				<td valign="top" width="629">The value violated the data source 
+				schema constraint for the field</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldBadStatus</td>
+				<td valign="top" align="center" width="77">12</td>
+				<td valign="top" width="629">An invalid status value was sent 
+				from ADO to the OLE DB provider</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldDefault</td>
+				<td valign="top" align="center" width="77">13</td>
+				<td valign="top" width="629">The default value for the field was 
+				used when setting data</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldIgnore</td>
+				<td valign="top" align="center" width="77">15</td>
+				<td valign="top" width="629">This field was skipped when setting 
+				data values in the source</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldDoesNotExist</td>
+				<td valign="top" align="center" width="77">16</td>
+				<td valign="top" width="629">The field does not exist</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldInvalidURL</td>
+				<td valign="top" align="center" width="77">17</td>
+				<td valign="top" width="629">The data source URL contains 
+				invalid characters</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldResourceLocked</td>
+				<td valign="top" align="center" width="77">18</td>
+				<td valign="top" width="629">The provider cannot perform the 
+				operation because the data source is locked</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldResourceExists</td>
+				<td valign="top" align="center" width="77">19</td>
+				<td valign="top" width="629">The provider cannot perform the 
+				operation because an object already exists at the destination 
+				URL and it is not able to overwrite the object</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCannotComplete</td>
+				<td valign="top" align="center" width="77">20</td>
+				<td valign="top" width="629">The server of the URL specified by 
+				Source could not complete the operation</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldVolumeNotFound</td>
+				<td valign="top" align="center" width="77">21</td>
+				<td valign="top" width="629">The provider is unable to locate 
+				the storage volume indicated by the URL</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldOutOfSpace</td>
+				<td valign="top" align="center" width="77">22</td>
+				<td valign="top" width="629">The provider is unable to obtain 
+				enough storage space to complete a move or copy operation</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldCannotDeleteSource</td>
+				<td valign="top" align="center" width="77">23</td>
+				<td valign="top" width="629">During a move operation, a tree or 
+				subtree was moved to a new location, but the source could not be 
+				deleted</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldReadOnly</td>
+				<td valign="top" align="center" width="77">24</td>
+				<td valign="top" width="629">The field in the data source is 
+				read-only</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldResourceOutOfScope</td>
+				<td valign="top" align="center" width="77">25</td>
+				<td valign="top" width="629">A source or destination URL is 
+				outside the scope of the current record</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldAlreadyExists</td>
+				<td valign="top" align="center" width="77">26</td>
+				<td valign="top" width="629">The specified field already exists</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingInsert</td>
+				<td valign="top" align="center" width="77">0x10000</td>
+				<td valign="top" width="629">The Append operation caused the 
+				status to be set. The field has been marked to be added to the 
+				Fields collection after the Update method is called</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingDelete</td>
+				<td valign="top" align="center" width="77">0x20000</td>
+				<td valign="top" width="629">The Delete operation caused the 
+				status to be set. The field has been marked for deletion from 
+				the Fields collection after the Update method is called</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingChange</td>
+				<td valign="top" align="center" width="77">0x40000</td>
+				<td valign="top" width="629">The field has been deleted and then 
+				re-added or the value of the field which previously had a status 
+				of adFieldOK has changed</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingUnknown</td>
+				<td valign="top" align="center" width="77">0x80000</td>
+				<td valign="top" width="629">The provider cannot determine what 
+				operation caused field status to be set</td>
+			</tr>
+			<tr>
+				<td valign="top">adFieldPendingUnknownDelete</td>
+				<td valign="top" align="center" width="77">0x100000</td>
+				<td valign="top" width="629">The provider cannot determine what 
+				operation caused field status to be set, and that the field will 
+				be deleted from the Fields collection after the Update method is 
+				called.</td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
