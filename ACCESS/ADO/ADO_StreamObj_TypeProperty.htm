@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Stream object: Type Property</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><br>
+<font size="6">ADO Stream object &gt;&gt; <font color="#F06000">Type property</font></font><font size="2"><span style="font-weight: 400"><br>
+<br>
+Indicates the type of data contained in the Stream (binary or text). The Type 
+property is read/write only. The default value is </span>adTypeText<span style="font-weight: 400">. 
+However, if binary data is initially written to a new, empty Stream, the Type 
+will be changed to </span>adTypeBinary<span style="font-weight: 400">.</span></font></h1>
+<h3><span style="font-weight: 400"><font size="2">Note:<br>
+For text data, the character set used for translation is set using the <b>
+CharSet</b> property. </font></span><br>
+<br>
+<span style="font-weight: 400"><b><font size="3">StreamTypeEnum Constant</font></b></span></h3>
+<table border="1" cellpadding="5" id="table5" width="382">
+	<tr>
+		<td width="106" bgcolor="#CCCCCC"><font size="2" face="Arial">Constant</font></td>
+		<td width="37" bgcolor="#CCCCCC"><font size="2" face="Arial">Value</font></td>
+		<td bgcolor="#CCCCCC">
+		<p align="center"><font size="2" face="Arial">Description</font></td>
+	</tr>
+	<tr>
+		<td width="106"><font size="2" face="Arial">adTypeBinary</font></td>
+		<td width="37" align="center"><font size="2" face="Arial">1</font></td>
+		<td><font size="2" face="Arial">Binary data</font></td>
+	</tr>
+	<tr>
+		<td width="106"><font size="2" face="Arial">adTypeText</font></td>
+		<td width="37" align="center"><font size="2" face="Arial">2</font></td>
+		<td><font size="2" face="Arial">Default, text data</font></td>
+	</tr>
+</table>
+<h3><font size="3">Syntax:</font></h3>
+		<table class="ex" id="table4" width="39%" border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td valign="top">
+				<font face="Courier New" color="#800000" size="2">objStream.Type 
+				= StreamTypeEnum <br>
+				StreamTypeEnum = objStream.Type</font></td>
+			</tr>
+		</table>
+		<h3><font size="3">Example:</font></h3>
+<div class="Entity_CodeExample">
+	<code class="CodeSample"><font color="#3366FF">If (objStream.</font><font color="#F06000"><b>Type</b></font><font color="#3366FF"> 
+	= adTypeText) Then<br>
+	&nbsp;&nbsp;&nbsp;objStream.Charset = &quot;ascii&quot;<br>
+	End If </font></code></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
