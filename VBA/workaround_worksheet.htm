@@ -1,0 +1,1835 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- Mirrored from vbautomation.110mb.com/VBA/workaround_worksheet.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:49:14 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.auto-style1 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style14 {
+	font-size: 10.5pt;
+	text-decoration: none;
+}
+.auto-style13 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	font-weight: normal;
+}
+.auto-style15 {
+	color: #0045C3;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style16 {
+	font-family: Verdana;
+}
+.auto-style17 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	color: #339966;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style18 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style19 {
+	font-size: 10.5pt;
+}
+.auto-style20 {
+	font-family: Verdana;
+	font-weight: bold;
+}
+.auto-style21 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	color: #CC3300;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style22 {
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style23 {
+	font-family: Verdana;
+	font-size: 11pt;
+}
+.auto-style24 {
+	font-size: 11pt;
+}
+.auto-style25 {
+	font-family: Verdana;
+	font-style: italic;
+}
+.auto-style26 {
+	font-size: 11pt;
+	font-style: italic;
+}
+.auto-style27 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style28 {
+	color: #0045C3;
+}
+.auto-style29 {
+	color: #000000;
+	font-size: 10.5pt;
+	font-weight: normal;
+}
+</style>
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" align="center" style="width: 13%">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../index.htm" rel="internal" class="auto-style1">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style1">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+				<font class="auto-style1"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font></font></font><span class="auto-style2">
+				</span>
+
+<font face="">
+
+                    <tr width="159">
+                    <td style="cursor: pointer; height: 66px;" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" class="auto-style2">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style27">
+					<strong><span class="auto-style28">Download</span></strong></a><span class="auto-style28"><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style27"> 
+					my Add-In tool</a></span>	
+ 				   (<a class="auto-style14" href="Sub_VBA/WilliamExcelUtilities.zip"><span class="auto-style29"><em>run on 32-bit MS Office Excel</em></span><span class="auto-style13"><font face="">)</font></span></a></td>
+                    </tr>
+                                                
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" height="28" class="auto-style2">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style1">
+					VBA Basic for beginners</a></td>
+                    </tr>
+
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="Objects.htm" rel="internal" class="auto-style1">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="rows_columns.htm" rel="internal" class="auto-style1">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style15">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="statements.htm" rel="internal" class="auto-style1">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+ 					<a href="functions.htm" rel="internal" class="auto-style1">
+					Functions</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style1">
+					Conditional Statements and Loops Structure</a></font><span class="auto-style2">
+					</span></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="errors_handling.htm" rel="internal" class="auto-style1">
+					Errors Handling</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="userforms.htm" rel="internal" class="auto-style1">UserForms</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="pivot_table.htm" rel="internal" class="auto-style1">
+					Pivot Tables</a><span class="auto-style2"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style1">Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style1">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>                            
+
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style1">
+					File I/O VBA Examples</a></font></td>
+                    </tr>     
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style1">ADO and 
+					DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style1">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="11388">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+
+<font face="">
+
+<font face="">
+
+<font face="">
+
+<font face="">
+						
+			
+<td bgcolor="#FFFFFF" style="width: 1%"></td>
+<td valign="top" width="79%" style="font-family: Courier New; font-size: 10">
+      <!-- Start Page Content -->
+<font face="arial">
+
+<font face="">
+		<p style="font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<b><font style="font-size: 20pt">Working around your worksheet</font></b></p>
+		<pre style="font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</pre>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		In this section, I would show you the many different ways 
+		of how you can work around in your worksheet with ease - </p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		such as 
+		selecting and counting the first or last Cells, Rows, Columns and Range; 
+		moving around cells using Offset </p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		and Resize properties; deleting, adding 
+		and hiding Rows, Columns and Sheets, and many more.&nbsp; </p>
+		<pre style="font-size: 16pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</pre>
+		<pre style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><b><span style="font-size: 16.0pt; font-family: Arial">Counting and finding last Cells, Rows and Columns</span></b></pre>
+		<pre style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</pre>
+		<p class="auto-style17">&#8216; Either of these two methods will find the last used cell, before a blank in Column A</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;A1&quot;).End(xldown).Select<br>
+		LastRow = Range(&quot;A1&quot;).End(xlDown).Row<br>
+		Range(&quot;A&quot; &amp; LastRow).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">&#8216; Either of these three methods will find the last used cell in Column A</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;A65536&quot;).End(xlup).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">LastRow = Range(&quot;A65536&quot;).End(xlup).Row<br>
+		Range(&quot;A&quot; &amp; LastRow).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Cells(Cells.Rows.Count, &quot;A&quot;).End(xlUp).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">&#8217; Either of these codes will jump to the last used cell but one Row down in Column A<br>
+</span><span style="color: #CC3300" class="auto-style16">ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Offset(1, 0).Select<br>
+		Range(&quot;A65536&quot;).End(xlUp).Offset(1, 0).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' Select last cell in an entire range of contiguous cells in Column A, staring from A1<br>
+</span><span style="color: #CC3300" class="auto-style16">Range(Range(&quot;A1&quot;).End(xlDown).Address).Select<br>
+</span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19"><span style="color: #CC3300">
+		<br class="auto-style16">
+</span><span style="color: #339966" class="auto-style16">' Select last cell in an entire range of contiguous cells in a Column, staring from active cell</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(ActiveCell.End(xlDown).Address).Select<br>
+</span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #CC3300" class="auto-style16">
+		<br>
+		<br></span><span style="color: #339966" class="auto-style16">' Pass to variable the address of last cell in an entire range of contiguous cells in a Column</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">LastCell_ActiveColumn = Range(ActiveCell.End(xlDown).Address).Address<br>
+		<br>
+&nbsp;</span></span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+<span style="color: #339966" class="auto-style16">&#8216; Select the blank cell at bottom of a Column of contiguous data<br>
+</span><span style="color: #CC3300" class="auto-style16">ActiveSheet.Range(&quot;A1&quot;).End(xlDown).Offset(1,0).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">&#8217; Find the last cell, before the 1st blank in Row 1</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;A1&quot;).End(xlToRight).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">&#8217; Find the very last used cell in Row 1</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;IV1&quot;).End(xlToLeft).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">&#8217; Find the very last used cell on a Worksheet.<br>
+		&#8217; if you encounter last cell problems, try save the worksheet and press Ctrl-End to check its position again</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Cells.Find(What:=&quot;*&quot;, After:=[A1], SearchDirection:=xlPrevious).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">' Find the last used cell in row 1</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastCol As Integer</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">With ActiveSheet</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">  &nbsp; &nbsp;LastCol = .Cells(1, .Columns.Count).End(xlToLeft).Column</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End With</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">' Find the last used cell in Column A</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastRow As Long</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">With ActiveSheet</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">  &nbsp; LastRow = .Cells(.Rows.Count, &quot;A&quot;).End(xlUp).Row</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End With<br>
+		&nbsp;</span></p>
+		<p style="margin-left:6.5in" class="auto-style2">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		Return To Top</a></font><p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #CC3300">
+		<br class="auto-style16">
+		</span><span class="auto-style16">Possible problems with xlCellTypeLastCell are: </span>
+		</p>
+		<p class="auto-style18">
+		(1) the last cell is only re-set when you save the worksheet; (2) clearing the data will not reset the last cell, but 
+		</p>
+		<p class="auto-style18">
+		you must delete the rows or columns.</p>
+		<p class="auto-style17">
+		' When using VBA you cannot rely on this method of finding last row and last column.</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastRow As Long</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastColumn As long</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">  &nbsp; With ActiveSheet</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp; LastRow = .Range(&quot;A1&quot;).SpecialCells(xlCellTypeLastCell).Row</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp; LastColumn = .Range(&quot;A1&quot;).SpecialCells(xlCellTypeLastCell).Column</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">  &nbsp; End With</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">MsgBox &quot;last row is &quot; &amp; LastRow &amp; &quot; and last column is &quot; &amp; LastColumn</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span class="auto-style2">
+		<br>
+		<br>
+		</span>
+		</font><span class="auto-style2">If 
+		you face last cell problems, you should always:</span><span style="color: #339966" class="auto-style2"><br>
+		</span><span class="auto-style2">a) avoid 
+		copying formulas or formatting down to the bottom of the spreadsheet 
+		using the fill handles.</span><font size="2" class="auto-style19"><br class="auto-style16">
+		<span class="auto-style16">b) a</span></font><span class="auto-style16"><span class="auto-style19"></font></font></span></span><span style="font-family: Arial" class="auto-style16"><span class="auto-style19">void entering data into cells and removing contents by pressing F2 
+		and Spacebar.&nbsp;The cells in this case </span></span></p>
+<font face="arial">
+
+		<p class="auto-style18">
+		are not same as ISBLANK.&nbsp;Instead 
+		you should always choose Edit/Delete or Edit/Clear.</p>
+
+	  </font>
+		<p class="auto-style2">&nbsp;</p>
+<font face="arial">
+
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style16">
+		<font class="auto-style19">&#8216; 
+		UsedRange is usually a more reliable way of finding last row, column and 
+		cell</font><br class="auto-style19">
+		</span></font>
+		<span style="color: #339966; font-size:10pt" class="auto-style16">
+		<font style="color: #CC3300; " class="auto-style19">Dim LastRow As Long<br>
+		ActiveSheet.UsedRange<br>
+		LastRow = Cells.SpecialCells(xlLastCell).Row</font></span></p>
+		<p>
+		<span class="auto-style16">
+		<span style="color: #339966; font-size:10pt">
+		<font style="color: #CC3300; " class="auto-style19">Dim LastRow As Long<br>
+		Dim LastColumn As Long<br>
+		With ActiveSheet.UsedRange<br>
+		&nbsp;&nbsp;&nbsp; LastRow = .Rows(.Rows.Count).Row<br>
+		&nbsp;&nbsp;&nbsp; LastColumn = .Columns(.Columns.Count).Column<br>
+		End With</font></span></p>
+		<p>
+		<span style="color: #339966; font-size:10pt">
+		<font style="color: #CC3300; " class="auto-style19">Dim LastRow As Long<br>
+		LastRow = Cells(ActiveSheet.UsedRange.Rows.Count, ActiveCell.Column).Row<br>
+		LastRow = ActiveSheet.UsedRange.Rows.Count</font></span></span></p>
+
+<font face="">
+		<p>
+		<span style="color: #CC3300"><br class="auto-style2">
+		</span>
+		</font>
+		<span style="font-family: Arial; color: #339966" class="auto-style19">
+		<font class="auto-style16">&#8216; To 
+		overcome the last cell reliability issue with xlCellTypeLastCell, 
+		UsedRange will reset all last cells in all worksheets <br>
+		in active 
+		Workbook. You use Rw = ActiveWorksheet.UsedRange.Rows.Count for active 
+		sheet</font></span><font face=""><span style="color: #CC3300" class="auto-style2"><br>
+		</span></font><span style="color: #CC3300; " class="auto-style2">
+		Dim sht As Worksheet, Rw As Long<br>
+		For Each sht In ActiveWorkbook.Worksheets<br>
+		&nbsp;&nbsp; Rw = sht.UsedRange.Rows.Count<br>
+		Next sht</span></p>
+
+		<p><br class="auto-style2">
+		<span style="font-family: Arial; color: #339966">
+		<font class="auto-style16">
+		<span class="auto-style19">&#8216; The sample below demonstrates the problems and solution with the last 
+		cell, column and row.<br>
+		&#8217; To begin with, key in the values; insert a row at row 9 and delete it; 
+		insert a column at E and also delete it</span></font><br class="auto-style2">
+		</span><span style="color: #CC3300">
+		<span class="auto-style2">
+		ActiveSheet.Cells.SpecialCells(xlLastCell).Row&nbsp;&nbsp;&nbsp;&nbsp;
+		</span> </span>
+		<span style="font-family: Arial; color: #339966; " class="auto-style2">
+		' returns 9</span><font face=""><span style="color: #CC3300"><br class="auto-style2">
+		</span></font><span style="color: #CC3300">
+		<span class="auto-style2">
+		ActiveSheet.Cells.SpecialCells(xlLastCell).Column&nbsp;&nbsp;</span></span><span style="font-family: Arial; color: #339966; " class="auto-style2">' returns 5</span><font face=""><span style="color: #CC3300"><br class="auto-style2">
+		</span>
+		</font><span style="color: #CC3300"><span class="auto-style2">ActiveSheet.UsedRange.Rows.Count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span> </span>
+		<span style="font-family: Arial; color: #339966; " class="auto-style2">
+		' returns 8</span><font face="Courier New" size="2" class="auto-style19"><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">ActiveSheet.Cells.SpecialCells(xlLastCell).Row &nbsp;&nbsp;&nbsp;    
+		</span>    </span>
+		</font>
+		<span style="font-family: Arial; color: #339966; " class="auto-style2">
+		' returns 8, after correction from Rows.Count</span><font face><span style="color: #CC3300"><br class="auto-style2">
+		</span></font><span style="color: #CC3300">
+		<span class="auto-style2">Application.CountA (Range(&quot;A:B&quot;))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span></span><span style="font-family: Arial; color: #339966; " class="auto-style2">' returns 8</span><font face><span style="color: #CC3300"><br class="auto-style2">
+		</span>
+		</font><span style="color: #CC3300"><span class="auto-style2">ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Offset(1, 0).Row&nbsp;
+		</span> </span>
+		<span style="font-family: Arial; color: #339966; " class="auto-style2">
+		' returns 9</span><font face><span style="color: #CC3300"><br class="auto-style2">
+		</span></font><span style="color: #CC3300">
+		<span class="auto-style2">ActiveSheet.UsedRange.Address&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family: Arial; color: #339966; " class="auto-style2">&#8216; returns string $A$2:$D$8 and corrects the last cell location</span><font face=""><span style="color: #CC3300"><font size="2" face="Courier New"><br>
+		</font><br>
+</span>
+		<span style="font-family: Arial; color: #339966">
+		<img border="0" src="Images/lastcell_and_UsedRange.gif" width="397" height="189"></span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a></font><span class="auto-style2"></font></span><p>
+		<span style="font-family: Arial; color: #339966">
+		<span class="auto-style2">' Find number of rows in the UsedRange in another worksheet</span><br class="auto-style2">
+		</span>
+		<span style="color: #CC3300; " class="auto-style2">Dim mySheet As Worksheet<br>
+		Set mySheet = Sheets(&quot;Sheet2&quot;)<br>
+		MsgBox &quot;number of used rows are &quot; &amp; mySheet.UsedRange.Rows.Count</span></p>
+
+		<p><br class="auto-style2">
+		<span style="font-family: Arial; color: #339966; " class="auto-style19">
+		<font class="auto-style16">' Displays row of first and last cell in a selection, then input sum formula of selected range in a column to E1.<br>
+		It uses the public UDF to find the Column letter. The example works only with selection in one column.</font></span><font face=""><span style="color: #CC3300"><br class="auto-style2">
+		</span></font><span class="auto-style16"><span style="color: #CC3300">
+		<span class="auto-style19">Sub RowOfFirstAndLastCell()<br>
+		&nbsp;
+		FirstRow = Selection(1).Row<br>
+		&nbsp;
+		LastRow = Selection(Selection.Count).Row<br>
+		&nbsp;
+		MsgBox &quot;you select from row &quot; &amp; FirstRow &amp; &quot; to &quot; &amp; LastRow<br>
+		<br>
+&nbsp;
+		cL = ColumnLetter(ActiveCell.Column)<br>
+		&nbsp;
+		Range(&quot;E1&quot;).Formula = &quot;=sum(&quot; &amp; cL &amp; FirstRow &amp; &quot;:&quot; &amp; cL &amp; LastRow &amp; &quot;)&quot;<br>
+		End Sub</span></span></p>
+		<p><span style="color: #CC3300; " class="auto-style19">Public Function ColumnLetter(ColumnNumber As Long) As String<br>
+		&nbsp;&nbsp;&nbsp; Const OffsetLng_c As Long = 64<br>
+		&nbsp;&nbsp;&nbsp; ColumnLetter = VBA.Chr$(ColumnNumber + OffsetLng_c)<br>
+		End Function</span></span></p>
+
+		<p><br class="auto-style2">
+
+<font face="">
+		<span style="color: #339966" class="auto-style16">
+		<font size="2" class="auto-style19">' To select all the cells that are filled with formula<br>
+		</font></span><span style="color: #CC3300" class="auto-style2">
+		Cells.SpecialCells(xlCellTypeFormulas, xlCellTypeLastCell).Activate</span><font face="Courier New"></p>
+		</font>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<br class="auto-style16">
+		<span style="color: #339966" class="auto-style16">' This is same as when you select Edit/GoTo/Special/Last cell</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Range(&quot;A1&quot;).SpecialCells(xlCellTypeLastCell).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' This find the last Row that has value on a Worksheet</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">Dim LastROW as Long<br>
+		LastROW = Cells.Find(&quot;*&quot;, SearchOrder:=xlByRows, LookIn:=xlValues, _</span></span></p>
+		<p style="margin-left: 8.35pt; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp; SearchDirection:=xlPrevious).EntireRow.Row</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' Find the last Row on a Worksheet that has formula, with error handling<br>
+</span><span style="color: #CC3300" class="auto-style16">On Error GoTo Handler</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; MsgBox &quot;Last row with a formula is &quot; &amp; Cells.Find(&quot;=&quot;, SearchOrder:=xlByRows, _</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; LookIn:=xlFormulas, SearchDirection:=xlPrevious).EntireRow.Row, _</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; vbExclamation, &quot;Last cell with a Formula:&quot;</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; Exit Sub<br>
+		Handler:</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; MsgBox &quot;No formula or value was found&quot;</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' This another way to find the last used Row on a Worksheet</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">Dim LastRow As Long</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">If WorksheetFunction.CountA(Cells) &gt; 0 Then</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp; LastRow = Cells.Find(What:=&quot;*&quot;, After:=[A1], SearchOrder:=xlByRows, _</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp; SearchDirection:=xlPrevious).Row</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp; MsgBox LastRow</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End If</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' Find the last used Column on a Worksheet</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">Dim LastColumn As Integer</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">If WorksheetFunction.CountA(Cells) &gt; 0 Then</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; LastColumn = Cells.Find(What:=&quot;*&quot;, After:=[A1], SearchOrder:=xlByColumns, _</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp;&nbsp; SearchDirection:=xlPrevious).Column</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; MsgBox LastColumn</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End If</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">
+		' Find the last used Cell on a Worksheet</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastColumn As Integer</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastRow As Long</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Dim LastCell As Range</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">If WorksheetFunction.CountA(Cells) &gt; 0 Then</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp; LastRow = Cells.Find(What:=&quot;*&quot;, After:=[A1], SearchOrder:=xlByRows, _</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp;&nbsp; SearchDirection:=xlPrevious).Row</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp; LastColumn = Cells.Find(What:=&quot;*&quot;, After:=[A1], SearchOrder:=xlByColumns, _</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SearchDirection:=xlPrevious).Column</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp; MsgBox Cells(LastRow, LastColumn).Address</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End If</span></p>
+		<p style="margin-left:6.5in" class="auto-style2">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		Return To Top</a></font><p class="auto-style17">
+		' Place the cursor on the last cell in Column A</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Cells(Cells.Rows.Count,&quot;A&quot;).End(xlUp).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">
+		' Place the cursor 2 cells below the last entry in column A 
+		</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Cells(rows.count,1).End(xlup)(3).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' Can use as Private Sub in your sheet module.<br>
+		' Define the named range &quot;MyRange&quot; to all data in Column A (includes blanks) each time the worksheet recalculates</span><span class="auto-style16"><b><br>
+</b><span style="color: #CC3300">Range(&quot;A1&quot;, Range(&quot;A65536&quot;).End(xlUp)).Name = &quot;MyRange&quot;<br>
+		<br>
+		<br>
+		<br>
+</span></span><span style="color: #339966" class="auto-style16">&#8217; This defines a dynamic range in Column A, but&nbsp; it does not include blanks</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">Range(&quot;A1&quot;, Range(&quot;A1&quot;).End(xlDown)).Name = &quot;MyRange&quot;</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">
+		' This defines the named range &quot;MyRange&quot; to all your data range each time the particular worksheet recalculates</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(Range(&quot;IV1&quot;).End(xlToLeft), Range(&quot;A65536&quot;).End(xlUp)).Name = &quot;MyRange&quot;</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' This selects the bottom last cell in a named range<br>
+</span><span style="color: #CC3300" class="auto-style16">Dim myRng As Range</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Set myRng = Sheets(&quot;Sheet1&quot;).Range(&quot;MyRange&quot;)</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">With myRng</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp; .Parent.Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp; .Cells(.Cells.Count).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End With</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">
+		' This UDF finds the letter of the Column where your cursor is 
+		pointing at.<br>
+		' Further below are other ways of finding the column's letter</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Public Sub Test()</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; VBA.MsgBox ColumnLetter(ActiveCell.Column)</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">End Sub</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Public Function ColumnLetter(ColumnNumber As Long) As String</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; Const OffsetLng_c As Long = 64</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; ColumnLetter = VBA.Chr$(ColumnNumber + OffsetLng_c)</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">End Function</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">' Find the column's 
+		letter thru an input box</span><font color="#CC3300"><br class="auto-style16">
+		<span class="auto-style16">Dim myCell As Range, iC As String<br>
+		Set myCell = Application.InputBox(prompt:=&quot;Click on a cell: &quot;, Type:=8)<br>
+		iC = myCell.EntireColumn.Address(False, False)<br>
+		iC = Left(iC, InStr(1, iC, &quot;:&quot;) - 1)<br>
+		MsgBox (&quot;Column's letter is: &quot; &amp; iC)<br>
+		<br>
+		<br>
+		</span>
+		</font><span style="color: #339966" class="auto-style16">' Get the active 
+		cell's column name</span><font color="#CC3300"><br class="auto-style16">
+		<span class="auto-style16">Dim Name$<br>
+		Name = ActiveCell.Address<br>
+		MsgBox &quot;you selected the column &quot; &amp; Left(Right(Name, Len(Name) - 1), _<br>
+		InStr(Right(Name, Len(Name) - 1), &quot;$&quot;) - 1)<br>
+		<br>
+		<br>
+		</span>
+		</font>
+
+<font face="">
+		<span style="color: #339966" class="auto-style16">' Get the active cell's 
+		column name </span></font><font color="#CC3300">
+		<br class="auto-style16">
+
+<font face="">
+		<span class="auto-style16">Dim mCol As String<br>
+		mCol = Split(ActiveCell(1).Address(1, 0), &quot;$&quot;)(0)<br>
+		MsgBox mCol<br>
+		</span></font>
+		</font><span class="auto-style16"><font color="#CC3300"><br>
+		<br>
+		</font></span><span style="color: #339966" class="auto-style16">' UDF to convert 
+		a column's number to a letter</span><font color="#CC3300"><br class="auto-style16">
+		<span class="auto-style16">Function ConvertColNumToLetter(iCol As Integer) As String<br>
+		Dim iAlpha As Integer, iRemainder As Integer<br>
+		iAlpha = Int(iCol / 27)<br>
+		iRemainder = iCol - (iAlpha * 26)<br>
+		&nbsp;
+		If iAlpha &gt; 0 Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		ConvertColNumToLetter = Chr(iAlpha + 64)<br>
+		&nbsp;
+		End If<br>
+		<br>
+&nbsp;
+		If iRemainder &gt; 0 Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		ConvertColNumToLetter = ConvertColNumToLetter &amp; Chr(iRemainder + 64)<br>
+		&nbsp;
+		End If<br>
+		End Function<br>
+		<br>
+		<br>
+		</span>
+		</font><span style="color: #339966" class="auto-style16">' UDF to convert 
+		a column's number to a letter</span><font color="#CC3300"><br class="auto-style16">
+		<span class="auto-style16">Function ColumnLetter(Col As Long)<br>
+		Dim sColumn As String<br>
+		<br>
+		On Error Resume Next<br>
+		sColumn = Split(Columns(Col).Address(, False), &quot;:&quot;)(1)<br>
+		On Error GoTo 0<br>
+		ColumnLetter = sColumn<br>
+		End Function<br>
+		<br>
+		<br>
+		</span>
+		</font>
+		<span style="color: #339966" class="auto-style16">' This UDF finds the value or text of the last used cell in any single column</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">Public Function LastInColumn(rng As Range) As Variant</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;&nbsp; LastInColumn = Cells(Rows.Count, rng(1).Column).End(xlUp).Value</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">End Function</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">&nbsp;</span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #CC3300" class="auto-style16">=LastInColumn(A:A)&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style16">&#8216; enter it in a cell</span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p class="auto-style17">
+		' Select an entire range of contiguous cells in a Column</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;A1&quot;, ActiveSheet.Range(&quot;A1&quot;).End(xlDown)).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966"><br class="auto-style16">
+		</span>
+		<span style="color: #339966" class="auto-style16">' Another way to select an entire range of contiguous cells in a Column</span><span style="font-family: Arial; color: #339966"><span style="color: windowtext" class="auto-style16"><br>
+</span><span style="color: #CC3300" class="auto-style16">Range(&quot;A1:&quot; &amp; ActiveSheet.Range(&quot;A1&quot;).End(xlDown).Address).Select</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966"><br class="auto-style16">
+		</span>
+		<span style="color: #339966" class="auto-style16">' Either way will select an entire range of non-contiguous cells in a Column</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;A1&quot;, ActiveSheet.Range(&quot;A65536&quot;).End(xlUp)).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300">Range(&quot;A1:&quot; &amp; ActiveSheet.Range(&quot;A65536&quot;).End(xlUp).Address).Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">
+		' CurrentRegion method selects a rectangular range of cells around a cell. The range selected by the CurrentRegion</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">&nbsp; is an area bounded by any combination of blank rows and blank columns</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">ActiveSheet.Range(&quot;A1&quot;).CurrentRegion.Select</span></span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #CC3300">
+		<br>
+		<img border="0" src="Images/CurrentRegion.gif" width="148" height="144"></span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</p>
+		<p class="auto-style17">
+		' CurrentRegion method will not work on pictorial example below because of the blank line on Row 4, these lines will.</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">lastcol = ActiveSheet.Range(&quot;A1&quot;).End(xlToRight).Column</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">lastrow = ActiveSheet.Cells(65536, lastcol).End(xlUp).Row</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Cells(lastrow, lastcol)).Select</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #CC3300"><br></span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<img border="0" src="Images/workaround_to_CurrentRegion.gif" width="141" height="141"><span style="color: #CC3300"><br>
+</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<br>
+		<br>
+		<span style="color: #339966" class="auto-style2">' Either of the methods 
+		below will select a range of contiguous data from A1 down (to the last 
+		cell with value), </span></p>
+		<p class="auto-style17">
+		then continues to 
+		select a range of contiguous data to its right.</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Range(&quot;A1&quot;) 
+		_</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp; .End(xlDown).End(xlToRight)).Select&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">ActiveSheet.Range(&quot;A1:&quot; &amp; ActiveSheet.Range(&quot;A1&quot;). End(xlDown). _<br>
+&nbsp; End(xlToRight).Address).Select</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966"><br class="auto-style16">
+		</span>
+		<span style="color: #339966" class="auto-style16">' Select the entire row 
+		of the last used cell in column A</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Cells(Cells.Rows.Count, &quot;A&quot;).End(xlUp).EntireRow.Select</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">' Select the entire row of the last used cell in any column<br>
+		</span><span style="color: #CC3300" class="auto-style16">
+		<font size="2" class="auto-style19">Cells.SpecialCells(xlLastCell).EntireRow.Select<br>
+		<br>
+		<br>
+		</font></span>
+
+<font face="">
+		<span style="color: #339966" class="auto-style2">' Select 
+		from activecell down to the last used row in the column<br>
+		</span>
+		<font size="2" class="auto-style19">
+		<span style="color: #CC3300; " class="auto-style16">Dim rng As Range<br>
+&nbsp; With ThisWorkbook.ActiveSheet<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Set rng = .Range(ActiveCell, </span>
+		<font color="#CC3300">
+		<span class="auto-style20"> LastCellInColumn</span></font></font></font><font size="2" class="auto-style19"><span style="color: #CC3300; " class="auto-style16">(ActiveCell))<br>
+&nbsp;&nbsp;&nbsp;&nbsp; rng.Select<br>
+&nbsp; End With<br>
+		Set rng = Nothing</span><font face=""><span style="color: #CC3300; font-family: Courier New"><span style="color: #CC3300" class="auto-style16"><br>
+		<br>
+		</span>
+		</span>
+		</font>
+		</font>
+
+<font face="">
+		<span style="color: #CC3300; " class="auto-style2">
+		<br>
+		</span><span class="auto-style2">
+		<font color="#CC3300">Function LastCellInColumn(rngInput As Range) As 
+		Range<br>
+		Dim lngCount As Long, rngWorkRange As Range, rngCell As Range<br>
+		Set rngWorkRange = rngInput.Columns(1).EntireColumn<br>
+&nbsp; With rngWorkRange<br>
+&nbsp;&nbsp;&nbsp;&nbsp; lngCount = .Rows.Count<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Set rngCell = .Cells(lngCount, 1)<br>
+&nbsp; End With<br>
+		<br>
+&nbsp; If IsEmpty(rngCell) Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Set LastCellInColumn = rngCell.End(xlUp)<br>
+&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Set LastCellInColumn = rngCell<br>
+&nbsp; End If<br>
+		End Function</font></span></font></p>
+		
+		<p style='margin-left:6.5in' class="auto-style2">		
+		<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		Return To Top</a></p>
+		<pre style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</pre>
+		<pre style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><b><span style="font-size: 14.0pt; font-family: Arial">Some Excel functions for last cell in a column:</span></b><span style="font-family: Arial; color: #339966">
+
+</span><span style="color: #339966" class="auto-style2">&#8216; These three examples find the last used row number in column A. SUMPRODUCT is an array formula</span></pre>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #CC3300" class="auto-style16">
+		<span class="auto-style19">=SUMPRODUCT(MAX((ROW(A1:A65535))*(A1:A65535&lt;&gt;&quot;&quot;)))<br>
+		<br>
+		</span>
+		</span><span class="auto-style19">
+		<span style="color: #339966" class="auto-style16">&#8216; These two 
+		examples find only the numerical value of the last used cell in column A<br>
+		</span></span><span style="color: #CC3300" class="auto-style16">
+		<span class="auto-style19">=LOOKUP(9.99999999999999E+307,A:A)<br>
+		=INDEX(A:A,MATCH(9.99999999999999E+307,A:A))<br>
+		<br>
+		</span>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		This finds only &nbsp;the text string of the last used cell in column A</span><span class="auto-style2"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		=INDEX(A:A,MATCH(REPT(&quot;z&quot;,255),A:A,1),1)<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		Enter as an array formula, which finds only &nbsp;the text string of the last 
+		used cell in column A<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		=</span>
+		<span style="color: #CC3300" class="auto-style2">
+		INDEX($A$1:$A$65535,MAX(IF(ISTEXT($A$1:$A$65535),ROW($A$1:$A$65535))),1)<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Find row number of the last used cell (that contain only numerical 
+		value) in column A</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">=MATCH(9.99999999999999E+307,A:A)<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Find row number of the last used cell (that contain only text string) in 
+		column A</span><span class="auto-style2"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		=MATCH(REPT(&quot;z&quot;,255),A:A)<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Fhese functions can find either text or numerical value of the last used 
+		cell in column A</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">=INDIRECT(&quot;A&quot;&amp;SUMPRODUCT(MAX((ROW(A1:A65535))*(A1:A65535&lt;&gt;&quot;&quot;))))<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		Enter as an array formula, which finds either text or value of the last 
+		used cell in column A</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">=INDIRECT(&quot;A&quot;&amp;MAX(IF(NOT(ISBLANK(A1:A65535)),ROW(1:65535))))</span></p>
+		<p class="auto-style2">&nbsp;</p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="font-size: 10.0pt; font-family: Courier New; color: #CC3300">
+		<br>
+&nbsp;</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<b><span style="font-size: 16.0pt; font-family: Arial">Deleting, Adding 
+		and Hiding Rows, Columns and Sheets<br>
+		</span><span style="font-family: Arial"><br>
+		</span></b>
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		&nbsp;This deletes all the rows after the active row until row 65536</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Range(ActiveCell.Row + ActiveCell.Rows.Count &amp; &quot;:&quot; &amp; 
+		Cells.Rows.Count).Delete</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		&nbsp;This is same as choosing Range(Cells(1,i+1), &quot;IV65536&quot;).Delete</span><span style="font-size: 10.0pt; font-family: Arial; color: #339966"><span style="color: windowtext" class="auto-style2"><br>
+		</span></span>
+		<span style="font-family: Arial; color: #339966">
+		<span style="color: #CC3300" class="auto-style2">
+		Range(Cells(1, ActiveCell.Column + ActiveCell.Columns.Count), _</span></span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp; Cells(Cells.Rows.Count, Cells.Columns.Count)).Delete</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8217;&nbsp; 
+		Delete rows after last cell used in column A</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Range(Cells(Rows.Count, 1).End(xlUp).Offset(1), Cells(Rows.Count, 
+		1)).EntireRow.Delete</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Delete all the blank rows in the active sheet</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Dim LastRow As Long, i As Long<br>
+		LastRow = Cells(ActiveSheet.UsedRange.Rows.Count, ActiveCell.Column).Row</span></p>
+		<p class="auto-style21">
+		Application.ScreenUpdating = False<br>
+&nbsp; For i = LastRow To 1 Step -1<br>
+&nbsp;&nbsp;&nbsp; If Application.CountA(Rows(i)) = 0 Then Rows(i).Delete<br>
+&nbsp; Next i</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Delete all the hidden rows in the active sheet, using For next loop<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim i As Long, LastRow As Long<br>
+		LastRow = Cells(ActiveSheet.UsedRange.Rows.Count, ActiveCell.Column).row</span></p>
+		<p class="auto-style21">
+		&nbsp; 
+		For i = LastRow To 1 Step -1</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp; 
+		If Rows(i).Hidden Then</p>
+		<p class="auto-style21">
+		&nbsp; 
+		&nbsp;&nbsp;&nbsp;&nbsp;Rows(i).Hidden = False</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Rows(i).Activate</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Selection.EntireRow.Delete</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp; 
+		End If</p>
+		<p class="auto-style21">
+		&nbsp; 
+		Next i</p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+	  &nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		Delete all the hidden rows in the active sheet without using For next 
+		loop</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Dim r As Range, k As Range</span></p>
+		<p class="auto-style21">
+		With ActiveSheet</p>
+		<p class="auto-style21">
+		&nbsp; 
+		Set r = .Range(&quot;A1:A&quot; &amp; .Cells.SpecialCells(xlCellTypeLastCell).row)</p>
+		<p class="auto-style21">
+		&nbsp; 
+		Set k = r.SpecialCells(xlCellTypeVisible)</p>
+		<p class="auto-style21">
+		&nbsp; 
+		r.EntireRow.Hidden = False</p>
+		<p class="auto-style21">
+		&nbsp; 
+		k.EntireRow.Hidden = True</p>
+		<p class="auto-style21">
+		&nbsp; 
+		r.SpecialCells(xlCellTypeVisible).EntireRow.Delete</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #CC3300" class="auto-style2">&nbsp; 
+		r.EntireRow.Hidden = False<br>
+		</span><span style="color: #CC3300"><br class="auto-style2">
+		<span style="color: #CC3300" class="auto-style2">&nbsp; 
+		Set r = Nothing<br>
+		</span></span>
+		<span style="font-size: 10.0pt; font-family: Courier New; color: #CC3300">
+
+<font face="">
+		<span style="color: #CC3300; " class="auto-style2">&nbsp; 
+		Set k = Nothing</span></font></span></p>
+		<p class="auto-style21">
+		End With</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #CC3300" class="auto-style2">
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">' 
+		Delete rows where the entry in column A matches the row above it</span></p>
+		<p class="auto-style21">
+		Dim r As Long, lastrow As Long</p>
+		<p class="auto-style21">
+		lastrow = Cells(Rows.Count, 1).End(xlUp).Row</p>
+		<p class="auto-style21">
+		&nbsp; 
+		For r = lastrow To 2 Step -1</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp; 
+		If Cells(r, 1) = Cells(r - 1, 1) Then Rows(r).EntireRow.Delete</p>
+		<p class="auto-style21">
+		&nbsp; 
+		Next r</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p class="auto-style17">
+		' 
+		Delete rows with duplicate data in the active column</p>
+		<p class="auto-style21">
+		Dim ActCol As Integer, Val As Variant, Rng As Range, i As Long</p>
+		<p class="auto-style21">
+		ActCol = ActiveCell.Column</p>
+		<p class="auto-style21">
+		Set Rng = ActiveSheet.UsedRange.Rows</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #CC3300" class="auto-style19">
+		<br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		i = 0</span></p>
+		<p class="auto-style21">
+		For i = Rng.Rows.Count To 1 Step -1</p>
+		<p class="auto-style21">
+		Application.ScreenUpdating = False</p>
+		<p class="auto-style21">
+		&nbsp; 
+		Val = Rng.Cells(i, ActCol).Value</p>
+		<p class="auto-style21">
+		&nbsp; 
+		If Application.WorksheetFunction.CountIf(Rng.Columns(ActCol), Val) &gt; 1 
+		Then</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		Rng.Rows(i).EntireRow.Delete</p>
+		<p class="auto-style21">
+		&nbsp; &nbsp;&nbsp; i = i + 1</p>
+		<p class="auto-style21">
+		&nbsp; 
+		End If</p>
+		<p class="auto-style21">
+		Next i</p>
+		<p class="auto-style21">
+		Application.ScreenUpdating = True</p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+	  &nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		Delete filtered rows with string &#8220;#N/A&#8221; found in column C<br>
+		&#8217; This example uses Offset to move the UsedRange range down one row to 
+		avoid including the headers, and resize <br>
+		' the range to number of rows &#8211; 1)<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Cells(1, 1).AutoFilter Field:=3, Criteria1:=&quot;#N/A&quot;</span></p>
+		<p class="auto-style21">
+		Application.DisplayAlerts = False<br>
+		<br>
+		On Error Resume Next</p>
+		<p class="auto-style21">
+		ActiveSheet.UsedRange.Offset(1, 
+		0).Resize(ActiveSheet.UsedRange.Rows.Count - 1).Rows.Delete<br>
+		Application.DisplayAlerts = True</p>
+		<p class="auto-style21">
+		Selection.AutoFilter Field:=3</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">' 
+		Delete rows that contain string name&nbsp; &#8220;william&#8221;&nbsp; in column B<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim rng As Long</span></p>
+		<p class="auto-style21">
+		For rng = 1 To 100</p>
+		<p class="auto-style21">
+		&nbsp; 
+		If Cells(rng, 2).Value = &quot;william&quot; Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Cells(rng, 2).EntireRow.Delete</p>
+		<p class="auto-style21">
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		rng = rng + 1</p>
+		<p class="auto-style21">
+		&nbsp; 
+		End If</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Next rng</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">&#8216; Another method of 
+		deleting rows that contain string &#8220;william&#8221;&nbsp; in column B</span><span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">Dim rng As Range</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Set rng = Range(&quot;B2:B&quot; &amp; Cells(65536, &quot;B&quot;).End(xlUp).Row)</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">If ActiveSheet.AutoFilterMode Then 
+		Cells.AutoFilter</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; Columns(&quot;B&quot;).AutoFilter Field:=1, 
+		Criteria1:=&quot;= william&quot;</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; On Error Resume Next</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">
+		&nbsp;&nbsp;
+		r.SpecialCells(xlCellTypeVisible).EntireRow.Delete</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp; On Error GoTo 0<br>
+		End If</span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+	  &nbsp;</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #339966" class="auto-style16">&#8217; Delete all rows that 
+		have a negative number in column B<br>
+		</span><span style="color: #CC3300" class="auto-style16">Dim Rng As Range</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Dim rowsCnt As Long, n As Long</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">With ActiveSheet</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp;&nbsp; rowsCnt = .UsedRange.Rows.Count</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp;&nbsp; Set Rng = 
+		.Range(.Cells(1, 2), .Cells(rowsCnt, 2))</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">End With</span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style19">
+		<span style="color: #CC3300"><br class="auto-style16">
+		<span class="auto-style16">For n = rowsCnt To 1 Step -1</span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp;&nbsp; If Rng.Cells(n, 1).Value 
+		&lt; 0 Then</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Rng.Cells(n, 
+		1).EntireRow.Delete</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">&nbsp;&nbsp;&nbsp; End If</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		<span style="color: #CC3300">Next n</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Delete rows when date data dd/mm/yyyy in column 2 does not contain 
+		&#8220;2008&#8221;, four places from the Right<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim i As Long, lastrow As Long<br>
+		lastrow = Cells(65536, 2).End(xlUp).Row<br>
+		For i = lastrow To 1 Step -1<br>
+&nbsp; If Right(CStr(Cells(i, 2).Value), 4) &lt;&gt; &quot;2008&quot; Then<br>
+&nbsp;&nbsp;&nbsp; Rows(i).Delete<br>
+&nbsp; End If<br>
+		Next</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">' 
+		Delete rows based on a specified criteria. <br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim tableSEL As Range, colSEL As Long, criteriaSEL<br>
+		On Error Resume Next<br>
+&nbsp; With Selection<br>
+&nbsp;&nbsp;&nbsp; If .Cells.Count &gt; 1 Then&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">' 
+		number of cells count</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set tableSEL = Selection<br>
+&nbsp;&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set tableSEL = .CurrentRegion&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">' 
+		determine the table range</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On Error GoTo 0<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp; End With<br>
+		<br>
+&nbsp;&nbsp;&nbsp; If tableSEL Is Nothing Or tableSEL.Cells.Count = 1 Or _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WorksheetFunction.CountA(tableSEL) &lt; 
+		2 Then&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">' 
+		determine if table range is valid</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;could not find your table 
+		range.&quot;, vbCritical, &quot;&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+		<br>
+&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">' 
+		get the criteria in the form of text or number</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp; criteriaSEL = Application.InputBox(Prompt:=&quot;Type in the 
+		criteria that you &quot; _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp; &quot;want the macthing rows to be deleted. If the 
+		criteria is in a cell, &quot; _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp; &quot;point your mouse pointer to that cell&quot;, _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Title:=&quot;delete rows based on criteria, text or 
+		number&quot;, Type:=1 + 2)<br>
+&nbsp;&nbsp;&nbsp; If criteriaSEL = &quot;False&quot; Then Exit Sub&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		exit sub if you select Cancel</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp; colSEL = Application.InputBox(Prompt:=&quot;Type in the column 
+		number where criteria &#8221; _<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&amp; &#8220;can be found&quot;, Title:=&quot;delete rows based on 
+		criteria, text or number&quot;, Type:=1)<br>
+&nbsp;&nbsp;&nbsp; If colSEL = 0 Then Exit Sub&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">' 
+		cancelled</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span>
+		<span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; ActiveSheet.AutoFilterMode = False&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">' 
+		remove any existing AutoFilters</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp; tableSEL.AutoFilter Field:=ColSEL, Criteria1:=criteriaSEL</span><span style="color: #339966" class="auto-style2"> ' 
+		filter table based on criteriaSEL using the relative column position 
+		stored in lCol</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">&nbsp;&nbsp;&nbsp; tableSEL.Offset(1, 0).SpecialCells(xlCellTypeVisible).EntireRow.Delete</span><span style="color: #339966" class="auto-style2">&nbsp; 
+		' delete all rows that are NOT hidden by AutoFilter</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">On Error GoTo 0</span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+	  &nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8217;&nbsp; Hide row 2 to 4, 6 to 8, 10 to 12 and so forth, stepping through 
+		every 4 rows</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Dim i As Long, n As Long<br>
+		n = Cells(65536, 1).End(xlUp).Row<br>
+		For i = 1 To n Step 4<br>
+&nbsp;&nbsp;&nbsp; Range(Cells(i + 1, 1), Cells(i + 3, 1)).EntireRow.Hidden = 
+		True<br>
+		Next i</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Using command button to toggle hide/unhide specified columns (6 columns 
+		to the Right from column 7) <br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		If CommandButton1.TopLeftCell.Offset(0, 5).Resize(, 
+		6).EntireColumn.Hidden = False Then<br>
+&nbsp;&nbsp; CommandButton1.TopLeftCell.Offset(0, 5).Resize(, 
+		6).EntireColumn.Hidden = True<br>
+		Else: CommandButton1.TopLeftCell.Offset(0, 5).Resize(, 
+		6).EntireColumn.Hidden = False<br>
+		End If</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">' 
+		Delete all worksheets except the sheet named &#8220;MySheet&#8221;</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Dim Sht As Object<br>
+		Application.DisplayAlerts = False<br>
+		&nbsp;For Each Sht In Sheets<br>
+&nbsp;&nbsp;&nbsp; If Not Sht.Name = &quot;MySheet&quot; Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On Error Resume Next<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sht.Delete<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+		&nbsp;Next Sht</span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+	  &nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">&#8217; 
+		Delete all worksheets except the first sheet &#8220;Sheet1&#8221; and second sheet 
+		&#8220;Sheet2&#8221;</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Dim I As Integer<br>
+		Application.ScreenUpdating = False<br>
+		Application.DisplayAlerts = False<br>
+		&nbsp;For I = ActiveWorkbook.Worksheets.Count To 1 Step -1<br>
+&nbsp;&nbsp; If Worksheets(I).Name &lt;&gt; &quot;Sheet1&quot; And Worksheets(I).Name &lt;&gt; 
+		&quot;Sheet2&quot; Then<br>
+		&nbsp;&nbsp;&nbsp;Worksheets(I).Delete<br>
+		&nbsp;Next I<br>
+		Application.ScreenUpdating = True</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style19">
+		<br class="auto-style16">
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; Delete all empty sheets</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Dim sh As Worksheet<br>
+		For Each sh In ThisWorkbook.Worksheets<br>
+&nbsp;&nbsp;&nbsp; If Application.WorksheetFunction.CountA(sh.Cells) = 0 Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.DisplayAlerts = False<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sh.Delete<br>
+&nbsp;&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; If Worksheets.Count = 1 Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit For<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Application.DisplayAlerts = True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+		Next</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<br class="auto-style2">
+		<span style="color: #339966" class="auto-style2">' 
+		Add one row after every alternating row, fill them with color and 
+		formula (eg, A2=B1, A4=B2, and if B2 is blank, leave <br>
+		A4 as blank, and so on), then convert formula to values. <br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim i As Long, LastRow As Long, cel As Range<br>
+		LastRow = Cells(ActiveSheet.UsedRange.Rows.Count, ActiveCell.Column).Row<br>
+		For i = LastRow To 2 Step -1<br>
+&nbsp;&nbsp; Rows(i).Insert Shift:=xlDown<br>
+		Next i<br>
+		<br>
+		ActiveSheet.UsedRange.SpecialCells(xlCellTypeBlanks).Select<br>
+		Selection.Interior.ColorIndex = 5<br>
+		Selection.FormulaR1C1 = &quot;=IF(R[-1]C[1]=&quot;&quot;&quot;&quot;,&quot;&quot;&quot;&quot;,R[-1]C[1])&quot;<br>
+		<br>
+		For Each cel In Selection<br>
+&nbsp; cel = cel.Value<br>
+		Next cel</span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p>
+		<span style="font-size: 10.0pt; font-family: Courier New; color: #CC3300">
+		<br>
+		</span><b><span style="font-size: 16.0pt; font-family: Arial">Working 
+		around Cells in the Worksheet<br>
+		</span></b>
+		<span style="font-size: 10.0pt; font-family: Courier New; color: #CC3300">
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Either of these select the same cell on the active Worksheet<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Cells(3, 2).Select<br>
+		ActiveSheet.Range(&quot;B3&quot;).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		' Select Cell B3 in Sheet2 in the same Workbook<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Application.Goto ActiveWorkbook.Sheets(&quot;Sheet2&quot;).Cells(3, 2)</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select Cell B3 in Sheet2 in the another workbook &#8220;BOOK2.XLS&#8221;<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Application.Goto Workbooks(&quot;BOOK2.XLS&quot;).Sheets(&quot;Sheet2&quot;).Cells(3, 2)<br>
+		<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Select a Range of cells (B3:C10) on the Active Worksheet<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(Cells(3, 2), Cells(10, 3)).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select a Range of Cells on another worksheet in the same Workbook<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Application.Goto ActiveWorkbook.Sheets(&quot;Sheet2&quot;).Range(&quot;B3:C10&quot;)</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Either line of code will select a Range of cells on a Worksheet in a 
+		different Workbook &#8220;BOOK2.XLS&#8221;</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Application.Goto Workbooks(&quot;BOOK2.XLS&quot;).Sheets(&quot;Sheet1&quot;).Range(&quot;B3:C10&quot;)<br>
+		Workbooks(&quot;Book2.xls&quot;).Worksheets(&quot;Sheet1&quot;).Range(Cells(3, 2), Cells(10, 
+		3)).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select a named Range of cells &#8220;myRange&#8221; on a Sheet 1in a different 
+		Workbook &#8220;BOOK2.XLS&#8221;</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Workbooks(&quot;Book2.xls&quot;).Worksheets(&quot;Sheet1&quot;).Range(&quot;myRange&quot;).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select a cell relative to another cell (here is selecting C5 relative 
+		to A2)<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Cells(2, 1).Offset(5, 3).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select a named Range of cells &#8220;myRange&#8221; and Resize the Selection<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(&quot;myRange&quot;).Select<br>
+		Selection.Resize(Selection.Rows.Count + 5, Selection.Columns.Count).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select a named Range of cells &#8220;myRange&#8221;, Offset it (3 cells down and 2 
+		cells to the Right), and then Resize it (extend <br>
+		the selection by 4 
+		rows down and 5 columns to the Right<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(&quot;myRange&quot;).Select<br>
+		Selection.Offset(3, 2).Resize(Selection.Rows.Count + 
+		4,Selection.Columns.Count + 5).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		' Select the Union of &nbsp;two or more Named Ranges (note both ranges must 
+		be on the same worksheet)</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">Application.Union(Range(&quot;myRange&quot;), Range(&quot;testRange&quot;)).Select</span></p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p>
+		<span style="color: #339966" class="auto-style2">&#8216; Select the blank Cell at bottom of&nbsp; Column A of contiguous data<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(&quot;A1&quot;).End(xlDown).Offset(1,0).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select an entire Range of contiguous Cells in Row 1<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Range(&quot;A1&quot;).End(xlToRight)).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; Select an entire Range of non-contiguous Cells in Row 1<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Range(&quot;IV1&quot;).End(xlToLeft)).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		' Select a rectangular Range of contiguous Cells <br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Range(&quot;A1&quot;).End(xlDown).End(xlToRight)).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		' Select a rectangular Range of non-contiguous Cells which CurrentRegion 
+		method will not work<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim lastRow As Long, lastCol As Long<br>
+		lastCol = ActiveSheet.Range(&quot;IV1&quot;).End(xlToLeft).Column<br>
+		lastRow = Cells(ActiveSheet.UsedRange.Rows.Count, ActiveCell.Column).Row<br>
+		ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Cells(lastRow, lastCol)).Select<br>
+		<br>
+		</span><span class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		<span style="color: #339966" class="auto-style2">' or 
+		using this:</span><span style="color: #CC3300" class="auto-style19"><br class="auto-style16">
+		</span><span style="color: #CC3300" class="auto-style2">ActiveSheet.Range(&quot;A1:&quot; &amp; ActiveSheet.Cells(lastRow, lastCol).Address).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		' Select multiple non-contiguous Columns of varying length using Union 
+		method (here is Column A &amp; C)<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim a As Range, c As Range<br>
+		Set a = ActiveSheet.Range(&quot;A1&quot;, ActiveSheet.Range(&quot;A65536&quot;).End(xlUp))<br>
+		Set c = ActiveSheet.Range(&quot;C1&quot;, ActiveSheet.Range(&quot;C65536&quot;).End(xlUp))<br>
+		Union(a, c).Select</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		' Sets the value of the merged range at Cells(2,3) from A2<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Set ma = Range(&quot;A2&quot;).MergeArea<br>
+&nbsp;&nbsp;&nbsp; ma.Value = &quot;888&quot;<br>
+&nbsp;&nbsp;&nbsp; ma.Cells(2, 3).Value = &quot;889&quot;</span><span style="color: #339966" class="auto-style2"><br>
+		<br>
+		<br>
+		&#8216; &nbsp;Delete all duplicate data in column A<br>
+		</span>
+		<span style="color: #CC3300" class="auto-style2">
+		Dim cell As Range, Last As Double, nonDupl As New Collection<br>
+		On Error GoTo ErrHandler<br>
+		Last = Range(&quot;A65536&quot;).End(xlUp).Row<br>
+&nbsp; For Each cell In Range(&quot;A1:A&quot; &amp; Last)<br>
+&nbsp; &nbsp;&nbsp;If Not IsEmpty(cell) Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nonDupl.Add cell.Value, CStr(cell.Value)<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp; Next cell<br>
+		&nbsp;&nbsp;Exit Sub<br>
+		ErrHandler:<br>
+&nbsp; cell.Clear<br>
+&nbsp; Resume Next</span></p>
+		<p class="auto-style2">&nbsp;</p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style2">Return To Top</span></a><span class="auto-style2"></font></span><p><b><span style="font-size: 16.0pt; font-family: Arial"><a name="CopyCutPaste"></a>A note on 
+		COPY, CUT, PASTE in VBA<br>
+		</span></b><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span><span class="auto-style23">Below are the commonly used Excel functions (Copy, Cut, Paste Special 
+		methods), now you see it in VBA.</span><span style="font-size: 10.0pt; " class="auto-style16"><br>
+		<br>
+		</span><span class="auto-style22"><font size="3">Copy method</font></span><span style="font-size: 10.0pt; " class="auto-style16"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style23">
+		Sheet1.Range(&quot;A1&quot;).Copy Destination:=Sheet2.Range(&quot;A2&quot;)</span></p>
+		<p><font size="3"><b><i><span style="font-family: Arial">Advance Copy 
+		Example</span></i></b></font><font size="2" color="#CC3300"><br>
+		</font>
+		<span style="color: #339966" class="auto-style2">' 
+		this will copy all your values in your active column in Sheet2 to the 
+		column from row 2 all the way down in Sheet1 (when one cell 
+		above it is the last empty cell leftward from cell IV1).</span><span class="auto-style2"><font color="#CC3300">
+		</font></span><font size="2" color="#CC3300" class="auto-style24">
+		<span class="auto-style16">&nbsp;&nbsp; </span><br class="auto-style16">
+		<span class="auto-style16">Sheets(2).Range(ActiveCell.Address, _ Cells(Rows.Count, 
+		ActiveCell.Column).End(xlUp).Address)</span></font><span class="auto-style23"><font color="#CC3300">.Copy 
+		_ Sheets(1).Range(&quot;IV1&quot;).End(xlToLeft).Offset(1, 1)&nbsp; </font>
+		</span></p>
+		<table border="0" width="60%" cellspacing="0" cellpadding="0" id="table6">
+			<tr>
+				<td width="209">&nbsp;</td>
+				<td width="106" align="center"><font size="2">Sheet1<br>
+				<img border="0" src="Images/145_Sheet1.gif" width="133" height="118"></font></td>
+				<td align="center">&nbsp;</td>
+				<td width="84" align="center"><font size="2">Sheet2<br>
+				<img border="0" src="Images/145_Sheet2.gif" width="108" height="127"></font></td>
+			</tr>
+		</table>
+		<p><b><span style="font-family: Arial"><i><br>
+		<font size="3">Cut method</font></i></span></b><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style23">
+		Sheet1.Range(&quot;A1&quot;).Cut Destination:=Sheet2.Range(&quot;A2&quot;)</span></p>
+		<p><b><i><span style="font-family: Arial"><font size="3">Copy and PasteSpecial method</font></span></i></b><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		<span style="color: #CC3300; " class="auto-style23">
+		expression.PasteSpecial(Paste, Operation (optional), SkipBlanks 
+		(optional TRUE/FALSE), Transpose (optional TRUE/FALSE)</span></p>
+		<p><font face="">
+		<span class="auto-style23">Example:</span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style23">
+		Sheet1.Range(&quot;A1&quot;).Copy<br>
+		Sheet2.Range(&quot;A1&quot;).PasteSpecial Paste:= xlPasteValues, Operation:=xlNone, 
+		SkipBlanks:=False, TRANSPOSE:=False<br>
+		Application.CutCopyMode=False</span></font><span class="auto-style23">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span><span style="font-size: 10.0pt; font-family: Arial"><font face="">
+		<span style="color: #339966; " class="auto-style23">' 
+		clears clipboard</span></font></span></p>
+		<p><span style="font-family: Arial"><font size="3"><i><b>&nbsp;&nbsp;&nbsp; Paste </b></i>option can be one of these <i>
+		<strong>:</strong></i></font></span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style23">
+		xlPasteAll </span>
+		<span class="auto-style23">
+		(default)</span><span style="color: #CC3300" class="auto-style23">, xlPasteAllExceptBorders, xlPasteColumnWidths, 
+		xlPasteComments, xlPasteFormats, xlPasteFormulas, 
+		xlPasteFormulasAndNumberFormats, xlPasteValidation,&nbsp; xlPasteValues, 
+		xlPasteValuesAndNumberFormats</span></p>
+		<p><b><font face="Arial"><i><font size="3">&nbsp;&nbsp;&nbsp; Operation</font></i></font></b><font size="3" face="Arial"><i> </i>(optional) can be
+		<strong>:</strong></font><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style23">
+		xlNone </span>
+
+<font face="">
+		<span class="auto-style23">
+		(default)</span></font><span style="color: #CC3300" class="auto-style23">, 
+		xlPasteSpecialOperationAdd, xlPasteSpecialOperationDivide, 
+		xlPasteSpecialOperationMultiply, xlPasteSpecialOperationSubtract</span></p>
+		<p><b class="runinhead"><i><font face="Arial" size="3">&nbsp;&nbsp;&nbsp; SkipBlanks</font></i></b><font size="2" face>&nbsp;<span class="auto-style16"><span class="auto-style24">&nbsp;</span></span><font class="auto-style16"><span class="auto-style24">is 
+		Optional. The default value is<b> </b>False.</span></font></font></p>
+		<p></font><b class="runinhead"><i><font face="Arial" size="3">&nbsp;&nbsp;&nbsp; Transpose</font></i></b><font face=""><font size="2" face>&nbsp;&nbsp;<span class="auto-style23">is 
+		Optional. The default value is False.</span></font><span style="font-size: 10.0pt; font-family: Arial"><br>
+		<br>
+		</span><b><i><font face="Arial"><br>
+		<font size="3">Copy Formula method</font></font></i></b><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		<span style="color: #CC3300" class="auto-style23">
+		Sheet1.Range(&quot;A1&quot;).Formula= Sheet2.Range(&quot;A2&quot;).Formula</span></p>
+		<div>
+			<div class="LW_CollapsibleArea_Container" xmlns="">
+				<div class="LW_CollapsibleArea_TitleDiv">
+					<b><span class="LW_CollapsibleArea_Title">
+					<font size="3" face="Arial"><i>PasteSpecial method </i>
+					</font>
+					<font size="4" face="Arial"> <br>
+					</font></span></b><span class="auto-style23">Pastes the 
+					contents of the Clipboard onto the sheet, using a specified 
+					format. Use this method to paste data from other 
+					applications or to paste data in a specific format.</span></div>
+				</font>
+				<p class="auto-style16" xmlns="http://www.w3.org/1999/xhtml">
+				<font color="#CC3300"><span class="auto-style26">expression</span></font><font color="#CC3300"><font size="2">.</font><b class="bterm"><span class="auto-style24">PasteSpecial</span></b><span class="auto-style24">(</span><b class="bterm"><i><span class="auto-style24">Format</span></i></b><font size="2"><span class="auto-style24">,
+				<b class="bterm"><i>Link</i></b>, <b class="bterm"><i>
+				DisplayAsIcon</i></b>, <b class="bterm"><i>IconFileName</i></b>,
+				<b class="bterm"><i>IconIndex</i></b>, <b class="bterm"><i>
+				IconLabel</i></b>, <b class="bterm"><i>NoHTMLFormatting</i></b>)</span></font></font><font size="2"></p>
+
+				<p xmlns="http://www.w3.org/1999/xhtml" class="auto-style24">
+				<span class="auto-style25"><b class="runinhead">Format</b></span><span class="auto-style16">&nbsp;&nbsp;</span><font face=""><span class="auto-style16">Optional. A string that 
+				specifies the Clipboard format of the data.</span><b class="runinhead"><i><br class="auto-style16">
+				<span class="auto-style16">Link</span></i></b><span class="auto-style16">&nbsp;&nbsp;</span><font class="auto-style16">Optional. <b class="bterm">True</b> 
+				to establish a link to the source of the pasted data. If the 
+				source data isn't suitable for linking or the source application 
+				doesn't support linking, this parameter is ignored. The default 
+				value is <b class="bterm">False</b>.<br>
+				</font><span class="auto-style25"><b class="runinhead">DisplayAsIcon</b></span><span class="auto-style16">&nbsp;&nbsp;</span><font class="auto-style16">Optional.
+				<b class="bterm">True</b> to display the pasted as an icon. The 
+				default value is <b class="bterm">False</b>.<br>
+				</font><span class="auto-style25"><b class="runinhead">IconFileName</b></span><span class="auto-style16">&nbsp;&nbsp;</span><font class="auto-style16">Optional. The name of 
+				the file that contains the icon to use if <b class="bterm"><i>
+				DisplayAsIcon</i></b> is <b class="bterm">True</b>.<br>
+				</font><span class="auto-style25"><b class="runinhead">IconIndex</b></span><span class="auto-style16">&nbsp;&nbsp;</span><font class="auto-style16">Optional. The index number 
+				of the icon within the icon file.<br>
+				</font><span class="auto-style25"><b class="runinhead">IconLabel</b></span><span class="auto-style16">&nbsp;&nbsp;</span><font class="auto-style16">Optional. The text label 
+				of the icon.<br>
+				</font><span class="auto-style25"><b class="runinhead">NoHTMLFormatting</b></span><span class="auto-style16">&nbsp;&nbsp;</span><font class="auto-style16">Optional.
+				<b class="bterm">True</b> to remove all formatting, hyperlinks, 
+				and images from HTML. <b class="bterm">False</b> to paste HTML 
+				as is. The default value is <b class="bterm">False</b>.</font></font></font></p>
+				<p xmlns="http://www.w3.org/1999/xhtml" class="auto-style16">
+				<font size="2" class="auto-style24">Note:&nbsp;&nbsp;<i><br>
+				NoHTMLFormatting</i> will only matter when <i>Format</i> = 
+				&quot;HTML&quot;. In all other cases, <i>NoHTMLFormatting</i> will be 
+				ignored.</font></div>
+		</div>
+		<font face=""><font face="">
+		<p>&nbsp;</p>
+		<p style="margin-left:6.5in">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<span class="auto-style23">Return To Top</span></a></font></td>
+</tr>
+
+<tr>
+
+
+<td valign="top" style="width: 13%">
+
+    </td>
+  </tr>
+</tbody></table>
+
+
+<table border="0" width="98%" id="table5">
+<tr>
+<td align="center">
+<font face="Courier New">	
+<font size="2">
+
+
+<br><br>  
+  
+<a href="http://s05.flagcounter.com/more/RvMZ"><img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a><br>
+	
+
+
+This site was created 
+in Feb.2007<b><br></b></font>
+</font>	
+<font size="2" face="Courier New">
+
+
+
+
+by William Tan</font></td>
+</tr>
+</table>
+
+</body>
+<!-- Mirrored from vbautomation.110mb.com/VBA/workaround_worksheet.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:49:18 GMT -->
+</html>

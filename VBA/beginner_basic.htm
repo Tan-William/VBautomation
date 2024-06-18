@@ -1,0 +1,2188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/VBA code</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.font5
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.font6
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.auto-style1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	color: #000000;
+}
+.auto-style2 {
+	text-decoration: none;
+}
+.auto-style3 {
+	text-align: center;
+}
+.auto-style4 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style5 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style6 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-style: italic;
+}
+.auto-style7 {
+	color: windowtext;
+	font-size: 9.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style8 {
+	text-indent: -.25in;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-left: .25in;
+}
+.auto-style9 {
+	text-indent: -.25in;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-left: .25in;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.auto-style10 {
+	font-weight: 700;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style11 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style12 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style13 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11pt;
+}
+.auto-style14 {
+	font-size: 11pt;
+}
+.auto-style15 {
+	font-size: 10.5pt;
+}
+.auto-style16 {
+	color: #0045C3;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style17 {
+	color: #0045C3;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style18 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+.auto-style19 {
+	font-size: 10pt;
+}
+.auto-style20 {
+	font-size: 10pt;
+	font-family: Verdana;
+}
+.auto-style21 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style22 {
+	color: #0045C3;
+}
+</style>
+
+
+<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="990">
+	<div align="center">
+		<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table8">
+			<tr>
+				<td height="20" align="center" class="auto-style13">
+
+
+	<span style="text-decoration: none">
+
+
+	<font class="auto-style14">
+				<a style="text-decoration: none" href="../index.htm">
+				<span style="text-decoration: none" class="auto-style4">Home</span></a></font><span class="auto-style4"><font class="auto-style14">&nbsp; </font>
+				</span> </span>
+
+
+<font face="">
+
+
+	<font style="font-size: 75%">
+
+
+	<font face="Verdana" class="auto-style14">
+				<span class="auto-style4">|</span></font></font><span class="auto-style13"></font></span><font style="text-decoration:none" color="#0033FF" class="auto-style13">&nbsp;
+				<a style="text-decoration: none" href="beginner_basic.htm">
+				<span style="text-decoration: none">EXCEL VBA 
+	programming (XL97-2003)</span></a>&nbsp; </font>
+
+
+	<font class="auto-style14">
+	<span style="text-decoration: none" class="auto-style4">|&nbsp; 
+				<a style="text-decoration: none" href="../EXCEL/excel_under_construction.htm"><span style="text-decoration: none">EXCEL VB.Net 
+	Programming</span></a></span><span class="auto-style4">&nbsp; |&nbsp;
+				<a style="text-decoration: none" href="../ACCESS/beginner_basic_Acc.htm"><span style="text-decoration: none">ACCESS 
+	Database Programming </span></a>&nbsp;|&nbsp;
+				<a style="text-decoration: none" href="../EXCEL/excel_worksheet_functions.htm">
+				<span style="text-decoration: none">EXCEL Spreadsheet Functions</span></a>&nbsp; 
+				|&nbsp; </span> </font></td>
+			</tr>
+			<tr>
+				<td height="20" align="center" class="auto-style13">
+
+
+	<font class="auto-style14">
+				<a style="text-decoration: none" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">
+				<span style="text-decoration: none" class="auto-style4">Material Management</span></a><a style="text-decoration: none" href="../ACCESS/beginner_basic_Acc.htm"><span style="text-decoration: none" class="auto-style4"> </span></a></font>
+
+
+<font face="">
+				<font class="auto-style14"><span class="auto-style4">&nbsp;|&nbsp;
+				<a style="text-decoration: none" href="../INVENTORY%20MGMT/production_planning.htm">
+				<span style="text-decoration: none">Master Scheduling &amp; 
+	Production Planning</span></a> &nbsp;|</span></font><font class="auto-style13">&nbsp;
+	<a style="text-decoration: none" href="../FORECASTING/forecasting_fundamental.htm">
+				<span style="text-decoration: none">Forecasting Methods &amp; 
+	Techniques</span></a> &nbsp;|&nbsp;
+				<a style="text-decoration: none" href="../AboutMe/Me.htm"><span style="text-decoration: none">About me</span></a>&nbsp; |&nbsp;
+				<a href="../GUESTBOOK/gbook.php" style="text-decoration: none" target="_blank">
+	<span style="text-decoration: none">Guestbook</span></a><u> </u> </font><hr>
+				</td>
+			</tr>
+		</table>
+	</div>
+		</td>
+	</tr>
+</table>
+<TABLE border="0" cellspacing="3" width="99%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center" height="825">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" style="height: 8415px; width: 159px">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153">
+					<a href="../index.htm" rel="internal" class="new_link">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153">
+					<a href="../AboutMe/Me.htm" rel="internal" class="new_link">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style12">
+				<font class="auto-style11"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font><span class="auto-style15"></font></font></font></span><span class="auto-style12">
+				</span>
+
+
+                    <tr width="159">
+                    <td style="cursor: pointer; height: 66px;" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" class="auto-style12">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style21">
+					<strong><span class="auto-style22">Download</span></strong></a><span class="auto-style22"><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style21"> my Add-In tool </a>
+					</span>
+	<a class="auto-style2" href="Sub_VBA/WilliamExcelUtilities.zip">
+					<span class="auto-style1">(<em>run on 32-bit MS Office Excel</em>)</span></a></td>
+                    </tr>
+                                                
+
+                                               
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style12">
+					<span class="auto-style14">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style17">
+					VBA</a></span><a href="beginner_basic.htm" rel="internal" class="auto-style16"> 
+					Basic for beginners</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="Objects.htm" rel="internal" class="auto-style11">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="rows_columns.htm" rel="internal" class="auto-style11">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style11">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="statements.htm" rel="internal" class="auto-style11">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+ 					<a href="functions.htm" rel="internal" class="auto-style11">
+					Functions</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a rel="internal" class="auto-style11" href="loops.htm">Conditional 
+					Statements and Loops Structure</a></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="errors_handling.htm" rel="internal" class="auto-style11">
+					Errors Handling</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="userforms.htm" rel="internal" class="auto-style11">UserForms</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="pivot_table.htm" rel="internal" class="auto-style11">
+					Pivot Tables</a></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+ 					<a href="charting.htm" rel="internal" class="auto-style11">Charting</a></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+ 					<a href="autofilter.htm" rel="internal" class="auto-style11">
+					AutoFilter, Advanced Filter</a></td>
+                    </tr>     
+                    
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style11">File I/O 
+					VBA Examples</a></td>
+                    </tr>                       
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style11">ADO and 
+					DAO, integrating Excel and Access</a></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style12">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style11">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="7710">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+						
+			
+<td bgcolor="#FFFFFF" style="height: 7896px; width: 1%;"></td>
+<td valign="top" width="81%" style="height: 7896px">
+
+		<p align="center" class="auto-style4">
+		<font style="font-weight: 700; font-size:22pt">
+		Learning How To Program With Visual Basic</font></p>
+
+
+      <font face="Arial">
+
+		<p><font style="font-weight: 700" size="5"><span class="auto-style4">Some Background of Visual Basic</span></font></font><font face="Arial" style="font-size: (10 pt)" size="2"><br class="auto-style4">
+		<span class="auto-style4">Visual 
+		Basic with Integrated Development Environment (<b>IDE</b>) has been the 
+		most popular programming environment for more than a decade. It means 
+		you can design your application's interface, write the code, test the 
+		code, compile the code, and create an installation package all from 
+		within Visual Basic's IDE. You don't have to write code to design your 
+		applications interface. Instead you use your mouse pointer to drag 
+		objects such as buttons, text boxes, and scrollbars from the toolbox to 
+		your form, and then use your mouse to place and size the objects.<br>
+		<br><b>Visual Basic 6</b> and earlier version is an <i>event-based</i> 
+		programming language (determined by user actions such as mouse clicks, 
+		key presses, or messages from other programs) and associated <b>
+		Integrated Development Environment</b> or IDE (consists of a source code 
+		editor, a compiler, interpreter, build automation tools, and debugger) 
+		from Microsoft for its COM programming model. Component Object Model (<b>COM</b>) 
+		encompasses the <b>OLE, OLE Automation, ActiveX, COM+</b> and <b>DCOM</b> 
+		technologies. Visual Basic was derived from BASIC and enables the Rapid 
+		Application Development (<b>RAD</b>) of graphical user interface (<b>GUI</b>) 
+		applications, access to databases using <b>DAO, RDO, or ADO</b>, and 
+		creation of <b>ActiveX Controls</b> and <b>Objects</b>.<br><br>Offices 
+		today have choices to migrate from Visual Basic 6 application to Visual 
+		Basic .NET. or keep the VB6 code, and interoperate with VB.NET to easily 
+		add any functionality from the .NET Framework. Visual Basic 6 
+		applications are essentially COM applications, whereas Visual Basic .NET 
+		applications are not COM-based. The two are built on incompatible 
+		technologies. However, many organizations today still have a significant 
+		Microsoft Visual Basic 6 code base and continue using VB6 application. 
+		This website will only focus on VB6 and earlier. As of November 2007, 
+		there are notably six versions of Visual Basic .NET Frameworks.</span></font></p>
+		</font>
+
+		<ul>
+			<li><font size="2" style="font-size: (10 pt)" class="auto-style15">
+			<span class="auto-style5">Visual Basic .NET</span><font face=""><span class="auto-style4"> 
+			(VB 7) - had many disadvantages, including a runtime that was ten 
+			times as large to package as the VB6 runtime and an increased memory</span></font></font></li>
+			<li class="auto-style20"><font style="font-size: (10 pt)">
+			<span class="auto-style18">Visual Basic .NET 
+			2003</span><span class="auto-style19"> (VB 7.1) </span>- improvements were made to the performance and 
+			reliability of the .NET IDE and runtime</font></li>
+			<font face=""><span class="auto-style4">
+			<li><font style="font-size: (10 pt)"><span class="auto-style18">Visual Basic 2005</span></font><span class="auto-style19"><font style="font-size: (10 pt)"> 
+			(VB 8.0) - Microsoft decided to drop the .NET portion of the title</font></span></li>
+			<li><font style="font-size: (10 pt)"><span class="auto-style18">Visual Basic 2005 
+			Express</span></font><span class="auto-style19"><font style="font-size: (10 pt)"> - as part of the Visual Studio product range, Microsoft 
+			has created it for hobbyists and novices, and it is available for 
+			free</font></span></li>
+			<li><font style="font-size: (10 pt)"><span class="auto-style18">Visual Basic 2008</span></font><span class="auto-style19"><font style="font-size: (10 pt)"> 
+			(VB 9.0) - it was released together with the Microsoft .NET 
+			Framework 3.5 on November 19, 2007</font></span></li>
+			<li><font style="font-size: (10 pt)"><span class="auto-style18">Visual Basic VBx</span></font><span class="auto-style19"><font style="font-size: (10 pt)"> 
+			(VB 10.0) - in the development stage, will offer support for the 
+			Dynamic Language Runtime</font></span></li>
+		</ul>
+		<p><font size="2" style="font-size: (10 pt)"><br>The following example 
+		demonstrates a difference between VB6 and VB.NET. Both examples unload 
+		the active window.<br>
+		<font color="#339966">' Classic VB Example</font></font></span><font size="2"><span class="auto-style4"><br>
+		</span>
+		</font>
+
+
+<font face="">
+		<font size="2" color="#800000">
+		<span class="auto-style4">Private Sub cmdClose_Click()<br>
+&nbsp;&nbsp;&nbsp; Unload Me<br>
+		End Sub</span></font><font size="2" class="auto-style4"><br>
+		<br>
+		</font><font color="#339966" size="2"><span class="auto-style4">' a VB.NET 
+		example. Note the 'cmd' prefix being replaced with the 'btn' prefix</span></font>
+		<font size="2"><br class="auto-style4">
+		</font>
+		<span class="auto-style4"><font size="2" color="#800000">
+		Private Sub btnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) _<br>
+&nbsp;&nbsp; Handles btnClose.Click <br>
+&nbsp;&nbsp;&nbsp;Me.Close()<br>
+		End Sub<br>
+		<br>
+		</font></span><font size="2" class="auto-style4">It is important 
+		to know some significant differences between VB6,VB Express and VB.NET. 
+		An integer inVB 6 will occupy 16 bits of memory (equivalent to 2 bytes) 
+		and can only store numbers in the range from -32,768 through 32,767. In 
+		all VB.NET languages, an integer will occupy 32 bits of memory or 4 
+		bytes, and can store numbers from -2,147,483,648 through 2,147,483,647. 
+		In addition, there are now at least three kinds of integers in .NET 
+		(short, integer, and long) and better still, Byte data type can technically also store
+		an integer.<br>
+		<br>
+		VB Express gives you a broad range of data types that you can use in 
+		your program to store not only numbers, but characters as Text, dates, 
+		true or false as Boolean or floating point numbers. There is also an 
+		Object data type that you can store anything in and a User-Defined data 
+		type.<br>
+		<br>
+		VB.NET does not support Variant data type that is popular in VB&nbsp;6 and 
+		earlier versions, which made it easy to just start using a variable 
+		without having to declare what data type for the variables. It turns out 
+		that this carefree way of declaring variables as Variant data type can 
+		result in unintentionally storing the wrong data type in the variables 
+		and causing serious bugs. Moreover it also make the code run slower. 
+		In VB.NET, you can use the Object data type in a similar way but it's 
+		strongly discouraged as&nbsp;performance can be even worse
+		(Object is provided for an entirely different reason).</font></p>
+
+		<p>
+<font size="4"><br class="auto-style4">
+</font>
+
+		<span class="auto-style4"></font>
+		</span>
+		</p>
+		<p class="auto-style4">
+<font style="font-weight:700; font-size:22pt">Get started with 
+VBA Programming for Excel</font></p></font>
+
+
+<p>
+<font size="2" face="Arial"><span class="auto-style5">Visual Basic Editor</span><span class="auto-style4"> (<b>VBE</b>) is the tool used to create, modify, 
+and maintain VBA procedures and modules in Excel application. VBA gives you the ability to 
+modify workbooks and worksheets, allows you to modify VB components and code modules. This 
+page applies only to Excel97 and above.  It does not apply to Excel95 or previous versions. 
+Before using these procedures, you'll need to set a reference in VBA to the VBA Extensibility 
+library.  In the VBA editor, go to the Tools menu, choose the References item, and put a check 
+next to "Microsoft Visual Basic For Applications Extensibility" library. 
+[see <a href="Images/References.gif" style="text-decoration:yes" target="_blank" 
+  onclick="NewWindow(this.href,'Reference','400','300','yes');return false">sample</a>]. 
+This enables VBA to find the definitions of these objects.  If you are using Excel97, this 
+library will appear in the References list without a version number:  "Microsoft Visual Basic 
+For Applications Extensibility".  If you are using Excel 2000 or later, it will appear with a 
+version number "<b>Microsoft Visual Basic For Applications Extensibility 5.3</b>"</span></font><font face=""><font size="2"><span class="auto-style4">.</span></font>
+<font size="2" class="auto-style4">It is very important that you reference the proper library.  If 
+you reference the wrong library, you will receive"<b>Type Mismatch</b>" errors.  If you don't 
+reference the extensibility library at all, you will receive "<b>User Defined Type Not Defined 
+Error</b>" messages.
+<br>
+<br>
+In Microsoft Office XP, when reference features of the Microsoft 
+Visual Basic for Applications Extensibility 5.3 object model, you may receive an error message that 
+programmatic access to the Visual Basic project is not trusted. To prevent this message from appearing, 
+select from Excel menu <b>Macro/Tools/Security</b> and on the <b>Trusted Sources</b> tab, select the 
+<b>Trust access to Visual Basic Project</b> box. By enabling this, macros in any worksheets can access 
+the core Microsoft Visual Basic objects, methods, and properties, which represents a possible security 
+hazard. The recommendation to select the &quot;Trust access to Visual Basic Project&quot; box only 
+for the duration of a macro that accesses the Visual Basic object model. The &quot;Trust access to 
+Visual Basic Project&quot; box should be cleared after the macro has finished running.</font>
+<font face="arial" size="2">
+<span class="auto-style4">
+<br>
+<br>
+Right-click on Excel Sheet1, select <b>View Code</b> or simply press
+<a href="Images/Alt-F11.gif" style="text-decoration:none" target="_blank" onclick="NewWindow(this.href,'AltF11','550','580','yes');return false">Alt-F11</a> 
+to open the VBE. The screen in the top-left corner is the 
+</span> 
+</font>
+<font size="2"><span class="auto-style5">Project Explorer</span></font><font class="auto-style4"><font size="2">. 
+In it you can see the currently loaded workbook (Book1) and the three worksheets. As you delete and add 
+workbooks or worksheets, the tree-like structure of the workbook and worksheet objects will reflect exactly 
+the changes that you have made. You can also add other objects such as UserForms, Modules and Class Modules. 
+Double-click <b>ThisWorkBook</b> opens the <a target="_blank" href="Images/codewindow.gif" style="text-decoration:none" 
+  onclick="NewWindow(this.href,'Code_Window','550','450','yes');return false">Code Window</a> for your 
+currently active Workbook object. Click on the drop-down list (<b>General</b>) in the top-left corner of the code 
+window and select another choice <b>(Workbook)</b>. Now you should see the <b>Workbook</b>_<b>Open</b> event in the 
+code window, <font color="#800080">Private Sub Workbook_Open() </font>and<font color="#800080"> End Sub</font>. 
+This simply means you can program an event to happen as it is at the point when you choose File&gt;Open 
+and load it in. Click on the drop-down list (<b>Open</b>) in the top-right corner, you notice that there 
+are other Workbook events you can choose from to write code.[see <a target="_blank" href="Images/workbookevents.gif" 
+   style="text-decoration:yes" onclick="NewWindow(this.href,'workbook_events','750','420','yes');return false">sample</a>].<br>
+<br>
+The Edit toolbar has three commands that offer pop-up help to VBA novices in writing code - <a target="_blank" href="Images/edittoolbar.gif" 
+   style="text-decoration:none" onclick="NewWindow(this.href,'edit_toolbar','520','450','yes');return false">Quick Info, List 
+Properties/Methods and List Constants</a>. You use <a target="_blank" href="Images/quickinfo.gif" style="text-decoration:none" 
+   onclick="NewWindow(this.href,'quick_info','700','200','yes');return false">Quick Info</a> command to get a 
+pop-up reminder of the syntax by right-click the term and select Quick Info from the shortcut menu. Alternatively, 
+position your cursor on the term, choose Edit--&gt;Quick Info.<b> </b>
+<a target="_blank" href="Images/listPropertiesMethods.gif" style="text-decoration:none" onclick="NewWindow(this.href,'ListProperties','650','530','yes');return false">List 
+Properties/Methods</a> command will automatically pop up a list box containing methods and properties when you 
+type a period &quot;<b>.</b>&quot; or &quot;</font><b><font size="2">,</font></b><font size="2">&quot; so that you 
+can easily complete the expression. Such automatic display of a pop-up list at current insertion point as you are 
+typing, is possible only if you had enabled the &quot;<a target="_blank" href="Images/auto_list_members.gif" 
+   style="text-decoration:none" onclick="NewWindow(this.href,'Auto_List_Members','660','470','yes');return false">Auto 
+List Members</a>&quot; in the VBE Options menu. Alternatively, you can display it through the Edit toolbar. 
+Remember the &quot;<a target="_blank" href="Images/auto_syntax_check.gif" style="text-decoration:none" 
+onclick="NewWindow(this.href,'auto_syntax_check','660','470','yes');return false">Auto Syntax Check</a>&quot; in the VBE Options menu 
+should always be checked as </font></font>
+</font>
+<font size="2" class="auto-style4">the checker&nbsp;will automatically examine the lines for any 
+irregular syntax and try to fix it, automatically remove unnecessary spaces, changing 
+cases and even add missing closing quotation marks and parentheses. The &quot;<a target="_blank" href="Images/auto_quick_info.gif" style="text-decoration: none" onclick="NewWindow(this.href,'auto_quick_info','660','470','yes');return false">Auto 
+Quick Info</a>&quot; feature should also always be marked checked so that you 
+would be able to see a pop-up reminder of the proper syntax for a 
+function. The
+<a target="_blank" href="Images/listconstants.gif" style="text-decoration:none" onclick="NewWindow(this.href,'list_constants','550','280','yes');return false">List Constants</a> command 
+displays a pop-up list box containing constants for a property you have just typed. This feature saves you time 
+especially when you have to remember complex constant names.<br>
+<br>
+Below the Project Explorer is the <a target="_blank" href="Images/PropertiesWindow.gif" style="text-decoration:none" 
+   onclick="NewWindow(this.href,'Properties_Window','580','600','yes');return false">Properties Window</a> 
+where you can use to view and modify the properties of an object such as a project, module, class module, user form, 
+or a control (eg. a button or check box in a dialog box). The drop-down list allows you to pick the object to view 
+or modify. The Alphabetic page on the left displays properties for ThisWorkBook and the Categorized page on the right 
+displays a list of properties for a user 
+form.<br>
+<br>
+VBE has other windows which it doesn't display by default - the Object Browser and the Immediate Window. </font>
+
+
+<font face="">
+<font size="2" class="auto-style4">
+The <a target="_blank" href="Images/ObjectBrowser.gif" style="text-decoration:none" onclick="NewWindow(this.href,'Object_Browser','620','580','yes');return false">Object Browser</a> 
+provides information about all built-in objects and custom objects that you created - Properties, Methods, Events, 
+Constants, Classes. Use the drop-down list to choose the object libraries you want to view or alternatively, you could 
+stay with default &lt;All Libraries&gt;.<br>
+<br>
+Properties : attributes of objects<br>Methods&nbsp;&nbsp; : actions you perform on objects<br>
+<a target="_blank" href="Sub_VBA/events_macro.htm" style="text-decoration:none">Events</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: examples such as opening or closing of a workbook<br>Constants : named items that remain a constant value while a procedure is 
+running<br>Classes&nbsp;&nbsp;&nbsp; : formal definition of objects<br>
+<br>
+We use the small <a target="_blank" href="Images/ImmediateWindow.gif" style="text-decoration:none" onclick="NewWindow(this.href,'ImmediateWin','730','230','yes');return false">Immediate 
+Window</a> as a virtual test pad to enter lines of code we want to test without entering them in the module macro itself. 
+After you have typed your lines of code in the 
+</font>
+
+<font size="2"><span class="auto-style4">Immediate Window, 
+press the Enter key, VBE will execute that code. To display it, press Ctrl-G or just access through the Edit toolbar.</span></font></p>
+
+
+		</font>
+<p class="auto-style4">
+&nbsp;</p>
+		<p>
+<font style="font-weight:700; font-size:22pt"><br class="auto-style4">
+		</font>
+
+
+<font face="">
+<font style="font-weight:700; font-size:22pt"><span class="auto-style4">Some Common Questions From VBA Novices:</span></font></p>
+		<p>
+<font class="auto-style4">
+<b><font size="2">What is a Function:</font></b><font size="2">&nbsp; Excel has built-in functions like IF, AND, OR, COUNT, SUM which you use 
+	in your worksheet.&nbsp;Functions can invoke other functions to return a value.</font><b><font size="2"><br><br>
+	What is a User Defined Function (UDF):</font></b><font size="2">&nbsp; You can make up your own functions or use functions 
+	made up by someone else, either or both would be UDF, because they are not Excel standard built-in functions. Macros begin
+	with <b>Sub</b>, and User Defined Functions begin with <b>Function</b>.&nbsp; Another distinction is that you will not find 
+	UDF in the macro list (<a target="_blank" href="Images/Alt-F8.gif" style="text-decoration:none" onclick="NewWindow(this.href,'ALT_F8','440','370','yes');return false">Alt+F8</a>), 
+	but you will find them in the Function Wizard list from the address bar button </font><i><b><font size="2">fx</font></b></i><font size="2">, 
+	or from the menu Insert --&gt; Function... [see
+	<a target="_blank" href="Images/Fx_UDF.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'Fx','460','430','yes');return false">sample</a>]<b><br>
+<br>
+	What is Personal.xls</b> - it is the file where you store your own macros and User Defined Functions, that you want 
+	to be available from any workbook [see <a target="_blank" href="Images/personalworkbook.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'personalWb','340','300','yes');return false">
+	sample</a>].&nbsp;For macros you only want available in a single workbook you would install macros in that workbook. 
+	Personal.xls is stored in your XLSTART directory, so you won't want to have other workbooks in that directory.</font><b><font size="2"><br>
+<br>
+	What is a Macro:</font></b><font size="2">&nbsp; 
+	A stored series of commands and functions that can be run to perform a specific task or tasks.&nbsp;In Excel a macro could 
+	be a complete program.&nbsp;Macros can be run from a toolbar button, or menu, from a shape in the workbook, or from another 
+	macro. If you want to program something, or issue a series of commands, you can create a macro. Recording a macro in Excel 
+	creates a series of actions in VBA, to duplicate what you enter but it does not record individual keystrokes. Macros are 
+	sometimes made into Add-Ins [see
+	<a href="Sub_VBA/record_macro.htm" style="text-decoration:none">Record and Run Macro</a>]</font></font><font size="2" face="Arial"><b><span class="auto-style4"><br>
+<br>
+	What is a Module:</span></b><span class="auto-style4"><span style="font-weight: 400"> In a VBA project, you can think of a</span> 
+<span style="font-weight: 400"> Module as a specialized sheet that serves as container for Visual Basic code. Your VB codes 
+	will reside in one or more modules. Let's address how you insert a module. In VBE, choose Macro</span> from the 
+		</span> <span style="font-weight: 400"> <span class="auto-style4">Tools 
+	menu, and the select </span> </span> </font>
+		<font size="2" class="auto-style4">
+<span style="font-weight: 400">
+	Visual Basic Editor. Easier yet, right-click on any worksheet tab, select View Code<b> </b>[see
+	<a target="_blank" href="Images/viewcode.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'view_code','300','280','yes');return false">sample</a>].&nbsp; 
+	Alternatively, use the shortcut key combination of Alt+F11</span> <span style="font-weight: 400"> to invoke VBE [see 
+	<a target="_blank" href="Images/vbe.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'VBEditor','400','250','yes');return false">sample</a></span></font>
+	<font size="2" face="Arial">
+		<span style="font-weight: 400" class="auto-style4">].<br><br>
+	From the VBE, choose Insert,</span><span class="auto-style4"> then <span style="font-weight: 400">Module from the menu. In the upper-left corner of the 
+	VBE is a the Project Window</span>, also called the <span style="font-weight: 400">Project Explorer. It features a tree-like 
+	hierarchical list of the items that make up your project. You will see a new folder under your current project that now has 
+	the module you have inserted. Alternatively, you can right-click on your current project in the Project Window and choose</span> 
+<span style="font-weight: 400">Insert, then Module from the shortcut menu [see
+	<a target="_blank" href="Images/insertmodule.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'insert_module','510','390','yes');return false">sample</a>].<br>
+	</span><br>
+		</span>
+	</font><font style="font-size: 16pt"><br class="auto-style4">
+		</font>
+
+
+<font face="">
+		<font style="font-size: 16pt"><span class="auto-style4">&nbsp;</span></font></p>
+		<p class="auto-style4">
+<font style="font-weight:700; font-size:22pt">Learning 
+All The Basics In The Module</font></p>
+
+
+		<p><span style="font-weight:400"><font size="2">
+		<span class="auto-style4">Modules</span></font><font size="2" class="auto-style4"> are VBE window code sheets. They are not fired off directly by
+	<a target="_blank" href="Sub_VBA/events_macro.htm" style="font-weight:400">events</a> such as worksheet being added 
+	or workbook being closed. They are a means of creating procedures, rather than running in an object. There are four basic things 
+	you will enter into a module:</font></span></p>
+		<ul type="disc" style="margin-bottom: 0in">
+			<li class="auto-style5">
+			<font size="2">declarations</font></li>
+			<li class="MsoNormal">
+			<span class="auto-style5"><font size="2">subroutines</font></span><font size="2"><span class="auto-style4">
+			</span>
+			</font> </li>
+			<li class="MsoNormal">
+			<span class="auto-style5"><font size="2">functions</font></span><font size="2"><span class="auto-style4">
+			</span>
+			</font> </li>
+			<li class="MsoNormal"><b>
+			<font size="2">
+			<span class="auto-style4">remarks</span></font><span style="font-size:
+     10.0pt;"><br class="auto-style4">
+			</span><span style="font-size:
+     10.0pt;" class="auto-style4">&nbsp;</span></b></li>
+		</ul>
+		<span class="auto-style4"><font size="2">A module can store any number of declarations or procedures, 
+		but there is a limit on the maximum bytes it can contain before you get an &quot;Out of Memory&quot; message. 
+		You 'll find that a module is something like a specialized text editor. In VBE window, you will see a header called 
+		(General) in the top left and a heading called (Declarations) in the top right of the module window. Click (<span 
+		style="color: blue"><a target="_blank" href="Images/declarations.gif" style="text-decoration:none" 
+		onclick="NewWindow(this.href,'declaration','500','260','yes');return false">Declarations</a></span>) 
+		you will go straight to the declarations section. This is where you will declare some of your constants and variables.<br>
+		<br>
+		</font>
+		</span><span class="auto-style6"><font size="2">* Note: There are also variations on types of modules -- those 
+		being standard modules and class modules. For the sake of simplicity, we're addressing standard modules unless otherwise 
+		specified. Class modules have some similar characteristics, but the details about class modules' special purpose 
+		warrant separate treatment.</font></span><p>
+		<font size="2"><span class="auto-style4">&nbsp;</span></font><font face=""><span class="auto-style4"><font size="2">A
+		<b>procedure</b> is a named unit of code that contains a sequence of statements to be executed as a group. There 
+		are two types of procedures: subroutine and function. You can call a code procedure in many ways:</font></span></p>
+		<ul>
+
+			<li>
+			<p class="auto-style8">
+			<font size="2">Using a 
+		custom menu command [see
+			<span style="color:blue">
+			<a target="_blank" href="Images/custom_menu_command.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'CustomMenuCommand','390','280','yes');return false">sample</a></span>]
+			or a custom 
+		toolbar command [see <span style="color:blue">
+			<a target="_blank" href="Images/custom_toolbar_command.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'CustomToolbarCommand','250','240','yes');return false">sample</a></span>]</font></li>
+			</font>
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in">
+			<span class="auto-style4"><font size="2">Insert a VBA 
+		control such as command button or combo box and assign the procedure to 
+		it. [see </font>
+			</span>
+
+
+<font face="">
+			<span style="font-family:Arial">
+			<a target="_blank" href="Images/commandbutton.gif" onclick="NewWindow(this.href,'command_button','480','280','yes');return false" class="auto-style4">
+			<font size="2">sample</font></a></span><span class="auto-style4"><font size="2">]</font></span></li>
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in">
+			<span class="auto-style4"><font size="2">In Excel menu, 
+		choose Tools/Macro/Macros, select the macro name from the list and click 
+		Run. [see </font>
+			</span><font face="">
+			<span style="font-family:Arial">
+			<a target="_blank" href="Images/select_macro.gif" onclick="NewWindow(this.href,'select_macro','750','550','yes');return false" class="auto-style4">
+			<font size="2">sample</font></a></span><span class="auto-style4"><font size="2">]</font></span></li>
+			<li>
+			<p class="auto-style8">
+			<font size="2">Run the code from a UserForm [see <span style="color:blue">
+			<a target="_blank" href="Images/run_code_UserForm.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'run_code_UserForm','450','250','yes');return false">sample</a></span>]</font></li>
+			<li>
+			<p class="auto-style8">
+			<font size="2">Call your code from another macro [see <span style="color:blue">
+			<a target="_blank" href="Images/call_code_from_another_macro.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'call_code_from_another_macro','750','400','yes');return false">sample</a></span>]</font></li>
+			<li>
+			<p class="auto-style8">
+			<font size="2">Write your code as a <a target="_blank" href="Images/function.gif" style="text-decoration:none" onclick="NewWindow(this.href,'function','750','550','yes');return false">function</a> 
+		and call it directly by inserting the function into cell [see
+			<a target="_blank" href="Images/insert_function_in_cell.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'insert_function_in_cell','650','260','yes');return false">sample</a> 
+		or <a href="Sub_VBA/function%20subroutine.xls" style="text-decoration:yes">download</a>]</font></li>
+			<li>
+			<p class="auto-style8">
+			<font size="2">Click directly 
+		on your code and press F5</font></li>
+		</ul>
+		<p class="auto-style4"><font size="2">A
+		<b>subroutine </b>(also called <b>sub-procedure</b>) is a self-contained unit of code that performs a set of actions or 
+		calculations or a combination of the two. It can be called by different routines anywhere within the program as many times 
+		as needed. It doesn&#8217;t return a value. The macro you record using the Macro Recorder is an example. You call a 
+		subroutine by inserting a <b><a target="_blank" href="Images/call.gif" style="text-decoration:none" onclick="NewWindow(this.href,'call','620','420','yes');return false">
+		Call</a></b> instruction into the code. Note that functions don&#8217;t appear in Macros dialog box.</font></p>
+		<p class="auto-style4"><font size="2">A
+		<b>function</b> is like a subroutine except that it returns a value. Functions start with <b>Function</b> (instead of <b>Sub</b>) 
+		and end with <b>End Function</b> (instead of <b>End Sub</b>). Generally, functions should be called by using a variable 
+		to accept the return value [see <span style="color:blue">
+		<a target="_blank" href="Images/UDF1.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'UDF1','700','500','yes');return false">sample1</a>, 
+		<a target="_blank" href="Images/UDF2.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'UDF2','550','320','yes');return false">sample2</a></span>]. VBAcomes 
+		with many built-in functions but you can also create your user-defined functions (UDF).</font></p>
+		<p class="auto-style4"><font size="2">A	<b>statement</b> is a unit of code that describes 
+		an action, defines an action, defines an item, or gives the value of a variable. You can put more than one statement on a 
+		line by separating them with colons. You can also beak a line of code onto a second line or a subsequent line by using an 
+		underscore (_). VBA reads all the lines as a single line of code. If you need to break a line that involves a long string 
+		in quotes, break the string into shorter strings and concatenate them using &amp; operator. [see 
+			<a target="_blank" href="Images/statement.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'statement','520','230','yes');return false">sample</a>]</font></p>
+			<p class="auto-style4"><font size="2">A	<b>constant</b> is in effect, a named variable 
+		that keeps a constant value when a program is executing. However, you can not assign a new value to it from within 
+		your code as you can with a variable. The constant&#8217;s value doesn&#8217;t change at different times of program execution. 
+		The example below sets up a constant called My_Path	and it always has the value C:\Data\.&nbsp;	There are also predefined 
+		constants which you can view using the
+		<a target="_blank" href="Images/ObjectBrowser.gif" style="text-decoration:none" onclick="NewWindow(this.href,'ObjectBrowser','630','600','yes');return false">Object Browser</a>.</font></p>
+		<p><span class="auto-style4">
+		<font size="2" color="#800000">Const My_Path = &#8220;C:\Data\&#8221;</font></span><font color="#008080" size="2"><span class="auto-style4">&nbsp;</span></font></p>
+
+		<p class="auto-style4"><font size="2">A
+		<b>variable</b> is a location in memory set aside for storing a piece of 
+		information that can be changed while a procedure is running. It may 
+		just be a single number or a piece of text that the program needs to 
+		hold and refer to while it is running. 
+		A variable has a name (the word that you use to refer to the value that 
+		the variable contains). A variable also has a data type (which 
+		determines the kind of data that the variable can store). A variable can 
+		represent an array if it has to store an indexed set of closely related 
+		data items. VBA uses several types of 
+		variables as indicated below. Try this
+		[<a target="_blank" href="Images/variable.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'variable','500','290','yes');return false">example</a>] 
+		variable in the Immediate window and press Enter.</font></p>
+		<ul>
+			<li>
+			<p class="auto-style9">
+			<font size="2">String (stores text characters like &quot;William&quot;)</font></li>
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in; margin-top:0; margin-bottom:0">
+			<span class="auto-style4"><font size="2">Integer (stores 
+			whole numbers in the range of -32,768 to 32,767)</font></span><font size="2"><span class="auto-style4"></li></span><font face=""><span class="auto-style4">
+			</span></font>
+			</font>
+			<font face=""><font face="Arial">
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in; margin-top:0; margin-bottom:0">
+			<span class="auto-style4">
+			<font size="2">Long (stores larger integers than Integer range, -2,147,438,648 to 
+			2,147,438,647)</font></li>
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in; margin-top:0; margin-bottom:0">
+			<font size="2">Single (stores numbers with decimals)</font></li>
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in; margin-top:0; margin-bottom:0">
+			<font size="2">Double (stores numbers with decimals where you want more accuracy 
+			than with Single)</font></li>
+			<li>
+			<p style="text-indent: -.25in; margin-left: .25in; margin-top:0; margin-bottom:0">
+			</span>
+			<font size="2"><span class="auto-style4">Boolean (variable can be True or False)</li>
+			</span>
+			</font></font>
+
+			<font face="">
+			<li>
+			<p class="auto-style9">
+			<font size="2">Object stores 
+			object</font></li>
+			<li>
+			<p class="auto-style9">
+			<font size="2">Variant (stores 
+			any type of data and you let VBA decides how to deal with the 
+			variable)</font></li>
+		</ul>
+
+<font size="2" class="auto-style4">
+			<p>&nbsp;</p>
+		<p>Below table summarizes the data types, amount of memory space 
+			each one uses, and their conversion functions.</p>
+		</font>
+
+
+		<table border="0" width="793" cellspacing="0" cellpadding="0" id="table9">
+			<tr>
+				<td>
+				<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 745px" id="table10" height="740">
+					<colgroup>
+						<col width="80" style="width: 60pt">
+						<col width="126" style="width: 95pt">
+						<col width="362" style="width: 272pt">
+						<col width="80" style="width: 60pt">
+					</colgroup>
+					<tr height="24" style="height: 18.0pt">
+						<td height="24" style="height: 18.0pt; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: #339966; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						<font color="#FFFFFF">Data type</font></td>
+						<td style="width: 117px; font-size: 9.0pt; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-left: medium none; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: #339966">
+						<p style="text-align: center" class="auto-style5"><font color="#FFFFFF">
+						Description</font></td>
+						<td style="width: 437px; font-size: 9.0pt; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-left: medium none; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: #339966">
+						<p style="text-align: center" class="auto-style5"><font color="#FFFFFF">
+						Range</font></td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: #339966; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
+						<font color="#FFFFFF">Conversion Function</font></td>
+					</tr>
+					<tr height="24" style="height: 18.0pt">
+						<td height="24" style="height: 18.0pt; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Byte</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						1-byte binary data</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						0 to 255 (unsigned)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						CByte( )</td>
+					</tr>
+					<tr height="24" style="height: 18.0pt">
+						<td height="24" style="height: 18.0pt; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						SByte</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						1-byte binary data</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						-128 through 127 (signed)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						CSByte( )</td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 26px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">Short</span><font class="auto-style7"> (short integer)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						12-byte integer</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						-32,768 through 32,767 (signed)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						CShort( )</td>
+					</tr>
+					<tr height="18" style="height:13.5pt">
+						<td style="height: 25px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Integer</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						2-byte integer</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						&#8211; 32,768 to 32,767</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						CInt( )</td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 26px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">Long</span><font class="auto-style7"> (long integer)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						4-byte integer</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						&#8211; 2,147,483,648 to 2,147,483,647</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						CLng( )</td>
+					</tr>
+					<tr height="21" style="height: 15.75pt">
+						<td rowspan="2" style="height: 53px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Single</td>
+						<td rowspan="2" style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						4-byte single-precision floating-point number</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						&#8211; 3.402823E38 to &#8211; 1.401298E &#8211; 45 (negative values)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						CSng( )</td>
+					</tr>
+					<tr height="22" style="height: 16.5pt">
+						<td style="height: 27px; width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						1.401298E &#8211; 45 to 3.402823E38 (positive values)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="27" class="auto-style4">
+						CDbl( )</td>
+					</tr>
+					<tr height="23" style="height: 17.25pt">
+						<td rowspan="2" style="height: 50px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Double</td>
+						<td rowspan="2" style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						8-byte double-precision floating-point number</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="24" class="auto-style4">
+						&#8211; 1.79769313486231E308 to &#8211; 4.94065645841247E &#8211; 324 
+						(negative values)</td>
+						<td rowspan="2" style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						CDbl( )</td>
+					</tr>
+					<tr height="22" style="height: 16.5pt">
+						<td style="height: 26px; width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						4.94065645841247E &#8211; 324 to 1.79769313486231E308 
+						(positive values)</td>
+					</tr>
+					<tr height="35" style="height: 26.25pt">
+						<td style="height: 33px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">Currency</span><font class="auto-style7"> (scaled integer)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="33" class="auto-style4">
+						8-byte number with fixed decimal point</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="33" class="auto-style4">
+						&#8211; 922,337,203,685,477.5808 to 922,337,203,685,477.5807</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="33" class="auto-style4">
+						Ccur( )</td>
+					</tr>
+					<tr height="49" style="height:36.75pt">
+						<td style="height: 34px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">String </span> 
+						<font class="auto-style7">(variable-length)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="34" class="auto-style4">
+						10 bytes (80 bits) + string length</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="34" class="auto-style4">
+						0 to approximately two billion characters</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="34" class="auto-style4">
+						StrConv( )</td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 26px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">String </span> 
+						<font class="auto-style7">(fixed-length)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						Length of string</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						1 to approximately 65,400</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						StrConv( )</td>
+					</tr>
+					<tr height="24" style="height: 18.0pt">
+						<td style="height: 31px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Date</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" x:str="8-byte date/time value " height="31" class="auto-style4">
+						8-byte date/time value&nbsp;</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="31" class="auto-style4">
+						January 1, 100 to December 31, 9999</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="31" class="auto-style4">
+						CDate( )</td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 32px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">Variant</span><font class="auto-style7"> (with numbers)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="32" class="auto-style4">
+						16 bytes (128 bits)</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="32" class="auto-style4">
+						Any numeric value up to the range of a Double</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="32" class="auto-style4">
+						CVar( )</td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 32px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">Variant</span><font class="auto-style7"> (with characters)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="32" class="auto-style4">
+						22 bytes (176 bits) + string length</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="32" class="auto-style4">
+						Same range as for variable-length String</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="32" class="auto-style4">
+						CVar( )</td>
+					</tr>
+					<tr height="20" style="height: 15.0pt">
+						<td rowspan="2" style="height: 77px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Decimal</td>
+						<td rowspan="2" style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						14-bytes (112 bits)</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="27" class="auto-style4">
+						0 through +/-79,228,162,514,264,337,593,543,950,335 (no 
+						decimal point).</td>
+						<td rowspan="2" style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						CDec( )</td>
+					</tr>
+					<tr height="32" style="height:24.0pt">
+						<td style="width: 437px; font-size: 9.0pt; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; height: 50px; border-left-width: medium; border-right: 1.0pt solid #008000; border-top-width: medium; border-bottom: 1.0pt solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: #FFFFFF">
+						<span class="auto-style4">0 through +/-7.9228162514264337593543950335 with 28 
+						places to the right of the decimal.</span><br class="auto-style4">
+						<span class="auto-style4">Smallest non-zero number is 
+						+/-0.0000000000000000000000000001</span></td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 48px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Boolean</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="48" class="auto-style4">
+						Depends on implementing platform</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="48" class="auto-style4">
+						True or False</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="48" class="auto-style4">
+						CBool( )</td>
+					</tr>
+					<tr height="33" style="height:24.75pt">
+						<td style="height: 34px; width: 114px; font-size: 9.0pt; font-weight: 700; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white">
+						<span class="auto-style4">Char</span><font class="auto-style7"> (single character)</font></td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="34" class="auto-style4">
+						2-bytes</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="34" class="auto-style4">
+						0 through 65535 (unsigned)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="34" class="auto-style4">
+						CChar( )</td>
+					</tr>
+					<tr height="23" style="height: 17.25pt">
+						<td style="height: 25px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						UInteger</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						4-bytes</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						0 through 4,294,967,295 (unsigned)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						CUInt( )</td>
+					</tr>
+					<tr height="23" style="height: 17.25pt">
+						<td style="height: 23px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Ulong</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="23" class="auto-style4">
+						8-bytes</td>
+						<td style="width: 437px; font-size: 9.0pt; font-family: Arial, sans-serif; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-left: medium none; border-right: 1.0pt solid green; border-top: medium none; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white" height="23">
+						<span class="auto-style4">0 through 18,446,744,073,709,551,615 (1.8...E+19
+						</span>
+						<font class="auto-style7"><sup>&#8224;</sup>) 
+						(unsigned)</font></td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="23" class="auto-style4">
+						CULng( )</td>
+					</tr>
+					<tr height="23" style="height: 17.25pt">
+						<td style="height: 25px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Ushort</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						2-bytes</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						0 through 65,535 (unsigned)</td>
+						<td style="width: 64px; color: blue; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="25" class="auto-style4">
+						CUShort( )</td>
+					</tr>
+					<tr height="23" style="height: 17.25pt">
+						<td style="height: 26px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						Object</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						4 bytes (32 bits)</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						Any Object reference</td>
+						<td style="width: 64px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="26" class="auto-style4">
+						None</td>
+					</tr>
+					<tr height="49" style="height:36.75pt">
+						<td style="height: 31px; width: 114px; font-size: 9.0pt; font-weight: 700; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-style: normal; text-decoration: none; border-left: 1.0pt solid green; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
+						User Defined Type</td>
+						<td style="width: 117px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="31" class="auto-style4">
+						Number required by elements</td>
+						<td style="width: 437px; font-size: 9.0pt; text-align: left; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="31" class="auto-style4">
+						The range of each element is the same as the range of 
+						its data type.</td>
+						<td style="width: 64px; font-size: 9.0pt; text-align: center; vertical-align: top; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; border-right: 1.0pt solid green; border-bottom: 1.0pt solid green; padding-left: 1px; padding-right: 1px; padding-top: 0px; background: white; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" height="31" class="auto-style4">
+						None</td>
+					</tr>
+				</table>
+				<p><br class="auto-style4">
+				<font face="">&nbsp;<table x:str border="0" cellpadding="0" cellspacing="1" style="border-collapse: collapse; width: 680px" id="table12">
+					<colgroup>
+						<col width="141" style="width: 106pt">
+						<col width="463" style="width: 347pt">
+					</colgroup>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 25px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: top; white-space: nowrap; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="676" colspan="2" align="left" class="auto-style4">
+						These are some other useful conversion functions below:</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" bgcolor="#339966">
+						<p align="left" class="auto-style4">Function Name</td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" bgcolor="#339966">
+						<p align="center" class="auto-style4">Description</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Error([ErrorNumber])</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns the error message for a given error number.</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Error$([ErrorNumber])</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns the error message for a given error number.</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Fix(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns the integer portion of a number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Hex(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a string representing the hexadecimal value of a 
+						number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Hex$(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a string representing the hexadecimal value of a 
+						number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Int(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns the integer portion of a number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Oct(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a string representing the octal value of a 
+						number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Oct$(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a string representing the octal value of a 
+						number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Str(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a string representation of a number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Str$(Number)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a string representation of a number</td>
+					</tr>
+					<tr height="17" style="height:12.75pt">
+						<td height="17" style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="165" class="auto-style4">
+						<font color="#0000FF">Val(String)</font></td>
+						<td style="color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #008000; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="506" class="auto-style4">
+						Returns a double representing the value of the numbers 
+						contained in the string</td>
+					</tr>
+				</table>
+				<p>&nbsp;<div align="left">
+					<table border="0" width="67%" cellspacing="1" cellpadding="0" id="table11" style="border-collapse: collapse">
+						<tr>
+							<td colspan="4" height="27" align="left" valign="top" class="auto-style4">
+							<font size="2">This is a reference table below for 
+							some of the common type of declaration characters
+							</font></td>
+						</tr>
+						<font face="Arial">
+						<tr>
+							<td width="20%" bgcolor="#339966" style="border: 1px solid #008000" class="auto-style5">
+							<font size="2">Data Type</font></td>
+							<td align="center" width="22%" bgcolor="#339966" style="border: 1px solid #008000" class="auto-style5">
+							<font size="2">Character</font></td>
+							<td width="21%" bgcolor="#339966" style="border: 1px solid #008000">
+							<p align="center" class="auto-style5">
+							<font size="2">
+							Example</font></td>
+							<td width="35%" bgcolor="#339966" style="border: 1px solid #008000">
+							<p align="center" class="auto-style5">
+							<font size="2">
+							Equivalent To</font></td>
+						</tr>
+
+
+						</font><font face="">
+						<font face="Arial">
+						<tr>
+							<td width="20%" style="border: 1px solid #008000">
+							<span class="auto-style4">
+							<font size="2">Currency</font></td>
+							<td align="center" width="22%" style="border: 1px solid #008000">
+							<font size="2" color="#0000FF">@</font></td>
+							<td width="21%" align="center" style="border: 1px solid #008000">
+							<font size="2">Dim var@</font></td>
+							<td width="35%" style="border: 1px solid #008000">
+							<font size="2">Dim var As Currency</font></td>
+						</tr>
+						<tr>
+							<td width="20%" style="border: 1px solid #008000">
+							<font size="2">Double</font></td>
+							<td align="center" width="22%" style="border: 1px solid #008000">
+							<font size="2" color="#0000FF">#</font></td>
+							<td width="21%" align="center" style="border: 1px solid #008000">
+							<font size="2">Dim var#</font></td>
+							<td width="35%" style="border: 1px solid #008000">
+							<font size="2">Dim var As Double</font></td>
+						</tr>
+						<tr>
+							<td width="20%" style="border: 1px solid #008000">
+							<font size="2">Integer</font></td>
+							<td align="center" width="22%" style="border: 1px solid #008000">
+							<font size="2" color="#0000FF">%</font></span></td>
+							<font face="">
+							<td width="21%" align="center" style="border: 1px solid #008000" class="auto-style4">
+							<font size="2">Dim var%</td>
+							<font face="Arial">
+							<td width="35%" style="border: 1px solid #008000">
+							<span class="auto-style4">
+							<font size="2">Dim var As Integer</font></td>
+						</tr>
+						<tr>
+							<td width="20%" style="border: 1px solid #008000">
+							<font size="2">Long</font></td>
+							<td align="center" width="22%" style="border: 1px solid #008000">
+							<font size="2" color="#0000FF">&amp;</font></span></td>
+							<font face="">
+							<td width="21%" align="center" style="border: 1px solid #008000" class="auto-style4">
+							<font size="2">Dim var&amp;</td>
+							<font face="Arial">
+							<td width="35%" style="border: 1px solid #008000">
+							<span class="auto-style4">
+							<font size="2">Dim var As Long</font></td>
+						</tr>
+						<tr>
+							<td width="20%" style="border: 1px solid #008000">
+							<font size="2">Single</font></td>
+							<td align="center" width="22%" style="border: 1px solid #008000">
+							<font size="2" color="#0000FF">!</font></span></td>
+							<font face="">
+							<td width="21%" align="center" style="border: 1px solid #008000" class="auto-style4">
+							<font size="2">Dim&nbsp; var!</td>
+							<font face="Arial">
+							<td width="35%" style="border: 1px solid #008000">
+							<span class="auto-style4">
+							<font size="2">Dim var As Single</font></td>
+						</tr>
+						<tr>
+							<td width="20%" style="border: 1px solid #008000">
+							<font size="2">String</font></td>
+							<td align="center" width="22%" style="border: 1px solid #008000">
+							<font size="2" color="#0000FF">$</font></span></td>
+							<font face="">
+							<td width="21%" align="center" style="border: 1px solid #008000" class="auto-style4">
+							<font size="2">Dim var$</td>
+							<td width="35%" style="border: 1px solid #008000" class="auto-style4">
+							<font size="2">Dim var As String</font></td>
+						</tr>
+					</table>
+				</div>
+
+
+				<p class="auto-style4">&nbsp;</td>
+			</tr>
+		</table>
+		<div id="ctl00_rs1_mainContentContainer_cpe37545_h" class="CollapseRegionLink">
+			<p>
+			<span class="auto-style5"><font size="2">Assigning 
+			Values to variable</font></span><font size="2"><br class="auto-style4">
+			<font face=""><span class="auto-style4">You use assignment statements to perform calculations and assign the 
+			result to a variable, as the following example shows.</span></font></font><font face=""><span style="font-size: 10.0pt; " class="auto-style4"><br>
+			<br>
+			</span>
+
+
+			<span class="auto-style4">
+
+			<font size="2" color="#800000">&nbsp;&nbsp;&nbsp;v = 5<br>
+&nbsp;&nbsp;&nbsp;v = v + 1</font></span><span style="font-size: 10.0pt; " class="auto-style4"><br>
+			<br>
+			</span><span class="auto-style4"><font size="2">Note that the equal sign (=) is an assignment operator, not an 
+			equality operator. Another way of saying is that the value is being 
+			assigned to the variable. The first statement assigns the value 5 to 
+			the variable v. The second statement increments the variable by 1, 
+			and the variable v now holds the value of 6.</font></span></div>
+		<p class="auto-style4">
+		<font size="2">You can declare variables either explicitly or implicitly. An <b>
+		implicit declaration</b> occurs when you tell VBA to store data in a 
+		variable that you have not explicitly declared. VBA then stores the data 
+		in a Variant variable. For example you create this statement tempVal = 2 
+		and a variable will automatically be created for tempVal as a variant 
+		(default type) and it will have the value of 2.</font></p>
+		<p class="auto-style4"><font size="2">An
+		<b>explicit declaration</b> sets the variable&#8217;s name, its type, before 
+		you use it. To avoid the problem of misnaming variables, you can 
+		stipulate that VBA always generates an error message whenever it 
+		encounters a variable not declared. Set the VBE up to require variables 
+		to be declared explicitly, so that you must declare each variable 
+		formally before you use it. Choose Tool/Options/ and select Require 
+		Variable Declaration check box on the Editor page [see
+		<a target="_blank" href="Images/require_var_declaration.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'variable','730','320','yes');return false">sample</a>]. This makes VBE automatically enter the <b>Option Explicit</b> 
+		statement for all modules and user forms you create from now on [see
+		<a target="_blank" href="Images/option_explicit.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'variable','630','240','yes');return false">sample</a>].</font></p>
+		<p class="auto-style4">
+		<font size="2">Coding is much faster using implicit because you do not have to 
+		initially define your variables before you use them. You simply make 
+		variables statements and VBA will take care of the rest. However, 
+		implicit declarations can make it difficult for someone else to 
+		understand your code. <b>Option Explicit</b> is usually the preferred 
+		practice and helps prevent runtime errors. Option Explicit must be 
+		placed in the declarations section of every module you want it to apply 
+		unless you define the variable as a global variable.<br><a name="ScopeOfVariables"></a>
+&nbsp;</font></p>
+        
+		<p>
+		<font size="5"><span style="font-weight:700" class="auto-style4">
+		<br>
+		<br>
+		</span>
+
+
+<font face="">
+			<span style="font-weight:700" class="auto-style4">
+		Variables: Local-level, Module-level and Global-level</span></font></font><font face=""></p>
+		<p class="auto-style4"><font size="2">If you define a variable within a procedure, only code within that 
+		procedure can access that variable. You call it local-level variable. 
+		However, you will often need variables that can be used by several 
+		procedures, from other modules or the whole application. For these 
+		reasons, you can declare a variable at local, module or global level.</font></p>
+
+		<p class="MsoNormal"><span class="auto-style4"><font size="2">A
+		<b>local variable</b> (sometimes called procedure-level) uses <b>Dim</b>,
+		<b>Static</b>, or <b>ReDim</b> (arrays only) to declare the variable. 
+		Local variable declared with the <b>Dim</b> statement (short for <i>
+		Dimension</i>) remains in 
+		existence only as long as the procedure is executing. 
+		Dim statement creates a space in memory for a variable. When it stops 
+		running, the values are not preserved and the memory is released. Local 
+		variable declared with the <b>Static</b> statement remains in existence 
+		for the lifetime of the application. Dim A(5) creates an array with 6 
+		elements (0-5), so there are altogether six A variables</font></span><font face=""><font size="2"><span class="auto-style4">.
+		Dim weeklyInput 
+		declares a 2-dimensional array (4 rows indexed 1 to 4, by 5 columns 
+		indexed 1 to 5).
+		</span>
+		</font>
+
+
+		<span class="auto-style4"><font size="2">Dim weeklyOutput 
+		declares a 3-dimensional array (the first dimension has 4 elements 
+		indexed 0 to 3, within that, the second dimension has 12 elements 
+		indexed 1 to 12, and within that, the third dimension has 5 elements 
+		indexed 2 to 6)
+		<b>ReDim</b> 
+		A(10) makes it an 11-element array but loses all the data in it. <b>
+		ReDim Preserve</b> A(15) makes a 16-element array but keeps all existing 
+		data. In array, all subscripts start at 0 by default. See statement 
+		examples below.</font></span></p>
+		<p class="MsoNormal">
+		<span class="auto-style4"><font size="2" color="#800000">Dim 
+		myVarl<br>
+		Static myVar1<br>
+		Dim A(5)<br>
+		</font></span><font size="2" color="#800000">
+		<span class="auto-style4">Dim weeklyInput(1 To 4, 1 To 5) 
+		As Single<br>
+		</span>
+
+
+<font face="">
+
+
+		<span style="font-family: Courier New">
+		<span class="auto-style4">Dim weeklyOutput(3, 
+		1 To 12, 2 To 6) As Single</span></span></font></font><font face=""><font size="2" color="#800000"><br class="auto-style4">
+		<span class="auto-style4">ReDim A(10)<br>
+		ReDim Preserve A(15)</span></font></p>
+		<p class="auto-style4"><font size="2">A
+		<b>module-level</b> is declared for a particular module. It is available 
+		to all procedures within that module but not to the rest of the 
+		application. An alternative to the keyword Dim is the keywaord Private. 
+		See statement examples below.&nbsp;</font></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Dim tempVal<br>
+		Private tempVal</font></p>
+		<p class="auto-style4"><font size="2">A
+		<b>global-level variable</b> (sometimes called public variable) is 
+		declared with the Global statement, and it can be accessed by any code 
+		within the application. See example below. See example below. Module and 
+		global variables hold their values while the application is running 
+		until the user closes the application.&nbsp;</font></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Global tempVal</font></p>
+		<p class="auto-style4">
+		<font size="2">You should only use local variables to hold values that are being used 
+		during that procedure. If you expect to access them from other modules, 
+		they need to be global variables. However, you can use <b>Static</b> 
+		statement (see below) to preserve a local variable. </font> </p>
+		<font size="2" color="#800000"><span class="auto-style5">Static</span><span class="auto-style4">
+		</span></font><span class="auto-style4"> 
+		<font color="#800000" size="2">Sub Static_Statement_Demo()</font></span><p class="auto-style4">
+		<font size="2">Here is another
+		<span style="color:blue">
+		<a target="_blank" href="Sub_VBA/scope_of_variables.htm" style="text-decoration:yes">example</a></span> 
+		that demonstrates differences between a local variable, module-level and 
+		global variable.</font></p>
+		<p class="MsoNormal">
+		
+		<p style='margin-left:6.5in' class="auto-style4">		
+		<font size="2">
+		<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		Return To Top</a></font></p>
+
+		<p class="auto-style10">		
+		<font size="5"><br>
+		</font>		
+		<font style="font-size: 20pt">Scope of Subroutines</font></p>
+		<p class="auto-style4"><font size="2">The default is all subs have <b>Public</b> scope unless otherwise 
+		specified. This means that one sub can call another sub inside a 
+		program. It is not necessary to precede the sub with keyword Public. If 
+		you want a particular sub to be callable only by subs within its module, 
+		you must precede Sub with the keyword <b>Private</b> as in below 
+		example. Then any sub within the same module can call Test_1, but subs 
+		outside of its module have no access to sub Test_1.&nbsp;</font></p>
+		<p class="MsoNormal">
+		<span class="auto-style4">
+		<font size="2" color="#800000">Private Sub Test_1()</font></span><span style="font-size:10.0pt;"><br class="auto-style4">
+		</span>
+
+
+<font face="">
+
+
+		<span style="font-size:10.0pt;" class="auto-style4">&nbsp;</span></p>
+		<p class="MsoNormal">
+		<span style="font-size:13.5pt;" class="auto-style4">
+		Passing Arguments</span><span style="font-size:10.0pt;" class="auto-style4"><br>
+		</span><span class="auto-style4"><font size="2">In a simple example below, suppose a &#8220;Main&#8221; sub calls &#8220;DisplayName&#8221; sub 
+		to display customers&#8217; names in message box. How do we get the customers&#8217; 
+		names from the Main sub to the DisplayName sub? There are two ways of 
+		doing this &#8211; by using module-level variables and by passing arguments.<br></font></span></p>
+		<p class="MsoNormal">
+		<span class="auto-style5">Module-level variables 
+		method</span><span style="font-size:10.0pt;" class="auto-style4"><br>
+		</span><span class="auto-style4"><font size="2">Suppose you define a range called 'PersonNames' that contains the last 
+		names and the first names of 7 persons. You want to display each 
+		person&#8217;s full name in a message box. First, you declare module-level 
+		variables LastName and FirstName in the first line. Then the Main sub 
+		loops through the rows of the named range, stores the last and first 
+		name of the persons in the LastName and FirstName variables, and call 
+		the DisplayName sub to display the persons' full names. (You can also
+		<span style="color:blue"><a href="Sub_VBA/module_variable.xls">download</a></span> 
+		the worksheet).</font></span></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Option Explicit<br>
+		Dim LastName As String, FirstName As String</font></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Sub Main()<br>
+		&nbsp;&nbsp;&nbsp; Dim i As Integer<br>
+		&nbsp;&nbsp;&nbsp; For i = 1 To 7<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LastName = Range(&quot;PersonNames&quot;).Cells(i, 1)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FirstName = Range(&quot;PersonNames&quot;).Cells(i, 2)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Call DisplayName<br>
+		&nbsp;&nbsp;&nbsp; Next<br>
+		End Sub</font></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Sub DisplayName()<br>
+		&nbsp;&nbsp;&nbsp; Dim Person As String<br>
+		&nbsp;&nbsp;&nbsp; Person = FirstName &amp; &quot; &quot; &amp; LastName<br>
+		&nbsp;&nbsp;&nbsp; MsgBox &quot;The person's name is &quot; &amp; Person<br>
+		End Sub<br><br></font></p>
+		<p class="MsoNormal">
+		<span class="auto-style5">Passing by Arguments 
+		method</span><span style="font-size:10.0pt;" class="auto-style4"><br>
+		</span><span class="auto-style4"><font size="2">I refer the Main sub as the <i>calling</i> sub and the DisplayName sub 
+		as <i>called</i> sub. Note that the variables LastName and FirstName are 
+		no longer declared as module-level variable before the sub. They are now 
+		declared as local-level variables in the Main sub, and are passed to 
+		DisplayName sub as arguments.
+		In programming, passing by arguments (or called parameters) means 
+		sending 
+		information back to those DisplayName sub variables. To pass argument, type (Call), then name 
+		of the called sub (DisplayName), follow by name of the variables being 
+		passed, separated by commas and within parenthesis as in Call 
+		DisplayName(LastName, FirstName).</font></span></p>
+		<p class="auto-style4">
+		<font size="2">You probably notice that the arguments in the called sub are LName and 
+		FName, and are not the same as the name of the variables passed to it as 
+		in LastName and FirstName. This is technically legal. The variables 
+		being passed from the calling sub and the arguments in the called sub do 
+		need to have the same names, but they must only match in the <i>number</i>,
+		<i>type</i> and <i>order</i>. (You can also <span style="color:blue">
+		<a href="Sub_VBA/passing_argument.xls">download</a></span> the example 
+		worksheet here).</font></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Option Explicit<br>
+		Sub Main()<br>
+		&nbsp;&nbsp;&nbsp; Dim i As Integer<br>
+		&nbsp;&nbsp;&nbsp; Dim LastName As String, FirstName As String<br>
+		&nbsp;&nbsp;&nbsp; For i = 1 To 7<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LastName = Range(&quot;PlannerNames&quot;).Cells(i, 1)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FirstName = Range(&quot;PlannerNames&quot;).Cells(i, 2)<br>
+		&nbsp;&nbsp;&nbsp; Call DisplayName(LastName, FirstName)<br>
+		&nbsp;&nbsp;&nbsp; Next<br>
+		End Sub</font></p>
+		<p class="MsoNormal">
+		<font color="#800000">
+		<span style="font-size:11pt;" class="auto-style4">
+		<br>
+		</span>
+		<span class="auto-style4">
+		<font size="2">Sub DisplayName(LName As String, FName As String)<br>
+		&nbsp;&nbsp;&nbsp; Dim Planner As String<br>
+		&nbsp;&nbsp;&nbsp; Planner = FName &amp; &quot; &quot; &amp; LName<br>
+		&nbsp;&nbsp;&nbsp; MsgBox &quot;The planner's full name is &quot; &amp; Planner<br>
+		End Sub<br><br></font></span></font></p>
+		<p class="MsoNormal">
+		<span class="auto-style5">Passing by reference (ByRef) 
+		and by value (ByVal)</span><span style="font-size:10.0pt;" class="auto-style4"><br>
+		</span><span class="auto-style4"><font size="2">When you pass a variable such as FirstName from one sub to another, the 
+		default method is by Reference. This means that the variables in the 
+		calling sub and called sub shares the same memory location, so that any 
+		changes made to the FName in the called sub will be reflected in the 
+		calling sub. In another word, the value of variable FirstName in the 
+		calling sub will reflect the same value as FName in the called sub 
+		DisplayName when control passes back to the calling sub.</font></span><font size="2" color="#800000"><br class="auto-style4">
+
+
+<font face="">
+
+
+		<span class="auto-style4">Sub DisplayName(ByRef LastName As String, ByRef FirstName As String)</span></font></font><font face=""></p>
+		<p><span class="auto-style4"><font size="2">To 
+		pass the variable by Value, we mean pass a copy of FirstName to the 
+		called sub, so that any changes made to the FName in the called sub will 
+		not be reflected in the calling sub.</font></span><font size="2" color="#800000"><br class="auto-style4">
+
+
+<font face="">
+
+
+		<span class="auto-style4">Sub DisplayName(ByVal FirstName as String, ByVal FirstName as String)<br>
+		<br>
+		</span></font></font>
+
+
+<font face="">
+
+
+		<span class="auto-style4">
+		<font size="2">The two examples below shall give you a better understanding of passing 
+		variables by reference and by value. The <i>showMyName</i> procedure 
+		receives a reference to the variables <i>LastName</i> and <i>FirstName</i> 
+		from the calling sub 'calling_test1'. After this procedure executes, the 
+		variable</font></span><font face="Arial" size="2"> 
+		<span class="auto-style6">LastName</span><span class="auto-style4">
+		</span>
+		</font>
+
+
+		<font size="2">
+		<span class="auto-style4">changes its name to 
+		'poh beng' from 'pb' because the 1st argument in the called sub was 
+		passed by Reference. Because the 2nd argument</span><font face="Arial"> </font>
+		<span class="auto-style6">FirstName</span></font><span class="auto-style4"><font size="2"> 
+		in the <i>showMyName</i> procedure was passed by Value, the modified 
+		string 'william' in the variable <i>FirstName</i> will not be reflected 
+		in the calling sub after control is passed back to it. In stead of 
+		displaying 'poh beng william', the second message box will display 'poh 
+		beng bill'</font></span><span style="font-size: 10.0pt" class="auto-style4"><br>
+		<br>
+		</span>
+		<span class="auto-style4">
+		<font size="2" color="#800000">Private Sub showMyName(ByRef LastName As 
+		String, ByVal FirstName As String)<br>
+		LastName = &quot;poh beng&quot;<br>
+		FirstName = &quot;william&quot;<br>
+		End Sub<br>
+		<br>
+		Sub calling_test1()<br>
+		Dim LastName As String, FirstName As String<br>
+		LastName = &quot;pb&quot;<br>
+		FirstName = &quot;bill&quot;<br>
+		MsgBox LastName &amp; &quot; &quot; &amp; FirstName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></span>
+
+
+		<font color="#339966" size="2"><span class="auto-style4">' message reads as 'pb bill'</span></font><font size="2" color="#800000"><br class="auto-style4">
+		<span class="auto-style4">Call showMyName(LastName, FirstName)<br>
+		MsgBox LastName &amp; &quot; &quot; &amp; FirstName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#339966"><span class="auto-style4">' 
+		message reads as 'poh beng bill'</span></font><font size="2" color="#800000"><br class="auto-style4">
+		<span class="auto-style4">End Sub<br>
+		<br>
+		<br>
+		</span>
+		</font>
+		<span class="auto-style4">
+		<font size="2">This following second example shows passing the variables by Reference. 
+		The calling sub creates two variables - <i>loginName</i> and <i>empID</i> 
+		- that stores the String and Variant data. The first message box 
+		displays the original string text as were created in the calling sub. 
+		Then the calling sub procedure calls the <i>DisplayMyName</i> procedure 
+		and pass to it the string data stored in the variables <i>loginName</i> 
+		and <i>empID</i>. The <i>DisplayMyName</i> procedure stores the content 
+		of the <i>loginName</i> and <i>empID</i> variables in <i>LastNam</i>e 
+		and <i>FirstName</i> variables, runs the Replace method to replace the 
+		string 'pb' with 'poh beng' and the string '9112 ?' with '91128'. Then 
+		it returns the replaced strings back to the calling sub, which then run 
+		the second message box to read the altered strings in the <i>loginName</i> 
+		and <i>empID</i> variables, joined with an &amp; operator to read as 'poh 
+		beng william, ID 91128'</font></span><font size="2" color="#800000"><span class="auto-style4"><br>
+		<br>
+		Private Static Sub DisplayMyName(loginName As String, empID 
+		As Variant)<br>
+		loginName = Replace(loginName, &quot;pb&quot;, &quot;poh beng&quot;)<br>
+		empID = Replace(empID, &quot; ?&quot;, &quot;8&quot;)<br>
+		End Sub<br>
+		<br>
+		Sub calling_test2()<br>
+		Dim loginName As String<br>
+		Dim empID As Variant<br>
+		loginName = &quot;pb william&quot;<br>
+		empID = &quot;9112 ?&quot;<br>
+		MsgBox loginName &amp; &quot;, ID &quot; &amp; empID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		</font><font size="2" color="#339966"><span class="auto-style4">' message reads as 
+		'pb william, ID 9112 ?'</span></font><span style="font-family:Courier New"><font size="2" color="#800000"><br class="auto-style4">
+		</font></span>
+		<span class="auto-style4"><font size="2" color="#800000">Call DisplayMyName(loginName, 
+		empID)</font></span><span style="font-family:Courier New"><font size="2" color="#800000"><br class="auto-style4">
+		</font><span class="auto-style4"><font size="2" color="#800000">MsgBox (loginName) &amp; &quot;, ID &quot; &amp; 
+		empID&nbsp;&nbsp;&nbsp; </font></span>
+		</span>
+		<font size="2" color="#339966"><span class="auto-style4">'message 
+		reads as 'poh beng william, ID 91128'</span></font><font size="2" color="#800000"><br class="auto-style4">
+		<span class="auto-style4">End Sub<br>
+		<br>
+		</span>
+		</font><span class="auto-style4"><font size="2">Note 
+		that array arguments and user-defined type arguments cannot be passed 
+		ByVal. Also, using ByVal or ByRef doesn't have any effect when the 
+		argument is a literal constant, but only when it's a variable. Most of 
+		our procedures will use the default ByRef argument passing. You can use 
+		ByVal when you want to ensure that code in the procedure cannot change 
+		the variable that was passed as an argument.</font></span><span style="font-size: 10.0pt"><br class="auto-style4">
+		</span><span style="font-size: 10.0pt" class="auto-style4">&nbsp;</span></p>
+		<p class="MsoNormal">
+		<span class="auto-style5">Passing Arrays</span><span style="font-size:10.0pt;" class="auto-style4"><br>
+		</span><span class="auto-style4"><font size="2">Consider this simple example, the calling sub stores 7 names in an array 
+		size of 7 (assume this array is populated with names in your worksheet 
+		range). It passes the Names array to the UpperBoundNames as in line 8. 
+		Note that there are no parenthesis to Names array in line 8 &#8211; this is 
+		because in line 4 it has already been declared as an array. On the other 
+		hand, line 1 of the UpperBoundNames has parenthesis next to the Names 
+		argument, indicating that it is expecting an array. (You can also
+		<span style="color:blue"><a href="Sub_VBA/passing_arrays.xls">download</a></span> 
+		the worksheet).&nbsp;</font></span></p>
+		<p>
+		<span class="auto-style4">
+		<font size="2" color="#800000">Option Explicit<br>
+		Sub Calling()<br>
+		Dim i As Integer<br>
+		Dim Names(7) As String<br>
+		&nbsp;&nbsp;&nbsp; For i = 1 To 7<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Names(i) = Range(&quot;PersonNames&quot;).Cells(i, 1)<br>
+		&nbsp;&nbsp;&nbsp; Next<br>
+		&nbsp;&nbsp;&nbsp; Call UpperBoundNames (Names)&nbsp; </font></span>
+		<font face=""><font size="2" color="#339966"><span class="auto-style4">' line 8</span></font><font size="2" color="#800000"><br class="auto-style4">
+		<span class="auto-style4">End Sub<br>
+&nbsp;</span></font></p>
+		<p class="auto-style4">
+		<font size="2" color="#800000">Sub UpperBoundNames(Names() As String)<br>
+		&nbsp;&nbsp;&nbsp; Dim NNames As Integer<br>
+		&nbsp;&nbsp;&nbsp; NNames = UBound(Names)<br>
+		&nbsp;&nbsp;&nbsp; MsgBox &quot;position of UBound(Names) is : &quot; &amp; NNames<br>
+		End Sub</font></p>
+		<p><span style="font-size:10.0pt;"><br class="auto-style4">
+		</span><font face="">
+		<span style="font-size:10.0pt;" class="auto-style4">&nbsp;</span><p class="auto-style10">
+		<font style="font-size: 22pt">Writing your 
+		first subroutine</font><p><span class="auto-style4"><font size="2">Double-click 
+		ThisWorkBook in the Project Explorer. Click (General) from the drop-down 
+		list in the top-left corner of the window and select Workbook [see
+		<a target="_blank" href="Images/Workbook.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'Workbook','530','240','yes');return false">sample</a>]. It will show the code 
+		for the </font> </span>
+		<font size="2"> <a target="_blank" href="Images/workbook_open.gif" style="text-decoration:none" onclick="NewWindow(this.href,'workbook_open','530','240','yes');return false">
+		<span class="auto-style4">Workbook
+		Open event</span></a></font><span class="auto-style4"><font size="2">,
+		<b>Private Sub Workbook_Open()</b> and <b>End Sub</b>. This occurs at 
+		the point when you choose File/Open, select the file and load it. If you 
+		click the drop-down list, you notice there are other
+		<span style="color:blue">
+		<a target="_blank" href="Images/workbookevents.gif" style="text-decoration:none" onclick="NewWindow(this.href,'workbookevents','800','360','yes');return false">Workbook events</a></span> 
+		with predefined codes available. Try out this simple
+		<span style="color:blue">
+		<a target="_blank" href="Images/my_first_subroutine.gif" style="text-decoration:yes" onclick="NewWindow(this.href,'MyFirstSubroutine','550','250','yes');return false">example</a></span>, 
+		save your workbook, then reopen it. You will see your first subroutine 
+		done, with a display message showing what you wanted to see.</font></span><p class="MsoNormal">
+		<span class="auto-style4">
+		<font size="2">Now a second example, from ThisWorkBook, select </font></span>
+		<font size="2">
+		<a target="_blank" href="Images/Workbook_NewSheet.gif" style="text-decoration:none" onclick="NewWindow(this.href,'workbookevents','650','260','yes');return false">
+		<span class="auto-style4">NewSheet 
+		event</span></a></font><span class="auto-style4"><font size="2"> (instead of Open event). It will show <b>Private Sub 
+		Workbook_NewSheet(ByVal Sh As Object)</b> and <b>End Sub</b>. Insert 
+		Module 1 and add in the following code. This subroutine has an argument 
+		parameter for a variable called VAR. You are going to call the 
+		subroutine (display_it) from another procedure (NewSheet event) and pass 
+		a variable (VAR) across.</font></span></p>
+		<p>
+		<span style="font-family:Courier New">
+		<font size="2" color="#800000" class="auto-style4">Sub display_it(VAR)<br>
+		&nbsp;&nbsp;&nbsp; MsgBox VAR<br>
+		End Sub</font></span></p>
+		<p class="auto-style4">
+		<font size="2">Next, on Workbook_NewSheet event, add the following code. In Excel 
+		worksheet menu, choose Insert/Worksheet, you will see a message box 
+		showing the workbook full path address, cell A1 is populated with the 
+		full path address and a message box showing as what you had just typed 
+		&#8220;My second piece of Subroutine !&#8221;&nbsp; The Call command call your subroutine 
+		and pass the required parameters to it (here it is the string called &#8220;My 
+		second piece of Subroutine&quot; that is passed into the variable called VAR)</font></p>
+		<p>
+		<font size="2" color="#800000">
+		<span class="auto-style4">Option Explicit<br>
+		Private Sub Workbook_NewSheet(ByVal Sh As Object)<br>
+		&nbsp;&nbsp;&nbsp; Dim x As String<br>
+		&nbsp;&nbsp;&nbsp; x = ActiveWorkbook.FullName<br>
+		&nbsp;&nbsp;&nbsp; MsgBox x<br>
+		&nbsp;&nbsp;&nbsp; Cells(1, 1) = x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font>
+
+
+<font face="">
+
+
+		<font size="2" color="#339966"><span class="auto-style4">&#8216; position of row 1 and column 1</span></font>
+		<font size="2" color="#800000"><br class="auto-style4">
+		<span class="auto-style4">&nbsp;&nbsp;&nbsp; Call display_it(&quot;My second piece of Subroutine&quot;)<br>
+		End Sub</span></font></p>
+		<p class="MsoNormal">
+		<span style="color:blue" class="auto-style4">
+		<a href="Sub_VBA/my_second_subroutine.xls"><font size="2">Download</font></a></span><span class="auto-style4"><font size="2"> 
+		this second example here</font></span></p>
+		<p class="auto-style3">
+		<font face="">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+<font size="2"><span class="auto-style4">Return To Top</span></font></a></p>
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+		</font>
+
+		</font></font></font></font>
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+
+
+<font face="">
+</td>
+</tr>
+
+<font face="">
+
+</tbody></table>
+
+
+<table border="0" width="99%" id="table5">
+<tr>
+<td align="center">
+<font face="Courier New">	
+<font size="2">
+
+
+
+
+This site was created 
+in Feb.2007<b><br></b>by William Tan</font></font></td>
+</tr>
+</table>
+
+
+		</font>
+
+
+		</font>
+		</body>
+</html>

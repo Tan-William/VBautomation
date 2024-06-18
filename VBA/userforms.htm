@@ -1,0 +1,1804 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+.auto-style1 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style3 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style4 {
+	color: #0045C3;
+}
+.auto-style5 {
+	color: #0045C3;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style6 {
+	font-family: Verdana;
+}
+.auto-style7 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12pt;
+}
+.auto-style8 {
+	font-size: 10.5pt;
+	color: #993300;
+	font-family: Verdana;
+}
+.auto-style9 {
+	font-size: 10.5pt;
+}
+.auto-style10 {
+	font-family: Arial;
+}
+.auto-style11 {
+	font-size: 22pt;
+}
+.auto-style12 {
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style13 {
+	font-family: Verdana;
+	font-style: italic;
+	font-size: 10.5pt;
+}
+.auto-style14 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style16 {
+	text-align: center;
+	font-size: 10.5pt;
+	font-family: Verdana;
+	font-weight: bold;
+}
+.auto-style19 {
+	font-size: 10.5pt;
+	font-weight: 700;
+	font-family: Verdana;
+}
+.auto-style21 {
+	text-align: center;
+	font-size: 10.5pt;
+	font-family: Arial;
+	font-weight: bold;
+}
+.auto-style22 {
+	font-family: Verdana;
+	font-size: 12pt;
+}
+.auto-style24 {
+	font-size: 12pt;
+}
+.auto-style25 {
+	font-family: Verdana;
+	font-weight: bold;
+}
+</style>
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../index.htm" rel="internal" class="auto-style1">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style1">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+				<font class="auto-style1"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font></font></font><span class="auto-style2">
+				</span>
+
+<font face="">
+
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style2">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style3">
+					<strong><span class="auto-style4">Download</span></strong></a><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style1"> my Add-In 
+					tool (run on 32-bit MS Office Excel)l</a></td>
+                    </tr>
+                                                
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style2">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style1">
+					VBA Basic for beginners</a></td>
+                    </tr>
+
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="Objects.htm" rel="internal" class="auto-style1">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="rows_columns.htm" rel="internal" class="auto-style1">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style1">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="statements.htm" rel="internal" class="auto-style1">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+ 					<a href="functions.htm" rel="internal" class="auto-style1">
+					Functions</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style1">
+					Conditional Statements and Loops Structure</a></font></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="errors_handling.htm" rel="internal" class="auto-style1">
+					Errors Handling</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="userforms.htm" rel="internal" class="auto-style5">UserForms</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="pivot_table.htm" rel="internal" class="auto-style1">
+					Pivot Tables</a><span class="auto-style2"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style1">Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style1">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>                            
+
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style1">
+					File I/O VBA Examples</a></font></td>
+                    </tr>     
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style1">ADO and 
+					DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style1">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="10173">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+
+<font face="">
+
+<font face="">
+
+<font face="">
+						
+			
+<td bgcolor="#FFFFFF" WIDTH="1%"></td>
+<td valign="top" width="80%">
+      <!-- Start Page Content -->
+
+<p>
+</font><span style="font-weight:700" class="auto-style10">
+<font class="auto-style11">UserForm</font></span></p>
+		<font face="arial">
+		<p><span class="auto-style2">
+		These are Excel dialog boxes that allow you to display and allow you to 
+		get input from user, and to perform further task base on that 
+		information. First, you have to design the user form to have the correct 
+		functionality. Then you have to write the <b>event</b> code that are 
+		connected behind each of the UserForm&#8217;s controls in the VBE, that will 
+		respond appropriately to whatever the user selects on the user form. For 
+		example, when the user clicks on the Cancel button, the dialog box 
+		should disappear and unload userform. If the user clicks on the OK 
+		button, the user&#8217;s input should be captured to store in variables or in 
+		some other ways, and dialog box should also disappear.<br>
+		<br>
+		</span><font color="#0033CC"><span class="auto-style7">MsgBox and InputBox functions</span></font></font><span class="auto-style9"><br class="auto-style6">
+		</span>
+		<font face="arial">
+		<span class="auto-style2"><br>These two dialog boxes are the most common and simpler means of 
+		displaying information and getting user&#8217;s input. 
+		<font color="#0033CC"> <b>MsgBox</b> </font>function</span><span style="font-family:Arial" class="auto-style9"><span class="auto-style6"> 
+		displays information and waits for user to press a button before 
+		continuing, or it continues after an elapse of specified few seconds. MsgBox provides four buttons for you to configure from, including Yes, 
+		No, OK, and Cancel. You can configure the prompt, window title, and user 
+		Help files. The Syntax is:</span></span></p>
+		<p class="auto-style8">
+		MsgBox(prompt[, buttons] [, title] [, helpfile, context])</p>
+		<p><span class="auto-style2">
+		This example displays a message box with &#8220;Yes&#8221;,&#8221;No&#8221; and Cancel buttons 
+		for user to response, and using Select Case statement to execute action 
+		whenever each button is pressed.<br>
+		</span>
+		<span style="color:#993300" class="auto-style2">
+		Dim msg As String, response As String, btn As String, openfile As String</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<font face="arial">
+		<span style="color:#993300" class="auto-style2">msg = &quot;</span><span style="color:#993300" class="auto-style2"> </span>
+		<span style="color:#993300" class="auto-style2">
+		Want me to show you the directory of the text file?&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">&#8216; define 
+		message</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<span style="color:#993300" class="auto-style2">btn = vbYesNoCancel + vbExclamation + vbDefaultButton1&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">&#8216; define buttons</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<span style="color:#993300" class="auto-style2">response = MsgBox(msg, btn, &quot;Action alert&quot;)<br>
+		Select Case response<br>
+		Case Is = vbYes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">' user 
+		chose Yes</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<span style="color:#993300" class="auto-style2">&nbsp;&nbsp;&nbsp; MsgBox &quot;please select a text file&quot;, vbOKOnly<br>
+		&nbsp;&nbsp;&nbsp; openfile = Application.GetOpenFilename(&quot;Textfiles (*.txt),*.txt&quot;, , 
+		&quot;&quot;)<br>
+		&nbsp;&nbsp;&nbsp; Workbooks.OpenText (openfile)&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">' user 
+		chose Yes, it opens folder &#8220;My Documents&#8221; with all text files</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<span style="color:#993300" class="auto-style2">Case Is = vbNo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color:red" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">&#8216; user chose No, it saves the current copy</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">&nbsp;&nbsp;&nbsp; ActiveWorkbook.Save<br>
+		Case Is = vbCancel&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#339966" class="auto-style2">' user chose Cancel, it stops the code from 
+		running</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">&nbsp;&nbsp;&nbsp; Exit Sub</span><span style="color: #993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color: #993300" class="auto-style2">End Select</span></p>
+		<p>
+		<img border="0" src="Images_Others/userform_ActionAlert_1.gif" width="323" height="64"><br>
+		<img border="0" src="Images_Others/userform_ActionAlert_2.gif" width="323" height="59"></p>
+		<p>&nbsp;</p>
+		<p><font color="#0033CC">
+		<span class="auto-style14">InputBox</span></font><span class="auto-style2"><font color="#0033CC">
+		</font></span>
+		</font>
+		</font>
+		<span class="auto-style2">function</span><font face="arial"><span style="font-family:Arial" class="auto-style9"><span class="auto-style6"> requests some keystrokes input from user before the program can 
+		continue. You can configure the prompt, window title, a default value, 
+		window position and user Help files. InputBox provides only two buttons: 
+		OK and Cancel. The function returns a string value.</span></span></p>
+		</font>
+		<p><font face="arial">
+		<span style="color: #993300" class="auto-style2">
+		expression.<b>InputBox(<i>Prompt, Title, Default, Left, Top, HelpFile, 
+		HelpContextId, Type</i>)</b></span></font></p>
+		<p><span class="auto-style13">
+		expression</span><span class="auto-style2"> Required. An expression that 
+		returns an Application object.<br>
+		<i><b>Prompt</b></i> Required String. The message to be displayed in the 
+		dialog box. This can be a string, a number, a date, or a Boolean value.<br>
+		<i><b>Title</b></i>&nbsp;&nbsp; Optional Variant. The title for the input box.<br>
+		<i><b>Default</b></i>&nbsp;&nbsp; Optional Variant. Specifies a value that will 
+		appear in the text box when the dialog box is initially displayed.</span><span style="font-family: Arial" class="auto-style9"><font class="auto-style6"> 
+		If it is omitted, the text box is left empty.<br>
+		<i><b>Left</b></i>&nbsp;&nbsp; Optional Variant. Specifies an x position for the 
+		dialog box in relation to the upper-left corner of the screen, in 
+		points.<br>
+		<i><b>Top</b></i>&nbsp;&nbsp; Optional Variant. Specifies a y position for the 
+		dialog box in relation to the upper-left corner of the screen, in 
+		points.<br>
+		<i><b>HelpFile</b></i>&nbsp;&nbsp; Optional Variant. The name of the Help file for 
+		this input box.<br>
+		<i><b>HelpContextId</b></i>&nbsp;&nbsp; Optional Variant. The context ID number of 
+		the Help topic in HelpFile.<br>
+		<i><b>Type</b></i>&nbsp;&nbsp; Optional Variant. Specifies the return data type. 
+		If this argument is omitted, the dialog box returns tex</font></span><font face="arial"><span class="auto-style2">t. 
+		If this argument is omitted, the dialog box returns text.</span></font></p>
+		<p><span style="font-family: Arial">
+		<span class="auto-style12">Type</span></span><span class="auto-style2"> 
+		c</span><span style="font-family: Arial" class="auto-style2">an 
+		be one or a sum of the following value</span><font face="arial"><span class="auto-style2">s. 
+		For example, for an input box that can accept both text and numbers, set 
+		Type to 1 + 2.</span></font></p>
+		<table x:str border="0" cellpadding="0" cellspacing="0" width="281" style="border-collapse:
+ collapse;width:211pt" id="table8">
+			<colgroup>
+				<col width="64" style="width:48pt">
+				<col width="217" style="width: 163pt">
+			</colgroup>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" width="64" style="width: 48pt; font-weight: 700; font-family: Arial, sans-serif; text-align: center; color: #000000; font-size: 10.0pt; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px; background-color:#CCCCCC" x:str="Value ">
+				Value&nbsp;</td>
+				<td width="217" style="width: 163pt; font-weight: 700; font-family: Arial, sans-serif; text-align: center; color: #000000; font-size: 10.0pt; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px; background-color:#CCCCCC">
+				Meaning</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>0</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				A formula</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>1</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				A number</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>2</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				Text (a string)</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>4</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				A logical value (True or False)</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>8</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				A cell reference, as a Range object</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>16</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				An error value, such as #N/A</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="text-align: center; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px" x:num>
+				<b>64</b></td>
+				<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #000000; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				An array of values</td>
+			</tr>
+		</table>
+		<p>
+		<span class="auto-style9"><br class="auto-style6">
+		</span>
+		<span class="auto-style2">This prompts the 
+		user for a number.<br>
+		</span>
+		<font face="arial">
+		<span style="color: #993300" class="auto-style2">
+		Dim iNum As Byte</span></font><font size="2" color="#993300" class="auto-style9"><br class="auto-style6">
+		<span class="auto-style6">i</span></font><font face="arial"><span style="color: #993300" class="auto-style2">Num 
+		= Application.InputBox(&quot;Enter a number from 0 to 9&quot;) </span></font></p>
+		<p><font face="arial">
+		<span class="auto-style2">This prompts the 
+		user to select a cell on the worksheet named &quot;mySheet&quot;. You 
+		use it to obtain the column's letter of the selected cell.</span><br class="auto-style2">
+		<span style="color: #993300" class="auto-style2">
+		Dim mycell As Range, C As String <br>
+		&nbsp;
+		Sheets(&quot;mySheet&quot;).Activate<br>
+		&nbsp;
+		Set mycell = Application.InputBox(prompt:=&quot;Select a cell:&quot;, Type:=8)<br>
+		&nbsp;
+		C = myCell.EntireColumn.Address(False, False)<br>
+		&nbsp;
+		C = Left(iC, InStr(1, iC, &quot;:&quot;) - 1)<br>
+		&nbsp;
+		MsgBox (&quot;the Column's letter is: &quot; &amp; iC)</span></font></p>
+		<p>
+		<span class="auto-style9"><br class="auto-style6">
+		</span>
+		<span class="auto-style2">This prompts the 
+		user to select a range of cells instead of a single cell.</span><font face="arial"><br class="auto-style2">
+		<span style="color: #993300" class="auto-style2">
+		Dim Selectedarea As Range<br>
+&nbsp; On Error Resume Next<br>
+		TryAgain:<br>
+&nbsp; Set Selectedarea = Application.InputBox(prompt:=&quot;Select the range of 
+		cells...&quot;, _<br>
+&nbsp; Title:=&quot;SELECT RANGE AREA&quot;, Default:=Selection.Address, Type:=8)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; If Selectedarea Is Nothing Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;You press Cancel, this 
+		procedure will now terminate.&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; If Selectedarea.Cells.Count = 1 Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If MsgBox(&quot;Note:&quot; &amp; vbNewLine &amp; _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;You had selected 
+		only one cell. Please try again.&quot;, vbOKCancel) = vbOK Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		GoTo TryAgain<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Else: Exit Sub<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Else: MsgBox &quot;you selected range: &quot; &amp; 
+		Selectedarea.Address<br>
+&nbsp;&nbsp;&nbsp;&nbsp; End If</span></font></p>
+
+		<p><span class="auto-style9">
+		<br class="auto-style6">
+		</span><span class="auto-style2">
+		The example below displays two input boxes asking input for a string 
+		value and the Row number you want to search from, then bold the cell 
+		that is found with the selected string value.</span><font face=""><span style="color:red" class="auto-style2"><br>
+		</span>
+		<span style="color:#993300" class="auto-style2">
+		Dim rw As Long, str As String, addr1</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">str = InputBox(&quot;Enter the string to find&quot;)<br>
+		rw = InputBox(&quot;Enter row letter to search&quot;)<br>
+		Rows(rw &amp; &quot;:&quot; &amp; rw).EntireRow.Select<br>
+		On Error GoTo handler:<br>
+		Selection.Find(What:=str, After:=ActiveCell, LookIn:=xlFormulas, 
+		MatchCase:=False).Activate<br>
+		addr1 = ActiveCell.Address<br>
+		Range(addr).Font.Bold = True<br>
+		handler:<br>
+		If Err.Description &lt;&gt; &quot;&quot; Then<br>
+		MsgBox &quot;no match is found&quot;</span><span style="color: #993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color: #993300" class="auto-style2">End If</span></p>
+		<table border="0" cellspacing="0" cellpadding="0" width="745" height="149">
+			<tr>
+				<td>
+				<span class="auto-style6">
+				<img border="0" src="Images_Others/InputBox_1.gif" height="37" width="186" class="auto-style9"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_2.gif" height="37" width="187" class="auto-style9"></span></td>
+
+<font face="">
+				<td>
+				<img border="0" src="Images_Others/InputBox_3.gif" height="37" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_4.gif" height="37" width="186"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/InputBox_5.gif" height="38" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_6.gif" height="38" width="187"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_7.gif" height="38" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_8.gif" height="38" width="186"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/InputBox_9.gif" height="37" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_10.gif" height="37" width="187"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_11.gif" height="37" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_12.gif" height="37" width="186"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/InputBox_13.gif" height="37" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_14.gif" height="37" width="187"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_15.gif" height="37" width="186"></td>
+				<td>
+				<img border="0" src="Images_Others/InputBox_16.gif" height="37" width="186"></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p><span style="font-size:10.0pt;font-family:Arial">
+		T</span></font></font><font face=""><span class="auto-style2">he buttons 
+		argument settings are as in the table below. When adding numbers to 
+		create a final value for the buttons argument, use only one number from 
+		each group. The constants return values.&nbsp;</span></p>
+		<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; margin-left: 5.4pt" id="table6">
+			<tr>
+				<td width="137" valign="top" style="border-left:1.0pt solid windowtext; border-right:1.0pt solid #000000; border-top:1.0pt solid #000000; border-bottom:1.0pt solid #000000; width: 102.85pt; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in; background-color:#CCCCCC" class="auto-style14">
+				<p align="center" class="auto-style16">
+				Constant</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid #000000; border-top: 1.0pt solid #000000; border-bottom: 1.0pt solid #000000; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in; background-color:#CCCCCC" align="center">
+				<p class="auto-style14">Value</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid #000000; border-top: 1.0pt solid #000000; border-bottom: 1.0pt solid #000000; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in; background-color:#CCCCCC">
+				<p align="center" class="auto-style16">
+				Description</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbOKOnly</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				0</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display OK 
+				button only</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbOKCancel</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				1</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display OK and 
+				Cancel buttons.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbAbortRetryIgnore</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				2</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display Abort, 
+				Retry, and Ignore buttons.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbYesNoCancel</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				3</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display Yes, 
+				No, and Cancel buttons.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbYesNo</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				4</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display Yes and 
+				No buttons.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbRetryCancel</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				5</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display Retry 
+				and Cancel buttons.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbCritical</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				16</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display 
+				Critical Message icon.&nbsp; </td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbQuestion</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				32</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display Warning 
+				Query icon.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbExclamation</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				48</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display Warning 
+				Message icon.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbInformation</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				64</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Display 
+				Information Message icon.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbDefaultButton1</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				0</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				First button is 
+				default.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbDefaultButton2</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				256</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Second button 
+				is default.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbDefaultButton3</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				&nbsp;</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Third button is 
+				default.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbDefaultButton4</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				768</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Fourth button 
+				is default.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbApplicationModal</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				0</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Application 
+				modal; the user must respond to the message box before 
+				continuing work in the current application.</td>
+			</tr>
+			<tr>
+				<td width="137" valign="top" style="width: 102.85pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbSystemModal&nbsp;</td>
+				<td width="62" valign="top" style="width: 46.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" align="center">
+				<p class="auto-style19">
+				4096</td>
+				<td width="362" valign="top" style="width: 271.15pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				System modal; 
+				all applications are suspended until the user responds to the 
+				message box.</td>
+			</tr>
+		</table>
+		<p class="auto-style2">&nbsp;Note&nbsp;&nbsp; These constants are specified by Visual Basic for Applications. 
+		As a result, the names can be used anywhere in your code in place of the 
+		actual values.</p>
+		</font>
+		</font>
+		<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; margin-left: 5.4pt" id="table7">
+			<tr>
+				<td width="75" valign="top" style="border-left:1.0pt solid windowtext; border-right:1.0pt solid #000000; border-top:1.0pt solid #000000; border-bottom:1.0pt solid #000000; width: 56.1pt; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in; background-color:#CCCCCC" class="auto-style14">
+				<p align="center" class="auto-style21">
+				Constant</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid #000000; border-top: 1.0pt solid #000000; border-bottom: 1.0pt solid #000000; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in; background-color:#CCCCCC">
+				<p align="center" class="auto-style21">
+				Value</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid #000000; border-top: 1.0pt solid #000000; border-bottom: 1.0pt solid #000000; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in; background-color:#CCCCCC">
+				<p align="center" class="auto-style21">
+				Description</td>
+			</tr>
+
+<font face="">
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbOK</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				1</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				OK</td>
+			</tr>
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbCancel</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				2</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Cancel</td>
+			</tr>
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbAbort</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				3</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Abort</td>
+			</tr>
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbRetry</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				4</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Retry</td>
+			</tr>
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbIgnore</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				5</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Ignore</td>
+			</tr>
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbYes</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				6</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				Yes</td>
+			</tr>
+			<tr>
+				<td width="75" valign="top" style="width: 56.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<p class="auto-style2">
+				vbNo</td>
+				<td width="50" valign="top" style="width: 37.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				7</td>
+				<td width="88" valign="top" style="width: 65.85pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<p class="auto-style2">
+				No</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p><b>
+		<span class="auto-style22"><font color="#0033CC">Create a UserForm</font></span><font face=""><span style="font-size: 12.0pt; " class="auto-style6"><br>
+		</span></font></b>
+
+<font face="">
+		<span class="auto-style2"><br>UserForm 
+		combines the functionality of InputBox and MsgBox to allow a more 
+		efficient way of interacting with user. To insert a new UserForm, choose
+		<a target="_blank" href="Images/userform_Insert.gif" onclick="NewWindow(this.href,'userform_Insert','300','200','yes');return false">Insert | UserForm</a> 
+		from the VBE menu bar. A
+		<a target="_blank" href="Images/userform_blank_form.gif" onclick="NewWindow(this.href,'userform_blank','630','280','yes');return false">blank UserForm</a> 
+		and the ToolBox should appears.</span></p>
+		</font>
+		<p><br class="auto-style6">
+		<b><span class="auto-style22">
+		<font color="#0033CC">Add Textbox, Combo Box and Label to 
+		the UserForm</font></span><font face=""><span style="font-size: 12.0pt; " class="auto-style6"><br>
+		</span></font></b>
+
+<font face="">
+		<span class="auto-style6"><br class="auto-style9"></span>
+		<span class="auto-style2">The objects on a 
+		UserForm, such as buttons, and textboxes, are called <b>Controls</b>. To 
+		allow users to enter data, you can add textbox controls to the form, 
+		with label controls to describe them. To add controls to the form, click 
+		on the desired control in the toolbox, drag and draw it on the form. 
+		Controls can be resized and moved just as the userform itself.</span></p>
+		<table border="0" cellspacing="0" cellpadding="0" width="437" height="175">
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_1.gif" height="58" width="146"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_2.gif" height="58" width="145"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_3.gif" height="58" width="146"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_4.gif" height="59" width="146"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_5.gif" height="59" width="145"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_6.gif" height="59" width="146"></td>
+			</tr>
+		</font>
+			<tr>
+				<td>
+				<span class="auto-style6">
+				<img border="0" src="Images_Others/userform_AddTextbox_7.gif" height="58" width="146" class="auto-style9"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_8.gif" height="58" width="145" class="auto-style9"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddTextbox_9.gif" height="58" width="146" class="auto-style9"></td>
+			</tr>
+		</table>
+		<p></span><p class="auto-style2">Now click 
+		on the first label you created, then double-click on the Caption 
+		property in the Properties window and type: <b><i>Part Number</i></b>. 
+		Click on the TextBox to the right, then in the Properties window, 
+		double-click on Name property and type: <b><i>txt_PartNumber</i></b>. 
+		Now you have to repeat the above step for the remaining textboxes, combo 
+		box and labels. You would add:&nbsp;</p>
+		<p class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp; a textbox named
+		<b>txt_CurrentTSL</b>, with a label Current TSL Qty<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named <b>txt_NewTSL</b>, with a label New TSL Qty<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a combo box named <b>cbo_Reason</b>, with a label Reason for change
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named <b>txt_Date</b>, with a label Date of change</p>
+	  <p class="auto-style2">If the text boxes are not aligned, you can align 
+	  them by dragging on the handle.</p>
+	  <table border="0" cellspacing="0" cellpadding="0" width="473" height="213">
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_1.gif" height="53" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_2.gif" height="53" width="119"></td>
+			<td bgcolor="#FFFFFF" height="53" width="118"></td>
+			<td bgcolor="#FFFFFF" height="53" width="118"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_5.gif" height="54" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_6.gif" height="54" width="119"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_7.gif" height="54" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_8.gif" height="54" width="118"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_9.gif" height="53" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_10.gif" height="53" width="119"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_11.gif" height="53" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_12.gif" height="53" width="118"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_13.gif" height="53" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_14.gif" height="53" width="119"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_15.gif" height="53" width="118"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_draghandle1_16.gif" height="53" width="118"></td>
+		</tr>
+		</table>
+		<p>&nbsp;</p>
+		<table border="0" cellspacing="0" cellpadding="0" width="499" height="104">
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_draghandle2_1.gif" height="52" width="250"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_draghandle2_2.gif" height="52" width="249"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_draghandle2_3.gif" height="52" width="250"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_draghandle2_4.gif" height="52" width="249"></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p><span class="auto-style7">
+		<font color="#0033CC">ListBox and ComboBox Controls</font></span><br class="auto-style2">
+		<span style="font-size:10.0pt;">&nbsp;</span><span class="auto-style6"><br class="auto-style9"></span>
+		<span class="auto-style2">ListBox displays a list of values from which you select one or more. If 
+		the ListBox is <span style="color: windowtext; text-decoration: none">
+		bound</span> to a <span style="color: windowtext; text-decoration: none">
+		data source</span>, then the ListBox stores the selected value in that 
+		data source. The ListBox can either appear as a list or as a group of 
+		OptionButton controls or CheckBox controls.</span></p>
+		<p class="auto-style2">ComboBox Control combines the features of a ListBox and a 
+		TextBox, and allows the user to enter a new value, or the user can 
+		select an existing value as with a ListBox.</p>
+	  <p class="auto-style2">The default name for the UserForms you created is 
+	  called UserForm1, UserForm2, etc. It is a good practice to give the 
+	  userform and its controls descriptive names because if you have multiple 
+	  userforms, the default names can become a bit of pain in telling the 
+	  difference. To rename UserForm1, in the Properties window, double-click on 
+	  Name property -UserForm1at the top right of the window, and type: 
+	  frm_TSLrecord. The userform name change in the Project Explorer, but the 
+	  form still shows UserForm1 in its title bar. To change it from title bar, 
+	  in the Properties window, double-click on the Caption property - 
+	  UserForm1, and type: TSL Change Record. The title bar will now display the 
+	  new caption. </p>
+		<table border="0" cellspacing="0" cellpadding="0" width="544" height="270">
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_1.gif" height="90" width="181"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_2.gif" height="90" width="182"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_3.gif" height="90" width="181"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_4.gif" height="90" width="181"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_5.gif" height="90" width="182"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_6.gif" height="90" width="181"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_7.gif" height="90" width="181"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_8.gif" height="90" width="182"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_Listbox_Combox_Controls_9.gif" height="90" width="181"></td>
+		</tr>
+		</table>
+		<p>&nbsp;<p><span class="auto-style7">
+		<font color="#0033CC">Adding Frame, OptionButton and 
+		CheckBox to the UserForm</font></span><span class="auto-style24"><br class="auto-style6">
+		</span><span style="font-size:10.0pt;" class="auto-style6"><br></span>
+	  <span class="auto-style2">Using the Frame tool, you can draw a Frame. Then you draw the Option 
+		buttons to contain inside the frame. The frame is used to group the 
+		option buttons together that separates them from the text box controls 
+		on the userform. OptionButton Control show you whether a single item in 
+		a group is selected. If an OptionButton is
+		<span style="color: windowtext; text-decoration: none">bound</span> to a
+		<span style="color: windowtext; text-decoration: none">data source</span>, 
+		the OptionButton can show the value of that data source as either <i>
+		Yes/No</i>, <i>True/False</i>, or <i>On/Off</i>. Depending on the value 
+		of the <b>TripleState</b> property, an OptionButton or a CheckBox can 
+		also have a null value. You can also use an OptionButton inside a group 
+		box to select one or more of a group of related items.</span></p>
+		<p class="auto-style2">It is worth to take 
+		note of the TripleState Property and functionality. TripleState 
+		determines whether a user can specify, from the user interface, the
+		<span style="color: windowtext; text-decoration: none">Null</span> state 
+		for a CheckBox or ToggleButton. Although the <b>TripleState</b> property 
+		exists on the OptionButton, the property is disabled. When the 
+		TripleState property is <b>True</b>, a user can choose from the values 
+		of Null, True, and False. The null value is displayed as a shaded 
+		button. When TripleState is <b>False</b>, the user can choose either 
+		True or False. A control set to <b>Null</b> does not initiate the Click 
+		event.<br>
+		<br>
+		Next using the CheckBox tool, you draw a check box on the form. You 
+		would use a CheckBox to give the user a choice between two values such 
+		as <i>Yes</i>/<i>No</i>, <i>True</i>/<i>False</i>, or <i>On</i>/<i>Off.
+		</i>A disabled <b>CheckBox</b> is dimmed and does not allow changes to 
+		the value as you see in the diagram below that the <b>Enabled</b> 
+		property is set to False.</p>
+		<p class="auto-style2">To allow users to 
+		perform an action, you have to add command buttons to the user form. In 
+		the Toolbox, click on the&nbsp; CommandButton button to draw on the userform. 
+		Select the CommandButton, 
+		double-click on the Name property in the Properties window and type: <b>
+		<i>cmdAdd</i></b>. Double-click on the Caption property and type:&nbsp;<b><i>Add 
+		this part</i>. </b>Repeat the above steps 
+		to add another two command buttons named <b><i>cmdCancel</i></b> with a 
+		label <b><i>Cancel</i></b>, 
+		and<b><i> cmdClearForm</i></b> 
+		with a label <b><i>Clear</i></b> <b><i>Form</i></b>.</p>
+		<p><span class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp; a frame named 
+		FramLevel, with a label &#8220;Request From&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; an option button named opt_Customer, with a label &#8220;Customer&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named opt_Field, with a label &#8220;Field Engineer&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named opt_Division, with a label &#8220;Product Division&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a checkbox named chk_Immediate, with a label &#8220;Immediate effect&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named chk_NonCritical, with a label &#8220;Non-critical&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named cmdAdd, with a label &#8220;Add this part&#8221;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; a textbox named cmdClearForm, with a label &#8220;Clear Form&#8221;</span><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp; a textbox named cmdCancel, with a label &#8220;Cancel&#8221;</span></p>
+		<table border="0" cellspacing="0" cellpadding="0" width="493" height="395">
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_1.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_2.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_3.gif" height="99" width="83"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_4.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_5.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_6.gif" height="99" width="82"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_7.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_8.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_9.gif" height="99" width="83"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_10.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_11.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_12.gif" height="99" width="82"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_13.gif" height="98" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_14.gif" height="98" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_15.gif" height="98" width="83"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_16.gif" height="98" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_17.gif" height="98" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_18.gif" height="98" width="82"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_19.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_20.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_21.gif" height="99" width="83"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_22.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_23.gif" height="99" width="82"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_AddFrame,OptionBtn,CheckBox_24.gif" height="99" width="82"></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		</font>
+		<p><span style="font-family:Arial" class="auto-style25">
+		<font color="#0033CC">Writing Event code for the UserForm</font></span><span style="font-size:10.0pt;"><br class="auto-style6">
+		</span><span class="auto-style2"><br>Events occur when the user does something such as &#8211; click on a button, 
+		enter text in textbox, click an option button, right-click on a cell, 
+		etc. Each of these events has a built-in <b>event handler</b>, where the 
+		subs are always available so that you can write appropriate code to it. 
+		Of course, there are other event handlers you want to ignore such as 
+		where the mouse is dragged over a command button.</span></p>
+		<p><span class="auto-style2">Of all the VBA code 
+		I have shown you thus far are codes that you placed in standard modules. 
+		Event code is different which you have to place in the userform&#8217;s code 
+		window. To get to it, select <b>View | Code</b> from the VBE menu, or 
+		right-click on the UserForm and select <b>View Code</b>. Another way to 
+		get from the design window to the userform&#8217;s code window is to 
+		double-click on a control. This not only open the code window, but it 
+		also insert a private sub for the event code. The footer, header, and 
+		default action for the form&#8217;s control is automatically inserted for you. 
+		For example, when you double-click the Cancel button in design view, the 
+		following sub is inserted in the code window.</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span style="color:#993300" class="auto-style2">Private Sub cmdCancel_Click()&nbsp;</span></p>
+		<span style="color: #993300" class="auto-style2">
+		End Sub</span><span style="font-size: 10.0pt; color: #993300" class="auto-style6"><br></span><table border="0" cellspacing="0" cellpadding="0" width="430" height="163">
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_1.gif" height="54" width="143"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_2.gif" height="54" width="144"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_3.gif" height="54" width="143"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_4.gif" height="55" width="143"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_5.gif" height="55" width="144"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_6.gif" height="55" width="143"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_7.gif" height="54" width="143"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_8.gif" height="54" width="144"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_CmdCancel1_9.gif" height="54" width="143"></td>
+		</tr>
+		</table>
+		<p>&nbsp;</p>
+		<table border="0" cellspacing="0" cellpadding="0" width="430" height="190">
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_1.gif" height="63" width="143"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_2.gif" height="63" width="144"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_3.gif" height="63" width="143"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_4.gif" height="64" width="143"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_5.gif" height="64" width="144"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_6.gif" height="64" width="143"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_7.gif" height="63" width="143"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_8.gif" height="63" width="144"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_CmdCancel2_9.gif" height="63" width="143"></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p class="auto-style2">If you select 
+		other control from the Object drop-down view on the left, you would be 
+		able to see a list of other events that are available in the drop-down 
+		Properties. For example, if you select <b>UserForm</b> from the Object 
+		drop-down list, you would be able to see the event <b>QueryClose</b> at 
+		the drop-down list on the right, which I will explain to you in the next 
+		example.</p>
+		<table border="0" cellspacing="0" cellpadding="0" width="613" height="218">
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_1.gif" height="44" width="204"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_2.gif" height="44" width="205"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_3.gif" height="44" width="204"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_4.gif" height="43" width="204"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_5.gif" height="43" width="205"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_6.gif" height="43" width="204"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_7.gif" height="44" width="204"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_8.gif" height="44" width="205"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_9.gif" height="44" width="204"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_10.gif" height="43" width="204"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_11.gif" height="43" width="205"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_12.gif" height="43" width="204"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_13.gif" height="44" width="204"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_14.gif" height="44" width="205"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_ObjectDropDownList_15.gif" height="44" width="204"></td>
+			</tr>
+		</table>
+		<p><span class="auto-style2">If you click on the 
+		event item <b>QueryClose</b>, you will get the following private sub 
+		automatically inserted for you. You can not change the format of the sub 
+		and it must be named as shown below (control name, followed by an 
+		underscore, and the event type), and it must contain any arguments that 
+		are given.</span></font><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span style="color:#993300" class="auto-style2">Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As 
+		Integer)&nbsp;</span></p>
+		<p class="auto-style8">
+		End Sub</p>
+		<p><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">If you like to prevent users from closing the form by clicking the X 
+		button on the top-right of the form, you would use the following example 
+		of event <b>QueryClose</b> of the UserForm Object. You place the 
+		following code in the userform&#8217;s code window.</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Private Sub <b>UserForm_QueryClose</b>(Cancel As Integer, CloseMode As 
+		Integer)<br>
+		&nbsp; If CloseMode = vbFormControlMenu Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; Cancel = True<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;Please use the button to close&quot;<br>
+		&nbsp; End If<br>
+		End Sub</span></p>
+		<p>
+		<span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:red"><br>
+		</span></font></font><span class="auto-style7">
+		<font color="#0033CC">Show, Load, Hide and Unload the 
+		UserForm</font></span><font face=""><span class="auto-style6"><br>
+		<br class="auto-style9"><span class="auto-style9">A userform can be called from any module. Below is the 
+		Initialize event procedure for the userform frm_TSLrecord, sitting in 
+		the module. The Load method allows the userform to be loaded, but 
+		remains hidden. The Show method pops up the form you have just created.</span></span></font><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span style="color:#993300" class="auto-style2">Sub OpenTSLrecord_Form()<br>
+		&nbsp;&nbsp; <b>Load</b> frm_TSLrecord<br>
+		&nbsp;&nbsp; frm_TSLrecord.<b>Show<br>
+		</b>End Sub</span></p>
+		<p><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">The Unload method unloads the form from memory and removes it from 
+		user&#8217;s view. The form is now no longer accessible by user. Select the 
+		cmdClose button, right-click and on the short-cut menu, choose View | 
+		Code, and type in this code:</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Private Sub cmdCancel_Click()<br>
+		&nbsp;&nbsp; <b>Unload</b> frm_TSLrecord<br>
+		End Sub</span></p>
+		<p><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">You can also use &#8216;Me&#8217; which refers to the current object, and in this 
+		case, the active form</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Private Sub cmdCancel_Click()<br>
+		&nbsp;&nbsp; Unload <b>Me<br>
+		</b>End Sub</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span class="auto-style9"><br class="auto-style6">
+		</span>
+		<span class="auto-style6"><span class="auto-style9">This is the Click event for frm_TSLrecord. Use the Hide method to hide 
+		the userform if you want. The form is still active but will be hidden 
+		from view.</span></span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Private Sub cmdHide_Click()<br>
+		&nbsp;&nbsp; frm_TSLrecord.<b>Hide<br>
+		</b>End Sub</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		&nbsp;</p>
+		</font>
+		</font>
+		</font>
+		<p><span style="font-family:Arial" class="auto-style7">
+		<font color="#0033CC">Introducing basic form Controls</font></span><font face=""><span style="font-size:10.0pt;font-family:Arial"><br>
+		</span></font><span class="auto-style9"><br class="auto-style6"></span><font face="">
+		<span style="font-size:10.0pt;" class="auto-style6">
+		<span class="auto-style2">Below is an example of asking input from the user, using the same 
+		userform that I have created in the previous example. After the text 
+		boxes are filled, combo box, option and check buttons are selected, and 
+		the user clicks OK, the information will be appended to a sheet as shown 
+		in the diagram. There are five event handlers: UserForm_Initialize, 
+		cmdAdd_Click, cmdClearForm_Click, cmdCancel_Click and 
+		chk_Immediate_Change. These event procedures would be placed in the form 
+		you have named as frm_TSLrecord. You can
+		<a href="Sub_VBA/userform_controls1.xls">DOWNLOAD</a> this example here.</span></span></p>
+		<p class="auto-style8">
+		Option Explicit</p>
+		<p class="auto-style8">
+		Sub UserForm_Initialize()<br>
+		txt_PartNumber.Value = &quot;&quot;<br>
+		txt_CurrentTSL.Value = &quot;&quot;<br>
+		txt_NewTSL.Value = &quot;&quot;<br>
+		With cbo_Reason<br>
+		&nbsp;&nbsp; .AddItem &quot;Excess &amp; Obsolescence&quot;<br>
+		&nbsp;&nbsp; .AddItem &quot;NPI IPP recommends&quot;<br>
+		&nbsp;&nbsp; .AddItem &quot;Globally slow-mover&quot;<br>
+		&nbsp;&nbsp; .AddItem &quot;GPP DSM SIMPLE-Opt&quot;<br>
+		&nbsp;&nbsp; .AddItem &quot;GPP PWS SIMPLE-Opt&quot;<br>
+		&nbsp;&nbsp; .AddItem &quot;GPP MDP SIMPLE-Opt&quot;<br>
+		&nbsp;&nbsp; .AddItem &quot;METRON SIMPLE-Opt&quot;<br>
+		End With<br>
+		&nbsp;&nbsp; cbo_Reason.Value = &quot;&quot;<br>
+		txt_Date.Value = &quot;&quot;<br>
+		opt_Customer = True<br>
+		opt_Field = False<br>
+		opt_Division = False<br>
+		chk_Immediate = False<br>
+		chk_NonCritical = False<br>
+		txt_PartNumber.SetFocus<br>
+		End Sub</p>
+		</font>
+		<p>
+		<span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<font face="">
+		<span style="color:#993300" class="auto-style2">Private Sub cmdAdd_Click()<br>
+		Dim lastrow As Long<br>
+		lastrow = Worksheets(&quot;datasheet&quot;).Range(&quot;A65536&quot;).End(xlUp).Row<br>
+		ActiveWorkbook.Sheets(&quot;datasheet&quot;).Activate<br>
+		Cells(lastrow, 1).Select<br>
+		Do<br>
+		&nbsp; If IsEmpty(ActiveCell) = False Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(1, 0).Select<br>
+		&nbsp; End If<br>
+		Loop Until IsEmpty(ActiveCell) = True<br>
+		With txt_PartNumber<br>
+		&nbsp; If .Value = &quot;&quot; Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;you must enter the part number&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; .SetFocus<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+		&nbsp; End If<br>
+		End With<br>
+		With txt_CurrentTSL<br>
+		&nbsp; If .Value = &quot;&quot; Or Not IsNumeric(.Value) Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;Current TSL must be numeric and must not be blank&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; .SetFocus<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+		&nbsp; End If<br>
+		End With<br>
+		With txt_NewTSL<br>
+		&nbsp; If .Value = &quot;&quot; Or Not IsNumeric(.Value) Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;New TSL must be numeric and must not be blank&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; .SetFocus<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+		&nbsp; End If<br>
+		End With<br>
+		With cbo_Reason<br>
+		&nbsp; If .ListIndex = -1 Then&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">&#8216; -1 means no item is selected. ListIndex = 0 
+		means first item is selected</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<span style="color:#993300" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;you must chose a reason for change from the list box&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; .SetFocus<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+		&nbsp; End If<br>
+		End With<br>
+		With txt_Date<br>
+		&nbsp;&nbsp;&nbsp; If .Value = &quot;&quot; Or Not IsDate(.Value) Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;Date Changed must not be blank and must be date format&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me.txt_Date.SetFocus<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+		&nbsp;&nbsp;&nbsp; End If<br>
+		End With<br>
+		&nbsp; If opt_Customer = True Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(0, 5).Value = &quot;Customer&quot;<br>
+		&nbsp; ElseIf opt_Field = True Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(0, 5).Value = &quot;Field Engineer&quot;<br>
+		&nbsp; Else<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(0, 5).Value = &quot;Product Division&quot;<br>
+		&nbsp; End If<br>
+		&nbsp; If chk_Immediate = True Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(0, 6).Value = &quot;Yes&quot;<br>
+		&nbsp; Else<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(0, 6).Value = &quot;&quot;<br>
+		&nbsp; End If<br>
+		&nbsp; If chk_NonCritical = True Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(0, 7).Value = &quot;Yes&quot;<br>
+		&nbsp; Else<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; If chk_NonCritical = False Then<br>
+		&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ActiveCell.Offset(0, 7).Value = &quot;&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; Else<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ActiveCell.Offset(0, 7).Value = &quot;No&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+		&nbsp; End If<br>
+		ActiveCell.Value = txt_PartNumber.Value<br>
+		ActiveCell.Offset(0, 1).Value = txt_CurrentTSL.Value<br>
+		ActiveCell.Offset(0, 2).Value = txt_NewTSL.Value<br>
+		ActiveCell.Offset(0, 3).Value = cbo_Reason.Value<br>
+		ActiveCell.Offset(0, 4).Value = txt_Date.Value<br>
+		Unload Me&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">' unload 
+		the form</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">End Sub</span></p>
+		<p>
+		<span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><font face="">
+		<span style="color:#993300" class="auto-style2">Private Sub cmdClearForm_Click()<br>
+		&nbsp;&nbsp;&nbsp; Call UserForm_Initialize<br>
+		End Sub</span></p>
+		<p>
+		<span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<font face="">
+		<span style="color:#993300" class="auto-style2">Private Sub cmdCancel_Click()<br>
+		&nbsp;&nbsp;&nbsp; Unload Me&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">' or frm_TSLrecord.Hide</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">&nbsp;&nbsp;&nbsp; End<br>
+		End Sub</span></p>
+		<p>
+		<span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><font face="">
+		<span style="color:#993300" class="auto-style2">Private Sub chk_Immediate_Change()<br>
+		If chk_Immediate = True Then<br>
+		&nbsp;&nbsp; chk_NonCritical.Enabled = True<br>
+		Else<br>
+		&nbsp;&nbsp; chk_NonCritical.Enabled = False<br>
+		&nbsp;&nbsp; chk_NonCritical = False<br>
+		End If<br>
+		End Sub</span></p>
+		<p class="auto-style2">UserForm_Initialize 
+		event handler determines how the userform will look like when the user 
+		first opens it. The &#8220;Reason for change&#8221; combo box should be filled with 
+		a list of pre-defined reasons, and only the &#8220;Customer&#8221; Option button is 
+		checked. <b>Value</b> property is the default property for an option 
+		button and a check box, which is either True or False. You can simply 
+		leave out the word <b>.Value</b> from the line opt_Customer.Value = 
+		True. Similarly, to make a text box blank, you can write txt_PartNumber 
+		= &quot; &quot;&nbsp;</p>
+		<p class="auto-style2">When the user click 
+		the Clear Form button, it erases the content which is because the 
+		cmdClearForm_Click event code is calling UserForm_Initialize event 
+		handler. When the user click Cancel button, the form disappears, which 
+		is driven by <b>Unload Me</b>, and then it ends the program.&nbsp;</p>
+		<span style="color: #993300" class="auto-style2">
+		cmdAdd_Click</span><span class="auto-style2"> 
+		event code captures the user&#8217;s input. Usually, these user&#8217;s inputs are 
+		stored in public <b>variables</b>, declared in a standard module, so 
+		that later you can re-use them again in the main module. Of course, 
+		these variables are recognized by the event code. This code performs 
+		errors-checking whether the user: (1) leave the text box blank, (2) type 
+		in non-numeric string in a numeric-only textbox, (3) fail to select an 
+		item in a combo box, (4) enter a value that is not in date format, (5) 
+		not selecting a checkbox. In either case, the code will display an alert 
+		message. <b>ListIndex</b> property identifies the currently selected 
+		item in a ComboBox or ListBox. When the user selects a row in the combo 
+		box, the system sets the <b>ListIndex</b> value. It starts with 0, and 
+		-1 indicates that no item is selected. This explains the error check. 
+		Below diagram is the output in datasheet when the Add button is clicked.</span><span style="font-size: 10.0pt; font-family: Arial"><br>
+&nbsp;</span><table border="0" cellspacing="0" cellpadding="0" width="661" height="103">
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_1.gif" height="42" width="178"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_2.gif" height="42" width="167"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_3.gif" height="42" width="165"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_4.gif" height="42" width="151"></td>
+		</tr>
+		<tr>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_5.gif" height="61" width="178"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_6.gif" height="61" width="167"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_7.gif" height="61" width="165"></td>
+			<td>
+			<img border="0" src="Images_Others/userform_basicFormControl_intro_8.gif" height="61" width="151"></td>
+		</tr>
+		</table>
+		<p>&nbsp;<p><font color="#0033CC"><span class="auto-style7">
+		Create a Button to open the UserForm</span></font></font></font></font></font><span style="font-size:10.0pt;" class="auto-style6"><br>
+	  </span><span class="auto-style6"><br class="auto-style9"> </span><font face="">
+	  <span class="auto-style2">To make it easy for users to open the UserForm, you can add a button to 
+		a worksheet, you then assign the following macro you created in the 
+		module to this button. </span></p>
+		<p>
+		<span style="color:#993300" class="auto-style2">Sub OpenTSLrecord_Form()<br>
+		&nbsp;&nbsp;&nbsp; frm_TSLrecord.Show<br>
+		End Sub<br>
+		</span><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">How to add a button?<br>
+		On the Drawing toolbar, click on the rounded rectangle tool.<br>
+		In the centre of the worksheet, draw a rectangle, and format as you 
+		desired.<br>
+		Select the rectangle and type: &#8220;Click here to ADD part information&#8221;.<br>
+		Right-click on the rectangle border, and choose 'Assign Macro'.</span><span class="auto-style9"><br class="auto-style6">
+		</span><span class="auto-style2">Select the macro name <i>UserForm_Initialize</i>, click OK.</span><span style="font-size: 10.0pt; " class="auto-style6"><br></span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		<img border="0" src="Images_Others/userform_addBtn.gif" width="113" height="56"></span></p>
+		<p>&nbsp;<p><font color="#0033CC"><span class="auto-style7">
+		Working with ListBox</span></font></font></font><span style="font-size:10.0pt;"><br class="auto-style6">
+	  </span><br class="auto-style2"><font face=""><span class="auto-style2">List boxes are a lot trickier than combo box. There are four methods 
+		that I know you can populate them. If the ListBox items are not 
+		contained in a worksheet range, you can use <b>AddItem</b> method to 
+		fill the ListBox as shown in example 1. </span></p>
+		<p><span style="color:#339966" class="auto-style2">&#8216; 
+		write in your module</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span>
+		<font face=""><span style="color:#993300" class="auto-style2">Private Sub Example1_ListBox1()<br>
+		With frm_Customers.ListBox1<br>
+		&nbsp;&nbsp;&nbsp; .RowSource = &quot;&quot;&nbsp;&nbsp; </span>
+		<span style="color:#339966" class="auto-style2">&#8216; to 
+		avoid getting &#8220;permission denied&#8221; error if there is nonempty RowSource 
+		setting</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">&nbsp;&nbsp;&nbsp; .AddItem &quot;SSMC&quot;<br>
+		&nbsp;&nbsp;&nbsp; .AddItem &quot;UMC&quot;<br>
+		&nbsp;&nbsp;&nbsp; .AddItem &quot;TSMC&quot;<br>
+		&nbsp;&nbsp;&nbsp; .AddItem &quot;IMF&quot;<br>
+		&nbsp;&nbsp;&nbsp; .AddItem &quot;INTEL&quot;<br>
+		End With<br>
+		frm_Customers.Show<br>
+		End Sub</span></p>
+		<p><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">You can also use <b>AddItem</b> method to fill in ListBox items from a 
+		range or a named range as shown in example 2. You can hide Sheet2 in 
+		case the content may accidentally be deleted by user.</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Private Sub Example2_ListBox1()<br>
+		With frm_Customers.ListBox1<br>
+		Dim r As Integer<br>
+		For r = 1 To 5<br>
+		&nbsp; frm_Customers.ListBox1.AddItem Sheets(&quot;Sheet2&quot;).Cells(r, 1)<br>
+		Next<br>
+		End With<br>
+		frm_Customers.Show<br>
+		End Sub</span></p>
+		<p><span class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span class="auto-style2">If you have named a range in Sheet2.Range(&#8220;A1:A5&#8221;) as &quot;MyCustomers&quot;, you 
+		can substitute with a dynamic range as shown below.</span><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Private Sub Example3_ListBox1()<br>
+		Dim cell As Range<br>
+		With frm_Customers.ListBox1<br>
+		For Each cell In Sheets(&quot;Sheet2&quot;).Range(&quot;MyCustomers&quot;)<br>
+		&nbsp; frm_Customers.ListBox1.AddItem cell.Value<br>
+		Next<br>
+		End With</span></p>
+		<span class="auto-style2">In the Property 
+		Window, if the <b>RowSource</b> property of the form frm_Customers is 
+		set to the named range &quot;MyCustomers&quot; at design time, the use of 
+		For..Each Next loop can be omitted. This setting tells VBA to populate 
+		the ListBox with the items in &#8220;MyCustomers&#8221; range. The diagram below is 
+		what the ListBox should look like using any of the above 4 methods.<br></span>
+		<span style="font-size: 10.0pt; font-family: Arial"><br>
+		<img border="0" src="Images_Others/userform_ListBox_RowSource.gif" width="152" height="122"></span><p>&nbsp;<p>
+		<span class="auto-style2">This CheckBox event 
+		code allows you to check and uncheck the option button you have selected 
+		in ListBox 1. In the whole exercise of this example , it checks on valid 
+		data entry on each textbox and listbox. The Add Items command button 
+		would add the user input into Sheet2 which is hidden. The diagram below 
+		is the userform I have created. You can
+		<a href="Sub_VBA/listbox_dogbreeds.xls">DOWNLOAD</a><span style="color:blue"> 
+		t</span>he example here.</span></font></font></font></font><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><font face=""><span style="color:#993300" class="auto-style2">Private Sub CheckBox1_Click()<br>
+		Dim i As Long<br>
+		For i = 0 To ListBox1.ListCount - 1<br>
+		&nbsp;&nbsp;&nbsp; ListBox1.Selected(i) = CheckBox1<br>
+		Next</span><span style="color: #993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color: #993300" class="auto-style2">End Sub</span></p>
+		<table border="0" cellspacing="0" cellpadding="0" width="414" height="274">
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_1.gif" height="69" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_2.gif" height="69" width="103"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_3.gif" height="69" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_4.gif" height="69" width="103"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_5.gif" height="68" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_6.gif" height="68" width="103"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_7.gif" height="68" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_8.gif" height="68" width="103"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_9.gif" height="69" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_10.gif" height="69" width="103"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_11.gif" height="69" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_12.gif" height="69" width="103"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_13.gif" height="68" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_14.gif" height="68" width="103"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_15.gif" height="68" width="104"></td>
+				<td>
+				<img border="0" src="Images_Others/userform_puppies_orderform_16.gif" height="68" width="103"></td>
+			</tr>
+		</table>
+		<p>&nbsp;</font><p><b><span style="font-family:Arial">
+		<font color="#0033CC" face="arial">S<span class="auto-style22">ingle and Multi Selection ListBox</span></font></span></b><span style="font-size:10.0pt;"><br class="auto-style6">
+		</span><span class="auto-style2"><br>The procedure below take a single selected ListBox item and places it 
+		into a range in Sheet2</span><font face=""><span style="color:#993300" class="auto-style9"><br class="auto-style6">
+		</span><span style="color:#993300" class="auto-style2">Sheet2.Range(&quot;A65536&quot;).End(xlUp)(2, 1) = ListBox1.Value</span></p>
+		<p class="auto-style2">For such code to 
+		work the ListBox must have its MultiSelect Property set to <b>1 
+		fmMultiSelectSingle</b>. When you set the MultiSelect Property set to <b>
+		-1 fmMultiSelectMulti</b>, you can allow user to make multiple 
+		selections. However, due to MultiSelect Property set to <b>-1 
+		fmMultiSelectMulti</b> we can no longer use simple code like above to 
+		return the selected items to our cells. To do this with multiple 
+		selections we can use code like shown below;</p>
+		<p class="auto-style8">
+		Private Sub CommandButton2_Click()<br>
+		Dim lItem As Long<br>
+		&nbsp;&nbsp;&nbsp; For lItem = 0 To ListBox1.ListCount - 1<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If ListBox1.Selected(lItem) = True Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sheet2.Range(&quot;A65536&quot;).End(xlUp)(2, 1) = 
+		ListBox1.List(lItem)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ListBox1.Selected(lItem) = False<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+		&nbsp;&nbsp;&nbsp; Next<br>
+		End Sub</p>
+		<span class="auto-style2">Below is an example 
+		of the listbox using MultiSelect Property set to <b>-1 
+		fmMultiSelectMulti</b>. <a href="Sub_VBA/listbox_multiselect.xls">
+		DOWNLOAD</a> the example here.</span><p class="MsoNormal">&nbsp;</td>
+</tr>
+
+<font face="">
+
+<tr>
+
+
+<td valign="top">
+
+    </td>
+  </tr>
+</tbody></table>
+
+
+<table border="0" width="99%" id="table5">
+<tr>
+<td align="center">
+<font face="Courier New">	
+<font size="2">
+
+
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  --> 
+<br>
+
+
+This site was created 
+in Feb.2007<b><br></b></font>
+</font>	
+<font size="2" face="Courier New">
+
+
+
+
+by William Tan</font></td>
+</tr>
+</table>
+</body>
+</html>
