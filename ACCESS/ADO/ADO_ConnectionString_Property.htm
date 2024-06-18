@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO ConnectionString Property</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO ConnectionString Property</font></h1>
+<p>The ConnectionString property sets or returns the details used to create a 
+connection to a data source. <br>
+The Command's ConnectionString argument is identical to that used by the 
+Connection object.</p>
+<p><b>Note:</b> You can not use both the Provider and File Name parameters. </p>
+<h3>Syntax</h3>
+<table class="ex" width="57%" border="1" cellpadding="3" cellspacing="0" id="table7">
+	<tr>
+		<td valign="top">
+		<pre>objconn.ConnectionString=&quot;para1=value;para2=value;etc;&quot;</pre>
+		</td>
+	</tr>
+</table>
+<p>The ConnectionString property has these parameters:</p>
+<table class="ex" width="82%" border="1" cellpadding="5" id="table8">
+	<tr>
+		<th valign="top" width="12%" align="left">Parameter</th>
+		<th valign="top" width="66%" align="left">
+		<p align="center">Description</th>
+	</tr>
+	<tr>
+		<td valign="top">Provider</td>
+		<td valign="top">The provider to use for the connection</td>
+	</tr>
+	<tr>
+		<td valign="top">File Name</td>
+		<td valign="top">A provider-specific file that contains connection 
+		information</td>
+	</tr>
+	<tr>
+		<td valign="top">Remote Provider</td>
+		<td valign="top">The provider to use when opening a client-side 
+		connection</td>
+	</tr>
+	<tr>
+		<td valign="top">Remote Server</td>
+		<td valign="top">A path name of the server to use when opening a 
+		client-side connection</td>
+	</tr>
+	<tr>
+		<td valign="top">url</td>
+		<td valign="top">An absolute URL identifying a resource, such as a file 
+		or directory</td>
+	</tr>
+</table>
+<h3>Example</h3>
+<table class="ex" width="66%" border="1" cellpadding="3" cellspacing="0" id="table9">
+	<tr>
+		<td valign="top">
+		<pre><font color="#0066CC">Sub test_ConnectionString()
+
+Dim conn As ADODB.Connection
+Dim strConn As String
+Set conn = New ADODB.Connection
+
+strConn = </font><font color="#FF6600"><b>ConnectionString</b></font><font color="#0066CC">
+conn.</font><b><font color="#FF6600">ConnectionString</font></b><font color="#0066CC"> = &quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; &amp; _
+  &quot;Data Source=</font><font color="#3366CC">F:\MaterialMaster\Material_Master.mdb</font><font color="#0066cc">;&quot;</font><font color="#0066CC">
+conn.open strConn
+MsgBox &quot;Connection to MaterialMaster database is made&quot;
+
+conn.close
+Set conn = Nothing</font></pre>
+		<pre><font color="#0066CC">End Sub</font></pre>
+		</td>
+	</tr>
+</table>
+
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

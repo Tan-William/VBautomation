@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO CompareBookmarks Method</title>
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="../../GUESTBOOK/gbook.html">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+		<h1><font size="6">ADO CompareBookmarks Method</font></h1>
+		<p>The CompareBookmarks method compares two bookmarks. This method 
+		returns a CompareEnum value that indicates the bookmark's relative row 
+		positions. </p>
+		<p><b>Note:</b> The two bookmarks must be within the same Recordset, or 
+		within a Recordset and its clone. </p>
+		<p><b>Note:</b> You can use this method only if the provider support 
+		bookmarks. </p>
+		<h3>Syntax</h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="61%" id="table6">
+			<tr>
+				<td valign="top">
+				<pre><font color="#800000" size="3">result=objRecordset.CompareBookmarks(mark1,mark2)</font></pre>
+				</td>
+			</tr>
+		</table>
+&nbsp;<h3>Example</h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="74%" id="table7">
+			<tr>
+				<td valign="top">
+				<pre><code class="CodeSample"><font color="#0066FF">If objRecordset.</font><font color="#FF6600"><b>CompareBookmarks</b></font><font color="#0066FF">(Bookmark1, Bookmark2) = adCompareEqual Then
+&nbsp;&nbsp;&nbsp;MsgBox &quot;Bookmarks Are Equal&quot;, vbOK
+Else
+&nbsp;&nbsp;&nbsp;MsgBox &quot;Bookmarks Are Not Equal&quot;, vbOK
+End If</font></code></pre>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="93%" id="table8">
+			<tr>
+				<th align="left" valign="top" width="29%">Parameter</th>
+				<th align="left" valign="top" width="68%">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">mark1</td>
+				<td valign="top">The bookmark of the first row</td>
+			</tr>
+			<tr>
+				<td valign="top">mark2</td>
+				<td valign="top">The bookmark of the second row</td>
+			</tr>
+		</table>
+&nbsp;<a name="compareenum"><h3>CompareEnum Values</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="93%" id="table9">
+			<tr valign="top">
+				<th align="left" width="190">Constant</th>
+				<th width="52">Value</th>
+				<th align="left">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td width="190">adCompareLessThan</td>
+				<td width="52" align="center">0</td>
+				<td>The first bookmark is before the second</td>
+			</tr>
+			<tr valign="top">
+				<td width="190">adCompareEqual</td>
+				<td width="52" align="center">1</td>
+				<td>The bookmarks are equal</td>
+			</tr>
+			<tr valign="top">
+				<td width="190">adCompareGreaterThan</td>
+				<td width="52" align="center">2</td>
+				<td>The first bookmark is after the second</td>
+			</tr>
+			<tr>
+				<td width="190">adCompareNotEqual</td>
+				<td width="52" align="center">3</td>
+				<td>The bookmarks are not equal</td>
+			</tr>
+			<tr valign="top">
+				<td width="190">adCompareNotComparable</td>
+				<td width="52" align="center">4</td>
+				<td>The bookmarks cannot be compared</td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
