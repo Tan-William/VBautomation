@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Demand Planning</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.font5
+	{color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.font6
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.auto-style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+.auto-style2 {
+	font-size: 11pt;
+}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 231px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(97-2003)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2000-2003)</span></a><br>
+<a href="index_inv_mgmt.htm">Material Management</a><br>
+&nbsp;<p><font color="#800000"><a href="supply_planning.htm">Master Scheduling &amp; <br>
+Production Planning</a><br>
+</font>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18">Demand Planning </span><p><font color="#800000"><br>
+<a target="_blank" href="../FORECASTING/forecasting_fundamental.htm">Forecasting 
+Methods &amp; <br>
+Techniques</a></font></td>
+
+<td class="menu" style="width: 4px">
+&nbsp;</td>
+
+
+    <TD class=body style="margin-top: 0; margin-bottom: 0">
+      <font face="Arial" style="font-size: 22pt; font-weight:700">
+
+
+		</font>
+      <font face="Arial" style="font-size: 11pt">
+
+
+<p align="center"><span style="font-size: 22pt"><b>
+<span style="font-family: Arial">Demand Planning</span></b></span></p></font>
+      <font face="Verdana" size="3">
+
+
+		<p align="left"><b>The Importance of Forecast Accuracy<br>
+		</b>
+      </font><font face="Arial" size="2">
+
+
+		<br>
+		<span class="auto-style1">Wide forecast errors seem to happen every month - material and 
+		capacities are planned for one level of demand, but the actual demand 
+		that finds its way to the factory is something quite off the mark from 
+		the forecast. Whenever a forecast is created, it means there are also 
+		materials and components created, rescheduled or cancelled. If there is 
+		an increased forecast, chances are we will have overloaded schedule, 
+		plan over-time, add additional shift or new equipment, paying premium 
+		price to expedite raw material and incur expensive freight charges. When 
+		forecasted orders failed to happen, all these become added costs and 
+		unused inventories. Sales and Account teams giving overly optimistic 
+		forecast for fear of stockouts, but they need to understand the impact 
+		of excess inventory to the profitability of the company's business. The 
+		manager's job is to get all parties involved in the forecasting process 
+		to work as a team rather than finger-pointing and blaming, and take 
+		accountabilities for the forecast accuracy. When there is under-forecast 
+		and demand under-estimated, master scheduler and managers will become 
+		&quot;traffic police&quot;, directing and coordinating to allocate company's 
+		limited output to certain customers and withholding it from others. 
+		Placing the customers on allocation gives a very bad reputation to the 
+		company.</span></font></p>
+		<p align="left" class="auto-style1">Knowing that forecasts will 
+		never match demand, except on rare occasions or by luck, master 
+		scheduler must be experienced enough to shift material and capacity from 
+		one period to another, and know when to call the Sales team and 
+		customers so that it may be possible to split customer's delivery over 
+		two or more periods. Experienced master scheduler knows how to question 
+		those many hidden issues and problems in the forecast numbers, rather 
+		than just follow the forecast blindly and load the numbers into 
+		production plan.</p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><b>
+      <font face="Verdana" size="3">
+
+
+		Demand-Driven Planning Process</font></b></p>
+		<p align="left" class="auto-style2"><font face="Arial">Demand can consist of a 
+		forecast, customer orders (which may or may not be part of that 
+		forecast), contract agreements, aftersale service spares, increased 
+		safety stock level and lot sizes, engineering prototypes, Distribution 
+		Center's replenishing orders, interplant orders, or orders from another 
+		division with the item ordered as a component of that division's 
+		products. The challenge the master scheduler faces is to effectively 
+		balance the supply resources with these demands. To satisfy these 
+		demands, we need to ensure availability of capacity and materials, with 
+		minimum qty, required dates and lead times all fully considered. With 
+		demand rises and falls unpredictably, we must also be quick to make 
+		necessary adjustment to supply resources (expedite/de-expedite PO 
+		delivery dates and qty, re-prioritizing start and completion dates of 
+		production orders, etc) in order to get supply and demand into balance.</font></p>
+		<p align="left"><font face="Arial" size="2">&nbsp;</font></p>
+      <font face="Arial" style="font-size: 11pt">
+
+
+      <P align=right><FONT 
+  size=3> <BR>&nbsp;</FONT></P></font></TD></TR></TBODY></TABLE>
+<TABLE id=table1 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=233>&nbsp;</TD>
+    <TD>
+      <P align=center><FONT face="Courier New"><FONT size=2><BR><BR><BR>This 
+		site was 
+		created in Feb.2007 <br>by William Tan</FONT></FONT><BR><BR>
+      
+      
+
+      
+      
+      </P></TD></TR></TBODY></TABLE></BODY>
+</HTML>

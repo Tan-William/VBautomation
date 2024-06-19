@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Rough Cut Capacity Planning</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, https://github.com/william-pbTan/VBautomation.git">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.font5
+	{color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.font6
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	font-size: 10.5pt;
+	font-weight: bold;
+}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 235px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a target="_blank" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">
+Guestbook</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(97-2003)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2000-2003)</span></a><br>
+<a href="index_inv_mgmt.htm">Material Management</a><br>
+&nbsp;<p><font color="#800000"><a href="production_planning.htm">Master Scheduling &amp; <br>
+Production Planning</a><br>
+</font>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18">Rough Cut Capacity 
+Planning </span><p><font color="#800000"><br>
+<a target="_blank" href="../FORECASTING/forecasting_fundamental.htm">Forecasting 
+Methods &amp; <br>
+Techniques</a></font></td>
+
+<td class="menu" style="width: 11px">
+&nbsp;</td>
+
+
+    <TD class=body style="margin-top: 0; margin-bottom: 0">
+      <font face="Arial" style="font-size: 22pt; font-weight:700">
+
+
+		</font>
+
+
+<p align="center"><b>
+      <font face="Arial" style="font-size: 22pt; font-family:Arial">
+
+
+ROUGH</font><font face="Arial" style="font-size: 22pt; font-family:Arial"> CUT 
+CAPACITY PLANNING</font></b></p>
+		<p><font face="Verdana"><span class="auto-style1">The main reason why Rough Cut Capacity Planning 
+		(<b>RCCP</b>) is needed because </span> </font>
+		<span class="auto-style1">Material Requirements Planning
+		<font face="Verdana">system </font>(<b>MRP</b>)<font face="Verdana"> 
+		assumes that needed capacity always is available. RCCP helps to identify 
+		the key resources (material and personnel shortages, lead time 
+		constraints, capacity issues, sole supplier, space, machineries, process 
+		bottlenecks that limit output), and to test the feasibility of the 
+		supply plan, production plan and master schedule before doing any 
+		detailed capacity/material planning. It also helps to initiate action 
+		for making mid- to long-term capacity adjustments. (Supply Plan can 
+		include purchased parts whereas Production Plan is strictly for 
+		production).</font></p>
+		<p></span><font face="Verdana"><span class="auto-style1">In this section, I will show you the RCCP 
+		technique using Resource Profile approach. I will not go through other 
+		RCCP techniques like the Overall Factors (CPOF) and the Bill Of Labor 
+		(BOL) approach, which are least detailed, implicitly assume a 
+		Lot-For-Lot policy for setting lot sizes, and are also insensitive to 
+		the shifts in product mix. They also do not take Lead-Time Offset into 
+		account, but which the Resource Profile approach does. In any event, 
+		rough-cut capacity plans should be used only to determine if sufficient 
+		capacity exists over broad time frames such as a month or a quarter.</span></font></p>
+		<p><font face="Arial"><br>
+		</font>
+		<font color="#FF6600" style="font-size: 16pt"><b>What is RCCP and how 
+		does it work?</b></font><br>
+		<br><span class="auto-style1">Rough Cut Capacity Planning (RCCP) is a rough check to evaluate all the 
+		key resources, to test the validity of MPS, to determine the feasibility 
+		of fulfilling the approved Production Plan that was developed in the 
+		Sales &amp; Operations Planning process. Once the master scheduler 
+		determines that a realistic plan exists, the production plan is then 
+		load into MRP to drive the allocation for all the lower-level materials. 
+		The production plan now translates into discrete part numbers, 
+		quantities and due dates. Because MRP is capacity-insensitive; it 
+		implicitly assumes that sufficient capacity is available to produce 
+		components at the time they're needed, and to avoid being caught by 
+		surprises, RCCP is necessary.</p>
+		<p>A problem commonly encountered in operating MRP systems is the 
+		existence of an Overstated MPS. An overstated master production schedule 
+		is one that orders more production to be released than production can 
+		complete. An overstated MPS causes raw materials and WIP inventories to 
+		increase because more materials are purchased and released to the 
+		production floor than they can be completed and shipped before due 
+		dates. It also causes a buildup of job queues on the shop floor. Since 
+		jobs have to wait to be processed, actual lead times increase, causing 
+		ship dates to be missed. As lead times increase, forecast accuracy over 
+		the lead-time diminishes because forecasts are more accurate for shorter 
+		periods than for longer ones. Thus, an overstated master schedule leads 
+		to past-due orders and other problems. Validating the MPS with respect 
+		to capacity is an extremely important step in MRP, and is called Rough 
+		Cut Capacity Planning. There is no hard and fast rule on the level of 
+		detail that should be incorporated in the MPS validation. Some companies 
+		used very crude techniques, other used detailed, time-phased, methods.</span></p>
+		<p><br><b><font color="#FF6600" style="font-size: 16pt">The Role of RCCP 
+		in Production Planning &amp; Control</font></b><br><br><font color="#0000FF">
+		<a target="_blank" href="images/mrp.html"><span class="auto-style1">Figure 1</span></a></font><span class="auto-style1"> 
+		shows an overview of the entire production planning and control (<b>PPC</b>) 
+		process under MRP. Capacity management techniques usually are separated 
+		into four categories that represent the four time horizons --&nbsp; 
+		Manufacturing Resource Planning (<b>MRP II</b>), Aggregate Production 
+		Planning, Rough Cut Capacity Planning (RCCP), and Capacity Requirements&nbsp; 
+		Planning (<b>CRP</b>). In any MRP system, the same sequence is to create 
+		a master schedule, use Rough Cut Capacity Planning to verify that the 
+		MPS is feasible, perform the MRP explosion, and send the Planned Order 
+		Release data to Capacity Requirements Planning. The following describes 
+		the role RCCP plays in the overall PPC system:</p>
+		<ul type="square">
+			<li>To develop an achievable Master Production Schedule.</li>
+			<li>T o plan and control <b>priorities and capacities</b>.</li>
+			<li><b>Priority Planning</b> is the process of specifying batch 
+			quantities and their start and finish dates for all Supply Orders 
+			where procurement and manufacturing are involved.</li>
+			<li><b>Priority Control</b> is making the right things at the right 
+			time. It is completely dependent on maintaining a balance between 
+			MPS requirements and factory Output rates, in which suppliers 
+			delivery performance is vital.</li>
+			<li><b>Capacity planning</b> is the task of determining how much 
+			output is needed from factory and from suppliers.</li>
+			<li><b>Capacity control</b> is the comparison between planned levels 
+			and actual outputs achieved, and the identification of significant 
+			variances above or below plan. Corrective action must be done 
+			quickly (adjust capacity or changing the master schedule).</li>
+		</ul>
+		<p>In MRP system, the functions of capacity planning and control are 
+		separated from the functions of priority planning and control. Priority 
+		planning is the task of the MRP system. Priority control is determined, 
+		for instance, on the shop floor by the use of a dispatching technique to 
+		sequence specific tasks on specific machines.</p>
+		<p>A few reasons I can think of why RCCP techniques are not used in some 
+		companies are: (1) data requirements are quite high - firm demand, 
+		forecasts, past data, lead times, utilization, products and process 
+		knowledge. (2) they don't have a stable MPS. If forecast and firm orders 
+		keep changing within week, and people bypassing agreed DTF and&nbsp; 
+		Planning Time Fence, capacity planning is a futile exercise. (3) they 
+		don't have the right skill, it is very time-consuming, or they are doing 
+		it the wrong ways.</p>
+		<p>All companies running MRP should implement capacity planning. 
+		Companies that have unstable master schedules can also be due to 
+		inadequate Safety Stock at the MPS level (besides orders and forecasts 
+		push in and push out, human errors, etc). The inadequate safety stock 
+		can be due to a poor demand forecasting or failure to measure Forecast 
+		Error. In turn, safety-stock level can provide protection against 
+		forecast error. For capacity planning process to be effective, we must 
+		make sure that there is adequate safety stock level, improving forecast 
+		error, and a stable master schedule (as I said, frequent last minute 
+		schedule changes are very expensive).</span></p>
+		<p><br><b><font style="font-size: 16pt" color="#FF6600">Determining the 
+		Resource Profile</font><font size="3"><br>
+		<br>
+		</font></b><span class="auto-style1">For this section, let's assume a lamps manufacturer I call it 
+		Johor's Lamps. Johor's Lamps 
+		<u>runs 3 shifts, 120 hours per week from Monday to Friday; Planned 
+		Production Lost Time per shift (change shift &amp; rest time) is 35 minutes, 
+		and company allows a maximum overtime of 10% of per shift either during 
+		weekdays or through Sat. &amp; Sunday</u>. Figure 16.1 below shows its bill 
+		of material used for all product families. Figure 16.2 is the worksheet 
+		matrix that is used to identify the key work centers, production lines, 
+		and other critical resources needed to support the master schedule. Once 
+		you complete the resources matrix, you should find out if any of the key 
+		resources identified can be combined so you can reduce lead times. 
+		Figure 16.4 is the master schedule for the 3 product families derived 
+		from sales &amp; Operations Plan. You can read in detail in the 
+		<a target="_blank" href="master_scheduling.htm"><font color="#0000FF">
+		Master Scheduling</font></a> section where I have explained the 
+		development of an MPS. </span> </p>
+		<div align="left">
+			<table border="0" width="53%" cellspacing="0" cellpadding="0" id="table2">
+				<tr>
+					<td width="323" valign="bottom">
+					<img border="0" src="images/rccp_fig16.1.gif" width="263" height="209"></td>
+					<td>
+					<img border="0" src="images/rccp_fig16.2.gif" width="333" height="350"></td>
+				</tr>
+			</table>
+		</div>
+		<p>&nbsp;</p>
+		<div align="left">
+			<table border="0" width="43%" cellspacing="0" cellpadding="0" id="table3" height="156">
+				<tr>
+					<td width="328" valign="top">
+					<img border="0" src="images/rccp_fig16.3.gif" width="302" height="168" align="top"></td>
+					<td align="left" valign="top">
+					<img border="0" src="images/rccp_fig16.4.gif" width="195" height="162"></td>
+				</tr>
+			</table>
+		</div>
+		<p><b><br>
+		<img border="0" src="images/rccp_fig16.5.gif" width="296" height="207" align="left"></b>F<span class="auto-style1">igure 
+		16.3 shows the standard time for each key resource by product family. <b>
+		Standard Time</b> refer to <b>Setup</b> <b>time</b> and <b>Run time</b> 
+		(processing time) which impact the workload on a resource because it 
+		actually tie up that resource. This is different from <b>Queuing time</b>,
+		<b>Waiting time</b>, and <b>Move time</b> which impact the time it takes 
+		to move through the work centers; and they do not affect the load on 
+		resources. So you should only include them as a small minimum percentage 
+		when you are testing the feasibility of the master schedule - this is 
+		because production can always split into smaller lot sizes, as well as 
+		expedite in small batches, thereby cutting down the times in queue, wait 
+		and moving the parts between work centers.</span></p>
+		<p><br>
+		<span class="auto-style1">You should use
+		<a target="_blank" href="../EXCEL/excel_worksheet_functions.htm#weighted_average">
+		<font color="#0000FF">Weighted Average</font></a> (using
+		<a target="_blank" href="../EXCEL/excel_worksheet_functions.htm#sumproduct">
+		<font color="#0000FF">SUMPRODUCT</font></a> formula) instead of a 
+		regular Average standard time when creating resource profile. For 
+		example, standard time for a key resource should be the sumproduct of 
+		total setup time + run time (from Figure 16.5 Routing file) and the sum 
+		of production output for an individual product family, divide by sum of 
+		production output for that individual product family. You can either use 
+		historical output for each work centers or using MPS volume. Use the 
+		same way to calculate standard time for the rest of the key resources. 
+		If engineering team has regularly updated process routings, setup times 
+		and run times, using this method can be quite accurate in developing the 
+		predictive resources profile. Once you are done,&nbsp; you should have a 
+		Resource Profile something like in Figure 16.3. You also note that Final 
+		Assembly Line 2 does not run product family C, and also supplier XYZ 
+		doesn't supply material for product family B.</p>
+		<p>When using process routings sheet and BOM to create the Resource 
+		Profile, it is better to use this formula:</span></p>
+		<table border="0" width="54%" cellspacing="1" id="table4" style="border-collapse: collapse" bordercolor="#800000">
+			<tr>
+				<td width="229" valign="top" style="border-left: 1px solid #800000; border-right-style: none; border-right-width: medium; border-top: 1px solid #800000; border-bottom: 1px solid #800000">
+				<b><font color="#800000">Required Resource Time&nbsp; =</font></b></td>
+				<td width="520" style="border-left-style: none; border-left-width: medium; border-right: 1px solid #800000; border-top: 1px solid #800000; border-bottom: 1px solid #800000" align="left">
+				<b>
+				<font color="#800000">(Run Time x BOM qty) + (Setup Time x 
+				number of Setups required)<br>
+				+ margin % of total non-standard times</font></b></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p><br>
+		<img border="0" src="images/rccp_fig16.6.gif" width="488" height="213"></p>
+		<p><span class="auto-style1">We also need to determine <b>Lead-Time Offset</b>, which is the time 
+		between the need for the resource and the date that the product has been 
+		promised. Lead-Time Offset is necessary if a product has longer lead 
+		times. Figure 16.6 illustrates a time line of the resources identified 
+		through the process routing for the critical Base Assembly. It shows 
+		that the longest lead time needed for the base assembly is 28.45 days, 
+		so the lead-time offset for this resource is about 29 hours prior to the 
+		completion of the lamp assembly. Every resource has its lead-time 
+		offset, but practically if the offset is less than 30days, you don't 
+		need to consider it when evaluating the validity of the production plan. 
+		In this case, even if you rough-cut master schedule and plan production 
+		on weekly basis, 29 hours is well within one week.</p>
+		<p>Now, with the key resources profile ready at hand, Johor Lamps want 
+		to validate the master schedule for the next 6 months, to verify whether 
+		there is adequate capacity at all key resources to meet the production 
+		plan (Figure 16.7). Of course, assuming there's a stable MPS. The 
+		technique involves comparing a machine-load report of required capacity 
+		to planned-available capacity at each work center. Here we need to 
+		understand there are several types of capacities being used.</span></p>
+		<p><font size="4" color="#800000" face="Arial"><b>Demonstrated Capacity</b></font><br>
+		<span class="auto-style1">This is the proven or historical capacity of a key resource or work 
+		center. Demonstrated capacity could potentially change if resources are 
+		added or if operations are altered. In such case, adjustments to planned 
+		capacity must be considered before making evaluation of the production 
+		plan.</span></p>
+		<p><b><font size="4" color="#800000" face="Arial">Planned Capacity</font></b><br>
+		<span class="auto-style1">This is demonstrated capacity plus or minus anticipated changes or 
+		adjustments to the product-flow process. For example, a production line 
+		has a regular demonstrated capacity of 400 units/month, an upward 
+		adjustment to 450 beginning sometime in the next few months might be 
+		reasonable if additional operators or equipment is expected to be 
+		available.</span></p>
+		<p><b><font size="4" color="#800000" face="Arial">Maximum Capacity</font></b><br>
+		<span class="auto-style1">This is the maximum load a resource can handle under any reasonable set 
+		of circumstances. This can be achieved through several means: use of 
+		available overtime, adding shifts, staff additions, offload volume to 
+		outside vendors, pay extra for supply priorities, paying premium 
+		freights to expedite materials delivery, etc).</span><br>
+&nbsp;</p>
+		<p><b><font style="font-size: 16pt" color="#FF6600">Determining Capacity 
+		Available or Planned Capacity</font></b><br>
+		<br><span class="auto-style1">Since Johor's works 3 eight-hour shifts each day and there are 21 
+		working days in Sept, it might seem that the capacity available to, for 
+		example the Copper-Plating department, is 518 hours per month (24 
+		hours/day/equipment less 1.75 hours of change-shift-rest time/day, times 
+		21 days in Sept). However, there should be an adjustment between the 
+		standard time and the actual average production rate of that department. 
+		The first adjustment factor is known as Utilization. <b>Utilization</b> 
+		is a number between 0 and 1 which is equal to 1 minus the proportion of 
+		time typically lost due to machine breakdown, labor shortage, parts 
+		failure, or material unavailability. The second adjustment factor is 
+		known as Efficiency. <b>Efficiency</b> is defined as the average of 
+		standard hours of actual production (after minus the unavoidable lost 
+		time - setup time, change shift, rest time). If a time standard is 
+		exactly right, efficiency is 1. If the time actually required to perform 
+		the work is less than the standard, efficiency is more than 1. If the 
+		time actually required to perform the work is more than the standard 
+		time, efficiency is less than 1. See another
+		<a target="_blank" href="capacity_requirements_planning.htm#measuring_capacity">
+		<font color="#0000FF">example on Utilization and Efficiency</font></a>.</p>
+		<p>Capacity available is determined by multiplying time available x 
+		utilization x efficiency:</span></p>
+		<table border="0" width="70%" cellspacing="0" id="table5">
+			<tr>
+				<td valign="top" style="border: 1px solid #800000" align="center" class="auto-style2"><font color="#800000">
+				Capacity Available = Time Available x Utilization x 
+				Efficiency</font></td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p align="left"><b><font size="5" color="#FF6600">The Resource Profile 
+		Technique</font></b>
+		<p align="left"><br><span class="auto-style1">This technique is designed to <u>convert the master 
+		production schedule from units of end items to be produced into the 
+		amount of time required on the key resources</u>. Resource Profile 
+		approach considers lead-time offsets. Unlike other techniques, <u>it 
+		does not assume all components are built in the same time period as the 
+		end item</u>; it time-phases the labor and lead time requirements. In 
+		some instances, RCCP may reveal that key resources are presently 
+		inadequate and that expanding the resources requires more time or more 
+		equipments than the company is willing to invest. In these instances, 
+		the MPS must be revised. Resource Profile technique is the most detailed 
+		rough-cut approach, but is not as detailed as Capacity Requirements 
+		Planning.<p>Resource Profile technique uses detailed data on the time 
+		standards for each product at the key resources. A <b>Time Standard</b> 
+		is the time it should take an average worker working at a normal pace to 
+		produce one unit of an item. The time standard for any part has built 
+		into it an allowance for rest to overcome fatigue or unavoidable delays, 
+		etc. Because production processes are&nbsp; continually improved, time 
+		standards become less reliable unless they are being updated. For this 
+		reason, you should not use time standard that is two or three years old 
+		to perform capacity study. However, poor standards are not an absolute 
+		barrier to capacity planning; you can use an adjustment factor known as 
+		&#8220;<b>efficiency</b>&#8221; to correct for outdated time standards (although 
+		efficiency is not intended to reduce the need to keep time standards 
+		updated). The detailed Resource Profile approach also requires standard 
+		times data, and additionally, lead times required to perform certain 
+		tasks.</p>
+		<p>The results of RCCP using the Resource Profile approach for Johor 
+		Lamps can be developed as this example shown in Figure 16.7 below. The 
+		computations are in the worksheet available for
+		<a href="inventory%20supp/rccp_required_vs_planned.xls">
+		<font color="#0000FF">download</font></a>. At one glance in Figure 16.7, 
+		you can see that there are Overloads at Chemical Dip and also for 
+		supplier XYZ in the same month of Nov, Dec and Jan. The Required 
+		Capacity in the these 3 months exceed the Planned Capacity as indicated 
+		by the negative Net Variance (in red fonts). The same situation happens 
+		for supplier XYZ. The projected Underloads are especially serious 
+		throughout the six months in Copper-Plating, Final Assembly Line 1 &amp; 2, 
+		ranging from 40% to 78%. If you look at the total % variance for these 
+		three key resources, there are projected schedule overloads of 47% in 
+		Copper-Plating facility, 61% in Final Assy Line 1, and 70% in Final Assy 
+		Line 2.</p>
+		<p>Note that the Planned Capacity has already included the Maximum 10% 
+		overtime that is permitted.</span></p>
+		<p>
+		<img border="0" src="images/rccp_fig16.7.gif" width="675" height="593"></p>
+		<p>
+		<img border="0" src="images/rccp_graph.gif" width="424" height="250" align="left"></p>
+		<p>
+		&nbsp;</p>
+		<p>
+		&nbsp;</p>
+		<p>
+		&nbsp;</p>
+		<p>
+		&nbsp;</p>
+		<p class="auto-style1">
+		This graph on the left is plotted on <br>
+		the Rough-Cut at Chemical Dip. It 
+		<br>
+		clearly shows the three troubled <br>
+		months (Nov through to Jan) with <br>
+		production plan overloads.</p>
+		<p>
+		&nbsp;</p>
+		<br><br>
+
+		<p><span class="auto-style1">Now, what can you do about the rest of production planning after 
+		reviewing the results from this rough-cut capacity analysis over the 6 
+		months period? Well, before making any changes or take actions, you need 
+		to do another rough-cut analysis, this time at the master schedule 
+		level. Companies that have varied mixes of products are especially 
+		compelled to do this. RCCP at the master schedule level use the same 
+		logic as rough cut at the production plan level, only difference is the 
+		calculations are extended down one or two additional levels. The master 
+		schedule is &quot;exploded&quot; through the Resource Profile to generate the 
+		required capacity to meet the master plan. </p>
+		<p>Let's look at one month, Nov, to analyze projected capacities on a 
+		weekly basis, at the Overload resource - Chemical Dip. Figure 16.8 shows 
+		the quantities scheduled for each master schedule item. Note that the 
+		totals are the same as in Figure 16.4 Nov's totals, but clearly this 
+		2nd-phase MPS rough-cut yields more detailed information, since it is at 
+		the component items level. The difference here is that the product 
+		families volume are broken down into component totals for the month, and 
+		analyzed on a week-by-week basis. To do this, take the quantities for 
+		each master scheduled item, multiply by the time requirements in the 
+		resource profile. (you need a
+		<a target="_blank" href="../EXCEL/excel_worksheet_functions.htm#sumproduct">
+		<font color="#0000FF">SUMPRODUCT</font></a> formula). All formula are in 
+		the worksheet for
+		<a href="inventory%20supp/rccp_by_MPS_ComponentItems.xls">
+		<font color="#0000FF">download</font></a>. These component items are 
+		from the forecast, firm planned orders, and booked orders.</span></p>
+		<p>
+		<img border="0" src="images/rccp_fig16.8.gif" width="683" height="413"></p>
+		<p><br>
+		<span class="auto-style1">Before we proceed further, we may want to set some guidelines pertaining 
+		to the % variance in Figure 16.8. It would seems logical to accept that
+		<font face="Arial">i</font>f the required capacity is :<br>
+		</span>
+		<font face="Arial"><span class="auto-style1">&#9679;&nbsp; </span> </font>
+		<span class="auto-style1">no more than 10% 
+		greater than the planned capacity, the master schedule is considered 
+		realistic. <br>
+		</span>
+		<font face="Arial"><span class="auto-style1">&#9679; </span> </font>
+		<span class="auto-style1">&nbsp;more than 20% greater than the 
+		planned capacity, the master schedule is considered unrealistic.<br>
+		</span>
+		<font face="Arial"><span class="auto-style1">&#9679; </span> </font>
+		<span class="auto-style1">&nbsp;between 10% and 20% greater than 
+		the planned capacity, the master schedule is questionable. Need to find 
+		out more information about the resource; ask the staff who have worked 
+		long enough in that resource department, you will be surprised they can 
+		give you a lot more accurate information.</p>
+		<p>Of course, in other industries and different environments, these 
+		guidelines may need tighter tolerances, say, 5% to 10%. Implement 
+		necessarily as you can deem fit.</p>
+		<p>For November, week 43, 44 &amp; 45 in Figure 16.8 have revealed serious 
+		overloads even though the planned capacity has already included the max 
+		10% overtime allowed. What causes it and what can be done? It might be 
+		possible to assign the workers from Final Assembly 2 Lines where 
+		underloads are projected, to help in the Chemical Dip department for the 
+		first 4 weeks in Nov. Splitting lots might helps to reduce some waiting 
+		time. It also might be possible to shift some of the volume from Nov 1st 
+		week to Oct where there is a little excess capacity. Of course, any 
+		decision of moving in or shifting out a master scheduled item requires 
+		consideration of the impact of that move on the ability to meet the 
+		customer promise dates. As a last resort, you can either tap into the 
+		maximum capacity which has included the 4 weekends, or sub-contracting 
+		out some of the load to approved vendors. Using the same calculations 
+		and analysis, you can extend to cover the rest of the key resources to 
+		have detailed view of all the MPS items and take appropriate corrective 
+		actions.</p>
+		<p>In many of today's ERP systems, there is also a &quot;What-If&quot; scenarios 
+		analysis capability being built into the capacity planning module, that 
+		makes it possible for the scheduler to juggle the numbers - shifting 
+		workers, reschedule in and -out, alternate routings, splitting lots, add 
+		equipments, off-loading to vendors, overtime, hiring temporary workers 
+		and so on. </span> </p>
+		<p><b><span style="font-size: 16pt"><font color="#FF6600">Revising the 
+		Master Schedule</font></span></b><br>
+		<br><span class="auto-style1">Most companies consider a revision to the MPS to be a solution of last 
+		resort in the event of insufficient capacity, and to be implemented only 
+		when all other options are exhausted. Actually this is not entirely true 
+		and logical. A number of things can cause an order to be expedited. An 
+		order is rarely de-expedited. There may be several orders on the 
+		existing master schedule that no longer are needed as early as the 
+		current due date shows them to be needed. It is not uncommon to find a 
+		machine-load capacity planning report that shows too much work in the 
+		first two or three periods, but ample capacity beyond that. This problem 
+		may be corrected or alleviated merely by people honestly putting the 
+		&quot;true&quot; need date on all orders.</p>
+		<p>If de-expediting, overtime, subcontracting, alternate routing, and 
+		shifting personnel collectively cannot provide sufficient capacity, MPS 
+		revision does in fact become the technique of last resort, It is 
+		important to understand that when an unavoidable capacity overload 
+		exists, it must be corrected. If insufficient capacity exists, it is 
+		impossible to complete all orders on time. The choice now is to have 
+		management decide whose order will be late based on the impact on the 
+		whole business. </span> </p>
+      <font face="Arial" style="font-size: 11pt">
+
+
+      <P align=right><span class="auto-style1">Next Page &gt;&gt; </span> <font color="#0000FF"><a href="capacity_requirements_planning.htm">
+		<font color="#0000FF"><span class="auto-style1">Detailed </span> </font></a></font>
+		<a href="capacity_requirements_planning.htm"><font color="#0000FF">
+		<span class="auto-style1">Capacity Requirements Planning</span></font></a><FONT 
+  size=3><BR>&nbsp;</FONT></P></font></TD></TR></TBODY></TABLE>
+<TABLE id=table1 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=241>&nbsp;</TD>
+    <TD>
+      <P align=center><FONT face="Courier New"><FONT size=2>This site was created in Feb.2007<B><br></B>
+	  by William Tan</FONT></FONT><br><br>
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  -->      
+
+      
+      
+      </P></TD></TR></TBODY></TABLE></BODY>
+</HTML>

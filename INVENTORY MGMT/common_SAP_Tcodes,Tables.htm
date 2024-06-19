@@ -1,0 +1,1119 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SAP Tcodes, SAP Tables.htm</title>
+</head>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+</style>
+
+<body topmargin="0" leftmargin="0" alink="#000000" background="" bgcolor="#edf3fa" link="#000000" marginheight="0" marginwidth="0" text="#000000" vlink="#000000">
+
+<pre><font face="Arial" style="font-size: 85%"><b><a name=top></a></b></font></pre>
+<div align="center">
+<a name=top></a>
+<table border="0" width="98%" cellspacing="1" cellpadding="0" id="table12">
+<tbody>
+<tr class="navbar"><td height="5" align="center"></td>
+	</tr>
+	
+<tr>
+<td height="20" align="center" class="auto-style1">
+	<font face="Verdana" style="font-size: 75%">
+	<span style="text-decoration: none">
+				<a href="../index.htm">
+	<span style="text-decoration: none" class="auto-style1">Home</span></a><span class="auto-style1">&nbsp; 
+	</span> </span>
+				<span class="auto-style1">|</span></font><font face="Verdana" style="text-decoration:none" color="#0033FF" class="auto-style1">&nbsp;
+				<a href="../VBA/beginner_basic.htm">
+				<span style="text-decoration: none">EXCEL VBA 
+	programming (XL97-2003)</span></a>&nbsp; </font>
+
+
+	<font face="Verdana" style="font-size: 75%">
+	<span style="text-decoration: none" class="auto-style1">|&nbsp; 
+				<a href="../EXCEL/excel_under_construction.htm"><span style="text-decoration: none">EXCEL VB.Net 
+	Programming</span></a></span><span class="auto-style1">&nbsp; |&nbsp;
+				<a href="../ACCESS/beginner_basic_Acc.htm"><span style="text-decoration: none">ACCESS 
+	Programming (2000-2003)</span></a>&nbsp; |&nbsp;
+				</span> </font></td>
+		</tr>
+		<tr>
+			<td height="20" align="center" class="auto-style1">
+
+
+	<font face="Verdana" style="font-size: 75%">
+			<span class="auto-style1">
+				<a href="../EXCEL/excel_worksheet_functions.htm">
+				<span style="text-decoration: none">EXCEL Spreadsheet Functions</span></a>&nbsp; 
+				|&nbsp; </span>
+				<a style="color: #800000" href="index_inv_mgmt.htm">
+				<span style="text-decoration: none" class="auto-style1">Material Management</span></a><span class="auto-style1"> &nbsp; | &nbsp;
+	<a href="../AboutMe/Me.htm"><span style="text-decoration: none">About me</span></a>&nbsp;&nbsp; 
+			</span> </font></td>
+		</tr>
+	</table>
+</div>
+<div align="center">
+	<table border="0" width="98%" cellspacing="0" cellpadding="0" id="table13" height="49">
+		<tr>
+			<td height="17"></td>
+		</tr>
+		<tr>
+			<td><b><font size="+2">List of Commonly Used SAP Functional / ABAP Development Transaction Codes 
+and Tables</font></b><pre><font color="#0066CC" size="3"><b><a name=01></a>MATERIALS MANAGEMENT Tables</a></b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EINA&nbsp;&nbsp;&nbsp; Purchasing Info Record- General Data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EINE&nbsp;&nbsp;&nbsp; Purchasing Info Record- Purchasing Organization Data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAKT&nbsp;&nbsp;&nbsp; Material Descriptions
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MARA&nbsp;&nbsp;&nbsp; General Material Data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MARC&nbsp;&nbsp;&nbsp; Plant Data for Material
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MARD&nbsp;&nbsp;&nbsp; Storage Location Data for Material
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAST&nbsp;&nbsp;&nbsp; Material to BOM Link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MBEW&nbsp;&nbsp;&nbsp; Material Valuation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MKPF&nbsp;&nbsp;&nbsp; Header- Material Document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MSEG&nbsp;&nbsp;&nbsp; Document Segment- Material
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MVER&nbsp;&nbsp;&nbsp; Material Consumption
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MVKE&nbsp;&nbsp;&nbsp; Sales Data for materials
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RKPF&nbsp;&nbsp;&nbsp; Document Header- Reservation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T023&nbsp;&nbsp;&nbsp; Mat. groups
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T024&nbsp;&nbsp;&nbsp; Purchasing Groups
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T156&nbsp;&nbsp;&nbsp; Movement Type
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T157H&nbsp;&nbsp;&nbsp;Help Texts for Movement Types
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MOFF&nbsp;&nbsp;&nbsp; Lists what views have not been created</font><b><font color="#0066CC">
+<font size="3"><a name=02></a>PURCHASING Tables</font></font></b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A501<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Plant/Material
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EBAN<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Requisition
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EBKN<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Requisition Account Assignment
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EKAB<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Release Documentation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EKBE<font color="#000000">&nbsp;&nbsp;&nbsp; </font>History per Purchasing Document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EKET<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Scheduling Agreement Schedule Lines
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EKKN<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Account Assignment in Purchasing Document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EKKO<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchasing Document Header
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EKPO<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchasing Document Item
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IKPF<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Header- Physical Inventory Document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ISEG<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Physical Inventory Document Items
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LFA1<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Vendor Master (General section)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LFB1<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Vendor Master (Company Code)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NRIV<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Number range intervals
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RESB<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Reservation/dependent requirements
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T161T<font color="#000000">&nbsp;&nbsp;&nbsp;</font>Texts for Purchasing Document Types<font color="#0066CC"><b>
+</b></font><font color="#0066CC" size="3"><b><a name=03></a>VENDOR</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XEIP&nbsp;&nbsp;&nbsp; Number range maintenance: EXPIMP
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK01&nbsp;&nbsp;&nbsp; Create vendor (centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK02&nbsp;&nbsp;&nbsp; Change vendor (centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK03&nbsp;&nbsp;&nbsp; Display vendor (centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK04&nbsp;&nbsp;&nbsp; Vendor Changes (Centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK05&nbsp;&nbsp;&nbsp; Block Vendor (Centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK06&nbsp;&nbsp;&nbsp; Mark vendor for deletion (centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XK07&nbsp;&nbsp;&nbsp; Change vendor account group
+</font><b><font color="#0066CC"><font size="3"><a name=04></a>CUSTOMER</font>
+</font></b><font color="#000000">	VD01	Create customer master
+	VD02	Change customer master
+	VD03	Display customer master
+	VD04	Customer account changes
+	VD06	Customer deletion flag</font><b><font color="#0066CC">
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD01&nbsp;&nbsp;&nbsp; Create Customer (Centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD02&nbsp;&nbsp;&nbsp; Change Customer (Centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD03&nbsp;&nbsp;&nbsp; Display Customer (Centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD04&nbsp;&nbsp;&nbsp; Customer Changes (Centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD05&nbsp;&nbsp;&nbsp; Block customer (centrally)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD06&nbsp;&nbsp;&nbsp; Mark customer for deletion (centr.)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD07&nbsp;&nbsp;&nbsp; Change Customer Account Group
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XD99&nbsp;&nbsp;&nbsp; Customer master mass maintenance
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XDN1&nbsp;&nbsp;&nbsp; Maintain Number Ranges (Customer)
+</font><font color="#0066CC"><b><font size="3"><a name=05></a>SALES ORDER</font>
+</b></font><font color="#000000">        VA00    Initial Sales Menu
+        VA01    Create Sales Order
+        VA02    Change Sales Order
+        VA03    Display Sales Order
+        VA05    List of Sales Orders
+        VA07    Compare Sales   Purchasing (Order)</font><font color="#0066CC"><b>
+<font size="3"><a name=06></a>PRODUCTION PLANNING AND CONTROL</font></b></font>
+<font color="#000000">        CO01    Create production order </font>with material
+<font color="#000000">        </font>CO01S   Adding simulation order
+<font color="#000000">        </font>CO02    Change Production Order
+<font color="#000000">        </font>CO02S   Change simulation order
+<font color="#000000">        </font>CO03    Display Production Order
+<font color="#000000">        </font>CO03S   Display simulation order
+<font color="#000000">        </font>CO04    Print Production Orders
+<font color="#000000">        </font>CO05    Collective Release of Production Orders
+<font color="#000000">        </font>CO06    Backorder Processing
+<font color="#000000">        </font>CO07    Create order without a material
+<font color="#000000">        </font>CO08    Create Production order with sales order
+<font color="#000000">        </font>CO09    Availability Overview
+<font color="#000000">        </font>CO1F    Create confirmation of prod. order
+<font color="#000000">        </font>CO1L    Confirmation: List of requests
+<font color="#000000">        </font>CO1P    Predefined confirmation processes
+<font color="#000000">        </font>CO1V    Confirmation: Fast entry of time ticket
+<font color="#000000">        </font>CO10    Create Production order with project
+<font color="#000000">        </font>CO11    Enter Time Ticket
+<font color="#000000">        </font>CO11N   Single Screen Entry of Confirmation
+<font color="#000000">        </font>CO12    Collective Entry of Confirmations
+<font color="#000000">        </font>CO13    Cancel confirmation of production order
+<font color="#000000">        </font>CO14    Display confirmation of production order
+<font color="#000000">        </font>CO15    Enter Production order Confirmation
+<font color="#000000">        </font>CO16    Conf.: Post-processing error records
+<font color="#000000">        </font>CO16N   Reprocessing Confirmation
+<font color="#000000">        </font>CO17    Enter confirmation with reference
+<font color="#000000">        </font>CO19    Enter Time Event
+<font color="#000000">        </font>CO20    Orders acc. to Order Numbers
+<font color="#000000">        </font>CO21    Orders for Material
+<font color="#000000">        </font>CO22    Orders for the MRP controller
+<font color="#000000">        </font>CO23    Orders for the production scheduler
+<font color="#000000">        </font>CO24    Missing Parts InfoSyst
+<font color="#000000">        </font>CO26    Order information system
+<font color="#000000">        </font>CO27    Picking list
+<font color="#000000">        </font>CO28    Choose individual object lists
+<font color="#000000">        </font>CO30    Standard trigger points
+<font color="#000000">        </font>CO31    Create standard trigger point
+<font color="#000000">        </font>CO32    Change standard trigger point
+<font color="#000000">        </font>CO33    Display standard trigger point
+<font color="#000000">        </font>CO40    Converting Planned Order
+<font color="#000000">        </font>CO41    Collective Conversion of Planned Orders
+<font color="#000000">        </font>CO42    Act. Overhead:  Prod.Order Ind.Pro
+<font color="#000000">        </font>CO43    Act. Overhead:  Prod.Order Col.Pro
+<font color="#000000">        </font>CO44    Mass processing of orders
+<font color="#000000">        </font>CO46    Order progress report
+<font color="#000000">        </font>CO47    Change comparison
+<font color="#000000">        </font>CO51    Send Process Messages
+<font color="#000000">        </font>CO52    Evaluate Process Data
+<font color="#000000">        </font>CO53    Control Recipe Monitor
+<font color="#000000">        </font>CO54    Message Monitor
+<font color="#000000">        </font>CO55    Worklist for Maintaining PI Sheets
+<font color="#000000">        </font>CO56    Display PI Sheet
+<font color="#000000">        </font>CO57    Create Message Manually
+<font color="#000000">        </font>CO58    Maintain PI Sheet
+<font color="#000000">        </font>CO59    Delete PI Sheet
+<font color="#000000">        </font>CO60    Find PI Sheet
+<font color="#000000">        </font>CO62    Delete Process Messages
+<font color="#000000">        </font>CO63    Evaluate Deletion Logs
+<font color="#000000">        </font>CO64    Worklist for Completing PI Sheets
+<font color="#000000">        </font>CO67    Worklist for Checking PI Sheets
+<font color="#000000">        </font>CO68    MiniApp PI Sheet Mon -&gt; List
+<font color="#000000">        </font>CO69    Create Message Automatically
+<font color="#000000">        </font>CO78    Archiving orders
+<font color="#000000">        </font>CO8A    Preset. Co-Products; Post-processing
+<font color="#000000">        </font>CO8B    Preset. Co-Products; Post-processing
+<font color="#000000">        </font>CO80    Number range maintenance: AUF_RUECK
+<font color="#000000">        </font>CO81    Number assignment: routing to order
+<font color="#000000">        </font>CO82    Number ranges for orders
+<font color="#000000">        </font>CO83    Number range maintenance: RESB
+<font color="#000000">        </font>CO88    Act. Settlement: Prod./Process Order
+<font color="#000000">        </font>CO99    Set Status &quot;Closed&quot;<b><font color="#0066CC">
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD04    Display Stock/Requirements Situation<b><font color="#0066CC">
+        </font></b>MF65    Stock Transfer for Reservation (Goods Movement)<b><font color="#0066CC">
+        </font></b>MF68    Log for Pull List (Goods Movement)<b><font color="#0066CC">
+        </font></b>MB1A    Goods Withdrawal (ie Goods issue)
+        MB1B    Transfer Posting
+        MB1C    Other Goods Receipts<b><font color="#0066CC">
+        </font></b>MB31    Goods Receipt for Production Order<b><font color="#0066CC">
+</font></b>        COHV&nbsp;&nbsp;&nbsp;&nbsp;Mass processing
+        COMAC   Collective Availability Check<b><font color="#0066CC">
+<font size="3"><a name=07></a>MATERIAL MASTER</font></font></b><span style="color: rgb(0, 0, 0);">
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">IH09</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Display Material
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM01</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Create Material 
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM02</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Change Material 
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM03</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Display Material</span><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM04</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font>Display Material Change Documents<span style="color: rgb(0, 0, 0);">
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM06    </span>Flag Material for Deletion<span style="color: rgb(0, 0, 0);">
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM11    Schedule Creation of Material
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM12    Schedule Changing of Material
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM13    Activate Planned Changes
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM14    Display Planned Changes
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM15    Display Changes (Migration)
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM16    Schedule Material for Deletion
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM18    Activate Planned Changes 
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM19    Display Material &amp; at Key Date 
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MM50</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">List Extendable Materials
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MMBE</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Stock Overview
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MMI1</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Create Operating Supplies
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MMN1</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Create Non-Stock Material 
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MMS1</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Create Service
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MMU1</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Create Non-Valuated Material
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB21</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Create Reservation
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB22</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Change Reservation
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB23</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Display Reservation
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB24</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Reservations by Material
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB25</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Reservations by Account Assignment
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB1C</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Other Goods Receipts
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB52</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font>Warehouse Stock<span style="color: rgb(0, 0, 0);">
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB90</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Output Processing for Material Documents
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MBRL</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Return Delivery per Material Document
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MB1B</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Transfer Posting
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MIBC</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ABC Analysis for Cycle Counting
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MI03</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Display Physical Inventory Document
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MI06</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Display Inventory Count
+</span><b><font size="3" color="#0066CC"><a name=07b></a>WORK CENTERS
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR00    Resource Planning Menu
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR01    Create work center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR02    Change work center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR03    Display work center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR04    Test Work Center Formulas
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR05    Work Center List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR06    Work Center Assignment to Cost Ctr
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR07    Work Center Capacities
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR08    Work Center Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR09    Task list reference text
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR10    Work center change documents
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR11    Add Capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR12    Change capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR13    Display Capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR15    Capacity where-used
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR21    Create Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR22    Change Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR23    Display Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR24    Create Resource Network
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR25    Change Resource Network
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR26    Display Resource Network
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR31    Create Hierarchy
+<font color="#000000">        </font>CR32    Change Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR33    Display Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR40    Work center usage in deleted object
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR41    Archiving work centers
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR60    Work center information system<b><font color="#0066CC">
+<font size="3"><a name=07c></a>ROUTING
+</font></font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA00    Routing Menu
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA01    Create Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA02    Change Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA03    Display Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA10    Std. Text for Task List/Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA11    Create Reference Operation Set
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA12    Change Reference Operation Set
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA13    Display Reference Operation Set
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA21    Create Rate Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA22    Change Rate Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA23    Display Rate Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA31    Create Reference Rate Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA32    Change Reference Rate Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA33    Display Reference Rate Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA51    Print Rtg/Ref.Op.Set; Fields Fixed
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA60    Changes in Routings/Ref. Op. Sets
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA61    Change Documents for Routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA62    Documents for Ref. Op. Sets
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA63    Change documents for rate routings
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA64    Change documents for ref. rate rtgs
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA70    PRT Where-Used Lists Reporting
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA72    PRT Where-used Lists: EquipTL Types
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA73    Standard Networks for PRT
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA75    Mass Replace PRT
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA75N   Change:Production Resource/Too
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA77    Bulk Replacemt PRT: Equip.TL Type
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA78    PRT Mass replacemt. in libr.network
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA80    Work center usage - Task Lists Reporting
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA81    Master recipe usage and resources
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA82    Where-used Lists EQUI Work Center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA83    Standard Networks for Work Center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA85    Replace Work Center in Task Lists
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA85N   replacement: work center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA86    Master recipe: replace resources
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA87    Mass Replace EQUI Work Center
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA88    SMass replace work center. in lib.netw
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA90    Use of Ref. Op. Set in Routings - Reporting
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA95    Replace reference operation set/reference rate routing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA95N   Change:Ref.OperationSet Ref.
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA96    Update material master
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA97    Mass scheduling using material master
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA97N   Material Master Update - New
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA98    Deletion of task lists Without archiving
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CA99    Deletion of task lists With archiving<b><font color="#000000">
+</font><font size="3" color="#0066CC"><a name=07d></a>SALES AND OPERATIONS PLANNING
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC10   Perform Analysis
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC11   Create Evaluation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC12   Change Evaluation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC13   Display Evaluation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC14   TIS: Maintain requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC15   TIS: Maintain formulas
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC16   LIS: Delete Evaluation Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC18   Create Field Catalog
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC19   Change Field Catalog
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC20   Display Field Catalog
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC21   Create Info Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC22   Change Info Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC23   Display Info Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC24   Create Update
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC25   Change Update
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC26   Display Update
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC27   Create Evaluation Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC28   Change Evaluation Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC29   Display Evaluation Structure
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC3V   U3 update
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC30   Update Log
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC35   Create Rough-Cut Planning Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC36   Change Rough-Cut Planning Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC37   Display Rough-Cut Planning Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC38   Number range maintenance: MC_ERKO
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC40   INVCO: ABC Analysis of Usage Values
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC41   INVCO: ABC Analysis of Reqmt Values
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC42   INVCO: Range of Coverage by Usg.Val
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC43   INVCO: Range Of Coverage By Reqmts
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC44   INVCO:Analysis of Inventory Turnover
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC45   INVCO: Analysis of Usage Values
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC46   INVCO: Analysis of Slow-Moving Item
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC47   INVCO: Analysis of Reqmt Values
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC48   INVCO: Anal. of Current Stock Value
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC49   INVCO: Mean Stock Values
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC50   INVCO: Analysis of Dead Stock
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC59   Revise Planning Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC6A   Sales and Operations Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC6B   Sales and Operations Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC61   Create Planning Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC62   Change Planning Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC63   Display Planning Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC64   Create Event
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC65   Change Event
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC66   Display Event
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC67   Init.graphics screen: genl.plg.hier
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC7E   ALE Configuration for Info Structur
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC71   Evaluation: Product Group Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC72   Evaluation: Product Group Usage
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC73   Evaluation: Material Usage; Prod.Gr
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC74   Transfer Material to Demand Management
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC75   Transfer PG to Demand Management
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC76   Breakdown PG Plan (Disaggregation)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC77   Display PG Plan (Disaggregation)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC78   Copy SOP Version
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC79   User Settings for SOP
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8A   Create Planning Type
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8B   Change Planning Type
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8C   Display Planning Type
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8D   Mass Processing: Create Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8E   Mass Processing: Change Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8F   Delete Entry in Planning File
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8G   Schedule Mass Processing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8H   Maintain User Methods
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8I   Mass Processing: Check Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8J   Reprocess Mass Processing
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8K   Copy/Delete Planning Versions
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8M   Read Opening Stocks
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8N   Delete forecast versions
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8O   Reset Generation Time Stamp
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8P   Standard SOP: Generate Master Data
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8Q   Aggregate Copy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8R   RESET: Status for Planning Objects
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8U   Calculate Proportional Factors
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8V   LIS Planning: Copy Versions
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8W   LIS Planning: Delete Versions
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8X   SOP: Distribution Scenario - Select
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8Y   SOP: Distribution Scenario - Display
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC8Z   SOP =&gt; Key Figure Assignments
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC80   Delete and activate versions
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC81   Create Planning For Product Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC82   Display Planning For Product Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC83   Change Planning For Product Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC84   Create Product Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC85   Display Product Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC86   Change Product Groups
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC87   Create For Material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC88   Change For Material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC89   Display For Material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC9A   Flexible Planning: Gen. Master Data
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC9B   Calc. Proportions as in Pl.Hierarchy
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC9E   Info Structure: Add to General Char
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC9F   Info Structure: Delete All Charact.
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC9K   Maintain Available Capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC90   Transfer to Demand Mgmt.: Mat.from any IS
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC91   Initial Graphic: Product Groups
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC92   Initial: Product Groups; Hierarchie
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC93   Create Flexible LIS Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC94   Change Flexible LIS Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC95   Display Flexible LIS Planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC96   Forecast Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC97   Number Range Maintenance: MC_SAUF
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC98   Maintain Planning Objects
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC99   Display Planning Objects
+        KSPP   Transfer Planning From Logistics to Cost Center
+        KSBL   Cost centers: Planning overview Report
+        KSOP   CO-OM-ABC: Transfer SOP/LTP (transfer to activity-based costing)
+        CPBL   Business Processes: Planning Overview Report
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MC9C   Reports for Flexible Planning<b><font color="#0066CC">
+<font size="3"><a name=07e></a>DEMAND MANAGEMNENT</font>
+        </font><font color="#0000FF" size="3">- Master Data -</font><font color="#0066CC">
+        </font></b>MDL1   Create Production Lot
+        MDL2   Change Production Lot
+        MDL3   Display Production Lot
+        MDSA   Display BOM explosion number
+        MDSP   Change BOM Explosion Numbers
+        MDUM   Convert Planned Orders into Purchase Requisitions
+        OPPP&nbsp;&nbsp;&nbsp;Explode BOM by date
+        MDUP   Maintain Project New Key Assignment
+        MDUS   Process Project Assignment
+        <b><font color="#0000FF" size="3">- Planning -</font></b>
+        MDAB   Set up planning file BATCH entry in background
+        MDRE   Checking Planning File In Background Mode
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD00   MRP : external procurement
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD01   Total planning online. MRP Run
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD02   MRP - Single-item; Multi-level planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD03   MRP-Individual Planning-Single-item, single-level planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD08   Reorganize MRP Lists
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD40   MPS
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD41   MPS - Single-item planning; Multi-level -
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD42   MPS - Single-item planning; Single-level -
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD43   MPS - Single-item planning; Interactive -
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD50   Multi-level, make-to-order Sales planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD51   Individual project planning. Multi-level project planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD61   Create Planned Indep. Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD62   Change Planned Indep. Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD63   Display Planned Indep. Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD64   Create Planned Indep.Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD65   Change Standard Indep.Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD66   Display Standard Indep.Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD67   Staggered Split
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD70   Copy Total Forecast
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD71   &quot;Copy Reference Changes&quot;
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD72   Evaluation; Charac.Plnng Techniques
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD73   Display Total Indep. Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD74   Reorganization: Adapt Indep.Reqmts
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD75   Reorganization: Delete Indep.Reqmts
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD76   Reorganize Delete Indep.Reqmts History
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD79   &quot;PP Demand Mngmt - XXL List Viewer&quot;
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD81   Create Customer Indep. Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD82   Change customer indep. requirement
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD83   Display Customer Indep. Requirement
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD85   List Customer Indep. Requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD90   Maintain Number Range for MRP
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD91   Maintain No. Range for Planned Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD92   Maint.No.Range for Reserv/Dep.Reqmt
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD93   Maintain Number Range: MDSM
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD94   Number range maint.: Total requirements
+        MDBT   MRP Run In Batch. Total planning in background
+        MF50   Planning Table - Change
+        MF51   Print Production Quantities
+        MF52   Planning Table - Display
+        MF53   Maintaining Variants-Production List
+        MF57   Planning Table - By MRP Lists
+        MF60   Pull List
+        MF63   Staging Situation
+        MF65   Stock Transfer for Reservation
+        MF70   Aggregate Collective Backflush
+        <b><font color="#0000FF" size="3">- Evaluations -</font></b>
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD04   Display Stock/Requirements Situation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD05   Individual Display Of MRP List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD06   Collective Display Of MRP List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD07   Collective access of stock/requirements list
+        MD09   Pegging requirements
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD4C   Multilevel Order Report
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD44   MPS Evaluation for a material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD45   MRP List Evaluation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD46   Eval. MRP lists of MRP controller
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD47   Product Group Planning Evaluation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD48   Cross-Plant Planning Evaluation
+        CO46   Order progress report
+        <b><font color="#0000FF"><font size="3"><a name=07f></a>- Planned Order -</font>
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD11   Create Planned Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD12   Capacity requirements - Change planned order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD13   Capacity requirements - Individual Display of planned order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD14   Individual Conversion of Planned Orders
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD15   Collective Conversion Of Planned Orders
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD16   Collective Display of Planned Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD17   Collective Requirements Display
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD19   Firm Planned Orders
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD20   Create Planning File Entry
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD21   Display Planning File Entry
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD25   Create Planning Calendar
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD26   Change Planning Calendar
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD27   Display Planning Calendar
+        CO40   Converting individual Planned Order into Production Order
+        CO41   Collective Conversion of Planned Orders
+        CO48   Partial conversion of Planned Order into Production Order
+        COR7   Individual Conversion of Planned Order into Procurement Order
+        COR7_PC  Collective conversion of Planned Orders to Procurement Order
+        COR8   Collective Conversion: Planned Order. to Procurement Order
+        MDUM   Convert Planned Orders into Purchase Requisitions
+        MDAC   Execute Action for Planned Order
+        MDVP   Collective Availability Check PAUF
+<b><font color="#0066CC" size="3"><a name=07g></a>MASTER SCHEDULE ITEMS (MPS)</font></b>
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD40   MPS
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD41   MPS - Single-item planning; Multi-level
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD42   MPS - Single-item planning; Single-level
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD43   MPS - Single-item planning; Interactive
+        MDBS   MPS - Total planning run (SA background job)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD50   Single-item planning; Multi-level, make-to-order Sales planning
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MD51   Individual project planning. Single-item, Multi-level project planning<b>
+<font color="#0066CC" size="3"><a name=07h></a>CAPACITY PLANNING</font>
+</b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM01   Capacity evaluation work center view: Load
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM02   Capacity planning; work center orders
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM03   Capacity planning; work center pool
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM04   Capacity planning; work center backlog
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM05   Capacity planning :Work center overload
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM07   Capacity planning: Variable access
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM10   Capacity leveling
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM11   Maintain flow control
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM21   Capacity leveling work center view – Capacity planning table (graphical)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM22   Capacity leveling work center view – Capacity planning table (tabular form)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM23   Capacity leveling order view – Capacity planning table (tabular form)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM25   Capacity leveling: Online
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM26   Capacity leveling project view – Capacity planning table (tabular form)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM27   Capacity leveling individual capacity view – Capacity planning table (graphical)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM28   Capacity leveling individual capacity view – Capacity planning table (tabular form)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM31   Capacity leveling order view – Capacity planning table (graphical)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM32   Capacity leveling project view – Capacity planning table (tabular form)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM40   Capacity leveling: Execute in the background
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM41   Evaluation of leveling: Background log
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM50   Extended evaluation: Work center view
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM51   Extended evaluation: Individual capacity view
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM52   Extended evaluation: Order view
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM53   Extended evaluation: Project view: WBS element/operation
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM54   Extended evaluation: Project view: Version
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM55   Extended evaluation: Work center/Version
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CM99   Generate basic capacity load
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR11   Add Capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR12   Change capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR13   Display Capacity
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>CR15   Capacity where-used
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OP4A&nbsp;&nbsp;&nbsp;Shift sequence
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OP43&nbsp;&nbsp;&nbsp;Factory calendar<b><font color="#0066CC"><font size="3"><a name=07i></a>
+FORECASTING</font>
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPBT   Total Forecast In BATCH Mode
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPDR   Print in BATCH Mode
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPE1   Create buyer
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPE2   Change buyer
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPE3   Display buyer
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPLT   Test Appl. for Interface to iPPE WB
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPR1   Forecast Adopted from External Data
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MPR2   Deletion of Forecast Data
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP00   Material Forecast Menu
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP01   Maintain AMPL Records
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP02   Display AMPL Records
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP11   Create message for direct production
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP12   Change Message for direct production
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP13   Display message - direct production
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP30   Execute Material Forecast
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP31   Change Material Forecast
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP32   Display Material Forecast
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP33   Reprocess material forecast
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP38   Total Forecast Run
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP39   Print
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP80   Create Forecast Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP81   Change Forecast Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP82   Delete Forecast Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP83   Display Forecast Profile
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP90   Maintain No. Range: Forecast Parameters
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>MP91   Maintain No. Range: Forecast Values<b>
+<font size="3" color="#0066CC"><a name=07j></a>LONG TERM PLANNING</font>
+<font color="#0066CC">        </font></b>MS00   Long-term planning
+<b><font color="#0066CC">        </font></b>MS01   Long-Term Planning: Total Planning
+<b><font color="#0066CC">        </font></b>MS02   Long-term planning: single-itm; multi-level
+<b><font color="#0066CC">        </font></b>MS03   Long-term planning: single-item; single-level
+<b><font color="#0066CC">        </font></b>MS04   Planning Scenario: Stock/Reqmts Lis
+<b><font color="#0066CC">        </font></b>MS05   Long-term planning: display MRP lis
+<b><font color="#0066CC">        </font></b>MS06   Long-term planning: collective MRP lis
+<b><font color="#0066CC">        </font></b>MS07   Long-Term planning: Material Overview
+<b><font color="#0066CC">        </font></b>MS08   Reorg.MRP Lists for Long-Term planning
+<b><font color="#0066CC">        </font></b>MS11   LTP: Create planned order
+<b><font color="#0066CC">        </font></b>MS12   LTP: Change planned order
+<b><font color="#0066CC">        </font></b>MS13   LTP: Display planned order
+<b><font color="#0066CC">        </font></b>MS20   Planning File Entry: Long-Term planning
+<b><font color="#0066CC">        </font></b>MS21   Planning File Entry: Long-Term planning
+<b><font color="#0066CC">        </font></b>MS22   Set Up planning File Entries for Scenario
+<b><font color="#0066CC">        </font></b>MS23   Delete planning File Entries of Scenario
+<b><font color="#0066CC">        </font></b>MS29   Calculate Sim. Initial Stock
+<b><font color="#0066CC">        </font></b>MS31   Create planning scenario
+<b><font color="#0066CC">        </font></b>MS32   Change planning scenario
+<b><font color="#0066CC">        </font></b>MS33   Display planning scenario
+<b><font color="#0066CC">        </font></b>MS44   Flexible Evaluation Long-Term planning
+<b><font color="#0066CC">        </font></b>MS47   Evaluation LTP for Product Group
+<b><font color="#0066CC">        </font></b>MS50   Make-to-order planning (LTP)
+<b><font color="#0066CC">        </font></b>MS51   Project planning (LTP)
+<b><font color="#0066CC">        </font></b>MS64   Create Simulation Version
+<b><font color="#0066CC">        </font></b>MS65   Requirements Situation
+<b><font color="#0066CC">        </font></b>MS66   Copy Simulative Dependent Requirements
+<b><font color="#0066CC">        </font></b>MS70   Evaluation planning Scenario for PURCHI
+<b><font color="#0066CC">        </font></b>MS71   Copy info structure version to LTP<b><font color="#0066CC">
+<font size="3"><a name=08></a>BILL OF MATERIALS</font></font></b><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS00&nbsp;&nbsp;&nbsp; BOM Menu
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS01&nbsp;&nbsp;&nbsp; Create Material BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS02&nbsp;&nbsp;&nbsp; Change Material BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS03&nbsp;&nbsp;&nbsp; Display Material BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS05&nbsp;&nbsp;&nbsp; Change Material BOM Group
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS06&nbsp;&nbsp;&nbsp; Display Material BOM Group
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS07&nbsp;&nbsp;&nbsp; Allocate Material BOM to Plant
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS08&nbsp;&nbsp;&nbsp; Change Material BOM   Plant Allocation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS09&nbsp;&nbsp;&nbsp; Display Allocations to Plant
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS11&nbsp;&nbsp;&nbsp; Display BOM Level by Level
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS12&nbsp;&nbsp;&nbsp; Multilevel BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS13&nbsp;&nbsp;&nbsp; Summarized BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS14&nbsp;&nbsp;&nbsp; BOM Comparison
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS15&nbsp;&nbsp;&nbsp; Single-Level Where-Used List
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS20&nbsp;&nbsp;&nbsp; Mass Change: Initial Screen
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS21&nbsp;&nbsp;&nbsp; Mass Material Change: Initial Screen
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS22&nbsp;&nbsp;&nbsp; Mass Document Change: Initial Screen
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS23&nbsp;&nbsp;&nbsp; Mass Class Change: Initial Screen
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS25&nbsp;&nbsp;&nbsp; Archiving for BOMs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS26&nbsp;&nbsp;&nbsp; BOM deletion
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS27&nbsp;&nbsp;&nbsp; Retrieval of BOMs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS28&nbsp;&nbsp;&nbsp; Archiving for BOMs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS31&nbsp;&nbsp;&nbsp; Create class BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS32&nbsp;&nbsp;&nbsp; Change class BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS33&nbsp;&nbsp;&nbsp; Display class BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS40&nbsp;&nbsp;&nbsp; Create Link to Configurable Material
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS41&nbsp;&nbsp;&nbsp; Change Material Config. Allocation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS42&nbsp;&nbsp;&nbsp; Display Material Config. Assignment
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS51&nbsp;&nbsp;&nbsp; Create standard BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS52&nbsp;&nbsp;&nbsp; Change standard BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS53&nbsp;&nbsp;&nbsp; Display standard BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS61&nbsp;&nbsp;&nbsp; Create Order BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS62&nbsp;&nbsp;&nbsp; Change Order BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS63&nbsp;&nbsp;&nbsp; Display Order BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS71&nbsp;&nbsp;&nbsp; Create WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS72&nbsp;&nbsp;&nbsp; Change WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS73&nbsp;&nbsp;&nbsp; Display WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS74&nbsp;&nbsp;&nbsp; Create multi-level WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS75&nbsp;&nbsp;&nbsp; Change multi-level WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS76&nbsp;&nbsp;&nbsp; Display multi-level WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS80&nbsp;&nbsp;&nbsp; Change Documents for Material BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS81&nbsp;&nbsp;&nbsp; Change Documents for Standard BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS82&nbsp;&nbsp;&nbsp; Change documents for sales order BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS83&nbsp;&nbsp;&nbsp; Change documents for WBS BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS84&nbsp;&nbsp;&nbsp; Change documents for class BOM
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS90&nbsp;&nbsp;&nbsp; Material BOM Number Ranges
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS91&nbsp;&nbsp;&nbsp; Number Ranges for Standard BOMs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CS92&nbsp;&nbsp;&nbsp; Number Ranges for Sales Order BOMs</font><b><font color="#0066CC">
+<font size="3"><a name=09></a>PURCHASING</font></font></b>
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME01<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Maintain Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME03<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Display Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME04<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Changes to Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME05<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Generate Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME06<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Analyze Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME07<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Reorganize Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME08<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Send Source List
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1A<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Archived Purchasing Info Records
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1B<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Re-determine Info Record Price
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1E<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Quotation Price History
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1L<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Info Records Per Vendor
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1M<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Info Records per Material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1P<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Order Price History
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1W<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Info Records Per Material Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1X<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Buyer's Negotiation Sheet for Vendor
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME1Y<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Buyer's Negotiate Sheet for Material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME11<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Create Purchasing Info Record
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME12<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Change Purchasing Info Record
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME13<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Display Purchasing Info Record
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME14<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Changes to Purchasing Info Record
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME15<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Flag Purchase Info Rec. for Deletion
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME16<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchasing Info Recs. for Deletion
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME18<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Send Purchasing Info Record
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2A<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Monitor Confirmations
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2B<font color="#000000">&nbsp;&nbsp;&nbsp; </font>POs by Requirement Tracking Number
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2C<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders by Material Group
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2J<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders for Project
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2K<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders by Account Assignment
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2L<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders by Vendor
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2M<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders by Material
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2N<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders by PO Number
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2O<font color="#000000">&nbsp;&nbsp;&nbsp; </font>SC Stock Monitoring (Vendor)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2S<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Services per Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2V<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Goods Receipt Forecast
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME2W<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Purchase Orders for Supplying Plant
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME21<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Create Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME21N<font color="#000000">&nbsp;&nbsp;&nbsp;</font>Create Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME22<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Change Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME22N<font color="#000000">&nbsp;&nbsp; </font>Change Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME23<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Display Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME23N<font color="#000000">&nbsp;&nbsp;&nbsp;</font>Display Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME24<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Maintain Purchase Order Supplement
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME25<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Create PO with Source Determination
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME26<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Display PO Supplement (IR)
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME27<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Create Stock Transport Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME28<font color="#000000">&nbsp;&nbsp;&nbsp; </font>Release Purchase Order
+<font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>ME29N<font color="#000000">&nbsp;&nbsp;&nbsp;</font>Release purchase order<b><font color="#0066CC">
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME51N</span><font color="#000000">&nbsp;&nbsp;&nbsp;</font><span style="color: rgb(0, 0, 0);">Create Purchase Requisition
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME52N   Change Purchase Requisition
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME53N   Display Purchase Requisition
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME5A</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Purchase Requisitions: List Display</span><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME5F</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Release Reminder: </span><span style="color: rgb(0, 0, 0)">Purchase</span><span style="color: rgb(0, 0, 0);"> Requisition
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME5J</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Purchase Requisitions for Project
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME5K</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Requisitions by Account Assignment
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME54</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Release Purchase Requisition
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME55</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Collective Release of Purchase </span><span style="color: rgb(0, 0, 0)">Requisition</span><span style="color: rgb(0, 0, 0);">s
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME56</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Assign Source to </span><span style="color: rgb(0, 0, 0)">Purchase</span><span style="color: rgb(0, 0, 0);"> Requisition
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME57</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Assign and Process </span><span style="color: rgb(0, 0, 0)">Purchase</span><span style="color: rgb(0, 0, 0);"> Requisitions
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME58</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Ordering: Assigned </span><span style="color: rgb(0, 0, 0)">Purchase </span><span style="color: rgb(0, 0, 0);">Requisitions
+</span><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">ME59</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">Automatic Generation of POs</span><b><font color="#0066CC">
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0);">MELB</span><font color="#000000">&nbsp;&nbsp;&nbsp; </font><span style="color: rgb(0, 0, 0)">Purchase</span><span style="color: rgb(0, 0, 0);"> Transactions by Tracking No.</span><b><font color="#0066CC">
+<font size="3"><a name=10></a>DELIVERY (Outbound)</font>
+</font></b><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL00&nbsp;&nbsp;&nbsp; Shipping
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL01&nbsp;&nbsp;&nbsp; Create Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL01N&nbsp;&nbsp; Create Outbound Delivery with Order Ref.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL01NO&nbsp; Create Outbound Delivery w/o Order Ref.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL02&nbsp;&nbsp;&nbsp; Change Outbound Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL02N&nbsp;&nbsp; Change Outbound Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL03&nbsp;&nbsp;&nbsp; Display Outbound Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL03N&nbsp;&nbsp; Display Outbound Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL04&nbsp;&nbsp;&nbsp; Process Delivery Due List
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06&nbsp;&nbsp;&nbsp; Delivery Monitor
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06C&nbsp;&nbsp; List Outbound Deliveries for Confirmation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06D&nbsp;&nbsp; Outbound Deliveries for Distribution
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06F&nbsp;&nbsp; General delivery list   Outbound delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06G&nbsp;&nbsp; List of Outbound Deliveries for Goods Issue
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06I&nbsp;&nbsp; Inbound Delivery Monitor
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06IC&nbsp; Confirmation of putaway inbound delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06ID&nbsp; Inbound Deliveries for Distribution
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06IF&nbsp; Selection inbound deliveries
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06IG&nbsp; Inbound deliveries for goods receipt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06IP&nbsp; Inbound deliveries for putaway
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06L&nbsp;&nbsp; Outbound Deliveries to be Loaded
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06O&nbsp;&nbsp; Outbound Delivery Monitor
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06P&nbsp;&nbsp; List of Outbound Deliveries for Picking
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06T&nbsp;&nbsp; List Outbound Deliveries (Trans. Planning)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL06U&nbsp;&nbsp; List of Unchecked Outbound Deliveries
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL08&nbsp;&nbsp;&nbsp; Confirmation of Picking Request
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL09&nbsp;&nbsp;&nbsp; Cancel Goods Issue for Delivery Note
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL10&nbsp;&nbsp;&nbsp; Edit User-specific Delivery List
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL10A&nbsp;&nbsp; Sales Orders Due for Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL10B&nbsp;&nbsp; Purchase Orders Due for Delivery</font><b><font color="#0066CC">
+<font size="3"><a name=11></a>INQUIRY</font></font></b><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA11&nbsp;&nbsp;&nbsp; Create Inquiry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA12&nbsp;&nbsp;&nbsp; Change Inquiry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA13&nbsp;&nbsp;&nbsp; Display Inquiry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA14L&nbsp;&nbsp; Sales Documents Blocked for Delivery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA15&nbsp;&nbsp;&nbsp; Inquiries List
+</font><font color="#0066CC" size="3"><b><a name=12></a>QUOTATION</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA21&nbsp;&nbsp;&nbsp; Create Quotation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA22&nbsp;&nbsp;&nbsp; Change Quotation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA23&nbsp;&nbsp;&nbsp; Display Quotation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA25&nbsp;&nbsp;&nbsp; Quotations List
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA26&nbsp;&nbsp;&nbsp; Collective Processing for Quotations
+</font><font color="#0066CC" size="3"><b><a name=13></a>ITEM PROPOSAL</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA51&nbsp;&nbsp;&nbsp; Create Item Proposal
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA52&nbsp;&nbsp;&nbsp; Change Item Proposal
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA53&nbsp;&nbsp;&nbsp; Display Item Proposal
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA55&nbsp;&nbsp;&nbsp; List of Item Proposals
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA88&nbsp;&nbsp;&nbsp; Actual Settlement: Sales Orders
+</font><font color="#0066CC" size="3"><b><a name=14></a>PRICING</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/03&nbsp;&nbsp;&nbsp; Create Condition Table (SD Price)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/04&nbsp;&nbsp;&nbsp; Change Condition Table (Sales pr.)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/05&nbsp;&nbsp;&nbsp; Display Condition Table: (Sales Pr.)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/06&nbsp;&nbsp;&nbsp; Condition Categories: SD Pricing
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/07&nbsp;&nbsp;&nbsp; Maintain Access (Sales Price)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/08&nbsp;&nbsp;&nbsp; Conditions: Procedure for A V
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/09&nbsp;&nbsp;&nbsp; Condition Types: Account Determine
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/10&nbsp;&nbsp;&nbsp; Account Determination: Access Sequence
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/11&nbsp;&nbsp;&nbsp; Conditions: Account Determine Proced.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/12&nbsp;&nbsp;&nbsp; Account Determination: Create Table
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/13&nbsp;&nbsp;&nbsp; Account Determination: Change Table
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/14&nbsp;&nbsp;&nbsp; Account Determination: Display Table
+</font><font color="#0066CC" size="3"><b><a name=15></a>BILLING</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VF02&nbsp;&nbsp;&nbsp; Change billing document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VF11&nbsp;&nbsp;&nbsp; Cancel Billing document
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VF04&nbsp;&nbsp;&nbsp; Billing due list
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FBL5N   Display Customer invoices by line
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FBL1N   Display Vendor invoices by line
+</font><font color="#0066CC" size="3"><b><a name=16></a>CONTRACT</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA41&nbsp;&nbsp;&nbsp; Create Contract
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA42&nbsp;&nbsp;&nbsp; Change Contract
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA42W&nbsp;&nbsp; Workflow for master contract
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA43&nbsp;&nbsp;&nbsp; Display Contract
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA44&nbsp;&nbsp;&nbsp; Actual Overhead: Sales Order
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA45&nbsp;&nbsp;&nbsp; List of Contracts
+</font><font color="#0066CC" size="3"><b><a name=17></a>CUSTOMER MANAGEMENT</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD01&nbsp;&nbsp;&nbsp; Create Customer (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD02&nbsp;&nbsp;&nbsp; Change Customer (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD02CORE Maintain customer
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD03&nbsp;&nbsp;&nbsp; Display Customer (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD04&nbsp;&nbsp;&nbsp; Customer Changes (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD05&nbsp;&nbsp;&nbsp; Block Customer (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD06&nbsp;&nbsp;&nbsp; Mark Customer for Deletion (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD08&nbsp;&nbsp;&nbsp; Confirm Customer Individually (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD09&nbsp;&nbsp;&nbsp; Confirm Customer List (Accounting)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD10&nbsp;&nbsp;&nbsp; Customer Account Balance
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD10N&nbsp;&nbsp; Customer Balance Display
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD10NA&nbsp; Customer Bal. Display with Worklist
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD10NET Customer Balance Display
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD11&nbsp;&nbsp;&nbsp; Customer Account Analysis
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD15&nbsp;&nbsp;&nbsp; Transfer customer changes: send
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD16&nbsp;&nbsp;&nbsp; Transfer customer changes: receive
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD24&nbsp;&nbsp;&nbsp; Credit Limit Changes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD32&nbsp;&nbsp;&nbsp; Change Customer Credit Management
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD33&nbsp;&nbsp;&nbsp; Display Customer Credit Management
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FD37&nbsp;&nbsp;&nbsp; Credit Management Mass Change
+</font><font color="#0066CC" size="3"><b><a name=18></a>ATP</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CO09&nbsp;&nbsp;&nbsp; Material Availability overview
+</font><font color="#0066CC" size="3"><b><a name=19></a>GOODS MOVEMENT</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIGO&nbsp;&nbsp;&nbsp; Post Goods receipt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MB51&nbsp;&nbsp;&nbsp; Material document list
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MB01&nbsp;&nbsp;&nbsp; Goods Movement
+</font><font color="#0066CC" size="3"><b><a name=22></a>GENERAL</b></font><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS00&nbsp;&nbsp;&nbsp; Master Data
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VC00&nbsp;&nbsp;&nbsp; Sales support
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VA00&nbsp;&nbsp;&nbsp; Sales
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL00&nbsp;&nbsp;&nbsp; Shipping
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VF00&nbsp;&nbsp;&nbsp; Billing
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MD04&nbsp;&nbsp;&nbsp; Material Requirements (Shows MRP and releases against materials)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LT03&nbsp;&nbsp;&nbsp; Create Transfer Order
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SM01&nbsp;&nbsp;&nbsp; Transaction list (Lock transactions in the system. Also a good tool to see what transactions are available)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SHDB&nbsp;&nbsp;&nbsp; Transaction recorder (BDC)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VKM1&nbsp;&nbsp;&nbsp; List of blocked SD documents
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VKM3,VKM4 List of sales documents
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VKM5&nbsp;&nbsp;&nbsp; Deliveries list
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vl09&nbsp;&nbsp;&nbsp; Goods issue cancel
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VL31N&nbsp;&nbsp;&nbsp;Inbound delivery</font></pre>
+<div align="right">
+<pre><font color="#0066CC" size="4">[ <b><a href="#top"><font color="#0066CC">GO TO TOP</font></a></b> ]</font></pre>
+</div>
+
+
+
+
+<pre><b><font size="+2"><a name=23></a>Common SAP ABAP Development Transaction Codes and Tables</font></b></pre>
+<pre><b><font color="#0066CC" size="3">EARCH_SAP_MENU</font></b>
+Find menu path for transaction code
+
+<font color="#0066CC" size="3"><b>AL11</b></font>
+SAP directorie structure
+
+<font color="#0066CC" size="3"><b>BAPI</b></font>
+BAPI Explorer, view all sap BAPI's
+
+<font color="#0066CC" size="3"><b>BUSP</b></font>
+Project management of SAP enhancements
+
+<font color="#0066CC" size="3"><b>FILE</b></font>
+Maintain Logical file path definitions
+
+<font color="#0066CC" size="3"><b>OAOR</b></font>
+Business document navigator (edit ENJOYSAP_LOGO etc for ALV Tree)
+
+<font color="#0066CC" size="3"><b>OLE</b></font>
+Examples for OLE Processing
+
+<font color="#0066CC" size="3"><b>PFTC</b></font>
+Workflow task maintain
+
+<font color="#0066CC" size="3"><b>SA38</b></font>
+Execute SAP ABAP program
+
+<font color="#0066CC" size="3"><b>SCC1</b></font>
+Client Copy, copy transport
+
+<font color="#0066CC" size="3"><b>SCDO</b></font>
+Change Document / Change History
+
+<font color="#0066CC" size="3"><b>SCOT</b></font>
+SAPconnect Administration
+
+<font color="#0066CC" size="3"><b>SE01</b></font>
+Transport Organizer (extended view)
+
+<font color="#0066CC" size="3"><b>SE03</b></font>
+Transport Organizer Tools (change package/dev class etc..)
+
+<font color="#0066CC" size="3"><b>SE09</b></font>
+Workbench organiser
+
+<font color="#0066CC" size="3"><b>SE11</b></font>
+ABAP Dictionary
+
+<font color="#0066CC" size="3"><b>SE14</b></font>
+Database utility: Adjust after change to definition, delete….
+
+<font color="#0066CC" size="3"><b>SE16</b></font>
+Data browser, view/add table data
+
+<font color="#0066CC" size="3"><b>SE18</b></font>
+Business Add-ins(BADI’s): Definition transaction
+
+<font color="#0066CC" size="3"><b>SE19</b></font>
+Business Add-ins(BADI’s): Implementation transaction
+
+<font color="#0066CC" size="3"><b>SE24</b></font>
+Class builder
+
+<font color="#0066CC" size="3"><b>SE38</b></font>
+Program Editor
+
+<font color="#0066CC" size="3"><b>SE39</b></font>
+Split screen editor
+
+<font color="#0066CC" size="3"><b>SE41</b></font>
+Menu Painter
+
+<font color="#0066CC" size="3"><b>SE51</b></font>
+Screen Painter
+
+<font color="#0066CC" size="3"><b>SE61</b></font>
+Document maintenance
+
+<font color="#0066CC" size="3"><b>SE71</b></font>
+Form painter (SAPscript)
+
+<font color="#0066CC" size="3"><b>SE80</b></font>
+Object Navigator ( SAP Development workbench, most development functionality is available from this transaction )
+
+<font color="#0066CC" size="3"><b>SE81</b></font>
+Application Hierarchy (leads to SE84 for desired area)
+
+<font color="#0066CC" size="3"><b>SE84</b></font>
+Repository info system
+
+<font color="#0066CC" size="3"><b>SE91</b></font>
+Message Maintenance
+
+<font color="#0066CC" size="3"><b>SE93</b></font>
+Maintain Transaction code
+
+<font color="#0066CC" size="3"><b>SHD0</b></font>
+Create Transaction Variant. Enter name of transaction plus name of new/existing variant.
+
+<font color="#0066CC" size="3"><b>SHDB</b></font>
+Batch input recorder
+
+<font color="#0066CC" size="3"><b>SLIN</b></font>
+ABAP program extended syntax check (full check of programs syntax)
+
+<font color="#0066CC" size="3"><b>SM04</b></font>
+User overview
+
+<font color="#0066CC" size="3"><b>SM12</b></font>
+Lock entries
+
+<font color="#0066CC" size="3"><b>SM13</b></font>
+Update Requests
+
+<font color="#0066CC" size="3"><b>SM21</b></font>
+Online system log analysis
+
+<font color="#0066CC" size="3"><b>SM30</b></font>
+Maintain table views
+
+<font color="#0066CC" size="3"><b>SM31</b></font>
+Table maintenance
+
+<font color="#0066CC" size="3"><b>SM35</b></font>
+Batch input i.e. Recording
+
+<font color="#0066CC" size="3"><b>SM36</b></font>
+Create background job
+
+<font color="#0066CC" size="3"><b>SM37</b></font>
+Background job monitor, Select background jobs
+
+<font color="#0066CC" size="3"><b>SM49</b></font>
+External Commands
+
+<font color="#0066CC" size="3"><b>SM50</b></font>
+Process overview (within current server)
+
+<font color="#0066CC" size="3"><b>SM51</b></font>
+Server overview
+
+<font color="#0066CC" size="3"><b>SM59</b></font>
+Display and Maintain RFC destination
+
+<font color="#0066CC" size="3"><b>SM64</b></font>
+Display/maintain Events
+
+<font color="#0066CC" size="3"><b>SM66</b></font>
+Process (session) overview across all servers
+
+<font color="#0066CC" size="3"><b>SM69</b></font>
+External commands (Maintain)
+
+<font color="#0066CC" size="3"><b>SMW0</b></font>
+SAP WEB Repository (binary data)   add/ mod images (used to put in screen containers)
+
+<font color="#0066CC" size="3"><b>SMX</b></font>
+View background jobs
+
+<font color="#0066CC" size="3"><b>SO10</b></font>
+Standard text editor
+
+<font color="#0066CC" size="3"><b>SP01</b></font>
+Spool list
+
+<font color="#0066CC" size="3"><b>SP02</b></font>
+Display your Own spool list
+
+<font color="#0066CC" size="3"><b>SPAD</b></font>
+SAP Spool Administrator
+
+<font color="#0066CC" size="3"><b>SPAM</b></font>
+Support package manager
+
+<font color="#0066CC" size="3"><b>SPAU</b></font>
+Modification adjustment
+
+<font color="#0066CC" size="3"><b>SPRO</b></font>
+SAP System Customizing, IMG
+
+<font color="#0066CC" size="3"><b>SQ01</b></font>
+Sap Query development
+
+<font color="#0066CC" size="3"><b>ST02</b></font>
+Database Tune Summary
+
+<font color="#0066CC" size="3"><b>ST04</b></font>
+DB Performance Monitor
+
+<font color="#0066CC" size="3"><b>STMS</b></font>
+Transport Management system
+
+<font color="#0066CC" size="3"><b>ST22</b></font>
+ABAP runtime analysis ( ABAP Dump Analysis )
+
+<font color="#0066CC" size="3"><b>SU01</b></font>
+User Maintenance
+
+<font color="#0066CC" size="3"><b>SU53</b></font>
+Retrieve authorisation data for object, execute after error message is displayed(/nsu53)
+
+<font color="#0066CC" size="3"><b>SUIM</b></font>
+User info system (New user, Roles, Authorisations, User tcodes etc..)
+
+<font color="#0066CC" size="3"><b>SXDA</b></font>
+SAP Data transfer workbench
+
+<font color="#0066CC" size="3"><b>SALE</b></font>
+IDoc and ALE development
+
+<font color="#0066CC" size="3"><b>VOK2</b></font>
+Output determination by functional area / output type (Output programs)
+
+<font color="#0066CC" size="3"><b>WEDI</b></font>
+IDoc and EDI Basis</pre>
+
+
+
+			<p>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+
+
+
+<TABLE id=table1 cellSpacing=0 cellPadding=0 width="99%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <P align=center><FONT face="Courier New"><FONT size=2><BR><BR>This 
+		site was 
+		created in Feb.2007 <br>by William Tan</FONT></FONT><BR><BR><!-- Histats.com  START  -->
+      <SCRIPT language=javascript type=text/javascript>   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </SCRIPT>
+
+
+      
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+</body>
+</html>
