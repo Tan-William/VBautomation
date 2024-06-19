@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Creating event procedure and errors handling</title>
+<meta name="author" content="WWilliam Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<STYLE TYPE="text/css">
+<!--
+#dek {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+</head>
+
+
+
+<body background="YellowTexture.gif">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table63">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table64">
+	<tr>
+		<td>
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a class="type3" href="../../index.htm">Home</a>&nbsp;|
+	<a class="type3" href="../../AboutMe/Me.htm">About me</a> |
+	<a class="type1" href="../../VBA/beginner_basic.htm">EXCEL VB Programming 
+	(XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../../EXCEL/excel_under_construction.htm">EXCEL VB.Net 
+	Programming</a>&nbsp;|
+	<a class="type1" href="../../EXCEL/excel_worksheet_functions.htm">EXCEL 
+	Spreadsheet Functions</a> |&nbsp;
+	<a class="type1" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; 
+	Management</a>&nbsp;|
+	<a class="type1" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a></font>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1"></td>
+	</tr>
+</table>
+
+
+<table border="0" width="98%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="105">&nbsp;</td>
+		<td><b><font size="5" face="Arial">Creating an event procedure and errors handling</font></b><p><font size="2" face="Arial">1.0&nbsp;Create a command button on the form in Design View</font></p>
+<p>
+<img border="0" src="openforms_errors_handler1.gif" width="406" height="242"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">2.0 in this example, say you want to open a form on the command 
+button click.<br>
+Click on Form Operations, then click on Open Form, Click Next.</font></p>
+<p>
+<img border="0" src="openforms_errors_handler2.gif" width="486" height="319"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">3.0 select from an existing table called 'Orders'. 
+Click Next.</font></p>
+<p>
+<img border="0" src="openforms_errors_handler3.gif" width="486" height="319"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">4.0 choose to view all records. Click Next.</font></p>
+<p>
+<img border="0" src="openforms_errors_handler4.gif" width="486" height="319"></p>
+<p><br>
+<font size="2" face="Arial">5.0 type the text to appear on the command button. 
+Click Next.</font></p>
+<p>
+<img border="0" src="openforms_errors_handler5.gif" width="486" height="319"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">6.0 give a name to the button that will appear in the event 
+procedure code.</font></p>
+<p>
+<img border="0" src="openforms_errors_handler6.gif" width="486" height="319"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">7.0 click on the command button, then click on the icon to open 
+its property sheet</font></p>
+<p>
+<img border="0" src="openforms_errors_handler7.gif" width="329" height="297"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">8.0 select [Event Procedure] from the On Click drop-down list, 
+then click on the ellipsis button on the right </font></p>
+<p>
+<img border="0" src="openforms_errors_handler8.gif" width="321" height="230"></p>
+<p>&nbsp;<br>
+<font size="2" face="Arial">9.0 you notice that the on-click event procedure to open the 
+Orders form is automatically created for you, as well as the errors handling 
+statement.</font></p>
+<p>
+<img border="0" src="openforms_errors_handler9.gif" width="701" height="350">&nbsp;</p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>
