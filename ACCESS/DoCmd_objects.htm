@@ -1,0 +1,2921 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DoCmd Ojcets and Examples</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#000000; text-decoration:none;}
+A.type2:visited {color:#000000; text-decoration:none;}
+A.type2:active  {color:#000000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+
+
+<style type="text/css">
+        #P { font: 9pt Verdana,Helvetica,Arial }
+        #TD { font: 9pt Verdana,Helvetica,Arial }
+    .noline {a:Verdana,Helvetica,Arial,Sans Serif;font-size:10pt;color:#000000;text-decoration:none;}
+    A:hover { color:CC0033; }
+</style>
+
+
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ValueClick Media POP-UNDER CODE v1.8 for javafile.com -->
+<script language="javascript"><!--                                 
+var dc=document; var date_ob=new Date();
+dc.cookie='h2=o; path=/;';var bust=date_ob.getSeconds();
+if(dc.cookie.indexOf('e=llo') <= 0 && dc.cookie.indexOf('2=o') > 0){
+dc.write('<scr'+'ipt language="javascript" src="http://media.fastclick.net');
+dc.write('/w/pop.cgi?sid=26049&m=2&tp=2&v=1.8&c='+bust+'"></scr'+'ipt>');
+date_ob.setTime(date_ob.getTime()+14400000);
+dc.cookie='he=llo; path=/; expires='+ date_ob.toGMTString();} // -->
+</script>  
+
+		
+<script language="javascript">
+<!--
+var Open = ""
+var Closed = ""
+
+function preload(){
+if(document.images){
+	Open = new Image(16,13)    
+	Closed = new Image(16,13)
+	Open.src = "open.gif"
+	Closed.src = "closed.gif"
+}}
+
+function showhide(what,what2){
+if (what.style.display=='none'){
+what.style.display='';
+what2.src=Open.src
+}
+else{
+what.style.display='none'
+what2.src=Closed.src
+}
+}
+-->
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<STYLE TYPE="text/css">
+<!--
+#dek {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+.auto-style1 {
+	font-family: Verdana;
+}
+.auto-style2 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style3 {
+	color: #000000;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style4 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style5 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style6 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style7 {
+	font-size: 10.5pt;
+}
+.auto-style8 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style9 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12pt;
+}
+.auto-style12 {
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style13 {
+	font-size: 10.5pt;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style14 {
+	text-align: left;
+	white-space: normal;
+	color: #000000;
+	font-size: 10.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	vertical-align: bottom;
+	border: 1px solid #C0C0C0;
+	padding: 1px;
+}
+.auto-style15 {
+	font-size: 10.5pt;
+	font-weight: bold;
+}
+.auto-style16 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style17 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-style: italic;
+}
+.auto-style18 {
+	font-size: 10.5pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style19 {
+	font-weight: bold;
+}
+.auto-style20 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style21 {
+	font-size: 10.5pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: left;
+}
+.auto-style22 {
+	font-family: Arial;
+	font-size: 10.5pt;
+}
+.auto-style23 {
+	color: #000000;
+	font-family: Arial;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style24 {
+	font-family: Arial;
+}
+.auto-style25 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style26 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style27 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style28 {
+	text-align: right;
+}
+.auto-style30 {
+	margin-top: 6px;
+	margin-bottom: 0px;
+}
+.auto-style32 {
+	margin-left: 0px;
+}
+.auto-style35 {
+	text-align: center;
+}
+.auto-style36 {
+	font-style: normal;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11pt;
+}
+.auto-style37 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+}
+.auto-style38 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	font-style: normal;
+}
+.auto-style40 {
+	color: #0066FF;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style41 {
+	font-size: 11pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style42 {
+	color: #0066FF;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style43 {
+	color: #0045C3;
+	font-family: Arial;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+</STYLE>
+</head>
+
+
+
+<body background="YellowTexture.gif" style="text-align: left" onload="preload()">
+<table border="0" cellspacing="0" cellpadding="0" id="table63" class="auto-style30" style="width: 79%; height: 12px">
+	<tr>
+		<td style="height: 12px">
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="table64" class="auto-style4" style="width: 61%; height: 14px;">
+	<tr>
+		<td class="auto-style35">
+	<p align="center" style="height: 39px; width: 990px;">
+	<a class="type3" href="../index.htm"><span class="auto-style38">
+	<font class="auto-style40">
+	H</font></span><font style="font-size: 80%" class="auto-style42"><span class="auto-style36">ome</span></font></a><font style="font-size: 80%" class="auto-style37"><span class="auto-style41">&nbsp;|
+	<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> 
+	| <a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a> |
+	</span>
+	<a class="type1" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661"><span class="auto-style41">Guestbook</span></a></font><span class="auto-style36">
+	</span><hr color="#0066FF" size="1" style="height: -15px; width: 988px;" class="auto-style32"></td>
+	</tr>
+</table>
+
+
+
+<TABLE border="0" cellspacing="0" width="985" height="3510" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825" id="table58">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033" id="table59">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style5">
+						<font class="auto-style4"><strong>Access Programming</strong></font></font><span class="auto-style5">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+		<font face>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style2" href="beginner_basic_Acc.htm">Access 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style23" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp;Methods</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style43" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style23" href="forms_controls_events.htm">
+						Forms, Control and Events</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+					<a rel="internal" class="auto-style3" href="ADO.htm">
+						<span class="auto-style24">ADO (ActiveX Data Objects)</span></a><span class="auto-style24"><span class="auto-style7"></font></font></font></span></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style23" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style23" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style22">
+					<a rel="internal" class="auto-style3" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style22">
+						<a rel="internal" class="auto-style3" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style6" href="SQL_Examples.htm">
+						<span class="auto-style24">Jet SQL examples</span></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style23" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style23" href="Integrating_Access_Excel.htm">
+						Integrating Access/Excel</a></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style23" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style22">
+						&nbsp;</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>		
+<td valign="top" height="3510">&nbsp;</td>
+<td valign="top" height="3510" width="8">&nbsp;</td>
+<td bgcolor="#ffffff" valign="top" align="center" height="3510" background="YellowTexture.gif" style="width: 1%"></font>
+
+
+
+<DIV ID="dek"></DIV>
+<SCRIPT TYPE="text/javascript">
+<!--
+//Pop up information box II (Mike McGrath (mike_mcgrath@lineone.net))
+//Permission granted to Dynamicdrive.com to include script in archive
+Xoffset=-200;    // modify these values to ...
+Yoffset=30;    // change the popup position.
+
+var old,skn,iex=(document.all),yyy=-1000;
+
+var ns4=document.layers
+var ns6=document.getElementById&&!document.all
+var ie4=document.all
+
+if (ns4)
+skn=document.dek
+else if (ns6)
+skn=document.getElementById("dek").style
+else if (ie4)
+skn=document.all.dek.style
+if(ns4)document.captureEvents(Event.MOUSEMOVE);
+else{
+skn.visibility="visible"
+skn.display="none"
+}
+document.onmousemove=get_mouse;
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=250 BORDER=1 BORDERCOLOR=red CELLPADDING=2 CELLSPACING=0 "+
+"BGCOLOR="+bak+"><TD ALIGN=left><FONT TYPE=arial COLOR=black SIZE=2>"+msg+"</FONT></TD></TABLE>";
+yyy=Yoffset;
+ if(ns4){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(ns6){document.getElementById("dek").innerHTML=content;skn.display=''}
+ if(ie4){document.all("dek").innerHTML=content;skn.display=''}
+}
+
+function get_mouse(e){
+var x=(ns4||ns6)?e.pageX:event.x+document.body.scrollLeft;
+skn.left=x+Xoffset;
+var y=(ns4||ns6)?e.pageY:event.y+document.body.scrollTop;
+skn.top=y+yyy;
+}
+
+function kill(){
+yyy=-1000;
+if(ns4){skn.visibility="hidden";}
+else if (ns6||ie4)
+skn.display="none"
+}
+//-->
+</SCRIPT>
+
+
+
+<td width="81%" height="3510">
+      <!-- Start Page Content -->
+		<align="left">
+		<font face="">
+		<div align="left">
+			<SCRIPT TYPE="text/javascript">
+<!--
+//Pop up information box II (Mike McGrath (mike_mcgrath@lineone.net))
+//Permission granted to Dynamicdrive.com to include script in archive
+Xoffset=-200;    // modify these values to ...
+Yoffset=30;    // change the popup position.
+
+var old,skn,iex=(document.all),yyy=-1000;
+
+var ns4=document.layers
+var ns6=document.getElementById&&!document.all
+var ie4=document.all
+
+if (ns4)
+skn=document.dek
+else if (ns6)
+skn=document.getElementById("dek").style
+else if (ie4)
+skn=document.all.dek.style
+if(ns4)document.captureEvents(Event.MOUSEMOVE);
+else{
+skn.visibility="visible"
+skn.display="none"
+}
+document.onmousemove=get_mouse;
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=250 BORDER=1 BORDERCOLOR=red CELLPADDING=2 CELLSPACING=0 "+
+"BGCOLOR="+bak+"><TD ALIGN=left><FONT TYPE=arial COLOR=black SIZE=2>"+msg+"</FONT></TD></TABLE>";
+yyy=Yoffset;
+ if(ns4){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(ns6){document.getElementById("dek").innerHTML=content;skn.display=''}
+ if(ie4){document.all("dek").innerHTML=content;skn.display=''}
+}
+
+function get_mouse(e){
+var x=(ns4||ns6)?e.pageX:event.x+document.body.scrollLeft;
+skn.left=x+Xoffset;
+var y=(ns4||ns6)?e.pageY:event.y+document.body.scrollTop;
+skn.top=y+yyy;
+}
+
+function kill(){
+yyy=-1000;
+if(ns4){skn.visibility="hidden";}
+else if (ns6||ie4)
+skn.display="none"
+}
+//-->
+</SCRIPT>
+
+
+      				       
+<font face="" size="2">
+		<font face="Arial">
+			<b><font size="6">DoCmd Object Model</font></b></font><font face="Arial" size="2"><p class="auto-style18">
+DoCmd originally appeared in version 1.0 and 2.0 of Access. Later with the 
+incorporation of VBA into Access, DoCmd has changed from language component to 
+become a portion of the Access object model.</p>
+			<span class="auto-style16">
+<p><span class="auto-style7">Methods of DoCmd object are used to run Microsoft Access actions from Visual 
+Basic code. Most of the methods have </span> <span style="font-weight: 400;">parameters 
+or
+</span></span><span class="auto-style1"><span class="auto-style16">arguments &#8212;&nbsp; some are required, while others are optional. The 
+methods correspond directly to the built-in '<a target="_blank" href="beginner_basic_Acc.htm#Access_Macro_Actions">macro 
+actions</a>' that are available in the Action column of the 
+<a target="_blank" href="images/macro_actions_dialogbox.gif">Macro dialog box</a>. 
+However, a few macro actions were not supported as members of the DoCmd object, 
+since they are already available as parts of VBA itself. </p>
+<p></span><span class="auto-style7"><span class="auto-style16">The DoCmd object does not work for the following macro actions :</span><span class="auto-style1"><br>
+</span></span><span class="auto-style1"><br>
+<span class="auto-style7">&#9679; AddMenu<br>
+&#9679; MsgBox - Replaces by MsgBox function<br>
+&#9679; RunApp - Use the Shell function instead to run another application<br>
+&#9679; RunCode - Run the function directly in Access Visual Basic<br>
+&#9679; SendKeys - Use the SendKeys command<br>
+&#9679; SetValue - Assign values directly in VBA<br>
+&#9679; StopAllMacros<br>
+&#9679; StopMacro</span></span></span></p>
+			<p>&nbsp;<a name="Menu"></a></p>
+            
+			<table border="0" width="63%" cellspacing="0" id="table65">
+				<tr>
+					<td colspan="4" bgcolor="#99CCFF" class="auto-style8">
+					<p align="center">
+
+
+			<font face="Arial" color="#000000">		
+        			<span class="auto-style9">DoCmd Methods</span></font></td>
+				</tr>
+				<tr>
+					<td width="29%" class="auto-style5">
+					<font size="2" face="Arial" color="#000000" class="auto-style7">
+		<a class="type1" href="#ApplyFilter"><span class="auto-style1">ApplyFilter</span></a><span class="auto-style1"><br>
+					<a class="type1" href="#Beep">Beep</a><br>
+					<a class="type1" href="#CancelEvent">CancelEvent</a><br>
+		<a class="type1" href="#Close">Close</a><br>
+					CopyDatabaseFile<br>
+					CopyObject<br>
+					DeleteObject<br>
+					DoMenuItem<br>
+					<a class="type1" href="#Echo">Echo</a><br>
+					<a class="type1" href="#FindNext">FindNext</a><br>
+					<a class="type1" href="#FindRecord">FindRecord</a><br>
+					<a class="type1" href="#GoToControl">GoToControl</a><br>
+					<a class="type1" href="#GoToPage">GoToPage</a><br>
+					<a class="type1" href="#GoToControl">GoToRecord</a><br>
+					Hourglass<br>
+					Maximize<br>
+					Minimize</span></font></td>
+					<td width="32%">
+					<font size="2" face="Arial" color="#000000" class="auto-style7">
+		<a class="type1" href="#MoveSize"><span class="auto-style1">MoveSize</span></a><span class="auto-style1"><br>
+					OpenDataAccessPage<br>
+					OpenDiagram<br>
+		<a class="type1" href="#OpenForm">OpenForm</a><br>
+					OpenFunction<br>
+					OpenModule<br>
+					<a class="type1" href="#OpenQuery">OpenQuery</a><br>
+					OpenReport<br>
+					OpenStoredProcedure<br>
+					OpenTable<br>
+					OpenView<br>
+					OutputTo<br>
+					PrintOut<br>
+					<a class="type1" href="#Quit">Quit</a><br>
+					Rename<br>
+					RepaintObject<br>
+					</span>
+					<a class="type1" href="#Requery"><span class="auto-style1">Requery</span></a></font></td>
+					<td width="35%">
+
+
+			<font size="2" color="#000000" class="auto-style5">Restore<br>
+			<a class="type1" href="#RunCommand">RunCommand</a><br>
+			<a class="type1" href="#RunCommand">RunMacro</a><br>
+			<a class="type1" href="#RunSQL">RunSQL</a><br>
+			<a class="type1" href="#Save">Save</a><br>
+			SelectObject<br>
+			SendObject<br>
+			SetMenuItem<br>
+			SetWarnings<br>
+			<a class="type1" href="#ShowAllRecords">ShowAllRecords</a><br>
+			ShowToolbar<br>
+			TransferDatabase<br>
+			<a class="type1" href="#TransferSpreadsheet">TransferSpreadsheet</a><br>
+			TransferSQLDatabase<br>
+			<a class="type1" href="#TransferText">TransferText</a></font><span class="auto-style1"><br class="auto-style7">
+			<br class="auto-style7">
+			&nbsp;<span class="auto-style7"></font></span></span></td>
+					<td width="1%">&nbsp;</td>
+				</tr>
+			</table>
+			<p class="auto-style7"><span class="auto-style1">Here is a list of all the
+			<a target="_blank" href="DoCmd/ListOfRunCommandConstants.htm">
+			RunCommand (acCommand) intrinsic Constants</a></span>.</p>
+			</font></font>
+			<font face="Arial" size="2">
+			<div align="left">
+			<p align="left"><b><font size="3" face="Arial">
+			<a name="ApplyFilter"></a><br>
+			ApplyFilter method<br>
+			</font></b><span style="font-weight: 400" class="auto-style5">Applies 
+			a filter, a query, or a SQL WHERE clause to a table, form, or report 
+			in order to limit or sort the underlying data. 
+			Both arguments are optional. It is same as setting the Filter 
+			property of a form.</span></p>
+			<p align="left" class="auto-style7">
+			<font color="#800000" class="auto-style1">
+			<span class="auto-style16">DoCmd.<b>ApplyFilter</b> 
+			[<i>filterName</i>] [, <i>whereCondition</i></span>]</font></p>
+			<p class="auto-style7"><span class="auto-style17">filterName</span><span class="auto-style16"> - optional, a string expression that's the 
+			valid name of a filter or query.<i><br>
+			wWhereCondition</i> - optional, a string expression that's a valid 
+			SQL WHERE clause without the word WHERE.</span></p>
+				<p align="left" class="auto-style18">
+				<font face="" size="2">
+				<span class="auto-style18">Example :<br></span><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table121">
+					<tr>
+						<td align="left" class="auto-style18">
+						<font size="2" color="#000080" class="auto-style5">Private Sub 
+						Command1_Click()<br>
+&nbsp;&nbsp;&nbsp; Dim strCustID As String, strFilter As String<br>
+&nbsp;&nbsp;&nbsp; strCustID = InputBox(&quot;Enter customer ID:&quot;)<br>
+&nbsp;&nbsp;&nbsp; If 
+						strCustID = &quot; &quot;&nbsp; Then&nbsp;&nbsp;&nbsp;&nbsp; </font>
+						<font color="#008000"><span class="auto-style1">' if nothing 
+						is entered.</span></font><font size="2" color="#000080" face="Arial" class="auto-style7"><br class="auto-style1">
+						<span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						</span> </font>
+						<font color="#008000"><span class="auto-style1">' removes 
+						any existing filters; same as assigning a null string to 
+						the form's Filter property.</span></font><font size="2" color="#000080" face="Arial" class="auto-style7"><br class="auto-style1">
+						<span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.ShowAllRecords<br>
+&nbsp;&nbsp;&nbsp; Else<br>
+						</span>
+						</font>
+						<font size="2" color="#008000" class="auto-style7">
+						<span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						' to </span>
+						<span style="font-weight: 400;" class="auto-style1">display only records 
+						that contain the strCustID (from the user's input) in 
+						the CustID field.</span></font><font size="2" color="#000080" face="Arial" class="auto-style7"><br class="auto-style1">
+						<span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strFilter = 
+						txtCustID = ' &quot; &amp; strCustID &amp; 
+						&quot; ' &quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.<b>ApplyFilter</b> , strFilter<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+						End Sub<br></span></font></td>
+					</tr>
+			</table>
+
+			</font>
+				<p align="left" class="auto-style18">
+				<font face="" size="2">
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+
+			</font>
+
+			<p align="left">&nbsp;<p align="left">&nbsp;<font face="Arial" size="2" color="#000000"><div align="right">
+
+			<table border="0" cellspacing="0" cellpadding="0" id="table122" width="18%" align="right" style="height: 28px">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><a name="Beep"></a><b>
+				<font size="2">
+				<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+			</tr>
+		</table>
+
+					<br>
+
+			</div>
+			</font>
+
+			<font face="Arial" size="2" color="#000000">
+
+			<div align="right">
+
+			<table border="0" cellspacing="0" cellpadding="0" id="table118" width="18%" height="19" align="right">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<br></td>
+			</tr>
+		</table>
+			<font face="Arial" size="2">
+			<font face="Arial" size="2" color="#000000"><div align="right">
+
+					<br>&nbsp;</div>
+			</font><font size="2" face>
+			<font face="Arial" size="2">
+			<h1 align="left">
+
+			<b><span class="auto-style18">Beep method</span><font size="3"><br>
+			</font><span class="auto-style16">
+			<span style="font-weight: 400" class="auto-style7">B</span></span></b><span class="auto-style16"><span style="font-weight: 400" class="auto-style7">eep 
+			method carries out the Beep action in Visual Basic. </span></span>
+			<span style="font-weight: 400" class="auto-style18">This method has no arguments.
+			</span></h1><font size="2" face color="#000000">
+				<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table153">
+					<tr>
+						<td align="left" class="auto-style7" style="height: 15px">
+						<font size="2" color="#000080" class="auto-style18">DoCmd.<b>Beep</b>( 
+						)</font></td>
+					</tr>
+			</table>
+
+			</font>
+
+				</font>
+			<h1 align="left" class="auto-style18">
+
+			&nbsp;</h1>
+			<h1 align="left">
+
+			</font></font></font>
+
+				</h1>
+				<p align="left">
+
+				&nbsp;</p>
+				<h1 align="left">
+
+				<font face="Arial" size="2">
+
+				<b><font size="3">CancelEvent method<br>
+			</font><span style="font-weight: 400"><font size="2">I</font><span class="auto-style18">t</span></span></b></font><span class="auto-style16"><span style="font-weight: 400" class="auto-style15"> 
+			cancels the event that caused Access to run the code containing this 
+			action
+			</span><span style="font-weight: 400" class="auto-style7">This method has no 
+			arguments</span><span style="font-weight: 400" class="auto-style15"> 
+			and can be called directly using the syntax DoCmd.CancelEvent. 
+			Following are the events that can be cancelled using the CancelEvent 
+			method.</span></span></h1>
+				<p align="left">
+
+				<span class="auto-style1"></p>
+			<table border="0" width="66%" cellspacing="0" cellpadding="0" align="left" class="auto-style7">
+				<tr>
+					<td width="123" class="auto-style16">
+					<font size="2" class="auto-style7">ApplyFilter<br>
+					BeforeInsert<br>
+					BeforeDelConfirm<br>
+					BeforeUpdate</font></td>
+					<td width="113"><font size="2" class="auto-style7">Delete<br>
+					Dirty<br>
+					DblClick<br>
+					Exit</font></td>
+					<td width="118"><font size="2" class="auto-style7">Filter<br>
+					Format<br>
+					KeyPress<br>
+					MouseDown</font></td>
+					<td><font size="2" class="auto-style7">NoData<br>
+					Open<br>
+					Print<br>
+					Unload</font></td>
+				</tr>
+				<tr>
+					<td width="123">&nbsp;</td>
+					<td width="113">&nbsp;</td>
+					<td width="118">&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p align="left">&nbsp;</p>
+			<p align="left"></span></p>
+				<font face="Arial" size="2">
+				<font size="2">
+				<p align="left" class="auto-style18">
+
+				&nbsp;</p>
+				<p class="auto-style21">
+
+				&nbsp;</p>
+				<p class="auto-style21">
+
+				<font size="2" face="Arial">
+				<span class="auto-style19">
+				<span style="font-weight: 400" class="auto-style20">
+				<span class="auto-style7">Example:</span></span></span><span style="font-weight: 400"><span class="auto-style16"><span class="auto-style7"> 
+			display a dialog box asking user whether want to save changes to the 
+			form </span></span><span class="auto-style18">frmCustomersBase (must be&nbsp;&nbsp; 
+			open). If click on Yes, it saves changes; if click No, CancelEvent 
+			will be triggered to cancel the update. </span> </span>
+
+			</font></p>
+
+			</font>
+
+			<font size="2" face color="#000000"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table119">
+					<tr>
+						<td align="left" class="auto-style18">
+						<font size="2" color="#000000" class="auto-style1">
+						<font size="2" color="#000080" class="auto-style7">Private Sub 
+						Form_BeforeUpdate(Cancel As Integer)<br>
+&nbsp;&nbsp;&nbsp; If MsgBox(&quot;Sure want to save changes to this form?&quot;, vbYesNo, 
+						&quot;Pls Confirm&quot; = vbYes Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.Save acForm, &quot;frmCustomersBase&quot;<br>
+&nbsp;&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.<b>CancelEvent</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</font><font color="#008000"><span class="auto-style7">' Cancel = True</span></font><font size="2" color="#000080"><br class="auto-style7">
+						<span class="auto-style7">End Sub</span></font></font></td>
+					</tr>
+			</table>
+			</font>
+			</font>
+
+			<p align="left">&nbsp;<p align="left">&nbsp;<p align="left">&nbsp;<p align="left"><br>	
+			<font size="2" color="#000000" face="Arial">
+
+			<div align="right">
+			<table border="0" cellspacing="0" cellpadding="0" id="table118" width="18%" height="19" align="right">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><a name="Close"></a><b>
+				<a style="color: #0166FE" href="#Menu"><font size="2">Go To 
+				Top</font></a></b></td>
+			</tr>
+		</table>
+		</font>
+			<font face="Arial" size="2" color="#000000">
+			<div align="right">
+		
+			<p align="left"><b><font size="3" face="Arial">Close method<br>
+			</font><span style="font-weight: 400" class="auto-style18">It
+			</span></b><span style="font-weight: 400" class="auto-style18">
+
+			&nbsp;closes the window of an Access object.</span></p>
+			</h1></div>
+			<font size="2">
+
+			<font size="2" face color="#000000">
+			<p align="left">
+
+			<font size="2" color="#800000" class="auto-style16">
+			<span style="font-weight: 400"><span class="auto-style7">DoCmd.</span></span><span class="auto-style7"><span style="font-weight: 700">Close </span>
+			</span>
+			<span style="font-weight: 400"><span class="auto-style7">[<i>ObjectType</i>] [, <i>ObjectName</i>] 
+			[, </span> <i><span class="auto-style7">Save</span></i><span class="auto-style7">]</span></span></font></p>
+			</font>
+			
+			
+			
+<div align="left">	
+<font size="2" face="arial">
+	<font style="text-decoration: none;">
+<span id="menu5" onclick="showhide(menu5outline,menu5sign)" style="text-decoration: none; font-weight: bold;">
+	<span class="auto-style7">
+<img id="menu5sign" src="closed.gif" valign="top" class="auto-style16"></span></span><span class="auto-style7"><span id="menu5" onclick="showhide(menu5outline,menu5sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16">&nbsp; AcObjectType</span></span></font><span class="auto-style16"><font style="text-decoration: none;"><span class="auto-style7"> 
+-
+</span>
+</font>
+	</span>
+<font size="2" face="Arial">			
+	<span class="auto-style18">can be one of these 12 AcObjectType constants:
+	</span>			
+			
+</font><font style="text-decoration: none;"><span class="auto-style16">
+	<span class="auto-style7"><br>
+	</span></span>
+<span id="menu5outline" style="display: none;">
+	<span class="auto-style16"><span class="auto-style7">
+<!--5 ---------------------------------------------------------------------------------------------------------------->	
+	</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:195px" id="table3">
+	<colgroup>
+		<col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acDataAccessPage</td>
+	</tr>
+
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acDefault default</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acDiagram</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acForm</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acFunction</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acMacro</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acModule</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acQuery</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acReport</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acServerView</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 122px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px; " class="auto-style18">
+		acStoredProcedure</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="text-align: left; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding: 0px" width="122" class="auto-style18">
+		acTable</td>
+	</tr>
+</table>
+</span>
+</font>
+</font>
+	<span class="auto-style12">
+<font size="2" style="text-decoration: none">
+			<font size="2" color="#000000" face="Arial" style="text-decoration: none">
+
+<font size="2" face="arial" class="auto-style7">
+<span id="menu9" onclick="showhide(menu5outline,menu5sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu5sign0" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu10" onclick="showhide(menu5outline,menu5sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16">&nbsp; </span>
+</font>
+	</font>
+
+
+
+</font></span></font>
+
+
+
+	<span class="auto-style27"><span class="auto-style7">
+<font style="text-decoration: none">ObjectName</font></span></span><span class="auto-style16"><span class="auto-style7"><font style="text-decoration: none"> 
+	-
+</font></span>
+<font style="text-decoration: none"><span class="auto-style7">optional, a string 
+	expression that's the valid name of an object of the type selected by the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	object type argument.</span><br class="auto-style7">
+</font></span>
+			<font size="2">
+
+			<font size="2" face="arial" class="auto-style7">
+<font style="text-decoration: none;">
+<span id="menu2" onclick="showhide(menu2outline,menu2sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu2sign" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu2" onclick="showhide(menu2outline,menu2sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16">&nbsp; </span> </font></font>
+<font size="2" class="auto-style7"><span class="auto-style27">AcCloseSave</span><span class="auto-style16">
+- </span></font></font>
+
+
+
+	<font style="text-decoration: none;"><span class="auto-style18">can be one 
+of the 3 AcCloseSave constants</span></font><font size="2"><span class="auto-style18">. The default 
+is acSavePrompt.</span><font size="2" face="arial"><font style="text-decoration: none;"><span class="auto-style16"><span class="auto-style7"><br>
+	</span></span>
+<span id="menu2outline" style="display: none;">
+	<span class="auto-style16"><span class="auto-style7">
+<!-- 2---------------------------------------------------------------------------------------------------------------->	
+	</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:164px" id="table3">
+	<colgroup><col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 138px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Constant</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 138px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">acSaveNo</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 138px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">acSavePrompt 
+		</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 138px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acSaveYes </font></td>
+	</tr>
+</table></span></font></p><font face="Arial" size="2">
+<p align="left"><font face="" size="2"><span class="auto-style5">Example:
+
+			to close the form, automatically saving changes.</span><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="28" id="table121">
+	<tr>
+		<td align="left"><font size="2" color="#000080" class="auto-style5">DoCmd.<b>Close</b> 
+						acForm, &quot;frmOrders&quot;, acSaveYes</font></td>
+	</tr>
+</table>
+
+			<font face="" size="2" color="#000000">
+<p align="left">&nbsp;</p><font face="Arial" size="2" color="#000000">
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table133" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="Echo"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table>
+	</div>
+	</font></font></font></font></font></font>
+
+
+
+<font face="Arial" size="3">
+<p align="left">
+<br>
+<b>Echo method</b></font><font face="Arial" size="2"><br>
+<span class="auto-style16"><span class="auto-style7">Specifies whether Microsoft Access repaints the display screen.
+<br>
+<br>
+</span>
+<font color="#800000"><span class="auto-style7">expression.<b>Echo</b>(<i>EchoOn</i>, 
+</span> <i><span class="auto-style7">bstrStatusBarText</span></i><span class="auto-style7">)</span></font><span class="auto-style7"><br>
+<br>
+</span><span class="auto-style13">EchoOn</span><span class="auto-style7"> - required Integer or Boolean indicates that the screen 
+repainting is on. True (default).<br>
+<i><b>bstrStatusBarText</b></i> - optional, a string expression that specifies 
+the text to display in the status bar when repainting is turned on or off.<br>
+<br>
+Example:</span></span>
+<table border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="69" id="table134">
+					<tr>
+						<td>
+			<font size="2" color="#000080" class="auto-style18">
+			Private Sub Form_Load()<br>
+			&nbsp;&nbsp;&nbsp;
+			DoCmd.<b>Echo</b> False, &quot;Visual Basic code is executing.&quot;<br>
+			&nbsp;&nbsp;&nbsp;
+			DoCmd.Hourglass True<br>
+			&nbsp;&nbsp;&nbsp;
+			DoCmd.<b>Echo</b> True, &quot;Screen updating. Please wait...&quot;<br>
+			&nbsp;&nbsp;&nbsp;
+			DoCmd.Hourglass False<br>
+			End Sub</font></td>
+					</tr>
+			</table>
+			<font size="2" face>
+<font face="Arial" size="2" color="#000000">
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table122" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="FindRecord"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div><font size="2" face>
+<h1 align="left"><font size="3" face="Arial"><br>
+<br></font></font></font>
+			<font size="2" face="Arial">
+
+			<font size="3" face="Arial">FindRecord method<br>
+</font><span style="font-weight: 400" class="auto-style18">Searches for the first 
+record that meets the designated criteria.</span></font></h1></font>
+<p align="left" class="auto-style16"><font color="#800000">
+<span class="auto-style7">expression.<b>FindRecord</b>(<i>FindWhat</i>,
+<i>Match</i>, <i>MatchCase</i>, <i>Search</i>, <i>SearchAsFormatted</i>, 
+OnlyCurrentField, </span> <i><span class="auto-style7">FindFirst</span></i><span class="auto-style7">)</span></font></p>
+<p align="left" class="auto-style16"><span class="auto-style13">FindWhat</span><span class="auto-style7"> - Required Variant. An expression that 
+evaluates to text, a number, or a date.<br>
+                        <i><b>AcFindMatch</b></i> - AcFindMatch can be one of these 3 constants: <i>
+acAnywhere</i>, <i>acEntire</i> (default), <i>acStart</i>.<br>
+<i><b>MatchCase</b></i> - Optional, Use True for a case-sensitive search and 
+False (default) for a search that's not <br>&nbsp; case-sensitive.<br>
+<i><b>AcSearchDirection</b></i> - can be one of these 3 constants: <i>acDown</i>,
+<i>acSearchAll</i> (default), <i>acUp</i>.<br>
+<i><b>SearchAsFormatted</b></i> - Optional. Use True to search for data as it's 
+formatted and False (default) to search for<br>&nbsp; data as it's stored in the database.<br>
+<i><b>AcFindField</b></i> - can be one of these 2 AcFindField constants: <i>
+acAll</i>, <i>acCurrent</i> (default).<br>
+<i><b>FindFirst</b></i> - Optional. Use True (default) to start the search at 
+the first record. Use False to start the search at<br>&nbsp; the record following the 
+current record.</span><br class="auto-style7">
+<span class="auto-style7">&nbsp;</span></p>
+<font size="2">
+	<font size="2" color="#000000">
+	<span class="auto-style16">
+<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="24" id="table119">
+					<tr>
+						<td align="left">
+						<font size="2" color="#000080" class="auto-style7">DoCmd.<b>FindRecord</b> &quot;0234-1234A&quot;, 
+						acEntire, True, acSearchAll, True, acCurrent, True</font></td>
+					</tr>
+			</table>
+            <p><br class="auto-style7">
+			<span class="auto-style7">&nbsp;</span></span></p>
+<font size="2" face="Arial" color="#000000">
+<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="80" id="table119">
+					<tr>
+						<td align="left">
+						<span class="auto-style16">
+						<font size="2" class="auto-style7"><font color="#008000">' perform a search 
+						using the value entered into txtSearch (textbox) and 
+						evaluates this against values in ctlCustomerID (combo or 
+						list box).</font><br>
+						<font color="#000080">DoCmd.ShowAllRecords<br>
+						DoCmd.GoToControl &quot;ctlCustomerID&quot;<br>
+						DoCmd.<b>FindRecord</b> Me</font></font><span class="auto-style7"></font></font></font></font></font></span></span><font color="#000080"><span class="auto-style18">!txtSearch, 
+						acAnywhere</span></font></td>
+					</tr>
+			</table>
+            <p>&nbsp;</p>
+			</font>
+			</font>
+		<font size="2" face="arial">
+<font size="2" face color="#000000">
+            <br>
+			&nbsp;</font><font face="Arial" size="2"><font size="2"><p align="left">
+	&nbsp;</p>
+</font><font size="2" face><font face="">
+
+
+
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table128" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="FindNext"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div></font>
+<div align="left"><font size="3" face="Arial"><br>
+	<b>FindNext method</b></font><br>
+<span style="font-weight: 400"><font face="Arial" size="2">I<span class="auto-style5">t find 
+			the next record that meets the criteria specified by the previous 
+			FindRecord method or the Find and Replace dialog box, available by 
+			clicking Find on the Edit menu. You can use the FindNext method to 
+			search repeatedly for records. This method has no arguments and can 
+be called using the syntax DoCmd.FindNext.</span></font></span></div>
+<div align="left" class="auto-style1">&nbsp;</div>
+<h1 align="left"><font face="Arial" size="2">
+<span style="font-weight: 400" class="auto-style16"><span class="auto-style7">Example: uses <font color="#000080">Screen.PreviousControl.SetFocus</font> to 
+ensure that the subsequent </span> </span><span class="auto-style7">
+<span class="auto-style16">FindNext</span></span><span style="font-weight: 400"><span class="auto-style16"><span class="auto-style7"> starts 
+searching where the previous search left off.</span><br class="auto-style7">
+</span></span></font></h1>
+	<font face="Arial" size="2">
+<font size="2" color="#000000">
+<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="45" id="table129">
+					<tr>
+						<td align="left" class="auto-style16">
+						<font size="2" color="#000080" class="auto-style7">
+						Screen.PreviousControl.SetFocus<br>
+						DoCmd.<b>FindNext</b></font></td>
+					</tr>
+			</table>
+
+			</font><font size="2" face color="#000000">
+<p>&nbsp;</p>
+
+			</font>
+
+			</font></font></font>
+<p>&nbsp;</p>
+<font face="Arial" size="2">
+			<font face="Arial" size="2" color="#000000">
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table126" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="GoToControl"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div></font><font size="2" face>
+<h1 align="left"><font size="3" face="Arial"><br>G</font></font><font size="3">oToControl</font><font size="3" face="Arial"> method</font><br>
+<font face="Arial" size="2" class="auto-style7">
+<span style="font-weight: 400">I<span class="auto-style16">t moves the focus (</span></span></font><span style="font-weight: 400" class="auto-style18">the 
+cursor) to a 
+particular control on a form. You can also use a variable declared as a Control 
+data type for this argument.</span></font></h1>
+<p align="left"><font color="#800000"><span class="auto-style16">
+<span class="auto-style7">expression.<b>GoToControl</b>(</span><i><span class="auto-style7">ControlName</span></i><span class="auto-style7">)</span></span></font><span class="auto-style16"></p>
+	</span><span class="auto-style1"><span class="auto-style16">
+<p><span class="auto-style13">ControlName</span><span class="auto-style7"> - required, the name of a field or a control where 
+you desire the focus to go. The control name can be a string expression, (eg. 
+&quot;btnComand1, cboSelect, lst_Select&quot;, etc), but
+</span></span></span><span class="auto-style18">no spaces are allowed in the name;
+or it can be a variable which contains the name of a control on the form.
+</span>
+</p>
+<p class="auto-style18">Consider using the <b>Setfocus</b> command in place of the DoCmd.<b>GotoControl</b> 
+command because the set focus command has increased functionality.</p>
+<font size="2" face>
+<h1 align="left"><font face="Arial" size="2"></h1>
+<font size="2" color="#000000">
+<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="70" id="table127">
+					<tr>
+						<td align="left">
+						<span class="auto-style18">
+						<font color="#008000">' moves focus to the 
+						control named </font>
+						</span>
+						<font color="#008000"><span class="auto-style18">txtSearch</span></font><span class="auto-style16"><font color="#008000"><span class="auto-style7"> 
+						of Form frmForm1.</span></font><font size="2" color="#000080"><br class="auto-style7">
+						<span class="auto-style7">Dim ctl As Control <br>
+						Set ctl = Forms!frmForm1!txtSearch<br>
+						DoCmd.<b>GoToControl</b> ctl.Name</span></font></span></td>
+					</tr>
+			</table>
+
+			</font>
+
+			</font></font>
+<br><br>
+<p align="left">&nbsp;</p></font>
+</font>
+		<font size="2" face><font face="">
+
+
+
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table120" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="GoToPage"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div></font>
+<h1 align="left">&nbsp;</h1>
+<h1 align="left"><font size="3" face="Arial"><br>GoToPage method<br>
+</font><font size="2" class="auto-style18"><span style="font-weight: 400">Moves the 
+focus to the first control on a specified page in the active form.<br>
+<br>
+<font color="#800000">expression.</font></span><font color="#800000">GoToPage<span style="font-weight: 400">(<i>PageNumber</i>,
+<i>Right</i>, <i>Down</i>)<br>
+</span></font><span style="font-weight: 400"><br>
+</span><i>PageNumber</i><span style="font-weight: 400"> - required, a valid page 
+number on the active form.<br>
+</span><i>Right</i><span style="font-weight: 400"> - optional, Long. A 
+horizontal offset (in twips) from the left side of the window to the part of the 
+page to be viewed.<br>
+</span><i>Down</i><span style="font-weight: 400"> - Optional Long. A vertical 
+offset (in twips) from the top of the window to the part of the page to be 
+viewed.</span></font></h1>
+			<font face="Arial" size="2">
+<p align="left"><span class="auto-style18">Example: </span>
+<span style="font-weight: 400"><span class="auto-style18">mo</span></span><span style="font-weight: 400" class="auto-style18">ve the focus to the second page of the 
+frmCustomers form at the position specified by the right and down arguments.</span><font face="" size="2"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="27" id="table131">
+	<tr>
+		<td align="left" class="auto-style7">
+		<font size="2" color="#000080" class="auto-style18">
+		<span style="font-weight: 400">Forms!frmCustomers.</span><span style="font-weight: 700">GoToPage</span><span style="font-weight: 400"> 2, 1440, 600</span></font></td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+	<p class="auto-style1"><font face="" size="2" color="#000000">
+	<span class="auto-style18">Example: </span>
+<span style="font-weight: 400" class="auto-style18">move the focus to the position specified by the 
+horizontal and vertical offsets on the second page of the active form.</span></font></p>
+			<font face="Arial" size="2">
+<p align="left"><font face="" size="2"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table132">
+	<tr>
+		<td align="left"><font size="2" color="#000080" class="auto-style18">
+		<span style="font-weight: 400">DoCmd.</span><span style="font-weight: 700">GoToPage</span><span style="font-weight: 400"> 2, 1440, 567</span></font></td>
+	</tr>
+</table>
+			<font face="Arial" size="2">
+<font size="2" face="arial">
+<span class="auto-style7">
+<br><br>
+</span>
+<p align="left">&nbsp;</p></font><font size="2" face><font face="">
+
+
+
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table138" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="MoveSize"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div></font>
+<h1 align="left">&nbsp;</h1>
+<h1 align="left"></font><font size="3">
+<b>MoveSize method</b></font><br>
+<span style="font-weight: 400" class="auto-style18">
+Let you change the 
+			position and size of the object that currently has the focus. The 
+			units for the arguments are twips. You must include at least one 
+			argument.</span></h1>
+	<span class="auto-style16">
+<p align="left"><font color="#800000"><i><span class="auto-style7">expression</span></i><span class="auto-style7">.<b>MoveSize</b>(</span><i><span class="auto-style7">Right, 
+			Down, Width, Height</span></i><span class="auto-style7">)</span></font></span><span class="auto-style1"><span class="auto-style16"><span class="auto-style7">
+</span>
+<p align="left"><span class="auto-style7">Example:
+</span></span></span>
+<font face="" size="2"><span class="auto-style18">to open the form in datasheet view, no matter what view it was saved 
+			in.</span><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="70" id="table137">
+	<tr>
+		<td align="left"><font size="2" color="#000080" class="auto-style18">Private Sub 
+						Form_Load()<br></font>
+		<font color="#008000"><span class="auto-style18">' to make 
+						the form opens in small size.</span></font><font size="2" face="Arial" color="#000080" class="auto-style7"><br class="auto-style16">
+		<span class="auto-style16">DoCmd.<b>MoveSize</b> Height:=3456<br>End Sub</span></font></td>
+	</tr>
+</table>
+
+<p>
+<br>
+<br>
+<p>
+&nbsp;<p>
+<font face="Arial" size="2" color="#000000">
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table122" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="OpenForm"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div></font><font size="2" face>
+<div align="left"><font size="3" face="Arial"><br></font></font></font>
+</font></font><b><font size="3" face="Arial">OpenForm method</font></b><br>
+	<span style="font-weight: 400"><span class="auto-style18">It 
+			carries out the OpenForm action in Visual Basic. If you leave all 
+			arguments blank except the required formName, it will load the 
+			default values for all these arguments.</span></span></div>
+<p align="left"><font color="#800000" class="auto-style1">
+<span class="auto-style7"><span class="auto-style16">DoCmd.<b>OpenForm</b> <i>formName</i>, [<i>view</i>], [<i>filterName</i>], [<i>whereCondition</i>], 
+			[<i>dataMode</i>], [<i>windowMode</i>], [</span></span><span class="auto-style16"><i><span class="auto-style7">OpenArgs</span></i><span class="auto-style7">]</span></span></font></p>
+<p align="left" class="auto-style7"><span class="auto-style27">formName</span><span class="auto-style16"> is 
+			required.<br><b><i>view</i></b> is required, can be one of these AcFormView 
+			constants:<br>&nbsp;&nbsp; acDesign - design view.<br>&nbsp;&nbsp; acFormDS - a datasheet.<br>&nbsp;&nbsp; acFormPivotChart - a pivot chart.<br>&nbsp;&nbsp; acFormPivotTable - a pivot table.<br>&nbsp;&nbsp; acNormal -&nbsp; normal view - the default.<br>
+<b><i>filterName</i></b> - optional, the valid name of a query in 
+			the current database.<br><b><i>whereCondition</i></b> - optional, a valid SQL WHERE clause 
+			without the word WHERE.<br><b><i>dataMode</i></b> - can be one of these constants:<br>&nbsp;&nbsp; acFormAdd - user can add new records but can't edit existing 
+			records.<br>&nbsp;&nbsp; acFormEdit - user can edit existing records and add new records.<br>&nbsp;&nbsp; acFormPropertySettings - the default - the mode is determined by 
+			the form's existing property values.<br>&nbsp;&nbsp; acFormReadOnly - user can only view records.<br>
+<b><i>windowMode</i></b> - can be one of these constants:<br>&nbsp;&nbsp; acDialog - the form's Modal and PopUp properties are set to Yes.<br>&nbsp;&nbsp; acHidden - the form is hidden.<br>&nbsp;&nbsp; acIcon - the form opens minimized in the Windows taskbar.<br>&nbsp;&nbsp; acWindowNormal - default, form is in the mode set by its properties<br>
+<b><i>OpenArgs</i></b> - optional, to set the form's OpenArgs 
+			property.</span></p>
+<p align="left"><font face="" size="2"><span class="auto-style18">Example: to open the form in datasheet view, no matter what view it 
+was saved in.</span><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table121">
+	<tr>
+		<td align="left"><font size="2" class="auto-style1">
+		<font size="2" color="#008000">'<span class="auto-style16"><span class="auto-style7"> open the form in 
+						datasheet view, page 2 of the multi-page form, and allow 
+						to add new records.</span></span></font><font size="2" color="#000080"><span class="auto-style16"><br class="auto-style7">
+		</span><span class="auto-style7"><span class="auto-style16">DoCmd.<b>OpenForm</b> &quot;Orders&quot;, acFormDS, , , acFormAdd, 
+						, 2</span></span></font></font></td>
+	</tr>
+</table>
+
+
+<p align="left">
+<span class="auto-style18">
+<br>
+<br>
+</span>
+<br><br>
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table139" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="OpenQuery"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table>
+	</div>
+	<font size="2" face>
+<h1 align="left"></font>
+			<font size="3" face="Arial">Open</font>
+			<font face="Arial"><b><font size="3">Query method</font><br>
+</b></font><span style="font-weight: 400" class="auto-style18">O</span><font class="auto-style16"><span style="font-weight: 400" class="auto-style7">pens the query in 
+the current database.</span></font><font size="2" class="auto-style18"><br>
+<br>
+</font><font class="auto-style16">
+<span style="font-weight: 400" class="auto-style7"><font color="#800000">expression.<b>OpenQuery</b>(<i>QueryName</i>, <i>View</i>,
+<i>DataMode</i>)</font></span></font><font color="#800000"><span style="font-weight: 400" class="auto-style18">
+</span></font></h1>
+
+
+<div align="left">	
+<font size="2" face="arial">
+<font style="text-decoration: none;">
+<span id="menu7" onclick="showhide(menu7outline,menu7sign)" style="text-decoration: none; font-weight: bold; font-style:italic">
+	<span class="auto-style7">
+<img border="0" src="closed.gif" width="16" height="13" class="auto-style16"></span></span><span class="auto-style7"><span id="menu7" onclick="showhide(menu7outline,menu7sign)" style="text-decoration: none; font-weight: bold; font-style:italic" class="auto-style16"> QueryName</span></span><span id="menu7" onclick="showhide(menu7outline,menu7sign)" style="text-decoration: none; " class="auto-style16"><span class="auto-style7"> 
+- required, a string indicating the name of the query.</span></span><span id="menu7" onclick="showhide(menu7outline,menu7sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"><span class="auto-style7"><br>
+<img id="menu7sign" src="closed.gif" valign="top"> <i>A</i></span></span></font><span class="auto-style7"><span class="auto-style27">cView</span></span><span class="auto-style16"><span class="auto-style7"> 
+- can be one of these 5&nbsp; constants:<br>
+	</span></span>
+<span id="menu7outline" style="display: none;">
+	<span class="auto-style16"><span class="auto-style7">
+<!-- 7--------------------------------------------------------------------------------------------------------------->	
+	</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:183px" id="table3">
+	<colgroup>
+		<col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 157px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Constant</td>
+	</tr>
+
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 157px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acViewDesign</td>
+	</tr>
+
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 157px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acViewNormal default</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 157px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acViewPivotChart</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 157px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acViewPivotTable</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 157px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acViewPreview</td>
+	</tr>
+	</table>
+</span>
+
+<div align="left">	
+
+<span id="menu8" onclick="showhide(menu8outline,menu8sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"><font style="text-decoration: none;">
+	<span class="auto-style7">
+<img id="menu8sign" src="closed.gif" valign="top"> <i>A</i></span></font></span><span class="auto-style7"><span class="auto-style27">cOpenDataMode</span></span><span class="auto-style16"><span class="auto-style7"> 
+can be one of these 3 constants:<br>
+	</span></span>
+<span id="menu8outline" style="display: none;">
+	<span class="auto-style16"><span class="auto-style7">
+<!-- 8--------------------------------------------------------------------------------------------------------------->	
+	</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:140px" id="table3">
+	<colgroup>
+		<col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 114px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Constant</td>
+	</tr>
+
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 114px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acAdd</td>
+	</tr>
+
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 114px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acEdit default</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-siz<br>e: 10.0pt; font-<br>; fon-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 114px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acReadOnly</td>
+	</tr>
+	</table>
+</span>
+<br class="auto-style18">		
+
+
+
+
+			<font face="" size="2"><span class="auto-style16">
+	<span class="auto-style7">Example: open the weekly sales totals in datasheet 
+	view but not to edit or add records.</span></span><font face="Arial" size="2" color="#000000"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="28" id="table140">
+	<tr>
+		<td align="left"><font size="2" color="#000080" class="auto-style7">
+		<span class="auto-style16">DoCmd.</span><span class="auto-style20">OpenQuery</span><span class="auto-style16"> 
+		&quot;Qry_WeeklySalesTotals&quot;,
+<span id="menu7outline" style="display: none;">
+		acViewNormal</span>, acReadOnly</span></font></td>
+	</tr>
+</table>
+
+
+<p align="left">
+<br class="auto-style18">
+<br>
+&nbsp;<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table144" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="Requery"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div>
+<h1 align="left">
+			</font></font>
+
+			<font face="Arial" size="3">
+Re</font><font face="Arial"><span style="font-weight: 400"><b><font size="3">query</font><font face="Arial" size="2"><font face="Arial" size="3"> method</font><font size="2"><br>
+</font></font>
+</b>
+
+			<font face="Arial" size="2">
+
+			<span class="auto-style7">
+
+			<font class="auto-style16">
+			Requery method of the DoCmd object carries out the Requery action 
+in Visual Basic. ControlName is optional.</font></span><font size="2"><font size="2" class="auto-style18"><br>
+<br>
+			</font></font>
+
+			<font class="auto-style16">
+<font color="#800000"><span class="auto-style7">expression.</span></font></font></font></span><font face="Arial" size="2"><font color="#800000"><font class="auto-style16"><span class="auto-style7">Requery</span></font><span style="font-weight: 400"><font class="auto-style16"><span class="auto-style7">(</span><i><span class="auto-style7">ControlName</span></i><span class="auto-style7">)</span></font></span></font><span style="font-weight: 400"><font size="2" class="auto-style16"><font size="2" class="auto-style7"><br>
+<br>
+			</font></font><font class="auto-style16"><span class="auto-style7">Requery method updates the data underlying a specified form or a control that's 
+on the active form by requerying the source of data for the form or control.<br>
+<br>
+<font color="#800000">expression.</font></span></font></span><font class="auto-style16"><font color="#800000"><span class="auto-style7">Requery</span></font></font><span style="font-weight: 400"><font size="2"><font size="2" class="auto-style18"><br>
+<br>
+			</font></font><span class="auto-style7"><font class="auto-style16">The Requery method does these:<br>
+&#9632; Reruns the query on which the form or control is based.<br>
+			</font></span>
+</span></font></font>
+<span style="font-weight: 400" class="auto-style18">&#9632;</span><font size="2" class="auto-style18"><span style="font-weight: 400"> 
+Displays any new or changed records or removes deleted records from the table on 
+which the form or control is based.<br>
+</span></font><span style="font-weight: 400" class="auto-style18">&#9632; 
+Updates records displayed based on any changes to the Filter property of the 
+form.</span></h1>	
+	<font face="" size="2">
+	<span class="auto-style16"><br class="auto-style7">
+	<span class="auto-style7">Example:
+
+			</span></span>
+
+			</font>
+
+	<span class="auto-style18">requery the subform when the product name field is updated.</span><font face="Arial" size="2" color="#000000"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="28" id="table145">
+	<tr>
+		<td align="left" class="auto-style16"><font size="2">
+		<font color="#000080" size="2" class="auto-style7">Private 
+		Sub Form_<b>AfterUpdate</b>()<br>
+		</font></font><font color="#008000"><span class="auto-style7">&nbsp;&nbsp; ' requery the subform when the 
+		required date changes</span></font><font color="#000080" size="2"><br class="auto-style7">
+		<span class="auto-style7">&nbsp;&nbsp; DoCmd.RunCommand acCmdSaveRecord<br>
+		&nbsp;&nbsp; fsubProductList.<b>Requery</b><br>
+		End Sub</span></font></td>
+	</tr>
+</table>
+
+			<font face="Arial" size="2">
+<font face="" size="2">
+<p align="left" class="auto-style18">&nbsp;</p>
+<font face="Arial" size="2" color="#000000">
+<div align="right">
+	<p align="left">&nbsp;<font face="Arial" size="2"><p align="left" class="auto-style16">
+	&nbsp;<p align="left"><font face="" size="2">
+	<br class="auto-style18">
+	<span class="auto-style18">Example: use Requery method to requery the data from the CustomerSales list 
+	box on frmCustomers form.</span></font><font size="2"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table147">
+	<tr>
+		<td align="left" class="auto-style16">
+		<font size="2" color="#000080" class="auto-style7">Sub RequeryList()<br>
+&nbsp;&nbsp;&nbsp; Dim ctlCombo As Control<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style7">&nbsp;&nbsp;&nbsp; ' return 
+		Control object pointing to a combo box.</span></font><font size="2" color="#000080"><br class="auto-style7">
+		<span class="auto-style7">&nbsp;&nbsp;&nbsp; Set ctlCombo = Forms!frmCustomers!SelectCustomerID<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style7">&nbsp;&nbsp;&nbsp; ' requery 
+		source of data for a list box.</span></font><font size="2" color="#000080"><br class="auto-style7">
+		<span class="auto-style7">&nbsp;&nbsp;&nbsp; ctlCombo.<b>Requery</b><br>
+		End Sub</span></font></td>
+	</tr>
+</table>
+
+			</font></font></div>
+<div align="right">
+	<p align="left">&nbsp;</div>
+<div align="right">
+	<p align="left">&nbsp;</div>
+<div align="right">
+	<p align="left">&nbsp;</div>
+<div align="right">
+	<p align="left">&nbsp;</div>
+	<div align="right">
+		<p align="left" style="height: 30px">&nbsp;</div></font></font>
+<font face="Arial" size="2" color="#000000">
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table146" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="RunMacro"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div></font><font size="2" face>
+<h1 align="left"><font size="3" face="Arial"><br></font></font></font></font></font>
+<font face="Arial" size="3">
+<b>RunMacro method</b><br>
+</font><font size="2" class="auto-style18">
+<span style="font-weight: 400">Run a macro action in Visual Basic.<br>
+<br>
+</span></font></font><font face="Arial" size="2">
+<font size="2" color="#800000" class="auto-style18"><span style="font-weight: 400">
+expression.</span><span style="font-weight: 700">RunMacro</span><span style="font-weight: 400">(<i>MacroName</i>,
+<i>RepeatCount</i>, <i>RepeatExpression</i>)</span></font><font size="2" color="#000000" class="auto-style1"><span style="font-weight: 400"><span class="auto-style18"><br>
+<br>
+</span>
+</span><span class="auto-style16"><span class="auto-style7"><span style="font-weight: 700; font-style: italic">MacroName</span><span style="font-weight: 400"> 
+- required,a string expression that's the macro macro in the current database.<br>
+</span><span style="font-weight: 700; font-style: italic">RepeatCount</span><span style="font-weight: 400"> 
+- optional, an integer indicating the number of times the macro will run.<br>
+</span><span style="font-weight: 700; font-style: italic">RepeatExpression</span></span></span><span style="font-weight: 400"><span class="auto-style16"><span class="auto-style7"> 
+- optional, a numeric expression that stops the macro from running When it 
+evaluates to False (0).</span></span></span></font></font></h1>	
+	<span class="auto-style16"><br class="auto-style7">
+	<span class="auto-style7">Example</span><font size="2">:</font><br class="auto-style7">
+	</span><font size="2" color="#000000" class="auto-style16">
+<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="28" id="table148">
+	<tr>
+		<td align="left">
+
+
+			
+			
+			<font color="#000080" size="2" class="auto-style7">Private Sub cmdTrackComplete_Click()<br>
+&nbsp;&nbsp;&nbsp; If Me.Dirty Then Me.Dirty = False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</font><font color="#008000"><span class="auto-style7">' force record save.</span></font><font color="#000080" size="2"><br class="auto-style7">
+			<span class="auto-style7">&nbsp;&nbsp;&nbsp; DoCmd.<b>RunMacro</b> &quot;querry_DailySales&quot;<br>
+&nbsp;&nbsp;&nbsp; Me.cmdDailySales.Visible = False&nbsp;&nbsp;&nbsp; </span> </font>
+			<font color="#008000"><span class="auto-style7">' hide command button after macro 
+			run.</span></font><font color="#000080" size="2"><br class="auto-style7">
+			<span class="auto-style7">End Sub</span></font></td>
+	</tr>
+</table>
+
+			</font>
+
+			<p align="left">&nbsp;</p>
+
+
+<font face="Arial" size="2" color="#000000">
+
+
+<h1 align="left">&nbsp;</h1>
+
+
+<p align="left">&nbsp;</p>
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table141" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="RunCommand"></a><b><font size="2">
+			<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+		</tr>
+	</table></div><font size="2" face>
+<p align="left"><font size="3" face="Arial"><br></font></font>
+
+			<b><font size="3" color="#000000" face="Arial">RunCommand method</font></b></font><b><font face="Arial" size="2"><br>
+<span style="font-weight: 400" class="auto-style5">Runs a built-in menu or toolbar command. </span>
+</font>
+
+</b>
+
+			<font face="Arial" size="2"><span class="auto-style5">Here is a list of all the
+			</span>
+			<font color="#000000">
+<a target="_blank" href="DoCmd/ListOfRunCommandConstants.htm">
+<span class="auto-style5">RunCommand (acCommand) intrinsic Constants</span></a></font><span class="auto-style5">. 
+And also </span>
+
+			<font color="#000000"> <a target="_blank" href="Access2003_VBA_Constants.htm#AcCommand">
+<span class="auto-style5">here</span></a></font><font size="2"><span class="auto-style1">.</span></font></font></p>	
+	<span class="auto-style5">Example: go to the next record if the search field is not null</span><font face="Arial" size="2" color="#000000"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="28" id="table142">
+	<tr>
+		<td align="left" class="auto-style16">
+
+
+			
+			
+			<font size="2" color="#000080" class="auto-style7">If Not IsNull(Me.txtSelect) Then<br>
+&nbsp;&nbsp;&nbsp; DoCmd.<b>RunCommand</b> acCmdRecordsGoToNext<br>
+			End If</font></td>
+	</tr>
+</table>
+
+<p align="left">&nbsp;
+<p align="left"><br>
+&nbsp;<table border="0" cellspacing="0" cellpadding="0" id="table149" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="RunSQL"></a><b>
+			<a style="color: #0166FE" href="#Menu"><font size="2">Go To Top</font></a></b></td>
+		</tr>
+	</table>
+
+			</font>
+
+			</font>
+</font>
+
+		</font></font>
+</font>
+
+			</font></font>
+		<font face="Arial" color="#000000"><p align="left"><b>RunSQL method</b></font><font face="Arial" size="2" color="#000000"><br>
+	<span class="auto-style18">RunSQL method performs the RunSQL action in Visual Basic, is also used to 
+execute SQL query code within Access Visual Basic.<br>
+<br>
+
+			</span>
+
+			</font>
+<font face="" size="2">
+			<font size="2" color="#800000" class="auto-style18">
+expression.<b>RunSQL</b>(<i>SQLStatement</i>, <i>UseTransaction</i>)</font><font face="Arial" size="2" color="#000000"><span class="auto-style16"><span class="auto-style7"><br>
+<br>
+	</span>
+<i><b><span class="auto-style7">SQLStatement</span></b></i><span class="auto-style7"> - required, an SQL statement for an action query or a 
+data-definition query.<br>
+<i><b>UseTransaction</b></i> - optional boolean. Use True (&#8211;1) to include this query in a 
+transaction. Use False (0) if you don't want to use a transaction. Default is 
+True.</span></span></font></font></p>
+			<font face="Arial" size="2" color="#000000">
+	<span class="auto-style18">Example: </span><span class="auto-style16">
+	<span class="auto-style7">using DoCmd.RunSQL to execute the SQL string, which is an Update 
+Query to remove leading 0's in the field PartNumber.</span></span><br><br>
+	<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="28" id="table154">
+	<tr>
+		<td align="left" class="auto-style1">
+
+
+			
+			
+			<font size="2" color="#000080" class="auto-style7">&nbsp;<span class="auto-style16">Sub 
+			RemoveLeadingZeros()<br>&nbsp;&nbsp;&nbsp;&nbsp; Dim strSQL As String<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+			strSQL = &quot;UPDATE tblMaterial SET tblMaterial.PartNumber = &quot; &amp; _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			IIf(IsNumeric([PartNumber])=True,CStr(Val([PartNumber])),[PartNumber]);&quot;<br>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp; DoCmd.RunSQL strSQL<br>&nbsp;End Sub </span></font></td>
+	</tr>
+</table>
+
+	<br>
+
+			</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left" style="height: 48px"><font face="Arial" size="2" color="#000000">
+<br>
+&nbsp;</p>
+<div align="right">
+	<table border="0" cellspacing="0" cellpadding="0" id="table118" width="18%" height="19" align="right">
+		<tr>
+			<td width="753" height="19" valign="top">
+			<p align="right"><a name="Save"></a><b>
+			<a style="color: #0166FE" href="#Menu"><font size="2">Go To Top</font></a></b></td>
+		</tr>
+	</table>
+
+	
+	<font face="Arial">
+	</font>
+		</font>
+			<font face="Arial" size="2" color="#000000">
+
+	<p align="left">
+	<font face="Arial" size="3">
+	<b>Save method</b></font>
+	<font face="Arial" size="2"><font size="2"><br></font>
+	<span class="auto-style18">It carries out the Save action in Visual Basic.<br>
+<br><font color="#800000">expression.<b>Save</b>(<i>ObjectType</i>, <i>ObjectName</i>)</font></span><font face="" size="2"></p>
+</font>
+<div align="left"><font size="2" face="Verdana">
+	<font style="text-decoration: none;">
+	<span id="menu1" onclick="showhide(menu1outline,menu1sign)" style="text-decoration: none; font-weight: bold;">
+	<span class="auto-style7">
+	<img id="menu1sign" src="closed.gif" valign="top" class="auto-style16"></span></span><span id="menu1" onclick="showhide(menu1outline,menu1sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"><span class="auto-style7">&nbsp;
+	</span>
+	</span>
+	<span id="menu1" onclick="showhide(menu1outline,menu1sign)" style="text-decoration: none; font-weight: bold;" class="auto-style18">
+	AcObjectType - 
+	</span> </font>
+	<font face="Arial" size="2"><span class="auto-style18">can be one of the 
+	12 AcObjectType constants: </span> </font><span class="auto-style16">
+	<span class="auto-style7"><br>
+	</span></span>
+	<font style="text-decoration: none;">
+	<span id="menu1outline" style="display: none;">
+	<span class="auto-style16"><span class="auto-style7">
+<!-- 1---------------------------------------------------------------------------------------------------------------->	
+	</span>	
+	<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:187px" id="table3">
+		<colgroup><col width="21" style="width: 16pt">
+			<col width="307" style="width: 230pt">
+		</colgroup>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style7">
+			<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acDataAccessPage</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acDefault default</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acDiagram</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acForm</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acFunction</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acMacro</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acModule</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acQuery</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acReport</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acServerView</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="width: 156px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style7">acStoredProcedure</td>
+		</tr>
+		<tr height="17" style="height: 12.75pt">
+			<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+			</td>
+			<td style="text-align: left; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding: 0px" width="158" class="auto-style7">acTable</span></td>
+		</tr>
+	</table></span>
+	</font></font>
+	<font size="2" style="text-decoration: none" class="auto-style7">
+	<span class="auto-style27">ObjectName</span><span class="auto-style16"> - 
+optional, a string expression that's the valid name of an object of the type 
+selected by the object type argument.</span></font><span class="auto-style16"><span class="auto-style7"><br>
+	</span><strong><span class="auto-style7">. . . . .</span></strong><span class="auto-style7">.</span></span></div></div>
+			<p align="left" class="auto-style16"><b><span class="auto-style7">Note</span></b><span class="auto-style7">:<br>
+			If you leave the <i>objecttype</i> and <i>objectname</i> arguments 
+			blank (the default constant, <b class="bterm">acDefault</b>, is 
+			assumed for the <i>objecttype</i> argument), Microsoft Access saves 
+			the active object. If you leave the <i>objecttype</i> argument 
+			blank, but enter a name in the <i>objectname</i> argument, Microsoft 
+			Access saves the active object with the specified name. If you enter 
+			an object type in the <i>objecttype</i> argument, you must enter an 
+			existing object's name in the <i>objectname</i> argument.If you leave the <i>objecttype</i> argument blank, but enter a 
+			name in the <i>objectname</i> argument, you must include the <i>
+			objecttype</i> argument's comma.</span></p>
+			<span class="auto-style16">
+			<p align="left"><b><span class="auto-style7">Note</span></b><span class="auto-style7">:<br>
+			You can't use the Save method to save any of the following with a 
+			new name:<br><br>
+			A form in Form view or Datasheet view.<br>
+			A report in Print Preview.<br>
+			A module.<br>
+			A data access page in Page view.<br>
+			A server view in Datasheet view or Print Preview.<br>
+			A table in Datasheet view or Print Preview.<br>
+			A query in Datasheet view or Print Preview.<br>
+			A stored procedure in Datasheet view or Print Preview.</span><br class="auto-style7">
+			<span class="auto-style7">&nbsp;</span></span></p><font size="2" face color="#000000"><table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="33" id="table119">
+					<tr>
+						<td align="left">
+						<font size="2" color="#000080" class="auto-style18">If MsgBox(&quot;save 
+						changes?&quot;, vbYesNo, &quot;Pls Confirm&quot; = vbYes Then<br>
+						&nbsp;&nbsp;&nbsp;DoCmd.<b>Save</b> acForm, &quot;frmCustomersBase&quot;<br>
+						Else<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;Cancel = true<br>
+						End If</font></td>
+					</tr>
+			</table>
+			<font face="Arial" size="2">
+
+			<font size="2" face color="#000000">
+			<p align="left">&nbsp;</p>
+			<font face="Arial" size="2" style="text-decoration: none">
+
+			<font face="Arial" size="2" color="#000000">
+
+				<div align="right">
+
+			<p align="left">
+			<p align="left">
+			<br>
+			<p align="left" style="height: 56px">
+			<br>
+			<br>
+			<table border="0" cellspacing="0" cellpadding="0" id="table151" width="18%" height="19" align="right">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><a name="ShowAllRecords"></a><b>
+				<font size="2">
+				<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></td>
+			</tr>
+		</table>
+
+			</div>
+			</font>
+			<p align="left">
+
+			</font></font>
+			</font>
+
+			</font>
+
+			</font>
+		</font>
+			<b>
+
+			<font face="Arial" color="#000000" style="text-decoration: none">
+			ShowAllRecords</font></b><font size="2" face color="#000000"><b><font size="3" face="Arial" style="text-decoration: none"> method<br>
+			</font></b>
+
+			</font><font color="#000000"><span class="auto-style18">This method removes any existing filters that may exist on the 
+			current table, query, or form. It can be called directly using the 
+			syntax DoCmd.ShowAllRecords.</span></p>
+
+			</font>
+
+		</font>
+		<font face="Arial" size="2" color="#000000">
+		<table align="left" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="157" id="table152">
+					<tr>
+						<td align="left" class="auto-style16">
+						<font size="2" color="#000080" class="auto-style7">Dim strCustID As String, strFilter As String<br>
+						<br>
+			strCustID = InputBox(&quot;Enter customer ID:&quot;)<br>
+			If strCustID = &quot; &quot; Then&nbsp;&nbsp;&nbsp; ' if nothing is entered.<br>
+
+			</font><font color="#008000"><span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;
+			' removes any existing filters; same as assigning a null string to 
+			the form's Filter property.</span></font><font size="2" color="#000080"><br class="auto-style7">
+						<span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			DoCmd.<b>ShowAllRecords</b><br>
+			Else<br>
+
+						</span>
+
+			</font><font color="#008000"><span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;
+			' display only records that contain the strCustID (from the 
+			user's input) in the CustID field.</span></font><font size="2" color="#000080"><br class="auto-style7">
+						<span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;
+			strFilter = txtCustID = ' &quot; &amp; strCustID &amp; &quot; ' &quot;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			DoCmd.ApplyFilter , strFilter<br>
+			End If</span></font></td>
+					</tr>
+			</table>
+			<p align="left">
+
+			<br>
+			&nbsp;</font><font face=""><font size="2" face color="#000000"><p align="left">
+
+			&nbsp;<p align="left">
+
+			&nbsp;<font face="Arial" size="2" color="#000000"><p align="left">
+
+			<br>
+			&nbsp;<p align="left">
+
+			<br>
+			<br>
+			&nbsp;</font><font size="2" face color="#000000"><font face="Arial" size="2" color="#000000"><div align="right">
+
+			<table border="0" cellspacing="0" cellpadding="0" id="table118" width="18%" height="19" align="right">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><a name="TransferSpreadsheet"></a><b>
+				<a style="color: #0166FE" href="#Menu"><font size="2">Go To Top</font></a></b></td>
+			</tr>
+		</table>
+			<div align="right" style="height: 21px">
+
+			&nbsp;</div>
+			</font></div>
+
+			</font>
+
+			</font>
+
+		<font face="">
+
+		<font face="">
+			<font face="Arial" color="#000000">
+			<p align="left" style="height: 37px">
+
+			<b>TransferSpreadsheet method</b></font><font size="2" face="Arial" color="#000000"><font size="2" face><br>
+			<span class="auto-style18">I</span></font><span class="auto-style18">t carries out the 
+			</span> </font></font>
+
+			<font face="Arial" size="2" color="#000000">
+			<font face="Arial" size="2">
+			<span class="auto-style18">TransferSpreadsheet action in Visual 
+			Basic.</span></p>
+		<font size="2" color="#800000" class="auto-style1">
+			<p align="left" class="auto-style16"><span class="auto-style7">expression.<b>TransferSpreadsheet</b>(<i>TransferType</i>, <i>
+			SpreadsheetType</i>, <i>TableName</i>, <i>FileName</i>, <i>
+			HasFieldNames</i>, <i>Range</i>, </span> <i>
+			<span class="auto-style7">UseOA</span></i><span class="auto-style7">)</span></p>
+			</font>
+
+
+			<div align="left">	
+<font size="2" face="arial" class="auto-style7">
+				<font style="text-decoration: none;">
+<span id="menu3" onclick="showhide(menu3outline,menu3sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu3sign" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu3" onclick="showhide(menu3outline,menu3sign)" class="auto-style20"> </span> </font></font>
+				<span class="auto-style25">&nbsp;AcData</span><font face="arial"><span class="auto-style25">TransferType</span></font><font size="2" face="Verdana"><span id="menu1" onclick="showhide(menu1outline,menu1sign)" style="text-decoration: none; font-weight: bold;"><font style="text-decoration: none;"><span class="auto-style18">
+	- </span> </font>
+	</span><font face="Arial" size="2"><span class="auto-style18">can be one of these 
+	3 constants: </span> </font></font>
+<font style="text-decoration: none;" size="2" face="arial">
+				<span class="auto-style16"><span class="auto-style7"><br>
+				</span></span>
+<span id="menu3outline" style="display: none;">
+				<span class="auto-style16"><span class="auto-style7">
+<!-- 3---------------------------------------------------------------------------------------------------------------->	
+				</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:475px" id="table3">
+	<colgroup>
+		<col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 71px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Constant</td>
+		<td style="width: 45px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Value</td>
+		<td style="width: 327px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px">
+		<p style="text-align: center" class="auto-style26">Description</td>
+	</tr>
+
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 71px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acExport</font></td>
+		<td style="width: 45px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		1</td>
+		<td style="width: 327px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		The data is exported.</td>
+	</tr>
+
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 71px; " class="auto-style14">
+		<font style="text-decoration: none;"><span class="auto-style7">ac</span></font><span class="auto-style7">Import</span></td>
+		<td style="width: 45px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		0</td>
+		<td style="width: 327px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		(Default) The data is imported.</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 71px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acLink </font></td>
+		<td style="width: 45px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		2</td>
+		<td style="width: 327px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		The database is linked to the specified data source.</td>
+	</tr>
+	</table>
+</span>
+
+<div align="left">	
+<font size="2" face="arial">
+<span id="menu4" onclick="showhide(menu4outline,menu4sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"><font style="text-decoration: none;">
+<img id="menu4sign" src="closed.gif" valign="top" class="auto-style7"> <i>&nbsp;<span class="auto-style7">AcSpreadSheetType</span></i></font></span><font size="2" face="Verdana"><span id="menu1" onclick="showhide(menu1outline,menu1sign)" style="text-decoration: none; font-weight: bold;" class="auto-style18"><font style="text-decoration: none;">- </font>
+	</span><font face="Arial" size="2"><span class="auto-style18">can be one of these 
+	10 constants: </span> </font></font><span class="auto-style16">
+	<span class="auto-style7"><br>
+	</span></span>
+<span id="menu4outline" style="display: none;">
+	<span class="auto-style16"><span class="auto-style7">
+<!-- 4---------------------------------------------------------------------------------------------------------------->	
+	</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:587px" id="table3">
+	<colgroup>
+		<col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Constant</td>
+		<td style="width: 40px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Value</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px">
+		<p style="text-align: center" class="auto-style26">Description</td>
+	</tr>
+
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeExcel3</td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		0</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Microsoft Excel 3.0 format</td>
+	</tr>
+
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeExcel4</td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		6</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Microsoft Excel 4.0 format</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeExcel5</td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		5</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Microsoft Excel 5.0 format</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeExcel7</span></td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		5</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Microsoft Excel 95 format</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeExcel8 default</span></td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		8</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Microsoft Excel 97 format</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeExcel9 default</span></td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		8</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Microsoft Excel 2000 format</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeLotusWJ2 - Japanese version</td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		4</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Japanese version only</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		cSpreadsheetTypeLotusWK1</span></td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		2</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Lotus 1-2-3 WK1 format</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeLotusWK3</span></td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		3</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px">
+<font style="text-decoration: none">
+<span id="menu4outline" style="display: none;" class="auto-style18">
+		Lotus 1-2-3 WK3 format</span></td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 316px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		acSpreadsheetTypeLotusWK4</span></td>
+		<td style="width: 40px; text-align: center; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		7</td>
+		<td style="width: 200px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px">
+<font style="text-decoration: none">
+<span id="menu4outline" style="display: none;" class="auto-style18">
+		Lotus 1-2-3 WK4 format</span></td>
+	</tr>
+	</table>
+</span>
+		
+	<span class="auto-style27"><span class="auto-style7">TableName</span></span><span class="auto-style7"><span class="auto-style16"> 
+- Optional, name of Access table<br>
+	</span>
+<b><i>	
+	<span class="auto-style1">
+<span id="menu23" onclick="showhide(menu4outline,menu4sign)" style="text-decoration: none; font-weight: bold;" class="auto-style1">
+			<font face="Arial" size="2" color="#000000">
+<font style="text-decoration: none;" size="2" face="arial">	
+<font size="2" face="arial" class="auto-style7" style="text-decoration: none">
+<img id="menu4sign0" src="closed.gif" valign="top" class="auto-style16"><span class="auto-style16">&nbsp;
+	</span></font></font>
+
+
+			</font>
+	</span></span><span class="auto-style16">FileName</span></i></b><span class="auto-style1"><span class="auto-style16"> 
+- Optional, file name and path of the spreadsheet you want to import from, 
+export to, or link to.<br>
+	</span>
+<b><i>	
+<span id="menu24" onclick="showhide(menu4outline,menu4sign)" style="text-decoration: none; font-weight: bold;" class="auto-style1">
+			<font face="Arial" size="2" color="#000000">
+<font style="text-decoration: none;" size="2" face="arial">	
+<font size="2" face="arial" class="auto-style7" style="text-decoration: none">
+<img id="menu4sign1" src="closed.gif" valign="top" class="auto-style16"><span class="auto-style16">&nbsp;
+	</span></font></font>
+
+
+			</font>
+	</span><span class="auto-style16">HasFieldNames</span></i></b><span class="auto-style16"> 
+- Optional. Use True (&#8211;1) to use the first row of the spreadsheet as field names 
+when importing or linking. Use False (0) to treat the first row of the 
+spreadsheet as normal data. If you leave this argument blank, the default 
+(False) is assumed. <br>
+	</span>
+<b><i>	
+<span id="menu25" onclick="showhide(menu4outline,menu4sign)" style="text-decoration: none; font-weight: bold;" class="auto-style1">
+			<font face="Arial" size="2" color="#000000">
+<font style="text-decoration: none;" size="2" face="arial">	
+<font size="2" face="arial" class="auto-style7" style="text-decoration: none">
+<img id="menu4sign2" src="closed.gif" valign="top" class="auto-style16"><span class="auto-style16">&nbsp;
+	</span></font></font>
+
+
+			</font>
+	</span><span class="auto-style16">Range</span></i></b><span class="auto-style16"> - 
+Optional, a valid range of cells or the name of a range in the spreadsheet. This 
+argument applies only to importing. Leave this argument blank to import the 
+entire spreadsheet. When you export to a spreadsheet, you must leave this 
+argument blank. If you enter a range, the export will fail.<br>
+	</span>
+<b><i>	
+<span id="menu26" onclick="showhide(menu4outline,menu4sign)" style="text-decoration: none; font-weight: bold;" class="auto-style1">
+			<font face="Arial" size="2" color="#000000">
+<font style="text-decoration: none;" size="2" face="arial">	
+<font size="2" face="arial" class="auto-style7" style="text-decoration: none">
+<img id="menu4sign3" src="closed.gif" valign="top" class="auto-style16"><span class="auto-style16">&nbsp;
+	</span></font></font>
+
+
+			</font>
+	</span><span class="auto-style16">UseOA</span></i></b><span class="auto-style16"> - 
+Optional Variant. This argument is not supported.</span></span></span><font face="Arial" size="2"><h1 align="left" class="auto-style18">
+
+			&nbsp;</h1><font size="2" face color="#000000">
+<table align="left" border="1" width="95%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="92" id="table119">
+					<tr>
+						<td align="left">
+						<font color="#008000" style="text-decoration: none">
+						<span class="auto-style18">' explicitly naming when import an 
+						Excel file, sheet name, with a specified range, into 
+						Access Table1. It 
+uses the first row of the spreadsheet as field names.</span></font><font style="text-decoration: none"><br class="auto-style18">
+						</font>
+
+						<span class="auto-style16"><span class="auto-style7">
+
+			</font>
+
+						</span>
+
+						<font color="#000080" size="2" style="text-decoration: none" class="auto-style7">
+						DoCmd.<b>TransferSpreadsheet</b> TransferType:=<b>acImport</b>, 
+						SpreadsheetType:=9, TableName:=&quot;Table1&quot;, _ FileName:=</font></span><font size="2" face color="#000000"><font size="2" face="arial" style="text-decoration: none"><font color="#000080" style="text-decoration: none"><span class="auto-style18">&quot;C:\</span></font><font size="2" face="arial" style="text-decoration: none" color="#000000"><font color="#000080"><span class="auto-style18">Sales\Week45.xls</span></font><span class="auto-style18"><font color="#000080" style="text-decoration: none">&quot;, 
+						HasFieldNames:=True, Range:=</font></span><font size="2" color="#000000" style="text-decoration: none"><font color="#000080" style="text-decoration: none"><span class="auto-style18">&quot;[MySheet1]!A1:G100&quot;</span></font><p>
+						<font color="#000080">
+						<span class="auto-style18">'</span></font></font></font></font><font color="#008000" style="text-decoration: none"><span class="auto-style18"> 
+						alternatively, you can use this:</span></font><font color="#000000" style="text-decoration: none"><br class="auto-style18">
+
+			</font>
+
+						</font>	
+<font size="2" style="text-decoration: none" color="#000080" class="auto-style18">
+			DoCmd.<b>TransferSpreadsheet</b> <b>acImport</b>, 9, &quot;Table1&quot;, &quot;C:\</font><font size="2" face="arial" style="text-decoration: none" color="#000000"><font color="#000080"><span class="auto-style18">Sales\Week45.xls</span></font><span class="auto-style18"><font color="#000080" style="text-decoration: none">&quot;, True, </font>
+						</span>
+						<font color="#000080" style="text-decoration: none">
+						<span class="auto-style18">&quot;[Sheet1]!A1:G100&quot;</span></font></font></p>
+<p>
+						<font color="#008000" style="text-decoration: none">
+						<span class="auto-style18">' this imports data from range A1:G12 of Lotus 
+						spreadsheet into the Access Table1.</span></font><font color="#000080" size="2" style="text-decoration: none" face="arial" class="auto-style7"><br class="auto-style16">
+						<span class="auto-style16">DoCmd.<b>TransferSpreadsheet</b> <b>acImport</b>, 3, 
+						&quot;Table1&quot;,&quot;C:\Lotus\MyData.wk3&quot;, True, &quot;A1:G100&quot;</span></font><font size="2" color="#000000" style="text-decoration: none" face="arial"></p>
+						<p><span class="auto-style18"><font color="#008000">' this exports data from </font>
+						</span>
+						<font color="#008000" style="text-decoration: none">
+						<span class="auto-style18">tblSalesWK45 
+						table into path name </span> </font>
+						<span class="auto-style18">
+						<font color="#008000">C:\Sales\</font></span><font color="#008000" style="text-decoration: none"><span class="auto-style18">Week45.xls.</span></font></font><font size="2" face="arial" style="text-decoration: none" color="#008000" class="auto-style7"><br class="auto-style16">
+						<span class="auto-style16">' Note: here I deliberately don't specify a sheet name, 
+						it therefore sends data to the default VBA Properties 
+						Sheet1.</span></font><font size="2" color="#000000" style="text-decoration: none" face="arial"><font color="#000080"><span class="auto-style7"><br class="auto-style16">
+						</span><span class="auto-style16">
+						<span class="auto-style7">DoCmd.<b>TransferSpreadsheet</b> <b>acExport</b>, 9, &quot;tblSalesWK45&quot;, &quot;C:\Sales\</span></span></font><font color="#000080" style="text-decoration: none"><span class="auto-style18">Week45.xls</span></font><span class="auto-style18"><font color="#000080">&quot;, True</font></span></p>
+						<p><span class="auto-style18"><font color="#008000">' this exports data from the same</font></span><font color="#008000" style="text-decoration: none"><span class="auto-style18"> 
+						table into network path 
+						\\Spares\Planning\ </span> </font>
+
+						<span class="auto-style18">
+
+						<font color="#008000">Sales\</font></span><font color="#008000" style="text-decoration: none"><span class="auto-style18">Week45.xls</span></font><font color="#008000"><span class="auto-style18">, 
+						by setting a Constant path</span></font></font><font style="text-decoration: none" color="#008000"><span class="auto-style18">.</span></font><font size="2" face="arial" style="text-decoration: none" color="#000000"><font color="#000080"><span class="auto-style7"><br class="auto-style16">
+						</span><span class="auto-style16">
+						<span class="auto-style7">Const netPath As String = 
+						\\Spares\Planning\ <br>
+						DoCmd.<b>TransferSpreadsheet</b> <b>acExport</b>, 
+						acSpreadsheetTypeExcel9, &quot;</span></span></font><font color="#000080" style="text-decoration: none"><span class="auto-style18">tblSalesWK45</span></font><span class="auto-style18"><font color="#000080">&quot;, 
+						netPath &amp; &quot;Sales_week45.xls&quot;, 
+						True<br></font></span></p>
+						</td>
+					</tr>
+			</table>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;<br><br><br>
+
+			</font></font></font></font>
+
+<font face="Arial" size="2" color="#000000">
+			<div align="right">
+<font size="2" face="arial" color="#000000">
+
+			<font face="Arial" size="2" color="#000000" style="text-decoration: none">
+
+				<p align="right">&nbsp;<p align="right">&nbsp;<p align="right" style="height: 29px">
+				<a name="Quit0"></a><b>
+				<font size="2">
+				<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></font></font></font><h1 align="left">
+
+				<font face="Arial" size="2">
+
+				<b><font size="3">TransferText method<br>
+			</font><span class="auto-style16"><span style="font-weight: 400">
+				<span class="auto-style7">C</span></span></span></b><span style="font-weight: 400"><span class="auto-style16"><span class="auto-style7">arries out the 
+	TransferText action in Visual Basic.</span></span></span></font></h1>
+			</div><font size="2" color="#000000">
+			
+			<p align="left"><font color="#800000" class="auto-style17">
+			<font size="2" class="auto-style7">
+			expression<b>.</b></font></font></font><font size="2" color="#800000"><b class="bterm"><span class="auto-style16"><span class="auto-style7">TransferText</span></span></b><span class="auto-style7"><span class="auto-style1">(</span><span class="auto-style17">TransferType</span><span class="auto-style1"><span class="auto-style16">,
+	<i>SpecificationName</i>, <i>TableName</i>,
+	<i>FileName</i>, <i>HasFieldNames</i>,
+	<i>HTMLTableName</i>, </span></span></span><span class="auto-style1">
+			<span class="auto-style16"> <i><span class="auto-style7">CodePage</span></i>)<br class="auto-style7">
+			<span class="auto-style7">&nbsp;</span></span></span></font><font size="2" face="Arial"><div align="left">	
+<font size="2" face="arial">
+<font style="text-decoration: none;">
+<span id="menu6" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+		<span class="auto-style7">
+<img id="menu6sign" src="closed.gif" valign="top" class="auto-style16"></span></span><span id="menu6" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"><span class="auto-style7">
+		</span></span> </font><i>
+		<span class="auto-style20"><span class="auto-style7">&nbsp;AcTextTransferType</span></span><span class="auto-style16"><span class="auto-style7"> 
+- </span></span></i><span class="auto-style18">Optional, can be one of these 10 constants.
+		</span>
+
+<font style="text-decoration: none;"><span class="auto-style7">
+		<br class="auto-style16">
+		<span class="auto-style16">If you leave this argument blank, the default constant (acImportDelim) is 
+	assumed.<br>
+		</span></span>
+<span id="menu6outline" style="display: none;">
+		<span class="auto-style16"><span class="auto-style7">
+<!-- 6---------------------------------------------------------------------------------------------------------------->	
+		</span></span>	
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:429px" id="table3">
+	<colgroup>
+		<col width="21" style="width: 16pt">
+		<col width="307" style="width: 230pt">
+	</colgroup>
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Constant</td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style26">
+		Value</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px">
+		<p style="text-align: center" class="auto-style26">Description</td>
+	</tr>
+
+<tr height="17" style="height: 12.75pt">
+		<td height="17" style="border-style: none; border-color: inherit; border-width: medium; height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; padding: 0px" class="auto-style18">
+		<img border="0" src="leftspace_yellow.gif" width="21" height="3"></td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acExportDelim</font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		2</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Export Delimited</td>
+	</tr>
+
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acExportFixed </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		3</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Export Fixed Width</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acExportHTML </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		8</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Export HTML</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acExportMerge </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		4</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Export Microsoft Word Merge</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">
+		acImportDelim default </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		0</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Import Delimited</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acImportFixed </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		1</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Import Fixed Width</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acImportHTML </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		7</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Import HTML</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acLinkDelim </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		5</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Link Delimited</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acLinkFixed </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		6</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Link Fixed Width</td>
+	</tr>
+	<tr height="17" style="height: 12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding: 0px">
+		</td>
+		<td style="width: 158px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		<font style="text-decoration: none;">acLinkHTML </font></td>
+		<td style="width: 44px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		9</td>
+		<td style="width: 195px; text-align: left; white-space: normal; color: #000000; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; border: 1px solid #C0C0C0; padding: 1px" class="auto-style18">
+		Link HTML</td>
+	</tr>
+	</table>
+</span>
+	
+	
+	
+			<span class="auto-style7"><span class="auto-style12">	
+<font size="2" face="arial" color="#000000">
+<span id="menu11" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu6sign0" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu12" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"> </span>
+		<span class="auto-style25">&nbsp;</span></font></span><span class="auto-style27">SpecificationName</span><span class="auto-style16"> - Optional Variant. A string expression that's 
+the name of an import or export specification you've created and saved in the 
+current database.<br>
+		</span>
+	<b>
+	<i><span class="auto-style1">	
+<font size="2" face="arial" color="#000000">
+<span id="menu13" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu6sign1" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu14" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"> </span>
+		<span class="auto-style26">&nbsp;</span></font></span><span class="auto-style16">TableName</span></i></b><span class="auto-style1"><span class="auto-style16"> - Optional Variant. A string expression that's the name of 
+	the Access table you want to import text data to, export text data 
+	from, or link text data to, or the Access query whose results you 
+	want to export to a text file.<br>
+		</span>
+	<b>
+	<i>	
+<font size="2" face="arial" color="#000000">
+<span id="menu15" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu6sign2" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu16" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"> </span>
+		<span class="auto-style26">&nbsp;</span></font><span class="auto-style16">FileName</span></i></b><span class="auto-style16"> - Optional Variant. A string expression that's the full 
+	name, including the path, of the text file you want to import from, export 
+	to, or link to.<br>
+		</span>
+	<b>
+	<i>	
+<font size="2" face="arial" color="#000000">
+<span id="menu17" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu6sign3" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu18" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"> </span>
+		<span class="auto-style26">&nbsp;</span></font><span class="auto-style16">HasFieldNames</span></i></b><span class="auto-style16"> Optional Variant. Use True (&#8211;1) to use the first row of 
+	the text file as field names when importing, exporting, or linking. Use 
+	False (0) to treat the first roRunCommand text file as normal data. If you 
+leave this argument blank, the default (False) is assumed.<br>
+		</span>
+	<b>
+	<i>	
+<font size="2" face="arial" color="#000000">
+<span id="menu19" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu6sign4" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu20" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"> </span>
+		<span class="auto-style26">&nbsp;</span></font><span class="auto-style16">HTMLTableName</span></i></b><span class="auto-style16"> - Optional Variant. A string expression that's the name 
+	of the table or list in the HTML file that you want to import or link. This 
+	argument is ignored unless the transfertype argument is set to acImportHTML 
+	or <i><b>acLinkHTML</b></i>.<br>
+		</span>
+	<b>
+	<i>	
+<font size="2" face="arial" color="#000000">
+<span id="menu21" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;">
+<img id="menu6sign5" src="closed.gif" valign="top" class="auto-style16"></span><span id="menu22" onclick="showhide(menu6outline,menu6sign)" style="text-decoration: none; font-weight: bold;" class="auto-style16"> </span>
+		<span class="auto-style26">&nbsp;</span></font><span class="auto-style16">CodePage</span></i></b><span class="auto-style16"> - Optional Variant. A Long value indicating the character 
+	set of the code page.</span></span></span><font face="Arial" size="2"><p align="left">
+		<span class="auto-style18">Example:</span><font face="" size="2"><span class="auto-style16"><br class="auto-style7">
+&nbsp;<table align="left" border="1" width="86%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="229" id="table123">
+					<tr>
+						<td align="left">		
+						<font style="text-decoration: none" color="#008000">
+						<span class="auto-style7">' Export Access table (</span></font></span><font color="#008000" style="text-decoration: none"><span class="auto-style18">tblWeeklySales) 
+						</span> </font>
+						<span class="auto-style18">
+						<font style="text-decoration: none" color="#008000">
+						as a comma-delimited CSV file (</font></span><font color="#008000" size="2" style="text-decoration: none" class="auto-style7"><span class="auto-style16">Sales_Week45.csv)</span>.<br class="auto-style16">
+						<span class="auto-style16">' Must reference to the Microsoft Scripting Runtime 
+						library in order to load the FileSystemObject</span></font><font color="#000080" size="2" face="Arial" class="auto-style7"><br class="auto-style16">
+						<span class="auto-style16">Dim fso As FileSystemObject<br>
+	Set fso = New FileSystemObject<br>
+	<br>
+	If fso.FileExists(&quot;C:\Sales_Week45.csv&quot;) Then<br>
+	&nbsp;&nbsp;&nbsp;
+	fso.DeleteFile &quot;</span></font><font color="#000080" style="text-decoration: none"><span class="auto-style18">C:\Sales_Week45.csv</span></font><font color="#000080" size="2" face="Arial">&quot;<span class="auto-style7"><br class="auto-style16">
+						</span><span class="auto-style16">
+						<span class="auto-style7">End If<br>
+	<br>
+	On Error Resume Next<br>
+	DoCmd.<b>TransferText</b> acExportDelim, &quot;Sales Import Specification&quot;,
+	&quot;tblWeeklySales&quot;, &quot;</span></span></font><font color="#000080" style="text-decoration: none"><span class="auto-style18">C:\Sales_Week45.csv</span></font><font color="#000080" size="2" face="Arial">&quot;<span class="auto-style7"><br class="auto-style16">
+						</span><span class="auto-style16">
+						<span class="auto-style7">If Err.Number &lt;&gt; 0 Then<br>
+	&nbsp;&nbsp;&nbsp;
+	MsgBox &quot;An Error occured during the transfer (&quot; &amp; Err.Description &amp; &quot;)&quot;<br>
+	End If<br>
+						On Error GoTo 0</span></span></font></td>
+					</tr>
+			</table>
+			<p align="left">&nbsp;</p>
+			<font face="Arial" size="2">
+
+			<font face="Arial" size="2" color="#000000">
+
+				<div align="right">
+
+			<br>
+			<p align="left">&nbsp;<p align="left">&nbsp;<p align="left">&nbsp;<p align="left">&nbsp;<p align="left"><br><br><br>
+			<table border="0" cellspacing="0" cellpadding="0" id="table124" width="18%" height="19" align="right">
+			<tr>
+				<td width="753" height="19" valign="top">
+				&nbsp;</td>
+			</tr>
+		</table>
+
+			</div>
+			</font><font size="2" face>
+			<h1 class="auto-style28">
+
+<font size="2" face="arial" color="#000000">
+
+			<font face="Arial" size="2" color="#000000" style="text-decoration: none">
+
+				<b>
+				<font size="2">
+				<a style="color: #0166FE" href="#Menu">Go To Top</a></font></b></font></font></h1>
+		<p align="left">
+
+			&nbsp;</p>
+		<h1 align="left">
+
+			<font size="3" face="Arial">			
+			Quit method<br>
+			</font>
+
+			<span style="font-weight: 400" class="auto-style5">Quit the access application.</span></h1></font></font></font></font></font>
+
+			</font><font size="2" color="#800000" class="auto-style7">
+			
+			<p align="left" style="height: 17px"><span class="auto-style16">expression.<b>Quit</b>(<i>Option</i>)</p>
+
+			</span>
+
+			</font>
+
+
+			<span class="auto-style16">
+
+
+			<p align="left" class="auto-style7">AcQuitOption can be one of these AcQuitOption 
+			constants:<br>
+			<i><b>acQuitPrompt</b></i> - displays a dialog box that asks whether 
+			you want to save any database objects that have been changed but not 
+			saved. (Formerly acPrompt).<br>
+			<i><b>acQuitSaveAll</b></i> - Default. Saves all objects without 
+			displaying a dialog box. (Formerly acSaveYes).<br>
+			<i><b>acQuitSaveNone</b></i> - quits Microsoft Access without saving 
+			any objects. (Formerly acExit).</span></p></font>
+
+
+			</font>
+<table align="left" valign="middle" border="1" width="75%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#000000" height="102" id="table143">
+					<tr>
+						<td align="left">
+						<font style="text-decoration: none" color="#000000" face="Arial" size="2" class="auto-style7">
+						<font color="#008000"><span class="auto-style16">' display a dialog box prompts the user to save changes and the procedure quits Access.</span></font><span class="auto-style16"><font color="#000080">
+Application.<b>Quit</b> acQuitPrompt</font>
+						</span>
+						</font>
+						<p>
+						<font style="text-decoration: none" color="#000000" size="2" class="auto-style18"><font color="#008000">' a dialog box prompts users to save any changed objects before they quit Access.</font><font color="#000080"><br>
+DoCmd.<b>Quit</b> acQuitPrompt</font></font></td>
+					</tr>
+			</table>
+			<font face="Arial" size="2">
+
+
+			<font size="2">
+			
+			<font face="Arial"><font size="2" color="#800000">
+			
+			<font size="2" face color="#000000">
+		<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+			</font>
+
+			</font>
+
+
+			</font>
+
+			<font face="Arial" size="2" color="#000000">
+
+			<table border="0" cellspacing="0" cellpadding="0" id="table125" width="18%" height="19" align="right">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#Main_Top"><font size="2">Go To 
+				Top</font></a></b></td>
+			</tr>
+		</table>
+			</font>&nbsp;</td>
+       </tr>
+</table>
+				
+				
+			</table>
+			</div>
+
+       </td>
+       </tr>
+</tbody></table>
+
+
+<table border="0" width="60%" id="table5" cellspacing="0" cellpadding="2" background="YellowTexture.gif">
+<tr>
+<td align="center">
+<p>
+<br>
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  --> 
+
+
+<br><br>
+	<font class="auto-style1"><span class="auto-style7">This site  
+	was created in February 2007 <br>by William&nbsp;Tan</span></font></td>
+	</tr>
+</table>
+</body>
+</html>

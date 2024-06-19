@@ -1,0 +1,2020 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_parent">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Access ActiveX Data Objects</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<style type="text/css">
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 1px solid black;
+padding: 4px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+font-type: courier;
+font-size: 14;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+</style>
+
+<body background="../YellowTexture.gif">
+<div id="dhtmltooltip"></div>
+<table border="0" cellspacing="0" cellpadding="0" id="table63" style="width: 100%; height: 12px">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="table64" style="width: 57%">
+	<tr>
+		<td>
+	<p class="auto-style9" style="height: 39px; width: 989px">
+	<font class="auto-style10">
+	<a class="type3" href="../index.htm"><span class="auto-style2">Home</span></a><span class="auto-style2">
+	|&nbsp;<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> |&nbsp;<a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a> |
+	</span>
+	<a class="type1" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661"><span class="auto-style2">Guestbook</span></a></font>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1" style="height: -15px; width: 982px;" class="auto-style15"></td>
+	</tr>
+</table>
+
+
+
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+/************************************************************
+* Cool DHTML tooltip script provided by www.dynamicdrive.com
+*************************************************************/
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+document.onmousemove=positiontip
+</script>
+
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+.auto-style1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 16pt;
+}
+.auto-style2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style3 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style4 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style5 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style6 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style7 {
+	font-size: 10.5pt;
+}
+.auto-style9 {
+	text-align: center;
+}
+.auto-style10 {
+	font-size: 11pt;
+}
+.auto-style11 {
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style12 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style13 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10pt;
+}
+.auto-style14 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+}
+.auto-style15 {
+	text-align: center;
+	margin-left: 0px;
+}
+.auto-style16 {
+	color: #0045C3;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+-->
+</style>
+</head>
+
+
+
+
+<TABLE border="0" cellspacing="0" width="995" height="11091" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center" width="170">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825" id="table58">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033" id="table59">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style5">
+						<font class="auto-style4"><strong>Access Programming</strong></font></font><span class="auto-style5">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+		<font face>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style3" target="_parent" href="beginner_basic_Acc.htm">Access 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style3" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp;Methods</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style3" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style3" href="forms_controls_events.htm">
+						Forms, Control and Events</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style3" target="_parent" target="_self" href="ADO.htm">
+					ADO (ActiveX Data Objects)</a></font><span class="auto-style2"><span class="auto-style7"></font></font></font></span></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style3" target="_parent" target="_self" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style3" target="_self" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style16" target="_parent" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style5">
+						<font face="Verdana">
+						<a rel="internal" class="auto-style3" target="_parent" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style6" target="_parent" href="SQL_Examples.htm">
+		                <span class="auto-style2">Jet SQL examples</span></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style3" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<a rel="internal" class="auto-style3" target="_parent" href="Integrating_Access_Excel.htm">
+						Integrating Access/Excel</a></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						<font face>
+						<a rel="internal" class="auto-style3" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style5">
+						&nbsp;</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>	
+<td valign="top" height="10796">
+      &nbsp;</td>
+<td valign="top" height="10796" width="8">
+      &nbsp;</td>
+<td valign="top" height="10796" align="left" style="padding: 1px" width="812">
+				       
+      <p class="auto-style1">Microsoft Access: 
+		ADOX Programming Code Examples</p>
+		<p class="section_title"><font size="2" face="Arial">T<span class="auto-style5">o use the ADOX 
+		Library for the following ADOX examples, </span> </font>
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="auto-style5">
+				       
+      	you need to set reference to Microsoft ADO Ext.2.7 or 2.8 for DDL and 
+		Security library. In the code window, go to 
+			</span><span class="auto-style5">Tools/Reference and check the box
+		</span><span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font size="2" class="auto-style5">[see
+		<a target="_new" href="ADOX/ADOX_Ext.2.8_for_DDL_Security.gif">diagram</a>].</font></span></p>
+<font face="">
+		<table style="BORDER-COLLAPSE: collapse" cellPadding="3" width="96%" border="1" id="table115" bordercolor="#808080">
+			<tr class="TableHeadRow">
+				<td bgcolor="#000066" class="auto-style11" style="width: 269px">
+				<font color="#FFFFFF">Functions</font></td>
+				<td bgcolor="#000066" style="width: 545px">
+				<p align="center" class="auto-style12">
+				<font color="#FFFFFF">Description</font></td>
+			</tr>
+			</font>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<font color="#000066">
+				<a class="type1" href="#CreateDatabase"><strong>CreateDatabase()</strong></a></font></td>
+				<td class="auto-style5" style="width: 545px">To create a new database using ADOX.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<font color="#000066">
+				<a class="type1" href="#CreateTable"><strong>CreateTable()</strong></a></font></td>
+				<td class="auto-style5" style="width: 545px">Add a table, columns and records to a 
+				database from code.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#CreateTables_VariousFieldTypes"><strong>CreateTable_VariousFieldTypes()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">Create different tables with 
+				various field types from code.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#CreateIndexes"><strong>CreateIndexes()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">Create Indexes for the different fields for 
+				existing tables.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#CreateForeignKeyRelationship"><strong>CreateForeignKeyRelationship()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">Create primary key and foreign 
+				key relationship between two tables.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#CreateNewFieldWithAttribute"><strong>CreateNewFieldWithAttributes()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">To create/delete new fields with 
+				the Types 
+				and Attributes.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#CreateGroupAndUsers"><strong>CreateGroupAndUsers()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">To create a new security group, 
+				add users and passwords, update access permissions.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#CreateUpdateProcedure"><strong>CreateUpdateProcedure()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">To create and update  
+				procedures.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#Deletes"><strong>Deletes()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">Demonstrate how to modify and delete tables, 
+				procedures, columns, fields, indexes and keys.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#RetrieveWorkbooksSchema"><strong>RetrieveWorkbooksSchema()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">To get 
+				Excel spreadsheet schema - treating workbook as a database catalog.</td>
+			</tr>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#RetrieveWorkbooksSchema2">
+				<strong>RetrieveWorkbooksSchema2()</strong></a></td>
+				<td class="auto-style5" style="width: 545px">Another example to get Excel 
+				spreadsheet schema and print into an array using ADOX.</td>
+			</tr>
+			</font>
+			<tr>
+				<td class="auto-style13" style="width: 269px">
+				<a class="type1" href="#ShowTableProperties"><strong>ShowTableProperties(Arg1,Arg2)</strong></a></td>
+				</font>
+				<td class="auto-style5" style="width: 545px">To Show the columns in a table, 
+				and optionally their properties</td>
+			</tr>
+			</font>
+			</font>
+			</font>
+			</table>
+
+<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table118" width="765" height="16">
+			<tr>
+				<td width="765" height="16" valign="top">
+				<p align="right">
+		<a name=CreateDatabase></a><font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		</font>
+
+		<p class="auto-style2"><font size="2" color="#008000">'<span class="auto-style7">Purpose: To 
+		create a new database using ADOX.</span></font></p>
+		<p><font size="2" color="#000066" class="auto-style5">Sub CreateDatabase()<br>
+		On Error GoTo CreateDatabaseError<br>
+		<br>
+		Dim cat As New ADOX.Catalog<br>
+		cat.Create &quot;Provider='Microsoft.Jet.OLEDB.4.0';Data Source=C:\NewDatabase.mdb&quot;<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Clean up object</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cat = Nothing<br>
+		Exit Sub<br>
+		<br>
+		CreateDatabaseError:<br>
+		Set cat = Nothing<br>
+		<br>
+		If Err &lt;&gt; 0 Then<br>
+		&nbsp;&nbsp;
+		MsgBox Err.Source &amp; &quot;--&gt;&quot; &amp; Err.Description, , &quot;Error&quot;<br>
+		End If<br>
+		End Sub</span></font></p>
+<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table123" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=CreateTable></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+      <p><font size="2" color="#008000" class="auto-style5">'To make a table, 
+		make new ADOX.Table object. Use its Columns collection's Append method 
+		to define fields. When it is done, use the Catalog's Tables collection's 
+		Append method to add the Table. <br>
+		</font><font color="#000066" size="2" class="auto-style5">Option Compare Database<br>
+		Option Explicit</font></p>
+				       
+      <font face="Courier New" size="2" color="#000066">
+				       
+      <p><font color="#008000"><span class="auto-style5">' Purpose: To add table, columns 
+		and records to a 
+		database using ADOX</span></font><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style2"><span class="auto-style7">Sub CreateTable()<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim tbl As New ADOX.Table<br>
+		Dim col As New ADOX.Column</span></span></font><font size="2" color="#800000" class="auto-style5"><br>
+		<br>
+		</font>
+      <font color="#008000">
+				       
+      <span class="auto-style5">' connect the catalog to the current database</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">cat.ActiveConnection = CurrentProject.Connection</span></font></p>
+		<p><font size="2" color="#000066" class="auto-style5">With col<br>
+&nbsp;&nbsp;&nbsp; Set .ParentCatalog = cat&nbsp;
+		</font><font color="#008000"><span class="auto-style5">' associate with the 
+		provider in order you can set provider-specific properties</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Name = &quot;SN&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' define the first 
+		column 'SN'</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Type = adInteger&nbsp;
+		</span>
+		</font><span class="auto-style5"></font>
+		</span>
+		<font color="#008000"><span class="auto-style5">' equivalent of the VB Long 
+		data type</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+		<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Properties(&quot;Autoincrement&quot;) = True&nbsp;&nbsp; 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">' automatically generate 
+		unique identifier, auto-incrementing</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Properties(&quot;Description&quot;) = &quot;unique serial numbers&quot;</span></font><font face=""><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">End With<br>
+		<br>
+		With tbl<br>
+&nbsp;&nbsp; .Name = &quot;MyTable&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </font>
+		<font color="#008000"><span class="auto-style5">' create a table 'MyTable'</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Columns.Append col&nbsp;&nbsp;&nbsp; 
+		</span> </font>
+      	<font color="#008000"><span class="auto-style5">' create column 'SN' to the 
+		Columns collection of the table</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Columns.Append &quot;Part_Number&quot;, adVarWChar, 12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		</span> </font>
+      	<font color="#008000"><span class="auto-style5">' create 2nd column 'Part_Number', 
+		</span> 
+		</font></font>
+      	<font color="#008000"><span class="auto-style5">Text (12 max)</span></font><font face=""><font color="#800000"><br class="auto-style5">
+		</font>
+		<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Columns.Append &quot;Part_Description&quot;, adVarWChar, 30&nbsp; 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">' create 3rd column 
+		'Description', Text (30 max)</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Columns.Append &quot;Std_Cost&quot;, adSingle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '</span></font><font color="#008000"><span class="auto-style5"> 
+		create the 4th column 'Std_Cost', 
+		data type Single</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Columns.Append &quot;Released_Date&quot;, adDate&nbsp;&nbsp;&nbsp; 
+		</span> </font>
+      	<font color="#008000"><span class="auto-style5">' create the 5th column &quot;Released_Date&quot;, 
+		</span> 
+		</font></font><font color="#008000"><span class="auto-style5">data type Date</span></font><font face=""><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Columns.Append &quot;Quantity&quot;, 
+		adSmallInt &nbsp;&nbsp;&nbsp; </span> </font>
+      	<font color="#008000"><span class="auto-style5">'&nbsp; create the 6th 
+		column &quot;Quantity&quot; as Integer</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .Keys.Append &quot;PrimaryKey&quot;, adKeyPrimary, &quot;SN&quot;&nbsp; 
+		</span> </font>
+      	<font color="#008000"><span class="auto-style5">' append column 'SN' as 
+		primary key to the Keys collection</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font size="2" color="#000066" class="auto-style5">End With<br>
+		cat.Tables.Append tbl&nbsp;&nbsp; </font>
+      	<font color="#008000"><span class="auto-style5">' save the table by 
+		appending to catalog</span></font></font></p>
+		<p><font size="2" color="#008000" class="auto-style5">' Connect to the 
+		database.<br>
+		</font><font size="2" color="#000066" class="auto-style5">Set cnn = 
+		cat.ActiveConnection<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Insert records.</span></font><font size="2" color="#000066" face="Courier New" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Execute &quot;<b>INSERT INTO</b> MyTable <b>VALUES</b> ('01 ', '11543B', &quot; 
+		&amp; _<br>
+&nbsp; &quot;'Hub Bearing', '125.05' ,'15 Feb 2005', '27')&quot;&nbsp;&nbsp; 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">' or you can input the date 
+		as #2/15/2005#</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' This line will 
+		delete the table.</span></font><font color="#000066"><br class="auto-style5">
+		</font><span class="auto-style5">''cat.Tables.Delete &quot;MyTable&quot;</span><font color="#000066"><br class="auto-style5">
+		</font><font face="">
+		<font face="Arial" size="2" color="#008000" class="auto-style7">
+		<br class="auto-style2">
+		<span class="auto-style2">' clean up objects</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      	<font size="2" color="#000066" class="auto-style5">Set cat = Nothing<br>
+		Set col = Nothing<br>
+		End Sub</p>
+		</font>
+<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table116" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=CreateTables_VariousFieldTypes></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+      </font>
+				       
+      <font face="Courier New">
+		<p class="auto-style5">
+				       
+      <font color="#008000">
+		'Purpose: To create different tables with various field types using ADOX.</font></p>
+		</font>
+		<p><span class="auto-style5"><font color="#000066">Function CreateTables_VariousFieldTypes()<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim tbl As ADOX.Table<br>
+		Dim col As ADOX.Column<br>
+		</font>
+      	<font color="#800000">
+		<br>
+		</font>
+        </span>
+      <font size="2">
+				       
+      <font face="Courier New">
+      <font color="#008000">
+				       
+        <span class="auto-style5">' connect the catalog to this database</span></font><span class="auto-style2"><font color="#800000"><span class="auto-style7"><br>
+		</span>
+		</font>
+		<span class="auto-style7">
+		<font color="#000066">Set cat.ActiveConnection = CurrentProject.Connection<br>
+		</font>
+		</span></span><span class="auto-style7">
+		<font color="#800000">
+		<span class="auto-style2">
+		<br>
+		</span>
+		</font>
+		</span>
+		</font>
+      	<font color="#339933"><span class="auto-style2">
+		<span class="auto-style7">' Initialize the 'tbl_CustomerCode' table</span></span></font><font face="Courier New"><font color="#800000"><br class="auto-style5">
+		</font>
+		<font color="#000066" size="2" class="auto-style5">Set tbl = New ADOX.Table<br>
+		tbl.Name = &quot;tbl_CustomerCode&quot;<br>
+		<br>
+		Set col = New ADOX.Column<br>
+		col.Name = &quot;CustomerCode&quot;<br>
+		col.Type = adInteger<br>
+		Set col.ParentCatalog = cat<br>
+		col.Properties(&quot;Autoincrement&quot;) = True<br>
+		col.Properties(&quot;Description&quot;) = </font>
+		</font><font color="#000066"><span class="auto-style5">&quot;generate 
+		auto-unique identifier for this record&quot;</span></font><font face="Courier New"><font color="#000066" face="Courier New" size="2" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">col.Properties(&quot;Nullable&quot;) = False<br>
+		col.Properties(&quot;Jet OLEDB:Allow Zero Length&quot;) = False<br>
+		tbl.Columns.Append col<br>
+		<br>
+		Set col = New ADOX.Column<br>
+		col.Name = &quot;CustomerName&quot;<br>
+		col.Type = adWChar<br>
+		col.DefinedSize = 50<br>
+		col.Attributes = 0&nbsp; </span> </font>
+		<font color="#008000"><span class="auto-style5">' disallow null</span></font><font color="#000066" face="Courier New" size="2" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set col.ParentCatalog = cat<br>
+		col.Properties(&quot;Description&quot;) = &quot;customer names&quot;<br>
+		tbl.Columns.Append col</span></font><font color="#800000" size="2" class="auto-style5"><br>
+		<br>
+		</font>
+		</font>
+      	<font color="#339933">
+		<span class="auto-style5">' Save the new table by appending to catalog.</span></font><font face="Courier New"><font color="#800000"><br class="auto-style5">
+		</font>
+		<font color="#000066" size="2" class="auto-style5">cat.Tables.Append tbl<br>
+		</font>
+		<font color="#800000">
+		<br class="auto-style5">
+		</font>
+		</font>
+      	<font color="#339933">
+		<span class="auto-style5">' Clean up objects</span></font><font face="Courier New"><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">Set tbl = Nothing</span></font></p>
+		</font>
+      <p><font color="#339933"><span class="auto-style2">
+	  <span class="auto-style7">' Initialize the 'Suppliers' table.</span></span></font><span class="auto-style7"><font class="auto-style2"><font color="#800000"><br>
+		</font>
+		<font color="#000066">Set tbl = New ADOX.Table<br>
+		tbl.Name = &quot;tbl_Suppliers&quot;</font><font color="#800000"><br>
+		<br>
+		</font>
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' Add some columns to the table.</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">With tbl.Columns<br>
+		</span>
+		</font>
+      <font size="2">
+				       
+      <font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;SupplierID&quot;, adInteger&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Number (Long Integer)</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;SupplierName&quot;, adVarWChar, 50&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Text (30 max)</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;ContactName&quot;, adVarWChar, 15&nbsp;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Text (15 max)</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;Active&quot;, adBoolean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Yes/No</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;UnitPrice&quot;, adCurrency&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Currency</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;MOQ&quot;, adSingle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Number (Single)</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;LastPurchaseDate&quot;, adDate&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">'&nbsp; Date/Time</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Append &quot;Web&quot;, adLongVarWChar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7"><font color="#008000">
+	  <span class="auto-style2">' Memo (for hyperlink)</span></font></span><font color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style5">End With</span><span class="auto-style7"><br class="auto-style2">
+		</span>
+		</font><span class="auto-style7">
+      <font color="#800000">
+		<br class="auto-style2">
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' Set the field properties AutoNumber</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">With !SupplierID<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">Set .ParentCatalog = cat<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">.Properties(&quot;Autoincrement&quot;) = True<br>
+		End With<br>
+		</span>
+		</font>
+      <span class="auto-style7">
+      <font color="#800000">
+		<br class="auto-style2">
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' Required field with no null</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">With !SupplierName<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">Set .ParentCatalog = cat<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">.Properties(&quot;Nullable&quot;) = False<br>
+		.Properties(&quot;Jet OLEDB:Allow Zero Length&quot;) = False<br>
+		End With<br>
+		</span>
+		</font>
+      <span class="auto-style7">
+      <font color="#800000">
+		<br class="auto-style2">
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' Set a validation rule</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">With !LastPurchaseDate<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">Set .ParentCatalog = cat<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">.Properties(&quot;Jet OLEDB:Column Validation Rule&quot;) = &quot;Is Null Or &lt;=Date()&quot;<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">.Properties(&quot;Jet OLEDB:Column Validation Text&quot;) = &quot;Date cannot be past&quot;<br>
+		End With</span></font><span class="auto-style7"><font color="#800000" class="auto-style2"><br>
+		<br>
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' Hyperlink field.</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">With !Web<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">Set .ParentCatalog = cat<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+	  <span class="auto-style7">.Properties(&quot;Jet OLEDB:Hyperlink&quot;) = True<br>
+		End With<br>
+		</span>
+		</font>
+      <span class="auto-style7">
+      <font color="#800000">
+		<br class="auto-style2">
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' Save the new table by appending to catalog.</span></font><font color="#800000"><br class="auto-style2">
+		</font>
+      <font color="#000066"><span class="auto-style2">cat.Tables.Append tbl</span></font><font color="#800000" class="auto-style2"><br>
+		<br>
+		</font>
+      <font color="#339933">
+		<span class="auto-style2">' clean up object</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font face="Courier New" color="#000066">
+	  <span class="auto-style2"><span class="auto-style7">Set tbl = Nothing<br>
+				       
+      </span></span><span class="auto-style5">Set cat = Nothing</span><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style2"><span class="auto-style7">End Function</span></span></font></p><font face="Courier New">
+      <font size="2">
+				       
+<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table117" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=CreateIndexes></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		</font>
+		</font>
+		</font>
+		</font>
+      <font face="Courier New">
+		<p><font color="#008000"><span class="auto-style5">'Purpose: To</span></font></font><font size="2"><span class="auto-style2"><font color="#008000"><span class="auto-style7"> create an index for any field that we intend to sort or search 
+		frequently.</span></font></p>
+		</span>
+		</font>
+      <span class="auto-style14">
+		<p><font color="#000066">Sub CreateIndexes()</font><br>
+		<font color="#000066">Dim cat As New ADOX.Catalog<br>
+		Dim tbl As ADOX.Table<br>
+		Dim idx As ADOX.Index<br>
+		Dim col As ADOX.Column</font></span><span class="auto-style2"><font size="2"><span class="auto-style7"><font color="#008000"><br>
+		</font>
+		</span>
+		</font>
+        </span>
+      <font size="2">
+				       
+        <span class="auto-style7">
+		<font color="#800000">
+		<span class="auto-style2">
+		<br>
+		</span>
+		</font>
+      	<font color="#008000"><span class="auto-style2">' Set up a catalog pointing to this database</span></font><font class="auto-style2"><font color="#800000"><br>
+		</font>
+		<font color="#000066">Set cat.ActiveConnection = CurrentProject.Connection</font><font color="#800000"><br>
+		<br>
+		</font>
+		</font>
+      	<font color="#008000">
+		<span class="auto-style2">' Retrieve an existing table 'MaterialsMaster'</span></font><font color="#800000"><br class="auto-style2">
+		</font>
+      	<font color="#000066"><span class="auto-style2">Set tbl = cat.Tables(&quot;MaterialsMaster&quot;)</span></font><font color="#800000" class="auto-style2"><br>
+		<br>
+		</font>
+      	<font color="#008000">
+		<span class="auto-style2">' Create a primary key and an index on this primary key field 'PartNumber'</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+		<span class="auto-style7">Set idx = New ADOX.Index<br>
+		With idx<br>
+		</span>
+		</font>
+      <font size="2">
+				       
+        <font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Name = &quot;PrimryKey&quot;<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.PrimaryKey = True<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Unique = True<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Columns.Append &quot;PartNumber&quot;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7">
+      	<font color="#008000">
+		<span class="auto-style2">' Specify the column for the index</span></font><font color="#800000"><br class="auto-style2">
+		</font>
+      	<font color="#000066" class="auto-style2">End With<br>
+		tbl.Indexes.Append idx&nbsp;&nbsp;
+		</font>
+      	<font color="#008000">
+		<span class="auto-style2">' Add the index to the table</span></font><font color="#800000" class="auto-style2"><br>
+		<br>
+		</font>
+      	<font color="#008000">
+		<span class="auto-style2">' Create a second index on the StandardCost field</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+		<span class="auto-style7">Set idx = New ADOX.Index<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">With idx<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Name = &quot;StdCosIndex&quot;<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Unique = False<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Columns.Append &quot;StandardCost&quot;<br>
+		End With<br>
+		tbl.Indexes.Append &quot;StdCosIndex&quot;, &quot;StandardCost&quot;<br>
+		</span>
+		</font><span class="auto-style7"><font color="#800000">
+		<br class="auto-style2">
+		</font><font color="#008000">
+		<span class="auto-style2">' Retrieve another table 'Q1CostReductionList'</span></font><font color="#800000"><br class="auto-style2">
+		</font><font color="#000066"><span class="auto-style2">Set tbl = cat.Tables(&quot;Q1CostReductionList&quot;)</span></font><font color="#800000" class="auto-style2"><br>
+		<br>
+		</font><font color="#008000">
+		<span class="auto-style2">' And create its primary key and index on the 'MaterialNumber' field</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+		<span class="auto-style7">Set idx = New ADOX.Index<br>
+		With idx<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Name = &quot;PrimryKey&quot;<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.PrimaryKey = True<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font color="#000066" class="auto-style2">
+		<span class="auto-style7">.Unique = True<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span><span class="auto-style2"><span class="auto-style7">.Columns.Append &quot;MaterialNumber&quot;&nbsp;&nbsp;
+		</span></span>
+		</font><span class="auto-style7">
+      	<font color="#008000">
+		<span class="auto-style2">' Specify the column for the index</span></font><font color="#800000"><br class="auto-style2">
+		</font></span><font color="#000066" class="auto-style2">
+		<span class="auto-style7">End With<br>
+		tbl.Indexes.Append idx</span></font><font size="2" face class="auto-style7"><font color="#000066"><span class="auto-style2">&nbsp;&nbsp;
+		</span>
+		</font>
+      	<font color="#008000">
+		<span class="auto-style2">' Add the index to the table</span></font></font><font color="#800000" class="auto-style2"><span class="auto-style7"><br>
+		<br>
+		</span>
+		</font><font color="#000066"><span class="auto-style2">
+		<span class="auto-style7">End Sub</span></span></font><font face="Courier New"></p>
+				       
+		<table border="0" cellspacing="0" cellpadding="0" id="table119" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+				<a name=CreateForeignKeyRelationship></a>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		</font>
+		</font>
+      <p class="auto-style7"><font color="#008000" class="auto-style2">'Purpose: To create a new foreign key relationship between two 
+		existing tables _<br>
+&nbsp; named 'Customers' and 'Orders'.</font></p>
+      <font face="">
+		<p><font size="2" color="#000066" class="auto-style5">Sub 
+		CreateForeignKeyRelationship()<br>
+		On Error GoTo CreateKeyError<br>
+		<br>
+		Dim kyForeign As New ADOX.Key<br>
+		Dim cat As New ADOX.Catalog<br>
+		</font><font color="#800000">
+		<br class="auto-style5">
+		</font></font>
+      	<span class="auto-style5">
+      	</font>
+        </span>
+				       
+      	<font color="#008000"><span class="auto-style5">' Connect to the catalog.</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+      <font size="2">
+				       
+      	<font size="2" color="#000066" class="auto-style5">cat.ActiveConnection = &quot;Provider='Microsoft.Jet.OLEDB.4.0';&quot; &amp; _<br>
+		&nbsp;
+		&quot;Data Source=C:\Program Files\Microsoft 
+		Office\OFFICE11\SAMPLES\Northwind.mdb;&quot;</font><font size="2" color="#800000" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Define the foreign 
+		key.</span></font><font color="#800000"><br class="auto-style5">
+		</font>
+		<font color="#000066"><span class="auto-style5">kyForeign.Name = &quot;CustOrder&quot;&nbsp;&nbsp; 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">' define name of key</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">kyForeign.Type = adKeyForeign&nbsp; 
+		</span> </font></font>
+			<span class="auto-style2">
+			<font color="#000066">
+			<span class="auto-style7">
+			</span></span></font>
+		<span class="auto-style7">
+		</font>
+		</span></span>
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font color="#008000"><span class="auto-style5">' type as foreign key</span></font><font face=""><font color="#800000"><br class="auto-style5">
+		</font>
+		<font color="#000066"><span class="auto-style5">kyForeign.RelatedTable = &quot;Customers&quot;&nbsp;&nbsp; 
+		</span> </font>
+		<font size="2">
+		<font color="#008000"><span class="auto-style5">' name of the primary key 
+		table 'Customers'</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">kyForeign.Columns.Append &quot;CustomerId&quot;&nbsp; 
+		</span> </font></font></font>
+		<font size="2">
+<font color="#008000">
+		<span class="auto-style5">' to append column 'C</span></font><font face=""><font color="#008000"><span class="auto-style5">ustomerID' 
+		of the foreign key table</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">kyForeign.Columns(&quot;CustomerId&quot;).RelatedColumn = &quot;CustomerId&quot;&nbsp;
+		</span>
+		</font></font>
+<font color="#008000">
+		<span class="auto-style5">' primary key table is also 'CustomerID'</span></font><font face=""><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">kyForeign.UpdateRule = adRICascade</span></font><font size="2" color="#800000" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Append the foreign 
+		key to the keys collection.</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">cat.Tables(&quot;Orders&quot;).Keys.Append kyForeign</span></font><font size="2" color="#800000" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Delete the key to 
+		demonstrate the Delete method.</span></font><font color="#800000"><br class="auto-style5">
+		</font><font color="#000066"><span class="auto-style5">cat.Tables(&quot;Orders&quot;).Keys.Delete kyForeign.Name</span></font><font size="2" color="#800000" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Clean up objects.</span></font><font color="#800000"><br class="auto-style5">
+		</font><font size="2" color="#000066" class="auto-style5">Set cat.ActiveConnection = Nothing<br>
+		Set cat = Nothing<br>
+		Set kyForeign = Nothing<br>
+		Exit Sub<br>
+		<br>
+		CreateKeyError:<br>
+		Set cat = Nothing<br>
+		Set kyForeign = Nothing<br>
+		<br>
+		If Err &lt;&gt; 0 Then<br>
+		&nbsp;&nbsp;
+		MsgBox Err.Source &amp; &quot;--&gt;&quot; &amp; Err.Description, , &quot;Error&quot;<br>
+		End If<br>
+		End Sub</font></font></font></span></p>
+				       
+<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table120" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=CreateNewFieldWithAttribute></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font face="" color="#800000">
+		<p class="auto-style5"><font color="#008000">'Purpose: To 
+		create/delete new fields with Types and Attributes</font></p>
+		</font><font size="2" color="#000066" class="auto-style5">
+		<p>Sub CreateNewFieldWithAttributes()<br>
+		On Error GoTo AttributesXError<br>
+		<br>
+		Dim cnn As New ADODB.Connection<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim col As New ADOX.Column<br>
+		Dim rst As New ADODB.Recordset<br>
+		Dim tbl As ADOX.Table<br>
+		Dim strMessage As String<br>
+		Dim strInput As String<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Connect the 
+		catalog.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Open </span> </font>
+		<font size="2" color="#000066" class="auto-style5">
+		&quot;Provider='Microsoft.Jet.OLEDB.4.0';&quot; &amp; _<br>
+		&nbsp;&quot;Data Source=C:\Program Files\Microsoft 
+		Office\OFFICE11\SAMPLES\Northwind.mdb;&quot;<br>
+		Set cat.ActiveConnection = cnn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><font color="#008000">
+		<span class="auto-style5">' Make a catalog for the database.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set tbl = cat.Tables(&quot;Employees&quot;)&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000">
+		<span class="auto-style5">' Get the table.</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Create a new Field 
+		object 'Fax' and append it to the Fields collection of the Employees table.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">col.Name = &quot;Fax&quot;<br>
+		col.Type = adVarWChar<br>
+		col.DefinedSize = 12<br>
+		col.Attributes = adColNullable<br>
+		cat.Tables(&quot;Employees&quot;).Columns.Append col.Name, adWChar, 12<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Open the Employees 
+		table for updating as a Recordset.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">rst.Open &quot;Employees&quot;, cnn, adOpenKeyset, adLockOptimistic, adCmdTable<br>
+		<br>
+		With rst<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Get user input.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">strMessage = &quot;Enter fax number for &quot; &amp; !FirstName &amp; &quot; &quot; &amp; !LastName &amp; 
+		&quot;.&quot; &amp; vbCr &amp; _<br>
+		&quot;[? = unknown, NA = no fax]&quot;<br>
+		strInput = UCase(InputBox(strMessage))<br>
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; If 
+		strInput &lt;&gt; &quot;&quot; Then<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Select Case strInput<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Case &quot;?&quot;<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		!Fax = Null<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Case &quot;NA&quot;<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		!Fax = &quot;&quot;<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Case Else<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		!Fax = strInput<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		End Select<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		.Update<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Print report.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Debug.Print &quot;Name &amp; Fax number&quot;<br>
+		Debug.Print !FirstName &amp; &quot; &quot; &amp; !LastName &amp; &quot; - &quot;;<br>
+		<br>
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; If 
+		IsNull(!Fax) Then<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Debug.Print &quot;[Unknown]&quot;<br>
+		&nbsp;&nbsp; 
+		Else<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; If 
+		!Fax = &quot;&quot; Then<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Debug.Print &quot;[Has no fax]&quot;<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Else<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		Debug.Print !Fax<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		End If<br>
+		&nbsp;&nbsp; 
+		End If<br>
+		End If<br>
+		.Close<br>
+		End With<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Drop the field. 
+		It's just a test.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">tbl.Columns.Delete &quot;Fax&quot;<br>
+		</span>
+		</font><span class="auto-style5">'Or, tbl.Columns.Delete col.Name</span><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Clean up objects.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Close<br>
+		Set rst = Nothing<br>
+		Set cat = Nothing<br>
+		Set col = Nothing<br>
+		Set cnn = Nothing<br>
+		Exit Sub<br>
+		<br>
+		AttributesXError:<br>
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; If 
+		Not rst Is Nothing Then<br>
+&nbsp;&nbsp;
+		&nbsp;&nbsp; If 
+		rst.State = adStateOpen Then rst.Close<br>
+		&nbsp;&nbsp; 
+		End If<br>
+		&nbsp;&nbsp; 
+		Set rst = Nothing<br>
+		<br>
+		&nbsp;&nbsp; If 
+		Not tbl Is Nothing Then <br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		tbl.Columns.Delete col.Name<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">End If<br>
+		&nbsp;&nbsp; 
+		Set cat = Nothing<br>
+		&nbsp;&nbsp; 
+		Set col = Nothing<br>
+		<br>
+		&nbsp;&nbsp; If 
+		Not cnn Is Nothing Then<br>
+&nbsp;&nbsp;
+		&nbsp;&nbsp; If 
+		cnn.State = adStateOpen Then <br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp;
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cnn.Close<br>
+		&nbsp;&nbsp;
+		&nbsp;&nbsp; 
+		End If<br>
+		&nbsp;&nbsp; 
+		End If<br>
+		&nbsp;&nbsp; 
+		Set cnn = Nothing<br>
+		<br>
+		&nbsp;&nbsp; If 
+		Err &lt;&gt; 0 Then<br>
+&nbsp;&nbsp;
+		&nbsp;&nbsp; 
+		MsgBox Err.Source &amp; &quot;--&gt;&quot; &amp; Err.Description, , &quot;Error&quot;<br>
+		</font><font face="Courier New" size="2" color="#000066">
+		<span class="auto-style5">&nbsp;&nbsp; 
+		End If<br>
+		End Sub</span><br>
+&nbsp;</font><font face="" size="2" color="#800000"><table border="0" cellspacing="0" cellpadding="0" id="table121" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=CreateGroupAndUsers></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		<p class="auto-style5"><font color="#008000">'Purpose: To create a new security group, add users and passwords, update 
+		access permissions.</font><p>
+		<font size="2" color="#000066" class="auto-style5">Sub 
+		CreateGroupAndUsers()<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim strOwner As String<br>
+		<br>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Connect the catalog pointing to this database.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cat.ActiveConnection = CurrentProject.Connection<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Add a group named 'Planning'.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Groups.Append &quot;Planning&quot;<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Add the Admin in this group.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Groups(&quot;Planning&quot;).Users.Append &quot;Admin&quot;<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Add a User named 'William' 
+		and password 'kuching'.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Users.Append &quot;William&quot;, &quot;kuching&quot;<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Add the user in the 
+		Planning group.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Users(&quot;William&quot;).Groups.Append &quot;Planning&quot;<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Change user's password.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Users(&quot;William&quot;).ChangePassword &quot;Kuching&quot;, &quot;Cat&quot;<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Show the current owner of the 'Orders' table.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">strOwner = cat.GetObjectOwner(&quot;Orders&quot;, adPermObjTable)<br>
+		Debug.Print &quot;Orders table is owned by &quot; &amp; strOwner<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Display permissions of current owner of the 'Orders' table. Refer to 
+		RightsEnum Constants.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Debug.Print &quot;Full permissions: &quot; &amp; _<br>
+		str(cat.Users(&quot;admin&quot;).GetPermissions(&quot;Orders&quot;, adPermObjTable))<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Change the ownership.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.SetObjectOwner &quot;Orders&quot;, adPermObjTable, &quot;William&quot;<br>
+		Debug.Print &quot;Orders table is now owned by William&quot;<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Grant user full access 
+		right permissions on the 'Orders' table.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Users(&quot;William&quot;).SetPermissions &quot;Orders&quot;, adPermObjTable, 
+		adAccessSet, adRightFull<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' these 2 lines are to delete user's account and group 'Planning'.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Users.Delete (&quot;William&quot;)<br>
+		cat.Groups.Delete (&quot;Planning&quot;)<br>
+		<br>
+		</span>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Or alternatively, use this 
+		line to revoke only all permissions to the user.</span></font><font color="#000066"><br class="auto-style5">
+		</font>
+		<span class="auto-style5">'cat.Users(&quot;William&quot;).SetPermissions &quot;Orders&quot;, adPermObjTable, 
+		adAccessRevoke, adRightFull</span><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font>
+		<font color="#008000"><span class="auto-style5">' Set ownership back to Admin with full access permissions.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.SetObjectOwner &quot;Orders&quot;, adPermObjTable, &quot;Admin&quot;<br>
+		cat.Users(&quot;Admin&quot;).SetPermissions &quot;Orders&quot;, adPermObjTable, adAccessSet, 
+		adRightFull<br>
+		End Sub</span></font><font face="" color="#800000" size="2"><p><font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table124" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=CreateUpdateProcedure></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		</font><font color="#008000"><p>
+		<span class="auto-style5">'Purpose: To create, update or to delete Views.</span></font><font face="Courier New" size="2" color="#000066"><p>
+		<span class="auto-style5">Sub CreateUpdateProcedure()<br>
+		Dim cnn As New ADODB.Connection<br>
+		Dim cmd As New ADODB.Command<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim viw As ADOX.View<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">'Open the 
+		Connection</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Open _<br>
+		&quot;Provider='Microsoft.Jet.OLEDB.4.0'; &quot; &amp; _<br>
+		&quot;Data Source=C:\Program Files\Microsoft Office\OFFICE11\SAMPLES\Northwind.mdb;&quot;<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">'Open the 
+		Catalog</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cat.ActiveConnection = cnn<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">'Create the 
+		parameterized command text (Microsoft Jet specific)</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cmd.ActiveConnection = cnn<br>
+		cmd.CommandText = &quot;PARAMETERS [CustID] Text;&quot; _<br>
+		&amp;
+		&quot;<b>SELECT</b> * <b>FROM</b> Customers <b>WHERE</b> CustomerID = [CustID]&quot;<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">'Create the new 
+		Procedure</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Procedures.Append &quot;qry_CustomerByID&quot;, cmd 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">&nbsp;&nbsp;&nbsp; ' or use 
+		cat.Views.Append &quot;qry_CustomerByID&quot;, cmd</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">'use the 
+		Command property to update the text of a procedure.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cmd = cat.Procedures(&quot;qry_CustomerByID&quot;).Command 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">&nbsp;&nbsp;&nbsp; ' Get the 
+		command.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cmd.CommandText = &quot;<b>SELECT</b> * <b>FROM</b> Customers <b>WHERE</b> CustomerID = 'ANTON'&quot;&nbsp; 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">' Update the CommandText.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cat.Procedures(&quot;qry_CustomerByID&quot;).Command = cmd&nbsp;&nbsp; 
+		</span> </font>
+		<font color="#008000"><span class="auto-style5">' Update the procedure.</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font>
+		<font color="#008000"><span class="auto-style5">'To obtain all views 
+		in the catalog</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">For Each objView In cat.Views<br>
+&nbsp;&nbsp; Debug.Print viw.Name<br>
+		Next<br>
+		<br>
+		cat.Views.Delete &quot;qry_CustomerByID&quot;&nbsp; </span> </font>
+		<font color="#008000"><span class="auto-style5">' Delete the procedure as 
+		it's only testing</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">'Clean up 
+		objects</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Close<br>
+		Set cmd = Nothing<br>
+		Set cat = Nothing<br>
+		Set cnn = Nothing<br>
+		End Sub</span></font><font face="" size="2" color="#800000"><br>
+&nbsp;<table border="0" cellspacing="0" cellpadding="0" id="table125" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=Deletes></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		<font color="#008000">
+		<p><span class="auto-style5">'Purpose: To modify/delete tables, procedures, columns, fields, 
+		indexes, keys, users and group.</span></font><font face="Courier New" size="2" color="#000066"><p>
+		<span class="auto-style5">Sub Deletes()<br>
+		Dim cnn As New ADODB.Connection<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim tbl As New ADOX.Table<br>
+		Dim col As New ADOX.Column<br>
+		Dim cmd As New ADODB.Command<br>
+		Dim ind As New ADOX.Index<br>
+		Dim ky As New ADOX.Key<br>
+		Dim prp As ADOX.Property</span></font><font face="Arial" size="2" color="#008000"><p>
+		<span class="auto-style5">' Connect the catalog to the current database</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.ActiveConnection = CurrentProject.Connection<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Add a new table and 
+		two fields</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">tbl.Name = (&quot;My_Table&quot;)<br>
+		tbl.Columns.Append &quot;Field1&quot;, adInteger<br>
+		With col<br>
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		.Name = &quot;My_Field&quot;<br>
+		&nbsp;&nbsp; 
+		.Type = adNumeric 'Decimal data type<br>
+		&nbsp;&nbsp; 
+		.Precision = 16 '28 digits<br>
+		&nbsp;&nbsp; .NumericScale 
+		= 4 '8 decimal places<br>
+		End With<br>
+		tbl.Columns.Append col<br>
+		cat.Tables.Append tbl<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Modify the column 
+		properties</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set col = cat.Tables(&quot;My_Table&quot;).Columns(&quot;My_Field&quot;)
+		</span>
+		</font><font color="#008000"><span class="auto-style5">&nbsp;&nbsp;
+		' Point column object 
+		to the field</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set prp = col.Properties(&quot;Nullable&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Set column property 
+		to null</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Debug.Print prp.Name, prp.Value, prp.Attributes, (prp.Type = adBoolean)&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Print the property</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">col.Properties(&quot;Jet OLEDB:Allow Zero Length&quot;) = False&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Change to disallow 
+		zero-length</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Create a primary 
+		key index</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set tbl = cat.Tables(&quot;My_Table&quot;)<br>
+		Set ind = New ADOX.Index<br>
+		ind.Name = &quot;PrimaryKey&quot;<br>
+		ind.PrimaryKey = True<br>
+		ind.Columns.Append &quot;My_Field&quot;<br>
+		tbl.Indexes.Append ind<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Retrieve the 
+		foreign key table</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set tbl = cat.Tables(&quot;My_Table2&quot;)<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Create as foreign 
+		key to Table2.Field2</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set ky = New ADOX.Key<br>
+		With ky<br>
+		</span>
+		</font><font size="2" color="#000066" class="auto-style5">&nbsp;&nbsp; 
+		.Name = &quot;My_Table2Key&quot;<br>
+		&nbsp;&nbsp; 
+		.Type = adKeyForeign<br>
+		&nbsp;&nbsp; .RelatedTable 
+		= &quot;My_Table&quot;<br>
+		&nbsp;&nbsp; .Columns.Append 
+		&quot;My_Field2&quot;<br>
+		&nbsp;&nbsp; 
+		.Columns(&quot;My_Field2&quot;).RelatedColumn = &quot;My_Field&quot;<br>
+		</font><font color="#000066"><span class="auto-style5">&nbsp;&nbsp; .DeleteRule 
+		= adRISetNull&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Cascade to Null on 
+		delete</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">End With<br>
+		tbl.Keys.Append ky<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Create the command 
+		and the new view</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cmd.CommandText = &quot;Select * From My_Table&quot;<br>
+		cat.Views.Append &quot;My_Query&quot;, cmd<br>
+		<br>
+		cat.Groups.Append &quot;Planning&quot;<br>
+		cat.Users.Append &quot;William&quot;<br>
+		cat.Users(&quot;William&quot;).Groups.Append &quot;Planning&quot;<br>
+		<br>
+		cat.Tables(&quot;My_Table2&quot;).<b>Keys.Delete</b> ky.Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Delete the foreign 
+		key</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.Tables(&quot;My_Table&quot;).<b>Indexes.Delete</b> &quot;Primarykey&quot;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Delete the index</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.<b>Views.Delete</b> &quot;My_Query&quot;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Delete the query</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.<b>Tables.Delete</b> &quot;My_Table&quot;&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Delete the table</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.<b>Users.Delete</b> (&quot;William&quot;)&nbsp;&nbsp;&nbsp;
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Delete the user 
+		account</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.<b>Groups.Delete</b> (&quot;Planning&quot;)&nbsp;
+		</span>
+		</font><font size="2" color="#008000" class="auto-style7">
+		<span class="auto-style2">' Delete the group 
+		account</span><br class="auto-style2">
+		</font><font color="#000066"><br class="auto-style5">
+		</font><font color="#008000"><span class="auto-style5">' Clean up the 
+		objects</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set ky = Nothing<br>
+		Set ind = Nothing<br>
+		Set prp = Nothing<br>
+		Set col = Nothing<br>
+		Set tbl = Nothing<br>
+		Set cat = Nothing<br>
+		End Sub</span></font><font face="" size="2" color="#800000" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">&nbsp;</span></font><p>
+		<font color="#800000"><br class="auto-style5">
+		</font><font size="2" class="auto-style5">Note:<br>
+		It is wise to have a message box to prompt user for confirmation 
+		especially on deleting tables and fields. Below is an example code.</font><p>
+		<font size="2" color="#000066" class="auto-style5">Dim cat As 
+		ADOX.Catalog<br>
+		Dim tbl As New ADOX.Table<br>
+		Dim input As Long<br>
+		<br>
+		For Each tbl In cat.Tables <br>
+		input = MsgBox(&quot;Do you want to delete &quot; &amp; tbl.Name, vbYesNo, &quot;Delete 
+		table...&quot;), _<br>
+&nbsp;&nbsp;&nbsp; vbYesNo, &quot;Confirm table delete&quot;)<br>
+		&nbsp;&nbsp;&nbsp; If input = vbYes Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input = MsgBox(&quot;Are you sure you want 
+		to PERMANENTLY delete &quot; &amp; tbl.Name _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp; &quot;from the database?&quot;, vbYesNo, 
+		&quot;Confirm delete...&quot;)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; If input = vbYes Then<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <b>DoCmd.DeleteObject</b> acTable, 
+		tbl.Name<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;MsgBox &quot;Table 
+		deleted&quot;&nbsp;&nbsp;&nbsp; <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+		Next tbl</font><font size="2" color="#0000ff" face="Verdana"><br class="auto-style5">
+&nbsp;</font><font face="Arial" size="2" color="#800000"><font face="" size="2" color="#800000"><table border="0" cellspacing="0" cellpadding="0" id="table128" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=RetrieveWorkbooksSchema></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		<p class="auto-style5"><font color="#008000">'Purpose: To 
+		retrieve total count of Excel worksheets and all sheet names.&nbsp;</font><p>
+	  <font size="2" color="#000066" class="auto-style5">Sub 
+		RetrieveWorkbooksSchema()<br>
+		Dim cnn As New ADODB.Connection<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim adoTable As ADOX.Table<br>
+		Dim adoTables As ADOX.Tables<br>
+		Dim path As String<br>
+		<br>
+		path = &quot;C:\MySheet.xls&quot;&nbsp; </font>
+		<font color="#008000"><span class="auto-style5">' change your path and 
+		workbook name</span></font><font size="2" color="#000066" class="auto-style5"><br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">' Connection string to Excel</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.ConnectionString = &quot;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=&quot; &amp; 
+		path &amp; _<br>
+		&nbsp;
+		&quot;;Extended Properties=&quot;&quot;Excel 8.0;HDR=Yes;&quot;&quot;&quot;<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Open the connection</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Open<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Treat the workbook as a database catalog</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cat.ActiveConnection = cnn<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Get the catalogs tables, which in this case is the worksheets</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set adoTables = cat.Tables<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Print a count of the worksheets</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Debug.Print &quot;No. of worksheets: &quot; &amp; adoTables.Count<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' For each table/sheet in the catalog/workbook display the name</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">For Each adoTable In adoTables<br>
+		&nbsp;&nbsp;
+		Debug.Print adoTable.Name<br>
+		Next<br>
+		<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Close the connection</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">cnn.Close<br>
+		</span>
+		</font><font color="#008000"><span class="auto-style5">' Clean up objects</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cnn = Nothing<br>
+		Set cat = Nothing<br>
+		Set adoTables = Nothing<br>
+		Set adoTable = Nothing<br>
+		End Sub</span></font></font></span><span id="dnn_ctr436_HtmlModule_HtmlHolder2" class="Normal"><font face="Arial" size="2" color="#800000"><font face="" size="2" color="#800000"><br>
+&nbsp;<table border="0" cellspacing="0" cellpadding="0" id="table126" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=RetrieveWorkbooksSchema2></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		<p><font color="#008000"><span class="auto-style5">'Purpose: another 
+		Visual Basic example that gets Excel spreadsheet schema and print into 
+		an array _ using ADOX objects.</span></font></font><font face="Courier New" size="2" color="#000066"><p>
+		<span class="auto-style5">Sub RetrieveWorkbooksSchema2()<br>
+		Dim cnn As New ADODB.Connection<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim tbl As ADOX.Table<br>
+		Dim col As ADOX.Column<br>
+		Dim strCnn As String<br>
+		<br>
+		Dim iTbl As Integer, iCol As Integer<br>
+		Dim strColNames(1 To 100, 1 To 1000) As String&nbsp; </span> </font>
+		<font color="#008000"><span class="auto-style5">' a two-dimensional array 
+		assigns two indexes to each element</span></font><font face="Courier New" size="2" color="#000066"><span class="auto-style2"><span class="auto-style7"><br>
+		<br>
+		strCnn = &quot;Provider=Microsoft.Jet.OLEDB.4.0; Data Source=C:\MySheet.xls;&quot; 
+		&amp; _<br>
+		&quot;Extended Properties=&quot;&quot;Excel 8.0; HDR=YES; IMEX=1&quot;&quot;&quot;<br>
+		cnn.Open strCnn<br>
+		cat.ActiveConnection = cnn<br>
+		<br>
+		iTbl = 0<br>
+		iCol = 0<br>
+		For Each tbl In cat.Tables<br>
+		iTbl = iTbl + 1<br>
+		</span></span>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder6" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; </font>
+		</span></font><font size="2" color="#000066" class="auto-style5">For Each col In tbl.Columns<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder5" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; 
+&nbsp;&nbsp; </font></span></font>
+		<font size="2" color="#000066" class="auto-style5">iCol = iCol + 1<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder7" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; </font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder8" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; </font>
+		</span></font><font size="2" color="#000066" class="auto-style5">strColNames(iTbl, iCol) = tbl.Name &amp; col.Name<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder9" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; </font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder10" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; </font>
+		</span></font><font size="2" color="#000066" class="auto-style5">Debug.Print tbl.Name &amp; &quot;: &quot; &amp; col.Name<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder11" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp; </font>
+		</span></font><font size="2" color="#000066" class="auto-style5">Next col<br>
+		Next tbl</font></span><span id="dnn_ctr436_HtmlModule_HtmlHolder3" class="Normal"><font face="Arial" color="#800000"><br class="auto-style5">
+		</font></span>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder12" class="auto-style5">
+		<font color="#000066">End Sub</font></span></font><span id="dnn_ctr436_HtmlModule_HtmlHolder3" class="Normal"><font face="Arial" size="2" color="#800000"><font face="" size="2" color="#800000"><table border="0" cellspacing="0" cellpadding="0" id="table127" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+<font face="">
+				<a name=ShowTableProperties></a>
+				</font></font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a></td>
+			</tr>
+		</table>
+		<hr>
+		</font>
+		<p><font color="#008000"><span class="auto-style5">'Purpose: To </span> </font></font>
+<font color="#008000">
+		<span class="auto-style5">Show the columns in a table, and optionally their properties, using ADOX.</span></font></span><p>
+		<font size="2" color="#000066" class="auto-style5">Function ShowTableProperties(strTable As String, Optional 
+		ShowProperties As Boolean)<br>
+		Dim cat As New ADOX.Catalog<br>
+		Dim tbl As ADOX.Table<br>
+		Dim col As ADOX.Column<br>
+		Dim prp As ADOX.Property<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">'Point the catalog to the current project's connection.</span></font><font face="Courier New" size="2" color="#000066" class="auto-style7"><br class="auto-style2">
+		<span class="auto-style2">Set cat.ActiveConnection = CurrentProject.Connection<br>
+		Set tbl = cat.Tables(strTable)<br>
+		<br>
+		For Each col In tbl.Columns<br>
+		</span>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder13" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder21" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font>
+		<font size="2" color="#000066" class="auto-style5">Debug.Print col.Name<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder14" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder15" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font><font size="2" color="#000066" class="auto-style5">If ShowProperties Then<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder16" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder17" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder20" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font><font size="2" color="#000066" class="auto-style5">For Each prp In col.Properties<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder18" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder19" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder22" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder23" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font><font size="2" color="#000066" class="auto-style5">Debug.Print , prp.Name, prp.Type, 
+		prp.Attributes, prp.Value<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder24" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder25" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder26" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font><font size="2" color="#000066" class="auto-style5">Next<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder27" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder28" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder29" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder30" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font><font size="2" color="#000066" class="auto-style5">Debug.Print 
+		&quot;---------------------&quot;<br>
+		</font>
+<font face="">
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder31" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder32" class="auto-style5">
+		<font color="#000066">&nbsp;&nbsp;
+		</font></span></font><font size="2" color="#000066" class="auto-style5">End If<br>
+		Next<br>
+		<br>
+		</font><font color="#008000"><span class="auto-style5">'Clean up objects</span></font><font face="Courier New" size="2" color="#000066"><span class="auto-style7"><br class="auto-style2">
+		</span><span class="auto-style2"><span class="auto-style7">Set prp = Nothing<br>
+		Set col = Nothing<br>
+		Set tbl = Nothing<br>
+		Set cat = Nothing<br>
+		End Function</span></span><br>
+&nbsp;</font><font face="" size="2" color="#800000"><table border="0" cellspacing="0" cellpadding="0" id="table122" width="765" height="19">
+			<tr>
+				<td width="765" height="19" valign="top">
+				<p align="right">
+				</font>
+<font face="Arial" size="2">
+				<a style="color: #0166FE; font-weight:700" href="#TOP">Go To Top</a>
+				</font>
+			    </td>
+       </tr>
+</table>
+
+
+
+
+<table border="0" width="765" id="table5" cellspacing="0" cellpadding="2" height="68">
+<tr>
+<td align="center" width="761">
+<p><br>
+
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  --> 
+  
+ <br><br>
+	<span class="auto-style5">This site  
+	was created in February 2007 <br>by William Tan</span></td>	
+</tr>
+</table>
+</body>
+</html>

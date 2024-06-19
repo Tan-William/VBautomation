@@ -1,0 +1,1345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Access Database Introduction</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<STYLE TYPE="text/css">
+<!--
+#dek {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style5 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style6 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style7 {
+	font-size: 11pt;
+}
+.auto-style8 {
+	font-size: 3pt;
+}
+.auto-style9 {
+	font-family: Arial;
+	font-size: 11pt;
+}
+.auto-style10 {
+	font-size: 14pt;
+}
+.auto-style12 {
+	border-collapse: collapse;
+	border: 1px solid #808000;
+}
+.auto-style16 {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding-bottom: 1px;
+}
+.auto-style17 {
+	border-width: 0;
+}
+.auto-style18 {
+	font-size: 12pt;
+	font-family: Arial;
+	color: black;
+	border-left: 1px solid #000000;
+	border-right: medium none #000000;
+	border-top: medium none #000000;
+	border-bottom: 1px solid #000000;
+	padding: 3pt 1px;
+}
+.auto-style19 {
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	font-size: 11pt;
+}
+.auto-style20 {
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-color: inherit;
+	border-bottom-width: medium;
+	padding: 3pt 1px;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style23 {
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom: medium none #A6A6A6;
+	padding: 3pt 1px;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style24 {
+	font-size: 12pt;
+	font-family: Arial;
+	color: black;
+	border-left: medium none #000000;
+	border-right: 1px solid #000000;
+	border-top: medium none #000000;
+	border-bottom: 1px solid #000000;
+	padding: 3pt 1px;
+}
+.auto-style25 {
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding: 3pt 1px;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style26 {
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style27 {
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding: 3pt 1px;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style28 {
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style29 {
+	text-decoration: none;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style30 {
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	font-size: 11pt;
+	font-family: Arial;
+}
+.auto-style31 {
+	font-family: Arial;
+}
+.auto-style32 {
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	vertical-align: top;
+}
+.auto-style33 {
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	font-size: 11pt;
+	font-family: Arial;
+	vertical-align: top;
+}
+.auto-style34 {
+	text-decoration: none;
+	font-size: 11pt;
+	font-family: Arial;
+	margin-bottom: 6px;
+}
+.auto-style36 {
+	font-size: 10.5pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style37 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style38 {
+	color: #000000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style40 {
+	font-size: 10pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style41 {
+	color: #0045C3;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+-->
+</style>
+</head>
+
+
+
+<body background="YellowTexture.gif">
+<table border="0" cellspacing="0" cellpadding="0" id="table63" align="center" style="width: 100%; height: 12px">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="table64" style="width: 53%">
+	<tr>
+		<td>
+	<p align="center"><font class="auto-style7">
+	<a class="type3" href="../index.htm"><span class="auto-style37">Home</span></a><span class="auto-style37"> |
+	<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> |&nbsp;
+	<br>
+	<a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a>&nbsp;|
+	</span>
+	<a class="type1" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661"><span class="auto-style37">Guestbook</span></a></font>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1" style="width: 989px; height: -13px"></td>
+	</tr>
+</table>
+
+
+
+
+<TABLE border="0" cellspacing="0" width="985" height="3510" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825" id="table58">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033" id="table59">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style40">
+						<font class="auto-style6"><strong>Access Programming</strong></font><span class="auto-style40">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+		<font face>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style40">
+						<a rel="internal" class="auto-style41" href="beginner_basic_Acc.htm">Access 
+						Database basicAccess 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<font face>
+						<a rel="internal" class="auto-style38" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp;Methods</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<font face>
+						<a rel="internal" class="auto-style38" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<a rel="internal" class="auto-style38" href="forms_controls_events.htm">
+						Forms, Control and Events</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style38" href="ADO.htm">
+					ADO (ActiveX Data Objects)</a></font><span class="auto-style40"></font></font></font></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<a rel="internal" class="auto-style38" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<a rel="internal" class="auto-style38" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style38" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style40">
+						<font face="Verdana">
+						<a rel="internal" class="auto-style38" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style40">
+						<font face>
+						<a rel="internal" class="auto-style5" href="SQL_Examples.htm">
+						<span class="auto-style37">Jet SQL examples</span></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<font face>
+						<a rel="internal" class="auto-style38" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<a rel="internal" class="auto-style38" href="Integrating_Access_Excel.htm">
+						Integrating Access/Excel</a></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						<font face>
+						<a rel="internal" class="auto-style38" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+					</tr>
+					<tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style40">
+						&nbsp;</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>		
+<td valign="top" height="3510">&nbsp;</td>
+<td valign="top" height="3510" width="8">&nbsp;</td>
+<td bgcolor="#ffffff" valign="top" width="1%" align="center" height="3510" background="YellowTexture.gif"></font>
+
+
+
+
+<DIV ID="dek"></DIV>
+<SCRIPT TYPE="text/javascript">
+<!--
+//Pop up information box II (Mike McGrath (mike_mcgrath@lineone.net))
+//Permission granted to Dynamicdrive.com to include script in archive
+Xoffset=-200;    // modify these values to ...
+Yoffset=30;    // change the popup position.
+
+var old,skn,iex=(document.all),yyy=-1000;
+
+var ns4=document.layers
+var ns6=document.getElementById&&!document.all
+var ie4=document.all
+
+if (ns4)
+skn=document.dek
+else if (ns6)
+skn=document.getElementById("dek").style
+else if (ie4)
+skn=document.all.dek.style
+if(ns4)document.captureEvents(Event.MOUSEMOVE);
+else{
+skn.visibility="visible"
+skn.display="none"
+}
+document.onmousemove=get_mouse;
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=250 BORDER=1 BORDERCOLOR=red CELLPADDING=2 CELLSPACING=0 "+
+"BGCOLOR="+bak+"><TD ALIGN=left><FONT TYPE=arial COLOR=black SIZE=2>"+msg+"</FONT></TD></TABLE>";
+yyy=Yoffset;
+ if(ns4){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(ns6){document.getElementById("dek").innerHTML=content;skn.display=''}
+ if(ie4){document.all("dek").innerHTML=content;skn.display=''}
+}
+
+function get_mouse(e){
+var x=(ns4||ns6)?e.pageX:event.x+document.body.scrollLeft;
+skn.left=x+Xoffset;
+var y=(ns4||ns6)?e.pageY:event.y+document.body.scrollTop;
+skn.top=y+yyy;
+}
+
+function kill(){
+yyy=-1000;
+if(ns4){skn.visibility="hidden";}
+else if (ns6||ie4)
+skn.display="none"
+}
+//-->
+</SCRIPT>
+
+
+<td valign="top" width="86%" height="3510" class="auto-style17">
+      <!-- Start Page Content -->
+		<align="left">
+		<font face="Tahoma" style="font-size: 20pt">
+		<b>Microsoft Access Database - a brief background</b></font><font face="Arial" size="2"> 
+		-
+<br>
+	  <br><span class="auto-style36">Access is a relational database management system from Microsoft. Access can use 
+data stored in Access, <font color="#0033CC" onMouseover="popup('A structured query language server, such as Microsoft\'s and Sybase\'s RDBMS (Relational Data Base Management System). SQL Server is used to interact with a database. Recently, it has been widely used in Web applications involving a database back-end.','yellow')" ; ONMOUSEOUT="kill()">SQL Server</font>
+, Oracle, or any <font color="#0033CC" onMouseover="popup('Open Database Connectivity (ODBC) provides a standard software API method for using database management systems (DBMS). The ODBC specification offers a procedural API for using SQL queries to access data. ODBC operates with a variety of operating systems. Hundreds of ODBC drivers exist, including drivers for Oracle, DB2, Microsoft SQL Server, Sybase, Pervasive SQL, MySQL, PostgreSQL, desktop database products such as FileMaker, and Microsoft Access, and non-relational data such as spreadsheets, text and XML files.','yellow')" ; ONMOUSEOUT="kill()";
+>ODBC</font>-compliant data container including 
+
+<font color="#0033CC" onMouseover="popup('MySQL is a multithreaded, multi-user SQL database management system, and is popular for web applications.','yellow')"; ONMOUSEOUT="kill()">MySQL </font>
+Access 1.0 was the first version released in November 1992. 
+Since then, the different versions have been released: 2.0, 95 (with Office 95), 97 (with Office 97), 2000 (with Office 2000), 2002, 2003 (with Office XP), and 
+2007 (with Office 2007).</span></font><p align="left"><font size="2" class="auto-style36">
+Access is used by small businesses, within departments of large corporations, and by hobby programmers to create ad hoc customized desktop systems 
+for handling the creation and manipulation of data. Access can be used as a database for basic web based applications hosted on 
+<font color="#0033CC" onMouseover="popup('Internet Information Services (IIS) is a set of Internet-based services for servers using Microsoft Windows. The servers include FTP, SMTP, NNTP, and HTTP/HTTPS.','yellow')"; ONMOUSEOUT="kill()">Microsoft's Internet Information Services</font> (IIS) and utilizing 
+
+<font color="#0033CC" onMouseover="popup('Active Server Pages (ASP) is Microsoft\'s server-side script engine for dynamically-generated web pages. ASP was one of the first web application development environments that integrated web application execution directly into the web server. This was done in order to achieve high performance compared to calling external executable programs or CGI scripts which was the most popular method for writing web applications at the time it was introduced.','yellow')" ; ONMOUSEOUT="kill()">Microsoft Active Server Pages </font>
+(ASP). Most typical web applications should use tools like ASP/Microsoft SQL Server.</font></p>
+<p align="left"><font size="2" class="auto-style36">One of the benefits of 
+Access is its relative compatibility with SQL (<font color="#0033CC"><a class="type1" href="SQL.htm">structured query language</a></font>) 
+- queries may be viewed and edited as SQL statements, and SQL statements can be used directly in Macros and VBA Modules to manipulate 
+Access tables. Users may mix and use both VBA and Macros for programming forms and logic.</font></p></font>
+<p align="left"><font size="2" class="auto-style36">Access allows relatively quick development because all database tables, queries, forms, and 
+reports are stored in the database. For query development, Access utilizes the Query Design Grid, a graphical user interface that 
+allows users to create queries without knowledge of the SQL programming language. In the Query Design Grid, users can chose the source 
+tables of the query and select the fields they want returned by clicking and dragging them into the grid. Joins can be created by 
+clicking and dragging fields in tables to fields in other tables. Access allows users to view and manipulate the SQL code if desired. 
+Two database access libraries of 
+
+<font color="#0033CC" onMouseover="popup('Component Object Model (COM) is an interface standard for software componentry introduced by Microsoft in 1993. It is used to enable interprocess communication and dynamic object creation in any programming language that supports the technology. COM is replaced to large extent by the Microsoft .NET framework, and support for Web Services. However, COM objects can still be used with all .NET languages without problems. COM is used to implement the OLE, OLE Automation, ActiveX, COM+ and DCOM technologies.','yellow')" ; ONMOUSEOUT="kill()">
+COM </font>components are provided: the legacy 
+<font color="#0033CC" onMouseover="popup('Data Access Objects is a general programming interface for database access on Microsoft Windows systems. DAO was used throughout Office and Visual Basic but wasn\'t developed to be used with Web environments. The last version was DAO 3.6 which includes support for unicode.','yellow')" ; ONMOUSEOUT="kill()">
+Data Access Objects</font> (DAO), which was superseded for a time (but still accessible) by 
+
+<font color="#0033CC" onMouseover="popup('ActiveX Data Objects (ADO) is Microsoft\'s standard data-access metod for most Office, Web and Visual Basic environments. ADO.NET is included in Visual Studio.NET.','yellow')" ; ONMOUSEOUT="kill()">
+ActiveX Data Objects</font> (ADO); however (DAO) is still included in Microsoft Access 2007.</font></p>
+<p align="left"><font size="2" class="auto-style36">One of the drawbacks of 
+		Access database is that it scales poorly if data access is via a network 
+and when access to larger projects involving 
+		multiple concurrent users which slows down processing speed - it because it is a desktop application, not a 
+		true client-server database. One recommended 
+		technique is to migrate to SQL Server and utilize Access Data Projects. 
+		This allows stored procedures, views, and constraints - which are 
+		greatly superior to anything found in Jet. However, an Access &quot;front end&quot; (ie. forms, reports, queries and VB code) can be used 
+against a host of database &quot;backend&quot;, including 
+
+<font color="#0033CC" onMouseover="popup('JET stands for Joint Engine Technology, sometimes being referred to as Microsoft JET Engine. Microsoft Access and Visual Basic used Jet as their underlying database engine. It has since been superseded, first by Microsoft Desktop Engine (MSDE), then later by SQL Server 2005, and no longer exists as a component of Microsoft Data Access Components (MDAC).','yellow')" ; ONMOUSEOUT="kill()">
+JET</font> (file-based database engine, used in Access by default), Microsoft SQL 
+Server, Oracle, and any other ODBC-compliant product.</font></p>
+		<p align="left" class="auto-style36">A database management system 
+		(DBMS) such as Access, FileMaker Pro, Oracle or SQL Server provides you 
+		with the software tools you need to add, modify or delete data 
+		from the database, queries about the data stored in 
+		the database and produce reports summarizing selected contents. Three of the major components of Access 
+		database are -&nbsp; tables, queries, and forms. Queries in Access provide the capability 
+		to combine data from multiple tables and place specific conditions on 
+		the data retrieved.
+		Access also provides forms interface that allows users 
+		to enter information and pass it to the database. Access
+		Reports allows users to quickly produce attractively formatted 
+		summaries of the data contained in one or more tables and queries. 
+		Through the use of wizards, reports can be produced in a matter of 
+		minutes. Access also provides web 
+		integration. If you have a 
+		formatted report that you would like to share with Internet or Intranet 
+		users, you can simply export it to an HTML file and publish it to your 
+		organization's web server. Access database also allows SQL Server integration.</p>
+		<p align="left">&nbsp;</p>
+
+<font face="">
+		<hr width="96%" color="#0066CC" size="1">
+		<p align="center"><font face="Tahoma" style="font-size: 20pt">
+		<b>Get started with Access Database</b></font></p>
+		</font>
+
+		</font>
+
+<font face="Arial" size="2" class="auto-style7">
+		<p align="left"><span class="auto-style36">In this site, I will not be showing you the VBA 
+		fundamentals such as VBE menus and windows, creating Modules, sub 
+		procedures and functions, declaring variables and constants, assignment 
+		statements, arrays, loop structures and decision statements,&nbsp;errors 
+		handling and debugging. These are in large parts fundamentals common to 
+		the VBA programming for Excel which you can find plenty of explanation 
+		and examples in my VBA Excel page. Instead I will show you the basics 
+		that are specific to Access programming such as VBA Objects, Properties, 
+		Methods and unique parameters, Forms and Controls, Events Procedures, 
+		Reports, Queries using <b>ADO</b>, <b>ADOX</b>, and <b>SQL</b>.<br>
+		<br>
+		VBA is used to help Access to accomplish what the database can not do on 
+		its own, and therefore you should maximize all the built-in functions in 
+		database before you would want to develop your own VBA code. In fact you 
+		may not realize, the queries and macros that you have done for your 
+		database, are the predefined built-in VBA codes that Access application 
+		has provided. There are many ready built-in programs and class libraries 
+		in Access application that you should always make full use of them 
+		before you will want to use VBA codes to fill in the remaining jobs that 
+		need to be done. That is because in certain complex situations, VBA 
+		syntax for Access can be more difficult and confusing than VBA for 
+		Excel. You can download to experience the following Access database 
+		example which has no VBA code in it, and to realize that predefined 
+		built-in queries and macros can also allow you to fully automation your 
+		jobs just as VBA does. Basically, my macro run these activities:<br>
+		<br>
+		<font color="#008080">1. import two text files <br>
+		2. link tables and query safety stock status <br>
+		3. query excess inventory status<br>
+		4. query surplus inventory status <br>
+		5. query before-stockout need-to-buy status <br>
+		6. query stockout need-to-buy status <br>
+		7. transfer the five tables result to five Excel worksheets in the c: 
+		directory as &quot;template.xls&quot;. It creates the workbook and worksheets if 
+		there is not already one that exists. It overwrites all existing data in 
+		the worksheets.</font><br>
+		<br>
+		<a target="_blank" href="http://www.4shared.com/file/118891794/b6c41406/automation1.html">DOWNLOAD</a> 
+		the above example here. The .exe file 
+		will extract all the files to C:\myDatabase. When you open up the 
+		database file, there are three option 
+		buttons for you to select - run macro, close the form, or quit Access.</p>
+		<p align="left">Here is a second example rather similar to the above 
+		example, except that when the table in Access is exported to Excel, a 
+		workbook will be fired up automatically to run further program through 
+		its visual basic code. The exe file will extract all the files to 
+		C:\WILLIAM\...&nbsp; Click to run the database file (MyDatabase.mdb). 
+		The ReadMe file explains to you all the steps clearly.
+		<a target="_blank" href="http://www.4shared.com/file/118891917/ed8ae2be/automation2.html">DOWNLOAD</a> it here. Have fun!</span></p></font>
+		<p align="left">
+		<font size="2" class="auto-style37">
+		<br class="auto-style1">
+		<span class="auto-style1">Following is a tabulated list all of the built-in macros actions that 
+		are available in Access 2003. On the right are the descriptions of the 
+		macro actions, and you can click on the hyperlinks to see for more detail 
+		explanation and 
+		examples. The <font color="#0033CC">
+		<a href="examples/NorthWind.zip">sample NorthWind</a>&nbsp;</font>database (it resides in your installed 
+		Office Sample folder. It comes with your Office Pro CD but isn't 
+		installed by default) has examples on most of these macro actions, 
+		together with queries and forms. It is advisable that you constantly go 
+		back to study the database's samples as you start to go through each of 
+		these macro actions.</span></font></p>
+		<table border="0" width="94%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="4">
+				<p align="center"><a name="Access_Macro_Actions"></a><b><font face="Arial">
+				<span class="auto-style10">Access Macro</span><br class="auto-style8">
+				<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></b>
+				<span class="auto-style8">&nbsp; </span></td>
+			</tr>
+			<tr>
+				<td width="170" align="left" valign="top" class="auto-style9">
+				<font size="2" face="Arial" class="auto-style7">AddMenu<br>
+				Apply Filter<br>
+				Beep<br>
+				CancelEvent<br>
+				ClearMacroError<br>
+				Close<br>
+				CloseDatabase<br>
+				CopyDatabaseFile<br>
+				CopyObject<br>
+				DeleteObject<br>
+				Echo<br>
+				Introduction to macros<br>
+				FindNext<br>
+				FindRecord<br>
+				GoToControl<br>
+				GoToPage<br>
+				GoToRecord<br>
+				Hidden Language Element<br>
+				Hourglass</font></td>
+				<td width="170" align="left" valign="top">
+				<font size="2" face="Arial" class="auto-style7">LockNavigationPane<br>
+				Maximize<br>
+				Minimize<br>
+				MoveSize<br>
+				MsgBox<br>
+				NavigateTo<br>
+				OnError<br>
+				OpenDataAccessPage<br>
+				OpenDiagram<br>
+				OpenForm<br>
+				OpenFunction<br>
+				OpenModule<br>
+				OpenQuery<br>
+				OpenReport<br>
+				OpenStoredProcedure<br>
+				OpenTable<br>
+				OpenView<br>
+				OutputTo<br>
+				PrintOut</font></td>
+				<td width="170" align="left" valign="top">
+				<font size="2" face="Arial" class="auto-style7">Quit<br>
+				RemoveAllTempVars<br>
+				RemoveTempVar<br>
+				Rename<br>
+				RepaintObject<br>
+				Requery<br>
+				Restore<br>
+				RunApp<br>
+				RunCode<br>
+				RunCommand<br>
+				RunMacro<br>
+				RunSavedImportExport<br>
+				RunSQL<br>
+				Save<br>
+				SearchForRecord<br>
+				SelectObject<br>
+				SendKeys<br>
+				SendObject<br>
+				SetDisplayedCategories</font></td>
+				<td width="170" align="left" valign="top">
+				<font size="2" face="Arial" class="auto-style7">SetMenuItem<br>
+				SetProperty<br>
+				SetTempVar<br>
+				SetValue<br>
+				SetWarnings<br>
+				ShowAllRecords<br>
+				ShowToolbar<br>
+				SingleStep<br>
+				StopAllMacros<br>
+				StopMacro<br>
+				TransferDatabase<br>
+				TransferSharePointList<br>
+				TransferSpreadsheet<br>
+				TransferSQLDatabase<br>
+				TransferText</font></td>
+			</tr>
+		</table>
+		<p>
+		<font face="">
+		<br>
+	  <div align="left" class="auto-style16">
+			<table border="1" cellspacing="1" style="width: 795" id="table6" class="auto-style12">
+				<colgroup>
+					<col width="141" style="width: 106pt">
+					<col width="750" style="width: 563pt">
+				</colgroup>
+				<tr height="23" style="height: 17.25pt">
+					<td height="23" style="height: 17.25pt; width: 106pt; text-align: center; vertical-align: top; white-space: normal; font-style: normal; text-decoration: none; " class="auto-style24">
+					<strong>Macro Action</strong></td>
+					<td style="width: 648; text-align: center; vertical-align: top; white-space: normal; font-style: normal; text-decoration: none; " class="auto-style18">
+					<strong>Purpose</strong></td>
+				</tr>
+				<tr>
+					<td style="height: 18pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; width: 106pt;" bgcolor="#CCCCCC" class="auto-style30">
+					<p align="center">
+					&nbsp;</td>
+					<td style="font-weight: 700; text-underline-style: single; font-family: Arial; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: top; white-space: nowrap; height: 18pt;" width="648" bgcolor="#CCCCCC" class="auto-style26">
+					<p align="center" class="auto-style29" style="height: 0px">
+
+					Opening, Closing, Printing and Saving Tables, Queries, Forms, and Reports</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Close</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Closes specified or active window for a table, query, form, 
+					or report.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<a font color="#0033CC" href="supp/OpenForm%20Action.htm">OpenForm</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Opens a form in Form view, Design view, Print Preview, or 
+					Datasheet view. Can apply filter or Where condition.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">OpenModule</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Opens the specified Visual Basic module in Design view.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">
+					<a href="supp/OpenQueryAction.htm">OpenQuery</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Opens a query in Datasheet view, Design view, or Print 
+					Preview. If an Action query, updates performed. 
+					To specify parameters for an Action query, use the RunSQL 
+					action.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">
+					<a href="supp/OpenReportAction.htm">
+					OpenReport</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Opens a report in Design view or Print Preview or prints the 
+					report immediately. For Print and Print Preview, can also 
+					specify a filter or Where condition.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">OpenTable</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Opens a table in Datasheet view, Design view, or Print 
+					Preview.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<u>
+					<font color="#0033CC" onMouseover="ddrivetip('the Action argument - Function Name - is the name of the user-defined function to open. The Function Name box in the Action Arguments section of the Macro window shows all user-defined functions in the current database.','yellow', 500)"; onMouseout="hideddrivetip()">OpenFunction</font>
+					</u></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					open a user-defined function in Datasheet view, inline 
+					function Design view, SQL Text Editor view, or Print 
+					Preview.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<u>
+					<font color="#0033CC" onMouseover="ddrivetip('database diagram is a graphical representation of either a whole or partial picture of the structure of the database. It includes tables, the columns they contain, and the relationships between the tables.','yellow', 500)"; onMouseout="hideddrivetip()">OpenDiagram
+					</font>
+					</u></td>					
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					open a database diagram in Design view. The Diagram Name in 
+					the Action Argument is a required argument. </td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">
+					<a href="supp/RunSQLAction.htm">
+					RunSQL</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Runs the specified SQL Insert, Delete, Select...Into, or 
+					Update statement. Can refer to form controls in the 
+					statement to limit the affected records. See the
+					<a target="_blank" href="DoCmd_objects.htm#RunSQL">
+					RDoCmd.RunSQL example</a>.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">OpenStoredProcedure Action</font> </td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					open a stored procedure in Datasheet view, stored procedure 
+					Design view, or Print Preview. This action runs the named 
+					stored procedure when opened in Datasheet view. You can 
+					select the data entry mode for the stored procedure and 
+					restrict the records that the stored procedure displays.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">PrintOut</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Prints the active database object. You can print datasheets, 
+					reports, forms, and modules.</td>
+				</tr>
+				<tr>
+					<td style="height: 20pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Save</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; height: 20pt;" class="auto-style27">
+					Saves the specified object or the active object if none is 
+					specified.</td>
+				</tr>
+				<tr>
+					<td style="height: 11px; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#C0C0C0" class="auto-style33">
+					<p>&nbsp;</td>
+					<td style="font-weight: 700; text-underline-style: single; font-family: Arial; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; white-space: nowrap; height: 11px;" width="648" bgcolor="#C0C0C0" class="auto-style32">
+					<p align="center" class="auto-style34" style="height: 14px; width: 626px">Renaming, Copying, Deleting, Importing, and Exporting 
+					Objects</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">
+					<a href="supp/CopyObjectAction.htm">CopyObject</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Copies the specified database object to a different 
+					Microsoft Access database or to the same database 
+					with a new name.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">CopyDatabaseFile</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					make a copy of the current Microsoft SQL Server 7.0 or later 
+					database connected to your Microsoft Access project.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">DeleteObject</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Deletes any table, query, form, report, macro, or module.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">OutputTo</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Exports the specified database object to a Microsoft Excel 
+					file (.xls), rich-text file (.rtf), text file (.txt), or
+					HTML file (.htm).</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Rename</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Renames the specified object.</td>
+				</tr>
+				<tr height="68" style="height: 51.0pt">
+					<td height="68" style="height: 51.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">SendObject</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Send the specified Access datasheet, form, report, module, 
+					or data access page as an attachment in 
+					an e-mail, where it can be viewed and forwarded. You can 
+					include objects in Microsoft Excel 2000 (*.xls),
+					MS-DOS text (*.txt), rich-text (*.rtf), or HTML (*.html) 
+					format in messages for Micros oft Outlook, 
+					Microsoft Exchange, or another electronic mail application 
+					that uses the Mail Applications Programming 
+					Interface (MAPI).</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">TransferDatabase</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Imports or exports data to or from the current database from 
+					or to another database (Access, Paradox, 
+					Jet, ODBC). Can also use this action to attach tables or 
+					files from other database.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">
+					<a href="supp/TransferSpreadsheetAction.htm">TransferSpreadsheet</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Imports data from a spreadsheet file into the current 
+					database or exports data from the current database
+					into a spreadsheet file.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">TransferText</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Imports data from a text file into the current database or 
+					exports data from the current database into a 
+					text file.&nbsp; See the
+					<a target="_blank" href="DoCmd_objects.htm#TransferText">
+					DoCmd.TransferText example</a>.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style30">
+					<font color="#0033CC">TransferSQLDatabase</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style28">
+					Transfer a complete Microsoft SQL Server database to another 
+					SQL Server database.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#C0C0C0" class="auto-style19">
+					<p align="center" class="auto-style31">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#C0C0C0" class="auto-style26">
+					<p align="center" class="auto-style29">Running Another Application for MS-DOS or Windows</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style30">
+					<font color="#0033CC">
+					<a href="supp/RunAppAction.htm">RunApp</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style28">
+					Run a Microsoft Windows-based or MS-DOS-based application, 
+					such as Microsoft Excel, Microsoft Word, or Microsoft 
+					PowerPoint, from within Microsoft Access. For example, to 
+					open up Excel, in the RunApp macro, you type
+					<font color="#800000">&quot;Excel.exe&quot; &quot;D:\YourFolderName\YourWorksheet.xls&quot;</font></td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#C0C0C0" class="auto-style19">
+					<p align="center" class="auto-style31">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#C0C0C0" class="auto-style26">
+					<p align="center" class="auto-style29">Testing Conditions and Controlling Action Flow</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">CancelEvent</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Cancels the event that caused the macro to run.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style30">
+					<font color="#0033CC">
+					<a href="supp/RunCommandAction.htm">RunCommand</a></font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style28">
+					Run a built-in Microsoft Access command. The command may 
+					appear on an Access menu bar, toolbar, 
+					or shortcut menu.&nbsp; See the
+					<a target="_blank" href="DoCmd_objects.htm#RunCommand">
+					DoCmd.RunCommand example</a>.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">RunCode</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Runs a Visual Basic Function procedure.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">RunMacro</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Runs a macro.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">StopAllMacros</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Stops all currently running macros.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">StopMacro</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Stops the currently running macro. Use to stop a macro when 
+					a certain condition is met.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Quit</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Quits Microsoft Access.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#CCCCCC" class="auto-style30">
+					<p align="center">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#CCCCCC" class="auto-style26">
+					<p align="center" class="auto-style29">Setting Values</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Requery</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Refreshes the data in a control that is bound to a query 
+					(such as a list box, combo box, subform).
+					Use requery without an argument to refresh the data in the 
+					active object (form or datasheet).</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">SendKeys</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Sends keystrokes to Microsoft Access or another active 
+					application.&nbsp; If you intend to send keystrokes 
+					to a modal form or dialog box, you must execute SendKeys 
+					before opening the modal form or dialog box.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">SetValue</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Sets the value for a control, field, or property on a form 
+					or report. For example, can use SetValue to
+					calculate a new total in an unbound control or to affect the 
+					Visible property of a control (which determines
+					whether you can see that control).</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#CCCCCC" class="auto-style30">
+					<p align="center">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#CCCCCC" class="auto-style26">
+					<p align="center" class="auto-style29">Searching for Data</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">ApplyFilter</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Applies a filter or query or SQL WHERE clause to a table, 
+					form, or report.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">FindNext</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Finds the next record that meets the criteria specified with 
+					the most recent FindRecord action or Find
+					dialog box.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">FindRecord</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Finds the first or next record that meets the specified 
+					criteria. Records can be found in the active form 
+					or datasheet.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">GoToRecord</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Moves to a different record and makes it the specified 
+					record the current record in a table, form, or 
+					query. Can move to the first, last, next, or previous 
+					record.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#CCCCCC" class="auto-style30">
+					<p align="center">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#CCCCCC" class="auto-style26">
+					<p align="center" class="auto-style29">Controlling Display and Focus</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Echo</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Hides or shows the results while a macro runs.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">GoToControl</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " x:str="Sets the focus to the specified control. It means selecting the specified field on the active datasheet or form. " class="auto-style27">
+					Sets the focus to the specified control. It means selecting 
+					the specified field on the active datasheet or form.&nbsp;</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">GoToPage</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Selects the first control on the specified page of the 
+					active form.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Hourglass</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Changes the mouse pointer to an hourglass while the macro 
+					runs.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Maximize</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Maximizes the active window.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Minimize</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Minimizes the active window.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">MoveSize</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Moves and sizes the active window.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">RepaintObject</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Completes any pending screen updates or pending 
+					recalculations of any formula in the controls on the 
+					specified object, or on the active object if none is 
+					specified.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Restore</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Restores a maximized or minimized window to its previous 
+					size.</td>
+				</tr>
+				<tr height="68" style="height:51.0pt">
+					<td height="68" style="height: 51.0pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Requery</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style28">
+					Refreshes the data in a control that is bound to a query 
+					(such as a list box, combo box, subform, or a
+					control based on an aggregate function such as DSum). When 
+					other actions (such as inserting or deleting a row in the 
+					underlying query) might affect the contents of a control 
+					that is bound to a query, use Requery to update the control 
+					values. Use requery without an argument to refresh the data 
+					in the active object (form or datasheet).</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">SelectObject</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Selects the window for the specified object. It restores the 
+					window if it was minimized. You can then run 
+					an action that applies to that object.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">ShowAllRecords</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Removes any filters previously applied to the active table, 
+					query, or form.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">ShowToolbar</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Shows or hides a built-in toolbar or a custom toolbar.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#CCCCCC" class="auto-style30">
+					<p align="center">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#CCCCCC" class="auto-style26">
+					<p align="center" class="auto-style29">Building a Custom Menu and Executing Menu Commands</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">SetMenuItem</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Sets the state of menu items (enabled or disabled, checked 
+					or unchecked) on custom menus. Works only on custom menus 
+					created using menu bar macros.</td>
+				</tr>
+				<tr height="51" style="height: 38.25pt">
+					<td height="51" style="height: 38.25pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">AddMenu</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Adds a drop-down menu to a custom menu bar for a form or 
+					report. Each menu on the menu bar requires 
+					a separate AddMenu action. Each AddMenu macro action must 
+					have a name that corresponds to the menu name on the menu 
+					bar of the custom menu. An AddMenu action can also refer to 
+					another macro that uses an AddMenu action to build submenus.</td>
+				</tr>
+				<tr height="17" style="height:12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" bgcolor="#CCCCCC" class="auto-style30">
+					<p align="center">&nbsp;</td>
+					<td style="width: 648px; font-weight: 700; text-underline-style: single; font-family: Arial; white-space: normal; color: #000000; font-size: 10.0pt; font-style: normal; text-align: general; vertical-align: bottom; " bgcolor="#CCCCCC" class="auto-style26">
+					<p align="center" class="auto-style29">Informing User of Actions</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">Beep</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Causes the computer to beep.</td>
+				</tr>
+				<tr height="17" style="height: 12.75pt">
+					<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style25">
+					<font color="#0033CC">MsgBox</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style27">
+					Displays a message box containing a warning or informational 
+					message.</td>
+				</tr>
+				<tr height="34" style="height: 25.5pt">
+					<td height="34" style="height: 25.5pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: middle; white-space: nowrap; width: 106pt;" class="auto-style20">
+					<font color="#0033CC">SetWarnings</font></td>
+					<td style="width: 648px; white-space: normal; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; " class="auto-style23">
+					Turns all system messages on or off. This has the same 
+					effect as clicking OK or Yes in each message box. It does 
+					not halt the display of error messages. Use this macro with 
+					Echo set to Off to avoid displaying the messages.</td>
+				</tr>
+				
+			</table>
+
+		</font>
+
+		</td>
+       </tr>
+</table>
+				
+				
+			</td>
+	</tr>
+</table>
+
+
+
+<font face="">
+				
+				
+			</table>
+			</div>
+
+       </td>
+       </tr>
+</tbody></table>
+
+
+<table border="0" width="60%" id="table5" cellspacing="0" cellpadding="2" background="YellowTexture.gif">
+<tr>
+<td align="center">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</font>
+<p>
+	<font face="">
+	<a href="http://s05.flagcounter.com/more/RvMZ"><img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a></font><p>
+	<font face="Verdana"><span class="auto-style1">This site  
+	was created in February 2007<br>by William Tan</span></font></td>
+	</tr>
+</table>
+</body>
+</html>

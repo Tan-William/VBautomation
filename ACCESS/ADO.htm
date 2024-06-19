@@ -1,0 +1,2630 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_parent">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Access ActiveX Data Objects</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style3 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style4 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style5 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style6 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style7 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 12pt;
+}
+.auto-style8 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+}
+.auto-style9 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style10 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+	text-align: center;
+}
+.auto-style11 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style12 {
+	font-size: 11pt;
+}
+.auto-style13 {
+	text-align: center;
+}
+.auto-style14 {
+	margin-left: 0px;
+}
+.auto-style15 {
+	color: #0045C3;
+}
+.auto-style16 {
+	color: #0045C3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+</style>	
+</head>
+
+<body background="../YellowTexture.gif">
+<table border="0" cellspacing="0" cellpadding="0" id="table7" style="width: 58%">
+	<tr>
+		<td style="height: 12px">
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+	<tr>
+		<td>
+	<p class="auto-style13" style="width: 990px; height: 39px;">
+	<font style="font-size: 80%" class="auto-style4">
+	<a class="type3" href="../index.htm"><span class="auto-style12">Home</span></a><span class="auto-style12"> |
+	<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a class="type1" style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a>&nbsp;|
+	</span>
+	<a class="type1" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661"><span class="auto-style12">Guestbook</span></a></font><span class="auto-style12"><font class="auto-style4"> </font>
+	</span>&nbsp;<br>
+	<font size="1">&nbsp;</font><hr color="#0066FF" size="1" style="height: -15px; width: 985px;" class="auto-style14"></td>
+	</tr>
+</table>
+
+
+
+<TABLE border="0" cellspacing="0" width="974" height="11091" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825" id="table58">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033" id="table59">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style1">
+						<font class="auto-style3"><strong>Access Programming</strong></font><span class="auto-style1">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="beginner_basic_Acc.htm">Access 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp; Methods</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="forms_controls_events.htm">
+						Forms, Controls and Events</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style16" href="ADO.htm">
+					ADO (ActiveX Data Objects)</a></font><span class="auto-style1"><span class="auto-style15"></font></font></font></span></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style2" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style1">
+						<font face="Verdana">
+						<a rel="internal" class="auto-style2" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="SQL_Examples.htm">
+		<font face="Verdana">
+						Jet SQL examples</font></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="Integrating_Access_Excel.htm">
+						Integrating Access/Excel</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						&nbsp;</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>		<td valign="top" height="11091">
+      &nbsp;</td>
+<td valign="top" height="11091" width="8">
+      &nbsp;</td>
+<td valign="top" height="11091">
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder25" class="Normal">
+		<table border="1" width="33%" cellspacing="1" cellpadding="4" style="border-collapse: collapse" bordercolor="#0166FE" id="table158">
+				<tr>
+					<td>
+					<font face="Arial" size="2" color="#0066FE">
+					<a class="type1" href="#ADO_Objects">&nbsp;<span class="auto-style4"><span class="auto-style12">ADO Objects</span></span></a><span class="auto-style4"><span class="auto-style12"><br>
+					&nbsp;ADO Collections<br>
+			        &nbsp;ADO Properties<br>
+			        &nbsp;ADO Methods<br>
+			        &nbsp;ADO Events<br>
+			        &nbsp;ADO Dynamic Properties<br>
+					<a class="type1" href="ADO_Enumerated_Constants.htm">&nbsp;ADO Enumerated Constants</a><br>
+					</span>
+					<a class="type1" href="ADO_Examples.htm">
+					<span class="auto-style12">&nbsp;ADO Programming Examples</span></a></span>
+					</font>
+					</td>
+				</tr>
+			</table>
+		             
+					<p><b><font style="font-size: 22pt"><font face="Arial">What is ADO?</font><br>
+					</font></b>
+					<span class="auto-style5">&#9679;&nbsp; ADO stands for ActiveX Data Objects.</span><br class="auto-style5">
+					<span class="auto-style5">&#9679;&nbsp; ADO is a Microsoft Active-X component and built on top of OLE DB technology.</span>
+					<br class="auto-style5">
+					<span class="auto-style5">&#9679; &nbsp;ADO is automatically installed with Microsoft IIS.</span>
+					<font size="2" class="auto-style1"><br class="auto-style4">
+					<span class="auto-style4">&#9679; &nbsp;ADO is provided as a DLL, and usually installed at &quot;c:\program 
+			files\common files\system\ado\msadox.dll&quot;. </span></font>
+					<span id="dnn_ctr436_HtmlModule_HtmlHolder29" class="Normal">
+					<br class="auto-style5">
+					</span>
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder30" class="auto-style5">
+					&#9679;&nbsp; </span>
+					<span class="auto-style5">ADO is an application programming interface (API) to access 
+			databases connected through ODBC data source names (DSN). </span>  
+					<span class="auto-style4"> 
+					</font></span></p>
+		<p><font size="2" class="auto-style5">The common way to access a database from inside an ASP page is to:<br>
+		1.&nbsp; Create an ADO connection to a database<br>
+		2.&nbsp; Open the database connection<br>
+		3.&nbsp; Create an ADO recordset<br>
+		4.&nbsp; Open the recordset<br>
+		5.&nbsp; Extract the data you need from the recordset<br>
+		6.&nbsp; Close the recordset<br>
+		7.&nbsp; Close the connection</font></p>
+		<p class="auto-style5">When ADO 2.5 was introduced, two new items to 
+		the ADO Object model were added. While the earlier versions of ADO 
+		addressed the operations dealing with relational databases, new 
+		necessities drove the enlargement of the applicability of ADO to 
+		non-relational, hierarchical data like those in web sites and 
+		folder/file systems. Record and Stream objects were born out of these 
+		necessities. These additions considerably extended ADO's applicability 
+		beyond the well known databases such as MS SQL Server and Oracle, and provided access for looking into web site directories, file 
+		structures with directories, nested subdirectories, file systems and so on. 
+		In the broader areas beyond Microsoft Access, ADO has largely been 
+		replaced by the quite different ADO.NET library.</p>
+		<p class="auto-style4"><font size="2">I</font><span class="auto-style1">n 
+		my site, you will learn how to display data from a database, and how to 
+		edit, add and delete the data with <strong>ADO</strong>. After that you 
+		will learn <strong>ADOX</strong> and <strong>SQL</strong>.</span></p>
+		<p class="auto-style4">&nbsp;</p>
+		<b><font style="font-size: 22pt" face="Arial">Overview of </font></b>
+
+		       
+		<b><font style="font-size: 22pt" face="Arial">ADO Objects, Collections, Properties, 
+			Methods and Events</font></b><font face=""></font><b><font style="font-size: 17pt" face="Arial"><br>
+			</font></b></font><font face="Arial" size="1">
+&nbsp;</font><font face="Arial"><table border="0" width="87%" cellspacing="0" cellpadding="0" id="table157">
+				<tr>
+				<td align="left" valign="top" style="width: 338px">
+				<b><a class="type2" href="#ADO_Objects"><font size="4">ADO Objects</font></a></b><br>
+		        <font color="#FF6600">
+				<a class="type1" href="#Command"><span class="auto-style5">ADO Command</span></a></font><p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a style="text-decoration: none"href="#Conn">ADO Connection</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#Error">ADO Error</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#Field">ADO Field</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#Parameter">ADO Parameter</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#Property">ADO Property</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a style="text-decoration: none"href="#Record">ADO Record</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#Recordset">ADO Recordset</a></font></p>
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#Stream">ADO Stream</a></font></p>
+				</font>
+	       		       
+				<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style5">
+				<font color="#ff6600">
+				<a class="type1" href="#DataTypes">
+				ADO DataTypes</a><font face="Arial"><p>
+		       
+       		<b><font face="Arial" size="4" color="#F06000">
+			ADO Methods</font></b><font face="Arial" size="2"><br>
+			</font><font size="2" class="auto-style5">
+			<a class="type1" href="ADO/ADO_AddNew_Method.htm">AddNew Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_AppendMethod.htm">Append Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_AppendChunk_Method.htm">AppendChunk Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_BeginTransComplete_CommitTransComplete_RollbackTransComplete%20Events.htm">BeginTrans, CommitTrans, and <br>
+&nbsp;&nbsp; RollbackTrans Methods (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Cancel_Method.htm">Cancel Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CancelBatch_Method.htm">CancelBatch Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CancelUpdateMethod.htm">CancelUpdate Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Clear_Method.htm">Clear Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Clone_Method.htm">Clone Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Close_Method.htm">Close Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CompareBookmarks_Method.htm">CompareBookmarks Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CopyRecord_MoveRecord_Methods.htm">CopyRecord Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CopyTo_Method.htm">CopyTo Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CreateParameter_Method.htm">CreateParameter Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_ParametersCollection_DeleteMethod.htm">Delete Method (ADO Parameters Collection)</a><br>
+			<a class="type1" href="ADO/ADO_FieldsCollection_DeleteMethod.htm">Delete Method (ADO Fields Collection)</a><br>
+			<a class="type1" href="ADO/ADO_RecordsetObj_DeleteMethod.htm">Delete Method (ADO Recordset)</a><br>
+			<a class="type1" href="ADO/ADO_DeleteRecord_Method.htm">DeleteRecord Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CommandObj_ExecuteMethod.htm">Execute Method (ADO Command)</a><br>
+			<a class="type1" href="ADO/ADO_ConnectionObj_ExecuteMethod.htm">Execute Method (ADO Connection)</a><br>
+			<a class="type1" href="ADO/ADO_Find_Method.htm">Find Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_%20FlushMethod.htm">Flush Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_GetChildren%20Method.htm">GetChildren Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_GetChunk_Method.htm">GetChunk Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_GetRows_Method.htm">GetRows Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_GetString_Method.htm">GetString Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_LoadFromFileMethod.htm">LoadFromFile Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Move_Method.htm">Move Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_MoveFirst_MoveLast_MoveNext_MovePrevious_Methods.htm">MoveFirst, MoveLast, MoveNext, and <br>
+&nbsp;&nbsp; MovePrevious Methods (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CopyRecord_MoveRecord_Methods.htm">MoveRecord Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_NextRecordset_Method.htm">NextRecordset Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_ConnectionObj_Open_Method.htm">Open Method (ADO Connection)</a><br>
+			<a class="type1" href="ADO/ADO_RecordObj_Open_Method.htm">Open Method (ADO Record)</a><br>
+			<a class="type1" href="ADO/ADO_RecordsetObj_Open_Method.htm">Open Method (ADO Recordset)</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_OpenMethod.htm">Open Method (ADO Stream)</a><br>
+			<a class="type1" href="ADO/ADO_OpenSchema_Method.htm">OpenSchema Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_ReadMethod.htm">Read Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_ReadTextMethod.htm">ReadText Method</a><br>
+			<a class="type1" href="ADO/ADO_Refresh_Method.htm">Refresh Method (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Requery_Method.htm">Requery Method</a><br>
+			<a class="type1" href="ADO/ADO_Resync_Method.htm">Resync Method</a><br>
+			<a class="type1" href="ADO/ADO_Save_Method.htm">Save Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_SaveToFileMethod.htm">SaveToFile Method</a><br>
+			<a class="type1" href="ADO/ADO_Seek_Method.htm">Seek Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_SetEOSMethod.htm">SetEOS Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_SkipLineMethod.htm">SkipLine Method</a><br>
+			<a class="type1" href="ADO/ADO_Supports_Method.htm">Supports Method</a><br>
+			<a class="type1" href="ADO/ADO_Update_Method.htm">Update Method</a><br>
+			<a class="type1" href="ADO/ADO_UpdateBatch_Method.htm">UpdateBatch Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_WriteMethod.htm">Write Method</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_WriteTextMethod.htm">WriteText Method</a></font></p>
+		<p>
+			<font face="Arial" size="4" color="#F06000">
+			<b>ADO Events</b></font>
+			<font face="Arial" size="2"><br>
+			<span class="auto-style5">
+			<a class="type1" href="ADO/ADO_BeginTransComplete_CommitTransComplete_RollbackTransComplete%20Events.htm">BeginTransComplete, CommitTransComplete,</a><br>&nbsp;<a class="type1" href="ADO/ADO_BeginTransComplete_CommitTransComplete_RollbackTransComplete%20Events.htm"> and RollbackTransComplete Events(ADO)</a><br>
+            <a class="type1" href="ADO/ADO_WillConnect_ConnectComplete_Disconnect%20Events.htm">ConnectComplete and Disconnect </a>
+			<br>&nbsp;
+            <a class="type1" href="ADO/ADO_WillConnect_ConnectComplete_Disconnect%20Events.htm">Events (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_EndOfRecordset_Event.htm">EndOfRecordset Event (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_WillExecute_ExecuteComplete_Events.htm">ExecuteComplete Event (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_FetchComplete_Event.htm">FetchComplete Event (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_FetchProgress_Event.htm">FetchProgress Event (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_InfoMessage_Event.htm">InfoMessage Event (ADO)</a><br>
+			</span>
+		</font>
+			<font size="2" class="auto-style5">
+			<a class="type1" href="ADO/ADO_WillConnect_ConnectComplete_Disconnect%20Events.htm">WillConnect Event (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_WillExecute_ExecuteComplete_Events.htm">WillExecute Event (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_WillMove_MoveComplete_Events.htm">WillMove and MoveComplete Events (ADO)</a><br>
+			</font>
+			<font face="Arial" size="2">
+			<a class="type1" href="ADO/ADO_WillChangeField_FieldChangeComplete_Events.htm">
+			<span class="auto-style4"><span class="auto-style1">WillChangeField and <br>
+&nbsp;&nbsp; FieldChangeComplete Events (ADO)</span></span></a><span class="auto-style4"><span class="auto-style1"><br>
+			<a class="type1" href="ADO/ADO_WillChangeRecord_%20RecordChangeComplete_Events.htm">WillChangeRecord and <br>
+&nbsp;&nbsp; RecordChangeComplete Events (ADO)</a><br>
+			</span>
+			<a class="type1" href="ADO/ADO_WillChangeRecordset_RecordsetChangeComplete_Events.htm">
+			<span class="auto-style1">WillChangeRecordset and <br>
+&nbsp;&nbsp; RecordsetChangeComplete Events (ADO)</span></a></span><br>
+			&nbsp;</font></span><font face="Arial"></td>
+				</font>
+	       		       
+					<td width="363" align="left" valign="top">
+
+					<b><font color="#F06000" size="4" face="Arial">ADO 
+		Collections</font></b><br>
+					<font size="2" class="auto-style5">
+					<a class="type1" href="ADO/ADO_Errors%20Collection.htm">Errors Collection (ADO)</a><br>
+		<a class="type1" href="ADO/ADO_FieldsCollection.htm">Fields Collection (ADO)</a><br>
+		<a class="type1" href="ADO/ADO_ParametersCollection.htm">Parameters Collection (ADO)</a><br>
+		<a class="type1" href="ADO/ADO_PropertiesCollection.htm">Properties Collection (ADO)</a></font><font face=""><font color="#ff6600"><a class="type1" href="#DataTypes"><font face="Arial"><p>
+		       
+       		<font face="Arial" size="4" color="#F06000">
+		       
+       		<b>A</b></font></font></a></font><font face="Arial" color="#ff6600"><b><font face=""><span id="dnn_ctr436_HtmlModule_HtmlHolder32" class="Normal"><font size="4" face="Arial">DO 
+			Properties</font></span></font></b></font></font><span id="dnn_ctr436_HtmlModule_HtmlHolder23" class="Normal"><font size="2" face="Arial"><br>
+					<span class="auto-style5">
+			<a class="type1" href="ADO/ADO_AbsolutePage_AbsolutePosition_Property.htm">AbsolutePage Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_AbsolutePage_AbsolutePosition_Property.htm">AbsolutePosition Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_ActiveCommand_Properties.htm">ActiveCommand Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CommandObj_ActiveConnection_Property.htm">ActiveConnection Property (ADO 
+			Command)</a><br>
+					</span>
+		</font>
+		       
+		</span><span id="dnn_ctr436_HtmlModule_HtmlHolder33" class="Normal">
+			<font size="2" class="auto-style5">
+			<a class="type1" href="ADO/ADO_RecordObj_ActiveConnection_Property.htm">ActiveConnection Property (ADO 
+			Record)</a><br>
+		</font>
+		       
+		</span><span id="dnn_ctr436_HtmlModule_HtmlHolder34" class="auto-style5">
+			<a class="type1" href="ADO/ADO_RecordsetObj_ActiveConnection_Property.htm">ActiveConnection Property (ADO 
+			Recordset)</a></span><span id="dnn_ctr436_HtmlModule_HtmlHolder33" class="Normal"><font size="2" face="Arial"><span class="auto-style4"><span class="auto-style1"><br>
+			<a class="type1" href="ADO/ADO_DefinedSize_ActualSize_Properties.htm">ActualSize Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Attributes_Property.htm">Attributes Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_BOF_EOF_Properties.htm">BOF, EOF Properties (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Bookmark_Property.htm">Bookmark Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CacheSize_Property.htm">CacheSize Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_CharSetProperty.htm">Charset Property (ADO)</a><br>
+		CommandStream Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_CommandObj_CommandText%20Property.htm">CommandText Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CommandObj_TimeoutProperty.htm">CommandTimeout Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CommandObj_CommandTypeProperty.htm">CommandType Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_ConnectionString_Property.htm">ConnectionString Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_ConnectionTimeout_Property.htm">ConnectionTimeout Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CountProperty.htm">Count Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CursorLocation_Property.htm">CursorLocation Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_CursorType_Property.htm">CursorType Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_DataMember_Property.htm">DataMember Property</a><br>
+			<a class="type1" href="ADO/ADO_DataSource_Property.htm">DataSource Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_DefaultDatabase_Property.htm">DefaultDatabase Property</a><br>
+					</span></span>
+			<a class="type1" href="ADO/ADO_DefinedSize_ActualSize_Properties.htm">
+					<span class="auto-style4"><span class="auto-style1">DefinedSize Property</span></span></a></font></span><font face=""><span id="dnn_ctr436_HtmlModule_HtmlHolder35" class="auto-style5"><a class="type1" href="ADO/ADO_DefinedSize_ActualSize_Properties.htm"> 
+			(ADO)</a></span></font><span id="dnn_ctr436_HtmlModule_HtmlHolder33" class="Normal"><font size="2" face="Arial" class="auto-style1"><br class="auto-style4">
+					<span class="auto-style4">Description Property<br>
+		Dialect Property<br>
+			<a class="type1" href="ADO/ADO_Direction_Property.htm">Direction Property</a><br>
+			<a class="type1" href="ADO/ADO_EditMode_Property.htm">EditMode Property</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_EOSProperty.htm">EOS Property</a><br>
+			<a class="type1" href="ADO/ADO_Filter_Property.htm">Filter Property</a><br>
+					</span>
+			<a class="type1" href="ADO/ADO_objError_HelpContext_Property.htm">
+					<span class="auto-style4">HelpContext</span></a></font></span><font face=""><span id="dnn_ctr436_HtmlModule_HtmlHolder38" class="auto-style5"><a class="type1" href="ADO/ADO_objError_HelpContext_Property.htm"> 
+			Property</a></span></font><span id="dnn_ctr436_HtmlModule_HtmlHolder33" class="Normal"><font size="2" face="Arial"><span class="auto-style4"><span class="auto-style1"><br>
+			<a class="type1" href="ADO/ADO_objError_HelpFile_Property.htm">HelpFile 
+			Property</a><br>
+			<a class="type1" href="ADO/ADO_Index_Property.htm">Index Property</a><br>
+			<a class="type1" href="ADO/ADO_IsolationLevel_Property.htm">IsolationLevel Property</a><br>
+		Item Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_StreamObj_LineSeparatorProperty.htm">LineSeparator Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_LockType_Property.htm">LockType Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_MarshalOptions_Property.htm">MarshalOptions Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_MaxRecords_Property.htm">MaxRecords Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Mode_Property.htm">Mode Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Name_Property.htm">Name Property (ADO)</a><br>
+		NamedParameters Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_objError_NativeError_Property.htm">NativeError Property (ADO)</a><br>
+		Number Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_NumericScale_Property.htm">NumericScale Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_OriginalValue_UnderlyingValue_Properties.htm">OriginalValue Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_PageCount_Property.htm">PageCount Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_PageSize_Property.htm">PageSize Property (ADO)</a><br>
+		ParentRow Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_ParentURL_Property.htm">ParentURL Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_PositionProperty.htm">Position Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_Precision_Property.htm">Precision Property (ADO)</a><br>
+		Prepared Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_Provider_Property.htm">Provider Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_RecordsetObj_RecordCountProperty.htm">RecordCount Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_RecordType_Property.htm">
+			RecordType Property (ADO)</a><br>
+		Row Property (ADO)<br>
+		RowPosition Property (ADO)<br>
+		Rowset Property (ADO)<br>
+			<a class="type1" href="ADO/ADO_ParameterObj_SizeProperty.htm">Size Property (ADO Parameter)</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_SizeProperty.htm">Size Property (ADO Stream)</a><br>
+			<a class="type1" href="ADO/ADO_Sort_Property.htm">Sort Property</a><br>
+			<a class="type1" href="ADO/ADO_objError_Source_Property.htm">Source Property (ADO Error)</a><br>
+			<a class="type1" href="ADO/ADO_RecordObj_SourceProperty.htm">Source Property (ADO Record)</a><br>
+			<a class="type1" href="ADO/ADO_RecordsetObj_Source_Property.htm">Source Property (ADO Recordset)</a><br>
+			<a class="type1" href="ADO/ADO_objError_SQLState_Property.htm">SQLState Property</a><br>
+			<a class="type1" href="ADO/ADO_State_Property.htm">State Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_FieldObj_StatusProperty.htm">Status Property (ADO Field)</a><br>
+			<a class="type1" href="ADO/ADO_RecordsetObj_Status_Property.htm">Status Property (ADO Recordset)</a><br>
+			<a class="type1" href="ADO/ADO_StayInSync_Property.htm">StayInSync Property</a><br>
+			<a class="type1" href="ADO/ADO_StreamObj_TypeProperty.htm">Type Property (ADO Stream)</a><br>
+			<a class="type1" href="ADO/ADO_Type_Property.htm">Type Property (ADO)</a><br>
+			<a class="type1" href="ADO/ADO_OriginalValue_UnderlyingValue_Properties.htm">UnderlyingValue Property</a><br>
+			<a class="type1" href="ADO/ADO_Value_Property.htm">Value Property (ADO)</a><br>
+					</span>
+			<a class="type1" href="ADO/ADO_Version_Property.htm">
+					<span class="auto-style1">Version Property (ADO)</span></a></span><br>
+		</font><br>
+		       
+		</span>
+		       
+
+		       
+		
+		       
+
+		       
+
+		       
+
+		       
+
+		       
+		
+		       
+
+		       
+
+
+
+
+		       
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder2" class="Normal">
+					<b><font color="#F06000" size="4" face="Arial">ADO Dynamic 
+		Properties</font></b></span><span id="dnn_ctr436_HtmlModule_HtmlHolder24" class="Normal"><br>
+		<font size="2" class="auto-style5">ADO Dynamic Property Index<br>
+		Optimize Property-Dynamic (ADO)<br>
+		Prompt Property-Dynamic (ADO)<br>
+		Reshape Name Property-Dynamic (ADO)<br>
+		Resync Command Property-Dynamic (ADO)<br>
+		Update Resync Property-Dynamic (ADO)<br>
+		Unique Table, Unique Schema, Unique Catalog <br>
+&nbsp;&nbsp; Properties-Dynamic (ADO)</font></p></td>
+</tr>
+</table>
+		       
+		<table border="0" cellspacing="0" cellpadding="0" id="table159" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><a name=#ADO_Objects></a>
+				<b><a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		       
+		<p align="left"><b><font size="6">ADO Objects:</font></b></p>
+		<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" class="auto-style4">
+		<font size="2" class="auto-style5">ADO provides two objects for managing 
+		connections with data sources (<b>Connection</b> and </font>
+		<span class="auto-style1"></font>
+		</span><font face="Arial" class="auto-style1" size="2">
+		<span class="auto-style6">Command</span><span class="auto-style4">), two objects for 
+		managing the data returned from a data source (<b>Field</b> and <b>Recordset</b>) and three 
+		secondary objects (<b>Parameters</b>, <b>Properties</b>, and </span> <b>
+		<span class="auto-style4">Errors</span></b></font><span class="auto-style1">) 
+		for managing information about ADO.</span></p>
+		<a name=Command></a>
+		<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+		&nbsp;</p>
+		<font color="#FF6600" face="Times New Roman" style="font-size: 22pt"><b>
+		ADO Command Object</b></font></p>
+		<p class="auto-style5">The ADO Command object is used to execute a single query against a 
+		database. The query can perform actions like creating, adding, 
+		retrieving, deleting or updating records.</p>
+		<p class="auto-style5">If the query is used to retrieve data, the data will be returned as a 
+		RecordSet object. This means that the retrieved data can be manipulated 
+		by properties, collections, methods, and events of the Recordset object.</p>
+		<p class="auto-style5">The major feature of the Command object is the ability to use stored 
+		queries and procedures with parameters.</p>
+		<h3 class="auto-style7">Properties</h3>
+		<table class="ex" id="table29" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="16%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="82%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CommandObj_ActiveConnection_Property.htm">ActiveConnection</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a definition for a connection 
+				if the connection is closed, or the current Connection object if 
+				the connection is open</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CommandObj_CommandText%20Property.htm">CommandText</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a provider command</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5"><font color="#0066cc">
+				<span style="COLOR: #0066cc; TEXT-DECORATION: none" class="auto-style5">
+				<a href="ADO/ADO_CommandObj_TimeoutProperty.htm">CommandTimeout</a></span></font></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the number of seconds to wait 
+				while attempting to execute a command</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CommandObj_CommandTypeProperty.htm">CommandType</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the type of a Command object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Name_Property.htm">
+				Name</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the name of a Command object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CommandObj_PreparedProperty.htm">Prepared</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a Boolean value that, if set to 
+				True, indicates that the command should save a prepared version 
+				of the query before the first execution</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5"><font color="#0066cc">
+				<span style="COLOR: #0066cc; TEXT-DECORATION: none" class="auto-style5">
+				<a href="ADO/ADO_State_Property.htm">
+				State</a></span></font></td>
+				<td vAlign="top" class="auto-style5">Returns a value that describes if the Command 
+				object is open, closed, connecting, executing or retrieving data</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table30" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" class="auto-style5" style="width: 17%">
+				Method</th>
+				<th vAlign="top" align="left" width="82%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 17%"><font color="#0066cc">
+				<span style="TEXT-DECORATION: none" class="auto-style5">
+				<a href="ADO/ADO_Cancel_Method.htm">
+				Cancel</a></span></font></td>
+				<td vAlign="top" class="auto-style5">Cancels an execution of a method</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style8" style="width: 17%">
+				<a href="ADO/ADO_CreateParameter_Method.htm">
+				CreateParameter</a></td>
+				<td vAlign="top" class="auto-style5">Creates a new Parameter object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style8" style="width: 17%">
+				<a href="ADO/ADO_Execute_Method.htm">
+				Execute</a></td>
+				<td vAlign="top" class="auto-style5">Executes the query, SQL statement or procedure 
+				in the CommandText property</td>
+			</tr>
+		</table>
+		<h3>Collections</h3>
+		<table class="ex" id="table31" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" class="auto-style5" style="width: 17%">
+				Collection</th>
+				<th vAlign="top" align="left" width="82%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5" style="width: 17%">Parameters</td>
+				<td vAlign="top" class="auto-style5">Contains all the Parameter objects of a Command 
+				Object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5" style="width: 17%">Properties</td>
+				<td vAlign="top" class="auto-style5">Contains all the Property objects of a Command 
+				Object</td>
+			</tr>
+		</table>
+		<h1>&nbsp;<a name=Conn></a></h1>
+		<table border="0" cellspacing="0" cellpadding="0" id="table60" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><span style="font-weight: 700">
+		<font size="6" color="#F06000" style="font-size: 22pt" face="Times New Roman">ADO Connection Object</font></span></p>
+		<p class="auto-style5">The ADO Connection Object is used to create an open connection to a 
+		data source.&nbsp;Through this connection, you can access and manipulate a 
+		database.</p>
+		<p class="auto-style5">If you want to access a database multiple times, you should establish 
+		a connection using the Connection object. You can also make a connection 
+		to a database by passing a connection string via a Command or Recordset 
+		object. However, this type of connection is only good for one specific, 
+		single query.</p>
+		<h3>Properties</h3>
+		<table class="ex" id="table32" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" class="auto-style5" style="width: 16%">
+				Property</th>
+				<th vAlign="top" align="left" width="82%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" height="26" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_Attributes_Property.htm">
+				Attributes</a></td>
+				<td vAlign="top" height="26" class="auto-style5">Sets or returns the attributes of a Connection 
+				object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_CommandTimeoutProperty.htm">CommandTimeout</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the number of seconds to wait 
+				while attempting to execute a command</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_ConnectionString_Property.htm">
+				ConnectionString</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the details used to create a 
+				connection to a data source</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_ConnectionTimeout_Property.htm">
+				ConnectionTimeout</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the number of seconds to wait 
+				for a connection to open</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_CursorLocation_Property.htm">
+				CursorLocation</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the location of the cursor 
+				service</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_DefaultDatabase_Property.htm">
+				DefaultDatabase</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the default database name</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_IsolationLevel_Property.htm">
+				IsolationLevel</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the isolation level</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_Mode_Property.htm">
+				Mode</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the provider access permission</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_Provider_Property.htm">
+				Provider</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the provider name</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_State_Property.htm">
+				State</a></td>
+				<td vAlign="top" class="auto-style5">Returns a value describing if the connection is 
+				open or closed</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5" style="width: 16%">
+				<a href="ADO/ADO_Version_Property.htm">
+				Version</a></td>
+				<td vAlign="top" class="auto-style5">Returns the ADO version number</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table33" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="16%" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="82%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BeginTrans_CommitTrans_RollbackTrans.htm">
+				BeginTrans</a></td>
+				<td vAlign="top" class="auto-style5">Begins a new transaction</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Cancel_Method.htm">
+				Cancel</a></td>
+				<td vAlign="top" class="auto-style5">Cancels an execution</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Close_Method.htm">
+				Close</a></td>
+				<td vAlign="top" class="auto-style5">Closes a connection</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BeginTrans_CommitTrans_RollbackTrans.htm">
+				CommitTrans</a></td>
+				<td vAlign="top" class="auto-style5">Saves any changes and ends the current 
+				transaction</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Execute_Method.htm">
+				Execute</a></td>
+				<td vAlign="top" class="auto-style5">Executes a query, statement, procedure or 
+				provider specific text</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">				
+				<a href="ADO/ADO_ConnectionObj_Open_Method.htm">Open</a></td>
+				<td vAlign="top" class="auto-style5">Opens a connection</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_OpenSchema_Method.htm">OpenSchema</a></td>
+				<td vAlign="top" class="auto-style5">Returns schema information from the provider 
+				about the data source</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BeginTrans_CommitTrans_RollbackTrans.htm">
+				RollbackTrans</a></td>
+				<td vAlign="top" class="auto-style5">Cancels any changes in the current transaction 
+				and ends the transaction</td>
+			</tr>
+		</table>
+		<h3>Events</h3>
+		<p><span class="auto-style9">Note:</span><span class="auto-style5">&nbsp; You can only use Visual Basic, Visual C++, and Visual 
+		J++ languages to handle events.</span></p>
+		<table class="ex" id="table34" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Event</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BeginTransComplete_CommitTransComplete_RollbackTransComplete%20Events.htm">BeginTransComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after the BeginTrans operation</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" height="28" class="auto-style5">
+				<a href="ADO/ADO_BeginTransComplete_CommitTransComplete_RollbackTransComplete%20Events.htm">CommitTransComplete</a></td>
+				<td vAlign="top" height="28" class="auto-style5">Triggered after the CommitTrans operation</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillConnect_ConnectComplete_Disconnect%20Events.htm">ConnectComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after a connection starts</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillConnect_ConnectComplete_Disconnect%20Events.htm">Disconnect</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after a connection ends</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillExecute_ExecuteComplete_Events.htm">ExecuteComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after a command has finished 
+				executing</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_InfoMessage_Event.htm">InfoMessage</a></td>
+				<td vAlign="top" class="auto-style5">Triggered if a warning occurs during a 
+				ConnectionEvent operation</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BeginTransComplete_CommitTransComplete_RollbackTransComplete%20Events.htm">RollbackTransComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after the RollbackTrans operation</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillConnect_ConnectComplete_Disconnect%20Events.htm">WillConnect</a></td>
+				<td vAlign="top" class="auto-style5">Triggered before a connection starts</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillExecute_ExecuteComplete_Events.htm">WillExecute</a></td>
+				<td vAlign="top" class="auto-style5">Triggered before a command is executed</td>
+			</tr>
+		</table>
+		<h3>Collections</h3>
+		<table class="ex" id="table35" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">Collection</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">Errors</td>
+				<td vAlign="top" class="auto-style5">Contains all the Error objects of the 
+				Connection object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">Properties</td>
+				<td vAlign="top" class="auto-style5">Contains all the Property objects of the 
+				Connection object</td>
+			</tr>
+		</table>
+		<h1>&nbsp;<a name=Error></a></h1>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table61" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><b>
+		<font color="#FF6600" style="font-size: 22pt" face="Times New Roman">ADO Error Object</font></b></p>
+		</font>
+		<p><font size="2" class="auto-style5">The 
+		<a href="ADO/ADO_Error_Object.htm">ADO Error object</a> contains details about data access errors that 
+		have been generated during a single operation.&nbsp;</font></p>
+		<p class="auto-style5">ADO generates one Error object for each error. Each Error object 
+		contains details of the specific error, and are stored in the Errors 
+		collection. To access the errors, you must refer to a specific 
+		connection.</p>
+		<h3>Properties</h3>
+		<table class="ex" id="table36" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_Description_Property.htm">Description</a></td>
+				<td vAlign="top" class="auto-style5">Returns an error description</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_HelpContext_Property.htm">HelpContext</a></td>
+				<td vAlign="top" class="auto-style5">Returns the context ID of a topic in the 
+				Microsoft Windows help system</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_HelpFile_Property.htm">HelpFile</a></td>
+				<td vAlign="top" class="auto-style5">Returns the full path of the help file in the 
+				Microsoft Windows help system</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_NativeError_Property.htm">NativeError</a></td>
+				<td vAlign="top" class="auto-style5">Returns an error code from the provider or the 
+				data source</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_Number_Property.htm">Number</a></td>
+				<td vAlign="top" class="auto-style5">Returns a unique number that identifies the 
+				error</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_Source_Property.htm">Source</a></td>
+				<td vAlign="top" class="auto-style5">Returns the name of the object or application 
+				that generated the error</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_objError_SQLState_Property.htm">SQLState</a></td>
+				<td vAlign="top" class="auto-style5">Returns a 5-character SQL error code</td>
+			</tr>
+		</table>
+<font face="">
+		<h3>Methods</h3>
+		<table class="ex" id="table160" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			</font>
+<font face="Arial">
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Clear_Method.htm">Clear</a></td>
+				<td vAlign="top" class="auto-style5">Removes all the 
+				Error objects from the Errors collection.</td>
+			</tr>
+			</font>
+<font face="">
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">&nbsp;</td>
+				<td vAlign="top" class="auto-style5">&nbsp;</td>
+			</tr>
+			</table>
+		</font>
+		<p>&nbsp;<a name=Field></a></p><font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table62" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left">
+		<font color="#FF6600" style="font-size: 22pt; font-weight: 700" face="Times New Roman">ADO Field Object</font></p>
+		</font>
+		<p><font size="2">The ADO Field object contains information about a column in a 
+		Recordset object. There is one Field object for each column in the 
+		Recordset.</font></p>
+		<h3>Properties</h3>
+		<table class="ex" id="table37" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_DefinedSize_ActualSize_Properties.htm">ActualSize</a></td>
+				<td vAlign="top" class="auto-style5">Returns the actual length of a field's value</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Attributes_Property.htm">Attributes</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the attributes of a Field 
+				object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_DefinedSize_ActualSize_Properties.htm">DefinedSize</a></td>
+				<td vAlign="top" class="auto-style5">Returns the defined size of a field</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Name_Property.htm">Name</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the name of a Field object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_NumericScale_Property.htm">NumericScale</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the number of decimal places 
+				allowed for numeric values in a Field object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_OriginalValue_UnderlyingValue_Properties.htm">OriginalValue</a></td>
+				<td vAlign="top" class="auto-style5">Returns the original value of a field</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Precision_Property.htm">Precision</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the maximum number of digits 
+				allowed when representing numeric values in a Field object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_FieldObj_StatusProperty.htm">Status</a></td>
+				<td vAlign="top" class="auto-style5">Returns the status of a Field object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Type_Property.htm">Type</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the type of a Field object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_OriginalValue_UnderlyingValue_Properties.htm">UnderlyingValue</a></td>
+				<td vAlign="top" class="auto-style5">Returns the current value of a field</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Value_Property.htm">Value</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the value of a Field object 
+				</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table38" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_AppendMethod.htm">Append</a></td>
+				<td vAlign="top"><font size="2" class="auto-style5">Add (append) a Field object to 
+				the Fields<b> </b>Collection. </font></td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_AppendChunk_Method.htm">AppendChunk</a></td>
+				<td vAlign="top" class="auto-style5">Appends long binary or character data to a 
+				Field object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CancelUpdateMethod.htm">
+				CancelUpdate</a></td>
+				<td vAlign="top" class="auto-style5">Cancels any changes 
+				made to the Fields collection of a Record object, before calling 
+				the Update method.</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_GetChunk_Method.htm">GetChunk</a></td>
+				<td vAlign="top" class="auto-style5">Returns all or a part of the contents of a 
+				large text or binary data Field object</td>
+			</tr>
+		</table>
+		<h3>Collections</h3>
+		<table class="ex" id="table39" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Collection</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_PropertiesCollection.htm">Properties</a></td>
+				<td vAlign="top" class="auto-style5">Contains all the Property objects for a Field 
+				object</td>
+			</tr>
+		</table>
+		<p>&nbsp;<a name=Parameter></a></p>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table63" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left">
+		<font color="#FF6600" style="font-size: 22pt; font-weight: 700" face="Times New Roman">ADO Parameter Object</font></p>
+		</font>
+		<p class="auto-style5">The ADO Parameter object provides information about a single 
+		parameter used in a stored procedure or query.&nbsp;&nbsp;</p>
+		<p class="auto-style5">A Parameter object is added to the Parameters Collection when it is 
+		created. The Parameters Collection is associated with a specific Command 
+		object, which uses the Collection to pass parameters in and out of 
+		stored procedures and queries.</p>
+		<p class="auto-style5">Parameters can be used to create Parameterized Commands. These 
+		commands are (after they have been defined and stored) using parameters 
+		to alter some details of the command before it is executed. For example, 
+		an SQL SELECT statement could use a parameter to define the criteria of 
+		a WHERE clause.</p>
+		<p class="auto-style5">There are four types of parameters: input parameters, output 
+		parameters, input/output parameters and return parameters.</p>
+		<h3>Properties</h3>
+		<table class="ex" id="table40" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Attributes_Property.htm">Attributes</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the attributes of a Parameter 
+				object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="28" class="auto-style5">
+				<a href="ADO/ADO_Direction_Property.htm">Direction</a></td>
+				<td vAlign="top" height="28" class="auto-style5">Sets or returns how a parameter is passed to or 
+				from a procedure</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Name_Property.htm">Name</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the name of a Parameter object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_NumericScale_Property.htm">NumericScale</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the number of digits stored to 
+				the right side of the decimal point for a numeric value of a 
+				Parameter object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Precision_Property.htm">Precision</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the maximum number of digits 
+				allowed when representing numeric values in a Parameter</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_ParameterObj_SizeProperty.htm">Size</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the maximum size in bytes or 
+				characters of a value in a Parameter object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Type_Property.htm">Type</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the type of a Parameter object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Value_Property.htm">Value</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the value of a Parameter object 
+				</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table41" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_AppendMethod.htm">Append</a></td>
+				<td vAlign="top"><font size="2" class="auto-style5">Add (append) a 
+				Parameter object to the Parameters<b> </b>Collection. </font></td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_AppendChunk_Method.htm">AppendChunk</a></td>
+				<td vAlign="top" class="auto-style5">Appends long binary or character data to a 
+				Parameter object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">Delete</td>
+				<td vAlign="top" class="auto-style5">Deletes an object from the Parameters 
+				Collection</td>
+			</tr>
+		</table>
+		<p>&nbsp;<a name=Property></a></p>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table64" width="752" height="19">
+			<tr>
+				<td width="752" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><b>
+		<font color="#FF6600" style="font-size: 22pt" face="Times New Roman">ADO Property Object</font></b></p>
+		</font>
+		<p class="auto-style5">The ADO Property object represents a dynamic characteristic of an ADO 
+		object that is defined by the provider.</p>
+		<p class="auto-style5">Each provider that talks with ADO has different ways of interacting 
+		with ADO. Therefore, ADO needs to store information about the provider 
+		in some way. The solution is that the provider gives specific 
+		information (dynamic properties) to ADO. ADO stores each provider 
+		property in a Property object that is again stored in the Properties 
+		Collection. The Collection is assigned to either a Command object, 
+		Connection object, Field object, or a Recordset object.</p>
+		<h3>Properties</h3>
+		<table class="ex" id="table42" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Property_Object.htm">Attributes</a></td>
+				<td vAlign="top" class="auto-style5">Returns the attributes of a Property object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Property_Object.htm">Name</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the name of a Property object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Property_Object.htm">Type</a></td>
+				<td vAlign="top" class="auto-style5">Returns the type of a Property object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Property_Object.htm">Value</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the value of a Property object 
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;<a name=Record></a></p>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table65" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><b>
+		<font color="#FF6600" style="font-size: 22pt" face="Times New Roman">ADO Record Object</font></b></p>
+		</font>
+		<p class="auto-style5">The ADO Record object is used to hold a row in a Recordset, a 
+		directory, or a file from a file system.</p>
+		<p class="auto-style5">Only structured databases could be accessed by ADO in versions prior 
+		2.5. In a structured database, each table has the exact same number of 
+		columns in each row, and each column is composed of the same data type.</p>
+		<p class="auto-style5">The Record object allows access to data-sets where the number of 
+		columns and/or the data type can be different from row to row.&nbsp;</p>
+		<h3>Properties</h3>
+		<table class="ex" id="table43" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordObj_ActiveConnection_Property.htm">ActiveConnection</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns which Connection object a 
+				Record object belongs to</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Mode_Property.htm">Mode</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the permission for modifying 
+				data in a Record object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_ParentURL_Property.htm">ParentURL</a></td>
+				<td vAlign="top" class="auto-style5">Returns the absolute URL of the parent Record</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordType_Property.htm">RecordType</a></td>
+				<td vAlign="top" class="auto-style5">Returns the type of a Record object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordObj_SourceProperty.htm">Source</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the src parameter of the Open 
+				method of a Record object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_State_Property.htm">State</a></td>
+				<td vAlign="top" class="auto-style5">Returns the status of a Record object</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table44" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Cancel_Method.htm">Cancel</a></td>
+				<td vAlign="top" class="auto-style5">Cancels an execution of a CopyRecord, 
+				DeleteRecord, MoveRecord, or Open call</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Close_Method.htm">Close</a></td>
+				<td vAlign="top" class="auto-style5">Closes a Record object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CopyRecord_MoveRecord_Methods.htm">CopyRecord</a></td>
+				<td vAlign="top" class="auto-style5">Copies a file or directory to another location</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_DeleteRecord_Method.htm">DeleteRecord</a></td>
+				<td vAlign="top" class="auto-style5">Deletes a file or directory</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_GetChildren%20Method.htm">GetChildren</a></td>
+				<td vAlign="top" class="auto-style5">Returns a Recordset object where each row 
+				represents the files in the directory</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CopyRecord_MoveRecord_Methods.htm">MoveRecord</a></td>
+				<td vAlign="top" class="auto-style5">Moves a file or a directory to another location</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordObj_Open_Method.htm">Open</a></td>
+				<td vAlign="top" class="auto-style5">Opens an existing Record object or creates a 
+				new file or directory</td>
+			</tr>
+		</table>
+		<h3>Collections</h3>
+		<table class="ex" id="table45" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Collection</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">Properties</td>
+				<td vAlign="top" class="auto-style5">A collection of provider-specific properties</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">Fields</td>
+				<td vAlign="top" class="auto-style5">Contains all the Field objects in the Record 
+				object</td>
+			</tr>
+		</table>
+		<h3>The Fields Collection's Properties</h3>
+		<table class="ex" id="table46" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a class="type1" href="ADO/ADO_CountProperty.htm">Count</a></td>
+				<td vAlign="top"><font size="2" class="auto-style5">Returns the number of items in the fields 
+				collection. Starts at zero. <br>
+				Example:<span class="CODE"><br>
+				countfields = rec.Fields.Count</span></font></td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">Item(named_item/number)</td>
+				<td vAlign="top"><font size="2" class="auto-style5">Returns a specified item in the fields 
+				collection. <br>
+				Example:<span class="CODE"><br>
+				itemfields = rec.Fields.Item(1)<br>
+				or<br>
+				itemfields = rec.Fields.Item(&quot;Name&quot;)</span></font></td>
+			</tr>
+		</table>
+		<p>&nbsp;<a name=Recordset></a></p>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table66" width="754" height="19">
+			<tr>
+				<td width="754" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><b>
+		<font color="#FF6600" style="font-size: 22pt" face="Times New Roman">ADO Recordset Object</font></b></p>
+		</font>
+		<p class="auto-style5">The ADO Recordset object is used to hold a set of records from a 
+		database table. A Recordset object consist of records and columns 
+		(fields).</p>
+		<p class="auto-style5">In ADO, this object is the most important and the one used most often 
+		to manipulate data from a database.</p>
+		<span class="auto-style5">When you first open a Recordset, the current record pointer will point 
+		to the first record and the BOF and EOF properties are False. If there 
+		are no records, the BOF and EOF property are True. </span> 
+		<p class="auto-style5">Recordset objects can support two types of updating:&nbsp;</p>
+		<ul>
+			<li><font face="Arial" size="2" class="auto-style1">
+			<span class="auto-style6">Immediate updating</span><span class="auto-style4"> - all changes are written immediately 
+			to the database once you call the Update method. 
+			</span> 
+			</font> 
+			</li>
+			<li><font face="Arial" size="2" class="auto-style1">
+			<span class="auto-style6">Batch updating</span><span class="auto-style4"> - the provider will cache multiple changes 
+			and then send them to the database with the UpdateBatch method.
+			</span>
+			</font> 
+			</li>
+		</ul>
+		<p class="auto-style5">In ADO there are 4 different cursor types defined:</p>
+		<ul>
+			<li><font face="Arial" size="2" class="auto-style1">
+			<span class="auto-style6">Dynamic cursor</span><span class="auto-style4"> - Allows you to see additions, changes, 
+			and deletions by other users. 
+			</span> 
+			</font> 
+			</li>
+			<li><font face="Arial" size="2" class="auto-style1">
+			<span class="auto-style6">Keyset cursor - </span>
+			<span class="auto-style4">Like a dynamic cursor, except that you 
+			cannot see additions by other users, and it prevents access to 
+			records that other users have deleted. Data changes by other users 
+			will still be visible. 
+			</span> 
+			</font> 
+			</li>
+			<li><font face="Arial" size="2" class="auto-style1">
+			<span class="auto-style6">Static cursor </span>
+			<span class="auto-style4">- Provides a static copy of a recordset for 
+			you to use to find data or generate reports. Additions, changes, or 
+			deletions by other users will not be visible. This is the only type 
+			of cursor allowed when you open a client-side Recordset object.
+			</span>
+			</font> 
+			</li>
+			<li><font face="Arial" size="2" class="auto-style1">
+			<span class="auto-style6">Forward-only cursor </span>
+			<span class="auto-style4">- Allows you to only scroll forward 
+			through the Recordset. Additions, changes, or deletions by other 
+			users will not be visible.&nbsp; </span> </font> 
+			</li>
+		</ul>
+		<p class="auto-style5">The cursor type can be set by the CursorType property or by the 
+		CursorType parameter in the Open method.</p>
+		<p><font face="Arial" size="2" class="auto-style1">
+		<span class="auto-style6">Note:</span><span class="auto-style4"> Not all providers support all methods or properties of 
+		the Recordset object.</span></font></p>
+		<h3>Properties</h3>
+		<table class="ex" id="table47" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="81%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_AbsolutePage_AbsolutePosition_Property.htm">AbsolutePage</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a value that specifies the page 
+				number in the Recordset object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_AbsolutePage_AbsolutePosition_Property.htm">AbsolutePosition</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a value that specifies the 
+				ordinal position of the current record in the Recordset object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_ActiveCommand_Properties.htm">ActiveCommand</a></td>
+				<td vAlign="top" class="auto-style5">Returns the Command object associated with the 
+				Recordset</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordsetObj_ActiveConnection_Property.htm">ActiveConnection</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a definition for a connection 
+				if the connection is closed, or the current Connection object if 
+				the connection is open</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BOF_EOF_Properties.htm">BOF</a></td>
+				<td vAlign="top" class="auto-style5">Returns true if the current record position is 
+				before the first record, otherwise false</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Bookmark_Property.htm">Bookmark</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a bookmark. The bookmark saves 
+				the position of the current record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CacheSize_Property.htm">CacheSize</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the number of records that can 
+				be cached</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CursorLocation_Property.htm">CursorLocation</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the location of the cursor 
+				service</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CursorType_Property.htm">CursorType</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the cursor type of a Recordset 
+				object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_DataMember_Property.htm">DataMember</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the name of the data member 
+				that will be retrieved from the object referenced by the 
+				DataSource property</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_DataSource_Property.htm">DataSource</a></td>
+				<td vAlign="top" class="auto-style5">Specifies an object containing data to be 
+				represented as a Recordset object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_EditMode_Property.htm">EditMode</a></td>
+				<td vAlign="top" class="auto-style5">Returns the editing status of the current 
+				record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_BOF_EOF_Properties.htm">EOF</a></td>
+				<td vAlign="top" class="auto-style5">Returns true if the current record position is 
+				after the last record, otherwise false</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Filter_Property.htm">Filter</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a filter for the data in a 
+				Recordset object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Index_Property.htm">Index</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the name of the current index 
+				for a Recordset object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_LockType_Property.htm">LockType</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a value that specifies the type 
+				of locking when editing a record in a Recordset</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_MarshalOptions_Property.htm">MarshalOptions</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a value that specifies which 
+				records are to be returned to the server</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_MaxRecords_Property.htm">MaxRecords</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the maximum number of records 
+				to return to a Recordset object from a query</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_PageCount_Property.htm">PageCount</a></td>
+				<td vAlign="top" class="auto-style5">Returns the number of pages with data in a 
+				Recordset object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_PageSize_Property.htm">PageSize</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the maximum number of records 
+				allowed on a single page of a Recordset object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordsetObj_RecordCountProperty.htm">RecordCount</a></td>
+				<td vAlign="top" class="auto-style5">Returns the number of records in a Recordset 
+				object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Sort_Property.htm">Sort</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the field names in the 
+				Recordset to sort on</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordsetObj_Source_Property.htm">Source</a></td>
+				<td vAlign="top" class="auto-style5">Sets a string value or a Command object 
+				reference, or returns a String value that indicates the data 
+				source of the Recordset object</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_State_Property.htm">State</a></td>
+				<td vAlign="top" class="auto-style5">Returns a value that describes if the Recordset 
+				object is open, closed, connecting, executing or retrieving data</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_RecordsetObj_Status_Property.htm">Status</a></td>
+				<td vAlign="top" class="auto-style5">Returns the status of the current record with 
+				regard to batch updates or other bulk operations</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StayInSync_Property.htm">StayInSync</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns whether the reference to the 
+				child records will change when the parent record position 
+				changes</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table48" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="17%" height="19" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="81%" height="19">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_AddNew_Method.htm">AddNew</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Creates a new record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Cancel_Method.htm">Cancel</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Cancels an execution</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_CancelBatch_Method.htm">CancelBatch</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Cancels a batch update</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_CancelUpdateMethod.htm">CancelUpdate</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Cancels changes made to a record of 
+				a Recordset object, before calling the Update method.</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Clone_Method.htm">Clone</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Creates a duplicate of an existing 
+				Recordset</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Close_Method.htm">Close</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Closes a Recordset</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_CompareBookmarks_Method.htm">CompareBookmarks</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Compares two bookmarks</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_RecordsetObj_DeleteMethod.htm">Delete</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Deletes a record or a group of 
+				records</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Find_Method.htm">Find</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Searches for a record in a 
+				Recordset that satisfies a specified criteria</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_GetRows_Method.htm">GetRows</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Copies multiple records from a 
+				Recordset object into a two-dimensional array</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_GetString_Method.htm">GetString</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Returns a Recordset as a string</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Move_Method.htm">Move</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Moves the record pointer in a 
+				Recordset object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_MoveFirst_MoveLast_MoveNext_MovePrevious_Methods.htm">MoveFirst</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Moves the record pointer to the 
+				first record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_MoveFirst_MoveLast_MoveNext_MovePrevious_Methods.htm">MoveLast</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Moves the record pointer to the 
+				last record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_MoveFirst_MoveLast_MoveNext_MovePrevious_Methods.htm">MoveNext</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Moves the record pointer to the 
+				next record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_MoveFirst_MoveLast_MoveNext_MovePrevious_Methods.htm">MovePrevious</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Moves the record pointer to the 
+				previous record</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_NextRecordset_Method.htm">NextRecordset</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Clears the current Recordset object 
+				and returns the next Recordset object by looping through a 
+				series of commands</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_RecordsetObj_Open_Method.htm">Open</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Opens a database element that gives 
+				you access to records in a table, the results of a query, or to 
+				a saved Recordset</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Requery_Method.htm">Requery</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Updates the data in a Recordset by 
+				re-executing the query that made the original Recordset</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Resync_Method.htm">Resync</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Refreshes the data in the current 
+				Recordset from the original database</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Save_Method.htm">Save</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Saves a Recordset object to a file 
+				or a Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Seek_Method.htm">Seek</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Searches the index of a Recordset 
+				to find a record that matches the specified values</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Supports_Method.htm">Supports</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Returns a boolean value that 
+				defines whether or not a Recordset object supports a specific 
+				type of functionality</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="19" class="auto-style5">
+				<a href="ADO/ADO_Update_Method.htm">Update</a></td>
+				<td vAlign="top" height="19" class="auto-style5">Saves all changes made to a single 
+				record&nbsp; in a Recordset object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" height="15" class="auto-style5">
+				<a href="ADO/ADO_UpdateBatch_Method.htm">UpdateBatch</a></td>
+				<td vAlign="top" height="15" class="auto-style5">Saves all changes in a Recordset to 
+				the database. Used when working in batch update mode</td>
+			</tr>
+		</table>
+		<h3>Events</h3>
+		<p class="auto-style5"><b>Note:</b>&nbsp; <span class="auto-style5">You cannot handle events using VBScript or JScript 
+		(only Visual Basic, Visual C++, and Visual J++ languages can handle 
+		events).</span></p>
+		<table class="ex" id="table49" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="20%" class="auto-style5">
+				Event</th>
+				<th vAlign="top" align="left" width="78%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_EndOfRecordset_Event.htm">EndOfRecordset</a></td>
+				<td vAlign="top" class="auto-style5">Triggered when you try to move to a record 
+				after the last record</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_FetchComplete_Event.htm">FetchComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after all records in an asynchronous 
+				operation have been fetched</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_FetchProgress_Event.htm">FetchProgress</a></td>
+				<td vAlign="top" class="auto-style5">Triggered periodically in an asynchronous 
+				operation, to state how many more records that have been fetched</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillChangeField_FieldChangeComplete_Events.htm">FieldChangeComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after the value of a Field object 
+				change</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillMove_MoveComplete_Events.htm">MoveComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after the current position in the 
+				Recordset has changed</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillChangeRecord_%20RecordChangeComplete_Events.htm">RecordChangeComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after a record has changed</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillChangeRecordset_RecordsetChangeComplete_Events.htm">RecordsetChangeComplete</a></td>
+				<td vAlign="top" class="auto-style5">Triggered after the Recordset has changed</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillChangeField_FieldChangeComplete_Events.htm">WillChangeField</a></td>
+				<td vAlign="top" class="auto-style5">Triggered before the value of a Field object 
+				change</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillChangeRecord_%20RecordChangeComplete_Events.htm">WillChangeRecord</a></td>
+				<td vAlign="top" class="auto-style5">Triggered before a record change</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillChangeRecordset_RecordsetChangeComplete_Events.htm">WillChangeRecordset</a></td>
+				<td vAlign="top" class="auto-style5">Triggered before a Recordset change</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_WillMove_MoveComplete_Events.htm">WillMove</a></td>
+				<td vAlign="top" class="auto-style5">Triggered before the current position in the 
+				Recordset changes</td>
+			</tr>
+		</table>
+		<h3>Collections</h3>
+		<table class="ex" id="table50" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="20%" class="auto-style5">
+				Collection</th>
+				<th vAlign="top" align="left" width="78%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_FieldsCollection.htm">Fields</a></td>
+				<td vAlign="top" class="auto-style5">Indicates the number of Field objects in the 
+				Recordset object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_PropertiesCollection.htm">Properties</a></td>
+				<td vAlign="top" class="auto-style5">Contains all the Property objects in the 
+				Recordset object</td>
+			</tr>
+		</table>
+		<p>&nbsp;<a name=Stream></a></p>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table67" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><b>
+		<font color="#FF6600" style="font-size: 22pt" face="Times New Roman">ADO Stream Object</font></b></p>
+		</font>
+		<p><font face="Arial" size="2">T<span class="auto-style5">he ADO Stream Object is used to read, write, and manage a stream of 
+		binary data or text.</span></font></p>
+		<p class="auto-style5">A Stream object can be obtained in three ways:</p>
+		<ul>
+			<li class="auto-style5">From a URL pointing to a document, a folder, or a Record object 
+			</li>
+			<li class="auto-style5">By instantiating a Stream object to store data for your 
+			application 
+			</li>
+			<li class="auto-style5">By opening the default Stream object associated with a Record 
+			object 
+			</li>
+		</ul>
+		<h3>Properties</h3>
+		<table class="ex" id="table52" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="20%" class="auto-style5">
+				Property</th>
+				<th vAlign="top" align="left" width="78%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_CharSetProperty.htm">CharSet</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns a value that specifies into 
+				which character set the contents are to be translated. This 
+				property is only used with text Stream objects (type is 
+				adTypeText)</td>
+			</tr>
+			<tr vAlign="top">
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_EOSProperty.htm">EOS</a></td>
+				<td vAlign="top" class="auto-style5">Returns whether the current position is at the 
+				end of the stream or not</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_LineSeparatorProperty.htm">LineSeparator</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the line separator character 
+				used in a text Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Mode_Property.htm">Mode</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the available permissions for 
+				modifying data</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_PositionProperty.htm">Position</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the current position (in bytes) 
+				from the beginning of a Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_SizeProperty.htm">Size</a></td>
+				<td vAlign="top" class="auto-style5">Returns the size of an open Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_State_Property.htm">State</a></td>
+				<td vAlign="top" class="auto-style5">Returns a value describing if the Stream object 
+				is open or closed</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_TypeProperty.htm">Type</a></td>
+				<td vAlign="top" class="auto-style5">Sets or returns the type of data in a Stream 
+				object</td>
+			</tr>
+		</table>
+		<h3>Methods</h3>
+		<table class="ex" id="table53" cellSpacing="0" cellPadding="3" width="98%" border="1">
+			<tr vAlign="top">
+				<th vAlign="top" align="left" width="20%" class="auto-style5">
+				Method</th>
+				<th vAlign="top" align="left" width="78%">
+				<p align="center" class="auto-style5">Description</th>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Cancel_Method.htm">Cancel</a></td>
+				<td vAlign="top" class="auto-style5">Cancels an execution of an Open call on a 
+				Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_Close_Method.htm">Close</a></td>
+				<td vAlign="top" class="auto-style5">Closes a Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_CopyTo_Method.htm">CopyTo</a></td>
+				<td vAlign="top" class="auto-style5">Copies a specified number of characters/bytes 
+				from one Stream object into another Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_%20FlushMethod.htm">Flush</a></td>
+				<td vAlign="top" class="auto-style5">Sends the contents of the Stream buffer to the 
+				associated underlying object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_LoadFromFileMethod.htm">LoadFromFile</a></td>
+				<td vAlign="top" class="auto-style5">Loads the contents of a file into a Stream 
+				object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_OpenMethod.htm">Open</a></td>
+				<td vAlign="top" class="auto-style5">Opens a Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_ReadMethod.htm">Read</a></td>
+				<td vAlign="top" class="auto-style5">Reads the entire stream or a specified number 
+				of bytes from a binary Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_ReadTextMethod.htm">ReadText</a></td>
+				<td vAlign="top" class="auto-style5">Reads the entire stream, a line, or a specified 
+				number of characters from a text Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_SaveToFileMethod.htm">SaveToFile</a></td>
+				<td vAlign="top" class="auto-style5">Saves the binary contents of a Stream object to 
+				a file</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_SetEOSMethod.htm">SetEOS</a></td>
+				<td vAlign="top" class="auto-style5">Sets the current position to be the end of the 
+				stream (EOS)</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_SkipLineMethod.htm">SkipLine</a></td>
+				<td vAlign="top" class="auto-style5">Skips a line when reading a text Stream</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_WriteMethod.htm">Write</a></td>
+				<td vAlign="top" class="auto-style5">Writes binary data to a binary Stream object</td>
+			</tr>
+			<tr>
+				<td vAlign="top" class="auto-style5">
+				<a href="ADO/ADO_StreamObj_WriteTextMethod.htm">WriteText</a></td>
+				<td vAlign="top" class="auto-style5">Writes character data to a text Stream object</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+<font face="">
+		<table border="0" cellspacing="0" cellpadding="0" id="table68" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b><a name=DataTypes></a>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<p align="left"><b>
+		<font color="#FF6600" style="font-size: 22pt" face="Times New Roman">ADO Data Types</font></b></p>
+		</font>
+		<p><span class="auto-style5">The table below shows the ADO Data Type mapping in MS Access 
+		and </span> 
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder0" class="auto-style5">
+		Visual Basic</span><font face="Arial" size="2"><span id="dnn_ctr436_HtmlModule_HtmlHolder0"><span class="auto-style5"> 
+		6<br>
+		</span>&nbsp;</span></font></p><font face="">
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<div align="left">
+			<table id="table57" border="1" cellpadding="3" cellspacing="0" width="501" height="1202">
+				<tr>
+					<th valign="top" class="auto-style5" style="width: 149px">
+					<font class="auto-style4"><strong>
+					<font color="#000000" size="2" class="auto-style1"><span style="text-decoration: none">
+					ADO<br>
+					DataType<br>
+					Enum</span></font></strong></font></th>
+					<th valign="top" style="width: 109px">
+					<font class="auto-style4"><strong>
+					<font color="#000000" size="2" class="auto-style1"><span style="text-decoration: none">
+					ADO<br>
+					DataType<br>
+					Enum Value</span></font></strong></font></th>
+					<th valign="top"><strong>
+					<font color="#000000">
+					<span style="text-decoration: none" class="auto-style5">
+					Access</span></font></strong></th>
+					<th valign="top" style="width: 110px">
+					<font class="auto-style4"><strong>
+					<font color="#000000" size="2" class="auto-style1"><span style="text-decoration: none">
+					Visual Basic<br>
+					6.0</span></font></strong></font></th>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adBigInt</font></td>
+					<td class="auto-style10" style="width: 109px">20</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adBinary</font></td>
+					<td class="auto-style10" style="width: 109px">128</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Binary<br>
+					LongBinary</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adBoolean</font></td>
+					<td class="auto-style10" style="width: 109px">11</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Bit<br>
+					YesNo</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Boolean</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adBSTR</font></td>
+					<td class="auto-style10" style="width: 109px">8</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adChapter</font></td>
+					<td class="auto-style10" style="width: 109px">136</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adChar</font></td>
+					<td class="auto-style10" style="width: 109px">129</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">String</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adCurrency</font></td>
+					<td class="auto-style10" style="width: 109px">6</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">Currency</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Currency</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDate</font></td>
+					<td class="auto-style10" style="width: 109px">7</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">DateTime</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Date</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDBDate</font></td>
+					<td class="auto-style10" style="width: 109px">133</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDBFileTime</font></td>
+					<td class="auto-style10" style="width: 109px">137</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDBTime</font></td>
+					<td class="auto-style10" style="width: 109px">134</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDBTimeStamp</font></td>
+					<td class="auto-style10" style="width: 109px">135</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">DateTime</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Date</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDecimal</font></td>
+					<td class="auto-style10" style="width: 109px">14</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adDouble</font></td>
+					<td class="auto-style10" style="width: 109px">5</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">Double</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Double</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adEmpty</font></td>
+					<td class="auto-style10" style="width: 109px">0</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adError</font></td>
+					<td class="auto-style10" style="width: 109px">10</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adFileTime</font></td>
+					<td class="auto-style10" style="width: 109px">64</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adGUID</font></td>
+					<td class="auto-style10" style="width: 109px">72</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Guid<br>
+					ReplicationID</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adIDispatch</font></td>
+					<td class="auto-style10" style="width: 109px">9</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adInteger</font></td>
+					<td class="auto-style10" style="width: 109px">3</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Counter<br>
+					AutoNumber<br>
+					LongInteger</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Long</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adIUnknown</font></td>
+					<td class="auto-style10" style="width: 109px">13</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" height="25" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adLongVarBinary</font></td>
+					<td height="25" class="auto-style10" style="width: 109px">
+					205</td>
+					<td align="left" height="25" class="auto-style5">
+					<font color="#FF0000">OLEObject</font></td>
+					<td align="left" height="25" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adLongVarChar</font></td>
+					<td class="auto-style10" style="width: 109px">201</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Memo <br>
+					Hyperlink </font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">String</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adLongVarWChar</font></td>
+					<td class="auto-style10" style="width: 109px">203</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Memo <br>
+					Hyperlink </font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">String</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adNumeric</font></td>
+					<td class="auto-style10" style="width: 109px">131</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">Decimal </font>
+					</td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adPropVariant</font></td>
+					<td class="auto-style10" style="width: 109px">138</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adSingle</font></td>
+					<td class="auto-style10" style="width: 109px">4</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">Single</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Single</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adSmallInt</font></td>
+					<td class="auto-style10" style="width: 109px">2</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Integer<br>
+					Short</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Integer</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adTinyInt</font></td>
+					<td class="auto-style10" style="width: 109px">16</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					</font>
+		       
+					<td align="left" class="auto-style5" style="width: 110px">&nbsp;</td>
+				</tr>
+				<font face="">
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">
+					adUnsignedBigInt</font></td>
+					<td class="auto-style10" style="width: 109px">21</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adUnsignedInt</font></td>
+					<td class="auto-style10" style="width: 109px">19</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">
+					adUnsignedSmallInt</font></td>
+					<td class="auto-style10" style="width: 109px">18</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">
+					adUnsignedTinyInt</font></td>
+					<td class="auto-style10" style="width: 109px">17</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">Byte</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Byte</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adUserDefined</font></td>
+					<td class="auto-style10" style="width: 109px">132</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adVarBinary</font></td>
+					<td class="auto-style10" style="width: 109px">204</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">ReplicationID
+					</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adVarChar</font></td>
+					<td class="auto-style10" style="width: 109px">200</td>
+					<td align="left">
+					<font size="2" color="#FF0000" class="auto-style5">Text<br>
+					LongText</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">String</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adVariant</font></td>
+					<td class="auto-style10" style="width: 109px">12</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">Variant</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adVarNumeric</font></td>
+					<td class="auto-style10" style="width: 109px">139</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">&nbsp;</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adVarWChar</font></td>
+					<td class="auto-style10" style="width: 109px">202</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">Text</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">String</font></td>
+				</tr>
+				<tr>
+					<td align="left" class="auto-style5" style="width: 149px">
+					<font color="#0066CC">adWChar</font></td>
+					<td class="auto-style10" style="width: 109px">130</td>
+					<td align="left" class="auto-style5">
+					<font color="#FF0000">&nbsp;</font></td>
+					<td align="left" class="auto-style5" style="width: 110px">
+					<font color="#ff0000">String</font></td>
+				</tr>
+			</table>
+		<table border="0" cellspacing="0" cellpadding="0" id="table69" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right"><b>
+				<a style="color: #0166FE" href="#TOP">Go To Top</a></b></td>
+			</tr>
+		</table>
+		</div>
+		</font>
+		       
+		</span>
+		       
+       </td>
+       </tr>
+</table>
+
+
+<table border="0" width="973" id="table5" cellspacing="0" cellpadding="2" height="68">
+<tr>
+<td align="center" width="969">
+<p>
+
+	<font face="Verdana"><span class="auto-style1">This site  
+	was created in February 2007 <br>by William Tan</span></font><br class="auto-style11"> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  --> 
+	
+</td>	
+</tr>
+</table>
+</body>
+</html>

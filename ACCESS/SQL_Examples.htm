@@ -1,0 +1,1310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Jet SQL Examples</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<style type="text/css">
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 1px solid black;
+padding: 4px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+font-type: courier;
+font-size: 14;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+</style>
+
+
+<body background="../YellowTexture.gif">
+<div id="dhtmltooltip"></div>
+<table border="0" cellspacing="0" cellpadding="0" id="table63" style="height: 12px; width: 62%">
+	<tr>
+		<td>
+	<font style="font-size: 6pt">&nbsp;</font></td>
+	</tr>
+</table>
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="table64" style="width: 63%">
+	<tr>
+		<td>
+	<p align="center" style="height: 39px; width: 990px">
+	<font class="auto-style5">
+	<a class="type3" href="../index.htm"><span class="auto-style4">Home</span></a><span class="auto-style4">&nbsp;|
+	<a class="type1" href="../VBA/beginner_basic.htm">EXCEL VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="beginner_basic_Acc.htm">ACCESS Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_under_construction.htm">EXCEL VB.Net Programming</a>&nbsp;|
+	<a class="type1" href="../EXCEL/excel_worksheet_functions.htm">EXCEL Spreadsheet Functions</a> |&nbsp;<a class="type1" href="../INVENTORY%20MGMT/index_inv_mgmt.htm">Material&nbsp; Management</a>&nbsp;|
+	<a class="type1" href="../INVENTORY%20MGMT/production_planning.htm">Master Scheduling &amp; Production Planning</a>&nbsp;|
+	<a class="type1" href="../FORECASTING/forecasting_fundamental.htm">Forecasting Methods &amp; Techniques</a>&nbsp;|
+	<a class="type3" href="../AboutMe/Me.htm">About me</a> |&nbsp;</span><a class="type1" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661"><span class="auto-style4">Guestbook</span></a></font>
+	<font size="1">&nbsp;<hr color="#0066FF" size="1" class="auto-style17" style="width: 984px"></font></td>
+	</tr>
+	</table>
+
+
+<script type="text/javascript">
+/************************************************************
+* Cool DHTML tooltip script provided by www.dynamicdrive.com
+*************************************************************/
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+document.onmousemove=positiontip
+</script>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+.auto-style1 {
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style3 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+}
+.auto-style4 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style5 {
+	font-size: 11pt;
+}
+.auto-style6 {
+	text-align: center;
+}
+.auto-style7 {
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style8 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style9 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style10 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 11pt;
+}
+.auto-style11 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style12 {
+	font-family: Arial;
+	font-size: 12pt;
+}
+.auto-style14 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 12pt;
+}
+.auto-style15 {
+	color: #008000;
+	font-size: 11pt;
+}
+.auto-style16 {
+	font-size: 20pt;
+	font-weight: bold;
+	font-family: Tahoma;
+}
+.auto-style17 {
+	text-align: center;
+	margin-left: 0px;
+}
+.auto-style18 {
+	color: #0045C3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+-->
+</style>
+</head>
+
+
+
+
+<TABLE border="0" cellspacing="0" width="986" height="3101" cellpadding="0">
+<font face="">
+<tr>
+<td bgcolor="#FFFF66" valign="top" align="center" width="170">
+		<font face>
+		<table bgcolor="#ffff66" border="0" cellpadding="0" cellspacing="0" width="164" height="825" id="table58">
+			<tr>
+				<td valign="top" height="825">
+				<table border="0" cellpadding="3" cellspacing="1" width="170" bgcolor="#660033" id="table59">
+					<tr>
+						<td bgcolor="#660033" height="128" width="162" valign="top">
+						<p align="center">
+						<img border="0" src="../logo-access.gif" width="162" height="128"></td>
+					</tr>
+					<tr height="35" width="157">
+						<td bgcolor="#FFFF66" valign="bottom" width="162" align="left" class="auto-style1">
+						<font class="auto-style3"><strong>Access Programming</strong></font><span class="auto-style1">
+						</span>                                              
+                                                
+                    	</td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" align="left" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="beginner_basic_Acc.htm">Access 
+						Database basic</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="objects_properties_methods.htm">
+						Objects, Collections, Properties and&nbsp;Methods</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="DoCmd_objects.htm">DoCmd Objects</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="access_under_construction.htm">
+						Forms, Control and Events</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style2" href="ADO.htm">
+					ADO (ActiveX Data Objects)</a></font><span class="auto-style1"></font></font></font></span></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="ADO_Examples.htm">
+		ADO examples</font></a></td>
+					</tr>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<a rel="internal" class="auto-style2" href="ADOX.htm">ADOX (ADO Extensions)</font></a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+					<font face="Verdana">
+					<a rel="internal" class="auto-style2" href="ADOX_Examples.htm">
+					ADOX examples</a></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style1">
+						<font face="Verdana">
+						<a rel="internal" class="auto-style2" href="SQL.htm">
+						Jet SQL (Structured Query Language)</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style18" href="SQL_Examples.htm">
+		                <font face="Verdana">
+						Jet SQL examples</font></a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="string_manipulation.htm">
+						String manipulation</a></font></td>
+					</tr>
+					<tr width="157">
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="Integrating_Access_Excel.htm">
+						Integrating Access/Excel</a></font></td>
+					</tr>
+					<tr>
+		<font face>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						<font face>
+						<a rel="internal" class="auto-style2" href="Access2003_VBA_Constants.htm">
+						Access 2003 VBA Constants</a></font></td>
+		</font>		
+					</tr>
+					<tr>
+		<font face>
+						<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#ff9933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="top" width="162" height="26" class="auto-style1">
+						&nbsp;</td>
+		</font>		
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</font>		
+<td valign="top" height="3101">
+      &nbsp;</td>
+<td valign="top" height="3101" width="8">
+      &nbsp;</td>
+<td valign="top" height="3101" align="left" style="padding: 1px; width: 797px;">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<p class="auto-style16">
+		Microsoft Access: SQL 
+		Programming Code Examples</p>
+		<table border="1" width="94%" cellpadding="0" id="table61" style="border-collapse: collapse" cellspacing="1" bordercolor="#CCCCCC">
+			<tr>
+				<font face="">
+				<td bgcolor="#000066" height="22" style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style7">
+				<font color="#FFFFFF"><strong>Functions</strong></font></td>
+				<td bgcolor="#000066" height="22" style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style6">
+				<p align="center" class="auto-style8">
+				<font color="#FFFFFF"><strong>Description</strong></font></td>
+				</font>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#Create_Table">Create_Table()</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To create a table using SQL 
+				statement if a table name was not already created.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#CreateMultipleTables">CreateMultipleTables(args...)</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To automate creation of multiple 
+				tables and columns instantaneously.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#AddDeleteFields">AddDeleteFields()</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To add and delete fields using SQL.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#CreateView">CreateView()</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To create a View with an Inner Join 
+				query.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#NestedQuery">NestedQuery()</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To create an Inner Join query between 3 tables.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#Crosstab_query">CrosstabQuery()</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To create a table with a crosstab 
+				outer join with another table.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<a class="type1" href="#subquery_update">Subquery_update()</a></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;" class="auto-style8">
+				To update records through a nested subquery.</td>
+			</tr>
+			<tr>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 218px;" class="auto-style8">
+				<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="auto-style8">
+				<a class="type1" href="#subquery_deleteDuplicates">Subquery_deleteDuplicates()</a></span></font></td>
+				<td style="padding: 2px 4px; border: 1px solid #C0C0C0; width: 551px;">
+				<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="auto-style8">
+				To delete duplicate records.</span></font></td>
+			</tr>
+		</table>
+<p>
+		&nbsp;</p>
+		<p class="auto-style8">
+		<font color="#000080">Option Compare 
+		Database</font></p>
+		<p><a name=Create_Table></a>
+		<font face="Courier New" size="2" color="#800000">
+				       
+      	<span class="auto-style8"><font color="#008000">' 
+		Purpose: To pass table name 'tblStockingList' to the function. If 'tblStockingList'&nbsp; 
+		doesn't exist, it creates the table and columns</font></span><br class="auto-style8">
+		</font><font size="2" color="#000080" class="auto-style8">
+				       
+		Sub Create_Table()<br>
+		<br>
+		If DoesTableExist(&quot;tblStockingList&quot;) = False Then<br>
+		&nbsp;
+		Dim cn As ADODB.Connection<br>
+				       
+      	&nbsp;
+		Dim strSQL As String<br>
+		&nbsp;
+		Set cn = CurrentProject.Connection<br>
+		<br>
+&nbsp;
+		strSQL = &quot;</font><font color="#800000"><span class="auto-style9">CREATE 
+		TABLE</span></font><font size="2" color="#000080" class="auto-style8"> tblStockingList (&quot; &amp; _<br>
+		&nbsp;
+		&quot;[SN] 
+		</font><font color="#F06000">
+				       
+      	<span class="auto-style8">AutoIncrement PRIMARY KEY</span></font><font size="2" color="#000080" class="auto-style8">, &quot; &amp; _<br>
+		&nbsp;
+		&quot;[Part_Number] 
+		</font><font color="#F06000">
+				       
+      	<span class="auto-style8">Text</span></font><font size="2" color="#000080" class="auto-style8"> (12), &quot; &amp; _<br>
+		&nbsp;
+		&quot;[Part_Description] 
+		</font><font color="#F06000">
+				       
+      	<span class="auto-style8">Text</span></font><font size="2" color="#000080" class="auto-style8"> (30), &quot; &amp; _<br>
+		&nbsp;
+		&quot;[Std_Cost] 
+		</font><font color="#F06000">
+				       
+      	<span class="auto-style8">Real</span></font><font size="2" color="#000080" class="auto-style8">, &quot; &amp; _<br>
+		&nbsp;
+		&quot;[Date_Released] 
+		</font><font color="#F06000">
+				       
+      	<span class="auto-style8">DateTime</span></font><font size="2" color="#000080" class="auto-style8">);&quot;<br>
+		&nbsp; <br>
+&nbsp;
+		cn.Execute strSQL<br>
+		Else<br>
+		&nbsp;
+		MsgBox &quot;'tblStockingList' table already exists&quot;<br>
+		End If</font></p>
+<p>
+		<font size="2" color="#000080" class="auto-style8">
+		cn.Close<br>
+		Set cn = Nothing<br>
+		End Sub</font></p>
+<p>
+<font face="">
+		<span class="CodeComment">
+		<font color="#339933"><br class="auto-style8">
+</font>
+		<font color="#008000"><span class="auto-style8">' Purpose: To check if a 
+		table already exist.</span></font></span><font face="Courier New" size="2" color="#000080" class="auto-style1"><br class="auto-style4">
+		<span class="auto-style4">Function 
+		DoesTableExist(table_name As String) As Boolean</span></font><font color="#800000"><br class="auto-style8">
+		</font><font size="2" color="#000080" class="auto-style8">Dim db As Database<br>
+		Dim tbl As TableDef<br>
+		<br>
+		Set db = CurrentDb()<br>
+		DoesTableExist = False<br>
+		&nbsp;&nbsp;
+		For Each tbl In db.TableDefs<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		If tbl.Name = table_name Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoesTableExist = True<br>
+		&nbsp;&nbsp;
+		Next tbl<br>
+		End Function</font></font></p>
+<font face="">
+<hr color="#CCCCCC" width="97%"></font>
+<font face="Arial" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table66" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b><a name=CreateMultipleTables></a>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b></td>
+			</tr>
+		</table>
+		</font>
+		<p class="auto-style10">
+		<font color="#008000">'a 
+		Purpose: Automating multiple tables and column creation instantaneously.</font></p></font>
+<font size="2" color="#000080" class="auto-style8">
+				       
+      <p>Sub CreateMultipleTables(Table As String, F1 As String,
+		F2 As String, F3 As String, F4 As String)<br>
+		Dim cn As ADODB.Connection<br>
+		Dim strSQL As String<br>
+		Set cn = CurrentProject.Connection<br>
+		<br>
+		strSQL = &quot;</font><font color="#800000"><span class="auto-style9">CREATE TABLE</span></font><font color="#000080"><span class="auto-style8"> 
+		&quot; &amp; </span> </font><font color="#F06000">
+				       
+      <span class="auto-style8">Table</span></font><font color="#000080"><span class="auto-style8"> &amp; &quot;([&quot; &amp; F1 
+		&amp; &quot;] </span> </font><font color="#F06000">
+				       
+      <span class="auto-style8">AutoIncrement PRIMARY 
+		KEY</span></font><font size="2" color="#000080" class="auto-style8">, &quot; _<br>
+		&amp;&nbsp;&quot;[&quot; &amp; F2 &amp; &quot;] </font>
+		<font color="#F06000">
+				       
+      <span class="auto-style8">Text</span></font><font color="#000080"><span class="auto-style8"> (20), &quot; &amp; &quot;[&quot; &amp; F3 &amp; &quot;] 
+	  </span> </font>
+		<font color="#F06000">
+				       
+      <span class="auto-style8">DateTime</span></font><font color="#000080"><span class="auto-style8">, &quot; &amp; &quot;[&quot; &amp; F4 &amp; &quot;] 
+		</span> 
+		</font><font color="#F06000">
+				       
+      <span class="auto-style8">Integer</span></font><font size="2" color="#000080" class="auto-style8">)&quot;<br>
+		<br>
+		cn.Execute strSQL<br>
+		cn.Close<br>
+		Set cn = Nothing<br>
+		End Sub</p>
+		</font>
+      <font face="" size="2" color="#800000">
+				       
+      <p class="auto-style8">
+      &nbsp;</p>
+<p>
+      <font size="2" color="#000080" class="auto-style8">
+				       
+      Sub create_multple_tables()<br>
+		On Error Resume Next<br>
+				       
+      CreateMultipleTables &quot;UMC_List&quot;, &quot;SN&quot;, &quot;UMC_PartNumber&quot;, &quot;RequestedDate&quot;, &quot;Final_Qty&quot;<br>
+				       
+      CreateMultipleTables &quot;SSMC_List&quot;, &quot;SN&quot;, &quot;SSMC_PartNumber&quot;, &quot;SubmittedDate&quot;, &quot;Min_Qty&quot;<br>
+		End Sub</font></p>
+		<table border="0" cellspacing="0" cellpadding="0" id="table64" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder5" class="Normal">
+<font face="" size="2" color="#800000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder6" class="Normal">
+				       
+				<a name=AddDeleteFields></a>
+			</span>
+				</font>
+			</span>
+				</font>
+				</b>
+		</font>
+		</font>
+				       
+		<font size="2" color="#800000">
+				<b>
+				       
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">Go To Top</a></b></td>
+			</tr>
+		</table>
+<font face="">
+<hr color="#CCCCCC" width="97%"></font>
+      </font>
+		<font face="Courier New" size="2" color="#800000">
+				       
+      <font face="" size="2" color="#800000">
+
+				       
+      <font face="Courier New" color="#800000">
+				       
+		<p class="auto-style10">
+        <font color="#008000">' 
+		Purpose: To add and delete fields using SQL</font></p></font>
+<font face="Courier New" size="2" color="#000080">
+				       
+      <p><span class="auto-style8">Sub AddDeleteFields()<br>
+		Dim cn As ADODB.Connection<br>
+		Dim strSQL As String</p>
+		</span>
+		<p><span class="auto-style8"><font face="">
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder27" class="Normal">
+		<font face="Courier New" size="2" color="#000080">
+				       
+        <span class="auto-style12">Set cn = CurrentProject.Connection</span></font></span></font><br>
+		<br>strSQL = &quot;</span><font color="#800000"><span class="auto-style9">CREATE 
+		TABLE</span></font><span class="auto-style8"> SSMC_List ([SN] </span> </font>
+		<font color="#F06000">
+				       
+      	<span class="auto-style8">AutoIncrement PRIMARY KEY</span></font><font face="Courier New" size="2" color="#000080"><span class="auto-style8">)&quot;<br>
+		cn.Execute strSQL<br>
+		strSQL = &quot;</span><font color="#800000"><span class="auto-style9">CREATE 
+		TABLE</span></font><span class="auto-style8"> UMC_List ([SN] </span> </font>
+		<font color="#F06000">
+				       
+      	<span class="auto-style8">AutoIncrement PRIMARY KEY</span></font><font size="2" color="#000080" class="auto-style8">)&quot;<br>
+		cn.Execute strSQL<br>
+		strSQL = &quot;</font><font color="#800000"><span class="auto-style9">ALTER TABLE</span></font><font color="#000080"><span class="auto-style8"> SSMC_List 
+		</span> </font>
+		<font color="#800000">
+				       
+      	<span class="auto-style9">ADD COLUMN</span></font><font color="#000080"><span class="auto-style8"> Request_Reason 
+		</span> </font>
+		<font color="#F06000">
+				       
+		<span class="auto-style8">TEXT</span></font><font size="2" color="#000080" class="auto-style8">(100)&quot;<br>
+		cn.Execute strSQL<br>
+		strSQL = &quot;</font><font color="#800000"><span class="auto-style9">ALTER TABLE</span></font><font color="#000080"><span class="auto-style8"> UMC_List 
+		</span> </font>
+		<font color="#800000">
+				       
+      	<span class="auto-style9">ADD COLUMN</span></font><font color="#000080"><span class="auto-style8"> PartNumbers_Add 
+		</span> </font>
+		<font color="#F06000">
+				       
+		<span class="auto-style8">TEXT</span></font><font size="2" color="#000080" class="auto-style8">(15)&quot;<br>
+		cn.Execute strSQL<br>
+		strSQL = &quot;</font><font color="#800000"><span class="auto-style9">ALTER TABLE</span></font><font color="#000080"><span class="auto-style8"> UMC_List 
+		</span> </font>
+		<font color="#800000">
+				       
+		<span class="auto-style9">ALTER COLUMN</span></font><font color="#000080"><span class="auto-style8"> PartNumbers_Add 
+		</span> </font>
+		<font color="#F06000">
+				       
+		<span class="auto-style8">Integer</span></font><font face="Courier New" size="2" color="#000080">&quot;<span class="auto-style1"><br class="auto-style4">
+		</span><span class="auto-style4"><span class="auto-style1">cn.Execute strSQL<br>
+		strSQL = &quot;</span></span></font><font color="#800000"><span class="auto-style9">ALTER TABLE</span></font><font color="#000080"><span class="auto-style8"> SSMC_List 
+		</span> </font>
+		<font color="#800000">
+				       
+      	<span class="auto-style9">DROP COLUMN</span></font><font size="2" color="#000080" class="auto-style8"> Request_Reason&quot;<br>
+		<br>
+		cn.Execute strSQL<br>
+		cn.Close<br>
+		Set cn = Nothing<br>
+		End Sub</font></p>
+		<table border="0" cellspacing="0" cellpadding="0" id="table64" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder5" class="Normal">
+<font face="" size="2" color="#800000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder6" class="Normal">
+				       
+				<a name=CreateView></a>
+			</span>
+				</font>
+			</span>
+				</font>
+				</b>
+		</font>
+		</font>
+				       
+		<font size="2" color="#800000">
+				<b>
+				       
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">Go To Top</a></b></td>
+			</tr>
+		</table>
+<font face="">
+<hr color="#CCCCCC" width="97%"></font>
+      <font face="Arial" size="2" color="#008000">
+				       
+		<p class="auto-style10">'&nbsp; Purpose: To create a View with an Inner Join query</p>
+<p class="auto-style10">' This example create an Inner Join query with another table. 
+It pivots 3 rows heading: 'PartNumber' from main table, CustomerName' <br>
+' from the 2nd table, and a new field name as 
+'Q4_RealizableAmount' which will have values to be computed from two tables, 
+i.e.&nbsp;&nbsp; [MaterialList.QtyOnhand] x [CustomerList.ListPrice]. 
+The matching part numbers and customer names have to meet the WHERE <br>
+' clause criteria which specifies that the available qty 
+on-hand must be at least more than 1 piece, before the matching data are to <br>
+' be retrieved to the main table. The table on the right in the
+<a target="_blank" href="SQL/CreateView_realizable_sales.gif">diagram</a> is the 
+result data. <a href="SQL/CreateView_Subquery.mdb">Download</a> this  
+database.</p></font>
+      <font color="#000080">
+				       
+      <p><span class="auto-style8">Sub CreateView()</span></font><font color="#800000"><br class="auto-style8">
+		</font>
+		<br class="auto-style8">
+		</font><font size="2" color="#000080" class="auto-style8">
+		Dim cn As ADODB.Connection<br>
+		Dim strSQL As String<br>
+		<br>
+		Set cn = CurrentProject.Connection<br>
+		<br>
+		strSql = &quot;</font><font color="#800000"><span class="auto-style9">CREATE 
+		VIEW</span></font><font color="#000080"><span class="auto-style8"> 
+		qry_CustomerSales
+		</span>
+		</font><font color="#800000">
+		<span class="auto-style9">AS</span></font><font size="2" color="#000080" class="auto-style8"> &quot;<br>
+		strSql = strSql &amp; &quot;</font><font color="#800000"><span class="auto-style9">SELECT</span></font><font size="2" color="#000080" class="auto-style8"> 
+		m.PartNumber, c.CustomerName, &quot;<br>
+		strSql = strSql &amp; &quot;</font><font color="#F06000"><span class="auto-style8">Format</span></font><font color="#000080"><span class="auto-style8">([m.QtyOnHand]*[c.ListPrice],&quot;&quot;$#,##0.00&quot;&quot;)
+		</span>
+		</font><font color="#800000">
+		<span class="auto-style9">AS</span></font><font size="2" color="#000080" class="auto-style8"> 
+		Q4_realizableAmount &quot;<br>
+		strSql = strSql &amp; &quot;</font><font color="#800000"><span class="auto-style9">FROM</span></font><font color="#000080"><span class="auto-style8"> 
+		MaterialList
+		</span>
+		</font><font color="#800000">
+		<span class="auto-style9">AS</span></font><font color="#000080"><span class="auto-style8"> m
+		</span>
+		</font><font color="#800000">
+		<span class="auto-style9">INNER JOIN</span></font><font color="#000080"><span class="auto-style8"> 
+		CustomerList
+		</span>
+		</font><font color="#800000">
+		<span class="auto-style9">AS</span></font><font color="#000080"><span class="auto-style8"> c
+		</span>
+		</font><font color="#800000">
+		<span class="auto-style9">ON</span></font><font size="2" color="#000080" class="auto-style8"> &quot;<br>
+		strSql = strSql &amp; &quot;m.PartNumber = c.PartNumber &quot;<br>
+		strSql = strSql &amp; &quot;</font><font color="#800000"><span class="auto-style9">WHERE</span></font><font size="2" color="#000080" class="auto-style8"> 
+		(([m.QtyOnHand]&gt;1));&quot;<br>
+		<br>
+		cn.Execute strSQL<br>
+		cn.Close<br>
+		Set cn = Nothing<br>
+		<br>
+		End Sub</font></p>
+				       
+<font face="">
+		<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table63" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder7" class="Normal">
+<font face="" size="2" color="#800000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder8" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder9" class="Normal">
+				       
+				<a name=NestedQuery></a>
+			</span>
+			</span>
+				</font>
+			</span>
+				</font>
+				</b>
+		</font>
+		</font>
+		<font color="#800000">
+				<b>
+		<font size="2" color="#800000" face="Arial">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">Go 
+				To Top</a></font></b></td>
+			</tr>
+		</table>
+		</font>
+<hr color="#CCCCCC" width="97%"></font></font>
+				       
+      <font face="" size="2" color="#800000" style="font-size: 9pt">
+
+				       
+      <font size="2" color="#008000" class="auto-style8">
+				       
+		<p>'&nbsp; Purpose: Using Inner Join to create a nested query between 3 tables, 
+		populating queried data to a created table name.</p>
+<p>' The main query will only get the data retrieved base on 3 conditions, 
+that's - if the delivery dates from the 2nd subselect was in <br>
+' year 2006; if the sales amount in 2006 was greater than $1000 or is a null 
+value for each of the matching parts; and if the <br>
+' inventory on-hand dollars for each matching part is greater than $300. <br>
+The table on the right in the
+<a target="_blank" href="SQL/NestedQuery_Stock-On-HandDollars.gif">diagram</a> 
+		is the result data. <a href="SQL/CrosstabQuery_NestedQuery.mdb">Download</a> this database 
+to see.</p></font>
+		</font>
+				       
+      <font color="#000080">
+				       
+		<p><span class="auto-style8">Sub NestedQuery()</span></font><font face="Courier New" color="#000080" style="font-size: 9pt"><span class="auto-style4"><span class="auto-style1"><br>
+		<br>
+		strSql = &quot;</span></span></font><font color="#800000" class="auto-style1"><span class="auto-style11">SELECT</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		MaterialList.PartNumber, DatePart('yyyy',[DeliveryDate]) </span> </font>
+				       
+      <font color="#800000" style="font-weight: 700" class="auto-style1">
+				       
+      	<span class="auto-style4">AS</span></font><font color="#000080" class="auto-style8"> 
+		YrDel, &quot; &amp; _<br>
+		&quot;</font><font color="#F06000" class="auto-style1"><span class="auto-style4">Format</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">CLng</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(([DeliveredQty]*[ListPrice])),&quot;&quot;$#,##0.00&quot;&quot;) 
+		</span> </font>
+				       
+      <font color="#800000" style="font-weight: 700" class="auto-style1">
+				       
+      	<span class="auto-style4">AS</span></font><font color="#000080" class="auto-style8"> 
+		[Sales$], &quot; &amp; _<br>
+		&quot;</font><font color="#F06000" class="auto-style1"><span class="auto-style4">Format</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">Nz</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(([QtyOnHand]),0)*</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">Nz</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(([StandardCost]),0),&quot;&quot;Currency&quot;&quot;) 
+		</span> </font>
+				       
+      <font color="#800000" class="auto-style1">
+				       
+      	<span class="auto-style11">AS</span></font><font color="#000080" class="auto-style8"> 
+		[Inventory$], &quot; &amp; _<br>
+		&quot;CustomerCode.CustomerID, CustomerList.CustomerName &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">INTO</span></font><font color="#000080" class="auto-style8"> 
+		tbl_StockOnHandDollars &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">FROM</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		CustomerCode </span> </font>
+				       
+      <font color="#800000" style="font-weight: 700" class="auto-style1">
+				       
+      	<span class="auto-style4">INNER JOIN</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		(MaterialList </span> </font>
+				       
+      <font color="#800000" style="font-weight: 700" class="auto-style1">
+				       
+      	<span class="auto-style4">INNER JOIN</span></font><font color="#000080" class="auto-style8"> 
+		CustomerList &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">ON</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		(MaterialList.PartNumber = CustomerList.PartNumber) </span> </font>
+				       
+      <font color="#800000" style="font-weight: 700" class="auto-style1">
+				       
+      	<span class="auto-style4">AND</span></font><font color="#000080" class="auto-style8"> 
+		(MaterialList.ID = CustomerList.ID)) &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">ON</span></font><font color="#000080" class="auto-style8"> 
+		CustomerCode.CustomerName = CustomerList.CustomerName &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">WHERE</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		(((</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">DatePart</span></font><font color="#000080" class="auto-style8">('yyyy',[DeliveryDate]))=2006) 
+		&quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">AND</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		((</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">Format</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">CLng</span></font><font color="#000080" class="auto-style8">(([DeliveredQty]*[ListPrice])),&quot;&quot;$#,##0.00&quot;&quot;)) 
+		&gt;1000 &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">OR</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		(</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">Format</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">CLng</span></font><font color="#000080" class="auto-style8">(([DeliveredQty]*[ListPrice])),&quot;&quot;$#,##0.00&quot;&quot;)) 
+		Is Null) &quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">AND</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		((</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">Format</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">(Nz(([</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">QtyOnHand</span></font><font color="#000080" class="auto-style1"><span class="auto-style4">]),0)*</span></font><font color="#F06000" class="auto-style1"><span class="auto-style4">Nz</span></font><font color="#000080" class="auto-style8">(([StandardCost]),0),&quot;&quot;Currency&quot;&quot;))&gt;300)) 
+		&quot; &amp; _<br>
+		&quot;</font><font color="#800000" class="auto-style1"><span class="auto-style11">ORDER 
+		BY</span></font><font color="#000080" class="auto-style1"><span class="auto-style4"> 
+		MaterialList.PartNumber </span> </font>
+				       
+      <font color="#800000" class="auto-style1">
+				       
+      	<span class="auto-style11">DESC</span></font><font color="#000080" class="auto-style8">;&quot;<br>
+		<br>
+		</font><font color="#000080" size="2" class="auto-style8">DoCmd.RunSQL strSql<br>
+		MsgBox &quot;query has updated table 'tbl_StockOnHandDollars'&quot;</font><font color="#000080" class="auto-style8"><br>
+		<br>
+		</font><font color="#000080"><span class="auto-style8">End Sub</span></p>
+		</font><font face="Courier New" size="2" color="#800000">
+				       
+<font face="Arial" size="2" color="#008000">
+		<font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table63" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder7" class="Normal">
+<font face="" size="2" color="#800000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder8" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder9" class="Normal">
+				       
+				<a name=Crosstab_query></a>
+			</span>
+			</span>
+				</font>
+			</span>
+				</font>
+				</b>
+		</font>
+		</font>
+		<font size="2" color="#800000">
+				<b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">Go To Top</a></b></td>
+			</tr>
+		</table>
+		<font face="">
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font face="" size="2" color="#800000">
+<hr color="#CCCCCC" width="97%"></font>
+			</span>
+				       
+      </font>
+		</font>
+		<p><span class="auto-style8">'&nbsp;Purpose: To create a Crosstab Query with an Outer Left Join query.
+		<br>
+		' To create this query, first open a new query, then switch to SQL View, 
+		paste from the code below, save a query name. </p>
+		</span><span class="auto-style4">
+		<p class="auto-style1">' This query creates a View table with
+		two row heading fields - 'PartNumber' from 
+		main table, and 'CustomerNames' from the other. <br>
+		' Customer's PO's 'DeliveryDates' are pivoted as column headings, 
+		formatted in 
+		year. The inventory values are the result of 
+		[StandardCost] x [QtyOnHand] from the main table, but where only customer's PO 
+		delivery dates had occurred after 2003 (from the 2nd table). The table on the right in the
+		<a target="_blank" href="SQL/CrosstabQuery_CustomerSalesRecords.gif">diagram</a> 
+		is the result data. <a href="SQL/CrosstabQuery_NestedQuery.mdb">Download</a> this database.</span></p>
+		<p></font><span class="auto-style9">TRANSFORM</span></font><font color="#000066"><span class="auto-style8">
+		</span>
+			</font>
+				       
+      <font color="#F06000">
+				       
+      	<span class="auto-style8">Nz</span></font><font color="#000066"><span class="auto-style8">(</span></font><font color="#F06000"><span class="auto-style8">Sum</span></font><font color="#000066"><span class="auto-style8">([StandardCost]*[QtyOnHand]),0)
+			</span>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">AS</span></font><font size="2" color="#000066" class="auto-style8"> 
+		[Inventory$] <br>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">SELECT</span></font><font size="2" color="#000066" class="auto-style8"> 
+		m.PartNumber, c.CustomerName <br>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">FROM</span></font><font color="#000066"><span class="auto-style8"> 
+		MaterialList
+			</span>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">AS</span></font><font color="#000066"><span class="auto-style8"> m
+			</span>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">LEFT JOIN</span></font><font color="#000066"><span class="auto-style8"> 
+		CustomerList
+			</span>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">AS</span></font><font size="2" color="#000066" class="auto-style8"> c <br>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">ON</span></font><font color="#000066"><span class="auto-style8"> (m.ID 
+		= c.ID)
+			</span>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">AND</span></font><font size="2" color="#000066" class="auto-style8"> (m.PartNumber 
+		= c.PartNumber) <br>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">WHERE</span></font><font color="#000066"><span class="auto-style8"> (((</span></font><font color="#F06000"><span class="auto-style8">DatePart</span></font><font size="2" color="#000066" class="auto-style8">('yyyy',[DeliveryDate]))&gt;2003))
+		<br>
+			</font><font color="#800000">
+				       
+      	<span class="auto-style9">GROUP BY</span></font><font size="2" color="#000066" class="auto-style8"> 
+		m.PartNumber, c.CustomerName <br>
+			</font><font color="#800000">
+				       
+      	<span class="auto-style9">ORDER BY</span></font><font color="#000066"><span class="auto-style8"> 
+		m.PartNumber
+			</span>
+			</font>
+				       
+      <font color="#800000">
+				       
+      	<span class="auto-style9">DESC</span></font><font face="Courier New" size="2" color="#000066"> 
+		<br class="auto-style8">
+			</font><font color="#800000">
+				       
+      	<span class="auto-style9">PIVOT</span></font><font color="#000066"><span class="auto-style8">
+		</span>
+			</font>
+				       
+      <font color="#F06000">
+				       
+      	<span class="auto-style8">DatePart</span></font><font size="2" color="#000066" class="auto-style8">('yyyy',[DeliveryDate])<b>;</b></font></p>
+		<p><font face="Arial" size="2" class="auto-style1">
+		<br class="auto-style4">
+		<span class="auto-style4">' If you want to show </span> </font>
+		<span class="auto-style8">null values 
+		(blank in the column) instead of 
+		zeros, remove the Nz(), like this:</span><font face=""><font color="#800000"><br class="auto-style9">
+			</font><font color="#000080">
+				       
+      	<span class="auto-style8">TRANSFORM Sum([StandardCost]*[QtyOnHand]) AS [Inventory$]
+			</span>
+			</font></font></p><font face="" size="2" color="#800000">
+		<table border="0" cellspacing="0" cellpadding="0" id="table60" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder10" class="Normal">
+<font face="" size="2" color="#800000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder11" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder12" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder13" class="Normal">
+				       
+				<a name=subquery_update></a>
+			</span>
+			</span>
+			</span>
+				</font>
+			</span>
+				</font>
+				</b>
+		</font>
+				</font>
+				       
+      <font face="Arial" size="2" color="#800000">
+				       
+				<b>
+				       
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">Go To Top</a></b></td>
+			</tr>
+		</table>
+		</font>
+			</span>
+				       
+      <font face="Courier New" size="2" color="#800000">
+				       
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder2" class="Normal">
+		<hr color="#CCCCCC" width="97%">
+			</span>
+		</font>
+<font face="Arial" size="2" color="#008000">
+				       
+		<p class="auto-style1"><span class="auto-style4">'<span class="auto-style5"> Purpose: to update records through a subquery.</span><p>
+	  </span></font><font face="Courier New" size="2" color="#000080">
+	  <span class="auto-style4"><span class="auto-style15">' Suppose you want to 
+	  increase the safetystock field of the safety stock quantity by 15%, and 
+	  for the matching part numbers, that in the customer name in the subselect 
+	  table must be Sony, and also the customer's delivery date must had 
+	  occurred after 12/15/2005.<br>' After you had run the SQL query, check on 
+	  the SafetyStock field in the main table, you will find that a part for 
+	  Sony had been updated in its safety stock level from 15 to 17.</span><span class="auto-style1">
+<font face="" color="#008000" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder14" class="Normal">
+<font size="2" color="#008000" class="auto-style14">
+		<a href="SQL/subquery_update.mdb"><span class="auto-style5">Download</span></a><span class="auto-style5"> this database.</span></font></span></font><br>
+	  <br>Sub subquery_update()<br>
+		<br>
+		DoCmd.RunSQL (&quot;</span></span></font><font color="#800000"><span class="auto-style9">UPDATE</span></font><font color="#000080"><span class="auto-style8"> 
+		MaterialList </span> </font>
+		<font color="#800000">
+		<span class="auto-style9">SET</span></font><font color="#000080"><span class="auto-style8"> [SafetyStock] 
+		= </span> </font>
+		<font color="#F06000">
+		<span class="auto-style8">ROUND</span></font><font size="2" color="#000080" class="auto-style8">(([SafetyStock]*1.15),0) 
+		&quot; &amp; _<br>
+		&quot;</font><font color="#800000"><span class="auto-style9">WHERE</span></font><font color="#000080"><span class="auto-style8"> 
+		PartNumber </span> </font>
+		<font color="#800000">
+		<span class="auto-style9">IN</span></font><font color="#000080"><span class="auto-style8"> (</span></font><font color="#800000"><span class="auto-style9">SELECT</span></font><font color="#000080"><span class="auto-style8"> 
+		PartNumber </span> </font>
+		<font color="#800000">
+		<span class="auto-style9">FROM</span></font><font size="2" color="#000080" class="auto-style8"> 
+		CustomerList &quot; &amp; _<br>
+		&quot;</font><font color="#800000"><span class="auto-style9">WHERE</span></font><font face="Courier New" size="2" color="#000080"><span class="auto-style8"> 
+		CustomerList.CustomerName = 'Sony' AND CustomerList.DeliveryDate 
+		&gt;#12/15/2005#);&quot;)<br>
+		<br>
+		Msgbox &quot;the safety stock level has the quantities already updated.&quot;<br>
+		<br>
+		End Sub</span><font face=""><span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal"><font face="Courier New" size="2" color="#000080">
+				       
+      	<span class="auto-style1">
+				       
+      	<br class="auto-style4">
+	  </span><span class="auto-style4"><span class="auto-style1">&nbsp;</span></span></font><font face="" size="2" color="#800000"><table border="0" cellspacing="0" cellpadding="0" id="table67" width="753" height="19">
+			<tr>
+				<td width="753" height="19" valign="top">
+				<p align="right">
+				<b>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder28" class="Normal">
+<font face="" size="2" color="#800000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder29" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder30" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder31" class="Normal">
+				       
+				<a name=subquery_update0></a>
+			</span>
+			</span>
+			</span>
+				</font>
+			</span>
+				</font>
+				</b>
+		</font>
+				</font>
+				       
+      <font face="Arial" size="2" color="#800000">
+				       
+				<b>
+				       
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">Go To Top</a></b></td>
+			</tr>
+		</table>
+		</font>
+			</span>
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder2" class="Normal">
+				       
+<font face="" size="2" color="#800000">
+				       
+      	<hr color="#CCCCCC" width="97%">
+			<p>
+<font color="#008000">
+				       
+			<span class="auto-style8">' Purpose: using a subquery to remove duplicate records within a 
+			table. 'Duplicates' here mean those part numbers and standard costs 
+			both have the same values repeating more than once. Same null values 
+			repeating are also duplicates. For the duplicates, the records that 
+			have the </span> </font>
+		</font>
+
+			</span>
+				       
+		</font>
+
+			</font>
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder2" class="Normal">
+				       
+      <font color="#008000">
+				       
+			<span class="auto-style8">lowest primary key value (field ID) will be retained. 
+			</span> </font>
+			<span id="dnn_ctr436_HtmlModule_HtmlHolder26" class="auto-style8">
+			<font color="#008000">You need to provide 
+			table aliases in order to join a table to itself.</font></span><font face="Arial" size="2" color="#008000">
+			<br class="auto-style8">
+			</font>
+<font face="" size="2" color="#008000">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder14" class="Normal">
+<font face="Arial" size="2" color="#008000" class="auto-style1">
+			<a href="SQL/subquery_remove%20Duplicates.mdb">
+			<span class="auto-style4">Download</span></a><span class="auto-style4"> this database.</span></font></span></font></p>
+				       
+<font face="" color="#800000">
+				       
+      <p><font color="#000080"><span class="auto-style8">Sub s</span></font></font><font face="Courier New" size="2" color="#000080"><font color="#800000"><span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="auto-style8"><a class="type1" href="#subquery"><font color="#000080">ubquery_deleteDuplicates()</font></a></span></font></p>
+		<p><span class="auto-style8">DoCmd.RunSQL (&quot;</span></font><span class="auto-style9">DELETE</span><font color="#000080"><span class="auto-style8"> 
+		FROM Table1 WHERE ID &lt;&gt;(</span></font><span class="auto-style9">SELECT</span><font face="Courier New" size="2" color="#000080"><span class="auto-style8"> 
+		Min(ID) AS MinOFiD &quot; &amp; _<br>
+		&quot;FROM Table1 AS dupTable1 WHERE (dupTable1.PartNumber = 
+		Table1.PartNumber) &quot; &amp; _<br>
+		&quot;OR (dupTable1.PartNumber Is Null AND Table1.PartNumber Is Null) &quot; &amp; _<br>
+		&quot;AND (dupTable1.StandardCost = Table1.StandardCost) &quot; &amp; _<br>
+		&quot;OR (dupTable1.StandardCost Is Null AND Table1.StandardCost Is Null));&quot;)<br>
+		<br>
+		MsgBox &quot;done! less than 24 records now.&quot;<br>
+		End Sub</span></p>
+		<font face="" size="2" color="#800000">
+		<p align="right">&nbsp;</p>
+		</font>
+
+			</span>
+				       
+      <font face="Courier New" size="2" color="#000080"> 
+				       
+      <font face="Courier New" size="2" color="#800000">
+				       
+		<font face="Courier New" size="2" color="#000080"> 
+		<p>
+		<table border="0" cellspacing="0" cellpadding="0" id="table62" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><b>
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				<font size="2">Go To Top</font></a></b>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</font>
+
+		</td>
+       </tr>
+</table>
+
+
+<table border="0" width="990" id="table5" cellspacing="0" cellpadding="2" height="53">
+<tr>
+<td align="center" width="986">
+<p>
+<br>
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  --> 
+
+
+<br><br>
+	<font class="auto-style4"><span class="auto-style1">This site  
+	was created in February 2007 <br>by William Tan</span></font></td>	
+</tr>
+</table>
+</body>
+</html>
