@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Clear Method</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+		<b><font size="6">ADO Clear Method</font></b><p><font size="2" face="Arial">Removes all the Error objects from the Errors collection.</font></p>
+		<p><font face="Courier New" color="#800000">Errors.Clear</font></p>
+		<p><font size="2" face="Arial">Applies To: Errors Collection (ADO)</font></p>
+		<p><font size="2" face="Arial">Remarks:<br>
+		Use the Clear method on the Errors collection to remove all existing 
+		Error objects from the collection. When an error occurs, ADO 
+		automatically clears the Errors collection and fills it with Error 
+		objects based on the new error.<br>
+		<br>
+		Some properties and methods return warnings that appear as Error objects 
+		in the Errors collection but do not halt a program's execution. Before 
+		you call the Resync, UpdateBatch, or CancelBatch methods on a Recordset 
+		object; the Open method on a Connection object; or set the Filter 
+		property on a Recordset object, call the Clear method on the Errors 
+		collection. That way, you can read the Count property of the Errors 
+		collection to test for returned warnings.</font></p>
+		<p><b>Example</b>:</p>
+		<pre class="libCScode" style="white-space: pre-wrap" id="ctl00_rs1_mainContentContainer_ctl09other" space="preserve"><font color="#008000">' Execute, Requery, and Clear Methods Example</font><font color="#800000">
+Public Sub Main()
+    On Error GoTo Err_Execute
+
+    </font><font color="#008000">' connection, command, and recordset variables</font><font color="#800000">
+    Dim Cnn As ADODB.Connection
+    Dim cmdChange As ADODB.Command
+    Dim rstTitles As ADODB.Recordset
+    Dim Err As ADODB.Error
+    Dim strSQLChange As String
+    Dim strSQLRestore As String
+    Dim strSQLTitles
+    Dim strCnn As String
+    
+     </font><font color="#008000">' Define two SQL statements to execute as command text</font><font color="#800000">
+    strSQLChange = &quot;UPDATE Titles SET Type = 'self_help' WHERE Type = 'psychology'&quot;
+    strSQLRestore = &quot;UPDATE Titles SET Type = 'psychology' WHERE Type = 'self_help'&quot;
+    
+     ' Open connection
+    strCnn = </font><font color="#800000" size="2" face="Courier New">&quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; &amp; &quot;Data Source=D:\MyData\Northwind.mdb&quot;</font><font color="#800000">
+    Set Cnn = New ADODB.Connection
+    Cnn.Open strCnn
+    
+     </font><font color="#008000">' Create command object</font><font color="#800000">
+    Set cmdChange = New ADODB.Command
+    Set cmdChange.ActiveConnection = Cnn
+    cmdChange.CommandText = strSQLChange
+    
+    </font><font color="#008000"> ' Open titles table</font><font color="#800000">
+    Set rstTitles = New ADODB.Recordset
+    strSQLTitles = &quot;titles&quot;
+    rstTitles.Open strSQLTitles, Cnn, , , adCmdTable
+    
+   </font><font color="#008000"> ' Print report of original data</font><font color="#800000">
+    Debug.Print _
+       &quot;Data in Titles table before executing the query&quot;
+    PrintOutput rstTitles
+    
+    </font><font color="#008000">' Call the ExecuteCommand subroutine below to execute cmdChange command</font><font color="#800000">
+    ExecuteCommand cmdChange, rstTitles
+    
+    </font><font color="#008000">' Print report of new data</font><font color="#800000">
+    Debug.Print _
+       &quot;Data in Titles table after executing the query&quot;
+    PrintOutput rstTitles
+    
+    </font><font color="#008000">' Use the Connection object's execute method to execute SQL statement to restore data and trap for
+    ' errors, checking the Errors collection if necessary</font><font color="#800000">
+    Cnn.Execute strSQLRestore, , adExecuteNoRecords
+    
+   </font><font color="#008000"> ' Retrieve the current data by requerying the recordset</font><font color="#800000">
+    rstTitles.Requery
+    
+    </font><font color="#008000">' Print report of restored data using sub from below</font><font color="#800000">
+    Debug.Print &quot;Data after executing the query to restore the original information &quot;
+    PrintOutput rstTitles
+
+    </font><font color="#008000">' clean up</font><font color="#800000">
+    rstTitles.Close
+    Cnn.Close
+    Set rstTitles = Nothing
+    Set Cnn = Nothing
+    Exit Sub
+   
+Err_Execute:
+    </font><font color="#008000">' Notify user of any errors that result from executing the query</font><font color="#800000">
+    If rstTitles.ActiveConnection.Errors.Count &gt;= 0 Then
+       For Each Err In rstTitles.ActiveConnection.Errors
+          MsgBox &quot;Error number: &quot; &amp; Err.Number &amp; vbCr &amp; _
+             Err.Description
+       Next Err
+    End If
+   
+    </font><font color="#008000">' clean up</font><font color="#800000">
+    If Not rstTitles Is Nothing Then
+        If rstTitles.State = adStateOpen Then rstTitles.Close
+    End If
+    Set rstTitles = Nothing
+    
+    If Not Cnn Is Nothing Then
+        If Cnn.State = adStateOpen Then Cnn.Close
+    End If
+    Set Cnn = Nothing
+    
+    If Err &lt;&gt; 0 Then
+        MsgBox Err.Source &amp; &quot;--&gt;&quot; &amp; Err.Description, , &quot;Error&quot;
+    End If
+End Sub
+</font></pre>
+		<pre class="libCScode" style="white-space: pre-wrap" space="preserve"><font color="#800000">
+Public Sub ExecuteCommand(cmdTemp As ADODB.Command, rstTemp As ADODB.Recordset)
+   Dim Err As Error   
+   </font><font color="#008000">' Run the specified Command object and trap for errors, checking the Errors collection</font><font color="#800000">
+   On Error GoTo Err_Execute
+   cmdTemp.Execute
+   On Error GoTo 0
+
+   </font><font color="#008000">' Retrieve the current data by requerying the recordset</font><font color="#800000">
+   rstTemp.Requery   
+   Exit Sub
+
+Err_Execute:
+   </font><font color="#008000">' Notify user of any errors that result from executing the query</font><font color="#800000">
+   If rstTemp.ActiveConnection.Errors.Count &gt; 0 Then
+      For Each Err In rstTemp.ActiveConnection.Errors
+         MsgBox &quot;Error number: &quot; &amp; Err.Number &amp; vbCr &amp; _
+            Err.Description
+      Next Err
+   End If   
+   Resume Next
+End Sub
+</font></pre>
+		<pre class="libCScode" style="white-space: pre-wrap" space="preserve"><font color="#800000">
+Public Sub PrintOutput(rstTemp As ADODB.Recordset)
+   </font><font color="#008000">' Enumerate Recordset</font><font color="#800000">
+   Do While Not rstTemp.EOF
+      Debug.Print &quot;  &quot; &amp; rstTemp!Title &amp; _
+         &quot;, &quot; &amp; rstTemp!Type
+      rstTemp.MoveNext
+   Loop
+End Sub
+'EndExecuteVB</font></pre>
+	</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

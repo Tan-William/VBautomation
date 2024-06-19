@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Attributes Property</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Attributes Property</font></h1>
+<p>The Attributes property sets or returns a long value that indicates one or 
+more characteristics of an object. </p>
+<p><b>Note:</b> When setting multiple attributes, it is possible to sum the 
+values. </p>
+<table class="ex" width="99%" border="1" cellpadding="3" cellspacing="0" id="table15">
+	<tr>
+		<th valign="top" width="13%" align="left">Object</th>
+		<th valign="top" width="84%" align="left">
+		<p align="center">Description of the Attributes Property</th>
+	</tr>
+	<tr>
+		<td valign="top">Connection </td>
+		<td valign="top">The Attributes property has read/write permissions on a 
+		Connection object. Its value can be the sum of one or more 
+		XactAttributeEnum values. Default value is 0</td>
+	</tr>
+	<tr>
+		<td valign="top">Parameter </td>
+		<td valign="top">The Attributes property has read/write permissions on a 
+		Parameter object. Its value can be the sum of one or more 
+		ParameterAttributesEnum values. Default value is adParamSigned
+    	</td>
+	</tr>
+	<tr>
+		<td valign="top">Field </td>
+		<td valign="top">The Attributes property has read/write permissions when 
+		used to create a Recordset, but it has read-only permissions when you 
+		open an existing Recordset. Its value can be the sum of one or more 
+		FieldAttributeEnum values </td>
+	</tr>
+	<tr>
+		<td valign="top">Property </td>
+		<td valign="top">The Attributes property is read-only for a Property 
+		object. Its value can be the sum of one or more PropertyAttributesEnum 
+		values
+    	</td>
+	</tr>
+</table>
+<h3>Syntax</h3>
+<table class="ex" width="51%" border="1" cellpadding="3" cellspacing="0" id="table16">
+	<tr>
+		<td valign="top">
+		<pre>object.Attributes</pre>
+		</td>
+	</tr>
+</table>
+<h3>Example</h3>
+<table class="ex" width="51%" border="1" cellpadding="3" cellspacing="0" id="table17">
+	<tr>
+		<td valign="top">For a Connection object:<pre><font color="#0066cc">set conn = New ADODB.Connection</font>
+<font color="#0066cc">conn.Provider = &quot;Microsoft.Jet.OLEDB.4.0&quot;</font>
+<font color="#0066cc">conn.Open &quot;F:\MaterialMaster\Material_Master.mdb&quot;</font></pre>
+		<pre><font color="#0066cc">debug.print(conn<b>.</b></font><b><font color="#FF6600">Attributes</font></b><font color="#0066cc">)</font></pre>
+		<pre><font color="#0066cc">conn.close</font></pre>
+		<pre>&nbsp;</pre>
+		<p>For a Field object:</p>
+		<pre><font color="#0066CC">set conn = New ADODB.Connection
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;
+conn.Open &quot;F:\MaterialMaster\Material_Master.mdb&quot;</font></pre>
+		<pre><font color="#0066CC">set rs = New ADODB.Recordset
+rs.open &quot;SELECT * FROM tblAMSEA&quot;, conn</font></pre>
+		<pre><font color="#0066CC">set f = New ADODB.Field</font></pre>
+		<pre><font color="#339966">'Display the field attributes of the tblAMSEA Table</font><font color="#0066CC">
+For each f in rs.Fields
+<span class="CODE">  debug.print &quot;Attr:&quot; &amp; f<b>.</b></span></font><span class="CODE"><b><font color="#FF6600">Attributes</font></b><font color="#0066CC"> </font></span><font color="#0066CC"><code class="CodeSample">&amp; VbCrLf</code><span class="CODE">
+  debug.print &quot;Name:&quot; &amp; f.Name </span><code class="CodeSample">&amp; VbCrLf</code><span class="CODE">
+  debug.print &quot;Value:&quot; &amp; f.Value
+</span>Next</font></pre>
+		<pre><font color="#0066CC">rs.Close
+conn.close
+set rs=nothing
+set conn=nothing</font></pre>
+		</td>
+	</tr>
+</table>
+<h3>&nbsp;</h3>
+<h3>XactAttributeEnum Values</h3>
+<table class="ex" width="99%" border="1" cellpadding="5" id="table18">
+	<tr>
+		<td valign="top" width="20%"><b>Constant</b></td>
+		<td valign="top" width="11%" align="center"><b>Value</b></td>
+		<td valign="top" width="65%">
+		<p align="center"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td valign="top">adXactAbortRetaining</td>
+		<td valign="top" align="center">262144</td>
+		<td valign="top">When calling RollbackTrans it automatically starts a 
+		new transaction.</td>
+	</tr>
+	<tr>
+		<td valign="top">adXactCommitRetaining</td>
+		<td valign="top" align="center">131072</td>
+		<td valign="top">When calling CommitTrans it automatically starts a new 
+		transaction.</td>
+	</tr>
+</table>
+<br>
+&nbsp;<h3>ParameterAttributesEnum Values</h3>
+<table class="ex" width="99%" border="1" cellpadding="5" id="table19">
+	<tr>
+		<td valign="top" width="20%"><b>Constant</b></td>
+		<td valign="top" width="11%" align="center"><b>Value</b></td>
+		<td valign="top" width="65%">
+		<p align="center"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td valign="top">adParamSigned</td>
+		<td valign="top" align="center">16</td>
+		<td valign="top">The parameter will accept signed values.</td>
+	</tr>
+	<tr>
+		<td valign="top">adParamNullable</td>
+		<td valign="top" align="center">64</td>
+		<td valign="top">The parameter will accept null values.</td>
+	</tr>
+	<tr>
+		<td valign="top">adParamLong</td>
+		<td valign="top" align="center">128</td>
+		<td valign="top">The parameter will accept long binary data.</td>
+	</tr>
+</table>
+<br>
+&nbsp;<h3>FieldAttributeEnum Values</h3>
+<table class="ex" width="99%" border="1" cellpadding="5" id="table20">
+	<tr>
+		<td valign="top" width="20%"><b>Constant</b></td>
+		<td valign="top" width="10%" align="center"><b>Value</b></td>
+		<td valign="top" width="65%">
+		<p align="center"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td valign="top">adFldCacheDeferred</td>
+		<td valign="top" align="center">0x1000</td>
+		<td valign="top">Provider caches the field values and reads from the 
+		cache.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldFixed</td>
+		<td valign="top" align="center">0x10</td>
+		<td valign="top">Field contains fixed-length data.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldIsChapter</td>
+		<td valign="top" align="center">0x2000</td>
+		<td valign="top">Field contains a chapter value that specifies a child 
+		recordset.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldIsCollection</td>
+		<td valign="top" align="center">0x40000</td>
+		<td valign="top">The field specifies that the resource represented by 
+		the record is a collection of&nbsp; resources</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldIsDefaultStream</td>
+		<td valign="top" align="center">0x20000</td>
+		<td valign="top">Field contains the default stream for the resource 
+		represented by the record.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldIsNullable</td>
+		<td valign="top" align="center">0x20</td>
+		<td valign="top">Field accepts null values.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldIsRowURL</td>
+		<td valign="top" align="center">0x10000</td>
+		<td valign="top">Field contains the URL that names the resource from the 
+		data store represented by the record.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldLong</td>
+		<td valign="top" align="center">0x80</td>
+		<td valign="top">Field is a long binary field.</td>
+	</tr>
+	<tr>
+		<td valign="top" height="32">adFldMayBeNull</td>
+		<td valign="top" align="center" height="32">0x40</td>
+		<td valign="top" height="32">You can read null values from the field.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldMayDefer</td>
+		<td valign="top" align="center">0x2</td>
+		<td valign="top">Field values are not retrieved from the data source 
+		with the whole record, but only when you explicitly access them.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldNegativeScale</td>
+		<td valign="top" align="center">0x4000</td>
+		<td valign="top">Field represents a numeric value from a column that 
+		supports negative scale values.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldRowID</td>
+		<td valign="top" align="center">0x100</td>
+		<td valign="top">Field contains a persistent row identifier that cannot 
+		be written to and has no meaningful value except to identify the row 
+		(such as a unique id)</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldRowVersion</td>
+		<td valign="top" align="center">0x200</td>
+		<td valign="top">Field contains some kind of time/date stamp used to 
+		track updates.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldUnknownUpdatable</td>
+		<td valign="top" align="center">0x8</td>
+		<td valign="top">The provider cannot determine if you can write to the 
+		field.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldUnspecified</td>
+		<td valign="top" align="center">&nbsp;-1<br>
+		0xFFFFFFFF</td>
+		<td valign="top">Provider does not specify the field attributes.</td>
+	</tr>
+	<tr>
+		<td valign="top">adFldUpdatable</td>
+		<td valign="top" align="center">0x4</td>
+		<td valign="top">You can write to the field.</td>
+	</tr>
+</table>
+<br>
+&nbsp;<h3>PropertyAttributesEnum Values</h3>
+<table class="ex" width="99%" border="1" cellpadding="5" id="table21">
+	<tr>
+		<td valign="top" width="20%"><b>Constant</b></td>
+		<td valign="top" width="11%" align="center"><b>Value</b></td>
+		<td valign="top" width="64%">
+		<p align="center"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td valign="top">adPropNotSupported</td>
+		<td valign="top" align="center">0</td>
+		<td valign="top">The property is not supported by the provider.</td>
+	</tr>
+	<tr>
+		<td valign="top">adPropRequired</td>
+		<td valign="top" align="center">1</td>
+		<td valign="top">The user must specify a value for this property before 
+		the data source is initialized.</td>
+	</tr>
+	<tr>
+		<td valign="top">adPropOptional</td>
+		<td valign="top" align="center">2</td>
+		<td valign="top">The user does not need to specify a value for this 
+		property before the data source is initialized.</td>
+	</tr>
+	<tr>
+		<td valign="top">adPropRead</td>
+		<td valign="top" align="center">512</td>
+		<td valign="top">The user can read the property.</td>
+	</tr>
+	<tr>
+		<td valign="top">adPropWrite</td>
+		<td valign="top" align="center">1024</td>
+		<td valign="top">The user can set the property.</td>
+	</tr>
+</table>
+
+	<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO CopyRecord and MoveRecord Methods</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+	<h1><font size="6">ADO CopyRecord and MoveRecord Methods</font></h1>
+	<h3><font color="#FF6600" size="5">CopyRecord</font><font size="5">
+	</font></h3>
+	<p>The CopyRecord method copies a file or directory to another location. </p>
+	<h3><font color="#FF6600" size="5">MoveRecord</font><font color="#FF3300" size="6">
+	</font></h3>
+	<p>The MoveRecord method moves a file or directory to another location.</p>
+	<p><b>Note:</b> The ParentURL property will not be automatically updated. 
+	You must close the Record and then open it again with the new URL.</p>
+	<h3>Syntax</h3>
+	<table class="ex" width="59%" border="1" cellpadding="3" cellspacing="0" id="table9">
+		<tr>
+			<td valign="top">
+			<pre><font color="#800000">CopyRecord(source,destination,username,password,optios,async)</font></pre>
+			<pre><font color="#800000">MoveRecord(source,destination,username,password,options,async)</font></pre>
+			</td>
+		</tr>
+	</table>
+&nbsp;<h2><font size="4">Example</font></h2>
+	<div class="Entity_CodeExample">
+		<code class="CodeSample"><font color="#0066CC">objRecord.</font><b><font color="#FF6600">CopyRecord</font></b><font color="#0066CC"> 
+		strSourceURL, strDestinationURL, , , adCopyOverWrite<br>
+		</font><font color="#339966">' some code....</font><font color="#0066CC"><br>
+		objRecord.Close<br>
+		</font><font color="#339966">' some code....</font><font color="#0066CC"><br>
+		objRecord.Open strDestinationURL </font></code></div>
+	<p>&nbsp;</p>
+	<p><code class="CodeSample"><font color="#0066CC">objRecord.</font><b><font color="#FF6600">MoveRecord</font></b><font color="#0066CC"> 
+	strSourceURL, strDestinationURL, , , adCopyOverWrite<br>
+	</font><font color="#339966">' some code....</font><font color="#0066CC"><br>
+	objRecord.Close<br>
+	</font><font color="#339966">' some code....</font><font color="#0066CC"><br>
+	objRecord.Open strDestinationURL </font></code></p>
+	<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table10">
+		<tr>
+			<th valign="top" width="16%" align="left">Parameter</th>
+			<th valign="top" width="78%" align="left">
+			<p align="center">Description</th>
+		</tr>
+		<tr>
+			<td valign="top">source </td>
+			<td valign="top">Optional. The URL of the file or directory that 
+			will be copied/moved</td>
+		</tr>
+		<tr>
+			<td valign="top">destination </td>
+			<td valign="top">Optional. The URL to the location where <i>source</i> 
+			will be copied/moved      
+    		</td>
+		</tr>
+		<tr>
+			<td valign="top">username </td>
+			<td valign="top">Optional. The user ID that authorizes access to <i>
+			destination</i>      
+    		</td>
+		</tr>
+		<tr>
+			<td valign="top">password </td>
+			<td valign="top">Optional. The password that verifies <i>username</i>      
+    		</td>
+		</tr>
+		<tr>
+			<td valign="top">options </td>
+			<td valign="top"><b>For CopyRecord:</b> Optional. A 
+			CopyRecordOptionsEnum value that specifies the behavior of this 
+			method. Default is adCopyUnspecified
+      		<p><b>For MoveRecord:</b> Optional. A MoveRecordOptionsEnum value 
+			that specifies the behavior of this method. Default is 
+			adMoveUnspecified</td>
+		</tr>
+		<tr>
+			<td valign="top">async</td>
+			<td valign="top">Optional. A Boolean value that, when True, sets 
+			this operation to be asynchronous
+    		</td>
+		</tr>
+	</table>
+	<br>
+&nbsp;<a name="copyrecordoptionsenum"><h3>CopyRecordOptionsEnum Values</h3>
+	</a>
+	<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table11">
+		<tr>
+			<th valign="top" align="left" width="185">Constant</th>
+			<th valign="top">Value</th>
+			<th valign="top" align="left" width="503">
+			<p align="center">Description</th>
+		</tr>
+		<tr>
+			<td valign="top" width="185"><b>adCopyUnspecified</b></td>
+			<td valign="top" align="center">-1</td>
+			<td valign="top" width="503">Default. Will not allow over write or 
+			recursive copy</td>
+		</tr>
+		<tr>
+			<td valign="top" width="185"><b>adCopyOverWrite</b></td>
+			<td valign="top" align="center">1</td>
+			<td valign="top" width="503">Overwrites the file/directory if it 
+			already exists</td>
+		</tr>
+		<tr>
+			<td valign="top" width="185"><b>adCopyNonRecursive</b></td>
+			<td valign="top" align="center">2</td>
+			<td valign="top" width="503">Copies the current directory (none of 
+			its subdirectories) to the destination (this operation is not 
+			recursive)</td>
+		</tr>
+		<tr>
+			<td valign="top" width="185"><b>adCopyAllowEmulation</b></td>
+			<td valign="top" align="center">4</td>
+			<td valign="top" width="503">Requests that the provider attempt to 
+			simulate the copy. If the attempt to copy the Record fails because 
+			the destination URL is on a different server or serviced by a 
+			different provider than the source, this may cause data loss</td>
+		</tr>
+	</table>
+	<br>
+&nbsp;<a name="moverecordoptionsenum"><h3>MoveRecordOptionsEnum Values</h3>
+	</a>
+	<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table12">
+		<tr>
+			<th valign="top" align="left">Constant</th>
+			<th valign="top" width="41">Value</th>
+			<th valign="top" align="left" width="504">
+			<p align="center">Description</th>
+		</tr>
+		<tr>
+			<td valign="top"><b>adMoveUnspecified</b></td>
+			<td valign="top" width="41" align="center">-1</td>
+			<td valign="top" width="504">Default. Will not overwrite any file/ 
+			directory at the destination location. Will also update links</td>
+		</tr>
+		<tr>
+			<td valign="top"><b>adMoveOverWrite</b></td>
+			<td valign="top" width="41" align="center">1</td>
+			<td valign="top" width="504">Overwrites the file/directory if it 
+			already exists</td>
+		</tr>
+		<tr>
+			<td valign="top"><b>adMoveDontUpdateLinks</b></td>
+			<td valign="top" width="41" align="center">2</td>
+			<td valign="top" width="504">Modifies the default behavior of 
+			MoveRecord method by not updating the links of the source Record. 
+			The default behavior depends on the capabilities of the provider</td>
+		</tr>
+		<tr>
+			<td valign="top"><b>adMoveAllowEmulation</b></td>
+			<td valign="top" width="41" align="center">4</td>
+			<td valign="top" width="504">Requests that the provider attempt to 
+			simulate the move. If the attempt to move the Record fails because 
+			the destination URL is on a different server or serviced by a 
+			different provider than the source, this may cause data loss</td>
+		</tr>
+	</table>
+	<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

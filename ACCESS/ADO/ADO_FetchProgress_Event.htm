@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO FetchProgress Event</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+		<h1><font size="6">ADO FetchProgress Event</font></h1>
+		<p>The FetchProgress event is triggered periodically in an asynchronous 
+		operation, to state how many more records that have been fetched into 
+		the Recordset.</p>
+		<p>An event is simply a subroutine that can be called automatically 
+		after a specific operation has occurred. This subroutine can contain any 
+		code that you need to run when the event occurs. The subroutine will 
+		only be called if it is included in your code. <br>
+		<br>
+		There are four parameters passed to this event. </p>
+		<h3>Syntax </h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="50%" id="table6">
+			<tr>
+				<td valign="top">
+				<pre>FetchProgress progress,maxprogress,status,objRs</pre>
+				</td>
+			</tr>
+		</table>
+		<br>
+&nbsp;<table class="ex" border="1" cellpadding="3" cellspacing="0" width="76%" id="table7">
+			<tr>
+				<th align="left" valign="top" width="15%">Parameter</th>
+				<th align="left" valign="top" width="74%">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">progress </td>
+				<td valign="top">The number of records that have been fetched by 
+				the operation </td>
+			</tr>
+			<tr>
+				<td valign="top">maxprogress </td>
+				<td valign="top">The maximum number of records that are expected 
+				to be fetched </td>
+			</tr>
+			<tr>
+				<td valign="top">status </td>
+				<td valign="top">An EventStatusEnum value that indicates the 
+				status of the execution of the event      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">objRs </td>
+				<td valign="top">The name of the Recordset object that triggered 
+				this event</td>
+			</tr>
+		</table>
+		<h3>Example </h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="76%" id="table8">
+			<tr>
+				<td valign="top">
+				<pre><code class="CodeSample"><font color="green">
+'use the WithEvents keyword to designate that events
+'can be handled by this Recordset object
+</font>Dim WithEvents objRecSet As ADODB.Recordset
+
+<font color="green">'Note how the object name, objRecSet, is incorporated into the event Sub name
+</font>Private Sub objRecSet_<b><font color="#FF6600">FetchProgress</font></b>(&nbsp;Progress As Long, _
+&nbsp;&nbsp;&nbsp;MaxProgress As Long, _
+&nbsp;&nbsp;&nbsp;adStatus As ADODB.EventStatusEnum, _
+&nbsp;&nbsp;&nbsp;ByVal pRecordset As ADODB.Recordset&nbsp;)
+
+<font color="green">'place any code you desire here, for example
+</font>Print &quot;Records retrieved = &quot; &amp; Progress
+
+End Sub</code></pre>
+				</td>
+			</tr>
+		</table>
+		<a name="EventStatusEnum">
+		<h3>EventStatusEnum Values</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="86%" id="table9">
+			<tr>
+				<th align="left" valign="top" width="171">Constant</th>
+				<th valign="top" width="44">Value</th>
+				<th align="left" valign="top">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top" width="171">adStatusOK</td>
+				<td valign="top" width="44" align="center">1</td>
+				<td valign="top">The operation that caused the event was 
+				successful</td>
+			</tr>
+			<tr>
+				<td valign="top" width="171">adStatusErrorsOccurred</td>
+				<td valign="top" width="44" align="center">2</td>
+				<td valign="top">The operation that caused the event failed</td>
+			</tr>
+			<tr>
+				<td valign="top" width="171">adStatusCantDeny</td>
+				<td valign="top" width="44" align="center">3</td>
+				<td valign="top">The operation that caused the event cannot be 
+				cancelled</td>
+			</tr>
+			<tr>
+				<td valign="top" width="171">adStatusCancel</td>
+				<td valign="top" width="44" align="center">4</td>
+				<td valign="top">The operation that caused the event is 
+				cancelled</td>
+			</tr>
+			<tr>
+				<td valign="top" width="171">adStatusUnwantedEvent</td>
+				<td valign="top" width="44" align="center">5</td>
+				<td valign="top">Prevents subsequent notifications before the 
+				event method has finished executing</td>
+			</tr>
+		</table>
+
+	<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

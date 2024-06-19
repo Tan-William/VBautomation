@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Open Method</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Record Object: </font><font color="#FF6600" size="6">Open Method</font></h1>
+		<p>The Open method opens a connection to a data source or is used to 
+		create a new file or directory.&nbsp;When the 
+		connection is open, you can execute commands against the data source.
+		</p>
+		<h3>Syntax</h3>
+		<table class="ex" id="table13" width="96%" border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td valign="top">
+				<pre><font color="#800000" style="font-size: 11pt">
+recordobject.Open Source, ActiveConnection, Mode, CreateOptions, Options, UserName, Password</font></pre>
+				</td>
+			</tr>
+		</table>
+		<br>
+		&nbsp;<table class="ex" width="96%" border="1" cellpadding="3" cellspacing="0" id="table14">
+			<tr>
+				<th valign="top" width="20%" align="left">Parameter</th>
+				<th valign="top" width="69%" align="left">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">Source </td>
+				<td valign="top">Optional. The source parameter may be one of 
+				the following:
+      			<ul>
+					<li>An absolute url</li>
+					<li>A relative url</li>
+					<li>An open Recordset</li>
+					<li>Another Record object</li>
+					<li>A Command object</li>
+					<li>An SQL SELECT statement</li>
+					<li>A table name</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">ActiveConnection</td>
+				<td valign="top">Optional. A connection string or a Connection 
+				object      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">Mode </td>
+				<td valign="top">Optional. A ConnectModeEnum value, that 
+				indicates the access mode of the Record object. Default is 
+				adModeUnknown      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">CreateOptions</td>
+				<td valign="top">Optional. A RecordCreateOptionsEnum value, that 
+				indicates whether an existing file/directory should be opened, 
+				or a new file/directory should be created. Default is 
+				adFailIfNotExists. This parameter will be ignored if the source 
+				parameter is not a URL      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">Opt ions</td>
+				<td valign="top">Optional. One or more RecordOpenOptionsEnum 
+				values, that specifies the options for opening the Record. 
+				Default is adOpenRecordUnspecified      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">Username </td>
+				<td valign="top">Optional. A user ID that authorizes access to 
+				source      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">Password </td>
+				<td valign="top">Optional. A password that verifies the username      
+    			</td>
+			</tr>
+		</table>
+		<h3>Example</h3>
+		<table class="ex" id="table15" width="96%" border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td valign="top">
+				<span id="intelliTxt">
+				<pre><font color="#0066FF">Dim rc As New ADODB.Record
+Dim rs As ADODB.Recordset
+Dim strURL As String
+Dim strUsername As String
+Dim strPassword As String
+
+strUsername = &quot;xxxxx&quot;
+strPassword = &quot;12345&quot;
+strURL = &quot;http://www.vbautomation.com/exchange/william/inbox&quot;
+
+rc.</font><font color="#FF6600"><b>Open</b></font><font color="#0066FF"> &quot;&quot;, &quot;URL=&quot; &amp; strURL, adModeRead, , adOpenRecordUnspecified, strUsername, strPassword
+Set rs = rc.GetChildren
+
+Do Until rs.EOF
+Debug.Print rs.Fields(&quot;Name&quot;) &amp; vbCrLf
+rs.MoveNext
+Loop
+
+rc.Close
+rs.Close
+Set rs = Nothing
+Set rc = Nothing</font></pre>
+				</span>
+				</td>
+			</tr>
+		</table>
+		<p class="Entity_DetailDescription">There are seven optional parameters.
+		<br>
+		<br>
+		<b><font size="4">ConnectModeEnum Constants</font></b><font size="4">
+		</font></p>
+		<table border="1" id="table16" width="924" cellspacing="0">
+			<tr>
+				<td>
+				<p align="left"><b>Constant</b></td>
+				<td width="98" align="center"><b>Value</b></td>
+				<td width="629">
+				<p align="center"><b>Description</b></td>
+			</tr>
+			<tr>
+				<td>adModeRead</td>
+				<td width="98" align="center">1</td>
+				<td width="629">Read-only permission</td>
+			</tr>
+			<tr>
+				<td>adModeReadWrite</td>
+				<td width="98" align="center">3</td>
+				<td width="629">Read/write permission</td>
+			</tr>
+			<tr>
+				<td>adModeRecursive</td>
+				<td width="98" align="center">0x400000</td>
+				<td width="629">Sets permissions for children of the <b>Record</b>. 
+				Must use with either <b>adModeShareDenyRead</b> or <b>
+				adModeShareDenyWrite</b>. Or must use with <b>
+				adModeShareDenyNone</b> plus any one of <b>adModeRead</b>, <b>
+				adModeReadWrite</b>, or <b>adModeWrite</b></td>
+			</tr>
+			<tr>
+				<td>adModeShareDenyNone</td>
+				<td width="98" align="center">16</td>
+				<td width="629">Other users can open a connection with all 
+				permissions</td>
+			</tr>
+			<tr>
+				<td>adModeShareDenyRead</td>
+				<td width="98" align="center">4</td>
+				<td width="629">No other user can open a connection with read 
+				permission</td>
+			</tr>
+			<tr>
+				<td>adModeShareDenyWrite</td>
+				<td width="98" align="center">8</td>
+				<td width="629">No other user can open a connection with write 
+				permission</td>
+			</tr>
+			<tr>
+				<td>adModeShareExclusive</td>
+				<td width="98" align="center">12</td>
+				<td width="629">No other user can open a connection</td>
+			</tr>
+			<tr>
+				<td>adModeUnknown</td>
+				<td width="98" align="center">0</td>
+				<td width="629">Default, permission not set or determined</td>
+			</tr>
+			<tr>
+				<td>adModeWrite</td>
+				<td width="98" align="center">2</td>
+				<td width="629">Write-only permissions</td>
+			</tr>
+		</table>
+		<p class="Entity_DetailDescription">
+		<br>
+		<br>
+		<b><font size="4">RecordCreateOptionsEnum</font> <font size="4">Constants</font></b> 
+		</p>
+		<table border="1" id="table17" width="927" cellspacing="0">
+			<tr>
+				<td>
+				<p align="left"><b>Constant</b></td>
+				<td width="100" align="center"><b>Value</b></td>
+				<td width="632">
+				<p align="center"><b>Description</b></td>
+			</tr>
+			<tr>
+				<td>adCreateCollection</td>
+				<td width="100" align="center">0x2000</td>
+				<td width="632">Create a new <b>Record</b> specified by <b><i>
+				Source</i></b> parameter</td>
+			</tr>
+			<tr>
+				<td>adCreateNonCollection</td>
+				<td width="100" align="center">0</td>
+				<td width="632">Create a new <b>Record</b> of type <b>
+				adSimpleRecord</b></td>
+			</tr>
+			<tr>
+				<td>adCreateOverwrite</td>
+				<td width="100" align="center">0x4000000</td>
+				<td width="632">Allows overwrite of existing <b>Record</b><br>
+				. You must OR this constant with <b>adCreateCollection</b>, <b>
+				adCreateNonCollection</b>, or <b>adCreateStructDoc</b></td>
+			</tr>
+			<tr>
+				<td>adCreateStructDoc</td>
+				<td width="100" align="center">0x80000000</td>
+				<td width="632">Create a new <b>Record</b> of type <b>
+				adStructDoc</b></td>
+			</tr>
+			<tr>
+				<td>adFailIfNotExists</td>
+				<td width="100" align="center">-1</td>
+				<td width="632">Default</td>
+			</tr>
+			<tr>
+				<td>adOpenIfExists</td>
+				<td width="100" align="center">0x2000000</td>
+				<td width="632">Provider must open existing <b>Record</b><br>
+				. You must OR this constant with <b>adCreateCollection</b>, <b>
+				adCreateNonCollection</b>, or <b>adCreateStructDoc</b></td>
+			</tr>
+		</table>
+		<br>
+		&nbsp;<br>
+		<b><font size="4">RecordOpenOptionsEnum Constants</font></b><font size="4">
+		</font>
+		<br>
+&nbsp;<table border="1" id="table18" width="928" cellspacing="0">
+			<tr>
+				<td width="181">
+				<p align="left"><b>Constant</b></td>
+				<td align="center" width="99"><b>Value</b></td>
+				<td>
+				<p align="center"><b>Description</b></td>
+			</tr>
+			<tr>
+				<td width="181">adDelayFetchField</td>
+				<td align="center" width="99">0x8000</td>
+				<td>Retrieve fields associated with <b>Record</b> only when 
+				needed</td>
+			</tr>
+			<tr>
+				<td width="181">adDelayFetchStream</td>
+				<td align="center" width="99">0x4000</td>
+				<td>Retrieve stream associated with <b>Record</b> only when 
+				needed</td>
+			</tr>
+			<tr>
+				<td width="181">adOpenAsync</td>
+				<td align="center" width="99">0x1000</td>
+				<td>Open in an asynchronous mode</td>
+			</tr>
+			<tr>
+				<td width="181">adOpenRecordUnspecified</td>
+				<td align="center" width="99">-1</td>
+				<td>Default, no options selected</td>
+			</tr>
+			<tr>
+				<td width="181">adOpenSource</td>
+				<td align="center" width="99">0x800000</td>
+				<td>Opens source of executable script</td>
+			</tr>
+		</table>
+
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

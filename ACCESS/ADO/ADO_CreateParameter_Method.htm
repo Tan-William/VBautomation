@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO CreateParameter Method</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO CreateParameter Method</font></h1>
+<p>The CreateParameter method creates and returns a Parameter object containing 
+the specified properties like name, type, direction, size, and value. </p>
+<p><b>Note:</b> This method does not automatically add the new Parameter to the 
+collection. To add the Parameter to the Parameters Collection, use the Append 
+property. </p>
+<h3><font size="3">Syntax</font></h3>
+<table class="ex" width="56%" border="1" cellpadding="3" cellspacing="0" id="table11">
+	<tr>
+		<td valign="top">
+		<pre><font color="#800000" size="3">Set objparameter=objcommand.CreateParameter
+(name,type,direction,size,value)</font></pre>
+		</td>
+	</tr>
+</table>
+&nbsp;<h3><font size="3">Example:</font></h3>
+<table class="ex" width="79%" border="1" cellpadding="3" cellspacing="0" id="table12">
+	<tr>
+		<td valign="top">
+		<div class="Entity_CodeExample">
+			<code class="CodeSample"><font color="#0066CC">Set objParameter = 
+			objCommand.</font><font color="#FF6600"><b>CreateParameter</b></font><font color="#0066CC"><br>
+			objParameter.Name = &quot;ConfirmID&quot;<br>
+			objParameter.Type = adBoolean<br>
+			objParameter.Direction = adParamInput<br>
+			objParameter.Value = True</font></code></div>
+		<div class="Entity_CodeExample">
+&nbsp;<p><font face="Courier New">Or:</font></p>
+			<p><code class="CodeSample"><font color="#0066CC">Set objParameter = 
+			objCommand.</font><b><font color="#FF6600">CreateParameter</font></b><font color="#0066CC"> 
+			(&quot;ConfirmID&quot;, adBoolean, adParamInput, True)</font></code></div>
+		</td>
+	</tr>
+</table>
+<p><b>Example:</b></p>
+<table class="ex" width="97%" border="1" cellpadding="3" cellspacing="0" id="table16">
+	<tr>
+		<td valign="top">
+		<font face="Courier New" size="2" color="#0066CC">Dim cmd As 
+		ADODB.Command<br>
+		Dim prm As ADODB.Parameter<br>
+		Set cmd = New ADODB.Command<br>
+		With cmd<br>
+&nbsp; .ActiveConnection = CurrentProject.Connection<br>
+&nbsp; .CommandText = &quot;qry_DeleteTable1&quot;<br>
+&nbsp; .CommandType = adCmdStoredProc<br>
+&nbsp; Set prm = cmd.</font><font face="Courier New" size="2" color="#F06000"><b>CreateParameter</b></font><font face="Courier New" size="2" color="#0066CC">(Name:=&quot;</font><code class="CodeSample"><font color="#0066CC">ConfirmID</font></code><font face="Courier New" size="2" color="#0066CC">&quot;, 
+		Type:=adInteger, Direction:=adParamInput).Parameters.Append prm<br>
+&nbsp; prm.Value = 13<br>
+&nbsp; .Execute<br>
+		End With</font></td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<table class="ex" width="97%" border="1" cellpadding="5" id="table13">
+	<tr>
+		<th valign="top" width="17%" align="left">Parameter</th>
+		<th valign="top" width="79%" align="left">
+		<p align="center">Description</th>
+	</tr>
+	<tr>
+		<td valign="top">name </td>
+		<td valign="top">Optional. The name of the Parameter object.</td>
+	</tr>
+	<tr>
+		<td valign="top">type </td>
+		<td valign="top">Optional. One of the
+		DataTypeEnum constants that specifies the data type for the 
+		Parameter object. Default is adEmpty. If you choose a variable-length 
+		data type, you will also need to specify the Size parameter or the Size 
+		property. If you specify adDecimal or adNumeric data type, you must also 
+		set the NumericScale and the Precision properties of the Parameter 
+		object. </td>
+	</tr>
+	<tr>
+		<td valign="top">direction </td>
+		<td valign="top">Optional. One of the
+		ParameterDirectionEnum constants that defines the direction of the 
+		Parameter object. Default is adParamInput.
+    	</td>
+	</tr>
+	<tr>
+		<td valign="top">size </td>
+		<td valign="top">Optional. Specifies the length of a variable-length 
+		data type, if such a type was declared in the <b>Type</b> parameter. 
+		Default is zero.</td>
+	</tr>
+	<tr>
+		<td valign="top">value </td>
+		<td valign="top">Optional. The value of the Parameter object</td>
+	</tr>
+</table>
+<a name="datatypeenum"><h3><font size="5">DataTypeEnum Values</font></h3>
+</a>
+<p>Specifies the data type of a Field, Parameter, or Property object</p>
+<table class="ex" width="97%" border="1" cellpadding="5" id="table14">
+	<tr valign="top">
+		<th width="17%">Constant</th>
+		<th width="6%">Value</th>
+		<th width="70%">Description</th>
+	</tr>
+	<tr>
+		<td>adEmpty</td>
+		<td>0</td>
+		<td width="70%">No value</td>
+	</tr>
+	<tr>
+		<td>adSmallInt</td>
+		<td>2</td>
+		<td width="70%">A 2-byte signed integer.</td>
+	</tr>
+	<tr>
+		<td>adInteger</td>
+		<td>3</td>
+		<td width="70%">A 4-byte signed integer.</td>
+	</tr>
+	<tr>
+		<td>adSingle</td>
+		<td>4</td>
+		<td width="70%">A single-precision floating-point value.</td>
+	</tr>
+	<tr>
+		<td>adDouble</td>
+		<td>5</td>
+		<td width="70%">A double-precision floating-point value.</td>
+	</tr>
+	<tr>
+		<td>adCurrency</td>
+		<td>6</td>
+		<td width="70%">A currency value</td>
+	</tr>
+	<tr>
+		<td>adDate</td>
+		<td>7</td>
+		<td width="70%">The number of days since December 30, 1899 + the 
+		fraction of a day.</td>
+	</tr>
+	<tr>
+		<td>adBSTR</td>
+		<td>8</td>
+		<td width="70%">A null-terminated character string.</td>
+	</tr>
+	<tr>
+		<td>adIDispatch</td>
+		<td>9</td>
+		<td width="70%">A pointer to an <b>IDispatch</b> interface on a COM 
+		object. <b class="le">Note:&nbsp;</b>Currently not supported by ADO.
+  		</td>
+	</tr>
+	<tr>
+		<td>adError</td>
+		<td>10</td>
+		<td width="70%">A 32-bit error code</td>
+	</tr>
+	<tr>
+		<td>adBoolean</td>
+		<td>11</td>
+		<td>A boolean value.</td>
+	</tr>
+	<tr>
+		<td>adVariant</td>
+		<td>12</td>
+		<td width="70%">An Automation <b>Variant</b>. <b class="le">Note: </b>
+		Currently not supported by ADO.
+  		</td>
+	</tr>
+	<tr>
+		<td>adIUnknown</td>
+		<td>13</td>
+		<td width="70%">A pointer to an <b>IUnknown</b> interface on a COM 
+		object. <b class="le">Note: </b>Currently not supported by ADO.
+  		</td>
+	</tr>
+	<tr>
+		<td>adDecimal</td>
+		<td>14</td>
+		<td width="70%">An exact numeric value with a fixed precision and scale.</td>
+	</tr>
+	<tr>
+		<td>adTinyInt</td>
+		<td>16</td>
+		<td width="70%">A 1-byte signed integer.</td>
+	</tr>
+	<tr>
+		<td>adUnsignedTinyInt</td>
+		<td>17</td>
+		<td width="70%">A 1-byte unsigned integer.</td>
+	</tr>
+	<tr>
+		<td>adUnsignedSmallInt</td>
+		<td>18</td>
+		<td>A 2-byte unsigned integer.</td>
+	</tr>
+	<tr>
+		<td>adUnsignedInt</td>
+		<td>19</td>
+		<td width="70%">A 4-byte unsigned integer.</td>
+	</tr>
+	<tr>
+		<td>adBigInt</td>
+		<td>20</td>
+		<td>An 8-byte signed integer.</td>
+	</tr>
+	<tr>
+		<td>adUnsignedBigInt</td>
+		<td>21</td>
+		<td width="70%">An 8-byte unsigned integer.</td>
+	</tr>
+	<tr>
+		<td>adFileTime</td>
+		<td>64</td>
+		<td width="70%">The number of 100-nanosecond intervals since January 
+		1,1601</td>
+	</tr>
+	<tr>
+		<td>adGUID</td>
+		<td>72</td>
+		<td width="70%">A globally unique identifier (GUID)</td>
+	</tr>
+	<tr valign="top">
+		<td>adBinary</td>
+		<td>128</td>
+		<td>A binary value.</td>
+	</tr>
+	<tr valign="top">
+		<td>adChar</td>
+		<td>129</td>
+		<td width="70%">A string value.</td>
+	</tr>
+	<tr>
+		<td>adWChar</td>
+		<td>130</td>
+		<td width="70%">A null-terminated Unicode character string.</td>
+	</tr>
+	<tr>
+		<td>adNumeric</td>
+		<td>131</td>
+		<td width="70%">An exact numeric value with a fixed precision and scale.</td>
+	</tr>
+	<tr>
+		<td>adUserDefined</td>
+		<td>132</td>
+		<td width="70%">A user-defined variable.</td>
+	</tr>
+	<tr valign="top">
+		<td>adDBDate</td>
+		<td>133</td>
+		<td width="70%">A date value (yyyymmdd).</td>
+	</tr>
+	<tr valign="top">
+		<td>adDBTime</td>
+		<td>134</td>
+		<td width="70%">A time value (hhmmss).</td>
+	</tr>
+	<tr valign="top">
+		<td>adDBTimeStamp</td>
+		<td>135</td>
+		<td width="70%">A date/time stamp (yyyymmddhhmmss plus a fraction in 
+		billionths).</td>
+	</tr>
+	<tr>
+		<td>adChapter</td>
+		<td>136</td>
+		<td width="70%">A 4-byte chapter value that identifies rows in a child 
+		rowset</td>
+	</tr>
+	<tr>
+		<td>adPropVariant</td>
+		<td>138</td>
+		<td width="70%">An Automation PROPVARIANT.</td>
+	</tr>
+	<tr>
+		<td>adVarNumeric</td>
+		<td>139</td>
+		<td width="70%">A numeric value (<b>Parameter</b> object only).</td>
+	</tr>
+	<tr>
+		<td>adVarChar</td>
+		<td>200</td>
+		<td width="70%">A string value (<b>Parameter</b> object only).</td>
+	</tr>
+	<tr>
+		<td>adLongVarChar</td>
+		<td>201</td>
+		<td width="70%">A long string value.</td>
+	</tr>
+	<tr>
+		<td>adVarWChar</td>
+		<td>202</td>
+		<td width="70%">A null-terminated Unicode character string.</td>
+	</tr>
+	<tr valign="top">
+		<td>adLongVarWChar</td>
+		<td>203</td>
+		<td width="70%">A long null-terminated Unicode string value.</td>
+	</tr>
+	<tr valign="top">
+		<td>adVarBinary</td>
+		<td>204</td>
+		<td width="70%">A binary value (<b>Parameter</b> object only).</td>
+	</tr>
+	<tr>
+		<td>adLongVarBinary</td>
+		<td>205</td>
+		<td width="70%">A long binary value.</td>
+	</tr>
+	<tr>
+		<td>AdArray</td>
+		<td>0x2000</td>
+		<td>A flag value combined with another data type constant. Indicates an 
+		array of that other data type.</td>
+	</tr>
+</table>
+<h3>&nbsp;</h3>
+<h3><a name="parameterdirenum"><font size="5">ParameterDirectionEnum Values</font></a></h3>
+<p>Specifies whether the Parameter represents an input parameter, an output 
+parameter, both an input and an output parameter, or the return <br>
+value from a 
+stored procedure.</p>
+<table class="ex" width="97%" border="1" cellpadding="5" id="table15">
+	<tr valign="top">
+		<th width="17%">Constant</th>
+		<th width="7%">Value</th>
+		<th width="69%">Description</th>
+	</tr>
+	<tr>
+		<td>adParamUnknown</td>
+		<td align="center">0</td>
+		<td width="69%">Direction is unknown</td>
+	</tr>
+	<tr>
+		<td>adParamInput</td>
+		<td align="center">1</td>
+		<td width="69%">Input parameter</td>
+	</tr>
+	<tr>
+		<td>adParamOutput</td>
+		<td align="center">2</td>
+		<td width="69%">Output parameter</td>
+	</tr>
+	<tr>
+		<td>adParamInputOutput</td>
+		<td align="center">3</td>
+		<td width="69%">Both input and output parameter</td>
+	</tr>
+	<tr>
+		<td>adParamReturnValue</td>
+		<td align="center">4</td>
+		<td width="69%">Return value</td>
+	</tr>
+</table>
+
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

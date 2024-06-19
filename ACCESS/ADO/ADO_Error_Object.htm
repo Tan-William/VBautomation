@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Error Object</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Error Object</font></h1>
+<p>The ADO Error object contains details about data access errors that have been 
+generated during a single operation.&nbsp;</p>
+<p>ADO generates one Error object for each error. Each Error object contains 
+details of the specific error, and are stored in the Errors collection. To 
+access the errors, you must refer to a specific connection.</p>
+<h3>Syntax</h3>
+<table class="ex" width="79%" border="1" cellpadding="3" cellspacing="0" id="table9">
+	<tr valign="top">
+		<td valign="top">
+		<pre>objErr.property</pre>
+		</td>
+	</tr>
+</table>
+<h3>Properties</h3>
+<table class="ex" width="79%" border="1" cellpadding="5" id="table10">
+	<tr valign="top">
+		<th valign="top" width="14%" align="left">
+		<p align="center">Property</th>
+		<th valign="top" width="67%" align="left">
+		<p align="center">Description</th>
+	</tr>
+	<tr valign="top">
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_Description_Property.htm">Description</a></font></td>
+		<td valign="top">Returns an error description</td>
+	</tr>
+	<tr valign="top">
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_HelpContext_Property.htm">HelpContext</a></font></td>
+		<td valign="top">Returns the context ID of a topic in the Microsoft 
+		Windows help system</td>
+	</tr>
+	<tr>
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_HelpFile_Property.htm">HelpFile</a></font></td>
+		<td valign="top">Returns the full path of the help file in the Microsoft 
+		Windows help system</td>
+	</tr>
+	<tr>
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_NativeError_Property.htm">NativeError</a></font></td>
+		<td valign="top">Returns an error code from the provider or the data 
+		source</td>
+	</tr>
+	<tr>
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_Number_Property.htm">Number</a></font></td>
+		<td valign="top">Returns a unique number that identifies the error</td>
+	</tr>
+	<tr>
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_Source_Property.htm">Source</a></font></td>
+		<td valign="top">Returns the name of the object or application that 
+		generated the error</td>
+	</tr>
+	<tr>
+		<td valign="top"><font color="#FF6600">
+		<a style="color: #FF6600; font-weight:700" target="_parent" href="ADO_objError_SQLState_Property.htm">SQLState</a></font></td>
+		<td valign="top">Returns a 5-character SQL error code</td>
+	</tr>
+</table>
+
+<h3>Example: <span style="font-weight: 400"><font size="3">to loop through the Errors collection</font></span></h3>
+<table class="ex" width="764" border="1" cellpadding="3" cellspacing="0" id="table11">
+	<tr valign="top">
+		<td valign="top" width="754">
+		<pre><font color="#0066CC">for each objErr in objConn.Errors
+  debug.print(&quot;Description: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">Description</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+  debug.print(&quot;Help context: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">HelpContext</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+  debug.print(&quot;Help file: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">HelpFile</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+  debug.print(&quot;Native error: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">NativeError</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+  debug.print(&quot;Error number: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">Number</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+  debug.print(&quot;Error source: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">Source</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+  debug.print(&quot;SQL state: &quot;)
+  debug.print objErr.</font><b><font color="#FF6600">SQLState</font></b><font color="#0066CC"> <code class="CodeSample">&amp; VbCrLf</code>
+next</font></pre>
+		</td>
+	</tr>
+</table>
+
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

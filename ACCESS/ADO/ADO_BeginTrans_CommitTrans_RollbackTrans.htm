@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO BeginTrans, CommitTrans, and RollbackTrans Methods</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO BeginTrans, CommitTrans, and RollbackTrans Methods</font></h1>
+<p>These 3 methods is used with the Connection object to save or cancel changes 
+made to the data source. </p>
+<p><b>Note:</b> Not all providers support transactions. </p>
+<p><b>Note:</b> These 3 methods are not available on a client-side Connection 
+object. </p>
+<h3>BeginTrans </h3>
+<p>The BeginTrans method starts a new transaction. </p>
+<p>This method can also be used to return a long value that is the level of 
+nested transactions. A top level transaction has a return value of 1. Each 
+additional level increments by one. </p>
+<h3>CommitTrans </h3>
+<p>The CommitTrans method saves all changes made since the last BeginTrans 
+method call, and ends the current transaction. </p>
+<p>Since transactions can be nested, all lower-level transactions must be 
+resolved before you can resolve higher-level transactions.&nbsp; </p>
+<h3>RollbackTrans </h3>
+<p>The RollbackTrans method cancels all changes made since the last BeginTrans 
+method call, and ends the transaction. </p>
+<p>Since transactions can be nested, all lower-level transactions must be 
+resolved before you can resolve higher-level transactions.&nbsp; </p>
+<h3>Syntax </h3>
+<table class="ex" width="35%" border="1" cellpadding="3" cellspacing="0" id="table4">
+	<tr>
+		<td valign="top">
+		<pre>level=objconn.BeginTrans()</pre>
+		<pre>objconn.BeginTrans</pre>
+		<pre>objconn.CommitTrans</pre>
+		<pre>objconn.RollbackTrans</pre>
+		</td>
+	</tr>
+</table>
+<h2>Example</h2>
+<div class="Entity_CodeExample">
+	<code class="CodeSample"><font color="#3366CC">objConnection.</font><font color="#FF6600"><b>BeginTrans</b></font></code><p>
+	<code class="CodeSample"><font color="#3366CC">objConnection.</font><font color="#FF6600"><b>CommitTrans</b></font></code></p>
+	<p>
+	<code class="CodeSample"><font color="#3366CC">objConnection.</font><font color="#FF6600"><b>RollbackTrans</b></font></code></div>
+
+	<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

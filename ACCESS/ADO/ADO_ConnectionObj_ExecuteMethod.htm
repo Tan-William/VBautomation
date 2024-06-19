@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Execute Method (Connection Object)</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Connection object &gt;&gt;<font color="#F06000">Execute Method</font></font></h1>
+<p>I<font face="Arial">t executes the specified query, SQL statement, stored procedure, or 
+provider-specific text. </font> </p>
+<h3>Syntax</h3>
+<table class="ex" width="67%" border="1" cellpadding="3" cellspacing="0" id="table13">
+	<tr>
+		<td valign="top">
+		<pre class="libCScode" style="white-space: pre-wrap;" id="ctl00_rs1_mainContentContainer_ctl01other" space="preserve"><font color="#800000" face="Courier New">Set recordset = connection.Execute (CommandText, RecordsAffected, Options)
+Set recordset = connection.Execute (CommandText, RecordsAffected, Options)</font></pre>
+		</td>
+	</tr>
+</table>
+<h3>Example</h3>
+<table class="ex" width="564" border="1" cellpadding="3" cellspacing="0" id="table19">
+	<tr>
+		<td valign="top" width="554">
+		<h1><span style="font-weight: 400"><code>
+		<font size="2" color="#0066CC" face="Courier New">Dim&nbsp;cnn&nbsp;As&nbsp;ADODB.Connection<br>
+		Dim&nbsp;rst&nbsp;As&nbsp;ADODB.Recordset<br>
+		<br>
+		Set&nbsp;cnn&nbsp;=&nbsp;New&nbsp;ADODB.Connection<br>
+		Set&nbsp;rst&nbsp;=&nbsp;New&nbsp;ADODB.Recordset<br>
+		cnn.Open</font></code></span><code><font color="#0066CC"><span style="font-weight: 400"><font face="Courier New" size="2">&nbsp;&quot;</font></span></font></code><span style="font-weight: 400"><font color="#0066cc" size="2" face="Courier New">Provider</font></span><code><font color="#0066CC"><span style="font-weight: 400"><font face="Courier New" size="2">=Microsoft.Jet.OLEDB.4.0;&quot; 
+		&amp; _<br>
+		&nbsp;&nbsp;&quot;Data Source=D:\MyData\Northwind.mdb;&quot;&nbsp;</font></span></font><font face="Courier New"><span style="font-weight: 400"><font size="2" color="#0066CC">&amp;&nbsp;_<br>
+		&nbsp;&nbsp;&quot;User&nbsp;Id=91128; Password=planning;&quot;<br>
+		<br>
+		Set&nbsp;rst&nbsp;=&nbsp;cnn.</font></span><font size="2" color="#F06000">Execute</font></font><span style="font-weight: 400"><font face="Courier New" size="2" color="#0066CC">(&quot;Select&nbsp;*&nbsp;from&nbsp;Employees&quot;)<br>
+		<br>
+		Do&nbsp;Until&nbsp;rst.EOF<br>
+		&nbsp;&nbsp;&nbsp;Debug.Print&nbsp;rst.Fields(0).Value<br>
+		&nbsp;&nbsp;&nbsp;rst.MoveNext<br>
+		Loop<br>
+		cnn.Close</font></span></code></h1>
+		</td>
+	</tr>
+</table>
+		<br>
+&nbsp;<table class="ex" width="95%" border="1" cellpadding="5" id="table15">
+	<tr>
+		<th valign="top" width="9%" align="left"><font size="2" face="Arial">Parameter</font></th>
+		<th valign="top" width="87%" align="left">
+		<p align="center"><font size="2" face="Arial">Description</font></th>
+	</tr>
+	<tr>
+		<td valign="top"><font size="2" face="Arial">CommandText</font></td>
+		<td valign="top"><font size="2" face="Arial">A String value that contains the SQL statement, stored 
+		procedure, a URL, or provider-specific text to execute. Optionally, 
+		table names can be used but only if the provider is SQL aware. For 
+		example if a table name of &quot;Customers&quot; is used, ADO will automatically 
+		prepend the standard SQL Select syntax to form and pass &quot;SELECT * FROM 
+		Customers&quot; as a Transact-SQL statement to the provider.</font></td>
+	</tr>
+	<tr>
+		<td valign="top"><font size="2" face="Arial">RecordsAffected</font></td>
+		<td valign="top"><font size="2" face="Arial">Optional. A <b>Long</b> variable to which the provider 
+		returns the number of records that the operation affected.</font></td>
+	</tr>
+	<tr>
+		<td valign="top"><font size="2" face="Arial">Options</font></td>
+		<td valign="top"><font size="2" face="Arial">Optional. A <b>Long</b> value that indicates how the 
+		provider should evaluate the CommandText argument. Can be a bitmask of 
+		one or more <b>CommandTypeEnum</b> or <b>ExecuteOptionEnum</b> values.</font><p>
+		<font size="2" face="Arial">Note:<br>
+		Do not use <b>adExecuteStream</b> with the Execute method of a 
+		Connection object.</font></td>
+	</tr>
+</table>
+		<p><a name="commandtypeenum"></p>
+		<h3>CommandTypeEnum Values</h3>
+</a>
+<table class="ex" width="95%" border="1" cellpadding="5" id="table17">
+	<tr valign="top" align="left">
+		<th width="18%"><font size="2" face="Arial">Constant</font></th>
+		<th width="4%"><font size="2" face="Arial">Value</font></th>
+		<th width="72%">
+		<p align="center"><font size="2" face="Arial">Description</font></th>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdUnspecified</font></td>
+		<td align="center"><font size="2" face="Arial">-1</font></td>
+		<td><font size="2" face="Arial">Does not specify the command type argument.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdText</font></td>
+		<td align="center"><font size="2" face="Arial">1</font></td>
+		<td><font size="2" face="Arial">Evaluates CommandText as a textual definition of a command or stored 
+		procedure call.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdTable</font></td>
+		<td align="center"><font size="2" face="Arial">2</font></td>
+		<td><font size="2" face="Arial">Evaluates CommandText as a table name whose columns are all returned 
+		by an internally generated SQL query.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdStoredProc</font></td>
+		<td align="center"><font size="2" face="Arial">4</font></td>
+		<td><font size="2" face="Arial">Evaluates CommandText as a stored procedure name.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdUnknown</font></td>
+		<td align="center"><font size="2" face="Arial">8</font></td>
+		<td><font size="2" face="Arial">Indicates that the type of command in the CommandText property is 
+		not known.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdFile</font></td>
+		<td align="center"><font size="2" face="Arial">256</font></td>
+		<td><font size="2" face="Arial">Evaluates CommandText as the file name of a persistently stored 
+		Recordset. Used with Recordset.Open or Requery only.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font size="2" face="Arial">adCmdTableDirect</font></td>
+		<td align="center"><font size="2" face="Arial">512</font></td>
+		<td><font size="2" face="Arial">Evaluates CommandText as a table name whose columns are all 
+		returned. Used with Recordset.Open or Requery only. To use the Seek 
+		method, the Recordset must be opened with adCmdTableDirect. This value 
+		cannot be combined with the ExecuteOptionEnum value adAsyncExecute.</font></td>
+	</tr>
+</table>
+<br>
+&nbsp;<a name="executeoptionenum"><h3>ExecuteOptionEnum Values</h3>
+</a>
+<table class="ex" width="95%" border="1" cellpadding="5" id="table18">
+	<tr valign="top" align="left">
+		<th width="18%"><font face="Arial" size="2">Constant</font></th>
+		<th width="5%"><font face="Arial" size="2">Value</font></th>
+		<th width="72%">
+		<p align="center"><font face="Arial" size="2">Description</font></th>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adOptionUnspecified</font></td>
+		<td align="center"><font face="Arial" size="2">-1</font></td>
+		<td><font face="Arial" size="2">Indicates that the command is unspecified.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adAsyncExecute</font></td>
+		<td align="center">&nbsp;</td>
+		<td><font face="Arial" size="2">Indicates that the command should execute asynchronously. This value 
+		cannot be combined with the CommandTypeEnum value adCmdTableDirect.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adAsyncFetch</font></td>
+		<td align="center">&nbsp;</td>
+		<td><font face="Arial" size="2">Indicates that the remaining rows after the initial quantity 
+		specified in the CacheSize property should be retrieved asynchronously.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adAsyncFetchNonBlocking</font></td>
+		<td align="center">&nbsp;</td>
+		<td><font face="Arial" size="2">Indicates that the main thread never blocks while retrieving. If the 
+		requested row has not been retrieved, the current row automatically 
+		moves to the end of the file. If you open a Recordset from a Stream 
+		containing a persistently stored Recordset, adAsyncFetchNonBlocking will 
+		not have an effect; the operation will be synchronous and blocking. 
+		adAsynchFetchNonBlocking has no effect when the adCmdTableDirect option 
+		is used to open the Recordset.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adExecuteNoRecords</font></td>
+		<td align="center">&nbsp;</td>
+		<td><font face="Arial" size="2">Indicates that the command text is a command or stored procedure 
+		that does not return rows (for example, a command that only inserts 
+		data). If any rows are retrieved, they are discarded and not returned. 
+		adExecuteNoRecords can only be passed as an optional parameter to the 
+		Command or Connection Execute method.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adExecuteStream</font></td>
+		<td align="center">&nbsp;</td>
+		<td><font face="Arial" size="2">Indicates that the results of a command execution should be returned 
+		as a stream. adExecuteStream can only be passed as an optional parameter 
+		to the Command Execute method.</font></td>
+	</tr>
+	<tr valign="top">
+		<td><font face="Arial" size="2">adExecuteRecord</font></td>
+		<td align="center">&nbsp;</td>
+		<td><font face="Arial" size="2">Indicates that the CommandText is a command or stored procedure that 
+		returns a single row which should be returned as a Record object.</font></td>
+	</tr>
+</table>
+
+	<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO GetChunk Method</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO GetChunk Method</font></h1>
+		<p>The GetChunk method returns a variant that contains all or a part of 
+		the contents of a large text or binary data Field object. </p>
+		<p>This method can divide long values into small portions, so if the 
+		system memory is limited and can't deal with long values, this method 
+		can be used. </p>
+		<p>When the GetChunk method is called, it starts to retrieve data from 
+		where the previous GetChunk call ended, as long as you stay on the same 
+		field in the current record. </p>
+		<p>You can use the GetChunk method for a field if the Attributes 
+		property of a Field object is set to adFldLong. </p>
+		<p><b>Note:</b> There has to be a current record when you use the 
+		GetChunk method on a Field object. </p>
+		<p><b>Note:</b> This method does not work on Field objects of a Record 
+		object. </p>
+		<h3>Syntax </h3>
+		<table class="ex" width="46%" border="1" cellpadding="3" cellspacing="0" id="table5">
+			<tr>
+				<td valign="top">
+				<pre>variable_name=field.GetChunk(size)</pre>
+				</td>
+			</tr>
+		</table>
+&nbsp;<h2>Example:</h2>
+		<div class="Entity_CodeExample">
+			<code class="CodeSample"><font color="#0066CC">Dim lngChunkSize<br>
+			lngChunkSize = 100<br>
+			...<br>
+			varGetChunk = rsData(strFieldName)<b>.</b></font><b><font color="#FF6600">GetChunk</font></b><font color="#0066CC">(lngChunkSize)
+			</font></code></div>
+		<p>&nbsp;</p>
+		<table class="ex" width="74%" border="1" cellpadding="3" cellspacing="0" id="table6">
+			<tr>
+				<th valign="top" width="11%" align="left">Parameter</th>
+				<th valign="top" width="64%" align="left">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">size </td>
+				<td valign="top">A long value that is the number of bytes or 
+				characters to be returned.
+      			<p>If size&gt;remaining data, this method returns only the 
+				remaining data without empty spaces. If the field is empty, it 
+				returns a null value.</td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>

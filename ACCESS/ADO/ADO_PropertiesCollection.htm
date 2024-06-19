@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_parent">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Properties Collection</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Properties Collection</font></h1>
+		<p class="Entity_BriefDescription"><font size="2" face="Arial">The <b>Properties Collection</b> is a 
+		collection of <b>Property</b> objects. Each <b>Property</b> object 
+		contains a single piece of information, called a dynamic property, about 
+		the database provider. By referring to the <b>Properties Collection</b>, 
+		each connection to a provider can be tailored specifically by ADO to 
+		suit the exact needs of that provider.</font></p>
+		<p><font size="2" face="Arial">This ability to be flexible when 
+		handling the various idiosyncrasies of individual database providers 
+		greatly enhances the usefulness of ADO. <br>
+		&nbsp;<br>
+		The <b>Command, Connection, Field, Parameter, Record</b> and <b>
+		Recordset</b> objects have access to the <b>Properties Collection</b>.
+		<br>
+		&nbsp;<br>
+		The <b>Properties Collection</b> has two properties and one method.</font><font size="4"><br>
+		<br>
+		</font><font size="5"><b>Properties</b></font><b><font size="2" color="#0066FF"><br>
+		</font><a href="ADO_CountProperty.htm">Count</a></b></p>
+		<p class="Entity_SubEntityBriefDescription"><font size="2" face="Arial">The <b>Count</b> property 
+		returns a long value that is the number of items in the collection. The 
+		counting starts at zero. You can use this value to loop through the 
+		collection by iterating from zero to the value of <b>Count</b> minus 
+		one.</font></p>
+		<h2><font size="2">Example<span style="font-weight: 400">:</span></font></h2>
+		<div class="Entity_CodeExample">
+			<code class="CodeSample"><font color="#0066CC">intCountNumber = 
+			objCommand.Properties<b>.</b></font><b><font color="#FF6600">Count</font><font color="#FF0000"> </font> </b></code></div>
+		<p><b><font color="#0066FF">
+		<a href="ADO_ItemProperty.htm">Item</a></font></b><br>
+		<font face="Arial" size="2">|The <b>Item</b> property is 
+		used to return a specific member of the <b>Properties Collection</b>. 
+		The <b>Index</b> parameter is a variant. It can be the named item or the 
+		position (ordinal) number. </font> </p>
+		<p class="Entity_SubEntityBriefDescription">
+		<font size="2" face="Arial">
+		<span style="font-weight: 700">Example</span><span style="font-weight: 400">:</span></font></p>
+		<p class="Entity_SubEntityBriefDescription"><code class="CodeSample">
+		<font color="#0066CC">
+		<span class="CODE">MyProperty = 
+		objCommand.Properties<b>.</b></span></font><b><font color="#FF6600">Item(5)</font></b></code></p>
+		<p class="Entity_SubEntityBriefDescription"><code class="CodeSample">
+		'Or </code></p>
+		<p class="Entity_SubEntityBriefDescription"><code class="CodeSample">
+		<span class="CODE"><font color="#0066CC">MyProperty = 
+		objCommand.Properties</font><font color="#FF6600"><b>(5)</b></font></span></code></p>
+		<p class="Entity_SubEntityBriefDescription"><code class="CodeSample">
+		'Or</code></p>
+		<p class="Entity_SubEntityBriefDescription"><code class="CodeSample">
+		<span class="CODE">MyProperty = objCommand.Properties</span><b><font color="#FF6600">(&quot;Transaction 
+		DDL&quot;)</font></b></code></p>
+<p><font size="5"><b>Methods</b></font><b><font size="2" color="#0066FF" face="Arial"><br>
+</font><font face="Arial"><a href="ADO_Refresh_Method.htm">Refresh</a></font></b></p>
+		<p class="Entity_SubEntityBriefDescription"><font size="2" face="Arial">The <b>Refresh</b> method 
+		updates the <b>Property</b> objects in the <b>Properties Collection</b> 
+		with the dynamic property information specific to the provider. It is 
+		quite possible that the provider has dynamic properties that are not 
+		supported by ADO.</font></p>
+		<p class="Entity_SubEntityBriefDescription">
+		<font size="2" face="Arial">
+		<span style="font-weight: 700">Example</span><span style="font-weight: 400">:</span></font></p>
+		<p class="Entity_SubEntityBriefDescription"><code class="CodeSample">
+		<font color="#0066CC">objCommand.Properties<b>.</b></font><b><font color="#FF6600">Refresh</font></b></code></p>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
