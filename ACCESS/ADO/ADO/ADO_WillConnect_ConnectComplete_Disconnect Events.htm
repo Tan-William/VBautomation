@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO WillConnect, ConnectComplete, and Disconnect Events</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO WillConnect, ConnectComplete, and Disconnect Events</font></h1>
+		<p>An event is a subroutine that can be called automatically after a 
+		specific operation has occurred. </p>
+		<ul>
+			<li>The <b>WillConnect</b> event can be fired before a connection 
+			starts.</li>
+			<li>The <b>ConnectComplete</b> event can be fired after a connection 
+			starts.</li>
+			<li>The <b>Disconnect</b> event can be fired after a connection 
+			ends.</li>
+		</ul>
+		<h3>Syntax </h3>
+		<table class="ex" id="table7" width="61%" border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td valign="top">
+				<pre>WillConnect ConnectionString,userid,psword,options,status,objcon</pre>
+				<pre>ConnectComplete objerror,status,objconn</pre>
+				<pre>Disconnect status,objconn</pre>
+				</td>
+			</tr>
+		</table>
+		&nbsp;<h2>Example: WillConnect</h2>
+		<div class="Entity_CodeExample">
+			<code class="CodeSample"><font color="green">' Use the WithEvents 
+			keyword to designate that events<br>
+			' can be handled by this Connection object<br>
+			</font><font color="#0066cc">Dim WithEvents objConn As 
+			ADODB.Connection</font><br>
+			<br>
+			<font color="green">' Note how the object name, objConn, is 
+			incorporated into the event Sub name<br>
+			</font><font color="#0066cc">Private Sub </font>
+			<font color="#FF6600"><b>objConn_</b></font><b><font color="#FF6600">WillConnect</font></b><font color="#0066cc">(ConnectionString 
+			As String, _<br>
+			&nbsp;&nbsp;&nbsp;UserID As String, Password As String Options As Long, _<br>
+			&nbsp;&nbsp;&nbsp;adStatus As ADODB.EventStatusEnum, ByVal pConnection As 
+			ADODB.Connection)</font><br>
+			<br>
+			<font color="green">' place any code you desire here, for example<br>
+			</font><font color="#0066cc">If UserID = &quot;91128&quot; Then<br>
+			&nbsp;&nbsp;&nbsp;MsgBox &quot;Connection String = &quot; &amp; ConnectionString<br>
+			End If<br>
+			End Sub </font></code></div>
+		<h2>Example: ConnectComplete</h2>
+		<p><code class="CodeSample"><font color="green">' Use the WithEvents 
+		keyword to designate that events<br>
+		' can be handled by this Connection object<br>
+		</font><font color="#0066cc">Dim WithEvents objConn As ADODB.Connection</font><br>
+		<br>
+		<font color="green">' Note how the object name, objConn, is incorporated 
+		into the event Sub name<br>
+		</font><font color="#0066cc">Private Sub </font><font color="#FF6600">
+		<b>objConn_ConnectComplete</b></font><font color="#0066cc">(ByVal 
+		pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, _<br>
+		&nbsp;&nbsp;&nbsp;ByVal pConnection As ADODB.Connection)</font><br>
+		<br>
+		<font color="green">' place any code you desire here, for example<br>
+		</font><font color="#0066cc">If adStatus = adStatusErrorsOccurred Then<br>
+		&nbsp;&nbsp;&nbsp;MsgBox &quot;CONNECTION ERROR: &quot; &amp; pError.Description<br>
+		End If<br>
+		End Sub </font></code></p>
+		<h2>Example: Disconnect</h2>
+		<p><code class="CodeSample"><font color="green">' Use the WithEvents 
+		keyword to designate that events<br>
+		' can be handled by this Connection object<br>
+		</font><font color="#0066cc">Dim WithEvents objConn As ADODB.Connection<br>
+		</font><br>
+		<font color="green">' Note how the object name, objConn, is incorporated 
+		into the event Sub name<br>
+		</font><font color="#0066cc">Private Sub </font><font color="#FF6600">
+		<b>objConn_</b></font><b><font color="#FF6600">Disconnect</font></b><font color="#0066cc">(adStatus 
+		As ADODB.EventStatusEnum, ByVal pConnection As ADODB.Connection)<br>
+		</font><br>
+		<font color="green">' place any code you desire here, for example<br>
+		</font><font color="#0066cc">If adStatus = adStatusOK Then<br>
+		&nbsp;&nbsp;&nbsp;Print &quot;The disconnect was successful&quot;<br>
+		Else<br>
+		&nbsp;&nbsp;&nbsp;MsgBox &quot;The disconnect status is &quot; &amp; adStatus<br>
+		End If<br>
+		End Sub </font></code></p>
+		<table class="ex" id="table8" width="87%" border="1" cellpadding="5">
+			<tr>
+				<th valign="top" width="13%" align="left">Parameter</th>
+				<th valign="top" width="83%" align="left">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">ConnectionString </td>
+				<td valign="top">A string that contains the information required 
+				for the connection      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">userid </td>
+				<td valign="top">A string that contains the user name for the 
+				connection      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">psword </td>
+				<td valign="top">A string that contains the password for the 
+				connection      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">options </td>
+				<td valign="top">A long value that specifies how the provider 
+				should evaluate the ConnectionString. Can only be set to 
+				adAsyncOpen      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">objerror </td>
+				<td valign="top">An Error object that contains the errors that 
+				occurred
+      			<p><b>Note:</b> The EventStatusEnum value must be set to 
+				adStatusErrorsOccurred to create the Error object </td>
+			</tr>
+			<tr>
+				<td valign="top">status </td>
+				<td valign="top">An EventStatusEnum value. Default is 
+				adStatusOK.<br>
+				However, when the ConnectComplete event is called, this 
+				parameter is set to adStatusCancel IF a WillConnect event calls 
+				for cancelling of the pending connection</td>
+			</tr>
+			<tr>
+				<td valign="top">objconn </td>
+				<td valign="top">The Connection object that fired the event&nbsp;      
+    			</td>
+			</tr>
+		</table>
+		&nbsp;<a name="eventstatusenum"><h3>EventStatusEnum Values</h3>
+		</a>
+		<table class="ex" id="table9" width="87%" border="1" cellpadding="5">
+			<tr valign="top" align="left">
+				<th valign="top" width="18%">Constant</th>
+				<th valign="top" width="4%">Value</th>
+				<th valign="top" width="70%">
+				<p align="center">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">adStatusOK</td>
+				<td valign="top" align="center">1</td>
+				<td valign="top">The operation that fired the event was 
+				successful</td>
+			</tr>
+			<tr>
+				<td valign="top">adStatusErrorsOccurred</td>
+				<td valign="top" align="center">2</td>
+				<td valign="top">The operation that fired the event failed</td>
+			</tr>
+			<tr>
+				<td valign="top">adStatusCantDeny</td>
+				<td valign="top" align="center">3</td>
+				<td valign="top">Cannot cancel the pending operation</td>
+			</tr>
+			<tr valign="top">
+				<td valign="top">adStatusCancel</td>
+				<td valign="top" align="center">4</td>
+				<td valign="top">Cancels the operation that fired the event</td>
+			</tr>
+			<tr>
+				<td valign="top">adStatusUnwantedEvent</td>
+				<td valign="top" align="center">5</td>
+				<td valign="top">Prevents subsequent notifications before the 
+				event method has finished executing</td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
