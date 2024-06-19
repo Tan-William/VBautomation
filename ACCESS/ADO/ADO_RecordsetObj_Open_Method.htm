@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<a name=TOP></a>
+<base target="_new">
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ADO Open Method</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Access Macros. Access Visual Basic. Access ADO. Access ADOX. Jet SQL. Access tutorial">
+<meta name="keywords" content="Access Macros. Access Visual Basic. Access ADO. Access AOX. Jet SQL. Access tutorial. Access Help">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#660000;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<body>
+<div align="left">
+<table border="0" width="99%" cellspacing="0" cellpadding="0" height="10%" background="../../YellowTexture.gif">
+	<tr>
+	<td height="" align="center" valign="bottom">
+	<p align="center"><font face="Verdana" style="font-size: 80%">
+	<a style="text-decoration: none" href="../../index.htm">Home</a>&nbsp;|
+	<a style="text-decoration: none" href="../../AboutMe/Me.htm">About me</a> |
+	<a style="text-decoration: none" href="../../VBA/beginner_basic.htm">EXCEL 
+	VB Programming (XL97-2003)</a>&nbsp;|
+	<a style="color: #800000; text-decoration: none" href="../beginner_basic_Acc.htm">
+	ACCESS Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL%20VB.Net/excel_vb.net_under_construction.htm">
+	EXCEL VB.Net Programming</a>&nbsp;|
+	<a style="text-decoration: none" href="../../EXCEL/excel_worksheet_functions.htm">
+	EXCEL Spreadsheet Functions</a> |&nbsp;
+	<a style="text-decoration: none" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+	Material Management</a>&nbsp; |&nbsp;&nbsp;<a style="text-decoration: none" href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661">Guestbook</a>
+	<br>
+	</font><font face="Verdana">&nbsp;</font></td>
+	</tr>
+	</table>
+	</div>
+
+	<div align="left">		
+	<table border="0" width="99%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+	<td>
+		
+<h1><font size="6">ADO Recordset Object: </font><font color="#FF6600" size="6">Open Method</font></h1>
+		<p>The Open method opens a database element that gives you access to 
+		records in a table, the results of a query, or to a saved Recordset. </p>
+		<p><b>Tip:</b> Always close the Recordset object after using it, to free 
+		system resources. Set the Recordset object to Nothing to completely 
+		eliminate it from memory. </p>
+		<h3>Syntax </h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="74%" id="table9">
+			<tr>
+				<td valign="top">
+				<pre><font color="#800000" size="3">objRecordset.Open source,activeConn,cursorType,lockType,options</font></pre>
+				</td>
+			</tr>
+		</table>
+		<br>
+&nbsp;<table class="ex" border="1" cellpadding="3" cellspacing="0" width="96%" id="table10">
+			<tr>
+				<th align="left" valign="top" width="20%">Parameter</th>
+				<th align="left" valign="top" width="80%">Description</th>
+			</tr>
+			<tr>
+				<td valign="top">source </td>
+				<td valign="top">Optional. Specifies a data source.&nbsp; The source 
+				parameter may be one of the following:
+      			<ul>
+					<li>A URL</li>
+					<li>A relative/full file path name</li>
+					<li>A Command object</li>
+					<li>An SQL statement</li>
+					<li>A stored procedure</li>
+					<li>A table name</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">activeConn </td>
+				<td valign="top">Optional. A connection string or a Connection 
+				object      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">cursorType </td>
+				<td valign="top">Optional. A <b>CursorTypeEnum</b> value that 
+				specifies the type of cursor to use when opening a Recordset 
+				object. Default is adOpenForwardOnly      
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">lockType</td>
+				<td valign="top">Optional. A <b>LockTypeEnum</b> value that 
+				specifies the type of locking on a Recordset object. Default is 
+				adLockReadOnly
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top">options</td>
+				<td valign="top">Optional. Specifies how to evaluate the source 
+				parameter if it is not a Command object. Can be one or more <b>
+				CommandTypeEnum</b> or <b>ExecuteOptionEnum</b> values.</td>
+			</tr>
+		</table>
+		<h3>Example</h3>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="96%" id="table11">
+			<tr>
+				<td valign="top">
+				<div class="Entity_CodeExample">
+					Code:<pre><code><font color="#0066FF">S</font></code><font color="#0066ff"><code>et conn=New ADODB.Connection
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;
+conn.Open &quot;F:\Mydata\northwind.mdb&quot;</code></font></pre>
+					<font color="#0066FF"><code class="CodeSample">Set 
+					objRecordset = </code></font><font color="#0066ff"><code>New 
+					ADODB.recordset</code></font><code class="CodeSample"><font color="#0066FF"><br>
+					Set objRecordset.ActiveConnection = strConnection<br>
+					objRecordset.CursorLocation = adUseClient<br>
+					objRecordset.CursorType = adOpenDynamic<br>
+					objRecordset.</font><font color="#FF6600"><b>Open</b></font><font color="#0066FF"> 
+					&quot;Customers&quot;, , , , adCmdTable </font></code>
+					<p><code class="CodeSample"><br>
+					</code>Code:</p>
+					<code class="CodeSample"><font color="#0066FF">objRecordset.</font><font color="#FF6600"><b>Open</b></font><font color="#0066FF"> 
+					&quot;SELECT * FROM Customers&quot;, strConnection, &nbsp;adOpenDynamic, 
+					adLockBatchOptimistic, adCmdTable </font></code>
+					<p>&nbsp;</div>
+				</td>
+			</tr>
+		</table>
+		<br>
+&nbsp;<a name="CursorTypeEnum"><h3>CursorTypeEnum Values</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="96%" id="table12">
+			<tr align="left" valign="top">
+				<th width="20%">Constant</th>
+				<th width="5%">Value</th>
+				<th width="73%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adOpenUnspecified</td>
+				<td align="center">-1</td>
+				<td>Unspecified type of cursor</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenForwardOnly</td>
+				<td align="center">0</td>
+				<td>Default. A forward-only cursor. This improves performance 
+				when you need to make only one pass through a Recordset</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenKeyset</td>
+				<td align="center">1</td>
+				<td>A keyset cursor. Like a dynamic cursor, except that you 
+				can't see records that other users add, although records that 
+				other users delete are inaccessible from your Recordset. Data 
+				changes by other users are still visible.</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenDynamic</td>
+				<td align="center">2</td>
+				<td>A dynamic cursor. Additions, changes, and deletions by other 
+				users are visible, and all types of movement through the 
+				Recordset are allowed</td>
+			</tr>
+			<tr valign="top">
+				<td>adOpenStatic</td>
+				<td align="center">3</td>
+				<td>A static cursor. A static copy of a set of records that you 
+				can use to find data or generate reports. Additions, changes, or 
+				deletions by other users are not visible.</td>
+			</tr>
+		</table>
+		<br>
+&nbsp;<a name="LockTypeEnum"><h3>LockTypeEnum Values</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="96%" id="table13">
+			<tr align="left" valign="top">
+				<th width="20%">Constant</th>
+				<th width="5%">Value</th>
+				<th width="73%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adLockUnspecified</td>
+				<td align="center">-1</td>
+				<td>Unspecified type of lock. Clones inherits lock type from the 
+				original Recordset.</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockReadOnly</td>
+				<td align="center">1</td>
+				<td>Default. Read-only records</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockPessimistic</td>
+				<td align="center">2</td>
+				<td>Pessimistic locking, record by record. The provider lock 
+				records immediately after editing</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockOptimistic</td>
+				<td align="center">3</td>
+				<td>Optimistic locking, record by record. The provider lock 
+				records only when calling update</td>
+			</tr>
+			<tr valign="top">
+				<td>adLockBatchOptimistic</td>
+				<td align="center">4</td>
+				<td>Optimistic batch updates. Required for batch update mode</td>
+			</tr>
+		</table>
+		<br>
+&nbsp;<a name="CommandTypeEnum"><h3>CommandTypeEnum Values</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="96%" id="table14">
+			<tr align="left" valign="top">
+				<th width="20%">Constant</th>
+				<th width="4%">Value</th>
+				<th width="74%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adCmdUnspecified</td>
+				<td align="center">-1</td>
+				<td>Unspecified type of command</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdText</td>
+				<td align="center">1</td>
+				<td>Evaluates CommandText as a textual definition of a command 
+				or stored procedure call</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdTable</td>
+				<td align="center">2</td>
+				<td>Evaluates CommandText as a table name whose columns are 
+				returned by an SQL query</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdStoredProc</td>
+				<td align="center">4</td>
+				<td>Evaluates CommandText as a stored procedure name</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdUnknown</td>
+				<td align="center">8</td>
+				<td>Default. Unknown type of command</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdFile</td>
+				<td align="center">256</td>
+				<td>Evaluates CommandText as the file name of a persistently 
+				stored Recordset. Used with Recordset.Open or Requery only.</td>
+			</tr>
+			<tr valign="top">
+				<td>adCmdTableDirect</td>
+				<td align="center">512</td>
+				<td>Evaluates CommandText as a table name whose columns are all 
+				returned. Used with Recordset.Open or Requery only. To use the 
+				Seek method, the Recordset must be opened with adCmdTableDirect. 
+				Cannot be combined with the ExecuteOptionEnum value 
+				adAsyncExecute.
+				</td>
+			</tr>
+		</table>
+		<br>
+&nbsp;<a name="ExecuteOptionEnum"><h3>ExecuteOptionEnum Values</h3>
+		</a>
+		<table class="ex" border="1" cellpadding="3" cellspacing="0" width="96%" id="table15">
+			<tr align="left" valign="top">
+				<th width="20%">Constant</th>
+				<th width="5%">Value</th>
+				<th width="73%">
+				<p align="center">Description</th>
+			</tr>
+			<tr valign="top">
+				<td>adOptionUnspecified</td>
+				<td align="center">-1</td>
+				<td>Unspecified command</td>
+			</tr>
+			<tr valign="top">
+				<td>adAsyncExecute</td>
+				<td align="center">16</td>
+				<td>The command should execute asynchronously. Cannot be 
+				combined with the CommandTypeEnum value adCmdTableDirect
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>adAsyncFetch</td>
+				<td align="center">32</td>
+				<td>The remaining rows after the initial quantity specified in 
+				the CacheSize property should be retrieved asynchronously</td>
+			</tr>
+			<tr valign="top">
+				<td>adAsyncFetchNonBlocking</td>
+				<td align="center">64</td>
+				<td>The main thread never blocks while retrieving. If the 
+				requested row has not been retrieved, the current row 
+				automatically moves to the end of the file. If you open a 
+				Recordset from a Stream containing a persistently stored 
+				Recordset, adAsyncFetchNonBlocking will not have an effect; the 
+				operation will be synchronous and blocking. 
+				adAsynchFetchNonBlocking has no effect when the adCmdTableDirect 
+				option is used to open the Recordset</td>
+			</tr>
+			<tr valign="top">
+				<td>adExecuteNoRecords</td>
+				<td align="center">128</td>
+				<td>The command text is a command or stored procedure that does 
+				not return rows. If any rows are retrieved, they are discarded 
+				and not returned. adExecuteNoRecords can only be passed as an 
+				optional parameter to the Command or Connection Execute method</td>
+			</tr>
+			<tr valign="top">
+				<td>adExecuteStream</td>
+				<td align="center">256</td>
+				<td>The results of a command execution should be returned as a 
+				stream. adExecuteStream can only be passed as an optional 
+				parameter to the Command Execute method
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>adExecuteRecord</td>
+				<td align="center">512</td>
+				<td>The CommandText is a command or stored procedure that 
+				returns a single row which should be returned as a Record object</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+	</td>
+				</tr>
+			</table>
+			</div>
+</body>
+</head>		
+</html>
