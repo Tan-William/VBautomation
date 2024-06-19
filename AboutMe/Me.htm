@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+
+<meta name="author" content="William Poh Beng, http://vbautomation.110mb.com">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh, William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Thailand, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#000000; text-decoration:none;}
+A.type2:visited {color:#000000; text-decoration:none;}
+A.type2:active  {color:#000000; text-decoration:none;}
+A.type2:hover   {color:#004080; text-decoration:underline;}
+
+A.type3:link    {color:#000000; text-decoration:none;}
+A.type3:visited {color:#000000; text-decoration:none;}
+A.type3:active  {color:#000000; text-decoration:none;}
+A.type3:hover   {color:#004080; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+<style>
+<!--.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}-->
+</style><style type="text/css"> 
+BODY {background-image: url('../Me.jpg'); background-repeat:
+no-repeat; background-position: 780px 133px; background-attachment: fixed}
+</style><style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+.auto-style1 {
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+}
+.auto-style2 {
+	text-align: left;
+}
+.auto-style3 {
+	font-size: 11pt;
+}
+.auto-style4 {
+	text-align: center;
+}
+.auto-style6 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style7 {
+	font-size: 11pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style8 {
+	font-size: 12pt;
+}
+.auto-style9 {
+	text-decoration: none;
+}
+		.auto-style10 {
+			font-family: Verdana;
+		}
+		.auto-style11 {
+			font-size: 10.5pt;
+		}
+		.auto-style12 {
+			font-family: Verdana;
+			font-size: 10.5pt;
+		}
+		</style></head><body topmargin="0" leftmargin="0" alink="#000000" background="" bgcolor="#edf3fa" link="#000000" marginheight="0" marginwidth="0" text="#000000" vlink="#000000">
+<p align="center">
+<table cellpadding="0" cellspacing="0" style="width: 98%">
+	<tr>
+		<td>
+<p class="auto-style2"><b><br></b><font style="font-size: 75%;" face="Verdana">
+<span style="text-decoration: none;"><a href="../index.htm" class="auto-style9">
+<span class="auto-style8">Home</span></a></span><span class="auto-style8">&nbsp;&nbsp; |&nbsp;&nbsp;
+</span>
+<span style="text-decoration: none;">
+<a href="../VBA/beginner_basic.htm" class="auto-style9">
+<span class="auto-style8">EXCEL VB Programming (XL97-XL2003)</span></a><span class="auto-style8">&nbsp; |&nbsp;&nbsp;
+	<a href="../EXCEL/excel_under_construction.htm" class="auto-style9">EXCEL VB.Net Programming</a>&nbsp;&nbsp; |&nbsp;&nbsp;
+	<a href="../ACCESS/beginner_basic_Acc.htm" class="auto-style9">ACCESS 
+Database Programming</a>&nbsp; |&nbsp;&nbsp;
+	<br>
+	<a href="../EXCEL/excel_worksheet_functions.htm" class="auto-style9">EXCEL Spreadsheet Functions</a>&nbsp;&nbsp; |&nbsp;&nbsp; 
+<a href="../INVENTORY%20MGMT/index_inv_mgmt.htm" class="auto-style9">
+	Material Management</a>&nbsp;&nbsp; |&nbsp; 
+<a href="../INVENTORY%20MGMT/production_planning.htm" class="auto-style9">
+Master Scheduling &amp; Production Planning</a>&nbsp; |&nbsp;
+<br>
+<a href="../FORECASTING/forecasting_fundamental.htm" class="auto-style9">
+Forecasting Methods &amp; Techniques</a>&nbsp; |&nbsp; 
+</span>
+<a href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661" style="text-decoration: none;" target="_blank">
+<span class="auto-style8">Guestbook</span></a><span class="auto-style8">&nbsp;&nbsp; |&nbsp;  
+</span>
+</span></font></p>
+
+<script type="text/javascript">
+<!--  if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+
+
+
+
+
+
+
+<div align="center">
+
+</div>
+		</td>
+	</tr>
+</table>
+</p>
+<div align="center">
+
+	<table border="0" cellpadding="5" cellspacing="10" width="97%">
+<tbody>
+<tr>
+<td valign="top" width="90%">
+      <!-- Start Page Content -->
+      <!-- End Page Content -->
+		<font face="">	
+		</font>
+		<p><b><font size="4"><span class="auto-style6">My Profile:</span></font><font size="5" face="Arial"><br>
+		</font></b>
+		<font face="Arial">
+		<br>
+		</font>	
+		<font size="2" class="auto-style7">Currently I work and live in Singapore. I 
+		have worked in few US 
+		companies, did data mining and <br>analysis, integrating Excel/ Access
+programming for process automation in areas of 
+		production <br>planning and scheduling, forecasting and inventory management.
+Applying VBA 
+		programming <br>to complex business decision analysis, scenarios simulation, inventory planning and forecasting
+		<br>models has been my love and passion amidst the hectic daily work 
+		routines. You can find many <br>working 
+		examples and help offering in this website. This is the reason
+why I created this 
+		website - <br>when I forget, I can always come back here to refer. And also, I want 
+		to help you people :-)
+		</font>
+		</p><p><font size="2" class="auto-style6"><span class="auto-style3">I did my Business Degree from 1990-1992 in Queensland, Australia. My 
+		work spanned over <br>the past 15 years +, assuming the different roles as a
+Production Planner, 
+		Inventory Controller <br>and Analyst, Manager in Production Planning/Materials, Orders fulfillment. The nature
+of all these <br>works provided me 
+		a lot of motivation for mastering VBA. Personally, I am&nbsp;hands-on, 
+		with eyes <br>for detail; constantly keep
+learning and improving; persevere, committed, and enjoy meaningful <br>challenges in life.
+	  </span>
+		<br>
+</font>
+		</p>
+	  <p class="auto-style1"><em>Mar. 2007</em></p></td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div class="auto-style4">
+
+
+<table id="table5" border="0" style="width: 48%">
+<tbody><tr>
+<td align="center">
+<p class="auto-style4" style="width: 511px">	
+<font face="Courier New" size="2"><span class="auto-style3"><br>
+
+	</span>
+
+<br class="auto-style12">
+
+	<font class="auto-style10"><span class="auto-style11">This site was 
+created in February 2007<br>
+	by William Tan</span></font></font></p></td>
+</tr>
+	<tr>
+<td align="center">
+<br><br></td>
+</tr>
+</tbody></table>
+
+ <br>
+  
+  
+ <a href="http://s05.flagcounter.com/more/RvMZ">
+	<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0" style="float: left"></a>	
+	
+</div>
+</body></html>
