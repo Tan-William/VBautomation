@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/product_costing.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:36 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material Management, Material Control, Production Planning and Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/>
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+</head>
+
+
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#660033; text-decoration:underline;}
+
+A.type2:link    {color:#800000; text-decoration:none;}
+A.type2:visited {color:#800000; text-decoration:none;}
+A.type2:active  {color:#800000; text-decoration:none;}
+A.type2:hover   {color:#800000; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(../../www.newmail.ru/pics/channels/a1.gif); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="../vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('../images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 244px">
+
+
+
+<a href="../../index.htm">Home</a><br>
+<a href="../../AboutMe/Me.htm">About Me</a><br>
+<a href="../../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(VB6)</span></a><br>
+<a href="../../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2003)</span></a><p><br>
+<a href="../index_inv_mgmt.htm">Material Management</a><span class="menu2"><br>
+<img src="../images/menu1.gif" alt="" height="9" width="18"><span style="font-weight: 400"><font face="Verdana" style="90%">Costs 
+classification and other <br>
+&nbsp;&nbsp;&nbsp; categorization</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../images/menu1.gif" alt="" height="9" width="18">Product costing 
+methods</span><p>&nbsp;<p><font color="#800000">
+<a href="../production_planning.htm">Master Scheduling, Capacity &amp; <br>
+Production Planning</a></font><p><font color="#800000">
+<a href="../../FORECASTING/forecasting_fundamental.htm">Business Forecasting 
+Methods</a></font></td>
+
+
+<td class="body">
+
+
+<p align="center"><b><font face="Verdana" size="5">Classification of Costs in 
+Products Manufacturing</font></b></p>
+<p>We can classify costs according to these three elements: </p>
+<ul>
+	<li>materials             
+	</li>
+	<li>labour             
+	</li>
+	<li>expenses or overheads </li>
+</ul>
+<p>We can also classify costs into two types - Product and Period Costs.</p>
+<ul>
+	<li>Product costs - the costs of manufacturing our products; or             
+	</li>
+	<li>Period costs - the costs other than product costs that are charged to, 
+	debited to, or written off to the income statement each period. </li>
+</ul>
+<p>&nbsp;</p>
+<p><b><font size="4">The Classification of Product Costs</font> </b></p>
+<p><b><u>Direct costs</u> </b></p>
+<p>Direct costs are generally seen as variable costs because they are directly 
+associated with manufacturing. Direct costs include direct materials (raw 
+materials), direct labour ( machine operators) and direct expenses (royalties 
+paid, etc). <i>Prime Cost </i>is the aggregate of all direct costs. <i>Overhead</i> 
+is the aggregate of all indirect costs. <i>Total Product Cost </i>is the sum of 
+prime cost and overheads.</p>
+<p><b><u>Indirect Costs </u></b></p>
+<p>Indirect costs are those costs that are incurred in the factory but that 
+cannot be directly associate with manufacture. Again, these costs are classified 
+according to the three elements of cost - materials, labour and overheads. </p>
+<p><u>1) indirect materials</u><br>
+Some materials are on the edge of being direct or indirect material costs. You 
+have to know you products and processes well before you classify them. Example 
+of indirect material costs includes lubricants, cleaning materials, etc.</p>
+<p><u>2) indirect labour</u><br>
+It includes labour costs of people who are only indirectly associated with 
+manufacture (managers, supervisors, operators, technicians, etc).</p>
+<p><u>3) indirect expenses</u><br>
+Essentially, if a cost is a factory cost and it has not been included in any of 
+the other sections, it has to be an indirect expense. For example, the 
+depreciation of equipment, machinery, vehicles, buildings electricity, water, 
+telephone, rent, tax, insurance, etc. Total indirect costs are collectively 
+known as Overheads.</p>
+<p>&nbsp;</p>
+<p><b><font size="4">The Classification of Period Costs </font></b></p>
+<p>The classification of Period costs varies according to the types of 
+organisation and the industry. They includes:</p>
+<p><u>1) Administration costs</u><br>
+These are the costs of running the administrative aspects of an organisation. 
+(example: salaries, rent, tax, electricity, water, telephone, depreciation, etc)</p>
+<p>2) Sales and Distribution costs<br>
+The costs of distribution and selling (example: advertising, market research, 
+salaries, bonuses, electricity, and so on) are all accumulated in a similar way 
+in which Administration costs are accumulated.</p>
+<p><u>3) Finance Costs</u><br>
+These are those costs associated with providing the permanent, long term and 
+short term finance. (example: within the section headed finance costs we will 
+find dividends, interest on long term loans and interest on short term loans).
+</p>
+<p>In deed you can add any number of sub-classifications depends on the ways in 
+which your organisation operates and how you want to refine cost analysis.</p>
+<p>&nbsp;</p>
+<p><b><font size="4">Fixed v Variable costs</font></b><br>
+<br>
+Fixed costs are expenses whose total does not change in proportion to the 
+activity of a business, within the relevant time period or scale of production. 
+Examples of fixed costs are overheads (rent, insurance etc), monthly salary of 
+the managers, monthly deprecation of a single machine. Fixed costs are 
+irrelevant for short-term decisions, as fixed costs do not change if more or 
+less products or services are sold. <br>
+<br>
+Variable costs vary in direct proportion to changes in the level of activity. 
+This means that if the activity level doubles, then the variable cost will 
+double. Examples of variable costs are direct material, direct labour and direct 
+expenses. In comparison with fixed costs, variable costs do vary with the level 
+of production or services provided. They are relevant for short-term decisions.</p>
+<p>&nbsp;</p>
+<p><b><font size="4">Marginal and Absorption Costing</font></b></p>
+<p>Marginal costing is a costing technique where each unit of output is charged 
+with variable production costs. Marginal costing also shows the effect on profit 
+of changes in volume/type of output by differentiating between fixed and 
+variable costs. Fixed production costs are not considered to be real costs of 
+production, but just enabling the production to take place. They are treated as 
+costs of the period and charged to the period in which they are incurred.</p>
+<p>Marginal costing is contrasted with absorption costing, which is a costing 
+technique where each unit of output is charged with both fixed and variable 
+production costs. Unlike marginal costing, with absorption costing stock is 
+valued on a full production cost basis. When stock is sold in the next 
+accounting period these costs are released and matched with the revenue of that 
+period.</p>
+<p>Looking at marginal and absorption costing this can be tied into the various 
+cost classifications that has been discussed in the assignment. Marginal costing 
+can be linked in with using relevant costing classification, as the methods of 
+marginal costing aid managerial decisions which is also used with relevant and 
+irrelevant costing. Absorption costing can be compared with the method of fixed 
+v variable costing. This is due to the fact that absorption costing recognized 
+the importance of fixed costs in production. However, marginal costing can also 
+be compared with the costing classification of fixed v variable cost are this 
+again is used to separate fixed and variable costs.</p>
+<p>&nbsp;</p>
+<p><b><font size="4">Activity-Based Costing (ABC)</font></b></p>
+<p>Activity Based Costing (ABC) emphasizes the need to obtain a better 
+understanding of the behavior of overhead costs, and thus ascertains what causes 
+overhead to occur and how they relate products. ABC recognizes that in the long 
+run most costs are not fixed, and it seeks to understand the forces that cause 
+overhead costs to change overtime.</p>
+<p>ABC systems assume that activities cause costs and also that products or 
+services create demands for activities. ABC is simply a more rigours abspotion 
+costing. This means instead of all the overhead being recovered on a single 
+basis (i.e. labour hours) ABC recognizes that different overheads are driven by 
+different factors (cost drivers). </p>
+<p>ABC not only links in with marginal and absorption costing, but also with 
+fixed v variable cost classifications. For example, ABC takes into account 
+overheads that change over time, which is what is incurred during fixed vs 
+variable costs. This is due to the fact that even though ABC does recognize 
+fixed cost, it understands that there is variable cost such as direct labour. 
+This links in with both marginal costing, by separating fixed and variable 
+costs, as well as absorption costing, recognizing the importance of fixed costs.</p>
+<p align="center">
+&nbsp;<p align="center">
+<font face="Arial" size="2"><br>
+   
+<a href="http://s05.flagcounter.com/more/RvMZ">
+<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a></font><br>
+<br>
+
+
+	<font face="Verdana"><font size="2">This site
+<a class="type1" href="index.html">
+	<span style="text-decoration: underline">http://vbautomation.110mb.com</span></a> 
+was created in February 2007.<br>
+	Contact William&nbsp;&nbsp;&nbsp;&nbsp; Email: </font><span style="font-size: 72%">
+	<span style="text-decoration: none"><font size="2">
+<a style="text-decoration: none; color: #0033FF" href="mailto:vbautomation@yahoo.com">
+vbautomation@yahoo.com</a></font></span>
+
+
+
+
+</td>
+</tr>
+</tbody></table>
+
+
+<td class="body">
+
+
+
+
+</body>
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/product_costing.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:36 GMT -->
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material Requirement Planning</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.auto-style1 {
+	text-align: right;
+}
+.auto-style2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style3 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style4 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="85%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 232px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(VB6)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2003)</span></a><br>
+<br>
+<a href="index_inv_mgmt.htm">Material Management</a><span class="menu2"><br>
+<img src="images/menu1.gif" alt="" height="9" width="18">Material Requirement
+<br>
+&nbsp;&nbsp;&nbsp; Planning</span><p>&nbsp;<p><a href="production_planning.htm">
+Master Scheduling, Capacity &amp; Production Planning 
+<br>
+</a></font><p><font color="#800000">
+<a href="../FORECASTING/forecasting_fundamental.htm">Business Forecasting 
+Methods</a></font><span class="menu2"><br>
+&nbsp;</span></td>
+
+
+<td class="menu" style="width: 4px">
+
+
+
+&nbsp;</td>
+
+
+<td class="body" align="center">
+
+
+<p><font size="5"><b><span style="font-family: Arial">Material Requirement 
+Planning</span></b></font></p>
+<p align="left"><font style="font-size: 11pt" class="auto-style2">A basic concept used 
+in planning dependent demand is called <b>Backward Scheduling</b>. This is 
+simply the process of taking the delivery date required by the customer, and 
+working back to identify when the items needs ordering from the supplier. <b>
+Material Requirement Planning</b> (MRP) technique is generally used for all 
+types of dependent demand. The basic concept is to have stock when it is needed 
+and to have none the rest of the time. With dependent demand, the size and 
+timing of the requirements are known from the next level down the supply chain. 
+MRP can therefore gives good control. MRP is used extensively in manufacturing 
+because there can be several levels of dependent demand in the bill of material 
+of a product (for example, from main assemblies made of sub-assemblies which are 
+made up from components, either purchased externally or manufactured within the 
+company).</font></p>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">MRP is integrated in 
+the computer inventory systems with sales and financial plans of the company. 
+MRP is only able to function effectively when the following are available:</font></p>
+<ul>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	A Master Schedule of planned supply to customers for each product, projected 
+	within the planning horizon (usually one to two years of planning horizon 
+	are adequate) to permit ordering of bought-out items, raw materials and 
+	components.</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	A well-defined Bill of Material, showing purchased items and manufactured 
+	components to identify what to make and what to buy.</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	Realistic Lead Times for the purchase or manufacture of all parts.</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">Accurate records of all inventory 
+	items (including std. unit cost, unit of measurement, quantity on-hand, work-in-progress (WIP), backorders and 
+	due dates).</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	Purchase Order Quantities and the associated Due Dates.</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">Suppliers information (supplier 
+	names, unit purchase price, materials lead time)</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	Safety Stock requirement, Reorder level.</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	Lot-Sizing Policies for all parts (lot-for-lot ordering, economic order 
+	quantity, fixed-period ordering)</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	Demand Forecasts for each inventory item, including partially or entirely 
+	firm customer orders.</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0">
+	<font style="font-size: 11pt" class="auto-style2">
+	Routings (only needed in <a href="capacity_requirements_planning.htm"><font color="#0066CC">
+	capacity requirements planning</font></a>)</font></p></li>
+</ul>
+<p align="left"><font style="font-size: 11pt">
+<a href="production_planning.htm#(MRP)"><font color="#0066CC">
+<span class="auto-style2">Read more</span></font></a></font><span class="auto-style2"><font style="font-size: 11pt">.. 
+on MRP Explosion Process and Functions.<br>
+&nbsp;</font></span></p>
+<p align="left"><font style="font-size: 11pt">
+<a name="MRP_Figure8.1"></a>
+</font><span class="auto-style2"><font style="font-size: 11pt">
+MRP is an integrated&nbsp; business planning tool but we can also use it to 
+calculate material supply in Excel spreadsheet. Figure 8.1 shows a procedural 
+framework of the Material Requirement Planning. It starts with <b>Manufacturing 
+Resource Planning </b>(MRP II) which is a long-term planning, identifying what 
+range of products are offered, when to introduce to market, what market focus, 
+and inventory policy decisions (LIFO, FIFO, etc). This cascades down to the 
+medium-range <font color="#0066CC">
+<a href="production_planning.htm#aggregate_planning">
+<font color="#0066CC">Aggregate Production Planning</font></a></font> that is 
+done in the corporate's Sales and Operations Planning Process. This level of 
+planning, usually on monthly buckets, is primarily concerned with establishing 
+production rates, work force sizes, initial inventory investment levels with 
+&quot;blanket&quot; orders released to suppliers ranging from 6 to 12 months into the 
+future.</font></span></p><a name=mps></a>
+<p><img border="0" src="images/mrp.gif" width="455" height="457"></p>
+<p class="auto-style2"><font style="font-size: 11pt"><strong>Figure 8.1&nbsp; Material 
+Requirement Planning and the production functions framework</strong></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font color="#0066CC" style="font-size: 11pt">
+<a href="mrp.htm#MPS">
+<font color="#0066CC"><span class="auto-style2">Master Production Schedule</span></font></a></font><span class="auto-style2"><font style="font-size: 11pt"> takes the 
+aggregate production plan (with its implied constraints) and breaks down into a 
+production schedule of specific family of products to be produced in specific 
+periods (in days or weeks) at each manufacturing plants. I have seen Master 
+Scheduler consistently using unrealistic production rates (for example, using 
+production output rate that were in fact achieved no more than only twice in the 
+past 12 months). This caused a lot of overtime planning at intervals when actual 
+output are consistently in danger of not meeting weekly output target. Don't 
+forget that,&nbsp;master schedule besides driving material buying ahead, is also used 
+to provide delivery dates to customer orders.</font></span></p>
+<p align="left"><font style="font-size: 11pt" class="auto-style2">The <b>Backward 
+Scheduling</b> process starts by identifying the customer orders qty required 
+and due dates in the Master Schedule, deciding what volume of the production 
+output for which customers. The Master Schedule run will check for available 
+stock. Question arises as to if there are Unrestricted On-Hand Balances, how far 
+ahead on the schedule will the inventory on-hand balance last? If there is no 
+stock available, then what has to be purchased and by when - the stock item 
+itself or are there other components that are needed? An accurately structured 
+Bill of Material (BOM) maintained in the inventory systems provides all the 
+answers. MRP explodes through and until the last level of BOM, and provides 
+allocation of components and raw material to each master scheduled product 
+items. When there are inadequate components or raw materials, MRP creates 
+Recommended Plan Orders to the scheduler or planners. In addition, information 
+on how long or when the Planned Supply Order Quantities can be received into 
+stock, where it will be received (the supply lead times, routings, location, 
+bin), Inventory Records (unit of measurement, stock transfers data, physical 
+count stock adjustment, write-off) are also needed to be input into the systems.</font></p>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">Here is a question of 
+how far into the future to prepare a Master Schedule. Each item&nbsp;that can appear 
+on the master schedule will have a cumulative lead time. For example, the lead 
+time to purchase its raw materials, manufacture them into components, metal 
+treatment process, sub-assemblies, and so on. The longest of these Cumulative 
+Lead Times or Critical Path is the Minimum Planning Horizon for the Master 
+Schedule.</font></p>
+<p align="left" class="auto-style2">&nbsp;</p>
+<p align="left"><font face="Arial" size="4"><b>T<span class="auto-style2">he logic of Material Requirement 
+Planning</span></b></font></p>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">MRP calculation is 
+actually simple. It sums up all the demand requirements for each stock item 
+within each time bucket (day or week). Inventory balance is deducted from this 
+total demand. If the inventory is sufficient to cover the demand, then the same 
+calculation is carried out for the next period. If the inventory on-hand is 
+insufficient, then purchase order is needed.</font></p>
+<p align="left" class="auto-style2">
+<font color="#800000" style="font-size: 11pt">
+Closing stock balance = (Beginning stock balance + Purchase receipts) - Demand</font></p>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">If closing stock 
+balance is above zero or safety stock, MRP repeats calculation for next time 
+bucket (day or week). If closing inventory balance is below zero or safety stock 
+level, MRP will recommend to place enough PO quantity to replenish. This 
+netting-off process is carried out for all the periods of the top-level process 
+first, and then it is repeated for the sub-assemblies and sub-levels of components if there is one in the bill of material. At the end of MRP run, 
+inventory system will provide a buy list of parts of when to place purchase 
+orders, how many, and when the order quantities must be received into stock. If 
+there is a sub-level component structured in the BOM to be produced within the 
+factory or in another location, MRP will also provide manufacturing plan of what 
+to be produced, when to begin, and to be done by when.</font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial" style="font-size: 11pt"><a name="MPS"></a></font>
+<font size="4"><span class="auto-style3">The Logic of Master Scheduling</span></font></p>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">Earlier on I 
+mentioned that master schedule is planned base on the aggregate production plan. 
+A typical master schedule will show you a list of what final products are to be 
+produced (front-end) or delivered (back-end orders fulfillment) in each week (or 
+each day for JIT business), at which production sites or with a shared 
+production output from different plants if there are capacity constrains. For 
+master scheduling process to work, the scheduler converts the existing demand 
+forecast into firm customer demand by inputting the orders on the master 
+schedule. The logic of this is that it is assuming the forecast is to be filled 
+up by real customer orders to the forecasted level each week. The master 
+scheduler publicizes this demand plan and is responsible for making all the 
+weekly schedules achievable. Table 8.1 shows an example of a master schedule 
+with family of products, scheduled for weekly production output for 10 weeks 
+into the future. This is a simple conventional example to demonstrate to you the 
+logic behind master scheduling, in which modern days ERP systems are based on.</font></p>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">In cases when actual 
+orders that are received in certain weeks exceed the demand forecast, it is 
+normal practice to change and revise the master schedule. For example, product 
+2400A is forecasted at 3000pc in week 01, and if the total customer orders 
+received for week 01 is, say 3500pc, that additional 500pc has to be fulfilled 
+from the forecast in week 02. In such case when customer actual demand exceeds 
+the forecast for the week, the master scheduler has several options to decide:</font></p>
+<ul>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	provide a later delivery date to the customer and face a possibility of this 
+	customer canceling the order</font></p>
+	</li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	cancel delivery order already picked for other less important customer and 
+	re-allocate available on-hand balance to this customer</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	reschedule and overload the revised forecast (this will cause panic buying 
+	and straining your suppliers' capacity plan and turnaround time)</font></p></li>
+	<li>
+	<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+	<font style="font-size: 11pt">
+	increasing capacity by scheduling overtime work</font></p></li>
+</ul>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">&nbsp;The last option is 
+usually more efficient and most recommended because the company inventory policy 
+will usually allows some percentage of upside planning on both the finished 
+products level (say 10%) and also on the components level (say 25%). Such 
+practice provides material buffer as the safety stock to short-term schedule 
+changes, and allow to cushion against the increase in real customer demand that 
+exceeds the forecasted plan in any week. It prevents turning away the unhappy 
+but important customers.</font></p>
+<table border="0" width="94%" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="486" align="left" valign="bottom">
+		<table border="0" cellspacing="0" cellpadding="0" width="389" height="138">
+			<tr>
+				<td>
+				<img border="0" src="images/master_schedule_1.gif" height="77" width="149"></td>
+				<td>
+				<img border="0" src="images/master_schedule_2.gif" height="77" width="131"></td>
+				<td>
+				<img border="0" src="images/master_schedule_3.gif" height="77" width="109"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="images/master_schedule_4.gif" height="61" width="149"></td>
+				<td>
+				<img border="0" src="images/master_schedule_5.gif" height="61" width="131"></td>
+				<td>
+				<img border="0" src="images/master_schedule_6.gif" height="61" width="109"></td>
+			</tr>
+		</table>
+		<p><font face="Arial" style="font-size: 11pt"><strong>Table 8.1 Master Schedule</strong><br>
+&nbsp;</font><p>&nbsp;</td>
+		<td align="left">
+		<table border="0" cellspacing="0" cellpadding="0" width="335" height="211">
+			<tr>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_1.gif" height="70" width="112"></td>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_2.gif" height="70" width="111"></td>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_3.gif" height="70" width="112"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_4.gif" height="71" width="112"></td>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_5.gif" height="71" width="111"></td>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_6.gif" height="71" width="112"></td>
+			</tr>
+			<tr>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_7.gif" height="70" width="112"></td>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_8.gif" height="70" width="111"></td>
+				<td>
+				<img border="0" src="images/PlannedOrdRel_9.gif" height="70" width="112"></td>
+			</tr>
+		</table>
+		<p><font face="Arial" style="font-size: 11pt"><strong>Table 8.2 Scheduling 
+		planned order release for Product 2400A base on Master Schedule 
+		(considering fixed order qty of 5000pc and lead time of 4 weeks)</strong></font></td>
+	</tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left"><font style="font-size: 11pt" class="auto-style2">Table 8.2 shows you 
+the logic of determining when the Planned Supply Orders should be released base 
+upon the weekly forecast in master schedule. You can
+<a href="inventory%20supp/master_schedule.xls"><font color="#0066CC">download</font></a> 
+the worksheet with the formulas. Below I show you the formulas which you would 
+have to copy down in your range of cells.
+<a target="_blank" href="../EXCEL/excel_worksheet_functions.htm#match"><font color="#0066CC">
+Offset</font></a> formula syntax is <b><font color="#660000">OFFSET(reference, 
+rows, cols, height, width)</font></b></font></p>
+<div align="left">
+	<table border="0" width="75%" cellspacing="0" cellpadding="0" id="table2">
+		<tr>
+			<td width="39" align="right" class="auto-style2">R4</td>
+			<td width="34" align="center" class="auto-style2">=</td>
+			<td width="399" class="auto-style3"><font color="#800000">(R3+Q4)-P4</font></td>
+			<td class="auto-style2"><font color="#800000">= 2500</font></td>
+		</tr>
+		<tr>
+			<td width="39" align="right" class="auto-style2">S9</td>
+			<td width="34" align="center" class="auto-style2">=</td>
+			<td width="399" class="auto-style3"><font color="#800000">
+			IF(AND(T8&lt;P9,R9&lt;0),5000,&quot;&quot;)</font></td>
+			<td class="auto-style2"><font color="#800000">= 5000</font></td>
+		</tr>
+		<tr>
+			<td width="39" align="right" class="auto-style2">T3</td>
+			<td width="34" align="center" class="auto-style2">=</td>
+			<td width="399" class="auto-style3"><font color="#800000">R3</font></td>
+			<td class="auto-style2"><font color="#800000">= 500</font></td>
+		</tr>
+		<tr>
+			<td width="39" align="right" class="auto-style2">T4</td>
+			<td width="34" align="center" class="auto-style2">=</td>
+			<td width="399" class="auto-style3"><font color="#800000">
+			IF(T3&lt;P4,IF(S4=&quot;&quot;,(T3+Q4)-P4,(T3+S4)-P4),T3-P4)</font></td>
+			<td class="auto-style2"><font color="#800000">= 2500</font></td>
+		</tr>
+		<tr>
+			<td width="39" align="right" class="auto-style2">U3</td>
+			<td width="34" align="center" class="auto-style2">=</td>
+			<td width="399" class="auto-style3"><font color="#800000">
+			IF(OFFSET(T3,4,-1,1,1)=5000,S7,&quot;&quot;)</font></td>
+			<td class="auto-style2"><font color="#800000">= &quot;blank&quot;</font></td>
+		</tr>
+		<tr>
+			<td width="39" align="right" class="auto-style2">U5</td>
+			<td width="34" align="center" class="auto-style2">=</td>
+			<td width="399" class="auto-style3"><font color="#800000">
+			IF(OFFSET(T5,4,-1,1,1)=5000,S9,&quot;&quot;)</font></td>
+			<td class="auto-style2"><font color="#800000">= 5000</font></td>
+		</tr>
+	</table>
+</div>
+<p align="left" class="auto-style2"><font style="font-size: 11pt">The first three 
+columns (forecast, scheduled receipts, and stock on-hand) show the current 
+situation, whereas the last three columns (planned order receipts, projected 
+available, and planned order release) show what has to be done in order to meet 
+the demand forecast. With a four-week supply lead time, the planned order 
+release has to precede the planned order receipt by four weeks. If you have set 
+a safety stock level, say 1000pc, the stock on-hand balance can trigger a 
+planned order receipt at the safety stock level instead of waiting until 
+stockout and negative stock balance. In this case, a safety stock level of 1000 
+would mean that the initial projected available on-hand of 500 would be too low 
+by end of week 05. So the formula in U3 can be revised as:</font></p>
+<p align="left"><font color="#800000">=<span class="auto-style3">IF(AND(OFFSET(T3,5,-1,1,1)=5000,OFFSET(T3,4,0)&lt;1000),5000,IF(OFFSET(T3,4,-1,1,1)=5000,S8,&quot;&quot;))</span></font></p>
+<p align="left">&nbsp;</p>
+<p align="right"><span class="auto-style2"><font style="font-size: 11pt">Next Page &gt;&gt; </font>
+</span> <a href="inv_turns.htm"><font color="#0066CC">
+<span class="auto-style2"><font style="font-size: 11pt">common problems with Inventory Turns computatio</font></span><font face="Arial" style="font-size: 11pt">n</font></font></a></p>
+
+
+
+</td>
+</tr>
+	<tr valign="top">
+<td class="menu" width="232">
+
+
+
+&nbsp;</td>
+<td class="menu" style="width: 4px">
+&nbsp;</td>
+
+
+<td class="body">
+&nbsp;</td>
+</tr>
+</tbody></table>
+
+
+<table border="0" id="table5" cellspacing="0" cellpadding="2" height="68" style="width: 80%">
+<tr>
+<td align="center" style="width: 744px">
+<p>
+	
+</td>	
+<td width="1386" class="auto-style1">
+
+<p align="center">
+&nbsp;<p align="center">
+&nbsp;<p align="center">
+<font face="Arial" size="2"><a href="http://s05.flagcounter.com/more/RvMZ">
+<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a></font><span style="font-size: 72%"><font face="Verdana"><br>
+</font></span>
+<p align="center">
+<span class="auto-style4">This site was created in February 2007<br>by William Tan</span></tr>
+</table>
+</body>
+</html>

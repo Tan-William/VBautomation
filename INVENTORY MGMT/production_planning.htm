@@ -1,0 +1,906 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Close-Loop Production Planning</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+<STYLE TYPE="text/css">
+<!--
+#dek {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#0033FF; text-decoration:underline;}
+
+A.type2:link    {color:#800000; text-decoration:none;}
+A.type2:visited {color:#800000; text-decoration:none;}
+A.type2:active  {color:#800000; text-decoration:none;}
+A.type2:hover   {color:#800000; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+</style>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+
+<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+.auto-style1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	font-size: 10.5pt;
+}
+.auto-style3 {
+	font-size: 10.5pt;
+	font-style: italic;
+	font-weight: bold;
+}
+.auto-style4 {
+	font-size: 10.5pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="99%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 235px">
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(VB6)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2003)</span></a><br>
+<br>
+<font color="#800000">Materials Management</font>
+<br>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="effective_inv_mgmt.htm">Effective 
+Inventory Planning</a><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="optimum_inventory.htm">&quot;Right&quot; 
+amount of inventory?</a><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="rop.htm">Reorder 
+Point &amp; Safety Stock</a>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="SS.htm">More 
+on Safety Stock</a>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="order_qty.htm">Order 
+Quantity Techniques</a>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="pareto.htm">Pareto 
+&quot;80/20&quot; Rule analysis</a>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="matl_classifications.htm">Inventory 
+Classifications</a><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="mrp.htm">Material 
+Requirements Planning</a> <br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="inv_turns.htm">Problems 
+with Inventory Turns</a>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="customer_service.htm">Measuring 
+Customer Service</a> <br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="managing_suppliers.htm">Managing 
+Your Suppliers </a>&nbsp;<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="vmi.htm">Vendor 
+Managed Inventory</a>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="kpi.htm">KPIs, 
+scorecard and dashboard</a></span><br>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="SAP_Tcodes,Tables,Reports.htm"><b><font color="#CC0000">SAP</font></b> 
+all TCodes, Tables, Reports</a></span><br>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18"><a href="Six_Sigma_tools.htm">Lean 
+Six Sigma Methods &amp; Tools</a></span><p>Master Scheduling &amp; Production Planning
+<span class="menu2">
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a href="production_planning.htm">Closed-Loop 
+Production Planning</a></span></font>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a href="master_scheduling.htm">Master 
+Production Scheduling</a></span></font>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><span style="font-weight: 400"><font color="#800000"><a href="mps_in_mto_environment.htm">MPS 
+in Make-To-Order Environment</a></font></span><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a href="rough_cut_capacity_planning.htm">Rough 
+Cut Capacity Planning</a></span></font>
+<br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a href="capacity_requirements_planning.htm">Detailed 
+Capacity Planning</a></span></font></span></p>
+<p><font color="#800000">
+<a target="_blank" href="../FORECASTING/forecasting_fundamental.htm">Forecasting 
+Methods </a><br>
+<a target="_blank" href="../FORECASTING/forecasting_fundamental.htm">&amp; Techniques</a></font><span class="menu2"><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a target="_blank" href="../FORECASTING/forecasting_fundamental.htm">Descriptive 
+Statistics Analysis</a></span></font><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a target="_blank" href="../FORECASTING/moving_averages.htm">Multiple 
+Moving Averages</a></span></font><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a target="_blank" href="../FORECASTING/expoential_smoothing_methods.htm">Exponential 
+Smoothing Methods</a></span></font><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400"><a target="_blank" href="../FORECASTING/exponential_smoothing_with_seasonality.htm">Exponential 
+Smoothing (Seasonality</a>)</span></font><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400">Decomposition 
+methods</span></font><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400">Multiple 
+Regression Analysis</span></font><br>
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400">Box-Jenkins 
+(ARIMA) Models</span></font><br>
+
+<img src="images/menu1.gif" alt="" height="9" width="18"><font color="#800000"><span style="font-weight: 400">Multivariate 
+Data Analysis</span></font></span></td>
+
+
+<TD style="margin-top: 0; margin-bottom: 0">  
+<p align="center"><font size="5">&nbsp;</font><font face="Arial Unicode MS" style="font-weight: 700" size="5"><span "font-family: Arial">Understanding 
+Master Scheduling, Capacity Requirements Planning &amp; Production Planning</span></font></p>
+
+		<font size="4">
+      <p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		</font><b>
+		<font face="Arial"><span style="font-family: Verdana; ">
+		<font size="4" color="#800000">The Long-Range Strategic Plan</font></span></font><font face="Arial" color="#FF6600"><span style="font-family: Arial; font-size:16pt"><font size="5"><br>
+		</font></span>
+		</font></b>
+		<font face="Verdana"><span class="auto-style2"><br>Manufacturing resource planning (MRP II) 
+		and facility planning are elements of long-range strategic planning. 
+		Long-range strategic planning is the process of establishing corporate 
+		goals and objectives along with the plans to accomplish them. 
+		Medium-range tactical planning is the process of selecting the methods 
+		of achieving organizational goals and objectives. Long-range strategic 
+		decisions of relevance to production area comprise of which products to 
+		manufacture; which dimensions of the cost, quality and delivery to 
+		compete; where to locate manufacturing facilities; what production 
+		equipments to use; what inventory management and decision systems to 
+		use, and other choices concerning long-term supply sources of raw 
+		materials, energy and workforce skills.</span></font><font face="Arial" style="font-size: 11pt"><br>
+&nbsp;</font></p>
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+      	<font size="4" color="#800000" face="Arial">
+		<span style="font-family: Verdana">The Medium<font style="font-family:Verdana">-Range 
+		Tactical Plan</font></span></font></b><font face="Arial" style="font-size: 11pt"><br>
+		</font>
+		<font face="Verdana" size="2"><br><span class="auto-style2">Tactical planning, with a planning horizon 
+		generally from 6 to 12 months into the future, take the basic physical 
+		production capacity constraints and projected demand pattern determined 
+		by the long-range plan, and allocate available resources to meet the 
+		projection of demand. Aggregate production planning, and aggregate 
+		capacity planning are examples of the medium-range tactical planning. 
+		Even though basic production capacity is essentially fixed in the 
+		long-range plan, production capacity can effectively be increased or 
+		decreased within threshold limits in the medium term. For example, a 
+		decision can be made to increase or reduce the workforce size, the 
+		amount of shifts and overtime scheduled, production rate, the level of 
+		inventory investment, the shipping modes used, and the amount of 
+		production subcontracting used.</span></font></P>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+&nbsp;</P>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2"><span class="auto-style2">Aggregate plans like the aggregate production and 
+capacity plans, must be reviewed at least quarterly to determine that marketing, 
+finance, manufacturing and production functions are operating in the same plan 
+with the correct allocation of resources and capacity.</span></P>
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		&nbsp;</P>
+		</font>
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+		<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+
+
+		<span style="font-family: Verdana; ">The Short-Range Operational Plan</span></font></b><font face="Arial" style="font-size: 11pt"><br>
+		</font>
+      	<font face="Verdana" size="2"><br><span class="auto-style2">Short-term operational activities provide 
+		the day-to-day flexibility needed to meet customer requirements within 
+		the guidelines established in the aggregate plans. Short-range operating 
+		schedules include receiving orders directly from customers, MRP 
+		explosion, release planned orders, approve purchase orders, revise 
+		production plan when actual output deviates from plan. In most cases, 
+		the detailed operational schedules are drawn up for one week, then one 
+		day, and finally one shift in advance. The schedules involve the 
+		assignment of products to machines, the sequencing and routing of orders 
+		through the production shop floor, recalculation of replenishment 
+		quantities for each SKU after offsetting against available supply from 
+		sales order, reorder point and planned safety stock level.<br>
+		</span>&nbsp;</font></P>
+		<font face="Arial" style="font-size: 11pt">
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+		<span style="font-family: Arial; font-size: 18pt"><font face="Arial">
+		<a name=aggregate_planning></a>
+		</font></span></b>
+		</font>
+      	<b>
+		<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+		<span style="font-family: Verdana; ">The Aggregate Production Plan</span></font></b><font face="Arial" style="font-size: 11pt"><br>
+		</font><font face="Verdana" size="2"><br><span class="auto-style2">This has the medium-range scope and 
+		involves establishing production rates, work force sizes, and inventory 
+		levels within normally a planning horizon of 6 to 12 months, sometimes 
+		up to 24 months. Time block is generally one month. Aggregate Production 
+		Planning is done on an aggregate basis for families of products which 
+		are produced on the same equipment. This phase of planning is designed 
+		to properly utilize capacity especially in the continuous process 
+		industries, and it must take into account the planned equipment 
+		maintenance downtime. It is relatively easy to aggregate and 
+		subsequently disaggregate production planning in the job shop production 
+		line. In this context, &quot;disaggregated&quot; means the plan for goods to be 
+		produced in aggregate is broken down or de-kitting into its individual 
+		units.</span></P>
+		</font><font face="Arial" style="font-size: 11pt">
+<font face="Verdana" size="2" class="auto-style2">
+		<p align="left" style="line-height: 100%">Note that the long-range 
+		strategic plan can influence the choices available in the aggregate 
+		production planning process, and that the aggregate plan can also 
+		influence the long-range strategic plans.</P>
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		The cost components to be determined in aggregate planning are:</P>
+<p align="left" style="line-height: 100%">1) cost of regular time payroll and 
+overtime (production cost/unit during and beyond regular working hours)<br>
+		2) cost of changing the production rate from one period to another 
+(additional hiring, training, layoff, etc)<br>
+		3) cost of carrying inventory<br>
+		4) cost of insufficient capacity in the short term</P>
+		</font>
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		</font><b>
+		<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+
+
+		<span style="font-family: Verdana; ">Master Production Scheduling (MPS)</span></font></b><font face="Arial" style="font-size: 11pt"><font face="Arial"><span style="font-size: 11pt;"><br>
+		<br>
+		</span>
+</font>
+		</font>
+      	<font face="Verdana"><span class="auto-style2">This is medium-range aggregate production 
+		planning. For a shorter planning horizon something like 6 months or so,
+		</span>
+		</font>
+      	<font face="Arial" style="font-size: 11pt">
+<font face="Verdana" size="2" class="auto-style2">master schedule is sometimes referred to as 
+		short-range plan.
+		<a href="mrp.htm#mps"><font color="#0066CC">Figure 8.1</font></a> 
+		demonstrates the various functions in relation to master production 
+		scheduling. (<font color="#0066CC"><a href="mrp.htm#MPS"><font color="#0066CC">read 
+		more</font></a><a href="mrp.htm#MPS" style="text-decoration: none">...</a></font>). 
+		Master schedule takes the aggregate production plan (with known 
+		constraints) and disaggregates it into a production schedule (usually in 
+		weeks or days) of specific products to be produced in a particular time 
+		periods at each manufacturing facility. Typically, the master schedule 
+		states which end items are to be produced, when these are needed, and in 
+		what quantities. The master schedule must be realistic, as besides 
+		driving material buying ahead</font><font face="Arial"><font face="Verdana"><span class="auto-style2">, 
+		it is used to generate customer delivery dates (i.e. ATP) for any new 
+		orders.</span></font></p>
+		<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		<font face="Verdana" size="2">
+		<font color="#0066CC"><a href="master_scheduling.htm">
+		<font color="#0066CC"><span class="auto-style2">Read on</span></font></a></font><span class="auto-style2"> the next page for more 
+		in-depth explanation on master scheduling.</span><br>
+		<br>
+		&nbsp;</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		</font><font face="Arial" style="font-size: 11pt"><b>
+<span style="font-family: Arial; font-size: 18pt"><font face="Arial">
+		<a name=(MRP)></a>
+		</font></span></b>
+		</font>
+		</font>
+      	<b>
+		<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+		<span style="font-family: Verdana; ">Materials Requirement Planning 
+		(MRP)</span></font></b><font face="Arial" style="font-size: 11pt"><font face="Arial"><span style="font-size: 11pt"><br>
+		</span></font>
+		</font>
+<font face="Verdana" size="2"><br><span class="auto-style2">MRP is a set of calculation techniques embedded in 
+		the computer-based information system, and it explodes the master 
+		production schedule into detailed production and procurement schedules, 
+		specifying timing and quantity of production for each end 
+		item.&nbsp;Closed-looped MRP performs capacity checks, which are used 
+		iteratively with MPS and the production plans, to generate feasible 
+		schedules. In assembly environments, it is crucial that can involves 
+		tens of thousands of SKU and components. In job shop production floor, 
+		it is relatively straightforward.</span></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+&nbsp;</p>
+<font face="Arial" style="font-size: 11pt" class="auto-style2">
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana">MRP uses bill of material data, inventory data 
+(accurate records of stock items, work-in-progress (WIP) and on-order parts), 
+lead time, routing, and the master production schedule to calculate net 
+requirements for materials. It makes recommendations on when to release orders 
+for material. Because it is time-phased, it makes recommendations to reschedule 
+open orders when due dates and need dates are not in phase. Time-phased MRP 
+begins with the product items listed on the MPS and determines : (1) the 
+quantity of all components and materials required to fabricate those product 
+items, and (2) the date that the components and material are required. </font>
+		</font>
+<font face="Verdana"><span class="auto-style2">Time-phased MRP is accomplished by exploding the 
+bill of material, adjusting for the net requirements by the appropriate lead 
+times, inventory quantities on-hand, open purchase orders, and sales orders.</span></p>
+		</font>
+<font face="Arial" style="font-size: 11pt"><font face="Verdana" size="2">
+<p align="left"><span class="auto-style3">MRP Explosion Process</span><span class="auto-style2"> 
+calculates and generates the following elements:<br>
+- Gross requirements<br>
+- Schedule receipts<br>
+- Projected on hand<br>
+- Net requirements<br>
+- Planned-order receipts<br>
+- Planned-order releases</p>
+<p align="left"><i><b>The Benefits of MRP</b></i> 
+to a company are:<br>
+- Reduced Inventory Levels<br>
+- Reduced Component Shortages<br>
+- Reduced Lead Times<br>
+- Improved Supply Schedules<br>
+- Improve Production Schedules<br>
+- Reduced Overtime<br>
+- Reduced Purchasing Cost, Manufacturing Cost, Freight Cost<br>
+- Reduction in Excess Inventory<br>
+- Less Scrap and Rework<br>
+- Improved Shipping Performance<br>
+- Improved Productivity<br>
+- Improved Customer Service</p>
+		<p align="left"><a href="mrp.htm">
+		<font color="#0066CC">Read more</font></a>.. on the MRP page.</span></font><font face="Arial" style="font-size: 11pt"><br>
+&nbsp;</font></p>
+		</font>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+
+
+<span style="font-family: Verdana; ">MRP Functional Requirements</span></font></b></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><font face="Arial" style="font-size: 11pt"><br>
+		</font>
+      <font face="Verdana"><span class="auto-style2">The following is a running list of the MRP 
+80 most common functional requirements.</span></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+&nbsp;</p>
+		<font face="Arial" size="2">
+
+
+<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0">
+<span class="auto-style4">1</span><span class="auto-style2">. 
+Supports <u>Overhead Costs or Burden Rates per Machine</u>.<br>
+<b>2</b>. Supports Assignment of <u>Burden or Overhead Rate to Work Centers</u>.<br>
+<b>3</b>. Supports per Unit or per Hour <u>Burden Costs by Dollar Amount</u>.<br>
+<b>4</b>. Supports <u>Burden Rates</u> that are Calculated by Dollar Amounts or 
+Percentages.<br>
+<b>5</b>. Supports Assignment of <u>Standard Direct Labor to Work Centers</u>.<br>
+<b>6</b>. Supports Assignment <u>Incremental Cost associated with 
+Subcontracting, Third Party Processing, or Outside Processing</u>.<br>
+<b>7</b>. Supports <u>Standard Cost Roll Up</u> Calculations.<br>
+<b>8</b>. Supports a Minimum of a Twelve Month <u>Planning Horizon for Master 
+Scheduling</u>.<br>
+<b>9</b>. Supports Definition of <u>Available Hours or Operation per Individual 
+Machine</u>.<br>
+<b>10</b>. Bill of Materials are exploded to calculate <u>Net Requirements, 
+Available Inventory Balances, Existing Sales Orders, and Scheduled Incoming 
+Receipts, Forecasted Amounts, and On Hold Inventory</u>.<br>
+<b>11</b>. Supports <u>Top (Shippable Finished Good) to Bottom (Raw Material) 
+Planning.</u><br>
+<b>12</b>. Supports <u>Real-Time Cumulative Lead Time Generation</u>.<br>
+<b>13</b>. Supports <u>Purchased Finished Goods Requirements, i.e., DRP.</u><br>
+<b>14</b>. Supports <u>Vendor Specific Lead Time Offsets</u> for component goods 
+purchases.<br>
+<b>15</b>. Supports Review of <u>ECO's Status and Effectivity Date</u> in 
+Planning.<br>
+<b>16</b>. Supports <u>Overlapping Operations within Scheduling</u>.<br>
+<b>17</b>. Supports <u>Simulation and &quot;What if&quot; Scenarios</u> without altering 
+the live production data.<br>
+<b>18</b>. Supports <u>modifications to Capacity Limits and Manufacturing 
+Calendars during simulations</u> without altering live data<br>
+<b>19</b>. Supports <u>Fully Integrated Master Scheduling and Planning 
+Functionality</u>.<br>
+<b>20</b>. Supports Scheduling from Order Due Date Back to Production Start Date 
+- also referred to as <u>Backward Scheduling</u>.<br>
+<b>21</b>. Supports Scheduling from the Order Start Date to the End Date - also 
+referred to as <u>Forward Scheduling</u>.<br>
+<b>22</b>. Supports Scheduling based on Order Planned Completion Dates - also 
+referred to as
+<u>Pull Scheduling</u>.<br>
+<b>23</b>. Supports Scheduling based on a Fixed or Limited Amount of Resources - 
+also referred to as <u>Finite Scheduling</u>. Finite Scheduling Calculations 
+consider Resource Requirements such as Labor, Machine, Tooling.<br>
+<b>24</b>. Supports the scheduling based on Machine or Process Availability 
+First and then Material Availability Second - also referred to as <u>Process 
+Flow Scheduling</u>.<br>
+<b>25</b>. Supports the <u>Automatic Calculation of the Work Order's Finish 
+Date-based Work and Available Resources</u>.<br>
+<b>26</b>. Supports <u>Firm Planned Orders</u> (FPO) Which allows the planner to 
+override Production Planned Orders output from MRP.<br>
+<b>27</b>. Supports <u>Automatic Rescheduling for MRP Exceptions</u>.<br>
+<b>28</b>. Allows the User to <u>Set Up a Standard Production Sequence for 
+Scheduling</u>.<br>
+<b>29</b>. <u>Incomplete Production Order Runs automatically Roll Forward</u> to 
+future shifts, days, or weeks.<br>
+<b>30</b>. <u>Tentative Planning Schedule</u> provides Forecasts, Sales Orders, 
+Master Schedule Demand Detail, and Incoming Receipts on One Screen or Report for 
+User Review prior to completion of the Final Schedule.<br>
+<b>31</b>. Supports User Defined <u>Rough Cut Capacity Planning of Critical 
+Resources and Master Schedule</u>.<br>
+<b>32</b>. <u>Order Start Dates</u> Utilize the Products Lead Time.<br>
+<b>33</b>. Supports the Usage of <u>Effective Dates in the BOM or ECN</u>.<br>
+<b>34</b>. Supports <u>Safety Stock Replenishment</u> Requirements.<br>
+<b>35</b>. Supports Minimum <u>Reorder Points</u>.<br>
+<b>36</b>. Supports Manufacturing <u>Routings</u>.<br>
+<b>37</b>. Routings Support <u>Revision Levels and Version Tracking</u>.<br>
+<b>38</b>. Supports the Entering of <u>Tooling Requirements</u> in Routings via 
+a Field or Note.<br>
+<b>39</b>. Supports <u>Unlimited Work Instructions per Routing and Operation</u>.<br>
+<b>40</b>. Supports Subcontract or <u>Outside Third Party Processing within 
+Routings</u>. Subcontracted or Outside Processing Operations within Routings 
+automatically create Purchase Orders and associated shipping documents.<br>
+<b>41</b>. Supports Input of a <u>Standard Set Up Time per Routing Operation</u>.<br>
+<b>42</b>. Supports a <u>Routing Run Time</u> that is entered by operation 
+personnel.<br>
+<b>43</b>. Supports <u>Routing Move Time</u> between Operations.<br>
+<b>44</b>. Supports the Entry of <u>Raw Materials or Components Utilized per 
+Routing Operation</u>.<br>
+<b>45</b>. Supports Work Center <u>'Where Used' Inquiries</u>.<br>
+<b>46</b>. Supports <u>Mass-Delete and Replacement of Operations within Routings</u>.<br>
+<b>47</b>. Supports <u>Drill Down Inquiries</u> for Work Orders Processing.<br>
+<b>48</b>. Allows Online <u>Component or Raw Material Inventory Availability 
+Inquiry</u>.<br>
+<b>49</b>. Allows the User to <u>define specific routing step to record actual 
+units produced or scraped</u>.<br>
+<b>50</b>. Supports <u>automatic allocation of Required Raw Materials or 
+Components when the Work Order is Released</u>.<br>
+<b>51</b>. Supports <u>Work Orders with Multiple Line Items</u>.<br>
+<b>52</b>. <u>Multiple-Level Bill of Materials are automatically allocated when 
+Work Order is Release</u>.<br>
+<b>53</b>. <u>Allows Modification to both Work Order Components and Operations 
+once Released</u>.<br>
+<b>54</b>. Supports Reporting of <u>Actual Quantities Produced and Actual 
+Quantities Scrapped</u> During Production.<br>
+<b>55</b>. Supports Reporting of <u>Actual Labor Utilized</u> During Production.<br>
+<b>56</b>. Completed Sub-Assemblies can be Allocated Directly to Final Work 
+Orders, and Completed Work Orders can be Allocated Directly to a Customer Order.<br>
+<b>57</b>. Supports <u>Assignment of Personnel, Entry of a Work Day and per 
+Shift Capacity</u> per Work Center.<br>
+<b>58</b>. Allows the Entry of Multiple Machines per Work Center, and the Entry 
+of Multiple Work Centers per Department.<br>
+<b>59</b>. Supports <u>Backflushing of Components, Raw Materials and Direct 
+Labor</u> at Standard Operation Rate.<br>
+<b>60</b>. Allows <u>Online Viewing of Work Center Load Information</u>.<br>
+<b>61</b>. The Work Center Load Reporting allows <u>Partially Complete 
+Operations and Work Orders</u>.<br>
+<b>62</b>. The Work Center Load Reporting Identifies <u>Planned, Firm, and 
+Released Orders</u>.<br>
+<b>63</b>. Supports a Dispatch List or Production Schedule Reporting <u>
+Capability per Manufacturing Work Center</u>.<br>
+<b>64</b>. Supports Online Inquiry of <u>Work Order Status</u> by Work Order 
+Number or Product Number.<br>
+<b>65</b>. Supports Online Inquiry of <u>Work in Process Inventory Status</u>.<br>
+<b>66</b>. Supports Online Inquiry of <u>Expected Work Order Completion Date</u>.<br>
+<b>67</b>. Supports Online Inquiry or Reporting of <u>Finished Good Availability</u>.<br>
+<b>68</b>. Scheduling Process Creates <u>Available-to-Promise (ATP) Data</u>.<br>
+<b>69</b>. Supports MRP <u>Action Exception Reports</u>.<br>
+<b>70</b>. Provides a Standard Report for <u>Manufacturing Variances</u>.<br>
+<b>71</b>. Provides Standard Report for <u>Detailed Production Schedules</u>.<br>
+<b>72</b>. Provides Standard Report for <u>Work Order Requirements</u>.<br>
+<b>73</b>. Provides Standard Report for <u>Manufacturing Planning</u>.<br>
+<b>74</b>. Provides Standard Report for <u>Raw Material Demand</u>.<br>
+<b>75</b>. Provides Standard Report for <u>Material Shortage</u>.<br>
+<b>76</b>. Provides Standard Report for <u>Inventory Status</u>.<br>
+<b>77</b>. Provides Standard Report for Reviewing <u>Tentative Schedules</u>.<br>
+<b>78</b>. Provides Standard Report for Reviewing <u>Final Schedules</u>.</span></p>
+<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0"><br>
+&nbsp;</p>
+		</font>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+<span style="font-family: Verdana">The conceptual differences between MPS and 
+MRP</span></font></b><font face="Arial" style="font-size: 11pt"><font face="Arial"><span style="font-size: 11pt"><br>
+</span></font>
+		</font>
+<font face="Verdana" size="2"><br><span class="auto-style2">Master Production Scheduling (MPS) is generally 
+done for when the product groups exists. By doing MPS we basically disaggregate 
+the product group requirements into individual product requirements. By doing 
+MPS we can disaggregate the plan and we can only create planned order for 
+finished products. Materials Requirement Planning (MRP) is done to drill down 
+for individual product once the planned orders for finished products are created 
+by MPS. However, we can use MRP for any individual material anytime.</span></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+<font face="Verdana">Material Requirement planning is used for 
+multi-level BOM planning. But MPS is used for critical level or single level BOM 
+planning. In short, MPS operates within only one level of the BOM, While MRP can 
+be utilized throughout all levels of a material&#8217;s BOM.</font></p>
+<font face="Arial" class="auto-style2">
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		</font>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+<font face="Verdana">In MPS, the critical components are planned 
+separately, but can be using interactive planning. In Material Master, the MRP 
+Type is chosen accordingly, eg., MRP I, MRP II. In MRP time phased system 
+planning, the bill-of-material is exploded, netting calculation is done, and 
+component level quantities and time requirements are planned. Firstly, MPS is 
+done, then MRP is run.</font></p><font face="Arial" class="auto-style2">
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		</font>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2">
+<a style="color: #0033FF" href="master_scheduling.htm#CPO">
+<span class="auto-style2">Planning Time Fence</span></a><span class="auto-style2"> 
+is must for MPS. Planning Time Fence dictates a series of time intervals for 
+planning purposes, during which any changes to the firm orders are restricted. 
+Subsequent MRP runs will not create planned orders within the time fence but 
+will place them just outside it. (i.e. planning time fence specifies a period 
+within which no automatic changes are made to the master plan. The master 
+scheduler has full control over planned order release).</span></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2"><br>
+&nbsp;</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+<font face="Arial" style="font-family:Verdana" size="4" color="#800000">
+<span style="font-family: Verdana">The Differences in the Inputs and Outputs of 
+MPS and MRP</span></font></b></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<font face="Arial" style="font-size: 11pt">
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b><i>
+<font color="#663300">INPUT to MPS</font></i></b></font><font face="Verdana" color="#663300"><span class="auto-style3">
+</span><span class="auto-style2">(i.e. sources of information 
+needed for MPS logic):</span></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana"><span class="auto-style2">&#9632;</span></font><font face="Arial" style="font-size: 11pt"><font face="Verdana" size="2" class="auto-style2"> 
+Product Demand or Forecast<br>
+&#9632; Spares Demand<br>
+&#9632; Sister Plants' Demand<br>
+&#9632; Production Costs<br>
+&#9632; Inventory Costs<br>
+&#9632; Customer Orders (Backlog)<br>
+&#9632; Safety Stock requirements<br>
+&#9632; Exhibition/Promotion/R&amp;D requirements<br>
+&#9632; Inventory Levels (beginning stock, etc)<br>
+&#9632; Supply<br>
+&#9632; Lot Size<br>
+&#9632; Production Lead Time<br>
+&#9632; Production Plan<br>
+&#9632; Availability of Capacity<br>
+&#9632; Key Capacity Constraints<br>
+&#9632; Goals <br>
+&#9632; Management/Inventory Policies</font><font color="#663300"><br>
+<br>
+<b>
+<i>OUTPUT from MPS</i></b></font></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2" color="#663300"><br>
+</font>
+<font face="Verdana" size="2" class="auto-style2">&#9632; Production plan volume, when to be produced, 
+when to be completed<br>
+&#9632; Number of productive hours needed and the staffing levels<br>
+&#9632; Quantity Available to Promise<br>
+&#9632; Projected Available Balance</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font color="#663300" face="Arial" size="3">
+-------------------------------------------------------------------------------------------------------------------------------</font><font color="#663300" face="Arial" style="font-size: 11pt"><br>
+<br>
+<i><b>INPUT to MRP</b></i></font><font face="Verdana" size="2" color="#663300"> 
+(plan optimal inventory levels, purchases, production schedules, etc):</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2"><font color="#663300"><br></font>
+<span class="auto-style2">&#9632;</span></font><font face="Arial" style="font-size: 11pt"><font face="Verdana" size="2" class="auto-style2"> 
+Master Production Schedule<br>&#9632; Bill of Materials<br>&#9632; Process Routings and 
+cycle times<br>&#9632; Inventory Data (Unit Inventory, Quantity on Hand, WIP)<br>&#9632; 
+Material Lead Times<br>&#9632; Sales Order Quantities / Due Dates<br>&#9632; Scrap Rate<br>&#9632; 
+Purchase Order Quantities / Due Dates<br>&#9632; Purchase Order Unit Conversion Factor<br>
+&#9632; Lot Sizing policies for all parts (Lot-for-lot, Min/Max Ordering Qty, 
+Fixed-Period Ordering Qty, EOQ)<br>&#9632; Safety Stock Requirements<br>&#9632; Re-Order 
+Levels</font><font color="#663300"><br>
+
+<br><i><b>OUTPUT from MRP</b>:</i></font></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2" color="#663300"><br>
+</font>
+<font face="Verdana" size="2" class="auto-style2">&#9632; Planned-Order Schedules (schedules that 
+indicates the amount and timing of future orders)<br>
+&#9632; Planned Order Releases (authorization for the execution of planned orders)<br>
+&#9632; Changes (revisions of due dates or order quantities, or cancellations of 
+orders)<br>
+&#9632; Purchase Requisitions<br>
+&#9632; Inventory Transaction<br>
+&#9632; Action Exception Message Reports<br>
+&#9632; Planning Reports<br>
+&#9632; Performance Control Reports</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Arial" style="font-size: 11pt"><br>
+&nbsp;</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>
+<font face="Arial" style="font-family:Verdana" color="#800000" size="4">
+<span style="font-family: Verdana; ">Capacity Requirements Planning (CRP)</span></font></b><font face="Arial" style="font-size: 11pt"><br>
+</font><font face="Verdana" size="2">
+<br><span class="auto-style2">It is the process of determining short-range capacity requirements. Capacity 
+Requirements Planning is a computerized technique for projecting resource 
+requirements for critical work stations. The functions are:</span></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2">
+<br class="auto-style2">
+<span class="auto-style2">&#9679; Tests MPS for feasibility<br>&#9679; Utilizes routings to determine labor/machine 
+loads<br>&#9679; If master schedule is feasible, recommends freezing<br>&#9679; If master 
+schedule overloads resources, identify processes that are over-scheduled</span></p>
+<p align="left">&nbsp;<font color="#0066CC"><a href="capacity_requirements_planning.htm"><font color="#000080"><span class="auto-style2">Read 
+more here</span></font></a><a href="capacity_planning.htm" style="text-decoration: none"><font color="#0066CC"><span class="auto-style2">
+</span> 
+</font></a></font><span class="auto-style2">on capacity planning<br></span></font>
+<font face="Arial" class="auto-style2">
+<br></font><font face="Verdana" size="2">
+<span class="auto-style4">The Input</span><span class="auto-style2"> comprises: -<br>
+&#8213;Planned Order Releases (after MRP run).<br>&#8213;Open Orders File.<br>&#8213;Other 
+important sources - Rework, Excess scrap, Quality problems.<br>
+<br><b>The Routing file</b> contains: -<br>&#8213;Operation identification code<br>
+&#8213;Operation description<br>
+&#8213;Planned work center<br>&#8213;Standard setup time<br>&#8213;Standard run time per unit<br>
+&#8213;Tooling requirements<br>
+<br><b>Lead Times</b> are: -<br>&#8213;Staging time (time to pick up materials from 
+store and send to shop floor work center)<br>&#8213;Queue time (time waiting before 
+operation begins)<br>&#8213;Setup time (time getting ready for operation)<br>
+&#8213;Run time (time performing operation)<br>&#8213;Wait time (time waiting after 
+operation ends)<br>
+&#8213;Move time (time physically moving between operations)<br><b><br>The Output</b> 
+comprises: -<br>Load Profile for each work center<br>Load Schedules that :<br>&nbsp;&nbsp; 
+&#8213;Compares actual labor and machine hours against available hours<br>&nbsp;&nbsp; 
+&#8213;Offsets schedules between successive stages of production by lead times<br>&nbsp;&nbsp; 
+&#8213;Provides feasible MPS and economically loaded work centers<br>&nbsp;&nbsp; 
+&#8213;Promotes system operating efficiency</span></p>
+		</font><font face="Arial" style="font-size: 11pt">
+<font face="Verdana" size="2">
+		<p align="left">
+		<span class="auto-style2">
+<br></span><b><span class="auto-style2">Adjustments to Capacity or Load</span></b><span class="auto-style2"> include:<br>&#8226; <b> <i>
+<font color="#800000">Increasing</font> <font color="#800000">Capacity</font></i></b><br>
+&nbsp; &#8213;Add extra shifts<br>&nbsp; &#8213;Schedule overtime or weekends<br>&nbsp; &#8213;Add 
+equipment and/or personnel<br>
+<br>&#8226; <b> <font color="#800000"><i>Increasing Load</i></font></b><br>&nbsp; 
+&#8213;Make items normally purchased or subcontracted, to be manufactured in-house<br>&nbsp; 
+&#8213;Release orders early<br>&nbsp; &#8213;Increase lot sizes<br>&nbsp; &#8213;Increase the MPS<br>
+<br>&#8226; <b> <i><font color="#800000">Reducing</font> <font color="#800000">
+Capacity</font></i></b><br>
+		&nbsp; &#8213;Eliminate shifts or reduce length of shifts worked<br>&nbsp; 
+&#8213;Reassign personnel temporarily between work centers<br>
+<br>&#8226; <b> <i><font color="#800000">Reducing</font> <font color="#800000">Load</font></i></b><br>
+		&nbsp; &#8213;Subcontract work to outside suppliers<br>
+		&nbsp; &#8213;Hold work in production control<br>&nbsp; &#8213;Reduce lot sizes<br>&nbsp; 
+&#8213;Reduce the MPS<br>
+<br>&#8226; <b> <i><font color="#800000">Redistributing</font> <font color="#800000">
+the</font>
+<font color="#800000">Load</font></i></b><br>&nbsp; &#8213;Use alternate work centers<br>&nbsp; 
+&#8213;Use alternate job routings<br>&nbsp; &#8213;Adjust operation start dates forward or 
+backward in time<br>&nbsp; &#8213;Revise the MPS<br>
+		</span>&nbsp;</p>
+<p align="left">
+&nbsp;</p>
+</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<DIV ID="dek">
+	<p></DIV>
+<SCRIPT TYPE="text/javascript">
+<!--
+//Pop up information box II (Mike McGrath (mike_mcgrath@lineone.net))
+//Permission granted to Dynamicdrive.com to include script in archive
+Xoffset=-200;    // modify these values to ...
+Yoffset=30;    // change the popup position.
+
+var old,skn,iex=(document.all),yyy=-1000;
+
+var ns4=document.layers
+var ns6=document.getElementById&&!document.all
+var ie4=document.all
+
+if (ns4)
+skn=document.dek
+else if (ns6)
+skn=document.getElementById("dek").style
+else if (ie4)
+skn=document.all.dek.style
+if(ns4)document.captureEvents(Event.MOUSEMOVE);
+else{
+skn.visibility="visible"
+skn.display="none"
+}
+document.onmousemove=get_mouse;
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=250 BORDER=1 BORDERCOLOR=red CELLPADDING=2 CELLSPACING=0 "+
+"BGCOLOR="+bak+"><TD ALIGN=left><FONT TYPE=arial COLOR=black SIZE=2>"+msg+"</FONT></TD></TABLE>";
+yyy=Yoffset;
+ if(ns4){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(ns6){document.getElementById("dek").innerHTML=content;skn.display=''}
+ if(ie4){document.all("dek").innerHTML=content;skn.display=''}
+}
+
+function get_mouse(e){
+var x=(ns4||ns6)?e.pageX:event.x+document.body.scrollLeft;
+skn.left=x+Xoffset;
+var y=(ns4||ns6)?e.pageY:event.y+document.body.scrollTop;
+skn.top=y+yyy;
+}
+
+function kill(){
+yyy=-1000;
+if(ns4){skn.visibility="hidden";}
+else if (ns6||ie4)
+skn.display="none"
+}
+//-->
+</SCRIPT>
+
+
+
+
+
+
+<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b>
+<span style="font-size: 16pt; font-family: Arial">In an ERP environment such as 
+SAP, What is the difference between Planned-Order and Production-Order (or 
+Work-Order)?</span></b></font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0"></font>
+<font face="Verdana" size="2">
+<br>
+<span class="auto-style2">I thought about sharing with you the sometimes confusing terms in production 
+planning - MRP Planned Order and Production Order. In 
+<font color="#0033CC" onMouseover="popup('Discrete manufacturing (distinct items where you can easily count, touch, see, such as computers, appliances) is not Process Manufacturing (where you cannot similarly tell the difference between one product and another such as petrol, gasaline, etc)','yellow')"; ONMOUSEOUT="kill()">
+Discrete manufacturing</font> environments, planned orders are created after 
+the MRP run.&nbsp; MRP - after adjusting for the net requirements 
+by the appropriate lead times, inventory quantities on-hand, inbound in-transit 
+inventory, open purchase orders, and sales orders - will create planned orders 
+for the shortages of materials or sub-assemblies. MRP Planned Orders can be converted into 
+Production Orders, released, and processed. 
+Production order once created becomes a fixed plan, cannot be adjusted by MRP 
+anymore.&nbsp;Once we firm the planned order, any material changes will not be reflected in the 
+subsequent MRP (example, with BOM changes in quantity and addition/deletion of 
+components). New components will not be recommended for firm planned order. 
+Deleting planned orders is only temporary, because as soon as you run MRP they 
+will be recreated. We can configure to automatically firming planned orders or 
+release the orders earlier, but the drawback is that inventory cost will go up 
+due to lesser control.</span></font></p>
+<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2" class="auto-style2">For 
+<font color="#0033CC" onMouseover="popup('Method of manufacturing where the same products (or a family of products)are continually and repetitiously manufactured. This is the ideal setting for Mass Production where Hard Manufacturing can be used with a large fixed cost investment.','yellow')"; ONMOUSEOUT="kill()">
+Repetitive manufacturing</font>,&nbsp;planned orders are created after you 
+run the MRP against your demand. You can change and firm these manually or you 
+can use <font color="#0033CC" onMouseover="popup('Time Fence dictates a series of time intervals for planning purposes, during which order changes are restricted. Subsequent MRP runs will not create planned orders within the time fence but will place them just outside it. (i.e. planning time fence specifies a period within which no automatic changes are made to the master plan, no planned-orders schedule within the time fence).','yellow')"; ONMOUSEOUT="kill()">
+time fence</font> strategies, and you can have multiple operations running 
+through multiple work centers. Repetitive planned orders type is normally run 
+against shorter lead time build schedule, where we don't need a high level of 
+control. Where we want a better level of control, we select Discrete planned 
+orders.</font></p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+&nbsp;</p>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+<font face="Verdana" size="2" class="auto-style2">With <font color="#0033FF">Discrete Planned Order</font> type, we can link 
+documents to the orders; we can change the routing and the BOM on the order; and 
+we have better visibility of the individual orders while they are in 
+manufacturing. After everything is complete, you still have a record against the 
+production build. The planned order stays intact and its history of changes in 
+process routing and the BOM is retained.</font></p>
+<font face="Arial" size="2" class="auto-style2">
+<p align="left" style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</font>
+<p align="left" style="line-height: 100%; margin-top: 0; margin-bottom: 0" class="auto-style2">
+<font face="Verdana">In its simplest form, we need to provide input to 
+a plan before it becomes a demand schedule. This demand schedule stores the 
+sales orders (partially or entirely firm), backlogs, and the forecasts, which 
+are the demands for external purchase, internal procurement or in-house 
+manufacturing. When you run MRP, you are launching the demand plan. The system 
+planning process looks to the stock levels, and to the demand. If there is not 
+enough stock to supply the demand, the planning process suggest Planned Orders.</font></p>
+<font face="Verdana" size="2" style="font-size: 11pt">
+		<p align="left">&nbsp;</p>
+      </font>
+      <font face="Arial">
+      <P align=right><FONT face=Verdana size="2" class="auto-style2">Next Page &gt;&gt;
+	  <a href="master_scheduling.htm"><FONT 
+      color=#0066cc>Master Production Scheduling</FONT></a></FONT></font><font face="Arial" style="font-size: 11pt"><FONT 
+  size=3><BR>&nbsp;</FONT></P></font></TD></TR></TBODY></TABLE>
+<TABLE id=table1 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=241>&nbsp;</TD>
+    <TD>
+      <P align=center style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+		<FONT size=2 face="Courier New"><BR></FONT>
+<font face="Arial" size="2">
+
+   
+<a href="http://s05.flagcounter.com/more/RvMZ">
+<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a></font><FONT size=2><FONT face="Courier New"><BR>
+		</FONT></FONT><span class="auto-style1">This site was 
+		created in Feb.2007<br>by William Tan</span><BR><BR>
+      
+
+
+      
+      
+      </P></TD></TR></TBODY></TABLE></BODY>
+</HTML>

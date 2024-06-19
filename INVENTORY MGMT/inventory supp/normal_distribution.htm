@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/normal_distribution.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:08 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Material Management, Material Control, Production Planning and Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/>
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 6.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="../vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('../images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 248px">
+
+
+
+<a href="http://www.110mb.com/404.php">Home</a><br>
+<a href="http://www.110mb.com/404.php">About Me</a><br>
+<a href="http://www.110mb.com/404.php">Excel VBA (XL97-2003)</a><br>
+<a href="http://www.110mb.com/404.php">Excel spreadsheet formula</a>
+<a href="http://www.110mb.com/404.php">Excel VB.NET (XL2007)</a><br>
+<a href="http://www.110mb.com/404.php">Access VBA</a><br>
+<br>
+<a href="../index_inv_mgmt.htm">Material Management</a><span class="menu2"><br>
+<img src="../images/menu1.gif" alt="" height="9" width="18"><span style="font-size: 100%; font-weight: 400">More on Safety Stock</span><br>
+&nbsp;&nbsp;&nbsp;
+<img src="../images/menu1.gif" alt="" height="9" width="18"><span style="font-size: 100%">'normal' 
+distribution</span></span><p><font color="#800000">Production Planning</font><span class="menu2"><br>
+</span><font color="#800000">Demand Forecasting</font></td>
+
+
+<td class="body" align="center">
+
+
+<p align="center"><font style="font-size: 22pt"><b><span style="font-family: Arial">Normal 
+Distribution</span></b></font></p>
+<p align="left">
+<font face="Arial" style="font-size: 11pt">Statistical safety stock level can be calculated to prevent a give number of 
+stock-outs by using 'normal' distribution to determine the deviation. Two 
+methods generally are used to find measure the deviation - standard deviation 
+and mean absolute deviation. Both are just the two different ways of measuring 
+the same thing. </font> </p>
+<table border="0" cellspacing="0" cellpadding="0" width="531" height="382">
+	<tr>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="132"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="133"></td>
+	</tr>
+	<tr>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="132"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="133"></td>
+	</tr>
+	<tr>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="132"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="96" width="133"></td>
+	</tr>
+	<tr>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="133"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="132"></td>
+		<td>
+		<img border="0" src="http://www.110mb.com/404.php" height="95" width="133"></td>
+	</tr>
+</table>
+<p align="center">
+<font face="Arial" style="font-size: 11pt">Figure 4.0&nbsp; Normal Distribution</font></p>
+<p align="left">
+<font face="Arial" style="font-size: 11pt">With the normal distribution, the forecast is assumed to be representative of 
+the actual usage rate on average. Deviations above and below the forecast are 
+assumed to relatively proportional on average. Conditions that are preventing 
+stock-out are also assumed to be constant. Therefore, when a standard deviation 
+is calculated, it is assumed to be representative if the deviation to be 
+encountered in the future on average.</font></p>
+<p align="left">
+<font face="Arial" style="font-size: 11pt">In figure 4.0, the midpoint is the forecast, which is the mean. The downward 
+slope curve on either side of the mean indicates that the probability of having 
+a specific actual demand greater than the forecast gets lesser and lesser as the 
+deviation from the forecast gets larger and larger.</font></p>
+<p align="left">
+<font face="Arial" style="font-size: 11pt">The width of the distribution curve varies from part to part based on the 
+deviation each part experiences. A part with a small sigma 
+(&#963;) will have a skinny distribution curve. A part will a large deviation 
+will have a fatty distribution curve. The width of the curve is a direct 
+indication of the safety stock quantity that you must stock to compensate for 
+the deviations to prevent stock-out.</font></p>
+<p align="left">
+<font face="Arial" style="font-size: 11pt">Sigma corresponds to a particular quantity based on average of the deviation. If 
+there is a forecast of 50 and also have 50 in stock, you have 50% probability of 
+satisfying demand for the period without the need for safety stock. However, if 
+there is a safety stock quantity equal to 1 standard deviation, you have an 84% 
+chance of able to satisfy demand for the period as shown in figure 4.0. This 
+percentage, which is referred to as &quot;safety stock service percent&quot;, increases as 
+safety stock is provided for each additional increment of the standard 
+deviation.</font></p>
+<p>
+&nbsp;</p>
+<p>
+&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;<font size="3"><br>
+&nbsp;</font></p>
+
+
+
+</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+
+</body>
+<!-- Mirrored from vbautomation.110mb.com/INVENTORY%20MGMT/inventory%20supp/normal_distribution.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:57:22 GMT -->
+</html>

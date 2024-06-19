@@ -1,0 +1,652 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Reorder Point Technique and Safety Stock</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style3 {
+	font-size: 10.5pt;
+}
+.auto-style4 {
+	font-size: 10.5pt;
+	font-weight: bold;
+}
+</style>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css"></head>
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#0066CC" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="96%">
+<tbody><tr valign="top">
+<td class="menu" width="185" style="width: 240px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(97-2003)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2000-2003)</span></a><br>
+<br>
+<a href="index_inv_mgmt.htm">Material Management</a><br>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18">Reorder Point &amp; Safety 
+Stock</span><p><font color="#800000"><br>
+Master Scheduling 
+&amp; <br>
+Production Planning</font><p><font color="#800000">Demand Forecasting</font></td>
+
+
+<td class="menu" style="width: 6px">
+
+
+
+&nbsp;</td>
+
+
+<td class="body">
+
+
+<p align="center">
+
+
+<b><span style="font-size:18.0pt;font-family:Verdana">Reorder Point Technique 
+and Safety Stock</span></b></p>
+<p class="auto-style2">MRP in the your ERP 
+computer systems accommodates all order trigger methods and review techniques. 
+Reorder Point is one the order methods used.</p>
+<p class="auto-style2">The risk of not using 
+Reorder Point n your inventory control is that your available stock balance will 
+dip into safety stock level or a stock-out will occur before an order is even 
+released during your next review period. Planners have a choice of two types of 
+Reorder Point trigger techniques which are logic controlled within most of 
+today&#8217;s computerized systems &#8211; quantity-based or demand-based reorder triggers.</p>
+<p><b><span style="font-family: Verdana; font-size: 11pt">Quantity-based reorder</span><span style="font-size:10.0pt;font-family:Verdana"><br>
+</span></b><span style="font-size:10.0pt;font-family:Verdana"><br></span>
+<span style="font-family:Verdana" class="auto-style3">Quantity-based 
+reviews are triggered by events which cause the projected net inventory balance 
+to dip into safety stock or reach zero bin. You normally set the re-order review 
+flag in your computer systems in events such as when parts are frequently having 
+high rate of quality inspection rejects, parts having consistent high volume 
+transaction, new parts are added into BOM, or other action that causes the stock 
+balance to reach re-order level where an order must be released. These parts are 
+reviewed online normally through the programmed nightly run via MRP in your ERP 
+systems, and one or more purchase requisitions are suggested for planner review 
+or are released to purchase orders automatically.</span></p>
+<p><b><span style="font-size: 11pt; font-family: Verdana">Demand-based reorder</span></b><span style="font-size:10.0pt;font-family:Verdana"><br>
+<br></span><span style="font-family:Verdana" class="auto-style3">Demand-based reviews are triggered normally by new requirements. Planners set 
+the review flag when there is new product released and MRP will explode 
+bill-of-material to generate new requirements. Other cases when planners will 
+also set the review flag are when the supply vs demand are often in shortfall, 
+ie.<span style="color: maroon"> </span>
+<span style="color: maroon; font-weight: 700">[(stock on-hand balance + pipeline 
+stock + released orders) - (customer firmed orders + safety stock target level)]</span>. 
+Such cases includes when you frequently have to schedule out promise dates, 
+expediting or de-expediting an order, inventory adjustments, returned materials, 
+and new replacement &nbsp;parts.</span></p>
+<p class="auto-style2">If the reorder review 
+occurs too early, average inventory levels may exceed the target as stock are 
+replenished far earlier than the actual date of the projected stock-out or 
+before safety is dipped into. If the reorder review occurs too late, a shortage 
+may occur and additional costs may be incurred to expedite the needed parts.</p>
+<p class="auto-style2">Parts using a lot-for-lot 
+dependent demand order are never reviewed using reorder point but are only 
+ordered as each individual demand occurred. Lot-for-lot order quantity is 
+generated automatically as part of the MRP explosion process. Parts without 
+target safety stock and MRO inventory items do not need reorder point. Planners 
+must give special attention to the overall &#8220;Time-to-receive&#8221; for parts using 
+reorder levels &#8211; this includes order review and order release time, supplier 
+lead time, transportation time, custom clearance, receiving, inspection and 
+storage time. Base on the knowledge the planners have on the parts, supplier 
+performance and business conditions, they will adjust reorder levels 
+necessarily, change review cycle or order methods. </p>
+<p><span style="font-size:10.0pt;font-family:Verdana">&nbsp;</span></p>
+<p><b><span style="font-size:14.0pt;font-family:Verdana">Types of control with 
+reorder trigger</span><span style="font-family:Verdana">&nbsp;</span></b></p>
+<p class="auto-style2">The planners use different 
+planning methods for order review triggers, base upon the types of parts stocked 
+for manufacturing, after-sale service and operating support; types of parts 
+procured externally or manufactured on-demand, and the company&#8217;s computer system 
+logic used. Most companies today use MRP triggers but some use a combination of 
+MRP and inventory reorder triggers. Three different part categories determine 
+the type of control that planner should apply: master-schedule planned parts, 
+MRP-planned parts, and inventory-planned parts (figure 3.1).</p>
+<div align="center">
+	<table border="0" cellspacing="0" cellpadding="0" width="305" height="279">
+		<tr>
+			<td>
+			<font face="Verdana">
+			<img border="0" src="images/mps_explosion_1.gif" height="93" width="153"></font></td>
+			<td>
+			<font face="Verdana">
+			<img border="0" src="images/mps_explosion_2.gif" height="93" width="152"></font></td>
+		</tr>
+		<tr>
+			<td>
+			<font face="Verdana">
+			<img border="0" src="images/mps_explosion_3.gif" height="93" width="153"></font></td>
+			<td>
+			<font face="Verdana">
+			<img border="0" src="images/mps_explosion_4.gif" height="93" width="152"></font></td>
+		</tr>
+		<tr>
+			<td>
+			<font face="Verdana">
+			<img border="0" src="images/mps_explosion_5.gif" height="93" width="153"></font></td>
+			<td>
+			<font face="Verdana">
+			<img border="0" src="images/mps_explosion_6.gif" height="93" width="152"></font></td>
+		</tr>
+	</table>
+</div>
+<p align="center"><span style="font-size:10.0pt;font-family:Verdana">&nbsp;</span><span style="font-family:Verdana" class="auto-style3"><strong>Figure 
+3.1 Master Production Schedule explosion and demand types</strong></span></p>
+<p><b><span style="font-size: 11pt; font-family: Verdana">Master-schedule 
+planned parts<br>
+</span></b><span style="font-family: Verdana; font-size:10.0pt"><br></span>
+<span style="font-family: Verdana; " class="auto-style3">Master Schedule 
+system reviews only those parts within the bills of material being processed. MS 
+system may not even need flags since MS system review parts for ordering at each 
+step in the BOM explosion process. Every part that is MS-planned will be 
+reviewed only in each Master Schedule run. For any firmed customer order, the 
+master production schedule explosion will typically consists of Lot-For-Lot 
+parts at the highest levels, and some combination of MRP-planned and inventory- 
+planned parts at the lower levels as shown in figure 3.1.</span></p>
+<p><span style="font-size: 11pt; font-family: Verdana"><b>MRP-planned parts</b></span><span style="font-size:10.0pt;font-family:Verdana"><br>
+<br></span><span style="font-family:Verdana" class="auto-style3">This includes dependent and dependent demand parts planned within the MRP 
+system. Today&#8217;s MRP systems like SAP are powerful enough to review every part 
+for order action everyday, with dynamic updates based on operational changes 
+(canceled orders, production or customer returned parts, short-shipment).</span></p>
+<p class="auto-style2">Planners sometimes 
+decrease the assembly order quantity in a work order booked for certain 
+customers, change its due date that will affect the quantity and timing of the 
+lower and upper level demands. MRP systems are capable of online recalculation 
+and planner can immediately see the effect of the change. However, the planner 
+should analyze the effect before committing the change especially when changing 
+the promise date is affecting a customer who is already very unhappy with the 
+company&#8217;s poor service level performance or is a strategic customer. </p>
+<p><span style="font-size: 10.0pt; font-family: Verdana; font-weight: 700">I</span><span style="font-size: 11pt; font-family: Verdana"><b>nventory-planned 
+parts</b></span><span style="font-size:10.0pt;font-family:Verdana"><br>
+<br></span><span style="font-family:Verdana" class="auto-style3">Inventory-planned parts include independent-demand parts planned using the 
+planner&#8217;s specified logic. These consist of regular replenishment parts 
+purchased externally, service parts, and MRO parts. The inventory system plans 
+these parts in companies where the MRP system does not have the embedded logic 
+to handle parts whose demand is not triggered by master production schedule.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14.0pt; font-family: Verdana"><b>Reorder Point 
+Technique</b></span></p>
+<p class="auto-style2">ROP technique is used 
+for inexpensive independent-demand, and sometimes high volume usage parts where 
+sufficient safety stock can be maintained to minimize risk of a stock-out. The 
+concept of ROP is that order must be placed with the supplier at the point where 
+there will be enough time to receive the material by the time the stock on-hand 
+balance reaches the safety stock level. ROP assumes that the safety stock will 
+never be dipped into but practically it often is not true. Below is the ROP 
+formula. It is better to use forecasted daily usage rate than forecasted monthly 
+usage rate because the number of workdays is not consistent every month.</p>
+<p><span style="font-size: 10.0pt; font-family: Verdana; color: maroon">&nbsp;&nbsp;
+</span><span style="font-family: Verdana; color: maroon" class="auto-style4">ROP = [(Forecasted daily usage x Lead time 
+in days) + Safety stock]</span></p>
+<div align="center">
+	<table border="0" cellspacing="0" cellpadding="0" width="435" height="369">
+		<tr>
+			<td><font face="Verdana"><img border="0" src="images/ROP_1.gif" height="92" width="218"></font></td>
+			<td><font face="Verdana"><img border="0" src="images/ROP_2.gif" height="92" width="217"></font></td>
+		</tr>
+		<tr>
+			<td><font face="Verdana"><img border="0" src="images/ROP_3.gif" height="93" width="218"></font></td>
+			<td><font face="Verdana"><img border="0" src="images/ROP_4.gif" height="93" width="217"></font></td>
+		</tr>
+		<tr>
+			<td><font face="Verdana"><img border="0" src="images/ROP_5.gif" height="92" width="218"></font></td>
+			<td><font face="Verdana"><img border="0" src="images/ROP_6.gif" height="92" width="217"></font></td>
+		</tr>
+		<tr>
+			<td><font face="Verdana"><img border="0" src="images/ROP_7.gif" height="92" width="218"></font></td>
+			<td><font face="Verdana"><img border="0" src="images/ROP_8.gif" height="92" width="217"></font></td>
+		</tr>
+	</table>
+	<p class="auto-style3"><font face="Verdana"><strong>Figure 3.2&nbsp; Three review conditions of a 
+	Reorder Point technique</strong></font></div>
+<p class="auto-style2">Figure 3.2 shows three 
+reorder review conditions that are faced by the planners &#8211; actual usage rate 
+equal to, less than, or greater than forecasted usage rate. In the first case, 
+actual usage rate may match the forecast, and generally this means that you are 
+right on target with your inventory level as you planned.</p>
+<p class="auto-style2">In the second case, actual 
+demand may exceed the forecasted usage rate. If such higher usage rate 
+continues, safety stock will be consumed and the part will stock-out before the 
+released order is received into warehouse. You will have a lower average 
+inventory level than targeted. The planner must have good knowledge of the part 
+type, part family and its demand profile to determine whether the actual high 
+usage rate will continue to be higher than forecast or whether it will average 
+out to the forecast over time. If the planner judged that the actual demand will 
+continue to be higher and safety stock won&#8217;t be enough to prevent the part from 
+stock-out, the planner will expedite open orders and flag the part for next 
+reorder level review. Of course the 3rd case, if the actual demand is lower than 
+the forecasted usage rate, you have a higher than average inventory level and 
+lower turns.</p>
+<p class="auto-style3"><font face="Verdana">Let&#8217;s see this example.</font></p>
+<table border="0" width="35%" id="table1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="222" class="auto-style3"><font face="Verdana">Forecasted ROP<br>
+		= (2 x 14) + 9<br>
+		= 37<br>
+		<br>
+		Forecasted stock-out rate<br>
+		= 37/14<br>
+		= 2.64</font></td>
+		<td align="center">
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p align="left"><font face="Verdana"><span class="auto-style3">2&nbsp;&nbsp;&nbsp; Forecasted 
+			daily usage<br>
+			4&nbsp;&nbsp;&nbsp; Actual daily usage<br>
+			14&nbsp; Lead time in days<br>
+			9&nbsp;&nbsp;&nbsp; Safety stock<br>
+			</span>&nbsp;</font></div>
+		</td>
+	</tr>
+	<tr>
+		<td width="222" height="44" class="auto-style3"><font face="Verdana"><br>
+		Revised ROP<br>
+		= (4 x 14) + 9<br>
+		= 65<br>
+&nbsp;</font></td>
+		<td height="44" align="center">&nbsp;</td>
+	</tr>
+</table>
+<p class="auto-style2">This means that this 
+part will be expected to have stock-out if the current usage rate of 4 per day 
+continues. This is because safety stock will only cover against a quantity 2 of 
+forecasted daily usage rate. At current daily usage rate of 4, the ROP is 
+revised to 65 instead of forecasted 37.</p>
+<p>&nbsp;</p>
+<p><b><span style="font-size: 14.0pt; font-family: Arial">Time-Phased Order 
+Point Technique</span></b></p>
+<p class="auto-style2">This type of order 
+review technique is used extensively by purchasers/material planners in MRP 
+system and in Central Distribution Center (CDC) system. CDC receives orders from 
+regional warehouses (dependent-demand using Inter-Company Order or sometimes 
+called Transfer Order) and also directly from customers (independent-demand). 
+The logic is embedded in your company&#8217;s MRP system but I want to give you a 
+refresher here with an example below.</p>
+<table border="0" cellpadding="0" style="border-collapse: collapse; width: 453px" id="table2">
+	<colgroup>
+		<col width="148" style="width: 111pt">
+		<col width="30" style="width: 23pt">
+		<col width="33" span="6" style="width: 25pt">
+	</colgroup>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="width: 159px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		<font face="Verdana">Lead Time Days</font></td>
+		<td style="width: 40px; font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		<span style="font-size: 10.0pt; font-family: Verdana">21</span></td>
+		<td style="width: 41px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		&nbsp;</td>
+		<td style="width: 38px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		&nbsp;</td>
+		<td style="width: 39px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		&nbsp;</td>
+		<td style="width: 39px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		&nbsp;</td>
+		<td style="width: 40px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		&nbsp;</td>
+		<td style="width: 39px; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Beginning Inventory</font></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">80</span></td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Safety Stock</font></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">20</span></td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">FOQ</font></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">140</span></td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="161">
+		</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="161">
+		</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="41">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="height: 12.75pt; color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="161">
+		</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; font-family: Arial, sans-serif; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #99CCFF" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">WK10</span></td>
+		<td style="font-size: 9.0pt; font-family: Arial, sans-serif; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #99CCFF" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">WK11</span></td>
+		<td style="font-size: 9.0pt; font-family: Arial, sans-serif; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #99CCFF" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">WK12</span></td>
+		<td style="font-size: 9.0pt; font-family: Arial, sans-serif; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #99CCFF" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">WK13</span></td>
+		<td style="font-size: 9.0pt; font-family: Arial, sans-serif; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #99CCFF" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">WK14</span></td>
+		<td style="font-size: 9.0pt; font-family: Arial, sans-serif; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #99CCFF" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">WK15</span></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Dependent demand</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">20</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">18</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">25</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">36</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">37</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">30</span></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Independent demand</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">15</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">15</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">15</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">15</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">15</span></td>
+		<td x:num style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">15</span></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="159">
+		<font face="Verdana">Gross requirements</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="40">
+		&nbsp;</td>
+		<td x:num x:fmla="=C8+C9" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">35</span></td>
+		<td x:num x:fmla="=D8+D9" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">33</span></td>
+		<td x:num x:fmla="=E8+E9" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">40</span></td>
+		<td x:num x:fmla="=F8+F9" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">51</span></td>
+		<td x:num x:fmla="=G8+G9" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">52</span></td>
+		<td x:num x:fmla="=H8+H9" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: silver" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">45</span></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Scheduled receipts</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td x:num x:fmla="=B4" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">140</span></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="159">
+		<font face="Verdana">Projected available</font></td>
+		<td x:num x:fmla="=B2-B3" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">60</span></td>
+		<td x:num x:fmla="=(B12-C10)+C11+C14" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="40">
+		<span style="font-size: 10.0pt; font-family: Verdana">25</span></td>
+		<td x:num x:fmla="=(C12-D10)+D11+D14" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">132</span></td>
+		<td x:num x:fmla="=(D12-E10)+E11+E14" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">92</span></td>
+		<td x:num x:fmla="=(E12-F10)+F11+F14" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">41</span></td>
+		<td x:num x:fmla="=(F12-G10)+G11+G14" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">129</span></td>
+		<td x:num x:fmla="=(G12-H10)+H11+H14" style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="38">
+		<span style="font-size: 10.0pt; font-family: Verdana">84</span></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Net requirements</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">8</span></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">11</span></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="159">
+		<font face="Verdana">Planned order receipts</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="37">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+		<td x:num style="color: #3366FF; font-size: 9.0pt; text-align: right; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="39">
+		<span style="font-size: 10.0pt; font-family: Verdana">140</span></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="38">
+		&nbsp;</td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="color: windowtext; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; text-align: general; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="159">
+		<font face="Verdana">Planned order release</font></td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="40">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="40">
+		&nbsp;</td>
+		<td x:num style="color: #3366FF; font-size: 9.0pt; text-align: right; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="37">
+		<span style="font-size: 10.0pt; font-family: Verdana">140</span></td>
+		<td style="color: #3366FF; font-size: 9.0pt; text-align: right; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="38">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="39">
+		&nbsp;</td>
+		<td style="font-size: 9.0pt; text-align: right; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: 1px solid #C0C0C0; padding-left: 1px; padding-right: 1px; padding-top: 1px; background: #FFFF99" width="38">
+		&nbsp;</td>
+	</tr>
+</table>
+<p class="auto-style2">In the above table, the 
+weekly dependent demand comes from requirements determined as a result of higher 
+level bill of material exploded by MRP system. The constant independent demand 
+comes from forecast calculated from historical usage. You can <a href="inventory%20supp/time-phased_OP.xls">
+<font color="#0066CC">download</font></a> this worksheet with the formula.</p>
+<p class="auto-style2">There are 60 pc 
+available in the current period (beginning inventory 80 - safety stock 20). 140 
+pc based on fixed-order qty are scheduled to be received in week 11, the week 
+after next. If 140 pc scheduled receipt in week 11 did not happen, there will 
+not enough projected on-hand to meet the gross requirement 40 pc in week 12. 
+Hence the negative net requirement of 8 pc. Now look at week 14, the gross 
+requirement of 52 pc can not be satisfied by its beginning stock balance of 41 
+pc. This gives the net requirement of 11 pc (52-41) but fortunately you still 
+have the safety stock 20 pc to meet the shortfall of 11 pc. Since there is no 
+open order scheduled for receipt in week 14 and none in the weeks after that you 
+can possibly expedite, the system will know that an order need to be released. 
+Embedded logic in your system will calculate backward 21 days from week 14 to 
+determine the exact date when the order must be released - it will be a date 
+week 11. Assuming this released order is received as scheduled, 129 pc will be 
+the projected inventory for week 15. The planner will extend the weekly demand 
+and ordering profile to the end of the planning horizon.</p>
+<p align="right">&nbsp;</p>
+<p align="right"><font color="#808080"><span class="auto-style3">Next Page &gt;&gt;</span></font><span class="auto-style3"><font color="#008000">
+</font></span><font color="#0066CC"><a href="SS.htm">
+<span class="auto-style3">
+<font color="#0066CC">More on Safety Stock techniques</font></span><span style><font color="#0066CC"><span class="auto-style3">...</span></font></span></a><span style> </span></font>
+<font size="3"><br>
+&nbsp;</font></p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

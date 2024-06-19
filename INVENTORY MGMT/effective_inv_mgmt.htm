@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Effective Inventory Planning </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="Inventory management. Material Planning and Control. Production planning and control">
+<meta name="keywords" content="inventory management, production planning, tutorials, formulas, macros, tips, examples">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.font5
+	{color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.font6
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.auto-style1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style2 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+}
+.auto-style3 {
+	font-size: 11pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.auto-style4 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 12pt;
+}
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="vb.css">
+<body alink="#FF6600" background="http://www.110mb.com/404.php" bgcolor="white" link="#0066CC" text="black" vlink="#880000" style="background-image: url('images/backgrd.gif')">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="99%">
+<tbody><tr valign="top">
+<td class="menu" style="width: 235px">
+
+
+
+<a href="../index.htm">Home</a><br>
+<a href="../AboutMe/Me.htm">About Me</a><br>
+<a href="../VBA/beginner_basic.htm">Excel VB Programming<span style="font-weight: 400"> 
+(97-2003)</span></a><br>
+<a href="../EXCEL/excel_worksheet_functions.htm">Excel Spreadsheet Formulas</a>
+<br>
+<a href="../EXCEL/excel_under_construction.htm">Excel VB.NET Programming</a><br>
+<a href="../ACCESS/beginner_basic_Acc.htm">Access Programming<span style="font-weight: 400"> 
+(2000-2003)</span></a><br>
+&nbsp;<p><a href="index_inv_mgmt.htm">Material Management</a><br>
+<span class="menu2">
+<img src="images/menu1.gif" alt="" height="9" width="18">Effective Inventory 
+Planning<span style="font-weight: 400"> </span></span></p>
+<p>&nbsp;</p>
+<p><font color="#800000"><a href="production_planning.htm">Master 
+Scheduling, Capacity &amp; <br>
+Production Planning</a></font><p>
+<font color="#800000"><a href="../FORECASTING/forecasting_fundamental.htm">Business Forecasting 
+Methods</a></font></td>
+
+<td class="menu" style="width: 11px">
+&nbsp;</td>
+
+
+<td>
+<p align="center">&nbsp;<font style="font-size: 20pt"><b><span style="font-family: Arial">An 
+Overview of Inventory Management</span></b></font></p>
+<p class="auto-style3">
+Inventory can consist of any 
+one or a mix of these types:<br>
+&#9472; Raw materials<br>
+&#9472; Components<br>
+&#9472; Work-in-progress (WIP)<br>
+&#9472; Finished goods<br>
+&#9472; Distribution inventory<br>
+&#9472; Maintenance, repair &amp; operating supplies (MRO)<br>
+&nbsp;</p>
+<p><span style="font-size:11pt" class="auto-style1">Your inventory is used to 
+fulfill two types of demand:</span><br class="auto-style2">
+<span style="font-size: 11pt" class="auto-style1">&#9679; <b>Independent demand</b> 
+- usually demand for finished goods that comes from outside customers&#8212;usually 
+predicted from forecasts.</span><span style="font-style: normal; font-variant: normal; font-weight: normal; " class="auto-style1"><font style="font-size: 11pt"><br>
+</font>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style2">Dependent demand</span><span style="font-size: 11pt; " class="auto-style1"> 
+- demand for raw materials, components, etc. needed to produce an item&#8212;usually 
+calculated from the 
+</span>
+<font color="#3366FF">
+<span style="font-size: 10.0pt; font-family: Arial">
+<a style="font-size: 11pt; text-decoration: none" target="_blank" href="mrp.htm#MPS" class="auto-style1">
+<font color="#0066CC">Master Production Schedule</font></a></span><span style="font-size: 11pt; " class="auto-style1"> </span>
+</font><span style="font-size: 11pt; " class="auto-style1"></a>(MPS).</span></p>
+<p><span style="font-size: 11pt; "><br class="auto-style1">
+</span><span style="font-size: 11pt; " class="auto-style1">Inventory are being kept for many purposes:<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Anticipating an increase in 
+demand during certain period of the year or festive season (seasonal inventory).<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Safety stock which serves to 
+buffer against demand fluctuations.<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Lot-size or cycle stock which 
+serves to take advantage of quantity discounts or purchasing efficiencies.<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Pipeline or transportation 
+inventory.<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Speculative strategy or to 
+hedge inventory against some possible future event (labor strike, price 
+hikes,etc)<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Specified list in a 
+contractual Service Level agreement with customer.<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Service parts for products 
+within warranty periods.<br>
+</span><span style="font-size: 11pt" class="auto-style1">&#9679; </span>
+<span style="font-size: 11pt; " class="auto-style1">Maintenance, repair, and 
+operating inventories.<br>
+&nbsp;</span></p>
+<p><span style="font-size: 11pt; " class="auto-style1">Various methods and 
+techniques can be used to manage your inventory effectively</span><span style="font-size:11pt" class="auto-style1">:</span><span class="auto-style1"><font style="font-size: 11pt"><br>
+</font> </span><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><span style="font-size: 10.0pt; font-family: Arial">
+<a style="font-size: 11pt; " target="_blank" href="pareto.htm" class="auto-style1">
+<font color="#0066CC">ABC material classes</font></a></span><span style="font-size: 11pt; "><br class="auto-style1">
+</span><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><span style="font-size: 10.0pt; font-family: Arial">
+<a style="font-size: 11pt; " target="_blank" href="pareto.htm" class="auto-style1">
+<font color="#0066CC">Pareto analysis or &quot;80/20&quot; rule</font></a><span style="font-size: 11pt; " class="auto-style1"><br>
+</span></span><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+<font color="#0066CC">
+Ratios such as Stock Cover,
+<a target="_blank" href="inv_turns.htm">
+<font color="#0066CC">Inventory Turns</font></a>, Forecast Accuracy</font><br>
+&#9632;  
+</span>
+<font color="#0066CC"><span style="font-size: 11pt; " class="auto-style1">
+<a target="_blank" href="inv_turns.htm#costofgoodssold">
+<font color="#0066CC">Cost of Goods Sold</font></a> (COGS)</span></font><span style="font-size: 11pt; " class="auto-style1"><br>
+</span><span style="font-size: 11pt; font-family: Arial">
+<span style="font-size: 11pt; " class="auto-style1">
+&#9632; </span> </span><span style="font-size: 11pt; " class="auto-style1">
+<font color="#0066CC">
+<a target="_blank" href="matl_classifications.htm#movers"><font color="#3366FF">
+Non-Moving and Slow-Moving categorization</font></a></font><br>
+&#9632; 
+<font color="#0066CC">
+<a target="_blank" href="matl_classifications.htm#orderevents">
+<font color="#3366FF">Consumption events classification</font></a></font><br>
+&#9632; </span>
+<font color="#0066CC"><span style="font-size: 11pt; " class="auto-style1">
+<a target="_blank" href="kpi.htm#kpiandsubsets">
+<font color="#0066CC">Days of Inventory</font></a> (DOI)</span></font><span style="font-size: 11pt; " class="auto-style1"><br>
+</span><span style="font-size: 11pt; font-family: Arial">
+<span style="font-size: 11pt; " class="auto-style1">
+&#9632; </span> </span><span style="font-size: 11pt; " class="auto-style1">
+<font color="#0066CC">Excess and Obsolescence control</font><br>
+&#9632; </span><span style="font-size:10.0pt" class="auto-style1">
+<font color="#0066CC">
+<span style="font-size: 11pt">Excess or surplus transfer or redistribution</span></font><span style="font-size: 11pt"><br>
+</span></span><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><span style="font-family: Arial; font-size:10.0pt">
+<font color="#0066CC">
+<a style="font-size: 11pt; " target="_blank" href="rop.htm" class="auto-style1">
+<font color="#0066CC">Reorder point techniques</font></a></font></span><span class="auto-style1"></font><font style="font-size: 11pt"></a></font></span><font size="5"><font color="#0066CC"><span style="font-family: Arial; font-size:10.0pt"><span style="font-size: 11pt; text-decoration:underline"><a style="font-size: 11pt; text-decoration: none" target="_blank" href="rop.htm" class="auto-style1"><font color="#0066CC">
+</font><font color="#3366FF">(</font></a></span></span><span style="font-size:10.0pt" class="auto-style1"><span style="font-size: 11pt; ">ROP)</span></span></font><span style="font-size:10.0pt" class="auto-style1"><span style="font-size: 11pt"><br>
+</span></span>
+</font><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><font size="5"><span style="font-size: 10.0pt; font-family: Arial">
+<a style="font-size: 11pt; " target="_blank" href="SS.htm" class="auto-style1">
+<font color="#0066CC">Safety stock target levels</font></a><span style="font-size: 11pt; " class="auto-style1"><br>
+</span></span>
+</font><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><font size="5"><span style="font-size: 11pt; " class="auto-style1">
+<font color="#0066CC">Order quantities - Lot-for-lot, Fixed-order qty (FOQ), 
+Economic order qty (EOQ), Minimum order qty (MOQ)</font><br>
+</span>
+</font><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><font size="5"><span style="font-size: 11pt; " class="auto-style1">
+<font color="#0066CC">Demand Forecasting</font><br>
+</span>
+</font><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><font size="5"><span style="font-size: 10.0pt; font-family: Arial">
+<a style="font-size: 11pt; " target="_blank" href="mrp.htm" class="auto-style1">
+<font color="#0066CC">Material requirements planning<span style="text-decoration: none"> 
+(MRP)</span></font></a><span style="font-size: 11pt; " class="auto-style1"><br>
+</span></span>
+</font><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><font size="5"><span style="font-size: 11pt; " class="auto-style1">
+<font color="#0066CC">Just-in-time stock control (Pull system)</font><br>
+</span>
+</font><span style="font-size: 11pt; " class="auto-style1">&#9632; 
+</span><font size="5"><span style="font-size: 10.0pt; font-family: Arial">
+<a style="font-size: 11pt; " target="_blank" href="mrp.htm#MPS" class="auto-style1">
+<font color="#0066CC">Master Production Scheduling or MPS</font></a><span class="auto-style1"><font color="#0066CC" style="font-size: 11pt"> 
+(Push system)</font></span></span><font style="font-size: 11pt"><br class="auto-style1">
+<span style="font-family: Arial">&nbsp;</span></font></p>
+</font>
+<font style="font-size: 20pt; font-weight: 700" face="Arial">
+<p>Challenges to an Effective Inventory Management</p></font>
+
+<p>
+<span style="font-size:11pt;" class="auto-style1">Suppose your boss says to you 
+that the senior management is not happy seeing the high inventory levels, and 
+company is not meeting customers&#8217; service levels. You may have implemented the 
+good inventory policies and strategies, best-in-class planning practices and 
+control measures, but non-performing inventory levels remain high and inventory 
+isn&#8217;t turnaround faster. Here will be the right place where you will find many 
+best practices, concepts and methodologies, explanation and examples in managing 
+your inventory, giving your company higher inventory turnover and more cash 
+flow. I will not touch on every subject but only the important components of an 
+effective inventory management.</span><span style="font-size: 11pt; " class="auto-style2">&nbsp;</span></p>
+<p class="auto-style3">Sometimes companies don&#8217;t even 
+need to hire big-talk inventory management consultant or specialists for 
+solutions. They don&#8217;t have to look further than internally sharing and 
+leveraging the best-in-class concepts and practices from across the different 
+functional divisions and units, and develop their own company-specific 
+world-class practices. The problem remains with those talented workers from the 
+different hierarchies and from the variety of entities and geographical regions, 
+they are not entirely willing to share every of their best practices, 
+techniques, and productivity tools. It is the job of the senior management to 
+drive for multi-echelons co-operation in order that company as a whole can 
+benefit.&nbsp;</p>
+<p class="auto-style3">In essence, inventory 
+management consists of a hierarchical set of policy, planning and control 
+elements outlined as follow:</p>
+<p><span class="auto-style4">Inventory policies</span><span style="font-size:11pt;font-family:Arial">:</span><span style="font-size:11pt;"><br class="auto-style1">
+</span><span style="font-size:11pt;font-family:Arial">
+<span style="font-size:11pt;" class="auto-style1"><br>&#9472; Guidelines and responsibilities<br>
+</span>
+</span><span style="font-size:11pt;" class="auto-style1">&#9472; 
+Stocking Level and Inventory Turns<br>
+&#9472; 
+MRP explosion and order frequency<br>
+&#9472; 
+Service Level agreement<br>
+&#9472; 
+Surplus and Excess definition<br>
+&#9472; 
+Non-Stocking and Slow-Moving items definition<br>
+&#9472; 
+Storage and Handling<br>
+&#9472; 
+Stock physical count and adjustments</span></p>
+<p><span class="auto-style4">Inventory planning 
+methodologies</span><span style="font-size:11pt;font-family:Arial">:</span><span style="font-size:11pt;"><br class="auto-style1">
+</span><span style="font-size:11pt;" class="auto-style1"><br>&#9472; 
+Dependent versus independent demand<br>
+&#9472; 
+Re-Order Points and Safety Stock replenishment<br>
+&#9472; 
+Economic order quantities<br>
+&#9472; 
+Demand forecasting<br>
+&#9472; 
+Pre-seasonal buys<br>
+&#9472; 
+Inventory allocation<br>
+&#9472; 
+Redistributing excess stock to other branches<br>
+&#9472; 
+Price breaks sale of excess stock to vendors/competitors</span></p>
+<p><span class="auto-style4">Inventory Control</span><span style="font-size:11pt;font-family:Arial">:</span><span style="font-size:11pt;"><br class="auto-style1">
+</span><span style="font-size:11pt;" class="auto-style1"><br>&#9472; 
+Issues and Receipts<br>
+&#9472; 
+Transfers<br>
+&#9472; 
+Cycle counting and adjustments<br>
+&#9472; 
+Barcoding and bins location</span></p>
+      <P class="auto-style3">The inventory 
+		guidelines that you structured must be responsive to customers in terms 
+		of customer&#8217;s production ramp, delivery lead times, availability, and 
+		service level. Your inventory strategy should change in focus over time 
+		depends on different stages of the <SPAN style="COLOR: #3366ff"><A 
+      href="inventory%20supp/PLC.htm" 
+      target=_blank><FONT color=#0066cc>product&#8217;s life cycle</FONT></A> 
+      </SPAN>(<B>PLC</B>). In each phase of the product&#8217;s life cycle, your 
+		inventory policies and forecasting techniques must adapt to the actual 
+		market conditions. These elements vary by different product mix for any 
+		given customer. Failure to consider these primary drivers will cause 
+		loss of potential and long-term customers due to dissatisfaction with 
+		early purchases. Lack of availability hinders the company&#8217;s penetration 
+		strategy to capture market share and to establish early market 
+		leadership position.&nbsp;</P>
+      <P class="auto-style3">The following are a 
+		list of challenges faced by inventory management team:</P>
+      <UL>
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Stockouts and lost 
+		sales while warehouses are bulging with inventory.</SPAN><span class="auto-style1">
+		</span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">On-hand and 
+		available-for-sale quantities in the computer systems are inaccurate.</SPAN><span class="auto-style1">
+		</span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Lack of an 
+		approved finite stock list.</SPAN><span class="auto-style1"> </span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Lack of an 
+		accurate and comprehensive set of measures and control to monitor 
+		against targets that bridge the As-Is baseline and To-Be performance.</SPAN><span class="auto-style1">
+		</span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Absence of a link 
+		mechanism to measure inventory balances reduction that increases 
+		inventory turns, with costs increase in expediting, airfreight and 
+		overtime expenses.</SPAN><span class="auto-style1"> </span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Lack of a thorough 
+		understanding of what is stopping the company from achieving the 
+		inventory targets.</SPAN><span class="auto-style1"> </span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Planners lack 
+		comprehensive analytical skill in making full use of computer tools.</SPAN><span class="auto-style1">
+		</span> 
+        <LI><SPAN style="FONT-SIZE: 11pt; " class="auto-style1">Return on 
+		investment (<B>ROI</B>) from inventory is not satisfactory.</SPAN><span class="auto-style1">
+		</span> 
+      </LI></UL>
+      <P class="auto-style3">Many companies focus 
+		only on incremental improvements in orders fulfillment, re-order levels, 
+		safety stock, and demand forecasting more effectively each quarter or 
+		each year. Significant improvement is difficult to achieve if they 
+		continue with the old ways of operating. Come to a time when service 
+		level deteriorates, voice of customers implying they are finding a 
+		second source, or some compelling need forces management to question 
+		their current processes, approaches and practices, then someone start to 
+		question why maintaining status quo, and some people start to question 
+		the planning algorithm and challenge with the reasons &#8220;why not other 
+		ways..&#8221;, and then eventually everybody agrees that they need to re-look 
+		at their inventory strategies, policies and guidelines. You can find 
+		some examples later in this site that will give you many useful ideas 
+		and clues, for example, categorization of material classes in terms of 
+		cost, status, historical consumption and criticality.</P>
+      <P align=right><FONT style="FONT-SIZE: 11pt" class="auto-style1">Next Page &gt;&gt; <A 
+      href="optimum_inventory.htm"><FONT 
+      color=#0066cc>What is the &quot;right&quot; amount of inventory?</FONT></A></FONT><FONT 
+  size=3><BR class="auto-style1">&nbsp;</FONT></P></TD></TR></TBODY></TABLE>
+<TABLE id=table1 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=241>&nbsp;</TD>
+    <TD>
+      <P align=center><FONT face="Courier New"><FONT size=2><BR></FONT></FONT>
+  
+  
+ <a href="http://s05.flagcounter.com/more/RvMZ"><img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a><FONT face="Courier New"><FONT size=2><BR>
+		</FONT></FONT>	
+      
+
+      
+      </P>
+	  <P align=center><FONT size=2 face="Courier New">This site was 
+		created in Feb.2007<br>by William Tan</FONT></P></TD></TR></TBODY></TABLE></BODY>
+</HTML>
