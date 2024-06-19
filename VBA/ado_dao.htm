@@ -1,0 +1,2795 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<base target="_parent">
+<a name=Main_Top></a>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:underline;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#800000; text-decoration:underline;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(''); padding:0; margin-left:15px; margin-right:0; margin-top:0; margin-bottom:0}
+	ul.list li {margin: 2px 0;}
+</style>
+
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+
+	
+	  
+
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+.auto-style1 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style3 {
+	color: #0166FE;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style4 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style5 {
+	color: #0066FF;
+}
+.auto-style7 {
+	font-size: 23pt;
+	font-family: Arial;
+	font-weight: bold;
+}
+.auto-style8 {
+	font-size: 11pt;
+	font-family: Verdana;
+}
+.auto-style9 {
+	font-family: Verdana;
+}
+.auto-style10 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style11 {
+	font-size: 10.5pt;
+}
+.auto-style13 {
+	color: #800000;
+	font-weight: normal;
+	font-family: Verdana;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style14 {
+	color: #339966;
+	font-weight: normal;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style15 {
+	color: #993300;
+	font-weight: normal;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style16 {
+	color: #800000;
+	font-weight: normal;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style17 {
+	font-size: 18pt;
+}
+.auto-style18 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 18pt;
+}
+.auto-style19 {
+	font-family: Verdana;
+	font-size: 17pt;
+}
+.auto-style23 {
+	font-family: Verdana;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style24 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style26 {
+	font-size: 10.5pt;
+	font-weight: normal;
+	font-family: Verdana;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style27 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 17pt;
+}
+.auto-style28 {
+	font-family: Verdana;
+	font-weight: bold;
+}
+.auto-style29 {
+	font-family: Verdana;
+	font-size: 18pt;
+}
+.auto-style30 {
+	color: #800000;
+	font-weight: normal;
+	font-family: Verdana;
+}
+.auto-style31 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-align: center;
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-color: inherit;
+	border-bottom-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style32 {
+	border-width: 1px;
+}
+.auto-style33 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-align: center;
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-color: inherit;
+	border-bottom-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style34 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom-style: none;
+	border-bottom-color: inherit;
+	border-bottom-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style35 {
+	border-collapse: collapse;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}
+.auto-style36 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom-style: none;
+	border-bottom-color: inherit;
+	border-bottom-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style37 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	border-left-style: solid;
+	border-left-color: inherit;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-color: inherit;
+	border-right-width: medium;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style38 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-color: inherit;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+	border-bottom-width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style39 {
+	text-align: center;
+}
+.auto-style40 {
+	text-align: center;
+	font-family: Verdana;
+	font-size: 11pt;
+}
+.auto-style41 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+	border-left: 1.0pt solid gray;
+	border-right: 1.0pt solid gray;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom: 1.0pt solid gray;
+	padding: 0in 5.4pt;
+}
+.auto-style42 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	border-left-style: none;
+	border-left-color: inherit;
+	border-left-width: medium;
+	border-right: 1.0pt solid gray;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom: 1.0pt solid gray;
+	padding: 0in 5.4pt;
+}
+.auto-style46 {
+	color: #800000;
+	font-weight: 400;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style47 {
+	color: #339966;
+	font-weight: normal;
+	font-family: Verdana;
+	font-size: 10.3pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style48 {
+	font-family: Verdana;
+	font-size: 10.3pt;
+}
+.auto-style49 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.3pt;
+}
+.auto-style51 {
+	font-family: Verdana;
+	color: #800000;
+	font-size: 10.3pt;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style52 {
+	text-align: center;
+	font-size: 10.5pt;
+	font-family: Verdana;
+}
+.auto-style53 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+	border-width: 1px;
+	padding: 2.25pt;
+}
+.auto-style54 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	padding: 2.25pt;
+}
+.auto-style55 {
+	text-align: center;
+	font-size: 12pt;
+	font-family: Verdana;
+}
+.auto-style56 {
+	font-family: Verdana;
+	font-size: 12pt;
+}
+</style>
+</head>
+
+
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../index.htm" rel="internal" class="auto-style1">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style1">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+				<font class="auto-style1"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font></font></font><span class="auto-style2">
+				</span>
+
+
+
+<font face="">
+
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style2">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style4">
+					<strong><span class="auto-style5">Download</span></strong></a><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style1"> 
+					my Add-In tool (<em>run on 32-bit MS Office Excel</em>)</a></td>
+                    </tr>
+                                                
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style2">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style1">
+					VBA Basic for beginners</a></td>
+                    </tr>
+
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="Objects.htm" rel="internal" class="auto-style1">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="rows_columns.htm" rel="internal" class="auto-style1">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style1">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="statements.htm" rel="internal" class="auto-style1">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+ 					<a href="functions.htm" rel="internal" class="auto-style1">
+					Functions</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style1">
+					Conditional Statements and Loops Structure</a></font></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="errors_handling.htm" rel="internal" class="auto-style1">
+					Errors Handling</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="userforms.htm" rel="internal" class="auto-style1">UserForms</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="pivot_table.htm" rel="internal" class="auto-style1">
+					Pivot Tables</a><span class="auto-style2"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style1">Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style1">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>
+
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style1">
+					File I/O VBA Examples</a></font></td>
+                    </tr>     
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style3">ADO and 
+					DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style1">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="9679">
+					<p>&nbsp;</p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+
+
+
+<font face="">
+
+
+
+<font face="">
+
+
+
+<font face="">
+						
+			
+<td bgcolor="#FFFFFF" style="width: 1%"></td>
+<td valign="top" width="80%" class="auto-style32">
+      <!-- Start Page Content -->
+		</font>
+
+		<p class="auto-style7">Integrating Excel with Access  
+		(SQL, ADO &amp; DAO methods)</p>
+
+		<p>
+		<span style="font-size: 10.0pt; font-family: Arial; font-weight: normal">
+		<br>
+		</span>
+
+		<span style="font-weight: normal" class="auto-style8">
+		<a href="#LateBinding">To create Excel object using LateBinding</a><br>
+		<a href="#AddWorkbooks_Sheets_Range">Automate creation of Workbook, worksheets, setting range and moving 
+		cells</a><br>
+		<a href="##1">Retrieve data from Access database to Excel sheets (DAO)</a><br>
+		</span>
+
+<font face="">
+		<span style="font-weight: normal" class="auto-style8">
+		<a href="##2">Retrieve data from Access database to Excel sheet (ADO &amp; SQL)</a></span></font><span style="font-weight: normal" class="auto-style8"><br>
+		<a href="##3">Export data from Excel to Access database (DAO)</a><br>
+		</span><font face="">
+
+		<span class="auto-style8"><a href="##4">Table of ADO Recordset 
+		Properties</a></span></font><span style="font-weight: normal" class="auto-style8"><br>
+		<a href="##5">Export data from Excel to Access (ADO)</a><br>
+		<a href="##6">Add record from Excel sheet to Access (ADO &amp; SQL)</a><br>
+		<a href="##7">Execute queries in Access database from Excel VBA Module</a></span><font face=""><span style="font-weight: normal" class="auto-style8"><a href="##7"> 
+		(ADO &amp; SQL)</a></span></font><span style="font-weight: normal" class="auto-style8"><br>
+		<a href="##8">Execute queries and Macros, and add recordsets in Access Table from 
+		Excel VBA (ADO &amp; SQL)</a></span><span style="font-size: 10.0pt; font-family: Arial; font-weight: normal"><br>
+&nbsp;</span></p>
+
+<font face="">
+		<p>
+		<span style="font-size: 10.0pt; font-family: Arial; font-weight: normal">
+		I</span></font><span style="font-weight: normal" class="auto-style2">f 
+		you handle tens of thousands of records in Excel, especially when you 
+		have complex formula computation in it, you easily realize the slow-down 
+		in performance as you approach mid-way to 65336 rows, and that will be 
+		the time you would want to consider utilizing the advantage of Access 
+		Multidimensional Database (</span><font face=""><span class="auto-style2">MDB</span><span style="font-weight: normal" class="auto-style2">). 
+		Of course, the Share Workbook feature in Excel does offer you an option 
+		of multi-user access even when you don&#8217;t have massive volume of records, 
+		but there are some basic reasons you would want to avoid sharing a 
+		workbook on a network. I am not a fan of Share workbook for the obvious 
+		reasons I can not use such beautiful features like pivot tables, group 
+		and outline, Insert column, Insert worksheet, auto subtotals, styles and 
+		many others. One of the great advantages of using Access database file 
+		as a back end is that you can use deploy Excel VBA as front end to read 
+		and write from MDB file to multi-users who do not have Microsoft Access 
+		installed in their computers.</span></p>
+		<p>
+		<span style="font-weight: normal" class="auto-style2">
+		When you want to copy data to or retrieve data from an Access database 
+		in Excel or Word, there are two different methods you can do this &#8211; DAO 
+		method and ADO method. </span>
+		<span class="auto-style2">DAO</span><span style="font-weight: normal" class="auto-style2"> 
+		(</span><span class="auto-style2">Data Access 
+		Objects</span><span style="font-weight: normal" class="auto-style2">) 
+		works only with databases that are Jet Engine based such as Access or 
+		FoxPro. </span><span class="auto-style2">ADO</span><span style="font-weight: normal" class="auto-style2"> 
+		(</span><span class="auto-style2">ActiveX Data 
+		Objects</span><span style="font-weight: normal" class="auto-style2">) 
+		is more popular, more flexible because you can deploy code that is 
+		written for say MS Access to another (say Oracle). DAO and ADO libraries 
+		both have a Recordset object, but with different methods, properties, 
+		and options. DAO is the native Access library (what Access itself uses), 
+		whereas ADO is a more generic library (now superseded by the vastly 
+		different ADO.NET library)</span></p>
+		<span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<font face="Arial" size="2">
+				       
+		<p style="margin-bottom: -5px;" align="left" class="auto-style2">&nbsp;</p>
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table11" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="LateBinding" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</font>
+			</span>
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+		<p class="auto-style2">The starting point of any Excel automation is 
+		you need the Excel Application object to use other objects in Excel. The only risk is if you use a different version 
+		of Excel than the other users using the application.</p>
+		<p><font size="2" color="#800000" class="auto-style2">
+		<span class="CodeComment">Public Sub GetExcel_earlyBinding()<br>
+		Dim xlApp As Excel.Application<br>
+		Set xlApp = New Excel.Application<br>
+		xlApp.Visible = True<br>
+		End Sub</span></font></p>
+		<p><br class="auto-style2">
+		<font size="2" class="auto-style2">
+		<span class="CodeComment">To eliminate the above problem, use <b>LateBinding</b>. That means you create 
+		a variable as object instead of specifying an exact object type, and use Createobject to 
+		produce the required object.</span></font></p>
+			</span>
+			</span>
+		</font>
+		</font>
+
+		</font>
+		<p><font size="2" color="#800000" class="auto-style2">
+		<span class="CodeComment">Public Sub GetExcel_LateBinding()<br>
+		Dim xlApp As Excel.Application<br>
+		Set xlApp = CreateObject(&quot;Excel.Application&quot;)<br>
+		xlApp.Visible = True<br>
+		End Sub</span></font></p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table12" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="AddWorkbooks_Sheets_Range" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		<p><font face="Arial" size="2" class="auto-style11">
+		<span class="CodeComment">
+		<br class="auto-style9">
+		<span class="auto-style9">To create a new workbook (Add method) and save, there are 3 choices - Save, SaveAs, SaveCopyAs. The SaveCopyAs is 
+		useful if you want to save the workbook in its current state (or with a different name) but 
+		continue to work with the original.</span></span></font></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span class="CodeComment">
+		<font size="2" color="#800000" class="auto-style2">
+		Public Sub NewWorkbook_AddMethod()<br>
+		Dim xlApp As Excel.Application<br>
+		Dim xlWb As Excel.Workbook<br>
+		Set xlApp = New Excel.Application<br>
+		xlApp.Visible = True<br>
+		Set xlWb = xlApp.Workbooks.Add</font></span></span></span></font><span class="CodeComment"><font color="#800000"><br class="auto-style2">
+		</font><br class="auto-style2">
+		</span><font face>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">' 
+		to open, use Set xlWb =xlApp.Workbooks.Open(&quot;D:\Test.xls&quot;)</span></font><span class="CodeComment"><font face="Arial"><span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal"><span id="dnn_ctr436_HtmlModule_HtmlHolder1"><font color="#000080"><br class="auto-style2">
+		</font>
+			</span>
+			</span>
+		</font></span><font color="#800000">
+		<span class="auto-style2">xlWb.SaveAs &quot;C:\Test.xls&quot;</span></font><font color="#008000"><span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></font><font face>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">' save into your default file location.</span></font><font face="Courier New" size="2" color="#800000" class="auto-style11"><span class="CodeComment"><br class="auto-style9">
+		<span class="auto-style9">End Sub</span></span></font></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p>
+
+<font face="">
+		<font face="Arial">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span class="CodeComment"><br class="auto-style2">
+		</span>
+			</span>
+			</span>
+		</font>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">' add new worksheet, set new range and moving cell with offset property</span><span id="dnn_ctr436_HtmlModule_HtmlHolder1"><span class="CodeComment"><span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal"><br class="auto-style2">
+			</span></span>
+			</span></font>
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+		<span class="CodeComment">
+		<font color="#800000" size="2" class="auto-style2">Public Sub AddNewSheetNewRangeOffset()<br>
+		<br>
+&nbsp;&nbsp;&nbsp;
+		Dim xlApp As Excel.Application<br>
+		&nbsp;&nbsp;&nbsp;
+		Dim xlWb As Excel.Workbook<br>
+		&nbsp;&nbsp;&nbsp;
+		Dim xlWs As Excel.Worksheet<br>
+		&nbsp;&nbsp;&nbsp;
+		Dim xlRng As Excel.Range<br>
+		&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;
+		Set xlApp = New Excel.Application<br>
+		&nbsp;&nbsp;&nbsp;
+		xlApp.Visible = True<br>
+		&nbsp;&nbsp;&nbsp;
+		Set xlWb = xlApp.Workbooks.Add<br>
+		&nbsp;&nbsp;&nbsp;
+		Set xlWs = xlWb.Worksheets.Add<br>
+		&nbsp;&nbsp;&nbsp;
+		xlWs.Name = &quot;MySheet1&quot;<br>
+		&nbsp;&nbsp;&nbsp;
+		Set xlRng = xlWs.Cells(2, 4)<br>
+		<br>
+		&nbsp;&nbsp;&nbsp;
+		With xlRng<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Value = &quot;MyCell&quot;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		.Font.Bold = True<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		.BorderAround.xlcontinue , xlThick, 5<br>
+		&nbsp;&nbsp;&nbsp;
+		End With<br>
+		&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;
+		xlWs.Columns(xlRng.Column).AutoFit 'or columns(4)<br>
+		End Sub</font></span></span></span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+		&nbsp;</p><font face="">
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table13" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+<font face="Verdana" style="font-weight: 700" size="5">
+		<p style="margin:0in;margin-bottom:.0001pt"><br>
+		<span class="auto-style17">DAO (Data Access Objects)</span></font><font face=""><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span>
+		</font>
+
+		</font><span class="auto-style2"><br>DAO allows you to access and manipulate data in local or remote 
+		databases, and to manage databases, their objects, and their structure. 
+		DAO supports two different database environments</span><font face=""><span class="auto-style2">, 
+		or &quot;workspaces&quot;.&nbsp;</span></p>
+		<p style="text-indent: -.25in; margin-left: .25in">
+		<span style="font-size: 10.0pt; font-family: Symbol">?<span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="auto-style10">Microsoft Jet workspaces</span><span class="auto-style2"> 
+		allow you to access data in <b>Microsoft Jet databases</b>, <b>Microsoft 
+		Jet-connected ODBC databases</b>, and installable <b>ISAM</b> (Indexed 
+		Sequential Access Method) data sources in other formats, such as Paradox 
+		and Lotus1-2-3.</span></p>
+		<p style="text-indent: -.25in; margin-left: .25in">
+		<span style="font-size: 10.0pt; font-family: Symbol">?<span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="auto-style10">ODBCDirect workspaces</span><span class="auto-style2"> 
+		allow you to access database servers through <b>ODBC </b>(Open Database 
+		Connectivity), without loading the Microsoft Jet database engine.&nbsp;</span></p>
+		<p class="auto-style2">You use Microsoft 
+		Jet workspace when you open a Microsoft Jet database (.mdb file) or 
+		other desktop ISAM database, or when you need to take advantage of 
+		Microsoft Jet's unique features, such as the ability to join data from 
+		different database formats. The ODBCDirect workspace provides an 
+		alternative when you only need to execute queries or stored procedures 
+		against a back-end server, such as Microsoft SQL Server. In this 
+		section, I will only explain on accessing Microsoft Jet database using 
+		DAO and ADO methods.</p>
+		<p>
+		<span style="font-weight: normal" class="auto-style2">
+		You need to set a reference to the </span>
+		<span class="auto-style2">Microsoft DAO 3.6 
+		Object Library</span><span style="font-weight: normal" class="auto-style2"> 
+		in order to get the DAO model to work. If you have set a reference to 
+		the ADO library you might want to uncheck that because the two models 
+		are fairly similar and it can cause some confusion if Excel calls a 
+		function from the wrong library.</span></p>
+		</font>
+		<p class="auto-style2">&nbsp;</p>
+
+		<font face="">
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table14" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#1" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				<p align="right">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+		<p style="margin:0in;margin-bottom:.0001pt"><span class="auto-style18">Retrieve data from Access 
+		database to Excel (DAO method)</span><font face=""><br>
+		<span style="font-weight: normal" class="auto-style2">
+		<br>If you want to extract certain data from an Access table to your Excel 
+		worksheet, example 1.1 using a DAO model shows you how this can be done:</span></p>
+		</font>
+		</font>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight: normal" class="auto-style11">
+		<br class="auto-style9">
+		</span>
+		<font face="">
+
+		<span style="font-weight: normal" class="auto-style2">
+		Example 1.1<br>
+		</span>
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		Sub AccessDataToExcel_DAO()</span></p>
+		<p class="auto-style16">
+		Dim Db As Database</p>
+		<p class="auto-style13">
+		<font size="2" class="auto-style11">Dim rs As Recordset<br>
+		Dim path As String, sSQL As String</font></p>
+		<p class="auto-style16">
+		Dim iCount As Long</p>
+		<p class="auto-style16">
+		Dim i As Long, j As Long</p>
+		<p class="auto-style16">
+		Dim rDest As Range</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' Set the path to your database, change to suit!</p>
+		<p class="auto-style16">
+		path = &quot;C:\customers\OF.mdb&quot;</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' Open the database.</p>
+		<p class="auto-style16">
+		Set Db = Workspaces(0).OpenDatabase(path)</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11"><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">
+		Set rs = Db.OpenRecordset(&quot;AMSEA&quot;, dbOpenTable)<br>
+		</span></font>
+		<span style="color: #993300; font-weight: normal">
+		<br class="auto-style9">
+		</span><font face="">
+		<span style="color: #993300; font-weight: normal" class="auto-style9">
+&nbsp;</span></font></font><font face=""></p>
+		<p class="auto-style14">
+		' Define your query - for example:</p>
+		<p class="auto-style13">
+		<font size="2" class="auto-style11">sSQL = &quot;select Location, Customer, Material &quot; &amp; &quot;from 
+		AMSEA &quot; &amp; _<br>
+&nbsp;&nbsp; &quot;where Location = '8800';&quot;</font></p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' Open a recordset in the database (this is basically 
+		your query) and store the data in the object variable rs.</p>
+		<p class="auto-style16">
+		Set rs = Db.OpenRecordset(sSQL)</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' Determine the number of found records</p>
+		<p class="auto-style16">
+		rs.MoveLast</p>
+		<p class="auto-style16">
+		iCount = rs.RecordCount</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' Write the data from the database and insert to the 
+		worksheet</p>
+		<p class="auto-style16">
+		Set rDest = ThisWorkbook.Sheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;)</p>
+		<p class="auto-style16">
+		If Not rs.EOF Then</p>
+		<p class="auto-style16">
+		rs.MoveFirst</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; For i = 1 To iCount</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For j = 0 To rs.Fields.Count - 1</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rDest(i, j + 1).Value = rs.Fields(j).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next j</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rs.MoveNext</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; Next i</p>
+		<p class="auto-style16">
+		End If</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' Tidy up</p>
+		<p class="auto-style16">
+		Set rs = Nothing</p>
+		<p class="auto-style16">
+		Set Db = Nothing</p>
+		<p class="auto-style16">
+		End Sub</p>
+		<p class="auto-style2">&nbsp;</p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table16" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#2" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+		<p style="margin:0in;margin-bottom:.0001pt">&nbsp;</p><b>
+
+	  <span class="auto-style19">R</span></b></font></font><b><span class="auto-style19">etrieve 
+	  data from Access database to Excel sheet using ADO &amp; SQL</span><font face="" size="5"><span style="font-family: Times New Roman"><br>
+		</span>
+		</font>
+		</b><font face="">
+
+		<span class="auto-style9">
+		<br class="auto-style11">
+		</span><span class="auto-style2">Below 
+		example shows how you can use ADO and SQL methods to filter and retrieve 
+		a table from Access to Excel spreadsheet. First, my procedure creates a 
+		connection the Access database and using DoCmd Object to execute a macro 
+		in the database. The macro runs the queries, populates the tables and 
+		export the tables to an excel spreadsheet in same folder where your 
+		database file is. For the purpose of this topic, my code only 
+		demonstrates to you how you can use SELECT FROM WHERE query statement in 
+		SQL to &#8216;filter&#8217; and export the data you want from Access database to the 
+		active Excel worksheet. You can <span style="color: #0033CC">
+		<a href="Sub_VBA/Materials_Control.zip">DOWNLOAD</a></span> this 
+		procedure with the worksheet examples and the database file.</span></font><p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight: normal" class="auto-style11">
+		<br class="auto-style9">
+		</span>
+		<font face="">
+
+		<span style="font-weight: normal" class="auto-style2">
+		Example 2.4<br>
+		</span>
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		Option Explicit</span></p>
+		<p class="auto-style16">
+		Global oApp As Object</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' make VBE reference to the your latest ActiveX Objects 
+		Library</p>
+		<p class="auto-style16">
+		Sub GetAccessDataToExcel_ADO()</p>
+		<p class="auto-style16">
+		Dim Db As ADODB.Connection</p>
+		<p class="auto-style16">
+		Dim rs As ADODB.Recordset</p>
+		<p class="auto-style16">
+		Dim path As String, sSQL As String</p>
+		<p class="auto-style16">
+		Dim iCount As Long</p>
+		<p class="auto-style16">
+		Dim i As Long, j As Long</p>
+		<p class="auto-style16">
+		Dim rDest As Range</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' connect to the Access database</p>
+		<p class="auto-style16">
+		Application.ScreenUpdating = False</p>
+		<p class="auto-style16">
+		Set oApp = CreateObject(&quot;Access.Application&quot;)</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' path to transfer .mdb file</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		path = &quot;</span><span style="color: #800000" class="auto-style2">C:\Materials_Control\Site_Inventory.mdb</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;</span></p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' run Access Macro with DoCmd Object</p>
+		<p class="auto-style16">
+		oApp.OpenCurrentDataBase path</p>
+		<p class="auto-style16">
+		oApp.Visible = False</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		oApp.DoCmd.RunMacro &quot;</span><span style="color: #800000" class="auto-style2">macro_Excess_Surplus_stocklist</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;</span></p>
+		<p class="auto-style16">
+		oApp.Quit</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' define and open connection to the database</p>
+		<p class="auto-style16">
+		Set Db = New ADODB.Connection</p>
+		<p class="auto-style16">
+		Db.Open &quot;Provider=Microsoft.Jet.OLEDB.4.0; &quot; &amp; &quot;Data 
+		Source=&quot; &amp; path &amp; &quot;;&quot;</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' define your query of SQL string, here I want only for 
+		Location '0001'</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		sSQL = &quot;SELECT Location, Depot, Material, 
+		Excess_Inventory$ FROM </span>
+		<span style="color: #800000" class="auto-style2">excess_inventory</span><span style="color: #800000; font-weight: normal" class="auto-style2"> 
+		WHERE Location ='0001';&quot;</span></p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' define and open the recordset</p>
+		<p class="auto-style16">
+		Set rs = New ADODB.Recordset</p>
+		<p class="auto-style16">
+		rs.CursorLocation = adUseClient</p>
+		<p class="auto-style16">
+		rs.Open Source:=sSQL, ActiveConnection:=Db, CursorType:=adOpenDynamic, 
+		LockType:=adLockOptimistic, Options:=adCmdText</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' determine the number of found records</p>
+		<p class="auto-style16">
+		iCount = rs.RecordCount</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' add heading</p>
+		<p class="auto-style16">
+		Range(&quot;A1:D1&quot;).Value = Array(&quot;Location&quot;, &quot;Depot&quot;, 
+		&quot;Material&quot;, &quot;Excess_Inventory$&quot;)</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' write the data from the database and insert to the 
+		worksheet</p>
+		<p class="auto-style16">
+		Set rDest = ThisWorkbook.Worksheets(&quot;Sheet1&quot;).Range(&quot;A2&quot;)</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; If Not rs.EOF Then</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rs.MoveFirst</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For i = 1 To iCount</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For j = 0 To rs.Fields.Count - 1</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rDest.Offset(i - 1, j).Value = 
+		rs.Fields(j).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next j</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rs.MoveNext</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next i</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; End If</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style14">
+		' close the connection</p>
+		<p class="auto-style16">
+		rs.Close</p>
+		<p class="auto-style16">
+		Set rs = Nothing</p>
+		<p class="auto-style16">
+		Db.Close</p>
+		<p class="auto-style16">
+		Set Db = Nothing</p>
+		<p class="auto-style16">
+		Application.ScreenUpdating = True</p>
+		<font color="#800000">
+		<p style="margin:0in;margin-bottom:.0001pt" class="auto-style2">End Sub</font></p>
+		<p style="margin:0in;margin-bottom:.0001pt"><span class="auto-style9"></p>
+		<p style="margin:0in;margin-bottom:.0001pt"></span></p>
+		<p class="auto-style23">
+		<font size="2" class="auto-style11">When you have a 
+		recordset object variable set, you probably want to manipulate the data 
+		in the recordset. <br>
+		The following table shows some commonly used methods you can use to move 
+		through the records in a recordset.</font></p>
+	  <p class="auto-style23">
+		&nbsp;</p>
+		<table x:str border="0" cellpadding="0" cellspacing="0" style="width:327pt" id="table15" class="auto-style35">
+			<colgroup>
+				<col width="94" style="width: 71pt">
+				<col width="270" style="width: 203pt">
+			</colgroup>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" width="94" style="height: 12.75pt; width: 71pt; text-decoration: underline; text-underline-style: single; color: windowtext; font-weight: 400; font-style: normal; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style33">
+				Method</td>
+				<td width="270" style="width: 203pt; text-decoration: underline; text-underline-style: single; color: windowtext; font-weight: 400; font-style: normal; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style31">
+				Description</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style34">
+				MoveFirst</td>
+				<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style36">
+				Moves to the first record in a recordset</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style34">
+				MoveLast</td>
+				<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style36">
+				Moves to the last record in a recordset</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style34">
+				MovePrevious</td>
+				<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style36">
+				Moves to the previous record in a recordset</td>
+			</tr>
+			<tr height="17" style="height:12.75pt">
+				<td height="17" style="height: 12.75pt; color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style37">
+				MoveNext</td>
+				<td style="color: windowtext; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; " class="auto-style38">
+				Moves to the next record in a recordset</td>
+			</tr>
+		</table>
+		<p>
+		<span style="color:#993300" class="auto-style10"><br>
+		</span><span class="auto-style2">There are 
+		wo important things to remember when working with the SQL Like clause:<br><br>
+		1) be sure to use single and not double quotes 2) For Microsoft Access, 
+		the wild card character is &quot;%&quot; and not &quot;*&quot;.<br>
+		For example, to select &#8216;Location&#8217; from the Table &#8216;excess_inventory&#8217; that 
+		begin with &quot;000&quot;, use the following SQL statement:<br>
+		</span><b>
+		<span style="color:#993300" class="auto-style2"><br>
+		</span><font color="#800000">
+		<span class="auto-style2">SELECT</span></font></b><span style="color:#800000" class="auto-style2"> 
+		Location, Depot, Excess_Inventory$ <b>FROM</b> excess_inventory <b>WHERE</b> 
+		Location<b> </b></span>
+		<span style="color:#800000" class="auto-style10">
+		LIKE</span><span style="color:#800000" class="auto-style2"> </span>
+		<span style="color:#800000" class="auto-style10">
+		'</span><font face=""><span style="font-size:11.0pt;color:#800000" class="auto-style9"><span style="color:#800000" class="auto-style11">000</span></span><b><span style="color:#800000" class="auto-style2">%</span><font color="#800000"><span class="auto-style2">'</span></font><span style="color:#993300" class="auto-style2"><br>
+		<br>
+		</span></b><span class="auto-style2">For example, 
+		if you want to display two fields concatenated together, like &quot;PartNumber, 
+		PartDescription&quot;, You can use a calculated expression in the SQL 
+		statement of the query like the following: </span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color:#800000" class="auto-style2">SELECT</span><span style="color: #800000; font-weight: normal" class="auto-style2"> 
+		SalesType, PartNumber, PartDescription, PartNumber + ', ' + 
+		PartDescription AS _<br>
+		&nbsp;&nbsp;&nbsp; FullPartName </span>
+		<span style="color:#800000" class="auto-style2">
+		FROM</span><span style="color: #800000; font-weight: normal" class="auto-style2"> 
+		Sales_Records </span>
+		<span style="color:#800000" class="auto-style2">ORDER BY</span><span style="color: #800000; font-weight: normal" class="auto-style2"> 
+		PartNumber, PartDescription</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color:#993300" class="auto-style2"><br>
+		<br>
+		</span><font face="">
+
+		<span style="color:#993300" class="auto-style2">&nbsp;</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt" class="auto-style2">&nbsp;</p>
+		<p class="auto-style24">
+		There are several 
+		ways you can reference a table (or range) in an Excel workbook:<br>
+&nbsp;</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span class="auto-style2">Use the sheet name 
+		followed by a dollar sign, for example, [Sheet1$]. A workbook table that 
+		is referenced in this manner consists of the entire used range of the 
+		worksheet.<br>
+		</span>
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		oRS.Open &quot;SELECT * FROM [</span><span style="color: #800000" class="auto-style2">Sheet1$</span><span style="color: #800000; font-weight: normal" class="auto-style2">]&quot;, 
+		oConn, adOpenStatic</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt"><br class="auto-style2">
+		<font face="">
+
+		<span class="auto-style2">Use a range with a 
+		defined name (for example, [Table1]).</span><span style="color: #993300" class="auto-style2"><br>
+		</span><font color="#800000">
+		<span class="auto-style2">oRS.Open &quot;</span></font><span style="color:#800000" class="auto-style2">SELECT 
+		* FROM
+		<b>Table1</b>&quot;, oConn, adOpenStatic</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt" class="auto-style2">&nbsp;</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-style: normal; font-variant: normal; font-weight: normal; " class="auto-style2">&nbsp;</span><span class="auto-style2">Use 
+		a range with a specific address (for example, [Sheet1$A2:H100]).</span><span style="color: #993300" class="auto-style2"><br>
+		</span><font color="#800000">
+		<span class="auto-style2">oRS.Open &quot;</span></font><span style="color:#800000" class="auto-style2">SELECT 
+		* FROM 
+		[<b>Sheet1$A2</b>:<b>H100</b>]&quot;, oConn, adOpenStatic</span></p>
+		</font></font></font></font>
+		<p style="margin:0in;margin-bottom:.0001pt" class="auto-style2">&nbsp;</p>
+		<p class="auto-style2">&nbsp;</p>
+
+		<font face="">
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table17" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#3" style="color: #0033FF"></a>
+			</span></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				<p align="right" class="auto-style2">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+		<p style="margin:0in;margin-bottom:.0001pt" class="auto-style27">Export data from Excel to Access 
+		database (DAO method)</p>
+
+		<p class="auto-style26">
+		<br>If you want to export data to an Access table from your Excel worksheet, 
+		the example below using DAO is one way how this can be done. Similarly, 
+		you must add a reference to the DAO object library in your VBA project.</p>
+		</font>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight: normal" class="auto-style11">
+		<br class="auto-style9">
+		</span><font face="">
+
+		<span style="font-weight: normal" class="auto-style2">
+		Example 1.2</span></p>
+		<p class="auto-style16">
+		Sub ExcelDataToAccess_DAO()</p>
+		<p class="auto-style14">
+		' exports data from the active worksheet to a table in an 
+		Access database</p>
+		<p class="auto-style16">
+		Dim db As Database, rs As Recordset, i As Long</p>
+		<p class="auto-style16">
+		Set db = OpenDatabase(&quot;C:\customers\UMC.mdb&quot;)</p>
+		<p class="auto-style14">
+		' open the database</p>
+		<p class="auto-style16">
+		Set rs = db.OpenRecordset(&quot;Membranes&quot;, dbOpenTable)</p>
+		<p class="auto-style14">
+		' get all records in a table</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11">
+		<span style="font-weight: normal" class="auto-style9">
+		<font color="#800000">i = 2</font></span><span style="color: #993300; font-weight: normal" class="auto-style9">&nbsp;&nbsp; </span> 
+		<span style="color: #339966; font-weight: normal" class="auto-style9">' 
+		the start row in the worksheet</span></font></p>
+		<p class="auto-style16">
+		Do While Range(&quot;C&quot; &amp; i).Value &gt; 0</p>
+		<p class="auto-style14">
+		' repeat until first empty cell in column C</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; With rs</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddNew &nbsp;</span><span style="color: #339966; font-weight: normal" class="auto-style2">' 
+		create a new record</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' add values to each field in the record</span></p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Fields(0) = Range(&quot;A&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Fields(1) = Range(&quot;B&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Fields(2) = Range(&quot;C&quot; &amp; i).Value</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' add more fields if you need to&#8230;</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Update&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' stores the new record</span></p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; End With</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp; i = i + 1&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' next row</span></p>
+		<p class="auto-style16">
+		Loop</p>
+		<p class="auto-style14">
+		' close the connection</p>
+		<p class="auto-style16">
+		rs.Close</p>
+		<p class="auto-style16">
+		Set rs = Nothing</p>
+		<p class="auto-style16">
+		db.Close</p>
+		<p class="auto-style16">
+		Set db = Nothing</p>
+		<p class="auto-style16">
+		End Sub</p>
+		<p class="auto-style2">&nbsp;</p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table18" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#4" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-size: 10.0pt; font-family: Arial; font-weight: normal">
+		&nbsp;</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt" class="auto-style28">
+
+<font size="5">
+		ADO (ActiveX Data Objects)</p>
+		</font>
+
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight: normal" class="auto-style2">
+		<br>ADO 
+		Connection and ADO Recordset are the two main objects needed to access 
+		data in .mdb file. ADO Connection defines the path and specifies that 
+		the connection to be based on Microsoft Jet Engine. Then you use that 
+		connection to define a recordset. A recordset can be a table, or a 
+		subset of records in the table, or a pre-defined query in Access 
+		database. To open a recordset, you have to specify the connection with a 
+		query of SQL and also the values for the </span>
+		<span class="auto-style2">CursorLocation</span><span style="font-weight:normal" class="auto-style2">,
+		</span><span class="auto-style2">CursorType</span><span style="font-weight:normal" class="auto-style2">,
+		</span><span class="auto-style2">LockType</span><span style="font-weight:normal" class="auto-style2">, 
+		and the </span><span class="auto-style2">
+		Options</span><span style="font-weight:normal" class="auto-style2"> 
+		parameters.</span></p>
+		<p class="auto-style2">If you have a small 
+		dataset and with only two or few users that need to access the tables, 
+		it may be faster to chose <b>adUseClient</b> for the CursorLocation. For 
+		large datasets, you may want to use <b>adUseServer</b> value of the 
+		CursorLocation property as it will free up your RAM for other tasks 
+		while database server will process the records. <i>adUseServer</i> is 
+		the default property.<br>
+		<br>
+		The ADO Recordset object has many properties and methods that can allow 
+		you to move through a recordset, sort, filter, find, update data 
+		contained with the recordset. The following table gives the explanation 
+		on the most commonly used ADO Recordset Properties used with Jet, and 
+		the Locking Options.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</p>
+		<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; margin-left: 5.4pt" id="table6" width="746">
+			<tr>
+				<td width="146" valign="top" style="padding: 0in 5.4pt; width: 109.75pt; height: 20pt; border: 1.0pt solid gray; " class="auto-style40">
+				<u><span class="auto-style8">Cursor Type</span></u></td>
+				<td valign="top" style="padding: 0in 5.4pt; width: 569px; height: 20pt; border-right: 1.0pt solid gray; border-top: 1.0pt solid gray; border-bottom: 1.0pt solid gray; border-left-style: none; border-left-color: inherit; border-left-width: medium;" class="auto-style39">
+				<u><span class="auto-style8">Description</span></u></td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adOpenUnspecified</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Does not 
+				specify the type of cursor.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adOpenKeyset</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Keyset cursors. 
+				Recordset is fully updateable, but you records that are added by 
+				other users and deleted records are not accessible.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adOpenStatic</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Recordset is a 
+				read-only static cursor. It generates a static list of rows at 
+				the point in time it is executed. You can move forward and 
+				backward through result sets. If another user changes a record 
+				in your cursor you won't see the change.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adOpenDynamic</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Dynamic 
+				cursors. It shows changes that other users make and allow you 
+				move forward and backward.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adOpenForwardOnly</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				It is 
+				read-only, and can only go forward through the rows. This gives 
+				best performance if you need to go through the records quickly.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adLockOptimistic</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Use optimistic 
+				locking where the recordsets are locked only when the record is 
+				saved. adLockOptimistic lock type is typically your best choice 
+				when deciding on a table lock for a non-read-only situation, and 
+				use it with adLockReadOnly.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adLockPessimistic</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Use pessimistic 
+				locking where the recordset is locked when it is first edited.</td>
+			</tr>
+			<tr>
+				<td width="146" style="width: 109.75pt; " class="auto-style41">
+				adLockReadOnly</td>
+				<td valign="top" style="width: 569px; " class="auto-style42">
+				Lock and block 
+				you from making any changes to the entire recordset in the 
+				table.</td>
+			</tr>
+		</table>
+		</font>
+		<p>
+		<br class="auto-style2">
+		<font face="">
+
+		<span class="auto-style2">&nbsp;</span></p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table19" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#5" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				<p align="right">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+<font face="Tahoma" size="5">
+		<p style="margin:0in;margin-bottom:.0001pt"><b>E<span class="auto-style9">xport data from Excel to 
+		Access &#8211; ADO using .AddNew</span></b></p>
+		</font>
+
+		<p class="auto-style26">
+		<br>Example 2.1 below using ADO method shows you how you can add records to 
+		Access table from data in an Excel worksheet. You use the <i>AddNew</i> 
+		method for the recordset. You specify the range to loop through and use 
+		the <i>Update</i> method to make changes to the database. When you go 
+		through all the following ADO examples, make sure your VBA project has 
+		added a reference to the ADO object library. For VB 6, it is Microsoft 
+		ActiveX Data Objects 2.8 Library. You 
+		can also <span style="color:#3366FF"><a href="Sub_VBA/Spares.zip">
+		DOWNLOAD</a></span> 
+		this example.</p>
+		</font>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight: normal" class="auto-style11">
+		<br class="auto-style9">
+		</span>
+		<font face="">
+
+		<span style="font-weight: normal" class="auto-style2">
+		Example 2.1<font color="#800000"><br>
+		</font>
+		</span>
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		Sub 
+		GetExcelDataToAccess_ADO()</span></p>
+		<p class="auto-style14">
+		' exports data from active worksheet to a table in an 
+		Access database</p>
+		<p class="auto-style16">
+		Dim cn As ADODB.Connection, rs As ADODB.Recordset, i As 
+		Long, lastrow As Long</p>
+		<p class="auto-style14">
+		' connect to the Access database</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11"><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">
+		Set cn = New ADODB.Connection</span></font><span style="color: #993300; font-weight: normal" class="auto-style9"><br>
+		</span>
+		</font>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		'define and open a recordset from the specified database 
+		path and database table name. Change it to suit your need.</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11">
+		<span style="font-weight: normal" class="auto-style9">
+		<font color="#800000">cn.Open &quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; &amp; &quot; 
+		Data</font></span><span style="color: #993300; font-weight: normal" class="auto-style9">
+		</span><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">
+		Source=</span></font></font><span style="color: #800000" class="auto-style2">C:\Spares\Planning\SSLChangeRecord.mdb</span><span style="color: #800000; font-weight: normal" class="auto-style2">;&quot;</span></p>
+		<p class="auto-style16">
+		Set rs = New ADODB.Recordset</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		rs.Open &quot;</span><span style="color: #800000" class="auto-style2">SafetyStockLevel_ChangeRecord</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;, 
+		cn, adOpenKeyset, adLockOptimistic, adCmdTable</span></p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; </p>
+		<p class="auto-style16">
+		lastrow = ActiveSheet.UsedRange.Rows.Count</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11"><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">
+		For i = 2 To lastrow&nbsp;</span></font><span style="color: #993300; font-weight: normal" class="auto-style9">
+		</span>
+		</font>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' start from row 2 in the worksheet</span></p>
+		<p class="auto-style16">
+		With rs</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp; .AddNew &nbsp;&nbsp;&nbsp;</span><span style="color: #339966; font-weight: normal" class="auto-style2">' 
+		create a new record</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp; &nbsp;</span><span style="color: #339966; font-weight: normal" class="auto-style2">' 
+		add values to each field in the record</span></p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Date_Changed&quot;) = Range(&quot;A&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Part_Number&quot;) = Range(&quot;B&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Part_Description&quot;) = Range(&quot;C&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Std_Cost&quot;) = Range(&quot;D&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Months_Used&quot;) = Range(&quot;E&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Old_SSL&quot;) = Range(&quot;F&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;New_SSL&quot;) = Range(&quot;G&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Reason&quot;) = Range(&quot;H&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Change_By&quot;) = Range(&quot;I&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; .Fields(&quot;Request_By&quot;) = Range(&quot;J&quot; &amp; i).Value</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp; .Update &nbsp;</span><span style="color: #339966; font-weight: normal" class="auto-style2">' 
+		stores the new record in Table Plant8800_TSLChangeRecord</span></p>
+		<p class="auto-style16">
+		End With</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11"><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">
+		Next i</span></font><span style="color: #993300; font-weight: normal" class="auto-style9"><br>
+		</span>
+		</font>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' close the connection</span></p>
+		<p class="auto-style16">
+		rs.Close</p>
+		<p class="auto-style16">
+		Set rs = Nothing</p>
+		<p class="auto-style16">
+		cn.Close</p>
+		<p class="auto-style16">
+		Set cn = Nothing</p>
+		<p class="auto-style16">
+		End Sub</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style15">
+		&nbsp;</p>
+		<p class="auto-style26">
+		You can use either of the following methods of ADO connection to an 
+		Excel 97 (or Excel 2000 to 2003) workbook or to a database file:</p>
+		<p class="auto-style16">
+		Dim oConn As New ADODB.Connection</p>
+		<p class="auto-style16">
+		myPath = &quot;C:\Spares\Planning\SSLChangeRecord.mdb&quot;</p>
+		<p class="auto-style16">
+		With oConn</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; .Provider = &quot;Microsoft.Jet.OLEDB.4.0&quot;</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; .Open myPath</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; ' your code here....</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp; .Close</p>
+		<p class="auto-style16">
+		End With</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight: normal" class="auto-style2">
+		<font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face=""><span style="font-weight: normal" class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+		<p class="auto-style26">
+		&nbsp;&nbsp;&nbsp;&nbsp; -or- </p>
+		<p class="auto-style26">
+		&nbsp;</p>
+		<p class="auto-style16">
+		Dim oConn As New ADODB.Connection, myPath as String</p>
+		<p class="auto-style16">
+		oConn.Open &quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; &amp; &quot;Data 
+		Source=C:\Spares\Planning\data_upload.xls;&quot;</p>
+		<p class="auto-style16">
+		oConn.Close</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span class="auto-style9"></p>
+		<p style="margin:0in;margin-bottom:.0001pt"><br class="auto-style11">
+		<span class="auto-style11">&nbsp;</span></span></p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table20" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#6" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				<p align="right">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span class="auto-style18">Add record from Excel sheet 
+		to Access (ADO and SQL)</span></font></font><span class="auto-style29"></font></span><font face="Tahoma"><br>
+		</font>
+
+<font face="">
+		<span style="font-weight: normal" class="auto-style2">
+		<br>Below Example 2.2 exports a dynamic data range from Excel spreadsheet 
+		into Access database, using an ADO connection to pass SQL strings. This 
+		example does not insert rows if all cells in the row are blank. It will 
+		roll back all transactions if the full update is not successful and thus 
+		saving you time to clean up any incomplete record set. Note that all 
+		values from Excel are passed as text strings to the mdb file and 
+		Microsoft Access automatically converts them to the proper format. 
+		Remember to format your Table Fields structure to the correct data type.</span></p>
+		<span class="auto-style2">I used dynamic range 
+		for the area of the heading and data record, so it is flexible enough 
+		for those who want to use this procedure for their work. The comments 
+		give you plenty of explanation. The database path, table name, range for 
+		the column headings and range for the data record are all assigned to 
+		variables for later use in the procedure. The table's column headings 
+		are all joined into a string, also to be used later in the procedure. 
+		For example, the concatenated string will become &quot; (DateChanged,PartNumber,MaterialClass,&#8230;and 
+		so on)&quot; For each row in the table, each field is evaluated, and joined 
+		into a string. If the field is empty, value of 0 is added; otherwise the 
+		value will be added. Each row is inserted into the database, one row at 
+		a time, unless it consists purely of null values, in which case it is 
+		ignored. The returned string from the worksheet row 4 and 6 would be:<br>
+		</span><span class="auto-style9"><font size="2" class="auto-style11">
+		'7/4/2006','0200-35113','C','3','0','1','P.kelvin','P.Kelvin','Increase 
+		in demand')<br>
+		'1/27/2008','0100-00516','C','0','1','0','william','Greg 
+		Weitzman','compliance to GPP SIMPLE_Opt Min (MDP)&#8217;</font></span><p>
+<img border="0" src="Images/ado_Ex2.gif" width="649" height="135"></p>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-size: 10.0pt; font-family: Arial; font-weight: normal">
+		<a name=BeginTransTransact></a> </span>
+		<span style="font-weight: normal" class="auto-style2">
+		The transaction methods manage transaction processing during a session 
+		defined by a Workspace object as follows: </span></h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-size: 10.0pt; font-family: Arial; font-weight: normal">
+		&nbsp;</span></h2>
+		<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; margin-left: 5.4pt" id="table7" width="639">
+			<tr>
+				<td width="99" valign="top" style="width: 74.35pt; border: 1.0pt solid gray; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<h2 class="auto-style24">
+				BeginTrans</h2>
+				</td>
+				<td valign="top" style="width: 509px; border-left: medium none; border-right: 1.0pt solid gray; border-top: 1.0pt solid gray; border-bottom: 1.0pt solid gray; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<h2 class="auto-style26">
+				begins a new transaction.</h2>
+				</td>
+			</tr>
+			<tr>
+				<td width="99" valign="top" style="width: 74.35pt; border-left: 1.0pt solid gray; border-right: 1.0pt solid gray; border-top: medium none; border-bottom: 1.0pt solid gray; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<h2 class="auto-style24">
+				CommitTrans</h2>
+				</td>
+				<td valign="top" style="width: 509px; border-left: medium none; border-right: 1.0pt solid gray; border-top: medium none; border-bottom: 1.0pt solid gray; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<h2 class="auto-style26">
+				ends the current transaction and saves the changes.</h2>
+				</td>
+			</tr>
+			<tr>
+				<td width="99" valign="top" style="width: 74.35pt; border-left: 1.0pt solid gray; border-right: 1.0pt solid gray; border-top: medium none; border-bottom: 1.0pt solid gray; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in" class="auto-style2">
+				<h2 class="auto-style24">
+				RollbackTrans</h2>
+				</td>
+				<td valign="top" style="width: 509px; border-left: medium none; border-right: 1.0pt solid gray; border-top: medium none; border-bottom: 1.0pt solid gray; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+				<h2 class="auto-style26">
+				ends the current transaction and restores the databases in the 
+				Workspace object to the state they were in when the current 
+				transaction began. </h2>
+				</td>
+			</tr>
+		</table>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-size: 10.0pt; font-family: Arial; font-weight: normal">
+		&nbsp;</span></h2>
+		<h2 class="auto-style26">
+		Typically, you use transactions to maintain the integrity of your data 
+		when you must both update records in two or more tables and ensure 
+		changes are completed (committed) in all tables or none at all (rolled 
+		back). For example, if you transfer money from one account to another, 
+		you might subtract an amount from one and add the amount to another. If 
+		either update fails, the accounts no longer balance. Use the BeginTrans 
+		method before updating the first record, and then, if any subsequent 
+		update fails, you can use the Rollback method to undo all of the 
+		updates. Use the CommitTrans method after you successfully update the 
+		last record.</h2>
+		<h2 class="auto-style26">
+		&nbsp;</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11"><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">
+		Option Explicit</span></font><span style="color: #993300; font-weight: normal" class="auto-style9"><br>
+		<br>
+		</span>
+		</font>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' You must make reference to ActiveX Data Objects Libary</span></h2>
+		<h2 class="auto-style16">
+		Sub AddRecord2DB_use_ADOSQL()</h2>
+		<h2 class="auto-style16">
+		Dim cn As New ADODB.Connection, rs As New ADODB.Recordset, 
+		_</h2>
+		<h2 class="auto-style16">
+		Path As String, TableName As String, RngHeadings As 
+		Range, RngRecords As Range, _</h2>
+		<h2 class="auto-style16">
+		StrHeading As String, StrRecord As String, j As Integer, 
+		i As Integer, _</h2>
+		<h2 class="auto-style16">
+		notNull As Boolean, LastColumn As Integer, LastRow As 
+		Long, LastCell, lastcellRow1</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Find the last cell in used range and last cell in row 1</h2>
+		<h2 class="auto-style16">
+		If WorksheetFunction.CountA(Cells) &gt; 0 Then</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; LastRow = Cells.Find(What:=&quot;*&quot;, After:=[A1], 
+		SearchOrder:=xlByRows, _</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SearchDirection:=xlPrevious).Row</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; LastColumn = Cells.Find(What:=&quot;*&quot;, After:=[A1], 
+		SearchOrder:=xlByColumns, _</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SearchDirection:=xlPrevious).Column</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; LastCell = Cells(LastRow, LastColumn).Address</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; lastcellRow1 = Range(&quot;IV1&quot;).End(xlToLeft).Address</h2>
+		<h2 class="auto-style16">
+		End If</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' Set the string to the path and table name of your 
+		database</span><font size="2" class="auto-style11"><span style="color: #993300; font-weight: normal" class="auto-style9"><br>
+		</span><font color="#800000">
+		<span style="font-weight: normal" class="auto-style9">Path = &quot;</span></font></font><span style="color: #800000" class="auto-style2">C:\Planning\TSLChangeRecord.mdb</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;</span></h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		TableName = &quot;</span><span style="color: #800000" class="auto-style2">TSLChangeRecord_plant8800</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;</span></h2>
+		<h2 class="auto-style16">
+		Set RngHeadings = ActiveSheet.Range(&quot;Sheet1!$A$1:&quot; &amp; 
+		lastcellRow1 &amp; &quot;&quot;)</h2>
+		<h2 class="auto-style16">
+		Set RngRecords = ActiveSheet.Range(&quot;Sheet1!$A$2:&quot; &amp; 
+		LastCell &amp; &quot;&quot;)</h2>
+		<h2 class="auto-style16">
+		&nbsp;</h2>
+		<h2 class="auto-style16">
+		' Concatenate a string with the names of the column 
+		headings</h2>
+		<h2 class="auto-style16">
+		StrHeading = &quot; (&quot;</h2>
+		<h2 class="auto-style16">
+		For j = 1 To RngHeadings.Count</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; StrHeading = StrHeading &amp; RngHeadings.Columns(j).Value</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; Select Case j</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case Is = RngHeadings.Count</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrHeading = StrHeading &amp; &quot;)&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case Else</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrHeading = StrHeading &amp; &quot;,&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp; End Select</h2>
+		<h2 class="auto-style16">
+		Next j</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Open database connection</h2>
+		<h2 class="auto-style16">
+		cn.Open &quot;Provider=Microsoft.Jet.OLEDB.4.0;&quot; &amp; &quot;Data 
+		Source=&quot; &amp; Path &amp; &quot;;&quot;</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Transaction processing</h2>
+		<h2 class="auto-style16">
+		On Error GoTo EndUpdate</h2>
+		<h2 class="auto-style16">
+		cn.BeginTrans</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Set a row counter for i</h2>
+		<h2 class="auto-style16">
+		For i = 1 To RngRecords.Rows.Count</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Open the record string for concatenation</h2>
+		<h2 class="auto-style16">
+		notNull = False</h2>
+		<h2 class="auto-style16">
+		StrRecord = &quot;('&quot;</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Evaluate field in the record</h2>
+		<h2 class="auto-style16">
+		For j = 1 To RngHeadings.Count</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; Select Case RngRecords.Rows(i).Columns(j).Value</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' If record is empty, append value of 0 to string</span></h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp; Case Is = Empty</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Case j</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case Is = RngHeadings.Count</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrRecord = Left(StrRecord, Len(StrRecord) 
+		- 1) &amp; &quot;0)&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case Else</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrRecord = Left(StrRecord, Len(StrRecord) 
+		- 1) &amp; &quot;0,'&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Select</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' If record is not empty, set notNull to true, and append 
+		value to string</span></h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp; Case Else</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; notNull = True</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Select Case j</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case Is = RngHeadings.Count</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrRecord = StrRecord &amp; 
+		RngRecords.Rows(i).Columns(j).Value &amp; &quot;')&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Case Else</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrRecord = StrRecord &amp; 
+		RngRecords.Rows(i).Columns(j).Value &amp; &quot;','&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Select</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; End Select</h2>
+		<h2 class="auto-style16">
+		Next j</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' If record has only Null values, do not insert it to 
+		table, otherwise insert record</h2>
+		<h2 class="auto-style16">
+		Select Case notNull</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; Case Is = True</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp; rs.Open &quot;INSERT INTO &quot; &amp; TableName &amp; StrHeading &amp; &quot; 
+		VALUES &quot; &amp; StrRecord, cn</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; Case Is = False</h2>
+		<h2 class="auto-style16">
+		End Select</h2>
+		<h2 class="auto-style16">
+		Next i</h2>
+		<h2 class="auto-style16">
+		&nbsp;</h2>
+		<h2 class="auto-style16">
+		EndUpdate:</h2>
+		<h2 class="auto-style14">
+		' Check if error was encounted</h2>
+		<h2 class="auto-style16">
+		If Err.Number &lt;&gt; 0 Then</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' If rrror encountered, rollback transaction and inform 
+		user</span></h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; On Error Resume Next</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; cn.RollbackTrans</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; MsgBox &quot;There was an error.&nbsp; Update was not succesful!&quot;, 
+		vbCritical, &quot;Error!&quot;</h2>
+		<h2 class="auto-style16">
+		Else</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; On Error Resume Next</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp; cn.CommitTrans</h2>
+		<h2 class="auto-style16">
+		End If</h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		' Close ADO objects</h2>
+		<h2 class="auto-style16">
+		cn.Close</h2>
+		<h2 class="auto-style16">
+		Set rs = Nothing</h2>
+		<h2 class="auto-style16">
+		Set cn = Nothing</h2>
+		<h2 class="auto-style16">
+		On Error GoTo 0</h2>
+		<h2 class="auto-style16">
+		End Sub</h2>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table21" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="font-weight:normal" class="auto-style11">
+		<br class="auto-style9">
+		</span>
+		<span style="font-weight:normal" class="auto-style2">I added a form where users can chose to select Load worksheet record 
+		data into Access table, Clear existing data on the record sheet, or to 
+		exit the user form. You can <span style="color:#3366FF">
+		<a href="Sub_VBA/Planning.zip">DOWNLOAD</a></span> this procedure with 
+		the worksheet example and the database file. Password for loading the 
+		data is &#8220;<font color="#660033">dobeman</font>&#8221;. Change to whatever you 
+		like. </span></h2>
+		<h2 class="auto-style14">
+		&nbsp;</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #339966; font-weight: normal" class="auto-style9">
+		<font size="2" class="auto-style11">&#8216; Insert into a module<br>
+		</font></span>
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		Private Sub frm_Initiliaze()</span></h2>
+		<h2 class="auto-style16">
+		Load UserForm1</h2>
+		<h2 class="auto-style16">
+		UserForm1.Show</h2>
+		<h2 class="auto-style16">
+		End Sub</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style9">
+		<br class="auto-style11">
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		&#8216; Insert into a module</span></h2>
+		<h2 class="auto-style16">
+		Sub clear_data()</h2>
+		<h2 class="auto-style16">
+		ActiveSheet.Range(&quot;A2&quot;, ActiveSheet.Range(&quot;A2&quot;).End(xlDown). 
+		_</h2>
+		<h2 class="auto-style16">
+		&nbsp; End(xlToRight)).Select</h2>
+		<h2 class="auto-style13">
+		<font size="2" class="auto-style11">Selection.Clear<br>
+		End Sub</font></h2>
+		<h2 class="auto-style15">
+		&nbsp;</h2>
+		<h2 class="auto-style14">
+		&#8216; Click event code in your userform</h2>
+		<h2 class="auto-style16">
+		Private Sub cmdLoad_click()</h2>
+		<h2 class="auto-style16">
+		Dim pwd As String</h2>
+		<h2 class="auto-style16">
+		Do</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp; pwd = InputBox(&quot;enter password to open this 
+		workbook:&quot;, &quot;password in characters&quot;)</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp; If pwd = vbNullString Then</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox &quot;you had not entered the password&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp;&nbsp;&nbsp; End If</h2>
+		<h2 class="auto-style16">
+		Loop While pwd &lt;&gt; &quot;dobeman&quot;</h2>
+		<h2 class="auto-style16">
+		&nbsp; Call AddRecord2DB_use_ADOSQL</h2>
+		<h2 class="auto-style16">
+		&nbsp; MsgBox &quot;upload to database successful!&quot;</h2>
+		<h2 class="auto-style16">
+		End Sub</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style9">
+		<br class="auto-style11">
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		&#8216; Click event code in your userform</span></h2>
+		<h2 class="auto-style16">
+		Private Sub cmdClear_Click()</h2>
+		<h2 class="auto-style16">
+		If MsgBox(&quot;this will clear all data. Are you sure?&quot;, 
+		vbYesNo, &quot;Warning&quot;) = vbYes Then</h2>
+		<h2 class="auto-style16">
+		clear_data</h2>
+		<h2 class="auto-style16">
+		Else</h2>
+		<h2 class="auto-style16">
+		Exit Sub</h2>
+		<h2 class="auto-style16">
+		End If</h2>
+		<h2 class="auto-style16">
+		End Sub</h2>
+		<h2 style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #993300; font-weight: normal" class="auto-style9">
+		<br class="auto-style11">
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		&#8216; Click event code in your userform</span></h2>
+		<h2 class="auto-style46">
+		Private Sub cmdHide_Click()</h2>
+		<h2 class="auto-style46">
+		UserForm1.Hide</h2>
+		<span style="color: #800000" class="auto-style2">
+		End Sub</span></font><p><br class="auto-style2">
+
+<font face="">
+		<span class="auto-style2">&nbsp;</span></p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table22" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#7" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style2"> </span>
+				<p align="right">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="font-weight: 700" class="auto-style19">
+		Execute queries in Access database from Excel VBA Module</span><span style="font-size:18.0pt;font-family:Arial"><br>
+		</span><span style="color: #800000" class="auto-style48"><br>Sub RunAccessQuery()</span></p>
+		<p class="auto-style51">
+		Dim cn As ADODB.Connection</p>
+		<p class="auto-style51">
+		Dim strPathToDB As String, 
+		strQuery As String</p>
+		<p class="auto-style51">
+		strPathToDB = &quot;C:\TSL_Change_Record\TSLChangeRecord.mdb&quot;</p>
+		<p class="auto-style51">
+		Set cn = New 
+		ADODB.Connection</p>
+		<p class="auto-style51">
+		With cn</p>
+		<p class="auto-style51">
+		&nbsp;&nbsp; .Provider = 
+		&quot;Microsoft.Jet.OLEDB.4.0&quot;</p>
+		<p class="auto-style51">
+		&nbsp;&nbsp; .ConnectionString = &quot;Data 
+		Source=&quot; &amp; strPathToDB &amp; &quot;;&quot;</p>
+		<p class="auto-style51">
+		&nbsp;&nbsp; .Open</p>
+		<p class="auto-style51">
+		End With</p>
+		<p class="auto-style51">
+		strQuery = &quot;qry_generate_Excess_Inventory_List&quot;</p>
+		<p class="auto-style51">
+		cn.Execute strQuery, , 
+		adCmdStoredProc</p>
+		<p class="auto-style47">
+		' with adCmdStoredProc specified, the corresponding SQL 
+		statement is generated</p>
+		<p class="auto-style51">
+		cn.Close</p>
+		<p class="auto-style51">
+		Set cn = Nothing</p>
+		<p class="auto-style51">
+		End Sub</p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<br class="auto-style48">
+		<span class="auto-style48">&nbsp;</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style48">
+		&nbsp;</p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table23" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#7" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style49">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span><span class="auto-style48"> </span>
+				<p align="right">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+		<b>
+
+		<span class="auto-style29">ADO CommandType property</span><span style="font-size:10.0pt"><br>
+		</span></b>
+
+		<span class="auto-style2"><br>The ADO CommandType 
+		property sets or returns a CommandTypeEnum value that defines the type 
+		of the Command object. Default is adCmdUnknown. If you do not specify 
+		the type, ADO will need to contact the provider to determine the type of 
+		the command. However, if you do specify the type, ADO will be able to 
+		process the command faster.</span><span class="auto-style10">&nbsp;</span></p>
+		</font>
+		<p><a name="commandtypeenum"><span class="auto-style2">
+		CommandTypeEnum Values</span></a></p>
+
+<font face="">
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="width: 78%" id="table8">
+			<tr>
+				<td valign="top" style="width: 14%; padding: 2.25pt" class="auto-style56">
+				<p align="center" class="auto-style55">
+				Constant</td>
+				<td valign="top" style="width: 5%; padding: 2.25pt">
+				<p align="center" class="auto-style55">
+				Value</td>
+				<td valign="top" style="width: 75%; padding: 2.25pt">
+				<p align="center" class="auto-style55">
+				Description</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdUnspecified</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				-1</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Does not 
+				specify the command type argument.</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdText</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				1</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Evaluates 
+				CommandText as a textual definition of a command or stored 
+				procedure call.</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdTable</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				2</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Evaluates 
+				CommandText as a table name whose columns are all returned by an 
+				internally generated SQL query.</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdStoredProc</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				4</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Evaluates 
+				CommandText as a stored procedure name.</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdUnknown</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				8</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Default. 
+				Indicates that the type of command in the CommandText property 
+				is not known.</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdFile</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				256</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Evaluates 
+				CommandText as the file name of a persistently stored Recordset. 
+				Used with Recordset.Open or Requery only.</td>
+			</tr>
+			<tr>
+				<td style="width: 14%; " class="auto-style53">adCmdTableDirect</td>
+				<td style="width: 5%; padding: 2.25pt" class="auto-style32">
+				<p align="center" class="auto-style52">
+				512</td>
+				<td valign="top" style="width: 75%; " class="auto-style54">
+				Evaluates 
+				CommandText as a table name whose columns are all returned. Used 
+				with Recordset.Open or Requery only. To use the Seek method, the 
+				Recordset must be opened with adCmdTableDirect. This value 
+				cannot be combined with the ExecuteOptionEnum value 
+				adAsyncExecute.</td>
+			</tr>
+		</table>
+		</font>
+		<p><span class="auto-style9"><br class="auto-style11">
+		<br class="auto-style11">
+		</span>
+
+<font face="">
+		<span class="auto-style2">&nbsp;</span></p>
+
+		<font face="Arial" size="2">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1">
+
+		<font face="Courier New" size="2" color="#000080"> 
+		<table border="0" cellspacing="0" cellpadding="0" id="table24" width="753" height="13">
+			<tr>
+				<td width="753" height="13" valign="top">
+				<font face="Arial" size="2" color="#800000">
+				<p align="right"><u>
+<font face="">
+				       
+      <span id="dnn_ctr436_HtmlModule_HtmlHolder1" class="Normal">
+				<a name="#8" style="color: #0033FF"></a>
+			</span></font></u><span class="auto-style10">
+				<a style="color: #0166FE" target="_parent" href="#Main_Top">
+				Go To Top</a></span>
+				<p align="right">&nbsp;</td>
+			</tr>
+		</table>
+		</font>
+
+		</span></span></font>
+
+		<b>
+
+<font face="Tahoma" size="5">
+		Running Query and Macro in Access Database from Excel VBA - using ADO &amp; 
+		SQL</font></b><span style="font-size:15.0pt"><font face="Tahoma"><br>
+		</font></span>
+		<span style="font-weight: normal" class="auto-style2">&nbsp;<br>The 
+		following procedure not only shows you how to export data from the 
+		active worksheet to a table in an Access database, but also show you 
+		using </span><span class="auto-style2">Execute</span><span style="font-weight: normal" class="auto-style2"> 
+		and </span><span class="auto-style2">DoCmd</span><span style="font-weight: normal" class="auto-style2"> 
+		command to execute Query and Macro in an Access database.</span></p>
+		<p>
+
+<font face="">
+		<span style="font-weight: normal" class="auto-style2">
+		Example 2.3</span></font></p>
+		<p class="auto-style30">
+		<font size="2" class="auto-style11">Option Explicit&nbsp;&nbsp;&nbsp; <br>
+		Global oApp As Object&nbsp;</font></p>
+		<p class="auto-style14">
+		' make your VBE reference to the ADO Object Library</p>
+		<p class="auto-style13">
+		<font size="2" class="auto-style11">Sub ExcelRunAccessQueryMacro_ADO()<br>
+&nbsp;</font></p>
+		<p class="auto-style14">
+		' declare variables</p>
+		<p class="auto-style16">
+		Dim cn As ADODB.Connection, rs As ADODB.Recordset, i As 
+		Long, Lpath As String</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		Lpath = &quot;</span><span style="color: #800000" class="auto-style2">C:\Spares\Planning\ZMCR003PLN.mdb</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font face>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' connect to the Access database</span></font></p>
+		<p class="auto-style13">
+		<font size="2" class="auto-style11">Set oApp = CreateObject(&quot;Access.Application&quot;)<br>
+&nbsp;</font></p>
+		<p class="auto-style16">
+		With oApp</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span class="auto-style2"><font color="#800000">&nbsp; &nbsp;</font></span><span style="color: #800000; font-weight: normal" class="auto-style2">.Visible 
+		= True </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' set False to make Access app invisible</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		End With</span></font><font size="2" class="auto-style11"><span style="color: #339966; font-weight: normal" class="auto-style9"><br>
+		<br>
+		</span>
+
+<font face="">
+		<span style="color: #339966; font-weight: normal" class="auto-style9">' open a recordset in a specified path</span></font></font><font face=""></p>
+		<p class="auto-style16">
+		Set cn = New ADODB.Connection</p>
+		<p class="auto-style16">
+		cn.Open &quot;Provider=Microsoft.Jet.OLEDB.4.0; &quot; &amp; &quot;Data 
+		Source=&quot; &amp; Lpath &amp; &quot;;&quot;</p>
+		<p class="auto-style16">
+		Set rs = New ADODB.Recordset</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p class="auto-style16">
+		Application.ScreenUpdating = False</p>
+		<p class="auto-style16">
+		Application.DisplayAlerts = False</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11">
+		<span style="color: #339966; font-weight: normal">
+		<br class="auto-style9">
+		</span>
+
+<font face="">
+		<span style="color: #339966; font-weight: normal" class="auto-style9">
+		' execute an Access Query</span></font></font><font face=""></p>
+		<p class="auto-style16">
+		cn.Execute &quot;clear_content_refTable1&quot;</p>
+		<p class="auto-style16">
+		rs.Open &quot;refTable1&quot;, cn, adOpenDynamic, adLockOptimistic, 
+		adCmdTable</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11">
+		<span style="color: #339966; font-weight: normal">
+		<br class="auto-style9">
+		</span>
+
+<font face="">
+		<span style="color: #339966; font-weight: normal" class="auto-style9">
+		' select a range in column A and B on worksheet 
+		&quot;template&quot;</span></font></font><font face=""></p>
+		<p class="auto-style16">
+		Sheets(&quot;template&quot;).Range(&quot;A1&quot;).Select</p>
+		<p class="auto-style16">
+		Range(ActiveCell, ActiveCell.End(xlDown).Offset(0, 
+		1)).Select</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		i = 2&nbsp;</span><span style="color: #339966; font-weight: normal" class="auto-style2">' 
+		start from row 2, loops thru column 1 on non-empty cells</span></p>
+		<p class="auto-style16">
+		Do While Not Range(&quot;A&quot; &amp; i).Value = vbNullString</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; With rs</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddNew&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' add recordset on Two Fields in Table &quot;refTable1&quot; in 
+		ZMCR003PLN.mdb file</span></p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Fields(&quot;Serial_No&quot;) = Range(&quot;A&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Fields(&quot;Material&quot;) = Range(&quot;B&quot; &amp; i).Value</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Update</p>
+		<p class="auto-style16">
+		&nbsp;&nbsp; End With</p>
+		<p class="auto-style16">
+		i = i + 1</p>
+		<p class="auto-style16">
+		Loop</p>
+		<p class="auto-style16">
+		&nbsp;</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		oApp.Visible = True&nbsp; </span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' set False to make Access application invisible</span></p>
+		<p class="auto-style16">
+		oApp.OpenCurrentDatabase Lpath</p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		oApp.DoCmd.OpenQuery &quot;</span><span style="color: #800000" class="auto-style2">qry_generate_Excess_Inventory_List</span><span style="color: #800000; font-weight: normal" class="auto-style2">&quot;&nbsp;
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' run an Access Query</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<span style="color: #800000; font-weight: normal" class="auto-style2">
+		oApp.DoCmd.RunMacro &quot;</span><span style="color: #800000" class="auto-style2">macro_ScorecardZMCR002_update_refTable1_StockingList</span><font size="2" class="auto-style11"><font color="#800000"><span style="font-weight: normal" class="auto-style9">&quot;</span></font><span style="color: #993300; font-weight: normal" class="auto-style9">&nbsp;&nbsp; </span>
+		</font>
+		<span style="color: #339966; font-weight: normal" class="auto-style2">
+		' run an Access Macro</span></p>
+		<p style="margin:0in;margin-bottom:.0001pt">
+		<font size="2" class="auto-style11">
+		<span style="color: #339966; font-weight: normal">
+		<br class="auto-style9">
+		</span>
+
+<font face="">
+		<span style="color: #339966; font-weight: normal" class="auto-style9">
+		' close the connection to database</span></font></font><font face=""></p>
+		<p class="auto-style16">
+		rs.Close</p>
+		<p class="auto-style16">
+		Set rs = Nothing</p>
+		<p class="auto-style16">
+		cn.Close</p>
+		<p class="auto-style16">
+		Set cn = Nothing</p>
+		<p class="auto-style16">
+		Application.ScreenUpdating = True</p>
+		<p class="auto-style13">
+		<font size="2" class="auto-style11">Application.DisplayAlerts = True<br>
+		End Sub</font></p>
+	  <p class="auto-style13">
+		&nbsp;</p>
+		<p style="margin-left: 6.5in" class="auto-style2">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		Return To Top</a></font></font></font></font></td>
+</tr>
+
+<tr>
+
+
+<td valign="top">
+
+    </td>
+  </tr>
+</tbody></table>
+
+
+<table border="0" width="99%" id="table5">
+<tr>
+<td align="center">
+&nbsp;</td>
+</tr>
+<tr>
+<td align="center">
+<font size="2">
+
+
+<font face="Courier New">	
+
+
+ <a href="http://s05.flagcounter.com/more/RvMZ"><img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=4/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a>	
+<br>
+
+
+<br></font></font><span class="auto-style9"><span class="auto-style11">This site was created 
+in Feb.2007<br>by William Tan<br><br></span></span></td>
+</tr>
+<tr>
+<td align="center">
+&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>

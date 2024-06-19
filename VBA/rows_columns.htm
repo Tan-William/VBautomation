@@ -1,0 +1,742 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- Mirrored from vbautomation.110mb.com/VBA/rows_columns.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:49:14 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China,Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h1
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	font-weight:bold}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	color:windowtext;
+	font-weight:bold}
+.auto-style1 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style2 {
+	font-size: 10.5pt;
+}
+.auto-style3 {
+	color: #0045C3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style5 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	color: windowtext;
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0in;
+	margin-bottom: .0001pt;
+}
+.auto-style6 {
+	font-family: Verdana;
+}
+.auto-style7 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style8 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style14 {
+	font-size: 10.5pt;
+	text-decoration: none;
+}
+.auto-style13 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	font-weight: normal;
+}
+.auto-style15 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style16 {
+	color: #0045C3;
+}
+</style>
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../index.htm" rel="internal" class="auto-style1">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style1">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+				<font class="auto-style1"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font><span class="auto-style2">
+				</span>                                              
+
+                    <tr width="159">
+                    <td style="cursor: pointer; height: 66px;" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" class="auto-style2">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style15">
+					<strong><span class="auto-style16">Download</span></strong></a><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style1">
+					my Add-In tool</a><font face="">	
+ 				   (<a class="auto-style14" href="Sub_VBA/WilliamExcelUtilities.zip"><span class="auto-style13"><em>run on 32-bit MS Office Excel</em>)</span></a></font></td>
+                    </tr>
+                                                                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" height="28" class="auto-style2">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style1">
+					VBA Basic for beginners</a></td>
+                    </tr>
+
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="Objects.htm" rel="internal" class="auto-style1">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="rows_columns.htm" rel="internal" class="auto-style3">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style1">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="statements.htm" rel="internal" class="auto-style1">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+ 					<a href="functions.htm" rel="internal" class="auto-style1">
+					Functions</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style1">
+					Conditional Statements and Loops Structure</a><span class="auto-style2">
+					</span> </font></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="errors_handling.htm" rel="internal" class="auto-style1">
+					Errors Handling</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="userforms.htm" rel="internal" class="auto-style1">UserForms</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="pivot_table.htm" rel="internal" class="auto-style1">
+					Pivot Tables</a><span class="auto-style2"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style1">Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style1">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>                            
+
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style1">
+					File I/O VBA Examples</a></font></td>
+                    </tr>     
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style1">ADO and 
+					DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style1">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="3303">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+	</font>
+						
+			
+<td bgcolor="#FFFFFF" WIDTH="1%"></td>
+<td valign="top" width="80%">
+      <h1><font size="2"><span style="font-family:Arial">&nbsp;</span></font><font size="5"><span style="font-family:Arial">Cells, Rows, Columns, Range, UsedRange, Offset, Resize, 
+		Union .....</span></font></h1>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; " class="auto-style5">This section contains many examples of the code to show how to move around and work with the components of a worksheet.</pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><b><span style="font-family:Arial"><font size="3">Range, UsedRange, Select</font></span></b></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family:Arial;color:#339966">&#8217;</span><span style="color:#339966" class="auto-style6"><span class="auto-style2"> select a range of cells
+</span></span><span class="auto-style2"><span style="color:#CC3300" class="auto-style6">Range(&quot;A1:B4&quot;)
+
+</span><span class="auto-style6"><span style="color:#339966">&#8216; select a set of non contiguous cells</span><span style="color:#009900">
+</span></span><span style="color:#CC3300" class="auto-style6">Range(&quot;A1,B4,B8&quot;).Select
+
+<br></span><span style="color:#339966" class="auto-style6">&#8217; selects the used range on active Sheet
+</span><span style="color:#CC3300" class="auto-style6">ActiveSheet.UsedRange.Select
+
+<br></span><span style="color:#339966" class="auto-style6">&#8217; count the number of columns of the used range</span></span><span style="color:#CC3300"><span class="auto-style2">
+</span><span class="auto-style6"><span class="auto-style2">ActiveSheet.UsedRange.Columns.Count</span></span></span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style7">&nbsp;</pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="font-family:Arial;color:#339966" class="auto-style6">&#8217; replace small &quot;square-box&quot; characters </span><span style="color:#339966" class="auto-style6">Y</span><font face=""><span style="color:#339966" class="auto-style6"> </span></font><span style="font-family:Arial;color:#339966" class="auto-style6">which is chr(13) Carriage-Return, with chr(10) which is a Line-Feed.</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style7"><span style="color:#CC3300">ActiveSheet.UsedRange.Replace Chr(13), Chr(10)</span></pre>
+		<p class="MsoNormal">
+		<span style="color:#339966" class="auto-style7">&#8217; Select 
+		the named range &quot;MyRange&quot; on the another worksheet, you can use either 
+		of the two examples below: </span>
+		</font>
+		<span style="color:#CC3300" class="auto-style2">
+		<br class="auto-style6">
+		</span>
+
+<font face="">
+		<span style="color:#CC3300" class="auto-style7">
+		Worksheets(&quot;Sheet1&quot;).Activate<br>
+		Range(&quot;MyRange&quot;).Select<br>
+		Application.Goto Worksheets(&quot;Sheet1&quot;).&quot;MyRange&quot;</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:#CC3300"><br>&nbsp;</span></p>
+		<p class="MsoNormal"><b><span style="font-family: Arial">Value</span></b><span style="font-size:10.0pt;font-family:Arial;color:#339966"><br>
+		</span>
+		</font><span style="color:#339966" class="auto-style7">&#8217; First example is to enter a numerical value in a selection of cells.<br>
+		&#8217; Second example shows entering a text in a cell<br>
+		</span>
+
+<font face="">
+		<span style="color:#CC3300" class="auto-style7">
+		Sheets(1).Range(&quot;A1:C5&quot;).Value = 15</span><span style="color: navy" class="auto-style8"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Range(&quot;A1&quot;).Value &nbsp;= &quot;William&quot;<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		entering a text in a cell in the active worksheet</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">Dim ws As Excel.Worksheet<br>
+		Set ws = Excel.ActiveSheet<br>
+		ws.Cells(2, 1).Value = &quot;Demo&quot;</span></p>
+		<h3>
+		<span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:#CC3300">
+		<br>
+		</span><font size="3"><span style="color: black">Formula</span></font><span style="font-size: 10.0pt; color: black"><br>
+		</span>
+		<span style="color:#339966;font-weight:normal" class="auto-style7">&#8217; 
+		to enter a formula&nbsp;in a cell<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Range(&quot;A2&quot;).Select<br>
+		Selection.Formula = &quot;=C2-D2&quot;<br>
+		<br>
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style7">&#8217; 
+		to enter formula&nbsp;in a range of cells<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Range(&quot;A2:A10&quot;).Formula = &quot;=C2-D2&quot;<br>
+		<br>
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style7">&#8217; 
+		to have the exact formula =C2-D2 in all the cells, you use:<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Range(&quot;A2:A10&quot;).Formula = &quot;=$C$2-$D$2&quot;</span></h3>
+		<h3>
+		<span style="font-size: 10.0pt; font-family: Courier New; color: #CC3300; font-weight: normal">
+		<br>
+		</span><span style="color: black"><font size="3">Offset, Resize</font></span><span style="font-size: 10.0pt; color: black; font-weight: normal"><br>
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style7">&#8217; 
+		to move one cell down, and two cells to the right<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Activecell.Offset(1,2).Select<br>
+		<br>
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style7">&#8216; 
+		to move one cell to the left. (your active cell can not be in column A)<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Activecell.Offset(0,-1).Select<br>
+		<br>
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style7">&#8217; 
+		to move one cell down<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Activecell.Offset(1,0).Select<br>
+		<br>
+		</span>
+		<span class="auto-style6">
+		<span style="color: #339966; font-weight: normal" class="auto-style2">&#8217; 
+		to move one cell up and two cells to the right</span><span style="font-weight: normal" class="auto-style2"><br>
+		</span>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Activecell.Offset(-1,2).Select<br>
+		<br>
+		</span>
+		<span class="auto-style6">
+		<span style="color: #339966; font-weight: normal" class="auto-style2">&#8216; 
+		either of these 2 statements will select one cell and two more cells 
+		down</span><span style="color: navy; font-weight: normal" class="auto-style2"><br>
+		</span>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		Range(Activecell,Activecell.Offset(2,0)).Select<br>
+		Range(&quot;A1&quot;,Range(&quot;A1&quot;).Offset(2,0)).Select<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		<br>
+		</span>
+		<span style="color: #339966; font-weight: normal" class="auto-style7">&#8217; 
+		select a cell that is five rows below and four columns to the right of 
+		cell B5 which is Cells(5,2)<br>
+		</span>
+		<span style="color: #CC3300; font-weight: normal" class="auto-style7">
+		ActiveSheet.Cells(5, 2).Offset(5, 4).Select</span></h3>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color:#339966">
+</span><span style="color: #339966" class="auto-style6">&#8216; select a range of cells Offset from a specified range. Here it shifts 2 Rows down and 3 Columns to the right
+</span><span style="color: #CC3300" class="auto-style6">ActiveSheet.Range(&quot;MyRange&quot;).Offset(2, 3).Select</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: #CC3300" class="auto-style6">
+
+</span><span style="color: #339966" class="auto-style6">&#8217; select a named Range and Resize (or extend) the selection by 3 Rows down
+&#8217; syntax is <b>expression.Resize(RowSize, ColumnSize)</b>
+</span><span style="color: #CC3300" class="auto-style6">Range(&quot;MyRange&quot;).Select</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span class="auto-style6"><span style="color: #CC3300">Selection.Resize(Selection.Rows.Count + 3, Selection.Columns.Count).Select
+
+</span>
+</span><span style="color: #339966" class="auto-style6">&#8217; shift 2 rows down and 3 columns to the right of the named range &quot;MyRange&quot; and extend 4 rows and 5 column more 
+' than the named range
+</span><span style="color: #CC3300" class="auto-style6">Range(&quot;MyRange&quot;).Offset(2, 3).Resize(Selection.Rows.Count + 4, _</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style7"><span style="color: #CC3300">&nbsp;&nbsp; Selection.Columns.Count + 5).Select</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2">
+<span style="color: #339966" class="auto-style6">&#8217; resize the active cell by 3 rows down and 5 columns to the Right
+</span><span style="color: #CC3300" class="auto-style6">ActiveCell.Resize(3, 5).Select</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color: #CC3300">&nbsp;</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color: #CC3300">&nbsp;</span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><b><span style="font-family: Arial; color: black"><font size="3">Selection, ActiveCell</font>
+</span></b><span style="color:#339966" class="auto-style6"><span class="auto-style2">&#8216; select specified range, remove content of the cells A1 to A30, move cursor to A31</span></span><span class="auto-style2"><span style="color:#009900" class="auto-style6">
+</span><span style="color:#CC3300" class="auto-style6">Range(&quot;A1:A20&quot;).Select
+Selection.ClearContents
+ActiveCell.Offset(21, 0).Select
+
+</span><span style="color:#339966" class="auto-style6">&#8217; it moves cursor to the position of row 1 and active column
+</span></span><span style="color:#CC3300" class="auto-style6"><span class="auto-style2">Cells(1, ActiveCell.Column).Select</span></span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style7">&nbsp;</pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><font face=""><span style="color:#339966" class="auto-style6">&#8217; it moves the cursor to cell B65536
+</span></font><span style="color:#CC3300" class="auto-style6">Cells(Rows.Count, &quot;B&quot;).Select</span><span style="color:#339966" class="auto-style6">
+
+' it counts the column of active cell as 1</span><span style="color:#CC3300">
+<span class="auto-style6">ActiveCell.Columns.Count
+
+</span></span><span style="color:#339966" class="auto-style6">' sets the formula for the active cell
+</span><span style="color:#CC3300" class="auto-style6">Selection.Formula = &quot;=A1*C1&quot;
+
+</span><span style="color:#339966" class="auto-style6">' sets the font for the selection to Bold
+</span><span style="color:#CC3300" class="auto-style6">Selection.Font.Bold = True
+
+</span><span style="color:#339966" class="auto-style6">&#8217; count the numbers of cells in selection</span><span class="auto-style6">
+<span style="color:#CC3300">ActiveSheet.Selection.Cells.Count
+
+</span></span><span style="color:#339966" class="auto-style6">&#8216; select the entire row(s) of your single or multiple cells selection</span><span style="color:#CC3300">
+<span class="auto-style6">Selection.EntireRow.Select</span></span></pre>
+		<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; color: windowtext; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:#CC3300">&nbsp;</span></pre>
+		<p><b>
+
+<font face="">
+		<span style="font-family: Arial">Column, Row, Columns, Rows, Count</span></font><span style="font-family: Arial">, Select, EntireRow, 
+		EntireColumn</span><span style="font-size:10.0pt;font-family:Arial"><br>
+		</span></b>
+		<span style="color:#339966" class="auto-style7">&#8216; select 
+		columns A and B</span><span style="color:#009900" class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Columns(&quot;A:B&quot;).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select columns A, C and E, a set of non contiguous columns</span><span style="color:#009900" class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Range(&quot;A:A,E:E,G:G&quot;).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select row&nbsp;2<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Rows(&quot;2&quot;).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		select columns 1, 5 and 7, a set of contiguous columns</span><span style="color:#009900" class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Range(&quot;1:1,5:5,7:7&quot;).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select columns from 1 to 10</span><span class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Rows(&quot;1:10&quot;).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select the entire column of your active cell</span><span class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		ActiveCell.EntireColumn.Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select the entire row of your active cell</span><span class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		ActiveCell.EntireRow.Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select entire column of A1</span></font><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span>
+
+<font face="">
+		<span style="color:#CC3300" class="auto-style7">Range(&quot;A1&quot;).EntireColumn.Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		select entire row of A1</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">Range(&quot;A1&quot;).EntireRow.Select</span><span style="color:#339966" class="auto-style7"><br>
+		<br>
+		&#8216; If 
+		you select more than one cell, this select all rows and columns covered 
+		by your selection:</span><span class="auto-style7"><br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Selection.EntireColumn.Select<br>
+		Selection.EntireRow.Select<br>
+		</span><span style="color:#339966" class="auto-style2">
+		<br class="auto-style6">
+		</span>
+		<span style="color:#339966" class="auto-style7">
+		&#8216; assign 
+		row number of the active cell to the variable<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		variable = Activecell.Row<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8216; 
+		assigns column number of the active cell to the variable</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">variable = Activecell.Column<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		count the number of rows in the selection</span><span style="font-family:&quot;Courier New&quot;;color:#CC3300" class="auto-style2">
+		</span><span style="color:#CC3300" class="auto-style2"> 
+		<br class="auto-style6">
+		</span>
+		<span style="font-size:10.0pt;
+color:#CC3300" class="auto-style6"> 
+		<span style="font-family:&quot;Courier New&quot;;color:#CC3300" class="auto-style2"> Selection.Rows.Count <br>
+		<br>
+		</span>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		count the number of columns in the selection<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Selection.Columns.Count<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		it counts the row of active cell as 1<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		ActiveCell.Rows.Count<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		it means active row number + 1<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		ActiveCell.Row + ActiveCell.Rows.Count<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		it counts the number of rows in a worksheet, displays 65536<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells.Rows.Count</span></p>
+		<p><b><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span><span style="font-family: Arial">RowOffset, ColumnOffset</span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span></b>
+		<span style="color:#339966" class="auto-style7">&#8216; 
+		activates the cell three columns to the right of and three rows down 
+		from the active cell<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		ActiveCell.Offset(rowOffset:=3, columnOffset:=3).Activate</span></p>
+		<p>
+		<span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:#CC3300">
+		<br>
+		</span><b><span style="font-family: Arial">Cells, RowIndex, ColumnIndex 
+		, CurrentRegion</span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		</span></b>
+		<span style="color:#339966" class="auto-style7">' Either 
+		way will work. Select 
+		the cell at B1, at intersection of Row 1 and Column 2<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells(1,2).Select <br>
+		Cells(1,&quot;B&quot;).Select <br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		this is same as Cells(1,2).Select</span></font><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span>
+
+<font face="">
+		<span style="color:#CC3300" class="auto-style7">Cells(RowIndex:=1, ColumnIndex:=2).Select<br>
+		</span><span class="auto-style8"><br>
+		</span>
+		<span style="color:#339966" class="auto-style7">&#8216; select 
+		all the cells in the active sheet, same as when you press Ctrl+A<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells.Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		this is the equivalent of Cells(65536, 256)<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells(Cells.Rows.Count, Cells.Columns.Count)</span></p>
+		<p class="MsoNormal">
+		<span style="color:#339966" class="auto-style7">&#8216; select 
+		all cells from the selection to the first empty row and the first empty 
+		column<br>
+		&#8216; the range selected by the CurrentRegion is an area bounded by any 
+		combination of blank rows and blank columns</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span>
+
+<font face="">
+		<span style="color:#CC3300" class="auto-style7">
+		Selection.CurrentRegion.Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		from active cell, this selects the CurrentRegion without selecting the 
+		header row</span><span style="font-size:10.0pt"> 
+		</span>
+		<br class="auto-style7">
+		<span style="color:#CC3300" class="auto-style7">
+		Set tbl = ActiveCell.CurrentRegion<br>
+		tbl.Offset(1, 0).Resize(tbl.Rows.Count - 1, tbl.Columns.Count).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		resizes the selection to extend it by one row and one column<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		numRows = Selection.Rows.Count<br>
+		numColumns = Selection.Columns.Count<br>
+		Selection.Resize(numRows + 1, numColumns + 1).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">' 
+		Moving down one cell from position at active Row and Column A<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells(ActiveCell.Row + 1, 1).Select<br>
+		</span><span style="color:#339966" class="auto-style2">
+		<br class="auto-style6">
+		</span>
+		<span style="color:#339966" class="auto-style7">
+		' Moving to the right one cell from position at active Column and Row 1<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells(1, ActiveCell.Column + 1).Select<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		moving 1 Row down and 2 Columns to the Right, from current location<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Cells(ActiveCell.Row + 1, ActiveCell.Column + 2).Select<br>
+		</span><span style="color:#339966" class="auto-style2">
+		<br class="auto-style6">
+		</span><span style="color:#339966" class="auto-style7">
+		' activate the worksheet, and select the range A2, C3</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">Application.Workbooks(&quot;Book1&quot;).Worksheets(&quot;Sheet1&quot;).Activate<br>
+		ActiveSheet.Range(Cells(2, 1), Cells(3, 3)).Select</span></p>
+		<p class="MsoNormal">
+		<span style="color:#339966" class="auto-style7">' another 
+		alternative to activate the worksheet, and select the range</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span>
+
+<font face="">
+		<span style="color:#CC3300" class="auto-style7">Application.Goto Workbooks(&quot;Book1&quot;).Sheets(&quot;Sheet1&quot;).Range(&quot;A2&quot;, &quot;C3&quot;)</span></p>
+		<p class="MsoNormal"><br>
+		<b><span style="font-family: Arial">Union </span></b>
+		<span class="auto-style7">(Note that Union method 
+		does not work across sheets)</span></font></font></font><span style="color:#339966" class="auto-style2"><br class="auto-style6">
+		</span>
+
+<font face="">
+		<span style="color:#339966" class="auto-style7">&#8216; fills the union of two named ranges, myRng1 and myRng1, with a text<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Set unionRng = Application.Union(Range(&quot;myRng1&quot;), Range(&quot;myRgn2&quot;))</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">unionRng.Value = &quot;Example&quot;<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">&#8217; 
+		you can also use the Sheet!A1 Notation to work with the Union method<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		Set URng = Application.Union(Range(&quot;Sheet1!A1:B2&quot;), _</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">&nbsp; Range(&quot;Sheet1!C3:D4&quot;))<br>
+		<br>
+		</span><span style="color:#339966" class="auto-style7">' 
+		this let you fill a function formula to the non-adjacent cells<br>
+		</span>
+		<span style="color:#CC3300" class="auto-style7">
+		For i = 1 To 20</span><span style="color:#CC3300" class="auto-style2"><br class="auto-style6">
+		</span><span style="color:#CC3300" class="auto-style7">Set x = Application.Union(Cells(i, 2), Cells(i, 3), Cells(i, 7))<br>
+		x.Value = &quot;=MyFunction()&quot;<br>
+		Next</span></p>
+		<p style='margin-left:6.5in'>
+		<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		<font face="Arial" size="2">Return To Top</font></a></p></td>
+		</tr>
+
+
+<font face="">
+<tr>
+<td valign="top">
+    </td>
+  </tr>
+</tbody></table>
+
+<table border="0" width="100%" id="table5">
+<tr>
+<td align="center">
+<font face="Courier New">	
+<font size="2">
+
+
+This site was created 
+in Feb.2007<br>by William Tan</font></font></td>
+</tr>
+</table>
+
+</body>
+<!-- Mirrored from vbautomation.110mb.com/VBA/rows_columns.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:49:14 GMT -->
+</html>

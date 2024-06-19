@@ -1,0 +1,1993 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>File I/O - VisualBasic Examples </title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+A.type1:link    {color:#0033CC; text-decoration:none;}
+A.type1:visited {color:#0033CC; text-decoration:none;}
+A.type1:active  {color:#0033CC; text-decoration:none;}
+A.type1:hover   {color:#FF0000; text-decoration:none;}
+
+A.type2:link    {color:#F06000; text-decoration:none;}
+A.type2:visited {color:#F06000; text-decoration:none;}
+A.type2:active  {color:#F06000; text-decoration:none;}
+A.type2:hover   {color:#0066FF; text-decoration:underline;}
+
+A.type3:link    {color:#0033CC; text-decoration:none;}
+A.type3:visited {color:#0033CC; text-decoration:none;}
+A.type3:active  {color:#0033CC; text-decoration:none;}
+A.type3:hover   {color:#800000; text-decoration:overline underline;}
+//-->
+</style>
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h1
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman"}
+span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+.auto-style1 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 11pt;
+}
+.auto-style4 {
+	font-size: 10.5pt;
+}
+.auto-style5 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 14pt;
+}
+.auto-style6 {
+	font-family: Verdana;
+	font-weight: bold;
+}
+.auto-style7 {
+	font-family: Verdana;
+}
+.auto-style8 {
+	font-family: Verdana;
+	font-size: 14pt;
+	text-align: left;
+}
+.auto-style9 {
+	font-family: Verdana;
+	font-weight: bold;
+	text-align: left;
+}
+.auto-style10 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 14pt;
+	text-align: left;
+}
+.auto-style11 {
+	font-family: Verdana;
+	font-size: 14pt;
+}
+.auto-style12 {
+	font-size: 14pt;
+}
+.auto-style13 {
+	text-align: left;
+}
+.auto-style14 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style15 {
+	color: #0045C3;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style16 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style17 {
+	color: #0045C3;
+}
+.auto-style18 {
+	font-family: Verdana;
+	font-style: italic;
+	font-size: 10.5pt;
+}
+.auto-style20 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style22 {
+	font-weight: 400;
+	font-size: 10.5pt;
+}
+.auto-style25 {
+	font-weight: bold;
+}
+.auto-style26 {
+	font-family: Verdana;
+	font-size: 12pt;
+}
+.auto-style27 {
+	font-size: 12pt;
+}
+.auto-style30 {
+	color: #800000;
+}
+.auto-style31 {
+	font-family: Verdana;
+	font-size: 12pt;
+	text-align: center;
+}
+.auto-style32 {
+	font-family: Verdana;
+	font-size: 12pt;
+	border-left-style: none;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding: 3.75pt;
+}
+.auto-style33 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right: 1px solid #C0C0C0;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom: 1px solid #C0C0C0;
+}
+.auto-style38 {
+	border-left-style: none;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	padding: 3.75pt;
+}
+.auto-style39 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: medium;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding: 3.75pt;
+}
+.auto-style40 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: medium;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	padding: 3.75pt;
+}
+.auto-style41 {
+	border-left-style: none;
+	border-left-width: medium;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	padding: 3.75pt;
+}
+.auto-style42 {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: medium;
+	border-top-style: none;
+	border-top-width: medium;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	padding: 3.75pt;
+}
+.auto-style43 {
+	font-size: 10pt;
+}
+.auto-style44 {
+	font-size: 10pt;
+	text-align: center;
+}
+.auto-style46 {
+	color: #800000;
+	font-size: 10.5pt;
+}
+.auto-style47 {
+	font-family: Verdana;
+	color: #800000;
+}
+.auto-style48 {
+	font-style: normal;
+	font-size: 10.5pt;
+}
+</style>
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+					<a href="../index.htm" rel="internal" class="auto-style14">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style14">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+				<font class="auto-style14"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font></font></font><span class="auto-style1">
+				</span>
+
+<font face="">
+
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style1">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style16">
+					<strong><span class="auto-style17">Download</span></strong></a><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style14"> my Add-In 
+					tool (<em>run on 32-bit MS Office Excel</em>)</a></td>
+                    </tr>
+                                                
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" height="28" class="auto-style1">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style14">
+					VBA Basic for beginners</a></td>
+                    </tr>
+
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<a href="Objects.htm" rel="internal" class="auto-style14">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+					<a href="rows_columns.htm" rel="internal" class="auto-style14">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="33" class="auto-style1">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style14">
+					Working around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<a href="statements.htm" rel="internal" class="auto-style14">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+ 					<a href="functions.htm" rel="internal" class="auto-style14">
+					Functions</a><span class="auto-style1"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style14">
+					Conditional Statements and Loops Structure</a></font></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+					<a href="errors_handling.htm" rel="internal" class="auto-style14">
+					Errors Handling</a><span class="auto-style1"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<a href="userforms.htm" rel="internal" class="auto-style14">
+					UserForms</a><span class="auto-style1"></font></span></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<a href="pivot_table.htm" rel="internal" class="auto-style14">
+					Pivot Tables</a><span class="auto-style1"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style14">
+					Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style14">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style15">
+					File I/O VBA Examples</a></font></td>
+                    </tr>                     
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style1">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style14">ADO 
+					and DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style1">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style14">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="1300">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+
+<font face="">
+
+<font face="">
+
+<font face="">
+
+<font face="">
+						
+			
+<td bgcolor="#FFFFFF" WIDTH="3%"></td>
+<td valign="top" width="79%">
+      <!-- Start Page Content -->
+<font face="arial">
+
+		</font></font>
+		</font>
+		<p><font face="arial"><b><font style="font-size: 20pt">File I/O In 
+		Visual Basic</font></b></font></p>
+
+		<font face="Arial" size="2">
+		<p><span class="auto-style2"><a class="type1" href="#File_Manager">File Manager Commands</a><br>
+		<a class="type1" href="#File I/O">File I/O Commands</a><br>
+		<a class="type1" href="#FileSystemObject">File Access via a 
+		FileSystemObject</a><br>
+		<a class="type1" href="#FreeFile">FreeFile(file_number)</a><br>
+		<a class="type1" href="#Open_Statement">The Open Statement</a><br>
+		<a class="type1" href="#Input#file_num">Input #file_num, varlist</a><br>
+		<a class="type1" href="#LineInput#file_num">Line Input #file_num, strVar</a><br>
+		<a class="type1" href="#Printfile_number">Print #file_number, variable1, 
+		variable2, ...</a><br>
+		<a class="type1" href="#Write#file_num">Write #file_num[, output_list]</a><br>
+		<a class="type1" href="#EOL_LOF">EOL(file_number) and LOF(file_number)</a><br>
+		<a class="type1" href="#Opening_Reading_File">Opening and Reading a File</a><br>
+		<a class="type1" href="#Get_Statement">The Get Statement</a><br>		
+		<a class="type1" href="#Input_Function">The Input Function</a><br>
+		<a class="type1" href="#Put_Statement">The Put Statement</a><br>
+		<a style="color: #0033CC" href="Sub_VBA/Automating%20Files%20Handling.zip">
+		MRP files EXAMPLES</a></span><span style="text-decoration: none"><span class="auto-style2">
+		</span><span class="auto-style1">(Note:&nbsp; 
+		After download, you must unzip the folder to C:\ in order for it to 
+		work)</span></span></p>
+		<span class="auto-style1">
+		<p>Visual Basic supports 3 types of files - <b>sequential</b> files, <b>
+		random-access</b> files and <b>binary</b> files. Sequential files are 
+		mostly text files, and even the numbers are stored as string and not 
+		numeric values (for example, 123.4 is stored as a string &quot;123.4&quot;). 
+		Sequential files are read from the beginning to the end. Therefore, you 
+		can't read and write at the same time to a sequential file. If you must 
+		read from and write to the file simultaneously, you must open two 
+		sequential files, one for reading from and another one for writing to. 
+		If the size of the file is small, you can read all the data into the 
+		memory, process them, and open the same file for output and overwrite 
+		the old data. However, if you require frequent access to the file's 
+		data, you should use random-access files.</p>
+		<p>Random-access files store text as characters, and numbers are stored 
+		in their native format (as integers, single, double, etc). Random-access 
+		files are used for storing data that are organized in segments of equal 
+		length called <i>records</i>. Random-access files allow you to move to 
+		any record. Because all records are of equal length, it is easy to 
+		locate any record in the file by its <i>index</i>. Unlike sequential 
+		files, random-access files can be opened for reading and writing at the 
+		same time. S</span><font face=""><span class="auto-style1">equential 
+		and random-access file types have a definitive structure, and there are 
+		mechanisms built into the language to read and write these files based 
+		on that structure. For example, the <b>Input #</b> 
+		statement reads a sequential comma-delimited file field-by-field, the <b>
+		Line Input</b> statement reads a sequential file line by line, etc.</span></font></p>
+		<font face="">
+		<p class="auto-style1">On the other hand, it is necessary to process a file in binary mode when 
+		that file does not have a simple line-based or record-based structure. 
+		For instance, characters, images, contents of an executable file, Excel 
+		file, are stored in binary files. If you really want to process an Excel 
+		.xls file at a very low level, you could open the file in binary mode 
+		and move to certain byte locations within the file to access data 
+		contained in the various internal data structures.&nbsp;However, in order to 
+		process a file that does not contain simple line-oriented or 
+		record-oriented data, the binary mode needs to be used and you must 
+		traverse or parse through the file to get at the data that you need.</p>
+
+					</font>
+		<p class="auto-style1">In the process of handling file, the OS reserves some memory for 
+		storing the file's data. A file can be opened for reading from, writing 
+		to, or reading and writing at the same time. When the file closed, the 
+		OS releases the memory reserved for the file (i.e. using <b>Close</b> 
+		statement or the <b>Reset</b> statement to close all open files).</p>
+		<hr color="#808080" size="1" align="left">
+		<table border="0" width="60%" cellspacing="0" cellpadding="0" id="table7">
+			<tr>
+				<td width="55">&nbsp;</td>
+				<td>
+				<p align="center" class="auto-style5">
+				<a name="File_Manager">File Manager Commands </a>
+				</td>
+			</tr>
+			<tr>
+				<td width="55">&nbsp;</td>
+				<td>
+
+<font face="Arial" size="2">
+				<center>
+				<table id="table8" style="width: 500px">
+					<tr>
+						<td class="auto-style1">Change Directory </td>
+						<td width="302" class="auto-style1">ChDir &quot;c:\path&quot; </td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Make Directory </td>
+						<td width="302" class="auto-style1">MkDir &quot;c:\path&quot; </td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Remove Directory </td>
+						<td width="302" class="auto-style1">RmDir &quot;c:\path&quot; </td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Change Drive </td>
+						<td width="302" class="auto-style1">ChDrive &quot;d&quot; </td>
+					</tr>
+					<tr valign="top">
+						<td class="auto-style1">Rename a File </td>
+						<td width="302" class="auto-style7">
+						<font size="2" class="auto-style4">Name &quot;test.txt&quot; as 
+						&quot;string.tst&quot; <br>
+						(May fail if directories are not specified) </font></td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Delete a File </td>
+						<td width="302" class="auto-style1">Kill &quot;c:\*.tst&quot; </td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Search for File </td>
+						<td width="302" class="auto-style1">temp$ = Dir (&quot;c:\*.tst&quot;) </td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Current Drirectory </td>
+						<td width="302" class="auto-style7">
+						<span class="auto-style4">temp$ = CurDir (&quot;d&quot;)&nbsp;&nbsp;
+						</span>
+						<font color="#008080"><span class="auto-style4">&nbsp;' Drive letter is 
+						optional </span> </font></td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Get File Attributes </td>
+						<td width="302" class="auto-style1">temp = GetAttr 
+						(&quot;c:\filename.tst&quot;)
+						</td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Get File Mode </td>
+						<td width="302" class="auto-style1">temp = FileAttr 
+						(&quot;c:\filename.tst&quot;, attributes) </td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Set File Attributes </td>
+						<td width="302" class="auto-style1">SetAttr 
+						&quot;c:\filename.tst&quot;, vbReadOnly
+						</td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Get File Length </td>
+						<td width="302" class="auto-style1">FileLen 
+						(&quot;c:\filename.tst&quot;) 
+						</td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Get File Date/Time </td>
+						<td width="302" class="auto-style1">tempDate = FileDateTime 
+						(&quot;c:\filename.tst&quot;)
+						</td>
+					</tr>
+					<tr>
+						<td class="auto-style1">Set File Date/Time </td>
+						<td width="302" class="auto-style1">???? </td>
+					</tr>
+				</table>
+				</center>
+		</font></td>
+			</tr>
+		</table>
+		<a name="FileManager">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table12">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="File I/O"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		<center>
+		<div align="left">
+			<table border="0" width="60%" cellspacing="0" cellpadding="0" id="table9">
+				<tr>
+					<td width="55">&nbsp;</td>
+					</a>
+		</font>
+
+					<td><a name="FileIO">
+					<p align="center" class="auto-style6"><font size="4">File I/O 
+					Commands</font></a></td>
+				</tr>
+
+
+<font face="Arial" size="2">
+				<tr>
+					<td width="55">&nbsp;</td>
+					<td>
+
+<font face="Arial" size="2">
+					<div align="center">
+						<table id="table10" style="width: 491px">
+							<tr valign="top">
+								<td width="150" class="auto-style1">Open File for I/O 
+								</td>
+								<td class="auto-style7">
+								<font size="2" class="auto-style4">Open &quot;c:\filename.tst&quot; For 
+								Input As 3 <br>
+								fn = FreeFile&nbsp;&nbsp;&nbsp;
+								<font color="#008080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+								' next unused number
+								</font> <br>
+								Open &quot;c:\filename.tst&quot; For Input As fn </font>
+								</td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Get File Mode </td>
+								<td class="auto-style1">temp = FileAttr (3, 1) 
+								</td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Write to File </td>
+								<td class="auto-style1">Write 3, </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Write to File </td>
+								<td class="auto-style1">Print 3, </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Read From File </td>
+								<td class="auto-style1">Input 3, </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Read From File </td>
+								<td class="auto-style1">Get 3, </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Read From File </td>
+								<td class="auto-style1">Line Input #FileHandle, 
+								TextLine$ </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Current Location </td>
+								<td class="auto-style1">tempNum = Seek (3) 
+								</td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Current Location </td>
+								<td class="auto-style1">tempNum = Loc (3) 
+								</td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Length of File </td>
+								<td class="auto-style1">tempNum = LOF(3) </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">End of File </td>
+								<td class="auto-style1">Do While Not EOF(3) .. Loop
+								</td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Close File </td>
+								<td class="auto-style1">Close 3 </td>
+							</tr>
+							<tr>
+								<td width="150" class="auto-style1">Closes All Files </td>
+								<td class="auto-style1">Reset </td>
+							</tr>
+						</table>
+					</div>
+		</font>
+
+					</td>
+				</tr>
+			</table>
+			</a></div>
+		</center>
+		</font></font>
+
+<font face="Arial" size="2">
+
+<font face="">
+
+		<p align="left"><b><br>
+		</b>
+
+			</font>
+		<span class="auto-style7"><span class="auto-style25">
+		<a name="FileIO"><span class="auto-style27">Write</span></a></span></span><a name="FileIO"><span class="auto-style26"> places strings in double 
+		quotes, separates values with commas, and adds a CR/LF pair at the end 
+		of each command. Read the data back with <b>Input</b>. </span> </p>
+		<span class="auto-style4"><span class="auto-style7">
+		<p align="left"><b>Print</b> does not add extra delimiters, but does 
+		concatenate a final CR/LF to each line. The CR/LF can be suppressed by 
+		ending the command with a semicolon (;).</p>
+		</span>
+		<p align="left" class="auto-style7">Read it back with <b>Line Input</b>. (<b>Line Input</b> 
+		assumes a DOS type ASCII input file where each line is terminated with 
+		CR/LF. It does not recognize the Unix line termination character.)</span></p>
+		<font face="Arial" size="2">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table13">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top
+">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="FileSystemObject"></a>
+				</font>
+		<font class="auto-style7">
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style4">Return To Top</span></a><span class="auto-style4"></a></span></font></td>
+			</tr>
+		</table>
+		</font>
+
+					</a>
+
+<font face="">
+
+		<center></a>
+
+			</font>
+		</font>
+
+		</font>
+		<center>
+		<h3 class="auto-style8">File Access via a FileSystemObject</h3>
+		</center></a></center><font face="">
+
+		<font face="Arial" size="2">
+		<p align="left" class="auto-style1">VB 6.0 provides a poorly documented FileSystemObject for 
+		File I/O. Help on these commands was found be basically &quot;stumbling&quot; onto 
+		them. This is the only File I/O method supported via VBScript. The basic 
+		syntax is </p>
+		</font>
+
+<font face="Arial">
+		<div>
+			<pre><font face="Arial Unicode MS" size="2"><font color="#660033"><span class="auto-style1">      Set fs = CreateObject(&quot;Scripting.FileSystemObject&quot;)
+      Set a = fs.CreateTextFile(&quot;c:\mytestfile.txt&quot;, True)
+      a.WriteLine(&quot;This is only a test.&quot;)
+      a.Close</span></font>
+</font></pre>
+
+<font face="" size="2">
+
+			<a name="FileIO"> 
+		<font face="Arial" size="2">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table14">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top
+">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="FreeFile"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		</font>
+
+					</a>
+
+			</font>
+		</font>
+
+			</font>
+			</font>
+			<h3 class="auto-style8">
+		<font color="#000000">
+			FreeFile (file_number)</font></h3>
+			<a name="Open">
+
+			<p class="auto-style1">Each file is identified with a unique number, which is assigned 
+			to the file the moment it is opened. Because that you open and close 
+			many files, and you may not know in advance which numbers are 
+			available. Therefore, you can use the FreeFile() function, which 
+			returns the next available file number. Use FreeFile() with the Open 
+			statement.</p>
+			</a>
+			</font>
+			<a name="Open">
+
+			<p>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033" size="2" class="auto-style1">Dim FileNo 
+As Long, LineNo As Long, LineText As String<br>
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033"><span class="auto-style1">FileNo = 
+FreeFile&nbsp;&nbsp;&nbsp; </span> </font><font color="#008080">
+			<span class="auto-style1">' 
+Get next available file number</span></font><font color="#660033" size="2" class="auto-style1"><br>
+<br>
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033" size="2" class="auto-style1">Open 
+&quot;c:\mytestfile.txt&quot; For Input Access Read Shared As #FileNo<br>
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033"><span class="auto-style1">Do Until 
+EOF(FileNo)&nbsp;&nbsp;&nbsp; </span> </font>
+<font color="#008080"><span class="auto-style1">' Repeat until end of file...</span></font><font color="#660033"><br class="auto-style1">
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> </font>
+<font color="#660033"><span class="auto-style1">Line Input #FileNo, 
+LineText&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </font>
+<font color="#008080"><span class="auto-style1">' Read a line from the file</span></font><font color="#660033"><br class="auto-style1">
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033" size="2" class="auto-style1">&nbsp;&nbsp; 
+LineNo = LineNo + 1<br>
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> </font>
+<font color="#660033" size="2" class="auto-style1">Debug.Print 
+Format(LineNo, &quot;00000&quot;); &quot;: &quot;; LineText<br>
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> </font>
+<font color="#660033"><span class="auto-style1">DoEvents&nbsp;&nbsp;
+</span>
+</font><font color="#008080"><span class="auto-style1">' Allow Windows to handle 
+other tasks</span></font><font color="#660033"><br class="auto-style1">
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033" size="2" class="auto-style1">Loop<br>
+</font>
+
+			<font color="#660033" face="Arial">      <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</span> 
+</font><font color="#660033"><span class="auto-style1">Close 
+#FileNo</span></font></p></a>
+
+<font face="">
+			<p class="auto-style1">After the above two statements 
+			execute, all subsequent commands that operate on the specific file 
+			can refer to it as fNum. The FreeFile() returns the next available 
+			file number, and unless this number is assigned to a file, 
+			FreeFile() returns the same number if called again. Each time you 
+			call FreeFile() to get a new file number, you must use it as the 
+			following example shows.</p>
+			<p><font size="2" color="#660033" class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			fNum1 = FreeFile()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open &quot;c:\mytestfile.txt&quot; For Input As #fNum1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fNum2 = FreeFile()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open &quot;c:\yourtestfile.txt&quot; For Input As #fNum2</font></p>
+
+<font face="" size="2">
+
+			<a name="FileIO"> 
+		<font face="Arial" size="2">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table15">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top
+">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Open_Statement"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		</font>
+
+					</a>
+
+			</font>
+			<h3 class="auto-style8">The Open Statement&nbsp;</h3>
+
+<font face="Arial" size="2">
+			<p class="MsoNormal">
+			<span style="font-size: 10pt; font-family: Arial;">T</span><span class="auto-style1">he 
+			full syntax for the Open statement, taken from MSDN, is:</span></p>
+			<p class="auto-style2"><span class="auto-style30"><strong>Open</strong>
+			<em>pathname</em> <strong>For</strong> <em>mode</em></span> [<span class="auto-style30"><strong>Access
+			</strong>access</span>] [<span class="auto-style30"><em>lock</em></span>]
+			<span class="auto-style30"><strong>As</strong></span> [<span class="auto-style30"><strong>#</strong></span>]<span class="auto-style30"><em>filenumber</em></span> 
+			[<span class="auto-style30"><strong>Len</strong></span>=<span class="auto-style30"><em>reclength</em></span>] </p>
+			<p class="auto-style1">The Open 
+			statement syntax has these parts:</p>
+			<table class="auto-style33" style="width: 83%" id="table11" border="0" cellpadding="0">
+				<tr>
+					<td style="width: 6%; height: 29px;" valign="top" class="auto-style32">
+					<p class="auto-style31">
+					Part</td>
+					<td style="width: 87%; height: 29px;" valign="top" class="auto-style39">
+					<p class="auto-style26" align="center">
+					Description</td>
+				</tr>
+				<tr>
+					<td style="width: 6%; height: 41px;" valign="top" class="auto-style41">
+					<p class="MsoNormal"><font color="#660033">
+					<span class="auto-style18">pathname</span></font></td>
+					<td style="width: 87%; height: 41px;" valign="top" class="auto-style40">
+					<p class="auto-style1">
+					Required. 
+					String expression that specifies a file name &#8212; may include 
+					directory or folder, and drive.</td>
+				</tr>
+				<tr>
+					<caption class="auto-style1">Input	
+					<td style="width: 6%; height: 177px;" valign="top" class="auto-style38">
+					<p class="MsoNormal"><font color="#660033">
+					<span class="auto-style18">mode</span></font></td>
+					<td style="width: 87%; height: 177px;" valign="top" class="auto-style42">
+					<p class="MsoNormal">
+					<span class="auto-style1">Required. 
+					Keyword specifying the file mode: <b>Append</b>, <b>Binary</b>,
+					<b>Input</b>, <b>Output</b>, or <b>Random</b>. If 
+					unspecified, the file is opened for Random access.<br>
+					<i><b>Input</b></i> - File is opened for input (reading 
+					from) only.<br>
+					<i><b>Output</b></i> - </span>
+
+<font face="Arial" size="2">
+					<span class="auto-style1">File is 
+					opened for output (writing to) only.</span></font><span class="auto-style1">
+					<br>
+					<i><b>Append</b></i></span><span style="font-size: 10pt; font-family: Arial;"><span class="auto-style1"> - </span>
+					</span>
+					<span class="auto-style1">
+
+					File is opened for appending new data to its existing 
+					contents.<br>
+					<i><b>Random</b></i> - 
+					File is opened for random access (reading or writing one 
+					record at a time).<br>
+					<i><b>Binary</b></i> - 
+					File is opened in binary mode.</span><p class="auto-style7">
+					<font size="2" class="auto-style4">Note: <br>
+					Input, Output and Append file types refer to sequential 
+					files; Random refers to random-access files, and Binary is 
+					used with binary files. </font></td>
+				</tr>
+				<tr>
+					<td style="width: 6%; height: 38px;" valign="top" class="auto-style38">
+					<p class="MsoNormal"><font color="#660033">
+					<span class="auto-style18">access</span></font></td>
+					<td style="width: 87%; height: 38px;" valign="top" class="auto-style42">
+					<p class="auto-style1">
+					Optional. 
+					Keyword specifying the operations permitted on the open 
+					file: <b>Read</b>, <b>Write</b>, or <b>Read Write</b>.</td>
+				</tr>
+				<tr>
+					<td style="width: 6%; height: 50px;" valign="top" class="auto-style38">
+					<p class="MsoNormal"><font color="#660033">
+					<span class="auto-style18">lock</span></font></td>
+					<td style="width: 87%; height: 50px;" valign="top" class="auto-style42">
+					<p class="MsoNormal">
+					<span class="auto-style1">Optional. 
+					File-Locking keyword specifying the operations restricted on 
+					the open file by other processes: <b>Shared</b>, <b>Lock 
+					Read</b> (the file is locked for reading), <b>
+					Lock Write </b></span>
+
+<font face="Arial" size="2">
+					<span class="auto-style1">(the file 
+					is locked for writing)</span></font><span class="auto-style1">, 
+					and <b>Lock Read Write</b> (other applications can't access 
+					this file).</span></td>
+				</tr>
+				<tr>
+					<td style="width: 6%; height: 38px;" valign="top" class="auto-style38">
+					<p class="MsoNormal"><font color="#660033">
+					<span class="auto-style18">
+					filenumber</span></font></td>
+					<td style="width: 87%; height: 38px;" valign="top" class="auto-style42">
+					<p class="auto-style1">
+					Required. 
+					A valid file number in the range 1 to 511, inclusive. Use 
+					the <b>FreeFile</b> function to obtain the next available 
+					file number.</td>
+				</tr>
+				<tr>
+					<td style="width: 6%;" valign="top" class="auto-style38">
+					<p class="MsoNormal"><font color="#660033">
+					<span class="auto-style18">reclength</span></font></td>
+					<td style="width: 87%; " valign="top" class="auto-style42">
+					<p class="auto-style1">
+					Optional. 
+					Number less than or equal to 32,767 (bytes). For files 
+					opened for random access, this value is the length of the 
+					record in bytes, and you must declare with a <b>Len</b> 
+					keyword. The record's length is the sum of the bytes taken 
+					by all record fields, and you can use the <i>Len(record)</i> 
+					function to calculate it. For sequential files, this value 
+					is the number of characters buffered.</td>
+				</tr>
+			</table>
+			<p class="auto-style1">You must open 
+			a file before any I/O operation can be performed on it. <b>Open</b> 
+			allocates a buffer for I/O to the file and determines the mode of 
+			access to use with the buffer.<br>
+			If the file specified by <i>pathname</i> doesn't exist, it is 
+			created when a file is opened for <b>Append</b>, <b>Binary</b>, <b>
+			Output</b>, or <b>Random</b> modes.<br>
+			If the file is already opened by another process and the specified 
+			type of access is not allowed, the <b>Open</b> operation fails and 
+			an error occurs.</p>
+			<p class="auto-style1">The <b>Len</b> 
+			clause is ignored if <i>mode</i> is Binary.</p>
+			<p class="auto-style1">
+			In Binary, Input, 
+			and Random modes, you can open a file using a different file number 
+			without first closing the file. In Append and Output modes, you must 
+			close a file before opening it with a different file number.</p>
+		</font>
+
+			</a>
+			<a name="Open">
+			<p><font color="#008080"><span class="auto-style1">' the syntax to open 
+			a binary file for input:</span></font></a><font face="" size="2"><span class="auto-style20"><br>
+			</span></font></font><span style="font-size: 10pt; ">
+			<font color="#660033" size="2" face="Arial Unicode MS" class="auto-style4">
+			<a name="Open"><span class="auto-style7">Open &quot;</span></a><span class="auto-style7">c:\</span></font></span><font face="" size="2"><font color="#660033"><span class="auto-style1">mytestfile.tx</span><a name="Open"><span style="font-size: 10pt; " class="auto-style1">t&quot; 
+			For Binary Access Read As #1</span></a></font><a name="Open"></p>
+			<p class="MsoNormal">
+			<span class="auto-style1">
+			<font color="#008080">' and the syntax to open a binary file for 
+			output:&nbsp;</font></span></a><span class="auto-style20"><br>
+			</span></font><font color="#660033" face="" size="2">
+			<span style="font-size: 10pt; ">
+			<font face="Arial Unicode MS" size="2" class="auto-style4">
+			<a name="Open"><span class="auto-style7">Open &quot;</span></a><span class="auto-style7">c:\mytestfile.tx</span></font></span><font face="" size="2"><a name="Open"><span style="font-size: 10pt; " class="auto-style1">t</span><font face=""><span style="font-size: 10pt; font-family: Arial" class="auto-style1">&quot;</span></font></a><font face=""><span style="font-size: 10pt; font-family: Arial"><span style="font-size: 10pt; " class="auto-style1"> </span>
+			<font size="2"><a name="Open">
+			<span style="font-family: Arial Unicode MS;" class="auto-style1">For 
+			Binary Access Write As #1</span></a></font></span></font></font></font></p>
+
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table19">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Input#file_num"></a>
+				</font>
+				</font></font></font></font></font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face=""><font face="Arial"><span class="auto-style4"></a></span></font></td>
+			</tr>
+		</table>
+		</font>
+
+			<p class="auto-style10">Input #file_num, varlist</p>
+
+					</a>
+
+			</font>
+
+<font size="2" class="auto-style1">
+
+			<p>The Input# statement reads data from a sequential file and 
+			assigns them to the variables listed in the <i>varlist</i> argument.
+			<i>varlist</i> is a comma-separated list of arguments. In the 
+			following example, Input #1 reads two values from the open file, a 
+			numeric value and a date:</p></font>
+
+			<font face="Arial Unicode MS" size="2" color="#660033">
+
+			<p>
+
+<font face="" size="2">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1">Dim numVal as Long, dateVal As Date<br>
+
+			</span>
+
+<font face="" size="2">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1">Input #1, numVal, dateVal</span></p>
+
+		<font face="Arial" size="2">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table20">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="LineInput#file_num"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		</font>
+
+					</a>
+
+			</font>
+
+			<a name="FileIO"> 
+
+					<font size="4">
+
+			<p class="auto-style9">Line Input #file_num, strVar</p>
+
+			</font>
+
+					</a>
+
+<font face="Arial" size="2">
+
+			<p><span class="auto-style1">You use the Line Input # statement to read from sequential files. 
+			The Line Input statement reads a single line of text from the file 
+			and assigns it to a string variable. It reads all the characters 
+			from the beginning of the file to the first new character. When you 
+			call it again, it returns the following characters, up to the next 
+			newline character. The new line characters are not part of the 
+			information stored to or read from the file, and they are used only 
+			as delimiters.</p>
+			<p>The <i>file_number</i> argument is the file's number, and <i>
+			strVar</i> is the name of a variable where data read from the file 
+			will be stored. The following lines will read the first 2 text lines 
+			and assign them to the string variable textLine1 and textLine2.</span></p>
+			<p><font color="#660033">
+
+<font face="" size="2">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><font size="2" class="auto-style1">Line Input #fNum, 
+			textLine1<br>
+			</font>
+
+<font face="" size="2">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1">Line Input #fNum, 
+			textLine2</span></font></p></font></font>
+
+<font face="Arial Unicode MS" size="2">
+			<p class="auto-style1">The following lines write the same data as what the Print # 
+			statement will show you in the next example.</p>
+			<p>
+
+<font face="Arial Unicode MS" size="2" color="#660033" class="auto-style4">
+			<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+			</span>      </font>
+			<span class="auto-style7">Kill &quot;C:\temp1.txt&quot;<br>
+			</span>
+			<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+			</span>      </font>
+			<span class="auto-style7">Open &quot;C:\temp1.txt&quot; For Output As #1</span><font color="#660033" face="Arial Unicode MS"><br class="auto-style7">
+			<span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Write</span></font><span class="auto-style7"> #1, &quot;Poh Beng William&quot;, &quot;Snr 
+Planning Manager&quot;, 30<br>
+			</span>
+			<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Write</span></font><span class="auto-style7"> #1, &quot;Irene Zhang&quot;, &quot;Planning Manager&quot;, 26<br>
+			</span>
+			<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Write</span></font><span class="auto-style7"> #1, &quot;Emily Seng&quot;, &quot;Senior Planner&quot;, 25<br>
+			</span>
+			<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Write</span></font><span class="auto-style7"> #1, &quot;Josephine Kok&quot;, &quot;Planner&quot;, 23</span></font></p>
+		<div align="left">
+
+<font face="">
+			<font face="Arial" size="2">
+
+			<font face="" size="2">
+
+			<a name="FileIO"> 
+		<font face="Arial" size="2">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table22">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top
+">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Printfile_number"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		</font>
+
+					</a>
+
+			</font></div>
+		</font></font><span class="auto-style7"><font size="4">
+			<strong>Print #file_number, variable1, variable2, ...</strong></font></span><font face=""><font face="Arial" size="2"><p align="left">T<span class="auto-style1">he Print statement writes data to a sequential file. 
+		The first argument is the number of file to be written, and the 
+		subsequent arguments are the variables to be written to the file. After 
+		all the variable values have been written to the file, the Print # 
+		statement inserts a line break.</p>
+		<p align="left">The semicolon (;) specifies that the 1st character of 
+		the new value will be placed right after the last character of the last 
+		value. The comma specifies that the next character will be printed in 
+		the next print zone. The Print # statement writes data to the file 
+		exactly as the DOS Command displays them on the screen. The Print # 
+		statement is used to create text files that can be viewed on a DOS 
+		Window. Data saved&nbsp; with the Print # statement can be read&nbsp; 
+		with the Line Input and Input statement.</p>
+		<p align="left">The following statements create a text file using the 
+		Print # file_number.</span></p>
+		</font>
+
+<font face="Arial Unicode MS" size="2" color="#660033" class="auto-style4">
+		<p align="left"><font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">On Error Resume Next<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Kill &quot;C:\temp1.txt&quot;<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Open &quot;C:\temp1.txt&quot; For Output As #1<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Print #1, &quot;[First Name]&quot;; Tab(15); &quot;[Last Name]&quot;; Tab(30); &quot;[Job 
+		Position]&quot;; Tab(58); &quot;[Age]&quot;<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Print #1, &quot;Poh Beng&quot;; Tab(15); &quot;William&quot;; Tab(30); &quot;Global Planning 
+		Manager&quot;; Tab(58); 30<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Print #1, &quot;Zhang&quot;; Tab(15); &quot;Irene&quot;; Tab(30); &quot;Production Planning 
+		Manager&quot;; Tab(58); 26<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Print #1, &quot;Seng&quot;; Tab(15); &quot;Emily&quot;; Tab(30); &quot;Senior Planner&quot;; Tab(58); 
+		25<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Print #1, &quot;Kok&quot;; Tab(15); &quot;Josephne&quot;; Tab(30); &quot;Planner&quot;; Tab(58); 23<br>
+		</span>
+		<font color="#660033">      <span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+		</span>      </font>
+		<span class="auto-style7">Close #1</span></p>
+		</font><font size="2" class="auto-style7">
+			<h3 align="left" class="auto-style22">
+			This is the output 
+		produced by the above statements:&nbsp;</h3>
+		</font><font class="auto-style7">
+			<table style="width: 32%">
+				<tr>
+					<td class="auto-style43" style="width: 105px">[<font face=""><font class="auto-style7">First 
+					Name]</font></font></td>
+					<td class="auto-style4" style="width: 113px">[<font face="" size="2"><font class="auto-style7"><span class="auto-style43">Last 
+					Name] </span>
+		</font></font></td>
+					<td class="auto-style43" style="width: 216px">
+
+<font face="">
+					<font class="auto-style7">&nbsp;[Job Position]
+		</font></font></td>
+					<td class="auto-style43">
+
+<font face="">
+					<font class="auto-style7">[Age]</font></font></td>
+				</tr>
+				<tr>
+					<td class="auto-style43" style="height: 22px; width: 105px">
+
+<font face="">
+					<font class="auto-style7">Poh Beng</font></font></td>
+					<td class="auto-style43" style="height: 22px; width: 113px">
+
+<font face="">
+					<font class="auto-style7">William&nbsp;&nbsp;
+		</font></font></td>
+					<td class="auto-style43" style="width: 216px; height: 22px">
+					<font face="">
+					<font class="auto-style7">Regional Planning Manager</font></font></td>
+					<td class="auto-style44" style="height: 22px">30</td>
+				</tr>
+				<tr>
+					<td class="auto-style43" style="width: 105px">
+
+<font face="">
+					<font class="auto-style7">Zhang
+		</font></font></td>
+					<td class="auto-style43" style="width: 113px">
+
+<font face="">
+					<font class="auto-style7">Irene
+		</font></font></td>
+					<td class="auto-style43" style="width: 216px">
+
+<font face="">
+					<font class="auto-style7">Planning Manager</font></font></td>
+					<td class="auto-style44">36</td>
+				</tr>
+				<tr>
+					<td class="auto-style43" style="width: 105px">
+
+<font face="">
+					<font class="auto-style7">Seng&nbsp;
+		</font></font></td>
+					<td class="auto-style43" style="width: 113px">
+
+<font face="">
+					<font class="auto-style7">Emily&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></font></td>
+					<td class="auto-style43" style="width: 216px">
+
+<font face="">
+					<font class="auto-style7">Senior Planner
+		</font></font></td>
+					<td class="auto-style44">25</td>
+				</tr>
+				<tr>
+					<td class="auto-style43" style="width: 105px">
+
+<font face="">
+					<font class="auto-style7">Kok</font></font></td>
+					<td class="auto-style43" style="width: 113px">
+
+<font face="">
+					<font class="auto-style7">Josephine</font></font></td>
+					<td class="auto-style43" style="width: 216px">
+
+<font face="">
+					<font class="auto-style7">Planner</font></font></td>
+					<td class="auto-style44">23</td>
+				</tr>
+			</table>
+		</font></font></font>
+
+<font face="Arial" size="2">
+
+		<font face="Arial" size="2" color="#660033">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table21">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Write#file_num"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		</font>
+
+<font face="">
+			<a name="FileIO"> 
+
+					<font size="4">
+
+			<p class="auto-style9">Write #file_num[, output_list</p>
+
+			</font>
+
+					</a>
+
+<font face="Arial" size="2">
+
+			<p>Y<span class="auto-style1">ou use the Write # statement to write data to a sequential file. 
+			The data to be written is supplied in the <i>output_list</i>, which 
+			is a comma-separated list of variables and literals. The following 
+			line writes a numeric, a string and a date value to a sequential 
+			file:</span></p>
+			<p>
+
+			<font face="Arial Unicode MS" size="2" color="#660033">
+
+<font face="" size="2">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1">Dim numVal as Long, strBuff As String, dateVal As Date<br>
+
+			</span>
+
+			</font>
+
+			<font color="#660033"><br class="auto-style1">
+			</font>
+
+<font face="" size="2" color="#660033">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">numVal = 9876543.210<br>
+			</font>
+
+			</span>
+
+<font face="" size="2" color="#660033">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">strBuff = &quot;I love Mother Earth&quot;<br>
+			</font>
+
+			</span>
+
+<font face="" size="2" color="#660033">
+			<span class="auto-style20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			<span style="font-size: 10pt; ">
+			<font size="2" class="auto-style1">dateVal = #21/12/2012#<br>
+			</font></span></font>
+
+			<font face="Arial Unicode MS" size="2" color="#660033">
+
+<font face="" size="2">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1">Write #1, numVal, strBuff, dateVal</span></font></p></font></font><font face="" size="2">
+			<a name="Open">
+			
+<font face="" size="2">
+
+			<a name="FileManager">
+
+			<a name="FileIO"> 
+		<font face="Arial" size="2">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table16">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="EOL_LOF"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a><font face="Arial"></a></font></td>
+			</tr>
+		</table>
+		</font>
+
+					</a>
+
+			</font>
+			</a>
+			</font>
+
+			<font size="2">
+			<h3 class="auto-style11">EOL(file_number) and LOF(file_number)</h3>
+			<p></a>
+
+			</font>
+			<span class="auto-style1">EOF() function accepts as an argument the number of an open file and 
+			returns True if the end of file has been reached. The LOF() function 
+			returns the length of the file, whose number is passed as an 
+			argument. The code below parses a text file, extract any lines 
+			containing the string called &quot;PCBA&quot;, and add those lines to a 
+			listbox. </span> </p>
+
+			<font face="" size="2">
+			<p><span class="auto-style7"><a style="color: #0033CC" href="../EXCEL/Samples/EOF(fNum).exe">
+			<span class="auto-style4">DOWNLOAD</span></a><span class="auto-style4">
+			</span></span> <span style="text-decoration: none">
+			<span class="auto-style1">&nbsp;(Note: After download, you must 
+			unzip the folder to C:\ in order for it to work)</span></span></p>
+
+			</font>
+			</font><font face="Arial Unicode MS" size="2">
+			<p><span class="auto-style1"><font color="#660033">Private Sub CommandButton1_Click()<br>
+			</font>
+
+			</span>
+
+<font face="">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">Dim dText As String, sLine As 
+			String, Filename$<br>
+			</font>
+
+			</span>
+
+<font face="">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">Dim fNum As Integer<br>
+			<br>
+			</font>
+
+			</span>
+
+<font face="">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">Filename$ = 
+			&quot;c:\vbautomation.110mb.dotcom\MyPartsList.txt&quot;<br>
+			<br>
+			</font>
+
+			</span>
+
+<font face="">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">If Dir(Filename$) = &quot;&quot; Then Exit 
+			Sub<br>
+			</font>
+
+			</span>
+
+<font face="">
+			<span style="font-size: 10pt; " class="auto-style20">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			</font><span class="auto-style1"><font color="#660033">fNum = FreeFile<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open Filename$ For Input As #fNum<br>
+			<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; While Not EOF(fNum)&nbsp;&nbsp;&nbsp;&nbsp; </font>
+			<font color="#008080">' returns True if it reaches end of file</font><br>
+			<font color="#660033">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			Line Input #fNum, sLine<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Debug.Print Seek(1), Left$(sLine, 5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+			<font color="#008080">&nbsp;' Seek statement sets the position for the 
+			next read/write operation.</font><font color="#660033"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If 
+			(InStr(1, sLine, &quot;PCBA&quot;) &lt;&gt; 0) Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			ListBox1.AddItem sLine<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wend<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Close #fNum&nbsp;&nbsp;&nbsp; </font><font color="#008080">
+			' this closes the file opened as fNum</font><br>
+			<font color="#660033">End Sub</font></span></p>
+
+			</font>
+
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table17">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Opening_Reading_File"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a></td>
+			</tr>
+		</table>
+			<font face="Arial" size="2">
+			<p class="auto-style9"><font size="4">
+			Opening and Reading a File</font></p>
+			<p></a>
+			<span class="auto-style1">When you open a sequential file, you can't change its data. You can 
+			either read them, store them to another file, or overwrite the 
+			entire file with the new data. To do so, you must open the file for
+			<i>Input</i>, read its data, then close the file. To overwrite the 
+			file, open it for <i>Output</i>, and save the data to it. When you 
+			open a file for <i>Output</i>, VisualBasic wipes out its entire 
+			contents, even if you don't write anything to it. if you don't want 
+			to overwrite an existing file but instead to append data to it, open 
+			it for Append.</span></p>
+			</font>
+
+			<font size="2" class="auto-style4">
+			<p class="auto-style7">The following command opens the file as a sequential file type 
+			with the number 1</p>
+			<p class="auto-style7"><font color="#660033">Open 
+			&quot;c:\CustomerList.txt&quot; For Input As #1</font></p>
+			<p class="auto-style7">To open a random-access file, you first must know its record's 
+			length. The record is the smallest piece of information you can 
+			write to a random-access file. To find the length of the record, you 
+			must first decide how the data will be organized in fields and then 
+			declare the record's type. See below example.</p>
+			</font>
+
+			<p><font color="#660033" size="2" class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			Private Type MyRecord<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PartNumber As String*13<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description As String*30<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PO_Date As Date<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delivered_Date As Date<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quantities As Integer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Type</font></p>
+
+			<pre>
+<font color="#008080"><span class="auto-style1">      ' then declare the record's type</span></font><font color="#660033" face="Arial Unicode MS" size="2" class="auto-style4">
+<span class="auto-style7">      Dim Mrec as MyRecord</span></font></pre>
+			<font face="Arial Unicode MS" size="2">
+			<p><span class="auto-style1">The following statement opens a random-access file for reading 
+			from and writing to, using the record structure shown above:</p>
+			<p><font color="#660033">Open &quot;c:\CustomerList.txt&quot; For Random As #1 </font>
+
+
+			</span>
+
+
+			<font color="#660033"> 
+			<span class="auto-style1">Len=Len(Mrec)</span></font><span class="auto-style7"><span class="auto-style4"></a></span></span><span class="auto-style4"></p>
+
+
+
+
+		<pre class="auto-style7">Below example demonstrates opening and reading a text file, replaces the character &quot;, one line at a time, and print the lines to range A1 in active sheet.</span></pre>
+			<pre></font><font color="#660033" size="2" class="auto-style1">Dim dText As String, TextLine$, Filename$
+Dim fNum as Integer
+
+Filename$ = &quot;c:\mytestfile.txt</font><font face="Arial Unicode MS" size="2"><font color="#660033">&quot;<span class="auto-style7"><span class="auto-style4">
+
+If Dir(Filename$) = &quot;&quot; Then Exit Sub      </span></span></font><span class="auto-style4"><span class="auto-style7"><font color="#008080">' Test if the file exists</font><font color="#660033">
+fNum = FreeFile       </font><font color="#008080">' This is safer than assigning a number, as in Open &quot;C:\myfiletest.txt&quot; For Input As #1</font><font color="#660033">
+Open Filename$ For Input As #fNum
+
+Do While Not EOF(fNum)           </font><font color="#008080">' Loop until end of file</font><font color="#660033">
+       Line Input #fNum, TextLine$       </font><font color="#008080">' Read line into variable</font><font color="#660033">
+       TextLine$ = Replace(TextLine$, Chr$(34), &quot;&quot;)        </font><font color="#008080">'Chr$(34) is &quot;</font></span></span><font color="#660033"><span class="auto-style7"><span class="auto-style4">
+       dText = dText &amp; TextLine &amp; vbCrLf 
+Loop</span></span></font></font></pre>
+			<pre><font color="#660033" size="2" class="auto-style1">Debug.Print dText
+ActiveSheet.Cells(1, 1).Value = dText
+Close #fNum       </font><font color="#008080"><span class="auto-style1">' this closes the file opened as fNum</span></font><font face="Arial" size="2"><span class="auto-style7"><span class="auto-style4">
+
+Note: 
+You can also call the <b>Close</b> statement with multiple file numbers, as in <font color="#660033">Close #fNum1, fNum2, fNum3
+</font>You can also use the <b>Reset</b> statement to close all files opened with the Open statement.</span></span></pre>
+			<span class="auto-style6"><span class="auto-style4">Line Input</span></span><span class="auto-style7"><span class="auto-style4"> assumes a DOS type ASCII input file where each 
+			line is terminated with CR/LF. It does not recognize the Unix line 
+			termination character.
+		</span></span>
+		</font></font><span class="auto-style1"></font>
+
+			</span>
+
+<font face="">
+
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table24">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Get_Statement"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a></td>
+			</tr>
+		</table>
+
+			</font>
+			<p class="auto-style9"><font size="4">The Get Statement</font></p>
+
+<font face="Arial">
+			<p class="auto-style1">
+			The <b>Get</b> 
+			statement is used read data from a file opened in binary mode. The 
+			syntax, as it applies to binary files is:&nbsp;</p>
+			</font>
+
+
+			<p class="auto-style7"><span class="auto-style46"><strong>Get [#]<em>filenumber</em>, 
+			[<em>byte position</em>], <em>varname</em></strong></span>&nbsp; </p>
+
+<font face="">
+
+<font face="Arial">
+			<p class="auto-style1">
+			The <i>filenumber</i> 
+			is any valid filenumber as defined above.&nbsp;</p>
+			<p class="MsoNormal">
+			<span class="auto-style18">Byte position</span><span class="auto-style1"> 
+			is the byte position within the file at which the reading begins. 
+			The byte position is &quot;one-based&quot;, meaning the first byte position in 
+			the file is 1, the second position is 2, and so on. You can omit 
+			this entry, in which case the next byte following the last <b>Get</b> 
+			or <b>Put</b> statement is read. If you omit the byte position 
+			entry, you must still include the delimiting commas in the Get 
+			statement, for example:&nbsp;</span></p>
+			<p class="MsoNormal"><font color="#660033">
+			<span class="auto-style1">Get 
+			#intMyFile, , strData&nbsp;</span></font></p>
+			<p class="MsoNormal">
+			<span class="auto-style18">Varname</span><span class="auto-style1"> 
+			is a string variable into which the data will be read. This string 
+			variable is often referred to as a &quot;buffer&quot; when processing binary 
+			files. It is important to note that the length, or size, of this 
+			string variable determines how many bytes of data from the file will 
+			be read. Thus, it is necessary to set the length of the string 
+			variable prior to issuing the Get statement. This is commonly done 
+			by using the String$ function to pad the string variable with a 
+			number of blank spaces equal to the number of bytes you want to read 
+			at a given time.&nbsp;</span></p>
+			<p class="auto-style1">
+			For example, the 
+			following statement pads the string variable strData with 10,000 
+			blank spaces:&nbsp;</p>
+			<p class="MsoNormal"><font color="#660033">
+			<span class="auto-style1">strData = 
+			String$(10000, &quot; &quot;)&nbsp;</span></font></p>
+			<p class="auto-style1">
+			Now that VB 
+			&quot;knows&quot; how big &quot;strData&quot; is, the following Get statement will read 
+			the first (or next) 10,000 bytes from file number &quot;intMyFile&quot; and 
+			overlay strData with that file data:&nbsp;</p>
+			<p class="MsoNormal"><font color="#660033">
+			<span class="auto-style1">Get 
+			#intMyFile, , strData&nbsp;</span></font></p>
+			<p class="auto-style1">
+			Depending on the 
+			application, it is sometimes necessary to process the file in 
+			&quot;chunks&quot;. Recall that you can omit the &quot;byte position&quot; entry, in 
+			which case VB will &quot;keep track&quot; of where it is in the file. For 
+			example, the first time the above Get statement is executed, bytes 1 
+			through 10000 will be read; the second time the above Get statement 
+			is executed, bytes 10001 through 20000 will be read; and so on. &nbsp;</p>
+			<p class="auto-style1">
+			In that a VB 
+			string variable can hold in the neighborhood of 2 GB worth of data, 
+			it would not be unreasonable in most cases to read in the whole file 
+			in &quot;one shot&quot;, as opposed to reading it in &quot;chunks&quot; as described 
+			above. To do this, you can set the length of the &quot;buffer&quot; string 
+			variable to the size of the file using the <b>LOF</b> (length of 
+			file) function as the first argument of the String$ function. The 
+			LOF function takes the filenumber of the file to be processed as its 
+			argument, and returns the length of the file in bytes. Thus, the 
+			following statement will fill the variable &quot;strData&quot; with a number 
+			of blank spaces equal to the size of the file:&nbsp;</p>
+			<p class="MsoNormal"><font color="#660033">
+			<span class="auto-style1">strData = 
+			String$(LOF(intMyFile), &quot; &quot;)&nbsp;</span></font></p>
+			<p class="auto-style1">
+			Then, when the 
+			subsequent Get statement is executed, the entire contents of the 
+			file will be stored in strData:&nbsp;</p>
+			<p class="MsoNormal"><font color="#660033">
+			<span class="auto-style1">Get 
+			#intMyFile, , strData</span></font></p>
+			</font>
+
+
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table25">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Input_Function"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a></td>
+			</tr>
+		</table>
+
+<font size="4">
+
+			<p class="auto-style9">&nbsp;The Input Function</p></font>
+
+			<p class="MsoNormal">
+			<span style="font-size: 10pt; font-family: Arial;">T</span></font><span class="auto-style1">he Input <i>
+			function</i> (not to be confused with the Input # or Line Input <i>
+			statements</i>) can be used as an alternative to the Get statement. 
+			The syntax is:</span></p>
+			<font face="">
+			<p class="auto-style47"><em><strong>v<span class="auto-style4">arname</span></strong><span class="auto-style4"> 
+			= </span></em><strong><span class="auto-style4">Input(</span><em><span class="auto-style4">number,
+			</span><span class="auto-style48">[#]</span><span class="auto-style4"> 
+			filenumber</span><span class="auto-style48">)&nbsp;</span> </em></strong></p>
+			<p class="auto-style1">
+			where <i>varname</i> 
+			is the string variable into which the file data will be stored, <i>
+			number</i> is the number of characters to be read, and <i>filenumber</i> 
+			is a valid filenumber identifying the file from which you want to 
+			read.&nbsp;</p>
+			<p class="auto-style1">
+			The following 
+			table contains examples that contrast the Get statement and Input 
+			function as ways of reading data from a binary file:&nbsp;</p>
+			<table class="MsoTableGrid" style="border: medium none ; border-collapse: collapse;" id="table27" border="1" cellpadding="0" cellspacing="0" width="737">
+				<tr>
+					<td style="width: 331px; border: 1pt solid #999999; padding: 1px" valign="top" class="auto-style20">
+					<p class="auto-style20" align="center">String 
+					Setup and Get Statement</td>
+					<td style="width: 375px; border: 1pt solid #999999; padding: 1px" valign="top">
+					<p class="auto-style20" align="center">Input 
+					Function</td>
+				</tr>
+				<tr>
+					<td style="width: 331px; border: 1pt solid #999999; padding: 1px" valign="top" class="auto-style1">
+					<p class="MsoNormal">
+					<font color="#660033">
+					<span class="auto-style1">
+					&nbsp;strData = String$(10000, &quot; &quot;)<br>
+					&nbsp;Get #intMyFile, , strData<br>
+					&nbsp;</span></font></td>
+					<td style="width: 375px; border: 1pt solid #999999; padding: 1px" valign="top">
+					<p class="MsoNormal">
+					<font color="#660033">
+					<span class="auto-style1">
+					&nbsp;strData = Input(10000, #intMyFile)</span></font></td>
+				</tr>
+				<tr>
+					<td style="width: 331px; border: 1pt solid #999999; padding: 1px" height="42" valign="top" class="auto-style1">
+					<p class="MsoNormal">
+					<font color="#660033">
+					<span class="auto-style1">
+					&nbsp;strData = String$(LOF(intMyFile), &quot; &quot;)<br>
+					&nbsp;Get #intMyFile, , strData</span></font></td>
+					<td style="width: 375px; border: 1pt solid #999999; padding: 1px" height="42" valign="top">
+					<p class="MsoNormal">
+					<font color="#660033">
+					<span class="auto-style1">
+					&nbsp;strData = Input(LOF(intMyFile), #intMyFile)</span></font></td>
+				</tr>
+			</table>
+
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table26">
+			<tr>
+				<td>
+		<font face="Arial" size="2">
+		<a name="Return To Top">
+		<hr color="#808080" size="1" align="left">
+				<p align="right"><a name="Put_Statement"></a>
+				</font>
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+				<span class="auto-style1">Return To Top</span></a></td>
+			</tr>
+		</table>
+			</font>
+			<p class="auto-style13"><span class="auto-style7">
+			<span class="auto-style12">&nbsp;</font></span></span><font face=""><span class="auto-style5">The 
+			Put Statement</span><p class="auto-style1">
+			The <b>Put</b> 
+			statement is used write data to a file opened in binary mode. The 
+			syntax, as it applies to binary files is:&nbsp;</p>
+			</font>
+			<p class="auto-style1"><span class="auto-style30"><strong>Put [#]<em>filenumber</em>, 
+			[<em>byte position</em>], <em>varname</em></strong></span>&nbsp; </p>
+			<font face="">
+			<p class="auto-style1">
+			The <i>filenumber</i> 
+			is any valid filenumber as defined above.&nbsp;</p>
+			<p class="MsoNormal">
+			<span class="auto-style18">Byte position</span><span class="auto-style1"> 
+			is the byte position within the file at which the writing begins. 
+			The byte position is &quot;one-based&quot;, meaning the first byte position in 
+			the file is 1, the second position is 2, and so on. You can omit 
+			this entry, in which case the next byte following the last <b>Get</b> 
+			or <b>Put</b> statement is written. If you omit the byte position 
+			entry, you must still include the delimiting commas in the Put 
+			statement, for example:&nbsp;</span></p>
+			<p class="MsoNormal"><font color="#660033">
+			<span class="auto-style1">Put 
+			#intMyFile, , strData&nbsp;</span></font></p>
+			<p class="MsoNormal">
+			<span class="auto-style18">Varname</span><span class="auto-style1"> 
+			is a string variable from which the data will be written. This 
+			string variable is often referred to as a &quot;buffer&quot; when processing 
+			binary files. It is important to note that the length, or size, of 
+			this string variable determines how many bytes of data will be 
+			written to the file.&nbsp;</span></p>
+			<p class="auto-style1">
+			For example, the 
+			following statements cause 1 byte of data to file number 
+			&quot;intMyFile&quot;:&nbsp;</p>
+			<p class="MsoNormal" style="margin-top: 0pt; margin-bottom: 0pt;">
+			<font color="#660033">
+			<span class="auto-style1">
+			strCharacter = Mid$(strData, lngCurrentPos, 1)</span></font></p>
+			<p class="MsoNormal" style="margin-top: 0pt; margin-bottom: 0pt;">
+			<font color="#660033">
+			<span class="auto-style1">Put 
+			#intMyFile, , strCharacter&nbsp;</span></font></p>
+			<p class="auto-style1">
+			Recall that you 
+			can omit the &quot;byte position&quot; entry, in which case VB will &quot;keep 
+			track&quot; of where it is in the file. For example, the first time the 
+			above Put statement is executed, byte 1 will be written; the second 
+			time the above Put statement is executed, byte 2 will be written; 
+			and so on.</div>
+		
+		<p style='margin-left:6.5in' align="right">		
+		<font face="Arial" size="2"><a name="While...Wend"></a>
+		</font>		
+		<a href="#TOP" style="color: #0066FF; text-decoration: underline; text-underline: single">
+		<span class="auto-style1">Return To Top</span></a></p></td>
+</tr>
+
+<font face="">
+
+<tr>
+
+
+<td valign="top" height="13">
+
+    </td>
+  </tr>
+</tbody></table>
+
+
+<div align="center">
+	<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table23">
+		<tr>
+			<td>
+			<p align="center">
+<font size="2">
+
+
+<font face="Courier New">	
+
+
+ <a href="http://s05.flagcounter.com/more/RvMZ">
+			<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=4/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0" align="center"></a><br>
+
+
+			</font></font>
+
+</font>
+
+			</font>	
+<font size="2" class="auto-style4">
+
+
+ 		   <span class="auto-style7">This site was created 
+in Feb.2007<br>by William Tan</span></font></td>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>

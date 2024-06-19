@@ -1,0 +1,1162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- Mirrored from vbautomation.110mb.com/VBA/pivot_table.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:52:01 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Korea, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+span.CodeBlue
+	{font-family:"Courier New";
+	color:navy}
+.auto-style1 {
+	color: #000000;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style3 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	color: #0045C3;
+}
+.auto-style4 {
+	color: #0045C3;
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style5 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style6 {
+	color: #0045C3;
+}
+.auto-style7 {
+	text-align: left;
+	font-size: 20pt;
+	font-weight: bold;
+	font-family: Arial;
+}
+.auto-style8 {
+	font-family: Verdana;
+}
+.auto-style9 {
+	font-size: 10.5pt;
+}
+.auto-style10 {
+	font-family: Verdana;
+	font-style: italic;
+}
+.auto-style11 {
+	font-family: Verdana;
+	font-size: 14pt;
+}
+.auto-style13 {
+	font-size: 10.5pt;
+	color: maroon;
+	font-family: Verdana;
+}
+.auto-style14 {
+	font-family: Verdana;
+	font-weight: bold;
+}
+.auto-style15 {
+	font-family: Verdana;
+	font-size: 16pt;
+}
+.auto-style16 {
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style18 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	margin: 5.0pt 0in;
+}
+.auto-style19 {
+	font-family: Verdana;
+	font-style: italic;
+	font-size: 10.5pt;
+}
+.auto-style20 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style23 {
+	font-size: 10.5pt;
+	font-family: Verdana;
+	margin-top: 5.0pt;
+	margin-bottom: 5.0pt;
+}
+.auto-style24 {
+	font-size: 10.5pt;
+	font-weight: normal;
+	font-family: Verdana;
+}
+</style>
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center" style="height: 7705px">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../index.htm" rel="internal" class="auto-style1">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style1">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+				<font class="auto-style1"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font></font></font><span class="auto-style2">
+				</span>
+
+<font face="">
+
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style2">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style5">
+					<strong><span class="auto-style6">Download</span></strong></a><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style1"> my Add-In 
+					tool (<em>run on 32-bit MS Office Excel</em>)</a></td>
+                    </tr>
+                                                
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" height="28" class="auto-style2">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style1">
+					VBA Basic for beginners</a></td>
+                    </tr>
+
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="Objects.htm" rel="internal" class="auto-style1">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="rows_columns.htm" rel="internal" class="auto-style1">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style1">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="statements.htm" rel="internal" class="auto-style1">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+ 					<a href="functions.htm" rel="internal" class="auto-style1">
+					Functions</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style1">
+					Conditional Statements and Loops Structure</a></font></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="errors_handling.htm" rel="internal" class="auto-style1">
+					Errors Handling</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="userforms.htm" rel="internal" class="auto-style1">UserForms</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="pivot_table.htm" rel="internal" class="auto-style4">
+					Pivot Tables</a><span class="auto-style3"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style1">Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style1">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>                            
+
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style1">
+					File I/O VBA Examples</a></font></td>
+                    </tr>     
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style1">ADO and 
+					DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style1">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="6850">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+
+<font face="">
+
+<font face="">
+
+<font face="">
+						
+			
+<td bgcolor="#FFFFFF" WIDTH="3%" style="height: 7705px"></td>
+<td valign="top" width="79%" style="height: 7705px">
+      <!-- Start Page Content -->
+		<p class="auto-style7">Automating Pivot Tables</p>
+		<p class="auto-style2">
+		You usually create 
+		your pivot table from the Excel User Interface by choosing from Data 
+		menu item: Data&gt;PivotTable and PivotChart Report Wizard, but you can 
+		also use VBA to create pivot table such as when you want to automate 
+		your routine summary report.</p>
+		<p>
+		<span class="auto-style2">Figure 1.1 Click on 
+		the Layout button will bring you to the Pivot Table Layout dialog as 
+		shown in the next diagram</span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		<br>
+		<a href="Images_Others/pivot_table_wizard1_1.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard1_1.gif" width="517" height="140"></a><br>
+		<a href="Images_Others/pivot_table_wizard1_2.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard1_2.gif" width="517" height="111"></a><br>
+&nbsp;</span></p>
+		<p>
+		<span class="auto-style9"><br class="auto-style8">
+		</span>
+		<span class="auto-style2">Figure 1.2&nbsp; You can drag Field names from the right-hand side and 
+		drop them in the Row, Column, and Data areas of the PivotTable and 
+		PivotChart Report Wizard Layout dialog.</span><span style="font-size: 10.0pt; font-family: Arial"><br>
+		<br>
+		<a href="Images_Others/pivot_table_wizard2_1.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard2_1.gif" width="460" height="98"></a><br>
+		<a href="Images_Others/pivot_table_wizard2_2.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard2_2.gif" width="460" height="94"></a><br>
+		<a href="Images_Others/pivot_table_wizard2_3.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard2_3.gif" width="460" height="103"></a></span></p>
+		<p>&nbsp;</p>
+		<p>
+		<span class="auto-style2">Figure 1.3&nbsp; 
+		When you are done, click OK, then click Finish, and almost instantly, 
+		Excel creates a summary of the data that you want to see.<br>
+		</span>
+		<span style="font-size: 10.0pt; font-family: Arial">
+		<br>
+		<a href="Images_Others/pivot_table_wizard3_1.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard3_1.gif" width="500" height="139"></a><br>
+		<a href="Images_Others/pivot_table_wizard3_2.gif">
+		<img border="0" src="Images_Others/pivot_table_wizard3_2.gif" width="500" height="107"></a><br>
+		<br>
+&nbsp;</span></p>
+		<p class="auto-style2">
+		Figure 1.4 below 
+		shows another field &#8216;MATERIAL_STATUS&#8217; was added to the Row area of the 
+		pivot table. You can add and remove other fields as you like to the Row, 
+		Column, and Data areas. You can move REGION to the Top, or to the Right, 
+		or to the Column, all depends on your need.</p>
+		<p>
+<font face=""><span style="font-size:10.0pt;font-family:Arial"> 
+		<a href="Images_Others/pivot_table_wizard4_1.gif">
+<img border="0" src="Images_Others/pivot_table_wizard4_1.gif" width="405" height="81"></a><br>
+<a href="Images_Others/pivot_table_wizard4_2.gif">
+<img border="0" src="Images_Others/pivot_table_wizard4_2.gif" width="405" height="65"></a><br>
+<a href="Images_Others/pivot_table_wizard4_3.gif">
+<img border="0" src="Images_Others/pivot_table_wizard4_3.gif" width="405" height="93"></a></span></font></p>
+		<p>
+<font face=""><span class="auto-style11"> 
+		<br>
+</span></font><span class="CodeBlue"><b>
+		<span style="font-size: 14.0pt; " class="auto-style10">
+		<font color="#000000">CreatePivotTable </font></span>
+<span class="auto-style11"><font color="#000000">method</font></span></b></span><span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></p>
+		<p class="auto-style2">
+		The following 
+		example demonstrates an auto-creation of pivot table using VBA. In Excel 
+		2000 and newer versions, you would first build a <b>PivotCache</b> 
+		object to input the data range. After the pivot table is defined, you 
+		use <b>CreatePivotTable</b> method to input pivot table output 
+		destination and pivot table name, and with this you create a blank pivot 
+		table based on your defined <b>PivotCache</b>. &nbsp;In the <b>.AddFields</b> 
+		method, you can specify one or more fields that you want to include in 
+		the Row, Column, or Data area of the pivot table. To add a field 
+		(&#8216;Material&#8217; as in this example) to the Page Data area of the pivot 
+		table, you would change <b>Orientation</b> property of the field to <b>
+		xlDataField</b>.</p>
+		<p>
+		<span style="color: #339966" class="auto-style2">' 
+		Define input area and set up a pivot cache</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">Dim wsh As Worksheet, rng As Range, lastRow As Long, pt as PivotTable<br>
+		lastRow = ActiveSheet.Cells(65536, 1).End(xlUp).Row<br>
+		Set wsh = Worksheets(&quot;sheet1&quot;)<br>
+		Set rng = wsh.Cells(1, 1).Resize(lastRow, 9)</span></p>
+		<p style="font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+		<span style="color: #339966" class="auto-style2">' Delete any prior pivot tables</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">On Error Resume Next</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: maroon">For Each pt In wsh.PivotTables</span></p>
+		<p style="font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style9">
+		<span style="color: maroon" class="auto-style8">&nbsp;&nbsp;&nbsp; pt.TableRange2.Clear&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style8">' TableRange2 refers to cell range of the entire pivot table</span></p>
+		<p style="margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" class="auto-style2"><span style="color: maroon">Next pt</span></p>
+		<p class="auto-style13">
+		ActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase, SourceData:= _<br>
+		&nbsp; rng.Address).CreatePivotTable TableDestination:=Sheets.Add.Cells(3, 
+		1), _<br>
+		&nbsp; TableName:=&quot;PivotTable&quot;</p>
+		<p>
+		<span style="color: #339966" class="auto-style2">' 
+		Set up the Row and Column fields</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">ActiveSheet.PivotTables(&quot;PivotTable&quot;).AddFields RowFields:=&quot;Material_Status&quot; 
+		_<br>
+		&nbsp; , ColumnFields:=Array(&quot;Location&quot;, &quot;Region&quot;)</span></p>
+		<p>
+		<span style="color: #339966" class="auto-style2">' 
+		Set up the Data field</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">ActiveSheet.PivotTables(&quot;PivotTable&quot;).PivotFields(&quot;Material&quot;).Orientation 
+		= _<br>
+		&nbsp; xlDataField</span></p>
+		<p>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		Setting the Function property to xlSum allow you to use summation 
+		instead of using xlCount</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">ActiveSheet.PivotTables(&quot;PivotTable&quot;).PivotFields(&quot;Count of 
+		Material&quot;).Function = xlSum</span></p>
+		<p>
+		<span style="color: #339966" class="auto-style2">&#8216; At 
+		this point, if you set the ManualUpdate to False, Excel calculates. You 
+		can immediately thereafter set it back to True</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">pt.ManualUpdate = False<br>
+		pt.ManualUpdate = True</span></p>
+		<span class="auto-style2">We begin with the 
+		data basis of a PivotCache object, from which pivot table is created 
+		with the CreatePivotTable method. Instead of using <b>.AddFields</b> 
+		method in the above example, we can use the <b>Orientation</b> property 
+		in the <b>With..End With</b> statement to change the orientation of the 
+		pivot fields as shown below. In this example, you see that we can 
+		suppress both the Sub-Total for the multiple column fields, and also the 
+		Grand Total rows and Grand Total columns. It also show you how to create 
+		a new workbook, give the new worksheet a name, copy the TableRange2 
+		property and offset it by one row (to eliminate copying the title row in 
+		row 1, with the button something like &#8216;Sum of Material&#8217;), use paste 
+		Special option to paste only the values and format numbers. Note that <b>
+		xlPasteFormulasAndNumberFormats</b> gets rid of both borders and the 
+		pivot nature of the table, but you could also use <b>
+		xlPasteAllExceptBorders</b>. The final output should look like		
+	
+		</span>
+		<span class="auto-style8">		
+	
+		<a target="_blank" href="Images/CreatePivotTable_sample_output.gif" onclick="NewWindow(this.href,'AltF11','380','400','yes');return false">
+		<font color="#0066CC" class="auto-style9">this sample</font></a></span><span class="auto-style2">.</span><p class="auto-style2">
+	  Here is the code:</p>
+		<p class="auto-style13">
+		Dim ws 
+As Worksheet, wsh As Worksheet, pt As PivotTable, pc As PivotCache<br>
+Dim rng As Range, lastRow As Long, wba As Workbook, wsp As Worksheet<br>
+lastRow = ActiveSheet.Cells(65536, 1).End(xlUp).Row<br>
+Set ws = Worksheets(&quot;sheet1&quot;)<br>
+Set rng = ws.Cells(1, 1).Resize(lastRow, 9)</p>
+		<p class="auto-style13">
+		On Error Resume Next<br>
+		For Each pt In ws.PivotTables<br>
+		&nbsp; pt.TableRange2.Clear&nbsp; 'TableRange2 refers to cell range of the entire 
+		pivot table<br>
+		Next</p>
+		<p class="auto-style13">
+		Set pc = ActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase,SourceData:=rng.Address)<br>
+		Set pt = pc.CreatePivotTable(TableDestination:=Sheets.Add.Range(&quot;A3&quot;),<br>
+&nbsp; &nbsp; TableName:=&quot;myPivotTable&quot;)</p>
+		<p>
+		<span style="color: #339966" class="auto-style2">&#8216; To 
+		change the orientation of the pivot fields</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">With pt<br>
+		&nbsp;&nbsp; .PivotFields(&quot;Material&quot;).Orientation = xlDataField<br>
+		&nbsp;&nbsp; .PivotFields(&quot;Region&quot;).Orientation = xlRowField<br>
+		&nbsp;&nbsp; .PivotFields(&quot;Material_Status&quot;).Orientation = xlRowField<br>
+		&nbsp;&nbsp; .PivotFields(&quot;Location&quot;).Orientation = xlColumnField<br>
+		End With</span></p>
+		<p>
+		<span style="color: maroon" class="auto-style2">
+		pt.PivotFields(&quot;Region&quot;).Subtotals(1) = False </span>
+		<span style="color: #339966" class="auto-style2">' 
+		suppressing the subtotals for multiple column fields</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span>
+		<span style="color: maroon" class="auto-style2">pt.ColumnGrand = False&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		suppressing the Grand Total for rows</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">pt.RowGrand = True&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span><span style="color: #339966" class="auto-style2">' 
+		set to False will suppress the Grand Total for Columns</span></p>
+		<p>
+		<span style="color: maroon" class="auto-style2">
+		Set wba = Workbooks.Add(xlWBATWorksheet)&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		create a new workbook to hole the pivot table report</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span>
+		<span style="color: maroon" class="auto-style2">Set wsp = wba.Worksheets(1)<br>
+		wsp.Name = &quot;summary report&quot;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		give the first worksheet in the new workbook a title</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color: maroon" class="auto-style2">pt.TableRange2.Offset(1, 0).Copy &nbsp;</span><span style="color: #339966" class="auto-style2">&#8216; 
+		use Offset(1,0) &nbsp;to avoid copy the title row of the pivot table</span></p>
+		<p>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		copy the pivot table data to row 1 of the new report sheet</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span>
+		<span style="color: maroon" class="auto-style2">wsp.[A1].PasteSpecial Paste:=xlPasteFormulasAndNumberFormats<br>
+		pt.TableRange2.Clear&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		erase the original pivot table</span><span style="color: maroon" class="auto-style9"><br class="auto-style8">
+		</span>
+		<span style="color: maroon" class="auto-style2">Set pc = Nothing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+		<span style="color: #339966" class="auto-style2">&#8216; 
+		dissociate variable &#8216;pc&#8217;&nbsp; from the object.</span></p>
+		<p>
+		<span class="auto-style2">Note: if you want to 
+		have zeros instead of blanks in the Data area of the pivot table, use 
+		the following line:</span><span style="color: maroon" class="auto-style2"><br>
+		<br>
+		pt.NullString = &quot;0&quot;</span></p><font face="">
+		
+		<p style='margin-left:6.5in' class="auto-style2">		
+		<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+		Return To Top</a></p>
+
+		</font>
+		<p><span class="CodeBlue">
+		<span style="font-size: 14.0pt; " class="auto-style14">
+		<font color="#000000">Filling in the blank Outline view in column A</font></span></span></p>
+		<p><span class="CodeBlue">
+		<span class="auto-style2">
+		<font color="#000000">If you had been using reports obtained pivot 
+		tables, you would notice this blank Outline view which are quite 
+		meaningless, usually in column A [</font></span></span><a target="_blank" href="Images/CreatePivotTable_sample_output.gif" onclick="NewWindow(this.href,'AltF11','390','410','yes');return false"><span class="auto-style2"><font color="#0066CC">see</font></span><font face=""><span class="auto-style2"><font color="#0066CC"> 
+		sample</font></span></font></a><font face=""><span class="auto-style2">]</span><span class="CodeBlue"><font color="#000000"><span class="auto-style2">.&nbsp; 
+		Here is a simple code that would let you fill in all those blank with 
+		the cell above it. See this
+		</span><span class="auto-style8">
+		<a target="_blank" href="Images/CreatePivotTable_fill_outline_view.gif" onclick="NewWindow(this.href,'AltF11','380','400','yes');return false">
+		<span class="auto-style9"><font color="#0066CC">sample output</font></span></a></span><span class="auto-style2"> after you 
+		have executed the code.</span></font></span></p>
+		<p class="auto-style13">
+		Dim finalrow As Long<br>
+		finalrow = Worksheets(&quot;summary report&quot;).Range(&quot;B65536&quot;).End(xlUp).Row<br>
+		With Worksheets(&quot;summary report&quot;).Range(&quot;A3&quot;).Resize(finalrow - 2, 1)<br>
+		&nbsp; With .SpecialCells(xlCellTypeBlanks)<br>
+		&nbsp;&nbsp;&nbsp; .FormulaR1C1 = &quot;=R[-1]C&quot;<br>
+		&nbsp; End With<br>
+		&nbsp; .Value = .Value<br>
+		End With</p>
+		<p class="auto-style13">
+		&nbsp;</p>
+		<p><span class="auto-style2">The following 
+		procedure combines all the methods that I have demonstrated above on 
+		creating pivot table and different ways of moving around cells, 
+		formatting and sorting the static summary report. </span>
+		<span class="auto-style8">
+		<a target="_blank" onclick="NewWindow(this.href,'AltF11','640','480','yes');return false" href="Images/PuttingItAltogether.gif">
+		<font color="#0066CC" class="auto-style9">This
+		diagram</font></a></span><span class="auto-style2"> shot is the exact output of what you should be seeing after 
+		you run the code. You can also
+		<a href="Sub_VBA/pivot_table_putting_it_together.zip">
+		<font color="#0066CC">DOWNLOAD</font></a> the 
+		worksheet sample here.</span></p>
+		<p>
+		<span style="color:maroon" class="auto-style2">Option Explicit</span></font><span style="color:#339966" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:#339966" class="auto-style2">' Using pivot table to create a summary report, move around cells and 
+		formatting</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color:maroon" class="auto-style2">Sub CreatePivotTable_SummaryReport()<br>
+		Dim wsd As Worksheet<br>
+		Dim pRange As Range<br>
+		Dim ptCache As PivotCache<br>
+		Dim pt As PivotTable<br>
+		Dim finalrow As Long, finalcolumn As Long<br>
+		Set wsd = Worksheets(&quot;sheet1&quot;)</span></p>
+		<p><span style="color:#339966" class="auto-style2">' 
+		Delete all pivot tables</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">For Each pt In wsd.PivotTables<br>
+		&nbsp;&nbsp;&nbsp; pt.TableRange2.Clear<br>
+		Next pt</span></p>
+		<p><span style="color:#339966" class="auto-style2">' 
+		Define last row, last column, input area, and set up a pivot cache</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span>
+		<font face=""><span style="color:maroon" class="auto-style2">finalrow = wsd.Cells(65536, 1).End(xlUp).Row<br>
+		finalcolumn = wsd.Cells(1, 255).End(xlToLeft).Column<br>
+		Set pRange = wsd.Cells(1, 1).Resize(finalrow, finalcolumn)<br>
+		Set ptCache = ActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase, _<br>
+		&nbsp;&nbsp; SourceData:=pRange.Address)<br>
+		Set pt = ptCache.CreatePivotTable(tabledestination:=wsd.Range(&quot;J2&quot;), _<br>
+		&nbsp;&nbsp; tablename:=&quot;PivotTable1&quot;)<br>
+		<br>
+		</span>
+		<span style="color: #339966" class="auto-style2">' 
+		Set up the row fields and column fields</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><span style="color:maroon" class="auto-style2">pt.AddFields RowFields:=Array(&quot;Region&quot;, &quot;Material_Status&quot;), ColumnFields:=&quot;Location&quot;</span></p>
+		<p><span style="color:#339966" class="auto-style2">' Set 
+		up the Data area field, set function property to Summation, format as $ 
+		in K<br>
+		' Move the PivotItem object (ie. pivot field 'Stock On-Hand') to the 
+		first position</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">With pt.PivotFields(&quot;Stock On-Hand&quot;)<br>
+		&nbsp;&nbsp;&nbsp; .Orientation = xlDataField<br>
+		&nbsp;&nbsp;&nbsp; .Function = xlSum<br>
+		&nbsp;&nbsp;&nbsp; .Position = 1<br>
+		&nbsp;&nbsp;&nbsp; .NumberFormat = &quot;$#,##0,\K&quot;<br>
+		End With</span></p>
+		<p>
+		<span style="color:maroon" class="auto-style2">With pt<br>
+		&nbsp;&nbsp;&nbsp; .PivotFields(&quot;Region&quot;).Subtotals(1) = False </span>
+		<span style="color: #339966" class="auto-style2">' 
+		suppressing the subtotals for multiple column fields</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">&nbsp;&nbsp;&nbsp; .ColumnGrand = False&nbsp;&nbsp;&nbsp; ' suppressing the Grand Total for rows<br>
+		&nbsp;&nbsp;&nbsp; .RowGrand = True<br>
+		&nbsp;&nbsp;&nbsp; .NullString = &quot;0&quot;<br>
+		End With</span></p>
+		<p><span style="color:#339966" class="auto-style2">' 
+		Calculate the pivot table</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">pt.ManualUpdate = False<br>
+		pt.ManualUpdate = True</span></p>
+		<p><span style="color:#339966" class="auto-style2">' Copy 
+		data from pt.TableRange2 property to Cell S2, and wipe out the constants 
+		that were pasted</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">pt.TableRange2.Offset(1, 0).Copy<br>
+		Worksheets(&quot;sheet1&quot;).Cells(2, finalcolumn + 11).PasteSpecial _<br>
+		&nbsp; Paste:=xlPasteFormulasAndNumberFormats</span></p>
+		<p><span style="color:#339966" class="auto-style2">' 
+		Delete original pivot table &amp; pivot cache</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">pt.TableRange2.Clear<br>
+		Set ptCache = Nothing</span></p>
+		<p><span style="color:#339966" class="auto-style2">' Fill 
+		all blanks in Outline view</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">Range(Range(&quot;IV2&quot;).End(xlToLeft).Address).End(xlToLeft).Offset(, 
+		1).Select<br>
+		Range(ActiveCell, ActiveCell.End(xlDown)).Rows.Offset(, -1).Select<br>
+		With Selection<br>
+		&nbsp; With .SpecialCells(xlCellTypeBlanks)<br>
+		&nbsp;&nbsp;&nbsp; .FormulaR1C1 = &quot;=R[-1]C&quot;<br>
+		&nbsp; End With<br>
+		&nbsp; .Value = .Value<br>
+		End With</span></p>
+		<p><span style="color:#339966" class="auto-style2">' 
+		Delete unwanted empty columns, formatting and sorting in a designated 
+		column</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">Range(ActiveCell.Offset(, -1), ActiveCell.End(xlToLeft).Offset(, 
+		2).Address) _<br>
+&nbsp;&nbsp; .EntireColumn.Delete<br>
+		Range(&quot;IV2&quot;).End(xlToLeft).Offset(1, 0).Select<br>
+		Range(ActiveCell, ActiveCell.End(xlDown)).Rows.Select<br>
+		With Selection<br>
+		&nbsp;&nbsp;&nbsp; .Font.Size = 11<br>
+		&nbsp;&nbsp;&nbsp; .Font.ColorIndex = 3<br>
+		&nbsp;&nbsp;&nbsp; .Font.Bold = True<br>
+		End With</span></p>
+		<p><span style="color:#339966" class="auto-style2">' 
+		Autofit the selection columns</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">Selection.Offset(-1, 0).Resize(Selection.Rows.Count + 1, 
+		Selection.Columns.Count _<br>
+		&nbsp;&nbsp; + 6).Offset(, -6).Select<br>
+		Selection.Columns.AutoFit</span></p>
+		<p><span style="color:#339966" class="auto-style2">' Sort 
+		by Grand Total</span><span style="color:maroon" class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span style="color:maroon" class="auto-style2">Rows(&quot;1:2&quot;).Find(What:=&quot;Grand Total&quot;, SearchDirection:=xlNext).Activate<br>
+		Selection.Sort Key1:=ActiveCell, Order1:=xlDescending, Orientation:=xlTopToBottom</span></p>
+		<p class="auto-style13">
+		End Sub</p>
+		<p class="auto-style2">&nbsp;</p>
+		</font></font></font></font></font></font></font></font></font></font>
+	  </font></font>
+		<h1>
+		<span class="auto-style15">A note on Sort Method</span><font face=""><br>
+		</font><span class="auto-style8"><span class="auto-style9">&nbsp;</span><br class="auto-style9">
+		</span><font face="">
+		<span style="font-weight: normal" class="auto-style2">It 
+sorts a PivotTable report, a range, or the active region if the specified range 
+contains only one cell.</span></h1>
+		<h1 class="auto-style13">
+		expression.Sort(Key1, Order1, Key2, Type, Order2, Key3, Order3, Header, 
+		OrderCustom, MatchCase, Orientation, SortMethod, DataOption1, 
+		DataOption2, DataOption3)</h1>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style16">expression</span><span class="auto-style19"> </span>
+		<span class="auto-style2">
+		Required. An expression that returns one of the objects in the Applies 
+		To list.</span></p>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in"><b>
+		<i><span class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span class="auto-style2">Key1</span></font></i></b><font face=""><span class="auto-style2"> 
+		Optional Variant. The first sort field, as either text (a PivotTable 
+		field or range name) or a Range object (&quot;Dept&quot; or Cells(1, 1), for 
+		example).</span></p>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in"><b>
+		<i><span class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span class="auto-style2">Order1</span></font></i></b><font face=""><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. The sort order 
+		for the field or range specified in <i>Key1</i>.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table6">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortOrder can 
+				be one of these XlSortOrder constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in" class="auto-style2">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlDescending</span><span class="auto-style2">. 
+					Sorts <i>Key1</i> in descending order.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in" class="auto-style2">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlAscending</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. Sorts <i>Key1</i> in ascending order.</span></span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in"><b>
+		<i><span style="font-size:10.0pt;
+font-family:Arial"><br>
+		K</span></i></b></font></font></font><span class="auto-style16">ey2</span><font face=""><span class="auto-style2"> 
+		Optional Variant. The second sort field, as either text (a PivotTable 
+		field or range name) or a Range object. If you omit this argument, 
+		there&#8217;s no second sort field. Cannot be used when sorting Pivot Table 
+		reports.</span></p>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in"><b>
+		<i><span class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span class="auto-style2">Type</span></font></i><font face=""><span class="auto-style2"> </span>
+		</font>
+		</b><font face=""><span class="auto-style2">Optional <b>Error! Hyperlink reference not valid.</b>. 
+		Specifies which elements are to be sorted. Use this argument only when 
+		sorting PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table7">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortType can 
+				be one of these XlSortType constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortLabels</span><span class="auto-style2">. 
+					Sorts the PivotTable report by labels.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortValues</span><span class="auto-style2">. 
+					Sorts the PivotTable report by values.</span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in"><b>
+		<i><span class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span class="auto-style2">Order2</span></font></i></b><font face=""><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. The sort order 
+		for the field or range specified in <i>Key2</i>. Cannot be used when 
+		sorting PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table8">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortOrder can 
+				be one of these XlSortOrder constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="auto-style23" style="text-autospace: none; ">
+					xlDescending. Sorts <i>Key2</i> in descending order.</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="auto-style23" style="text-autospace: none; ">
+					xlAscending
+					<i>default</i>. Sorts <i>Key2</i> in ascending order.</li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>Key3</b></span><span class="auto-style2"> 
+		Optional Variant. The third sort field, as either text (a range name) or 
+		a Range object. If you omit this argument, there&#8217;s no third sort field. 
+		Cannot be used when sorting PivotTable reports.</span></p>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>Order3</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. The sort order 
+		for the field or range specified in <i>Key3</i>. Cannot be used when 
+		sorting PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table9">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortOrder can 
+				be one of these XlSortOrder constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlDescending</span><span class="auto-style2">. 
+					Sorts <i>Key3</i> in descending order.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlAscending</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. Sorts <i>Key3</i> in ascending order.</span></span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>Header</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. Specifies whether 
+		or not the first row contains headers. Cannot be used when sorting 
+		PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table10">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlYesNoGuess 
+				can be one of these XlYesNoGuess constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">xlGuess</span><span class="auto-style2">. 
+					Let Microsoft Excel determine whether there&#8217;s a header, and 
+					to determine where it is, if there is one.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">xlNo</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. (The entire range should be sorted).</span></span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">xlYes</span><span class="auto-style2">. 
+					(The entire range should not be sorted).</span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style16">OrderCustom</span><span class="auto-style2"> Optional Variant. This argument is a one-based integer 
+		offset to the list of custom sort orders. If you omit <i>OrderCustom </i>
+		, a normal sort is used.</span></p>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in"><b>
+		<i><span class="auto-style9"><br class="auto-style8">
+		</span><font face=""><span class="auto-style2">MatchCase</span></font></i></b><font face=""><span class="auto-style2"> 
+		Optional Variant. True to do a case-sensitive sort; False to do a sort 
+		that&#8217;s not case sensitive. Cannot be used when sorting PivotTable 
+		reports.</span></p>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>Orientation</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. The sort 
+		orientation.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table11">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortOrientation can be one of these XlSortOrientation 
+				constants.</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortRows</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. Sorts by row.</span></span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortColumns</span><span class="auto-style2">. 
+					Sorts by column.</span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>SortMethod</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. The type of sort. 
+		Some of these constants may not be available to you, depending on the 
+		language support (U.S. English, for example) that you&#8217;ve selected or 
+		installed.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table12">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortMethod 
+				can be one of these XlSortMethod constants.</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="auto-style23" style="text-autospace: none; ">
+					xlStroke 
+					Sorting by the quantity of strokes in each character.</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="auto-style23" style="text-autospace: none; ">
+					xlPinYin <i>
+					default</i>. Phonetic Chinese sort order for characters.</li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>DataOption1</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. Specifies how to 
+		sort text in key 1. Cannot be used when sorting PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table13">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortDataOption can be one of these XlSortDataOption constants&#8221;</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortTextAsNumbers</span><span class="auto-style2">. 
+					Treat text as numeric data for the sort.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortNormal</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. Sorts numeric and text data separately.</span></span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>DataOption2</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. Specifies how to 
+		sort text in key 2. Cannot be used when sorting PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table14">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortDataOption can be one of these XlSortDataOption constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortTextAsNumbers</span><span class="auto-style2">. 
+					Treats text as numeric data for the sort.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortNormal</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. Sorts numeric and text data separately.</span></span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-autospace: none; margin: 5.0pt 0in">
+		<span class="auto-style19"><br>
+		<b>DataOption3</b></span><span class="auto-style2"> 
+		Optional <b>Error! Hyperlink reference not valid.</b>. Specifies how to 
+		sort text in key 3. Cannot be used when sorting PivotTable reports.</span></p>
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table15">
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<p class="auto-style18" style="text-autospace: none; ">
+				XlSortDataOption can be one of these XlSortDataOption constants:</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortTextAsNumbers</span><span class="auto-style2">. 
+					Treats text as numeric data for the sort.</span></li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td width="436" style="width:327.25pt;padding:0in 0in 0in 0in">
+				<ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+					<li class="MsoNormal" style="text-autospace: none; margin-top: 5.0pt; margin-bottom: 5.0pt">
+					<span class="auto-style20">
+					xlSortNormal</span><span style="font-family:Arial" class="auto-style9"> </span>
+					<span class="auto-style19">
+					default</span><span style="font-size:10.0pt;font-family:Arial"><span class="auto-style2">. Sorts numeric and text data separately.</span></span></li>
+				</ul>
+				</td>
+			</tr>
+		</table>
+		<h1 class="auto-style24">
+		Remarks:<br>
+		The settings for Header, Order1, Order2, Order3, OrderCustom, and 
+		Orientation are saved, for the particular worksheet, each time you use 
+		this method. If you don&#8217;t specify values for these arguments the next 
+		time you call the method, the saved values are used. Set these arguments 
+		explicitly each time you use Sort method, if you choose not to use the 
+		saved values.</h1>
+		<h1 class="auto-style24">
+		Text strings which are not convertible to numeric data are sorted 
+		normally.&nbsp;</h1>
+		<h1 class="auto-style24">
+		Note:&nbsp; If no arguments are defined with the Sort method, Microsoft Excel 
+		will sort the selection, chosen to be sorted, in ascending order.</h1>
+		<h1>
+		<span style="font-weight: normal" class="auto-style2">
+		This example sorts the range A1:C20 on Sheet1, using cell A1 as the 
+		first sort key and cell B1 as the second sort key. The sort is done in 
+		ascending order by row, and there are no headers. This example assumes 
+		there is data in the range A1:C20.<br>
+		</span>
+		<span style="color: maroon; font-weight: normal" class="auto-style2">
+		Sub SortRange1()<br>
+		&nbsp;&nbsp; Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C20&quot;).Sort _<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Key1:=Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;), _<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Key2:=Worksheets(&quot;Sheet1&quot;).Range(&quot;B1&quot;)<br>
+		End Sub<br>
+		<br>
+		<br>
+		</span>
+		<span style="font-weight: normal" class="auto-style2">
+		This example sorts the region that contains cell A1 (the active region) 
+		on Sheet1, sorting by the data in the first column and automatically 
+		using a header row if one exists. This example assumes there is data in 
+		the active region, which includes cell A1. The Sort method determines 
+		the active region automatically.<br>
+		</span>
+		<span style="color: maroon; font-weight: normal" class="auto-style2">
+		Sub SortRange2()<br>
+		&nbsp;&nbsp; Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Sort _<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Key1:=Worksheets(&quot;Sheet1&quot;).Columns(&quot;A&quot;), Header:=xlGuess<br>
+		End Sub</span></h1>
+		<p style='margin-left:6.5in'>
+		<font face="">
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+<font face="Arial" size="2">R<span class="auto-style2">eturn To Top</span></font></a></p></td>
+</tr>
+
+<font face="">
+
+<tr>
+
+
+<td valign="top">
+
+    </td>
+  </tr>
+</tbody></table>
+
+
+<table border="0" width="98%" id="table5">
+<tr>
+<td align="center">
+<font face="Courier New">	
+<font size="2">
+
+
+  <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ <script  type="text/javascript" language="javascript" src="../../s10.histats.com/js9.js"></script> 
+ <font face="">
+
+<font class="auto-style11">	
+<font size="2" class="auto-style2">
+
+
+
+
+This site was created in Feb.2007<br>by William Tan</font></font></font></font></td>
+</tr>
+</table>
+
+</body>
+<!-- Mirrored from vbautomation.110mb.com/VBA/pivot_table.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:52:12 GMT -->
+</html>

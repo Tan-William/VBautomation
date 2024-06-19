@@ -1,0 +1,1139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel Macros Help</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh,William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Thailand, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<script language="javascript">
+// Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+win = window.open(mypage,myname,settings)
+}
+</script>
+
+
+<script type="text/javascript">
+<!--if (top.location != location) {top.location.href = document.location.href ;}-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<body background="../logo.gif" style="background-attachment: fixed">
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+span.term
+	{}
+.auto-style1 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style2 {
+	font-size: 10.5pt;
+}
+.auto-style5 {
+	font-family: Verdana;
+	font-size: 10.5pt;
+}
+.auto-style6 {
+	font-family: Verdana;
+}
+.auto-style7 {
+	font-family: Verdana;
+	font-weight: bold;
+}
+.auto-style9 {
+	color: maroon;
+	font-family: Verdana;
+}
+.auto-style10 {
+	font-size: 10.5pt;
+	font-weight: bold;
+}
+.auto-style11 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+.auto-style12 {
+	font-size: 10.5pt;
+	color: maroon;
+	font-family: Verdana;
+}
+.auto-style13 {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	font-weight: normal;
+}
+.auto-style14 {
+	font-size: 10.5pt;
+	text-decoration: none;
+}
+.auto-style15 {
+	color: #0045C3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style16 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10.5pt;
+	text-decoration: none;
+	font-weight: normal;
+}
+.auto-style17 {
+	color: #0045C3;
+}
+</style>
+
+<font face="">
+<TABLE border="0" cellspacing="3" width="98%" style="height: 8243px">
+<TBODY>
+<tr>
+<td bgcolor="#ffffff" valign="top" width="13%" align="center">
+</font>
+
+
+<font face="">	
+ <TABLE bgcolor="#3399cc" border="0" cellpadding="0" cellspacing="0" width="158">
+  <TBODY>
+	<TR>
+	 <TD>
+       <TABLE border="0" cellpadding="3" cellspacing="1" width="161">
+         <TBODY>
+
+
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../index.htm" rel="internal" class="auto-style1">Home</a></td>
+					</tr>
+					
+					<tr width="159">
+					<td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="../AboutMe/Me.htm" rel="internal" class="auto-style1">
+					About me</a></td>
+					</tr>
+                     
+		<TBODY>
+		<td bgcolor="#3399cc" height="135" width="153">
+		<p align="left">
+		<img border="0" src="../logo-excelvba_1.gif" width="153" height="59"><br>
+		<img border="0" src="../logo-excelvba_2.gif" width="153" height="68"></td>
+		</TBODY>                  
+                                                
+                                                
+				<tr height="" width="159">
+				<td bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+				<font class="auto-style1"><strong><br>
+				&nbsp;<i>VBA Programming</i></strong></font><span class="auto-style2">
+				</span>                                              
+
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" align="left" class="auto-style2">
+					<a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style16">
+					<strong><span class="auto-style17">Download</span></strong></a><a href="Sub_VBA/WilliamExcelUtilities.zip" rel="internal" class="auto-style1">
+					my Add-In tool</a> <font face="">	
+ 				   (<a class="auto-style14" href="Sub_VBA/WilliamExcelUtilities.zip"><span class="auto-style13"><em>run on 32-bit MS Office Excel</em>)</span></a></td>
+                    </tr>
+                                                                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" align="left" height="28" class="auto-style2">
+					<a href="beginner_basic.htm" rel="internal" class="auto-style1">
+					VBA Basic for beginners</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="Objects.htm" rel="internal" class="auto-style15">Excel 
+					Main Objects</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="rows_columns.htm" rel="internal" class="auto-style1">
+					More with Rows, Columns, Cells, Range ...</a></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="workaround_worksheet.htm" rel="internal" class="auto-style1">Working 
+					around your Worksheet ...</a></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="statements.htm" rel="internal" class="auto-style1">
+					Statements</a></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+ 					<a href="functions.htm" rel="internal" class="auto-style1">
+					Functions</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                   
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="loops.htm" rel="internal" class="auto-style1">
+					Conditional Statements and Loops Structure</a><span class="auto-style2">
+					</span> </font></td>
+                    </tr>
+                                                                   
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<a href="errors_handling.htm" rel="internal" class="auto-style1">
+					Errors Handling</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                                        
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="userforms.htm" rel="internal" class="auto-style1">UserForms</a><span class="auto-style2"></font></span></td>
+                    </tr>
+                    
+                    <tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="pivot_table.htm" rel="internal" class="auto-style1">
+					Pivot Tables</a><span class="auto-style2"></font></span></td>
+                    </tr>
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="charting.htm" rel="internal" class="auto-style1">Charting</a></font></td>
+                    </tr>		
+					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="autofilter.htm" rel="internal" class="auto-style1">
+					AutoFilter, Advanced Filter</a></font></td>
+                    </tr>
+
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<font face="">	
+ 					<a href="File_IO_VisualBasic.htm" rel="internal" class="auto-style1">
+					File I/O VBA Examples</a></font></td>
+                    </tr>     
+                    					
+					<tr width="159">
+                    <td style="cursor: pointer" onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" class="auto-style2">
+					<font face="">	
+ 					<a href="ado_dao.htm" rel="internal" class="auto-style1">ADO and 
+					DAO, integrating Excel and Access</a></font></td>
+                    </tr>
+                    
+					<tr width="159">
+                    <td onmouseover="this.style.backgroundColor='#339933'; this.style.cursor='hand'; this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#FFFF66';" bgcolor="#FFFF66" valign="middle" width="153" height="28" class="auto-style2">
+					<a href="excel_fun_staff.htm" rel="internal" class="auto-style1">
+					Other VBA fun staff</a></td>
+                    </tr>
+
+
+                    <tr HEIGHT="130" width="159">
+                    <td bgcolor="#FFFF66" width="153" height="7361">
+					<p></p>
+					</tr>
+
+					</TBODY></TABLE>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+	</font>
+						
+			
+<td bgcolor="#FFFFFF" WIDTH="1%">&nbsp;</td>
+<td valign="top" width="81%">
+
+<font face="">
+<p class="MsoNormal"><b><span style="font-size:18.0pt;font-family:
+Arial"><a name=TOP>Excel Object Model</a></span></b></p>
+</font></font>
+<p class="MsoNormal"><span class="auto-style5">The Excel 
+Object Model provides you additional commands than you would normally obtain 
+from the Excel menu of commands and functions. Almost anything you can do with 
+Excel from its user interface, you can do by manipulating its objects through 
+VBA. Microsoft has empowered you with all the </span>
+
+<font face="">
+<span style="font-size:10.0pt;font-family:Arial"> 
+<span class="auto-style5"><a href="#OBJECT" style="text-decoration:none">objects </a></span></span>
+<span class="auto-style5">and
+</span><span style="font-family:Arial">
+<span class="auto-style5"><a href="#METHOD" style="text-decoration:none">methods </a>so you can do anything through VB code 
+that can't be done through the Excel user interface. Examples of objects in the 
+Excel Object Model are <b>Workbooks</b>, <b>Worksheets</b>, <b>Range, Cells,</b>
+<b>Charts</b>, <b>Pivot</b> and <b>Comments</b></span></span></font><span class="auto-style5">.</span></p>
+
+<font face="">
+<p class="MsoNormal"><span class="auto-style5">Excel is a 
+three-tier application: <i>client services tier, object model, and data services 
+layer</i>. The workbook interface that user usually communicate with is the 
+client services tier.&nbsp;Underneath this lays the object model. Each time you do 
+something on your worksheet, you are issuing commands through the Excel object 
+model. You use the object model to communicate with Excel application by 
+manipulating the </span>
+
+<font face="">
+<span style="font-size:10.0pt;font-family:Arial"> <span class="auto-style5">
+<a href="#PROPERTY" style="text-decoration:none">properties</a></span></span><span class="auto-style5"> and
+</span><span style="font-size:10.0pt;font-family:Arial">
+<span class="auto-style5">methods of the various objects. For example, if 
+you select File/Open from Excel menu, you are using the command <b>
+Workbooks.Open</b> to open your workbook, <b>Sheets.Add</b> to insert a new 
+worksheet [see
+<a href="Sub_VBA/workbook_open.xls">example</a>], and add it to the workbooks collection object. Similarly, if you 
+select Tool/Options and in Options dialog box to set Calculation to manual and 
+using F9 to recalculate, you are issuing the command <b>Application.Calculate</b> 
+[see
+<a href="Sub_VBA/auto_manual_calculation.xls">example</a>]. Below the object model sits the data services layer, which hold 
+data in the spreadsheet and is modified by commands from the Excel object model.</span></span></p>
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:Arial"><br>
+</span><span style="font-family: Arial"><font style="font-size: 16pt"><a name=OBJECT>Objects </a>explained</font></span></b>
+<span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font>
+<span class="auto-style5">An <span class="term">object</span> is a programming structure combining both 
+code and data that can be treated as a single unit. Objects let you declare 
+variables and procedures once and then reuse them whenever needed. An object can 
+be a piece of an application, like <b>Application</b> object, <b>Workbook</b> 
+object, <b>Worksheet</b> object, <b>Range</b> objects, a control or a form. In a 
+way, an object is like a variable in that it can store a value, but is more 
+complex in that it can hold multiple values (</span><font face=""><span style="font-family:Arial"><span class="auto-style5"><a href="#PROPERTY" style="text-decoration:none">properties</a>) 
+and has its own set of defined actions (<a href="#METHOD" style="text-decoration:none">methods</a>) 
+it can perform. To give you an analogy - you are an object. You have properties 
+like eyes color, hairs color, and you have methods like speak, laugh, etc. A 
+cell is also an object - a Range object. It has properties like <b>Value</b>, <b>
+Address</b>, <b>HasFormula</b>. It has methods like <b>ClearContents</b>, <b>
+Copy</b>,<b> Activate</b>.</span></span></p>
+<p class="auto-style5">The 
+following example demonstrates the concept of object. (In fact you do not have 
+to explicitly refer to the Application object as shown in line 2). Cell A1 has a 
+Value property that shows 10. If cell B1 has a formula, a message will display 
+cell B1 address, else it will do nothing. Address property cannot be changed. 
+Cell B1 will have the Address of $B$1 no matter what you do. Value is a 
+read/write property. Cell content of A1 is cleared, and B1 formula will be 
+copied over to A1. The last line makes A1 an active cell.</p>
+<p class="MsoNormal">
+<span style="color:maroon" class="auto-style5">Dim ad As String</span><b><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<font face="">
+<span style="color:maroon" class="auto-style5">Application</span></font></b><font face=""><span style="color:maroon" class="auto-style5">.Workbooks(1).Sheets(1).Range(&#8220;A1&#8221;).Select<span style="color: windowtext"><br>
+</span>Range(&#8220;A1&#8243;).<b>Value</b> = 10</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">&nbsp;&nbsp;&nbsp; ad = Range(&quot;B1&quot;).<b>Address</b><br>
+&nbsp;&nbsp;&nbsp; If Range(&quot;B1&quot;).<b>HasFormula</b> = True Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MsgBox ad &amp; &quot; has a formula&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exit Sub<br>
+&nbsp;&nbsp;&nbsp; End If<br>
+Workbooks(1).Sheets(1).Range(&quot;A1&quot;).<b>ClearContents</b><br>
+Workbooks(1).Sheets(1).Range(&quot;B1&quot;).<b>Copy</b><br>
+Workbooks(1).Sheets(1).Range(&quot;A1&quot;).<b>PasteSpecial</b><br>
+Workbooks(&quot;Book1&quot;).Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).<b>Activate</b></span></p>
+<p><span class="auto-style5">Objects are arranged in 
+hierarchy. For example, at the top of the Excel object model is the <b>
+Application</b> object, and under which is the <b>Workbook</b> object. Within 
+each Workbook object are the <b>Range</b> objects, <b>Cells</b> objects, and so 
+on. Each object can contain settings or attributes called
+</span>
+
+<font face="">
+<span style="font-size:10.0pt;font-family:Arial">
+<span class="auto-style5"><a href="#PROPERTY" style="text-decoration:none">properties</a></span></span><span class="auto-style5">, and actions that can be performed on 
+the object called </span><span style="font-family:Arial"> 
+<span class="auto-style5">
+<a href="#METHOD" style="text-decoration:none">methods</a>, or both. In example 
+line 1 below, you specify a range of cells A1:A10 in the range property and use 
+the value property to place the text &quot;Welcome to VBA&quot; in these cells. In line 2, 
+you copy the range of cells in the Activecell column and paste it into range 
+B1:B10 in Sheet2.</span></span></p>
+</font>
+<p><font face>
+<span style="color: maroon" class="auto-style5">Worksheets(&quot;Sheet1&quot;).<b>Range</b>(&quot;A1:A10&quot;).Value 
+= &quot;Welcome to VBA&quot;<br>
+<b>Sheets</b>(1).<b>Range</b>(ActiveCell.Address, <b>Cells</b>(Rows.Count, _<br>
+&nbsp; ActiveCell.Column).End(xlUp).Address).Copy&nbsp;&nbsp; <b>Sheets</b>(2).<b>Range</b>(&quot;A1&quot;).<b>Offset</b>(0, 
+1)</span></p>
+<p class="auto-style5">Excel exposes various other 
+creatable objects, allow you to do other more amazing things with these objects. 
+These are some of the other commonly used key objects:<br>
+<br>
+<b>ActiveWorkbook</b> object represents the active workbook. <br>
+<b>ActiveSheet</b> object represents the active worksheet.<br>
+<b>ActiveWindow</b> object represents the active window.<br>
+<b>Activecell</b> object represents the active cell.</p>
+<p class="MsoNormal"><span class="auto-style11"><br>
+</span></font>
+
+<font class="auto-style2">
+<span class="auto-style7">Properties Explained</span></font><br class="auto-style5">
+
+<font size="2" class="auto-style5">
+Property is an attribute of an object such as size, color, screen location, or 
+the state of an object, such as enabled or disabled. Most objects have multiple 
+properties that describe each relevant aspect of the object. Each property has a 
+specific data type for the information it stores. For example, the Workbooks 
+object has a Boolean property named <b>Saved</b> that stores value denoting 
+whether all changes in the workbook have been saved (True) or not (False). The
+<b>Name</b> property of the Workbooks object is a string property because it 
+needs to contain text for the filename (limit by 255 characters and certain 
+characters like colon). The <b>Visible</b> property of the Worksheet object 
+which can be <b>xlSheetVisible (-1)</b>, <b>xlSheetHidden (0)</b>, <b>
+xlSheetVeryHidden (2),</b> indicates whether the worksheet is visible to the 
+user or is hidden.</span></p>
+</font>
+
+<p class="MsoNormal">
+<span style="color:#339966" class="auto-style5">&#8216; if you close 
+the workbook, you will still be prompted for saving even changes had already 
+been saved</span><span class="auto-style5"><br>
+</span>
+<span style="color:maroon" class="auto-style5">
+Private Sub Workbook_BeforeClose(Cancel As Boolean)<br>
+&nbsp;&nbsp;&nbsp; Workbooks(&quot;MyWorkbook&quot;).<b>Saved</b> = False<br>
+End Sub<br>
+</span><span class="auto-style5"><br>
+<span style="color:#339966">&#8216; you can&#8217;t set the Name property of the workbook 
+directly. Name is a property that can only be changed via a method. Change name 
+of workbook via a property, this doesn&#8217;t work:</span></span><br class="auto-style5">
+
+<font face="">
+<span style="color:maroon" class="auto-style5">
+ThisWorkbook.<b>Name</b> = &#8220;MyWorkbook.xls&#8221;<br>
+</span><span class="auto-style5"><br>
+</span><span style="color:#339966" class="auto-style5">&#8217; change 
+name of workbook via a method, this does work:</span><br class="auto-style5">
+<span style="color:maroon" class="auto-style5">
+ThisWorkbook.<b>SaveAs</b> &#8220;MyWorkbook.xls&#8221;<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8217; this 
+gives the name of the activesheet as &#8220;week1&#8221;</span><br class="auto-style5">
+<span style="color:maroon" class="auto-style5">
+ActiveSheet.<b>Name</b> = &#8220;week1&#8221;<br>
+<br>
+</span><span style="font-family:Arial" class="auto-style2">&nbsp;</span><span class="auto-style2"><span style="color:#339966" class="auto-style6">&#8216; 
+This example hides Sheet1</span></span><br class="auto-style5">
+<span style="color:maroon" class="auto-style5">
+Worksheets(&quot;Sheet1&quot;).<b>Visible</b> = False<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' this 
+example makes every sheet in the active workbook visible</span><span class="auto-style5"><br>
+</span>
+<span style="color:maroon" class="auto-style5">
+Sub MakeAllSheetsVisible()<br>
+Dim sh As Worksheet<br>
+&nbsp;&nbsp;&nbsp; For Each sh In Sheets<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sh.<b>Visible</b> = True<br>
+&nbsp;&nbsp;&nbsp; Next sh<br>
+End Sub</span></p>
+<p class="MsoNormal">
+<span style="color:#339966" class="auto-style5">&#8216; this example 
+creates a new worksheet and then sets its Visible property to xlVeryHidden. To 
+use the newSheet object variable in another procedure, you must declare it as a 
+public variable (<b>Public newSheet As Object</b>).<br>
+</span>
+<span style="color:maroon" class="auto-style5">
+Set newSheet = Worksheets.Add<br>
+newSheet.<b>Visible</b> = xlVeryHidden</span></p>
+<p class="auto-style5">Properties 
+can be either read-only or read/write. <b>HasPassword</b> property in Workbook 
+shows True or False according to whether the workbook is protected by a 
+password. HasPassword property is read-only as you can&#8217;t change it to False to 
+remove password protection without knowing the password. The <b>Count</b> 
+property of the Workbooks object defines how many workbooks are loaded into the 
+Excel application, and is read-only. For example, a workbook contains three 
+worksheets and if you could change the Count property to one sheet, the other 
+two sheets of data would be deleted. If a property is read-write, it means you 
+can substitute values into it to provide different effects, depending on the 
+object.</p>
+<p class="auto-style9"><span class="auto-style2">If ActiveWorkbook.</span><span class="auto-style10">HasPassword</span><span class="auto-style2"> = True Then</span><br class="auto-style2">
+<span class="auto-style2">&nbsp;&nbsp;&nbsp; MsgBox &quot;Please login with your password.&quot;</span><br class="auto-style2">
+<span class="auto-style2">Else</span><br class="auto-style2">
+<span class="auto-style2">&nbsp;&nbsp;&nbsp; Cancel = True</span><br class="auto-style2">
+<span class="auto-style2">End If</span><br class="auto-style2">
+<span class="auto-style2">aw = ActiveWorkbook.Worksheets.</span><span class="auto-style10">Count</span><br class="auto-style2">
+<span class="auto-style2">MsgBox &quot;number of sheets in this active workbook is: &quot; &amp; aw</span></p>
+<p class="MsoNormal"><span class="auto-style5">Properties 
+can be manipulated by using code at <i>runtim</i>e when the program is executing 
+and can be changed at <i>design time</i> using properties window in VBE. The 
+following is an example of changing property at design time. The open Workbook 
+is the object and <b>Saved</b> is the property. There is more than one dot 
+separator because objects can have subobjects and properties can have 
+subproperties. The workbook Saved property is set to True and it means you will 
+not get prompted for saving regardless of whether it has been saved or not. In 
+the example below, you place this code in ThisWorkbook&#8217;s
+</span>
+
+<font face="">
+<span style="font-size:10.0pt;font-family:Arial">
+<span class="auto-style5">SheetChange</span></span><span style="font-family:Arial" class="auto-style2"> </span>
+<span class="auto-style5">
+<a target="_blank" href="Sub_VBA/events_macro.htm" style="text-decoration:none" onclick="NewWindow(this.href,'event_macro','750','580','yes');return false">event</a></span><span style="font-size:10.0pt;" class="auto-style6"><span style="font-family:Arial" class="auto-style2">, and every time you 
+make changes to the data in the worksheet, the <b>Saved</b> property will be set 
+back to True. When you close the worksheet, there is no prompt to save because 
+the program will check the Saved property of your worksheet called Sheet1 and 
+set it to True and assume that it is already saved.</span></span></p>
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:Arial">&nbsp;<img border="0" src="Images/suboject_subproperty.gif" width="479" height="46"></span></p>
+<p class="auto-style12">
+Private Sub Workbook_SheetChange(ByVal Sh As Object, ByVal Target 
+As Range)<br>
+&nbsp;&nbsp;&nbsp; Workbooks(&quot;MyWorkbook&quot;).Worksheets(&quot;Sheet1&quot;).Saved = True<br>
+End Sub</p>
+<p><br>
+<b><span style="font-size: 16pt; font-family: Arial"><a name=METHOD>Methods explained</a></span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font></font></font></font><span class="auto-style5">Methods are ways of executing actions based on a particular object. One thing a 
+method might do is manipulate the objects fields and properties. For examples, 
+you use the <b>Open</b> method to open an existing workbook, <b>Activate</b> 
+method to make this workbook the current workbook, <b>Delete</b> method on the 
+worksheets collection, specifying which worksheet you want to delete,<b> SaveAs</b> 
+method to save a workbook with a different filename and/or to a different 
+location, <b>NewWindow</b> method to create a new window for the active 
+workbook, <b>Add</b> method to add new worksheet for the active workbook.</span></p>
+
+<font face="">
+<p class="MsoNormal">
+<span style="color:#339966" class="auto-style5">&#8216; this opens 
+MyWorkbook.xls from C directory</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<font face="">
+<span style="color:maroon" class="auto-style5">Workbooks.<b>Open</b> (&quot;C:\MyWorkbook.xls&quot;)<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+activates the open &#8220;MyWorkbook.xls</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Windows(&quot;MyWorkbook&quot;).<b>Activate</b><br>
+</span><span style="color:#339966" class="auto-style2"><br class="auto-style6">
+</span><span style="color:#339966" class="auto-style5">&#8216; alternatively use this example to activate MyWorkbook.xls</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MyWorkbook&quot;).<b>Activate</b><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+deletes Sheet2 from the active workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet2&quot;).<b>Delete</b><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+saves MyWorkbook.xls to a different path in C directory:</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MyWorkbook&quot;).<b>SaveAs</b> Filename:=&quot;</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:maroon"><span style="color: maroon" class="auto-style5">C\Data\MyWorkbook.xls</span>&quot;<span style="color:maroon" class="auto-style5"><br>
+<br>
+</span>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+creates a new window for the active workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.<b>NewWindow</b><br>
+<br>
+</span><span style="color: #339966; " class="auto-style5">&#8216; 
+this adds a new worksheet to the active workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.Worksheets.<b>Add</b></span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial"><br>
+Calling Methods &#8211; passing by order and passing by name</span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font><span class="auto-style5">The following example SaveAs method passes the mandatory parameter 
+&#8220;Mybook1.xls&#8221;, a password parameter &#8220;kuching&#8221; and a ReadOnlyRecommended 
+parameter. This is called <b>passing by order</b> because the parameters are 
+being passed in the order in which they are defined in the function, separated 
+by commas which are optional parameters (optional parameters are shown with 
+square brackets [ ] ). <a target="_blank" href="Images/optional_parameters.gif" style="text-decoration:none" onclick="NewWindow(this.href,'optional_parameters','820','200','yes');return false">
+Passing by order</a><font color="#0000FF"> </font>can sometimes become 
+complicated with many optional parameters even though we use only three of them 
+as in the example below. Optional parameters that are not being used are shown 
+by the null values between the commas.</span></p>
+
+<font face="">
+<p class="auto-style12">
+Workbooks(&quot;Book1&quot;).SaveAs &quot;C:\Mybook1.xls&quot;, , &quot;kuching&quot;, ,True</p>
+<p class="auto-style5">An 
+alternative way is <b>passing by name</b> method. Passing parameters by name 
+enables you to selectively pass arguments without having to specify null values 
+for arguments you don not want to use. In this method, you can pass the 
+parameters in any order. With this method, the preceding example will be 
+re-written as follow:</p>
+<p class="MsoNormal">
+<span style="color:maroon" class="auto-style5">Workbooks(&quot;Book1&quot;).SaveAs Filename:=&quot;C:\Mybook1.xls&quot;, _</span><span style="color: maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<font face="">
+<span style="color: maroon" class="auto-style5">&nbsp;&nbsp; Password:=&quot;kuching&quot;, ReadOnlyRecommended:=True</span></p>
+<p class="MsoNormal"><br>
+<b><span style="font-size: 16pt; font-family: Arial">Collections explained</span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font><span class="auto-style5">Many types of objects in Excel come in groups. There may be multiple workbooks 
+open in Excel at a given time, and these open workbooks in the Excel application 
+are grouped together into the Workbooks collection. All the workbooks are like 
+objects because they have the same properties and methods. Each workbook may 
+have multiple worksheets and each worksheet can have multiple charts. These 
+multiple objects are gathered together in what&#8217;s called a collection. The 
+collection itself is an object, with its own set of 
+</span>
+
+<font face="">
+<span style="font-family:Arial"> 
+<span class="auto-style5"><a href="#PROPERTY" style="text-decoration:none">properties </a>and 
+<a href="#METHOD" style="text-decoration:none">methods. </a>Worksheets 
+collection has different properties and methods and so it can not be part of the
+Workbooks collection. The same is for the <b>Charts</b> collection which 
+has different properties and methods.</span></span></p>
+<p class="auto-style5">To explain 
+in another way, the Application object has a property called Workbooks, which 
+represents a <b>Workbooks</b> Collection object. It includes a single Workbook 
+object for each workbook currently open in Excel. Similarly, the Workbooks 
+object has a property called Worksheets which is a <b>Worksheets</b> Collection 
+object, including one Worksheet object for each worksheet in the workbook. 
+Collections also have their own properties and methods apart from the objects 
+that they hold. For example, Collections have a <b>Count</b> property that 
+represents the number of objects within the collection, and also have an <b>Add</b> 
+method that adds a new object into the collection.</p>
+<p class="MsoNormal"><b><span style="font-size: 11pt; font-family: Arial">
+Referencing Items in a Collection</span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+I</span></font><span class="auto-style5">n Excel, all objects are either 
+singular objects referenced by name, or objects in a collection reference by 
+index or by name. It is easier to reference an object in a collection is by 
+number. All objects in a collection have a numeric index, starting with 1. To 
+reference an item in a collection by number, simply put the number in 
+parentheses after the collection object. Try the following example.</span></p>
+
+<font face="">
+<p class="auto-style12">
+Option 
+Explicit<br>
+Sub ShowNamesOfSheets()<br>
+Dim shCount As Integer<br>
+Dim iSheet As Integer<br>
+&nbsp;&nbsp;&nbsp; shCount = ActiveWorkbook.Worksheets.Count<br>
+&nbsp;&nbsp;&nbsp; For iSheet = 1 To shCount<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worksheets(iSheet).Activate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Range(&quot;A1&quot;) = Worksheets(iSheet).Name<br>
+&nbsp;&nbsp;&nbsp; Next iSheet<br>
+End Sub</p>
+<span class="auto-style5">The above example shows that 
+collections can be cycled through. <i>Cycling</i> is the best term to describe 
+what happens in a For Each..Next loop as you will see under
+<span style="color:blue">Looping methods</span>. We set up a variable iSheet to 
+store integer values that represent active workbook&#8217;s worksheets count. The code 
+cycles through the worksheets collection, get the name property of each 
+worksheet in turn, then activate each worksheet to store the worksheet names in 
+cell A1 of each worksheet.<br>
+<br>
+Remember this: Objects are things in Excel; Properties are characteristics that 
+define those objects; and Methods are actions that the objects take and that 
+change a few properties along the way. The structure of Excel object model is 
+complicated and you should not be expected to remember every object, collection, 
+property and method within it. If you do not use the automatic list boxes that 
+appear as you type object code in, you will have to constantly refer to
+<a target="_blank" href="Images/ObjectBrowser.gif" style="text-decoration:none" onclick="NewWindow(this.href,'ObjectBrowser','630','600','yes');return false">Object Browser</a> in order 
+to know what command to use next. In the Object Browser, click a class (which is 
+an object) to see all the collection, property and method within it in the 
+Members of Lists box to the right of class. Methods have a green icon (<a target="_blank" href="Images/ObjectBrowser_MethodSyntax.gif" style="text-decoration:none" onclick="NewWindow(this.href,'clicking_a_method','700','570','yes');return false">clicking 
+a method</a> display the syntax for parameters, which ones are optional and 
+mandatory), and properties have a grey icon with a hand symbol holding it (<a target="_blank" href="Images/ObjectBrowser_PropertyType.gif" style="text-decoration:none" onclick="NewWindow(this.href,'clicking_a_property','580','530','yes');return false">clicking 
+a property</a> will show whether it is read-only or if you can write to it).</span><p class="MsoNormal">
+<span class="auto-style5">You can get an overview of the 
+Microsoft Excel Object Model by going to VBE, choose Help/ Microsoft Visual 
+Basic Help. Type <b>excel object model</b> in search box, press Enter. In the 
+search result, click Microsoft Excel Object Model, and you will able to see an 
+overview screen of the </span>
+
+<font face="">
+<span style="font-size:10.0pt;font-family:Arial"> <span class="auto-style5">
+<a target="_blank" href="Sub_VBA/Excel_Object_Model.htm" style="text-decoration:none" onclick="NewWindow(this.href,'Excel_Object_Model','800','730','yes');return false">Excel Object Model</a></span></span><span class="auto-style5">. 
+The yellow shaded boxes are objects that are organized into collections, while 
+the blue shaded boxes are objects that do not have collections. You can click a 
+box to display the Help screen for an individual object or collection including 
+a schematic of the related objects. For example, click on the blue shaded
+</span>
+<span style="font-family:Arial">
+<span class="auto-style5">
+<a target="_blank" href="Sub_VBA/Workbook_object.htm" style="text-decoration:none" onclick="NewWindow(this.href,'Workbook_object','800','730','yes');return false">Workbook object</a> 
+will display the related properties.</span></span></p>
+<p><br>
+<b><span style="font-family: Arial"><font size="5">Main Objects of the Excel 
+Objects Model</font></span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font><span class="auto-style5">There are other collection objects such as <b>Windows</b>, <b>Charts</b>, <b>
+Borders, PivotTables, Validation</b> but <b>Application</b>, <b>Workbooks,</b>
+<b>Worksheets, and Range</b> objects are the main ones.</span></p>
+
+<font face="">
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:Arial">
+Application Object</span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font><span class="auto-style5">Properties: Workbooks, ActiveWindow, ActiveWorkbook, ThisWorkbook, ActiveSheet, 
+ActiveCell, Caption, Selection, Charts, <br>
+</span>
+
+<font face="">
+<span class="auto-style5">ScreenUpdating, DisplayAlerts, UserName, CutCopyMode&#8230;<br>
+Methods: CheckSpelling, Run, Quit&#8230;<br>
+Collections: Rows, Columns, Sheets&#8230;</span></p>
+<p class="MsoNormal">
+<span style="color:#339966" class="auto-style5">&#8216;ActiveCell 
+property represents the active cell the cursor is currently at</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<font face="">
+<span style="color:maroon" class="auto-style5">Application.<b>ActiveCel</b>l.Address<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">
+&#8216;ActiveWindow property represents the active window in Excel</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>ActiveWindow</b>.Caption<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; Caption 
+property holds the caption that is found in the window bar for Excel, example 
+&#8220;Book1.xls&#8221;</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Caption<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; this 
+changes the caption &#8220;Microsoft Excel = Book 1&#8221; to &#8220;MyExcel &#8211; Book1&#8221;</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Caption</b> = &quot;MyExcel&quot;&nbsp;&nbsp;&nbsp;
+</span><font color="#339966">
+<span class="auto-style5">' put in null 
+value will reset it</span></font><span style="color:maroon" class="auto-style5"><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+ActiveWorkbook property displays the name of the active workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>ActiveWorkbook</b>.Name<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+ThisWorkbook property represents where the current macro is executing</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>ThisWorkbook</b>.Name<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+ActiveSheet property represents the active worksheet being displayed</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>ActiveSheet</b>.Cells(1, 2).Select<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+Selection property holds the current selection object. The Address property let 
+you can get the cell address</span><span style="font-family:&quot;Courier New&quot;;
+color:maroon" class="auto-style2">
+</span><span style="color:maroon" class="auto-style2"> <br class="auto-style6">
+</span><span style="font-size:10.0pt;color:maroon" class="auto-style6"> 
+<span style="font-family:&quot;Courier New&quot;;
+color:maroon" class="auto-style2"> Application.<b>Selection</b>.Address<br>
+<br>
+</span>
+</span><span style="color:#339966" class="auto-style5">&#8216; The 
+Worksheet property tells you which sheet the selection is currently on</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Selection</b>.Worksheet.Name<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; UserName 
+property returns the name of the user currently logged on to the Windows system</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>UserName<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; this 
+Rows collection selects row 2</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Rows</b>(2).Select<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+Columns collection selects column 1</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Columns</b>(1).Select<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+Calculate method forces recalculation of the entire spreadsheet similar to 
+pressing F9</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Calculate<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; 
+Calculation property sets the method of calculation used in Excel. Here it sets 
+to Manual mode</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Calculation</b> = xlCalculationManual<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; this 
+property sets to the default automatic calculation</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>Calculation</b> = xlCalculationAutomatic<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; set DisplayAlerts property to False if you don&#8217;t want to see prompts and alert 
+messages while macro is running</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Application.<b>DisplayAlerts</b> = True<br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' set 
+ScreenUpdating property to False to speed up your macro code, and you won't be 
+able to see what the macro is doing<br>
+</span><span style="color: maroon" class="auto-style5">
+Application.<b>ScreenUpdating</b> = True<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8217; Sheets 
+collection represents all the worksheets within the current workbook. 
+PrintPreview method let you preview<br>
+</span>
+<span style="color:maroon" class="auto-style5">
+Application.<b>Sheets</b>(1).PrintPreview<br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' 
+Sheets collection creates a new worksheet and places a list of the active 
+workbook's sheet names in the first column</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Set newSht = <b>Sheets</b>.Add(Type:=xlWorksheet)<br>
+For i = 1 To <b>Sheets</b>.Count<br>
+&nbsp; newSht.Cells(i, 1).Value = <b>Sheets</b>(i).Name<br>
+Next i<br>
+<br>
+</span><span class="auto-style5">You can
+<a href="Sub_VBA/MainApplicationObjects.xls">download</a> as a demo workbook from here</span></p>
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:Arial"><br>
+Workbook Object</span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font><span class="auto-style5">Properties: Worksheets, ActiveSheet, ActiveChart, Name, Path, FullName, 
+FileFormat, HasPassword&#8230;<br>
+Methods: Activate, Save, SaveAs, Close, Protect, PrintOut, PrintPreview&#8230;</span></p>
+
+<font face="">
+<p class="MsoNormal">
+<span style="color: #339966; " class="auto-style5">&#8216; Activate 
+method activates the workbook specified in the Collection object</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<font face="">
+<span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorkbookObjects&quot;).<b>Activate<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; 
+Worksheets collection represents all the worksheets within the workbook object, 
+here is represents Sheet2</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.<b>Worksheets</b>(&quot;Sheet2&quot;).Select<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+ActiveSheet property references the active worksheet within the workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.<b>ActiveSheet</b>.Name<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' FullName 
+property is same as
+</span><span style="font-size:10.0pt;font-family:Arial;color:#339966">
+<span style="color: #339966; " class="auto-style5">Path</span></span><span style="color:#339966" class="auto-style5"> property. It 
+returns the name of the object, including its path on disk, as a string.</span><span style="font-family:&quot;Courier New&quot;;color:maroon" class="auto-style2">
+</span><span style="color:maroon">
+<br class="auto-style5">
+</span>
+<span style="color:maroon" class="auto-style11">ActiveWorkbook.FullName<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+HasPassword returns True or False, depends on whether the workbook is protected 
+by a password</span><span style="color:maroon" class="auto-style11">
+</span>
+<span style="color:maroon" class="auto-style2">
+<br class="auto-style6">
+</span>
+<span style="color:maroon" class="auto-style5">
+Workbooks(<b>&quot;</b>MainWorkbookObjects<b>&quot;</b>).<b>HasPassword<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; 
+Protect method protects the particular workbook with a password called &#8216;william&#8221;</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorkbookObjects&quot;).<b>Protect</b> Password:=&quot;william&quot;<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; 
+PrintPreview method provides a print preview on the active sheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorkbookObjects&quot;).<b>PrintPreview<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; 
+PrintOut method prints out the active sheet of the referenced workbook to the 
+printer</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorkbookObjects&quot;).<b>PrintOut<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; Save 
+method saves your workbook as the same name</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorkbookObjects&quot;).<b>Save<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; 
+SaveAs method save your workbook to a different filename</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.<b>SaveAs</b> <b>FileFormat</b>:=xlNormal, Filename:=&quot;C:\MainWorkbookObjects.xls&quot;<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">&#8216; Saved 
+property is True or False. If your workbook has been saved and no further 
+changes have been made, it displays True. If changes are made and have not been 
+saved, it displays False.</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorkbookObjects&quot;).<b>Saved</b></span></p>
+<p class="MsoNormal">
+<span style="color: #339966" class="auto-style5">' To exit a 
+worksheet without saving any changes that are made to it</span><br class="auto-style5">
+
+<font face="">
+<span style="color:maroon" class="auto-style5">ActiveWorkbook.Saved = True&nbsp;&nbsp; </span>
+<span class="auto-style5">'or, </span><font color="#800000">
+<span class="auto-style5">ActiveWorkbook.Close SaveChanges:=False</span></font><span style="color:maroon" class="auto-style2"><br class="auto-style7">
+</span><span style="color:maroon" class="auto-style5">Application.Quit<b><br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">&#8216; 
+Close method close the workbook in the same way as you select from Excel menu 
+File/Close</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.<b>Close<br>
+<br>
+</b></span><span class="auto-style5">You can
+<a href="Sub_VBA/MainWorkbookObjects.xls">download</a> as a demo workbook from here</span></p>
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:Arial"><br>
+Worksheet Object</span></b><span style="font-size:10.0pt;font-family:Arial"><br>
+</span></font></font></font><span class="auto-style5">Properties: Name, Index, Cells, Columns, Rows, Type, Visible&#8230;<br>
+Methods: Activate, Select, Calculate, Copy, Add, Delete, Move, PrintOut, 
+Protect, Unprotect, SaveAs&#8230;<br>
+Collections: Comments&#8230;<br>
+<br>
+</span>
+
+<font face="">
+<span style="color: #339966; " class="auto-style5">' 
+this Activate method makes the 1st worksheet the active worksheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).<b>Activate</b></span><span class="auto-style5"><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' Name 
+property changes the name of the active worksheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveSheet.<b>Name</b> = &quot;mySheet&quot;<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' Index 
+property displays the tab number of the sheet that you specified</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;mySheet&quot;).<b>Index</b></span><span class="auto-style5"><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' 
+Calculate method calculates the first worksheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).<b>Calculate<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">' this 
+example Comments collection shows how many comments there are in 1st sheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+<span style="color:maroon" class="auto-style5">Worksheets(1).<b>Comments</b>.Count<br>
+<br>
+</span>
+<span style="color:#339966" class="auto-style5">' this Cells property displays 65535, which denotes the number of 
+rows in a worksheet</span><span style="color:maroon" class="auto-style5"><br>
+<b>Cells</b>.Rows.Count</span><span class="auto-style5"><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' the 
+Cells property cycles through a range of cells using For Next loop, and 
+substitute variables for the index numbers</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">&nbsp;&nbsp;&nbsp; Dim Counter As Integer</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">&nbsp;&nbsp;&nbsp; For Counter = 1 To 12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worksheets(1).<b>Cells</b>(Counter, 2).Value = Counter<br>
+&nbsp;&nbsp;&nbsp; Next Counter</span><span class="auto-style2"><br class="auto-style6">
+</span>
+<span class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="color:maroon" class="auto-style5">Cells(1, 2).Select&nbsp;&nbsp; &nbsp;&nbsp;</span><span style="color:#339966" class="auto-style5">&#8216; 
+this selects cell B1<br>
+<br>
+' this Columns property formats column 1 with Bold font</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).<b>Columns</b>(1).Font.Bold = True<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' this 
+Rows property deletes row 1</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).<b>Rows</b>(1).Delete<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' this Add 
+method and Type property add two chart sheets to the active workbook, placing 
+them after sheet two</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Sheets.<b>Add</b> Type:=xlChart, Count:=2, after:=Sheets(2</span><span style="font-family:Arial" class="auto-style2">)</span><span class="auto-style5"><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' this Add 
+method and Type property give the same result as above</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">ActiveWorkbook.Sheets.<b>Add</b> <b>Type</b>:=xlChart, after:=Sheets(Sheets.Count 
+- 2), Count:=2</span><span class="auto-style5"><br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' Protect 
+method protects Sheet1 in &quot;MainWorksheetObjects&quot; workbook with password 'william&quot;. 
+Unprotect, the opposite<br>
+</span>
+<span style="color:maroon" class="auto-style5">
+Workbooks(&quot;MainWorksheetObjects&quot;).Worksheets(1).<b>Protect</b> Contents:=True, 
+Password:=&quot;william&quot;</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Workbooks(&quot;MainWorksheetObjects&quot;).Sheets(1).<b>Unprotect</b> Password:=&quot;william&quot;<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' this 
+example Delete method deletes the 4th worksheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet4&quot;).<b>Delete<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">' 
+these 2 methods to preview or print out the active worksheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).<b>PrintPreview<br>
+</b>Worksheets(1).<b>PrintOut<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">' Move 
+method let you move Sheet2 after Sheet3 in the active workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet2&quot;).<b>Move</b> after:=Worksheets(&quot;Sheet3&quot;)<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' the 
+Visible property hides Sheet3. set it to <b>True</b> will unhide the sheet</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet3&quot;).<b>Visible</b> = False<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' Select 
+method selects a particular worksheet. It select Sheet2</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet2&quot;).<b>Select<br>
+<br>
+</b></span><span style="color:#339966" class="auto-style5">' 
+SaveAs method saves the workbook under a different filename</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet2&quot;).<b>SaveAs</b> (&quot;C:\MyWorksheetObjectsFile&quot;)<br>
+<br>
+</span><span style="color:#339966" class="auto-style5">' this 
+Copy method example let you copy the first Sheet to a new workbook</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).<b>Copy<br>
+<br>
+</b></span><span class="auto-style5">You can
+<a href="Sub_VBA/MainWorksheetObjects.xls">download</a> as a demo workbook from here</span></p>
+<p class="MsoNormal"><span style="font-size: 10.0pt; font-family: Arial"><br>
+</span><b><span style="font-size:14.0pt;font-family:Arial">Range Object<br>
+</span></b><span class="auto-style5">Properties: Count, 
+Column, Columns, Row, Rows, Cells, Address, Value, ColumnWidth, RowWidth,UsedRange&#8230;<br>
+Methods: Activate, Select, Find, Copy, PasteSpecial, Replace, Clear, 
+ClearContents, ClearComments,ClearFormats&#8230;</span></p>
+<p class="MsoNormal">
+<span style="color: #339966" class="auto-style5">' Value 
+property input values to the range A1:C4</span></font><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<font face="">
+<span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C4&quot;).<b>Value</b> = &quot;Mycells&quot;<br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' 
+Cells collection displays how many cell are within the specified range</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span>
+<span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C4&quot;).<b>Cells</b>.Count<br>
+<br>
+</span>
+<span style="color:#339966" class="auto-style5">'&nbsp; Address property display different representations of the 
+same cell A1 on Sheet1</span><code><br class="auto-style5">
+</code><span style="color: maroon" class="auto-style5">
+Set Addr = Worksheets(&quot;Sheet1&quot;).Cells(1, 1)<br>
+MsgBox Addr.<b>Address</b>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>
+
+<span style="color: #339966" class="auto-style5">'&nbsp; 
+it displays $A$1</span><span style="color: maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<span style="color: maroon" class="auto-style5">MsgBox Addr.<b>Address</b>(RowAbsolute:=False)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+<span style="color: #339966" class="auto-style5">'&nbsp; 
+it displays $A1</span><span style="color: maroon" class="auto-style2"><br class="auto-style6">
+</span>
+
+<span style="color: maroon" class="auto-style5">MsgBox Addr.<b>Address</b>(ReferenceStyle:=xlR1C1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+<span style="color: #339966" class="auto-style5">'&nbsp; 
+it displays R1C1</span><span style="color: maroon" class="auto-style5"><br>
+</span><span class="auto-style5">
+<br>
+<span style="color: #339966">'this Copy and PasteSpecial methods copy and paste 
+a range of cells, from 1st to 2nd sheet</span></span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;A1:C4&quot;).<b>Copy<br>
+</b>Worksheets(2).Range(&quot;D1&quot;).<b>PasteSpecial</b></span><span class="auto-style5"><br>
+<br>
+<span style="color: #339966">'this does the same trick as above by skipping the 
+PasteSpecial method</span><br>
+</span>
+<span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;A1:C4&quot;).<b>Copy</b> Worksheets(2).Cells(1, 4)<br>
+<br>
+</span><span class="auto-style5">' this method activates 
+a range of cells to make into active cells</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C4&quot;).<b>Activate<br>
+<br>
+</b></span><span style="color: #339966" class="auto-style5">' 
+Columns and Rows property display the number of columns &amp; rows respectively</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;A1:E8&quot;).<b>Columns</b>.Count<br>
+Worksheets(1).Range(&quot;A1:E8&quot;).<b>Rows</b>.Count<br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' 
+Column &amp; Row property return the 1st column number or the 1st row number within 
+the range<br>
+</span>
+<span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;B4:E8&quot;).<b>Column</b><br>
+Worksheets(1).Range(&quot;B4:E8&quot;).<b>Row<br>
+<br>
+</b></span><span style="color: #339966" class="auto-style5">' 
+ColumnWidth and RowHeight properties sets the width of columns &amp; height of rows</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;A1:E8&quot;).<b>ColumnWidth</b> = 6<br>
+Worksheets(1).Range(&quot;A1:E8&quot;).<b>Rowheight</b> = 14<br>
+<br>
+</span><span style="color: #339966; " class="auto-style5">' 
+replace method replaces a specified character found within the range with 
+another one</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;A1:C4&quot;).<b>Replace</b> &quot;My&quot;, &quot;Testing</span><span style="font-family:Arial" class="auto-style2">&quot;</span><span class="auto-style5"><br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' 
+this property sets whether text will wrap within a cell (True) or stay on one 
+line (False)</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(1).Range(&quot;A1:C4&quot;).<b>WrapText</b> = True<br>
+<br>
+</span><span style="color: #339966; " class="auto-style5">' ClearContents method clears content of a range of cells, but does not clear 
+the format or border</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C4&quot;).<b>ClearContents<br>
+<br>
+</b></span><span style="color: #339966" class="auto-style5">' 
+Clear method clears everything - content, formats, borders</span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Worksheets(&quot;Sheet2&quot;).Range(&quot;A1:C4&quot;).<b>Clear</b></span><span class="auto-style5"><br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' the 
+Find method looks for 1905 in formulas in cells after the active cell, without 
+searching for its <br>
+' cell format. In fact you can skip all the optional parameters to just
+</span><span style="font-size: 10.0pt; font-family: Arial; color: #339966">
+<span style="color: #339966; " class="auto-style5">
+Cells.Find(What:=1905).Activate</span></span><span style="color:maroon" class="auto-style2"><br class="auto-style6">
+</span><span style="color:maroon" class="auto-style5">Cells.<b>Find</b>(What:=&quot;1905&quot;, After:=ActiveCell, LookIn:=xlFormulas, _<br>
+&nbsp;&nbsp; LookAt:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, _<br>
+&nbsp;&nbsp; MatchCase:=False, SearchFormat:=False).Activate<br>
+<br>
+</span><span style="color: #339966" class="auto-style5">' 
+UsedRange Property represents the used range on the active worksheet</span><span style="color:maroon" class="auto-style6"><br class="auto-style2">
+</span><span style="color:maroon" class="auto-style5">ActiveSheet.<b>UsedRange</b>.Select<br>
+<br>
+</span><span class="auto-style5">You can
+<a href="Sub_VBA/MainRangeObjects.xls">download</a> as a demo workbook from here</span><p class="MsoNormal" align="right">
+
+<a href="#TOP" style="color: blue; text-decoration: underline; text-underline: single">
+<font face="Arial" style="font-size: 9pt">Return To Top</font></a><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""><font face=""></td>
+</tr>
+
+<font face="">
+
+<tr>
+
+
+<td valign="top">
+
+    </td>
+  </tr>
+</tbody></table>
+
+
+<table border="0" width="99%" id="table5">
+<tr>
+<td align="center">
+<font face="Courier New">	
+<font size="2">
+
+<br><br>
+  
+  
+<a href="http://s05.flagcounter.com/more/RvMZ"><img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="free counters" border="0"></a>	<br>
+
+
+
+This site was created 
+in Feb.2007 <br>by William Tan</font></font></td>
+</tr>
+</table>
+</font>
+</body>
+</html>

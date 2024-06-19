@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<!-- Mirrored from vbautomation.110mb.com/VBA/excel_fun_staff.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:03 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel Macros/Excel VBA code. Excel VBA Macro Tips for Beginners. Excel 
+Macros Help</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="Description" content="Excel Macros: Excel VBA Macros. Free help on Excel Macros, Free Excel VBA code">
+<meta name="Keywords" content="excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="Poh, William,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Thailand, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(../../www.newmail.ru/pics/channels/a1.gif); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+.auto-style1 {
+	font-family: Tahoma;
+	font-size: 14pt;
+}
+.auto-style2 {
+	font-size: 14pt;
+}
+.auto-style3 {
+	font-family: Tahoma;
+}
+.auto-style4 {
+	font-family: Verdana;
+}
+.auto-style5 {
+	font-size: 11pt;
+}
+.auto-style6 {
+	font-family: Verdana;
+	font-size: 11pt;
+}
+.auto-style9 {
+	text-decoration: none;
+}
+</style>
+<body topmargin="0" leftmargin="0" alink="#000000" background="http://www.110mb.com/404.php" bgcolor="#edf3fa" link="#000000" marginheight="0" marginwidth="0" text="#000000" vlink="#000000">
+
+
+
+<p><br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>
+	<font style="font-size: 75%" class="auto-style3">
+	<span style="text-decoration: none">
+	<a href="../index.htm" class="auto-style9">
+<span class="auto-style2">Home</span></a></span><span class="auto-style2"> |&nbsp;
+	<a href="beginner_basic.htm" class="auto-style9">EXCEL VBA (XL97-2003)</a>&nbsp; |&nbsp;
+	<span style="text-decoration: none">
+	<a href="../EXCEL/excel_under_construction.htm" class="auto-style9">EXCEL VB.Net</a></span>&nbsp; |&nbsp;
+	<a href="../ACCESS/beginner_basic_Acc.htm" class="auto-style9">ACCESS VBA</a>&nbsp; |&nbsp;
+	<a href="../EXCEL/excel_worksheet_functions.htm" class="auto-style9">EXCEL Spreadsheet Functions</a>&nbsp; 
+| <a href="../INVENTORY%20MGMT/index_inv_mgmt.htm" class="auto-style9">
+	Material Management</a>&nbsp; |</span></font><span class="auto-style1">
+</span>
+<font style="font-size: 75%" class="auto-style3">
+	<a href="../AboutMe/Me.htm" class="auto-style9">
+	<span class="auto-style2">About me</span></a><span class="auto-style2">&nbsp; |</span></font><span class="auto-style1">&nbsp; 
+</span>
+<font class="auto-style2">
+	<a href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661" target="_blank" class="auto-style9">
+<span class="auto-style3">Guestbook</span></a></font></p>
+<font face="">
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+<font face="Arial" size="6">
+
+
+
+Having fun with Excel VBA</b></font><font face="Arial" size="2"><br>
+<br>
+<table border="0" width="78%" cellspacing="0" cellpadding="0" id="table5" style="height: 178px">
+	<tr>
+		<td width="28">&nbsp;</td>
+		<td valign="top">
+		<font face="Arial" size="2"><span class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp; In this section I want to show you 
+some interesting and fun staff of the Excel VBA examples, so that if you are a 
+beginner who is just starting to learn to swim in the sea 
+of Visual Basic applications, you will soon realize the power of Visual Basic Programming. 
+Hopefully after you have gone through all my 
+earlier pages of learning VBA knowledge for Excel application, you would be able 
+		to start automating some of your routine and repetitive office 
+work processes, or integrating Excel with Access applications in areas where you 
+		would hope to successfully eliminate some really very time-consuming and energy-sapping 
+manual work routines. Good luck !<br><br></span></font>
+		<font size="2" class="auto-style6">&nbsp;&nbsp;&nbsp; Some of these examples are for demonstration purpose only. Some are contributed 
+by internet community volunteers, and some are my own creations. The codes are 
+strictly NOT for any commercial use but would be allowed only for personal 
+experimentation or for use in your personal works.<br><br>&nbsp;&nbsp;&nbsp; If you like to read more and enhance 
+your VBA skill, the following are some of the popular online forums and websites.<br>
+		<br>
+<a target="_blank" href="http://www.dbforums.com/">http://www.dbforums.com/</a><br><a target="_blank" href="http://www.pcreview.co.uk/">
+<span class="auto-style6">http://www.pcreview.co.uk/</span></a><br><font face="Arial" size="2" class="auto-style5">
+<span class="auto-style4">
+<a target="_blank" href="http://forums.devx.com/">http://forums.devx.com/</a></span></font><br><font face="Arial" size="2" class="auto-style5">
+<span class="auto-style4">
+<a target="_blank" href="http://www.tek-tips.com/">http://www.tek-tips.com/</a></span></font><br><font face="Arial" size="2" class="auto-style5">
+<span class="auto-style4">
+<a target="_blank" href="http://www.cpearson.com/">http://www.cpearson.com</a></span></font><br><font face="Arial" size="2" class="auto-style5">
+<span class="auto-style4">
+<a target="_blank" href="http://j-walk.com/ss/">http://j-walk.com/ss/</a></span></font><br></font><font face="Arial" size="2" class="auto-style5">
+<span class="auto-style4">
+<a target="_blank" href="http://msdn.microsoft.com/archive/default.asp">
+		MSDN 
+Library Archive</a></span></font><br><br>
+
+		</td>
+	</tr>
+</table>
+
+</font>
+<table border="0" width="78%" cellspacing="0" cellpadding="0" height="1247" id="table2">
+	<tr>
+		<td width="28">&nbsp;</td>
+		<td>
+<table border="1" width="100%" id="table3" cellspacing="0" cellpadding="6" align="left">
+	<tr>
+		<td class="auto-style6">Copy data to new worksheets by selecting 
+		your choice using a combo box.</td>
+		<td width="34"><font face="Arial" size="2">
+		<a href="fun_staff/ComboBoxToSelectChoice_AddSheetCopyData.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></font></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Copy the rows data from a master sheet 
+		with only the unique names under the Field &quot;Region&quot; and paste to 
+		individual new worksheets added. It then saves as individual workbooks 
+		to folder C:\Temp\</td>
+		<td width="34"><font face="Arial" size="2">
+		<a href="fun_staff/Copying%20Data%20To%20Multiple%20Workbooks%20(save%20them%20all)%20From%20A%20Master.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></font></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Copy all the data from multiple sheets 
+		except the row 1 heading, loop through one sheet at a time, and paste 
+		append to the master sheet.</td>
+		<td width="34"><a href="fun_staff/CopyMultipleSheetsTo_MasterSheet.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td height="37" class="auto-style6">Create new worksheets for 
+		all the data in the multiple sheets, base on list of unique values in 
+		column A; Another option to save the new worksheets with data already 
+		copied, to your default file path in &quot;My Documents&quot;, with date format in 
+		today's date, hour, minutes, AM or PM.</td>
+		<td width="34" height="37">
+		<a href="fun_staff/CreateNewSheetsNewWorkbooks_forAllUniqueValues.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Create new worksheets with the given 
+		template, base on the list of unique values in column A.</td>
+		<td width="34">
+		<a href="fun_staff/CreateWorksheetsWithTemplate_SheetNamesBaseOnList.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Delete all blank rows and columns in the 
+		CurrentRegion.</td>
+		<td width="34"><a href="fun_staff/Delete_blank_rows_or_columns.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Delete all blank sheets from current 
+		Workbook.</td>
+		<td width="34"><a href="fun_staff/DeleteBlankSheetsfromWorkbook.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Delete all other sheets except for one 
+		or more sheets that you specified to keep.</td>
+		<td width="34">
+		<a href="fun_staff/DeleteAllSheetsExceptSpecifiedSheetNames.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Delete only the specified rows and 
+		columns of the worksheet.</td>
+		<td width="34"><a href="fun_staff/deleteOnlySpecificRowsAndColumns.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Delete all the project VBA Modules, 
+		including the event macro in ThisWorkBook before you save a copy.</td>
+		<td width="34">
+		<a href="fun_staff/DeleteSheetModules_ThisWorkbookMacro_beforeSave.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Add Comment by double-clicking on any 
+		cell in the worksheet.</td>
+		<td width="34"><a href="fun_staff/doubleClick_addComments.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Disable/Enable Cut, Copy, Paste and 
+		PasteSpecial with VB macro.</td>
+		<td width="34"><a href="fun_staff/Disable_CutCopyPaste.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Disable/Enable sorting of data n the 
+		worksheet</td>
+		<td width="34"><a href="fun_staff/Disable_Enable_Sort.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Disable/Enable sheets deletion with VB 
+		macro.</td>
+		<td width="34"><a href="fun_staff/Disable_SheetDeletion.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Disable/Enable new sheets insert with VB 
+		macro.</td>
+		<td width="34"><a href="fun_staff/Disable_SheetInsert.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Disable/Enable rows and columns insert 
+		or delete with VB macro.</td>
+		<td width="34"><a href="fun_staff/Disable_RowColumnInsertDeletion.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Disable users from renaming worksheets with VB 
+		macro.</td>
+		<td width="34">
+		<a href="fun_staff/Disable_SheetRename.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Find headings in row one that has a 
+		Sales*Type string and delete all rows in that column that either do not 
+		have cell values of &quot;Sales&quot; and &quot;Warranty&quot; or the cells are blank; 
+		otherwise keep only rows that meet these criteria.</td>
+		<td width="34">
+		<a href="fun_staff/KeepRowsWithCriteriaMatch_ElseDeleteRow.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Jump to any sheet in the workbook by 
+		letting you quickly select from a drop-down list of sheet names.</td>
+		<td width="34"><a href="fun_staff/QuickSheetsSelect.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">ListBox to select and copy the selected 
+		rows to another worksheet.</td>
+		<td width="34">
+		<a href="fun_staff/Listbox_MoveSelectedDataRows_ToAnotherSheet.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Prevent users save as a different 
+		worksheet name, except only save as its default worksheet name</td>
+		<td width="34">
+		<a href="fun_staff/prevent_saveas_different_filename.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Prevent users from using SaveAs (as a 
+		different worksheet name, in the same or in a different location), 
+		except only save in its same default worksheet name in the same 
+		directory.</td>
+		<td width="34"><a href="fun_staff/prevent_usingSaveAs.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Segregate the text from the numeric 
+		values in the textual-numeric strings.</td>
+		<td width="34"><a href="fun_staff/SegregateTextFromNumeric.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">SpinButton to navigate through each Page 
+		Field of the Pivot Table, showing data for each selected criteria.</td>
+		<td width="34"><a href="fun_staff/PivotTablePage_SpinnerButtons.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">Using Union method in a worksheet level 
+		event procedure to keep users out of a restricted range.</td>
+		<td width="34"><a href="fun_staff/forbid_range.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+	<tr>
+		<td class="auto-style6">When the execution of code ended, this 
+		worksheet will be permanently deleted. The code should be used together 
+		some trial period procedure after a certain expiry date (for example, 
+		like using: If Application.WorksheetFunction.Date &gt; &quot;1/1/2006&quot; Then... 
+		or when users failed to correctly login with a password after an allowed 
+		number of trials, then permanently delete the workbook after the user 
+		closes it.</td>
+		<td width="34"><a href="fun_staff/suicide.xls">
+		<img border="0" src="save_icon.gif" width="34" height="34"></a></td>
+	</tr>
+</table>
+
+		</td>
+	</tr>
+</table>
+
+<font face="">
+
+
+<table border="0" width="78%" id="table4">
+<tr>
+<td align="center">
+<font class="auto-style4">	
+<font size="2" class="auto-style5">
+
+
+
+<br><br>This site was created in Feb.2007<br>by William Tan<br><br></font></font></td>
+</tr>
+</table>
+
+</font>
+
+</body>
+
+
+<!-- Mirrored from vbautomation.110mb.com/VBA/excel_fun_staff.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:41 GMT -->
+</html>
