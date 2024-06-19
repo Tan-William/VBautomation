@@ -1,0 +1,152 @@
+<html>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/CopyObjectAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:47 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<table border="0" width="97%" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="14">&nbsp;</td>
+		<td>
+		<p class="nav" align="left"><font face="Verdana" style="font-size: 75%">
+		<span style="text-decoration: none">
+		<a style="color: #0033FF" href="../../index.htm">
+		<span style="text-decoration: none">Home</span></a></span> |&nbsp;
+		<a style="color: #0033FF" href="../../VBA/beginner_basic.htm">
+		<span style="text-decoration: none">EXCEL VBA</span>
+		<span style="text-decoration: none">(XL97-2003)</span></a>&nbsp; |&nbsp;
+		<span style="text-decoration: none">
+		<a style="color: #0033FF" href="../../EXCEL/excel_under_construction.htm">
+		<span style="text-decoration: none">EXCEL VB.Net</span></a></span>&nbsp; 
+		|&nbsp; <a style="color: #0033FF" href="../beginner_basic_Acc.htm">
+		<span style="text-decoration: none">ACCESS VBA</span></a>&nbsp; |&nbsp;
+		<a style="color: #0033FF" href="../../EXCEL/excel_worksheet_functions.htm">
+		<span style="text-decoration: none">EXCEL Spreadsheet Functions</span></a>&nbsp; 
+		|&nbsp; 
+		<a style="color: #0033FF" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+		<span style="text-decoration: none">Material Management</span></a>&nbsp; |&nbsp;
+		<a style="color: #0033FF" href="../../AboutMe/Me.htm">
+		<span style="text-decoration: none">About me</span></a></font><br>
+&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="14" height="50">&nbsp;</td>
+		<td height="50"><b><font size="5">CopyObject Action</font></b><p>
+		<font size="2" face="Arial">You can use the CopyObject action to copy 
+		the specified database object to a different Microsoft Access database 
+		(.mdb) or to the same database or Access project (.adp) under a new 
+		name. For example, you can copy or back up an existing object in another 
+		database or quickly create a similar object with a few changes.</font></p>
+		<p><font size="2" face="Arial">The CopyObject action has the following 
+		arguments.</font></p>
+		<p><font size="2" face="Arial">To run the CopyObject action in Visual 
+		Basic, use the <font color="#800000"><b class="ui">CopyObject</b></font> 
+		method of the <font color="#800000"><b class="ui">DoCmd</b></font> 
+		object. The following example uses the Access DoCmd CopyObject method to 
+		copy the Employees table and give it a new name in the current database:<br>
+		<br>
+		</font>
+		<font color="#800000" face="Courier New" size="2">DoCmd.CopyObject, &quot;Employees_SourceFileName&quot;, 
+		acTable, &quot;Employees_DestinationFileName&quot;</font></p>
+		<p><font face="Arial" size="2">AcObjectType can be one of these 
+		AcObjectType constants.<br>
+		</font><font face="Arial" size="2" color="#800000"><br>
+		acDataAccessPage <br>
+		acDefault default <br>
+		acDiagram <br>
+		acForm <br>
+		acFunction <br>
+		acMacro <br>
+		acModule <br>
+		acQuery <br>
+		acReport <br>
+		acServerView <br>
+		acStoredProcedure <br>
+		acTable <br>
+&nbsp;</font></p>
+		<table id="table2" cellspacing="0" cellpadding="0" border="1" bordercolor="#C0C0C0">
+			<tr>
+				<th bgcolor="#CCCCCC"><font size="2" face="Arial">Action 
+				argument</font></th>
+				<th><font size="2" face="Arial">Description</font></th>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCCC"><font size="2" face="Arial">Destination 
+				Database</font></td>
+				<td><font size="2" face="Arial">A valid path and file name for 
+				the destination database. Enter the path and file name in the
+				<b class="ui">Destination Database</b> box in the <b class="ui">
+				Action Arguments</b> section of the Macro window. Leave this 
+				argument blank if you want to select the current database.
+				</font>
+				<p><font face="Arial"><b><font size="2">Note</font></b><font size="2">&nbsp;&nbsp;This 
+				argument is only available in the Access database environment (.mdb). 
+				When using this action in an Access project environment (.adp),
+				</font></font><font size="2" face="Arial">you must leave the 
+				destination object argument blank.</font></p>
+				<p><font size="2" face="Arial">If you run a macro containing the 
+				CopyObject action in a library database and leave this argument 
+				blank, Access will copy the object into the library database.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCCC"><font size="2" face="Arial">New Name</font></td>
+				<td><font size="2" face="Arial">A new name for the object. When 
+				copying to a different database, leave this argument blank to 
+				keep the same name.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCCC"><font size="2" face="Arial">Source Object 
+				Type</font></td>
+				<td><font size="2" face="Arial">The object type you want to 
+				copy. Click <b class="ui">Table</b>, <b class="ui">Query</b>,
+				<b class="ui">Form</b>, <b class="ui">Report</b>, <b class="ui">
+				Macro</b>, <b class="ui">Module</b>, <b class="ui">Data Access 
+				Page</b>, <b class="ui">Server View</b>, <b class="ui">Diagram</b>,
+				<b class="ui">Stored Procedure</b>, or <b class="ui">Function</b>. 
+				To copy the object selected in the Database window, leave this 
+				argument blank.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCCC"><font size="2" face="Arial">Source Object 
+				Name</font></td>
+				<td><font size="2" face="Arial">The name of the object to be 
+				copied. The <b class="ui">Source Object Name</b> box shows all 
+				objects in the database of the type selected by the Source 
+				Object Type argument. In the <b class="ui">Source Object Name</b> 
+				box, click the object to copy. If you leave the Source Object 
+				Type argument blank, leave this argument blank also. </font>
+				<p><font size="2" face="Arial">If you run a macro containing the 
+				CopyObject action in a library database, Access looks for the 
+				object with this name first in the library database, then in the 
+				current database.</font></td>
+			</tr>
+		</table>
+		<p><font size="2" face="Arial">Remarks: You must enter a value for 
+		either one or both of the Destination Database and New Name arguments 
+		for this action.</font></p>
+		<p><font size="2" face="Arial">If you leave the Source Object Type and 
+		Source Object Name arguments blank, Access copies the object selected in 
+		the Database window. To select an object in the Database window, you can 
+		use the SelectObject action with the In Database Window argument set to
+		<b class="ui">Yes</b>.</font></p>
+		<p><font size="2" face="Arial">The CopyObject action is similar to 
+		selecting an object in the Database window, clicking <b class="ui">Copy</b> 
+		on the <b class="ui">Edit</b> menu, and then clicking <b class="ui">
+		Paste</b> on the <b class="ui">Edit</b> menu. The <b class="ui">Paste As</b> 
+		dialog box appears so that you can give the object a new name. The 
+		CopyObject action performs all of these steps automatically.</font></p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/CopyObjectAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:47 GMT -->
+</html>

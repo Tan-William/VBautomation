@@ -1,0 +1,107 @@
+
+Private Sub cboSearchStudent_Click()
+
+'Selecting value form combo box opens up Student
+'information form to display related information.
+Dim stDocName As String
+Dim stLinkCriteria As String
+
+stDocName = "frmStudentDetails"
+
+stLinkCriteria = "[strStudentNumber]=" & "'" & Me![cboSearchStudent] & "'"
+DoCmd.OpenForm stDocName, , , stLinkCriteria
+
+DoCmd.Close acForm, "frmSearchForStudent"
+
+'Close Search Form on selection
+'acSaveNo actions no saves on the form
+DoCmd.Close acForm, "frmSearchForm", acSaveNo
+
+End Sub
+
+
+
+Private Sub cmdClose_Click()
+
+'Open switchboard if closed without search
+DoCmd.OpenForm "frmSwitchboard"
+
+'Close Search form
+DoCmd.Close acForm, "frmSearchForStudent"
+End Sub
+
+
+'Graham Thorpe 25-01-02
+'--------------------------------------------------------------
+Private Sub cmdSearch_Click()
+Dim strStudentRef As String
+Dim strSearch As String
+
+'Check txtSearch for Null value or Nill Entry first.
+
+If IsNull(Me![txtSearch]) Or (Me![txtSearch]) = "" Then
+MsgBox "Please enter a value!", vbOKOnly, "Invalid Search Criterion!"
+Me![txtSearch].SetFocus
+Exit Sub
+End If
+'---------------------------------------------------------------
+
+'Performs the search using value entered into txtSearch
+'and evaluates this against values in strStudentID
+
+DoCmd.ShowAllRecords
+DoCmd.GoToControl ("strStudentID")
+DoCmd.FindRecord Me!txtSearch
+
+strStudentID.SetFocus
+strStudentRef = strStudentID.Text
+txtSearch.SetFocus
+strSearch = txtSearch.Text
+
+'If matching record found sets focus in strStudentID and shows msgbox
+'and clears search control
+
+If strStudentRef = strSearch Then
+MsgBox "Match Found For: " & strSearch, , "Congratulations!"
+strStudentID.SetFocus
+txtSearch = ""
+
+'If value not found sets focus back to txtSearch and shows msgbox
+Else
+MsgBox "Match Not Found For: " & strSearch & " - Please Try Again.", _
+, "Invalid Search Criterion!"
+txtSearch.SetFocus
+End If
+End Sub
+
+Private Sub cmdOpenReport_Click()
+    ' Purpose:  Opens the report selected in the list box.
+    On Error GoTo cmdOpenReport_ClickErr
+    If Not IsNull(Me.lstReports) Then
+        DoCmd.OpenReport Me.lstReports, IIf(Me.chkPreview.Value, acViewPreview, acViewNormal)
+    End If
+    Exit Sub
+
+cmdOpenReport_ClickErr:
+    Select Case Err.Number
+    Case 2501   ' Cancelled by user, or by NoData event.
+        MsgBox "Report cancelled, or no matching data.", vbInformation, "Information"
+    Case Else
+        MsgBox "Error " & Err & ": " & Error$, vbInformation, "cmdOpenReport_Click()"
+    End Select
+    Resume Next
+End Sub
+Docmd.OpenForm "NameOfPopupForm",,,,,acDialog
+If IsNull(Forms!NameOfPopupForm!ClientID) Then
+   Msgbox "A new client was not entered!"
+Else
+   Dim Rst As DAO.Recordset
+   Set Rst = Me.RecordsetClone
+   Rst.FindFirst "[ClientID] = " & Forms!NameOfPopupForm!ClientID
+   Me.BookMark = Rst.BookMark
+   Rst.Close
+   Set Rst = Nothing
+End If
+DoCmd.Close acForm, "NameOfPopupForm"
+
+

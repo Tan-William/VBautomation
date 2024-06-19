@@ -1,0 +1,111 @@
+<html>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/RunCommandAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:48 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<table border="0" width="97%" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="14">&nbsp;</td>
+		<td>
+		<p class="nav" align="left"><font face="Verdana" style="font-size: 75%">
+		<span style="text-decoration: none">
+		<a style="color: #0033FF" href="../../index.htm">
+		<span style="text-decoration: none">Home</span></a></span> |&nbsp;
+		<a style="color: #0033FF" href="../../VBA/beginner_basic.htm">
+		<span style="text-decoration: none">EXCEL VBA</span>
+		<span style="text-decoration: none">(XL97-2003)</span></a>&nbsp; |&nbsp;
+		<span style="text-decoration: none">
+		<a style="color: #0033FF" href="../../EXCEL/excel_under_construction.htm">
+		<span style="text-decoration: none">EXCEL VB.Net</span></a></span>&nbsp; 
+		|&nbsp; <a style="color: #0033FF" href="../beginner_basic_Acc.htm">
+		<span style="text-decoration: none">ACCESS VBA</span></a>&nbsp; |&nbsp;
+		<a style="color: #0033FF" href="../../EXCEL/excel_worksheet_functions.htm">
+		<span style="text-decoration: none">EXCEL Spreadsheet Functions</span></a>&nbsp; 
+		|&nbsp;
+		<a style="color: #0033FF" href="../../INVENTORY%20MGMT/index_inv_mgmt.htm">
+		<span style="text-decoration: none">Material Management</span></a>&nbsp; |&nbsp;
+		<a style="color: #0033FF" href="../../AboutMe/Me.htm">
+		<span style="text-decoration: none">About me</span></a></font><br>
+&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="14" height="50">&nbsp;</td>
+		<td height="50"><b><font size="5">RunCommand</font><font size="5"> 
+		Action</font></b><p><font size="2" face="Arial">You can use the 
+		RunCommand action to run a built-in Microsoft Access command. The 
+		command may appear on an Access menu bar, toolbar, or shortcut menu. 
+		There is some overlap between DoCmd and RunCommand actions. The DoCmd 
+		method often gives you more control over equivalent RunCommand methods.</font></p>
+		<p><font size="2" face="Arial">To run the RunCommand action in Visual 
+		Basic, use the <b class="ui">RunCommand</b> method of the <b class="ui">
+		DoCmd</b> object. For example, below the RunCommand causes the COM add 
+		in manager to popup.</font></p>
+		<p><font face="Courier New" color="#800000">Docmd.RunCommand 
+		acCmdAddInManager</font></p>
+		<p><font size="2" face="Arial">The RunCommand action has the following 
+		action argument.</font></p>
+		<table id="table2" cellspacing="0" cellpadding="0" border="1" bordercolor="#C0C0C0">
+			<tr>
+				<th bgcolor="#CCCCCC">
+				<p align="left"><font size="2" face="Arial">Action argument</font></th>
+				<th><font size="2" face="Arial">Description</font></th>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCCC"><font size="2" face="Arial">Command</font></td>
+				<td><font size="2" face="Arial">The name of the command you want 
+				to run. The <b class="ui">Command</b> box shows a long list of 
+				the available built-in commands in Access, in alphabetical 
+				order. This is a required argument. See below snapshot.</font></td>
+			</tr>
+		</table>
+		<p>
+		<img border="0" src="../images/RunCommandAction.gif" width="376" height="209"></p>
+		<p><font size="2" face="Arial">Remarks:</font></p>
+		<p><font size="2" face="Arial">In Access 97, the RunCommand action 
+		replaced the <b>DoMenuItem</b> method of the <b>DoCmd</b> object. When 
+		you open and save a macro from a previous version of Access that 
+		contains a DoMenuItem action, the action and its action arguments will 
+		automatically be converted to the equivalent RunCommand action. The 
+		DoMenuItem action no longer appears in the list of actions in the Macro 
+		window.</font></p>
+		<p><font size="2" face="Arial">You can use the RunCommand action to run 
+		an Access command from a custom menu bar, global menu bar, custom 
+		shortcut menu, or global shortcut menu. However, it's normally easier to 
+		use the <b class="ui">Customize</b> dialog box, available by pointing to
+		<b class="ui">Toolbars</b> on the <b class="ui">View</b> menu and 
+		clicking <b class="ui">Customize</b>, to add Access commands to custom 
+		menus and shortcut menus. The <b class="ui">Commands</b> tab on the
+		<b class="ui">Customize</b> dialog box lists the built-in Access 
+		commands that appear on the Access toolbars and menus.</font></p>
+		<p><font size="2" face="Arial">You can use the RunCommand action in a 
+		macro with conditional expressions (eg. If..Then..Else, Select Case) to 
+		run a command depending on certain conditions.</font></p>
+		<p><font face="Arial"><b><font size="2">Note:</font></b></font></p>
+		<p><font size="2" face="Arial">The <b class="ui">File</b> menu shows the 
+		most recently used databases. You can click one of these databases 
+		instead of clicking <b class="ui">Open Database</b>. These database 
+		items don't appear in the drop-down list box for the Command argument, 
+		and aren't available by using the RunCommand action in a macro.</font></p>
+		<p><font size="2" face="Arial">When you convert an Access database from 
+		a previous version of Access, some commands may no longer be available. 
+		A command may have been renamed, moved to a different menu, or may no 
+		longer be available in Access. The DoMenuItem actions for such commands 
+		can't be converted to RunCommand actions. When you open the macro, 
+		Access will display a RunCommand action with a blank Command argument 
+		for such commands. You must edit the macro and enter a valid command 
+		argument, or delete the RunCommand action.</font></td>
+	</tr>
+</table>
+
+</body>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/RunCommandAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:49 GMT -->
+</html>

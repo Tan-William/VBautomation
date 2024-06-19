@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>External Data - Mixed Data Types</title>
+</head>
+
+<body>
+
+<h2><font face="Verdana">External Data - Mixed Data Types</font></h2>
+<div>
+	<font face="Verdana" size="2">June 03, 2004, 12:50 pm by
+	Dick Kusleika</a><br>
+&nbsp;</div>
+<div>
+	<font face="Verdana" size="2">This is a newsgroup post from OneDayWhen. He’s 
+	an expert (in my opinion) on External Data. The issue he discusses is that 
+	of mixed data types. If you have, for instance, both strings and numerics in 
+	one external data column, you can get unexpected results - like some of your 
+	data doesn’t show up.</font><p><font face="Verdana" size="2">This is a 
+	common problem in the newsgroups and this is the best post I’ve ever seen on 
+	the subject. As OneDayWhen says himself, it needs looking after. Therefore, 
+	I’m posting it here in its entirety for all time.</font></p>
+	<blockquote>
+		<p><font face="Verdana" size="2">Here my notes on the subject: (look 
+		after them; as my granddad used to<br>
+		say, ‘I won’t be around forever, there’ll be one day when you’ll have<br>
+		to fend for yourself, sonny’):</font></p>
+		<p><font face="Verdana" size="2">The relevant registry keys (for Jet 
+		4.0) are in:</font></p>
+		<p><font face="Verdana" size="2">Hkey_Local_Machine/Software/Microsoft/Jet/4.0/Engines/Excel/</font></p>
+		<p><font face="Verdana" size="2">The ImportMixedTypes registry key is 
+		always read (whether it is<br>
+		honored is discussed later). You can test this by changing the key to<br>
+		ImportMixedTypes=OneDayWhen and trying to use the ISAM: you get the<br>
+		error, ‘Invalid setting in Excel key of the Engines section of the<br>
+		Windows Registry.’ The only valid values are:</font></p>
+		<p><font face="Verdana" size="2">ImportMixedTypes=Text<br>
+		ImportMixedTypes=Majority Type</font></p>
+		<p><font face="Verdana" size="2">Data type is determined column by 
+		column. ‘Majority Type’ means a<br>
+		certain number of rows (more on this later) in each column are scanned<br>
+		and the data types are counted. Both a cell’s value and format are<br>
+		used to determine data type. The majority data type (i.e. the one with<br>
+		the most rows) decides the overall data type for the entire column.<br>
+		There’s a bias in favor os numeric in the event of a tie. Rows from<br>
+		any minority data types found that can’t be cast as the majority data<br>
+		type will be returned with a null value.</font></p>
+		<p><font face="Verdana" size="2">For ImportMixedTypes=Text, the data 
+		type for the whole column will be:</font></p>
+		<p><font face="Verdana" size="2">Jet (MS Access UI): ‘Text’ data type<br>
+		DDL: VARCHAR(255)<br>
+		ADO: adWChar (’a null-terminated Unicode character string’)</font></p>
+		<p><font face="Verdana" size="2">Note that this is distinct from:</font></p>
+		<p><font face="Verdana" size="2">Jet (MS Access UI): ‘Memo’ data type<br>
+		DDL: N/A<br>
+		ADO: adLongVarWChar (’a long null-terminated Unicode string value’)</font></p>
+		<p><font face="Verdana" size="2">ImportMixedTypes=Text will curtail text 
+		at 255 characters as ‘Memo’ is<br>
+		cast as ‘Text’. For a column to be recognized as ‘Memo’, majority type<br>
+		must be detected, meaning the majority of rows detected must contain<br>
+		256 or more characters.</font></p>
+		<p><font face="Verdana" size="2">But how many rows are scanned for each 
+		column before is decided that<br>
+		mixed and/or what the majority type is? There is a second registry<br>
+		Key, TypeGuessRows. This can be a value from 0-16 (decimal). A value<br>
+		from 1 to 16 inclusive is the number of rows to scan. A value of zero<br>
+		means all rows will be scanned.</font></p>
+		<p><font face="Verdana" size="2">There is one final twist. A setting of 
+		IMEX=1 in the connection<br>
+		string’s extended property determines whether the ImportMixedTypes<br>
+		value is honored. IMEX refers to IMport EXport mode. There are three<br>
+		possible values. IMEX=0 and IMEX=2 result in ImportMixedTypes being<br>
+		ignored and the default value of ‘Majority Types’ is used. IMEX=1 is<br>
+		the only way to ensure ImportMixedTypes=Text is honored. The resulting<br>
+		connection string might look like this:</font></p>
+		<p><font face="Verdana" size="2">Provider=Microsoft.Jet.OLEDB.4.0;<br>
+		Data Source=C:\ db.xls;<br>
+		Extended Properties=’Excel 8.0;HDR=Yes;IMEX=1&#8242;</font></p>
+		<p><font face="Verdana" size="2">Finally, although it is mentioned in 
+		MSDN articles that MAXSCANROWS<br>
+		can be used in the extended properties of the connection string to<br>
+		override the TypeGuessRows registry keys, this seems to be a fallacy.<br>
+		Using MAXSCANROWS=0 in this way never does anything under any<br>
+		circumstances. Put another way, is has just the same effect as putting<br>
+		ONEDAYWHEN=0 in the extended properties, being none (not even an<br>
+		error!). The same applied to ImportMixedTypes i.e. can’t be used in<br>
+		the connection string to override the registry setting.</font></p>
+		<p><font face="Verdana" size="2">In summary, use TypeGuessRows to get 
+		Jet to detect whether a ‘mixed<br>
+		types’ situation exists or use it to ‘trick’ Jet into detecting a<br>
+		certaint data type as being the majority type. In the event of a<br>
+		‘mixed types’ situation being detected, use ImportMixedTypes to tell<br>
+		Jet to either use the majority type or coerce all values as ‘Text’<br>
+		(max 255 characters). </font></p>
+	</blockquote>
+</div>
+
+</body>
+
+</html>

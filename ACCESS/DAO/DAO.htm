@@ -1,0 +1,530 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The end result is that we will h</title>
+</head>
+
+<body>
+
+<p align="left"><font size="2">The end result is that we will have a field 
+called Allergy that we can place on our report.&nbsp;<br>
+Here is the VBA code that concatenates the records (field columns)&nbsp; to a 
+single text field:</font></p>
+<p align="left"><font size="2">Public Function concat_alrgy(Patient_ID)<br>
+Dim rst As DAO.Recordset<br>
+Dim db As DAO.Database<br>
+Dim hold_alrgy As String<br>
+Set db = CurrentDb<br>
+hold_alrgy = &quot;&quot;<br>
+<br>
+<font color="#008000">'&nbsp; clear out old list<br>
+</font><br>
+DoCmd.RunSQL (&quot;delete * from t_patient_alrgy&quot;)<br>
+<br>
+<font color="#008000">'&nbsp; start creating new list<br>
+<br>
+'&nbsp; select list of records for this patient<br>
+</font><br>
+Set rst = db.OpenRecordset(&quot;SELECT Allergy &quot; &amp; _<br>
+&quot; FROM L_alrgy INNER JOIN M_Patient_alrgy &quot; &amp; _<br>
+&quot; ON L_alrgy.Allergy_ID = M_Patient_alrgy.Allergy_ID &quot; &amp; _<br>
+&quot; WHERE Patient_ID=&quot; &amp; Patient_ID)<br>
+<br>
+<font color="#008000">'&nbsp; skip process if there are no items in the list</font><br>
+<br>
+If rst.BOF Or rst.EOF = True Then GoTo jump_out<br>
+&nbsp; rst.MoveFirst<br>
+<br>
+<font color="#008000">&nbsp; '&nbsp; start Concatenate Multiple Records to Text Field</font><br>
+<br>
+Do While Not rst.EOF<br>
+&nbsp; If hold_alrgy = &quot;&quot; Then<br>
+&nbsp;&nbsp;&nbsp; hold_alrgy = rst!Allergy<br>
+&nbsp; Else<br>
+&nbsp;&nbsp;&nbsp; hold_alrgy = hold_alrgy &amp; &quot;; &quot; &amp; rst!Allergy<br>
+&nbsp; End If<br>
+&nbsp; rst.MoveNext<br>
+Loop<br>
+&nbsp; <font color="#008000">'&nbsp; end Concatenate Multiple Records to Text Field</font><br>
+jump_out:<br>
+rst.Close<br>
+Set rst = Nothing<br>
+<br>
+<font color="#008000">'&nbsp; load the concatenated&nbsp; list</font><br>
+<br>
+DoCmd.RunSQL (&quot;INSERT INTO T_Patient_alrgy ( Patient_ID, Allergy ) &quot; &amp; _<br>
+&quot; SELECT &quot; &amp; Patient_ID &amp; &quot;,'&quot; &amp; hold_alrgy &amp; &quot;'&quot;)<br>
+<br>
+End Function</font></p>
+<hr color="#C0C0C0" width="97%" size="1">
+
+<p align="left"><font size="2">These orders get faxed to the manufacturer and 
+then we want the program to update and clear out various tables to indicate that 
+the faxes have been done and when they were done.<br>
+<br>
+There are basically three tables involved in our Access transaction processing 
+tutorial:<sub> </sub><br>
+&nbsp;</font></p>
+<ol>
+	<li>
+	<p align="left"><font size="2">M_Odr_Dtl - containing each Widget order
+	</font></li>
+	<li>
+	<p align="left"><font size="2">T_Mnu_Odr - a temporary table used to 
+	selectively send out Widget orders to any of several Widget manufacturers.
+	</font></li>
+	<li>
+	<p align="left"><font size="2">M_Mnu_Odr - a table that stores the details 
+	of each order that has been faxed to the manufacturers. </font></li>
+</ol>
+<p align="left"><font size="2">The process goes as follows:&nbsp; (Note that a 
+procedure for faxing the orders has already taken place) <br>
+&nbsp; </font></p>
+<ol>
+	<li>
+	<p align="left"><font size="2">Check to see if orders have been faxed </font>
+	</li>
+	<li>
+	<p align="left"><font size="2">User is asked for a faxed date - usually this 
+	is today </font></li>
+	<li>
+	<p align="left"><font size="2">Insert each faxed order into our M_Mnu_Odr 
+	table </font></li>
+	<li>
+	<p align="left"><font size="2">Then we update a field in the M_Odr_Dtl table 
+	with each of the newly create M_Mnu_Odr records, creating a link between 
+	these two tables </font></li>
+	<li>
+	<p align="left"><font size="2">Clear out the appropriate records in the 
+	T_Mnu_Odr table </font></li>
+</ol>
+<p align="left"><font size="2">The visual basic code uses DAO.&nbsp; The code for ADO 
+would be very similar.&nbsp; The key to all of this is the nesting of the VB 
+BeginTrans instructions and the VB Rollback code in each of the error 
+handlers.&nbsp;&nbsp; Ideally I would have indented the nested transactions but I don't 
+have enough room on the screen to make it readable.</font></p>
+<p align="left"><font size="2">Private Sub Command4_Click() <br>
+Dim strInput As String, myformat As String, Thedate As Date <br>
+Dim rst As DAO.Recordset <br>
+Dim rst2 As DAO.Recordset <br>
+Dim rst3 As DAO.Recordset <br>
+Dim rst4 As DAO.Recordset <br>
+Dim db As DAO.Database <br>
+Dim wksp As DAO.Workspace <br>
+Dim sqltext As String <br>
+' <br>
+Set db = CurrentDb <br>
+Set rst = db.OpenRecordset(&quot;select count(faxed) as icount from t_Mnu_Odr &quot; &amp; _
+<br>
+&quot;where faxed=true and Manufacturer_ID=&quot; &amp; Me.Manufacturer_ID) <br>
+' <br>
+rst.MoveFirst <br>
+If rst!icount = 0 Then <br>
+&nbsp;&nbsp;&nbsp; MsgBox &quot;You have not faxed these orders yet.&nbsp; They will not be marked as 
+done.&quot; <br>
+&nbsp;&nbsp;&nbsp; rst.Close <br>
+&nbsp;&nbsp;&nbsp; Exit Sub <br>
+End If <br>
+rst.Close <br>
+' <br>
+myformat = Format(Date, &quot;mm/dd/yyyy&quot;) <br>
+' <br>
+strInput = InputBox(&quot;Today's Date or enter another date&quot;, &quot;Faxed Date&quot;, myformat)
+<br>
+If strInput = &quot;&quot; Then <br>
+&nbsp;&nbsp;&nbsp; MsgBox &quot;This function has been canceled.&quot; <br>
+&nbsp;&nbsp;&nbsp; Exit Sub <br>
+End If <br>
+' <br>
+On Error GoTo bad_date <br>
+Thedate = CDate(strInput) <br>
+GoTo Good_date <br>
+bad_date: <br>
+MsgBox Err.Description &amp; vbCrLf &amp; &quot;&nbsp; The date you entered may not be in a 
+standard &quot; &amp; _ <br>
+&quot;format.&nbsp; Try mm/dd/yyyy.&nbsp; This operation has been canceled&quot; <br>
+' <br>
+Resume exit_it <br>
+' <br>
+Good_date: <br>
+' <br>
+Set wksp = DBEngine.Workspaces(0) <br>
+'<br>
+<font color="#008000">'-------------------------- setup for 1st transaction 
+processing loop -------------------- <br>
+' start by getting the list of order details to insert into M_Mnu_Odr table <br>
+' </font><br>
+sqltext = &quot; SELECT T_Mnu_Odr.Manufacturer_ID, &quot; &amp; _ <br>
+&quot;T_Mnu_Odr.Order_Detail_ID,&quot; &amp; _ <br>
+&quot;#&quot; &amp; Thedate &amp; &quot;# as tdate FROM T_Mnu_Odr &quot; &amp; _ <br>
+&quot;WHERE T_Mnu_Odr.Manufacturer_ID=&quot; &amp; _ <br>
+Me.Manufacturer_ID <br>
+' <br>
+<font color="#008000">' we don't need transaction processing on the next 
+recordset because we<br>
+' are only reading it <br>
+' </font><br>
+Set rst3 = db.OpenRecordset(sqltext, dbReadOnly) <br>
+<font color="#008000">' <br>
+'now open up the m_Mnu_Odr table to insert new recs. <br>
+' </font><br>
+Set rst4 = db.OpenRecordset(&quot;M_Mnu_Odr&quot;, dbOpenDynaset) <br>
+wksp.BeginTrans <br>
+On Error GoTo roll0 <br>
+' <br>
+rst3.MoveFirst&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' goto the first record that needs to be inserted <br>
+Do While Not rst3.EOF <br>
+&nbsp;&nbsp;&nbsp; With rst4 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .AddNew <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !Manufacturer_ID = rst3!Manufacturer_ID <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !Order_Detail_ID = rst3!Order_Detail_ID <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !Order_Sent_Date = rst3!tdate <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Update <br>
+&nbsp;&nbsp;&nbsp; End With <br>
+&nbsp;&nbsp;&nbsp; rst3.MoveNext <br>
+Loop <br>
+<font color="#008000">'--------------------------- finished 1st transaction 
+---------------------------- <br>
+</font>GoTo Tran <br>
+<font color="#008000">' -----------------------&nbsp; 1st transaction error handler 
+------------------------- <br>
+</font>roll0: <br>
+&nbsp;&nbsp;&nbsp; ' encountered error in first transaction so rollback transactioin <br>
+&nbsp;&nbsp;&nbsp; wksp.Rollback <br>
+&nbsp;&nbsp;&nbsp; MsgBox Err.Description &amp; &quot;&nbsp; An error was encountered will attempting to 
+insert &quot; &amp; _ <br>
+&nbsp;&nbsp;&nbsp; &quot;the fax records in table:M_Mnu_Odr.&nbsp; This operation has been canceled &quot; &amp; _
+<br>
+&nbsp;&nbsp;&nbsp; &quot;and faxes have NOT been marked as done.&quot; <br>
+&nbsp;&nbsp;&nbsp; rst3.Close <br>
+&nbsp;&nbsp;&nbsp; rst4.Close <br>
+&nbsp;&nbsp;&nbsp; wksp.close<br>
+&nbsp;&nbsp;&nbsp; Resume exit_it <br>
+<font color="#008000">
+'--------------------------------------------------------------------------------
+<br>
+</font>' <br>
+Tran: <br>
+<font color="#008000">'----------------------------- setup 2nd transaction 
+---------------------------- <br>
+' update the M_Odr_Dtl.manufacturer_order_id to the newly <br>
+'&nbsp; inserted Manufacturer_order_ID <br>
+</font>' <br>
+On Error GoTo roll1 <br>
+' <br>
+sqltext = &quot;SELECT M_Odr_Dtl.Manufacturer_Order_ID as Order_Man_ID, &quot; &amp; _ <br>
+&quot;M_Mnu_Odr.Manufacturer_Order_ID as Man_ID&quot; &amp; _ <br>
+&quot; FROM (M_Odr_Dtl INNER JOIN M_Mnu_Odr ON &quot; &amp; _ <br>
+&quot;M_Odr_Dtl.Order_Detail_ID = M_Mnu_Odr.Order_Detail_ID) &quot; &amp; _ <br>
+&quot;INNER JOIN T_Mnu_Odr ON M_Mnu_Odr.Order_Detail_ID = &quot; &amp; _ <br>
+&quot;T_Mnu_Odr.Order_Detail_ID &quot; &amp; _ <br>
+&quot; WHERE (((T_Mnu_Odr.Faxed)=True))&quot; <br>
+' <br>
+Set rst = db.OpenRecordset(sqltext, dbOpenDynaset) <br>
+' <br>
+wksp.BeginTrans <br>
+' <br>
+rst.MoveFirst <br>
+Do While Not rst.EOF <br>
+&nbsp;&nbsp;&nbsp; With rst <br>
+&nbsp;&nbsp;&nbsp; .Edit <br>
+&nbsp;&nbsp;&nbsp; !Order_Man_ID = !man_id <br>
+&nbsp;&nbsp;&nbsp; .Update <br>
+&nbsp;&nbsp;&nbsp; .MoveNext <br>
+&nbsp;&nbsp;&nbsp; End With <br>
+Loop <br>
+GoTo tran2 <br>
+'---------------------------- error handler for 2nd transaciton 
+----------------- <br>
+roll1: <br>
+MsgBox Err.Description &amp; vbCrLf &amp; &quot;&nbsp; Error in updating &quot; &amp; _ <br>
+&quot;M_Odr_Dtl.Manufacturer_order_id.&nbsp; The faxes have not been &quot; &amp; _ <br>
+&quot;marked as complete. Perhaps one of these orders is being editted?&quot; <br>
+wksp.Rollback <br>
+wksp.Rollback <br>
+rst.Close <br>
+rst3.Close <br>
+rst4.Close <br>
+wksp.close<br>
+Resume exit_it <br>
+<font color="#008000">
+'---------------------------------------------------------------------------------
+<br>
+</font>tran2: <br>
+On Error GoTo roll2 <br>
+<font color="#008000">' <br>
+'-------------------------------- setup for 3rd transaction 
+---------------------- <br>
+' clear out temp table for this manufacturer <br>
+' first select the records to be deleted <br>
+' <br>
+</font>sqltext = &quot;select order_detail_id from T_Mnu_Odr where &quot; &amp; _ <br>
+&quot;manufacturer_id=&quot; &amp; Me.Manufacturer_ID <br>
+' <br>
+Set rst2 = db.OpenRecordset(sqltext, dbOpenDynaset) <br>
+' <br>
+wksp.BeginTrans <br>
+' <br>
+rst2.MoveFirst <br>
+Do While Not rst2.EOF <br>
+With rst2 <br>
+&nbsp;&nbsp;&nbsp; .Delete <br>
+&nbsp;&nbsp;&nbsp; .MoveNext <br>
+End With <br>
+Loop <br>
+<font color="#008000">'-------------------------------- finished 3rd Access 
+transaction ------------------------ <br>
+</font>wksp.CommitTrans <br>
+wksp.CommitTrans <br>
+wksp.CommitTrans <br>
+' <br>
+rst.Close <br>
+rst2.Close <br>
+rst3.Close <br>
+rst4.Close <br>
+wksp.close<br>
+GoTo do_report <br>
+<font color="#008000">'------------------------------- error handler for 3rd 
+Access transaction ----------------- <br>
+</font>roll2: <br>
+MsgBox Err.Description &amp; vbCrLf &amp; &quot;&nbsp; Error clearing out Temp table.&nbsp; The faxes 
+have not &quot; &amp; _ <br>
+&quot;been marked as complete. Perhaps one of these orders is being edited?&quot; <br>
+wksp.Rollback <br>
+wksp.Rollback <br>
+wksp.Rollback <br>
+rst.Close <br>
+rst2.Close <br>
+rst3.Close <br>
+rst4.Close <br>
+wksp.close<br>
+Resume exit_it <br>
+<font color="#008000">
+'----------------------------------------------------------------------------------
+<br>
+</font>exit_it: <br>
+exit sub <br>
+do_report: <br>
+'<br>
+</font><font size="2" color="#008000">' report code follows - but not important 
+for this example </font></p>
+<p align="left"><font size="2">One helpful feature included in this example is 
+the construction of the SQL statements within the code.&nbsp; This makes seeing what 
+is going on much easier and also aids in debugging since you can have a 
+debug.print sqltext statement to see exactly what is going on.&nbsp; The way most 
+developers do this is with a stored query often resulting in dozens, if not 
+hundreds, of queries to look through in the database.&nbsp; Only use stored queries 
+when queries are going to be used in more than two locations in the forms or 
+modules.</font></p>
+
+<hr color="#C0C0C0" width="97%" size="1">
+<h2><a name="Using and Running Queries in VBA Code"><font size="2">Using and 
+Running Queries in VBA Code </font></a></h2>
+<p><font size="2">There are many ways to run queries through modules. Here are a 
+few examples: </font></p>
+<ul>
+	<li>
+	<a href="http://www.fmsinc.com/tpapers/queries/index.html#CreateRecordset">
+	<font size="2">Creating and using a RecordSet based on a saved Select query</font></a><font size="2">
+	</font></li>
+	<li>
+	<a href="http://www.fmsinc.com/tpapers/queries/index.html#AssigningParameters">
+	<font size="2">Assigning Parameters in Queries</font></a><font size="2">
+	</font></li>
+	<li><a href="http://www.fmsinc.com/tpapers/queries/index.html#SQLstring">
+	<font size="2">Using a SQL string to open a Recordset</font></a><font size="2">
+	</font></li>
+	<li><a href="http://www.fmsinc.com/tpapers/queries/index.html#ActionQuery">
+	<font size="2">Running a stored Action query</font></a><font size="2">
+	</font></li>
+	<li><a href="http://www.fmsinc.com/tpapers/queries/index.html#MakeTable">
+	<font size="2">Creating a table with a MakeTable Query SQL string </font>
+	</a></li>
+</ul>
+<h3><a name="CreateRecordset"><font size="2">Creating and using a RecordSet 
+based on a saved Select query </font></a></h3>
+<p><font size="2">RecordSets let you programmatically move through a table or 
+query. By assigning a Select query to a RecordSet, you can move through the 
+table. Commands such as MoveNext, MoveFirst, MoveLast, MovePrevious, let you 
+control where you are in the query. By checking the EOF status, you can make 
+sure you stop at the end of the table. Field values are referenced with a ! and 
+field name (in Access 2.0, you could use &quot;.&quot; rather than &quot;!&quot;). </font></p>
+<blockquote>
+	<font face="Courier New" size="2">Public Sub BrowseQuery_DAO()<br>
+	&nbsp; ' Comments: Browse a query and display its fields in the Immediate Window 
+	using DAO<br>
+	<br>
+	&nbsp; Const cstrQueryName = &quot;Basics: Top 10 Most Profitable Companies&quot;<br>
+	&nbsp; Dim dbs As DAO.Database<br>
+	&nbsp; Dim rst As DAO.Recordset<br>
+	<br>
+	&nbsp; ' Open pointer to current database<br>
+	&nbsp; Set dbs = CurrentDb<br>
+	<br>
+	&nbsp; ' Open recordset on saved query<br>
+	&nbsp; Set rst = dbs.OpenRecordset(cstrQueryName)<br>
+	<br>
+	&nbsp; ' Display data from one record and move to the next record until finished<br>
+	&nbsp; Do While Not rst.EOF<br>
+	&nbsp;&nbsp;&nbsp; Debug.Print &quot;Company: &quot; &amp; rst![Company] &amp; &quot; Sales: &quot; &amp; rst![Sales] &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Sales: &quot; &amp; rst![Profits]<br>
+	&nbsp;&nbsp;&nbsp; rst.MoveNext<br>
+	&nbsp; Loop<br>
+	<br>
+	&nbsp; rst.Close<br>
+	&nbsp; dbs.Close<br>
+	End Sub</font></blockquote>
+<p><font size="2">This example prints the company name and sales in the 
+Immediate Window. </font></p>
+<h3><a name="AssigningParameters"><font size="2">Assigning Parameters in Queries</font></a></h3>
+<p><font size="2">Earlier we showed how to use parameters in queries. If you 
+want to run from code a query which has parameters you need to specify the 
+parameters in your code. Otherwise, the user is prompted for the parameter value 
+when the query is executed. </font></p>
+<p><font size="2">To pass a parameter value to a query, you need to create a 
+QueryDef and reference its parameters collection. From there you can specify 
+each of the query's parameters. When you are finished, you can create a 
+recordset from it (if it is a Select query) or execute it if it is an Action 
+query. To learn more about QueryDefs and the parameters collection, refer to the 
+on-line help section under QueryDefs. </font></p>
+<blockquote>
+	<font face="Courier New" size="2">Public Sub RunParameterQuery_DAO(pstrState 
+	As String)<br>
+	&nbsp; ' Comments: Runs a query containing parameters<br>
+	&nbsp; ' Input&nbsp;&nbsp; : pstrState&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of state to select records<br>
+	<br>
+	&nbsp; Const cstrQueryName As String = &quot;Basics: Parameters&quot;<br>
+	&nbsp; Dim dbs As DAO.Database<br>
+	&nbsp; Dim qdf As DAO.QueryDef<br>
+	&nbsp; Dim rst As DAO.Recordset<br>
+	<br>
+	&nbsp; Set dbs = CurrentDb()<br>
+	&nbsp; Set qdf = dbs.QueryDefs(cstrQueryName)<br>
+	&nbsp; qdf.Parameters(&quot;State Abbreviation&quot;) = pstrState<br>
+	<br>
+	&nbsp; ' Open recordset on the query<br>
+	&nbsp; Set rst = qdf.OpenRecordset()<br>
+	&nbsp; Do While Not rst.EOF<br>
+	&nbsp;&nbsp;&nbsp; Debug.Print (&quot;ID: &quot; &amp; rst![ID] &amp; &quot; State: &quot; &amp; rst![State])<br>
+	&nbsp;&nbsp;&nbsp; rst.MoveNext<br>
+	&nbsp; Loop<br>
+	<br>
+	&nbsp; rst.Close<br>
+	&nbsp; qdf.Close<br>
+	&nbsp; dbs.Close<br>
+	End Sub</font></blockquote>
+<h3><a name="SQLstring"><font size="2">Using a SQL string to open a Recordset</font></a></h3>
+<p><font size="2">Often it is not possible to know a query's specifications in 
+advance. In these situations, the query needs to be programmatically created. 
+This is done be creating a SQL string containing the query to run. The example 
+below shows a simple case, but one can easily create a more complex example 
+where the query string (strSQL) is based on other situations (field values, user 
+selections, etc.). </font></p>
+<blockquote>
+	<font face="Courier New" size="2">Public Sub RecordsetFromSQL_DAO()<br>
+	&nbsp; ' Comments: Browse the results of a SQL string and display it in the 
+	Immediate Window<br>
+	<br>
+	&nbsp; Dim dbs As DAO.Database<br>
+	&nbsp; Dim rst As DAO.Recordset<br>
+	&nbsp; Dim strSQL As String<br>
+	<br>
+	&nbsp; strSQL = &quot;SELECT Left([Company],1) AS Letter, Count(Company) AS [Count], &quot; 
+	&amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Avg(Sales) AS AvgOfSales, Avg(Profits) AS AvgOfProfits &quot; &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;FROM Fortune100 &quot; &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;GROUP BY Left([Company],1)&quot;<br>
+	<br>
+	&nbsp; ' Open pointer to current database<br>
+	&nbsp; Set dbs = CurrentDb()<br>
+	<br>
+	&nbsp; ' Create recordset based on SQL<br>
+	&nbsp; Set rst = dbs.OpenRecordset(strSQL)<br>
+	<br>
+	&nbsp; Do While Not rst.EOF<br>
+	&nbsp;&nbsp;&nbsp; Debug.Print &quot;Company Letter: &quot; &amp; rst![Letter] &amp; &quot; Sales: &quot; &amp; 
+	rst![AvgOfSales] &amp; &quot; &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Profits: &quot; &amp; rst![AvgOfProfits]<br>
+	&nbsp;&nbsp;&nbsp; rst.MoveNext<br>
+	&nbsp; Loop<br>
+	<br>
+	&nbsp; rst.Close<br>
+	&nbsp; dbs.Close<br>
+	<br>
+	End Sub</font></blockquote>
+<p><font size="2">Running your own query string is identical to the previous 
+examples. Just base a RecordSet on the query string. </font></p>
+<h3><font size="2">Running A Stored Action Query</font></h3>
+<p><font size="2">To run a saved Action query, use the query Execute command. 
+The simple procedure below lets you easily run a saved query. Just pass the name 
+of the query and it is performed: </font></p>
+<blockquote>
+	<font face="Courier New" size="2">Public Sub 
+	RunActionQuery_DAO(pstrQueryName As String)<br>
+	&nbsp; ' Comments: Sample code of running a stored (action) query<br>
+	&nbsp; ' Input&nbsp;&nbsp; : pstrQueryName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of saved query to run<br>
+	<br>
+	&nbsp; DoCmd.SetWarnings False<br>
+	&nbsp; CurrentDb.Execute pstrQueryName<br>
+	&nbsp; DoCmd.SetWarnings True<br>
+	<br>
+	End Sub<br>
+	&nbsp;</font></blockquote>
+<p><font size="2">This procedure sets up a database variable referencing the 
+current database, and creates a QueryDef based on the query name. The Warning 
+message is temporarily turned off before executing the query and reset 
+afterwards. DoEvents and DBEngine.Idle commands are used to make sure the Jet 
+Engine has completed its tasks and releases its locks.</font></p>
+<h3><a name="MakeTable"><font size="2">Creating a table with a MakeTable Query 
+SQL string</font></a></h3>
+<p><font size="2">A MakeTable query is an Action query and can be run with the 
+Action Query example shown earlier. The only wrinkle here is to make sure the 
+new table is deleted prior to the Make Table query's execution. Also, the 
+example below shows another way to execute a query without using a QueryDef.
+</font></p>
+<blockquote>
+	<font face="Courier New" size="2">Public Sub MakeTableFromSQL_DAO()<br>
+	&nbsp; ' Comments: Sample code running an action query created in a SQL string<br>
+	&nbsp; '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Includes simple error trapping to handle problems creating 
+	table<br>
+	<br>
+	&nbsp; Const cstrNewTableName As String = &quot;Fortune100 LetterSummary&quot;<br>
+	&nbsp; Dim strSQL As String<br>
+	&nbsp; Dim strError As String<br>
+	<br>
+	&nbsp; ' SQL string to create a new table<br>
+	&nbsp; strSQL = &quot;SELECT Left([Company],1) AS Letter, Count(Company) AS [Count], &quot; 
+	&amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Avg(Sales) AS AvgOfSales, Avg(Profits) AS AvgOfProfits &quot; &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;INTO [&quot; &amp; cstrNewTableName &amp; &quot;] &quot; &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;FROM Fortune100 &quot; &amp; _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;GROUP BY Left([Company],1)&quot;<br>
+	<br>
+	&nbsp; ' Delete table if it exists<br>
+	&nbsp; On Error Resume Next<br>
+	&nbsp; DoCmd.DeleteObject acTable, cstrNewTableName<br>
+	<br>
+	&nbsp; Err.Clear<br>
+	<br>
+	&nbsp; ' Execute (run) the query<br>
+	&nbsp; CurrentDb.Execute strSQL<br>
+	&nbsp; If Err.Number &lt;&gt; 0 Then<br>
+	&nbsp;&nbsp;&nbsp; strError = Err.Description<br>
+	&nbsp; End If<br>
+	<br>
+	&nbsp; On Error GoTo 0<br>
+	<br>
+	&nbsp; If strError = &quot;&quot; Then<br>
+	&nbsp;&nbsp;&nbsp; MsgBox &quot;Table: [&quot; &amp; cstrNewTableName &amp; &quot;] created&quot;<br>
+	&nbsp;&nbsp;&nbsp; DoCmd.OpenTable cstrNewTableName<br>
+	&nbsp; Else<br>
+	&nbsp;&nbsp;&nbsp; MsgBox &quot;Error creating table: &quot; &amp; strError<br>
+	&nbsp; End If<br>
+	<br>
+	End Sub</font></blockquote>
+
+</body>
+
+</html>

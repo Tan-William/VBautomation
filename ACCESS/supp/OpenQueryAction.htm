@@ -1,0 +1,174 @@
+<html>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/OpenQueryAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:46 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>O</title>
+</head>
+
+
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/OpenQueryAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:46 GMT -->
+<head>
+<style type="text/css">
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 1px solid black;
+padding: 2px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+font-type: arial;
+font-size: 14;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+</style>
+</head>
+<body></body>
+<div id="dhtmltooltip"></div>
+<script type="text/javascript">
+/************************************************************
+* Cool DHTML tooltip script provided by www.dynamicdrive.com
+*************************************************************/
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+document.onmousemove=positiontip
+</script>
+
+
+
+
+
+
+
+<table border="0" width="85%" cellspacing="0" cellpadding="0" id="table3">
+	<tr>
+		<td width="43">&nbsp;</td>
+		<td>
+		<b><font size="5" face="Arial" color="#800000">OpenQuery Action</font></b><p>
+		<font face="Arial" size="2">You can use the OpenQuery action to open a
+		<font color="#0066CC" onMouseover="ddrivetip('Select query: A query that asks a question about the data stored in your tables and returns a result set in the form of a datasheet, without changing the data.','yellow', 500)"; onMouseout="hideddrivetip()">Select query </font>or 
+		<font color="#0066CC" onMouseover="ddrivetip('Crosstab query: A query that calculates a sum, average, count, or other type of total on records, and then groups the result by two types of information: one down the left side of the datasheet and the other across the top.','yellow', 500)"; onMouseout="hideddrivetip()">Crosstab query </font>
+		 in Datasheet view, Design view, or Print Preview. 
+		This action runs an <font color="#0066CC" onMouseover="ddrivetip('Action query: A query that copies or changes data. Action queries include append, delete, make-table, and update queries. They are identified by an exclamation point (!) next to their names in the Database window.','yellow', 500)"; onMouseout="hideddrivetip()">Action query</font>. 
+		To specify parameters for an Action query, you use the
+		<font color="#3366CC">RunSQL action</font>. You can also select a data entry mode for the query.</font></font></p>
+		<p><font size="2" face="Arial">The OpenQuery action is similar to 
+		clicking the <b class="ui">Open</b> button or <b class="ui">Design</b> 
+		button after clicking <b class="ui">Queries</b> under <b class="ui">
+		Objects</b> in the Database window, and then selecting a query. With 
+		this action you can select additional options.</font></p>
+		<p><font size="2" face="Arial">If you use <b class="ui">Datasheet</b> 
+		for the View argument, Access displays the result set if it is a Select 
+		query, Crosstab query, 
+		<font color="#0066CC" onMouseover="ddrivetip('Union query: An SQL-specific query that uses the UNION operator to combine the results of two or more select queries.','yellow', 500)"; onMouseout="hideddrivetip()">Union query</font>, or 
+		<font color="#0066CC" onMouseover="ddrivetip('Pass-through query: An SQL-specific query you use to send commands directly to an ODBC database server. By using pass-through queries, you work directly with the tables on the server instead of having the Microsoft Jet database engine process the data.','yellow', 500)"; onMouseout="hideddrivetip()">Pass-Through query</font> whose <b class="ui">
+		ReturnsRecords</b> property is set to <b class="ui">Yes</b>; and it runs the query if it is an Action query,
+		<font color="#0066CC" onMouseover="ddrivetip('Data-Definition query: An SQL-specific query that contains data definition language (DDL) statements. These statements allow you to create or alter objects in the database.','yellow', 500)"; onMouseout="hideddrivetip()"> Data-Definition query</font>, 
+		or pass-through query whose <b class="ui">
+		ReturnsRecords</b> property is set to <b class="ui">No</b>.</font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" face="Arial">The OpenQuery action has the following 
+		arguments.</font></p>
+		<table id="table4" cellspacing="1" border="1" bordercolor="#C0C0C0">
+			<tr>
+				<th bgcolor="#C0C0C0"><font size="2" face="Arial">Action argument</font></th>
+				<th width="654"><font size="2" face="Arial">Description</font></th>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font size="2" face="Arial" color="#800000">Query Name</font></td>
+				<td width="654"><font size="2" face="Arial">The name of the 
+				query to open. The <b class="ui">Query Name</b> box in the
+				<b class="ui">Action Arguments</b> section of the Macro window 
+				shows all queries in the current database. This is a required 
+				argument. </font>
+				<p><font size="2" face="Arial">If you run a macro containing the 
+				OpenQuery action in a library database, Access looks for the 
+				query with this name first in the library database, then in the 
+				current database.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font size="2" face="Arial" color="#800000">View</font></td>
+				<td width="654"><font size="2" face="Arial">The view in which 
+				the query will open. Click <b class="ui">Datasheet</b>,
+				<b class="ui">Design</b>, <b class="ui">Print Preview</b>,
+				<b class="ui">PivotTable</b>, or <b class="ui">PivotChart</b> in 
+				the <b class="ui">View</b> box. The default is <b class="ui">
+				Datasheet</b>.</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#C0C0C0"><font size="2" face="Arial" color="#800000">Data Mode</font></td>
+				<td width="654"><font size="2" face="Arial">The data entry mode 
+				for the query. This applies only to queries opened in Datasheet 
+				view. Click <b class="ui">Add</b> (the user can add new records 
+				but can't edit existing records), <b class="ui">Edit</b> (the 
+				user can edit existing records and add new records), or
+				<b class="ui">Read Only</b> (the user can only view records). 
+				The default is <b class="ui">Edit</b>.</font></td>
+			</tr>
+		</table>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+
+<!-- Mirrored from vbautomation.110mb.com/ACCESS/supp/OpenQueryAction.htm by HTTrack Website Copier/3.x [XR&CO'2008], Sun, 21 Dec 2008 07:53:46 GMT -->
+</html>
