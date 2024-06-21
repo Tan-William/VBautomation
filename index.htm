@@ -1,0 +1,844 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Excel VBA codes. Excel complete Formulas. Access Database. Inventory Management. Scheduling. Production Planning, etc</title>
+<meta name="author" content="William Tan, http://tan-william.github.io/VBautomation/">
+<meta name="description" content="VBautomation, Excel VBA. Excel Macros. Visual Basic codes automation. Free help on Excel Macros. Free Excel VBA code">
+<meta name="keywords" content="vbautomation,excel macros,Excel VBA,excel,vba,tips,tricks,excel vba,Visual Basic For Applications,help">
+<meta name="keywords" content="tan-william,William Tan,Excel,Access,VBA,Forecasting,Inventory">
+<meta name="keywords" content="Excel macro tips,Excel macro training,Excel tips,Home,Office,Basic,Intermediate,Advance">
+<meta name="keywords" content="Singapore, Kuala Lumpur, KL, Malaysia, Hong Kong, Taiwan, Japan, China, Thailand, Sarawak">
+<meta name="generator" content="Microsoft FrontPage 12.0">
+</head>
+
+
+<style>
+	table.includes {border-top:1px solid #ccc}
+	table.includes td {font:normal 11px sans-serif; border-bottom: 1px solid #ccc; padding:10px}
+	a {color: #0033FF}
+	a:hover {color:#660000}
+	h1 {font-size:12px; margin:0 0 5px 0}
+	ul.list {list-style-image: url(../www.newmail.ru/pics/channels/a1.gif); margin:0 0 0 15px; padding:0}
+	ul.list li {margin: 2px 0;}
+</style>
+<style>
+	table.bottom_links {margin:10px 0px}
+	table.bottom_links td {padding:3px}
+</style>
+<body topmargin="0" leftmargin="0" alink="#0166FE" bgcolor="#FFFFFF" link="#0166FE" marginheight="0" marginwidth="0" text="#000000" vlink="#660000">
+
+
+<table border="0" cellspacing="1" align="left" style="width: 1044px; height: 1587px;">
+<tbody>
+	<tr class="navbar">
+	<td align="center" valign="bottom" bgcolor="#FFFFFF" rowspan="3" style="width: 24px"><p><br>
+&nbsp;<p>&nbsp;<!-- Search Google --><br>&nbsp;<br>
+	</td>
+	
+	<td valign="bottom" align="center" style="width: 859px; height: 40;" class="auto-style40">
+	<p class="auto-style9" style="height: 62px">
+	<font face="Verdana" style="font-size: 75%">
+	<a href="VBA/beginner_basic.htm" style="text-decoration: none"><span style="text-decoration: none">
+	<span class="auto-style27">EXCEL VB6 
+	Programming</span></span></a><span class="auto-style27">&nbsp; |&nbsp;
+	<a class="auto-style10" href="ACCESS/beginner_basic_Acc.htm">Access Database 
+	Programming</a>&nbsp; |&nbsp;
+	<a href="EXCEL/excel_worksheet_functions.htm" style="text-decoration: none">
+	<span style="text-decoration: none">EXCEL Spreadsheet Formulas</span></a>&nbsp; |&nbsp;
+	<br>
+	<span style="text-decoration: none">
+	<a href="INVENTORY%20MGMT/production_planning.htm" style="text-decoration: none">
+	Master Scheduling &amp; Production Planning</a></span>&nbsp; |&nbsp;
+	<a href="INVENTORY%20MGMT/index_inv_mgmt.htm" style="text-decoration: none">
+	<span style="text-decoration: none">Materials Management</span></a>&nbsp; |<span style="">&nbsp; </span>	
+	<a href="FORECASTING/forecasting_fundamental.htm" style="text-decoration: none">
+	<span style="text-decoration: none">Forecasting Methods &amp; Techniques</span></a>&nbsp; |&nbsp;
+	<br>
+	<span style="text-decoration: none">
+	<a href="AboutMe/Me.htm" style="text-decoration: none">
+	About me</a></span></span><span style="text-decoration: none"><span class="auto-style27">&nbsp;&nbsp; |&nbsp;
+	<a href="http://www.websitegoodies.com/guestbook.php?a=view&id=1740661" style="text-decoration: none" target="_blank">Guestbook</a>&nbsp;
+	</span>
+	</td>
+	<br>
+	
+	
+	<!--  <a target="_blank" style="text-decoration: none" href="GUESTBOOK/gbook.html">Guestbook</a><br>   -->
+	
+	<script type="text/javascript">
+<!--
+  if (top.location != location) {top.location.href = document.location.href ;}
+-->
+</script>
+
+
+<style>
+<!--
+.new_link {color: #000000;  font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 11px; text-decoration: none; font-weight: normal;}
+-->
+</style>
+
+<!-- default document font and size -->
+<!-- end default tags -->
+<!-- start language tags -->
+<!-- end language tags -->
+<!-- start document specific tags -->
+<!-- document last updated -->
+<!-- end document specific tags -->
+
+
+<!-- facebook JS function -->
+<script>
+    function fbShare(url, title, descr, image, winWidth, winHeight) {
+        var winTop = (screen.height / 2) - (winHeight / 2);
+        var winLeft = (screen.width / 2) - (winWidth / 2);
+        window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+    }
+</script>
+
+
+
+
+<body>
+
+
+<style type="text/css">
+body {scrollbar-3dlight-color:#000000;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-face-color:#339933;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#ffffff}
+.auto-style1 {
+	border-collapse: collapse;
+}
+.auto-style2 {
+	font-family: Verdana;
+	font-size: 10pt;
+}
+.auto-style3 {
+	font-family: "Arial Narrow";
+	font-size: small;
+}
+.auto-style9 {
+	text-align: center;
+}
+.auto-style10 {
+	text-decoration: none;
+}
+.auto-style11 {
+	font-family: "Times New Roman";
+	font-size: 13pt;
+}
+.auto-style12 {
+	font-family: "Arial Narrow";
+	font-size: 2pt;
+}
+.auto-style14 {
+	text-align: left;
+}
+.auto-style18 {
+	font-family: "Times New Roman";
+}
+.auto-style19 {
+	text-align: center;
+	font-family: "Times New Roman";
+	font-size: 13pt;
+}
+.auto-style20 {
+	font-family: Tahoma;
+	font-size: medium;
+	color: #FF0000;
+}
+.auto-style21 {
+	font-size: 11.5pt;
+}
+.auto-style25 {
+	font-size: 10pt;
+}
+.auto-style26 {
+	font-size: 88%;
+}
+.auto-style27 {
+	font-size: 11pt;
+}
+.auto-style28 {
+	font-family: "Arial Narrow";
+	font-size: 11pt;
+}
+.auto-style29 {
+	font-size: 12pt;
+	color: #0033FF;
+}
+.auto-style30 {
+	color: #0033FF;
+}
+.auto-style32 {
+	font-size: 10.5pt;
+}
+.auto-style36 {
+	font-size: 5pt;
+}
+.auto-style37 {
+	font-size: 12pt;
+}
+.auto-style39 {
+	color: #0166FE;
+}
+.auto-style40 {
+	background-color: #FFFFCC;
+}
+.auto-style43 {
+	font-size: 12pt;
+	color: #0B59CE;
+}
+.auto-style44 {
+	color: #0B59CE;
+}
+.auto-style45 {
+	font-family: "Arial Narrow";
+}
+.auto-style47 {
+	font-family: "Times New Roman", Times, serif;
+}
+.auto-style48 {
+	font-size: 13pt;
+}
+.auto-style49 {
+	text-align: left;
+	margin-top: 0px;
+}
+.auto-style51 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+.auto-style52 {
+	text-align: left;
+	font-family: Arial;
+}
+.auto-style53 {
+	font-family: Arial;
+}
+.auto-style54 {
+	font-family: Arial;
+	font-size: 12pt;
+}
+.auto-style55 {
+	font-size: 11pt;
+	font-style: italic;
+}
+.auto-style56 {
+	font-size: 12pt;
+	font-style: italic;
+}
+.auto-style57 {
+	font-size: 10.5pt;
+	font-family: Tahoma;
+}
+.auto-style58 {
+	font-size: 10pt;
+	font-style: italic;
+}
+.auto-style59 {
+	font-family: "Times New Roman";
+	font-size: 22pt;
+	color: #FF0000;
+}
+.auto-style60 {
+	font-family: Tahoma;
+}
+.auto-style62 {
+	text-align: left;
+	font-size: 10.5pt;
+}
+.auto-style63 {
+	text-align: right;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+}
+.auto-style65 {
+	text-decoration: none;
+	color: #0B59CE;
+}
+.auto-style66 {
+	color: #FFFFFF;
+}
+.auto-style70 {
+	font-family: "Times New Roman";
+	font-size: 11pt;
+}
+.auto-style71 {
+	color: #FFFFFF;
+	font-size: 11pt;
+}
+.auto-style73 {
+	font-family: "Times New Roman";
+	font-size: 2pt;
+}
+.auto-style74 {
+	font-family: "Arial Narrow";
+	font-size: 3pt;
+}
+.auto-style75 {
+	font-family: "Arial Narrow";
+	font-size: 12pt;
+}
+.auto-style78 {
+	font-family: Verdana;
+}
+.auto-style79 {
+	font-family: "Arial Narrow";
+	font-size: 11.5pt;
+}
+.auto-style81 {
+	font-family: Tahoma;
+	font-size: 11pt;
+}
+.auto-style83 {
+	font-family: "Arial Narrow";
+	font-size: 12pt;
+	color: #0B59CE;
+}
+.auto-style84 {
+	font-family: Tahoma;
+	font-size: 11.5pt;
+}
+.auto-style85 {
+	font-family: "Arial Narrow";
+	font-size: 6pt;
+}
+.auto-style86 {
+	font-family: "Arial Narrow";
+	font-size: 4pt;
+}
+</style>
+<td valign="top" rowspan="3" bgcolor="#FFFFFF" class="auto-style9" style="width; 139px; height: 453px;">
+<div class="auto-style9">
+	<strong><span class="auto-style20">Let's Go<br></span>
+	<span class="auto-style59">Buddhism</span></strong></div>
+<table cellspacing="1" style="width: 100%; height: 26px">
+	<tr>
+		<td class="auto-style19"><span class="auto-style84">Contemporary<br>authors</span><span class="auto-style45"><font size="3"> 
+		of Buddhism <strong>:</strong></font></span> </td>
+	</tr>
+</table>
+<div class="auto-style14" style="height: 1506px; width: 170px;">
+	<strong><span class="auto-style11"><span class="auto-style3">
+	<span class="auto-style12">
+	<div class="auto-style49" style="height: 31px">
+		<span class="auto-style66">&#257;</span></span></span></span><span class="auto-style66"><span class="auto-style18"><span class="auto-style45"><span class="auto-style85">na 
+		/</span></span></span></span><span class="auto-style45"><span class="auto-style18"><br class="auto-style71"></span> </span>
+		<span class="auto-style11"><span class="auto-style3">
+		<span class="auto-style12">&nbsp;<span class="auto-style28">&nbsp;&nbsp;</span><span class="auto-style45"><span class="auto-style18"><span class="auto-style70">&nbsp; </span></span> </span>
+		<span class="auto-style47"><span class="auto-style48">Therav&#257;da<br></span></span> </span>
+</span></span><span class="auto-style45"><span class="auto-style73">&nbsp;&nbsp; 
+</div>
+		</span> </span></strong>
+	<span class="auto-style44"><span class="auto-style27">
+	<span class="auto-style12"><span class="auto-style3"><span class="auto-style11">
+	&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://forestsangha.org/teachings/books/authors/ajahn-amaro?language=English" target="_blank">Ajahn 
+		Amaro</a></span></span><br><span class="auto-style45"><span class="auto-style37">&nbsp;<a class="auto-style65" href="https://www.amazon.com/stores/Ajahn-Brahm/author/B001JSBNZI?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Ajahn 
+		Brahmavamso</a></span></span></span></span></span></span><span class="auto-style45"><br class="auto-style37"></span>
+	<span class="auto-style3"><span class="auto-style12">
+	<span class="auto-style27"><span class="auto-style11">
+	&nbsp;<span class="auto-style45"><span class="auto-style75"><a class="auto-style65" href="https://forestsangha.org/teachings/books/authors/ajahn-candasiri?language=English" target="_blank">Ajahn 
+		Candasiri</a><br></span></span></span><span class="auto-style48">&nbsp;<span class="auto-style18"><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://forestsangha.org/teachings/books/authors/ajahn-chah?language=English" target="_blank">Ajahn 
+		Chah</a><br>&nbsp;<a class="auto-style65" href="https://forestsangha.org/teachings/books/authors/ajahn-sucitto?language=English" target="_blank">Ajahn 
+		Sucitto</a></span></span></span><br class="auto-style43">
+		</span><span class="auto-style11">
+		&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://buddhistuniversity.net/authors/sujato" target="_blank">Ajahn 
+		Sujato</a></span></span></span><span class="auto-style45"><br class="auto-style37"></span><span class="auto-style48">&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://forestsangha.org/teachings/books/authors/ajahn-sumedho?language=English" target="_blank">Ajahn 
+		Sumedho</a></span></span><br class="auto-style43"></span><span class="auto-style11">
+	&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://forestsangha.org/teachings/books/authors/ajahn-sundara?language=English" target="_blank">Ajahn 
+		Sundara</a></span></span></span><span class="auto-style48"><br class="auto-style43"></span>
+	<span class="auto-style45"><span class="auto-style37">&nbsp;</span></span><span class="auto-style11"><span class="auto-style45"><span class="auto-style75"><a class="auto-style65" href="https://www.amazon.com/stores/Bhikkhu-Analayo/author/B00J2DHS7Y?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Analayo</a></span></span></span><span class="auto-style48"><span class="auto-style37">
+		</span></span></span></span></span><span class="auto-style18">
+	<span class="auto-style45">
+		<a class="auto-style65" href="https://www.amazon.com/stores/Bhikkhu-Analayo/author/B00J2DHS7Y?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">
+		<span class="auto-style75">T</span></a></span></span><span class="auto-style3"><span class="auto-style12"><span class="auto-style27"><span class="auto-style48"><span class="auto-style29"><a class="auto-style65" href="https://www.amazon.com/stores/Bhikkhu-Analayo/author/B00J2DHS7Y?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true">hera</a></span></span><span class="auto-style11"><span class="auto-style45"><br class="auto-style43">
+</span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/author/B000APELX2" target="_blank">Ayya 
+		Khema</a></span><br class="auto-style43">
+	</span><span class="auto-style75">&nbsp;</span><span class="auto-style45"><span class="auto-style75"><a class="auto-style65" href="https://www.amazon.com/stores/Bhikkhu-Bodhi/author/B001JXB7VI?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Bodhi 
+	Bhikkhu</a></span><br class="auto-style43">
+	</span><span class="auto-style83">&nbsp;</span><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/Dr.-B-R-Ambedkar/author/B00JPNHS6W/allbooks?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">B. 
+		R. Ambedkar</a></span><br class="auto-style43">
+	</span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/Bhante-Henepola-Gunaratana/author/B002LADY6O?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Henepola 
+		Gunaratana</a></span><br class="auto-style43">
+	<span class="auto-style75">
+	&nbsp;J<a class="auto-style65" href="https://www.amazon.com/stores/Joseph-Goldstein/author/B00DPSACUW?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">oseph 
+		Goldstein</a></span><br class="auto-style43"><span class="auto-style37">
+	&nbsp;</span></span></span></span></span></span><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/Books-K-N-Jayatilleke/s?rh=n%3A283155%2Cp_27%3AK.N.+Jayatilleke" target="_blank">K. 
+		N. Jayatilleke</a></span><span class="auto-style11"><span class="auto-style3"><span class="auto-style12"><span class="auto-style27"><br class="auto-style43">
+	<span class="auto-style83">&nbsp;</span><span class="auto-style37"><a class="auto-style65" href="https://store.pariyatti.org/search.asp?scope=Products&amp;keyword=Ledi+Sayadaw" target="_blank">Ledi 
+		Sayadaw</a></span><br class="auto-style43"><span class="auto-style83">&nbsp;</span><span class="auto-style37"><a class="auto-style65" href="https://www.waterstones.com/author/l-s-cousins/793935" target="_blank">L. 
+		S. Cousins</a></span><br class="auto-style43"><span class="auto-style30">&nbsp;<span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/Mahasi-Sayadaw/author/B00J649BUG?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Mahasi 
+		Sayadaw</a></span></span><span class="auto-style37"><br class="auto-style44"></span><span class="auto-style30">
+	<span class="auto-style37">
+	&nbsp;Mingun 
+		Sayadaw &nbsp;</span><span class="auto-style29"><a href="https://www.bps.lk/olib/mi/mi014.pdf" target="_blank" class="auto-style44">1</a></span>&nbsp;<span class="auto-style43"> </span>
+		<span class="auto-style37">
+		<a href="https://archive.org/details/ven.-mingun-sayadaw-the-great-chronicles-of-the-buddhas/Ven.%20Mingun%20Sayadaw%20-%20The%20Great%20Chronicles%20of%20Buddhas%20-%20Volume%201%20Part%201/" target="_blank" class="auto-style44">
+		2</a></span></span></span></span></span></span></span><span class="auto-style11"><span class="auto-style3"><span class="auto-style12"><span class="auto-style27"><span class="auto-style48"><br class="auto-style43"></span>
+	<span class="auto-style45">
+	<span class="auto-style18">
+	<span class="auto-style75">&nbsp;Nina 
+		van Gorkom&nbsp; <span class="auto-style39">
+		<a href="http://abhidhamma.com/Nachruf_Nina_en.pdf" target="_blank" class="auto-style44">1</a></span>&nbsp;
+		<span class="auto-style39">
+		<a href="https://abhidhamma.org/books/" target="_blank" class="auto-style44">2</a></span></span></span></span><span class="auto-style48"><br class="auto-style43"></span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/Books-Nyanatiloka-Mahathera/s?rh=n%3A283155%2Cp_27%3ANyanatiloka+Mahathera" target="_blank">Nyanatiloka 
+		Mahathera</a></span></span><span class="auto-style48"><br class="auto-style43"></span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/Thera-Nyanaponika/author/B001HPZUT8?ref=dbs_a_mng_rwt_scns_share&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Nyanaponika 
+		Thera</a></span></span><span class="auto-style48"><br class="auto-style43"></span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.librarything.com/author/theranarada" target="_blank">Narada 
+		Mahathera</a></span></span><span class="auto-style48"><br class="auto-style43"></span>
+	<span class="auto-style83">&nbsp;</span><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://store.pariyatti.org/search.asp?scope=Products&amp;keyword=Nanamoli+Bhikkhu" target="_blank">Nyanamoli 
+		Thera</a></span></span><span class="auto-style48"><br class="auto-style43"></span>
+	<span class="auto-style75">&nbsp;</span><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.paaukforestmonastery.org/" target="_blank">Pa-Auk 
+		Sayadaw</a></span></span><span class="auto-style48"><br class="auto-style43"></span><span class="auto-style45">
+	<span class="auto-style43">&nbsp;</span><span class="auto-style37">P. B. Tan</span></span><span class="auto-style83">&nbsp;
+		<a href="https://independentresearcher.academia.edu/PBTan" target="_blank">
+		1</a>&nbsp;
+		<a href="https://www.amazon.com/stores/author/B0BQC9JDYD" target="_blank">
+		2</a></span><span class="auto-style48"><br class="auto-style43"><span class="auto-style43">&nbsp;Richard 
+		Gombrich&nbsp;&nbsp; </span>
+		</span>
+		</span></span></span></span>
+		<span class="auto-style30">
+		<span class="auto-style45">
+	<span class="auto-style37">
+		<a href="https://gombrich.co.uk/papers-and-articles/" target="_blank" class="auto-style44">
+		1</a></span><span class="auto-style27"><span class="auto-style12"><span class="auto-style3"><span class="auto-style11"><span class="auto-style75"> 
+		&nbsp;<a href="https://www.amazon.com/stores/Richard-Gombrich/author/B01DR0504U?ref=dbs_a_mng_rwt_scns_share&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank" class="auto-style44">2</a></span></span></span></span></span></span></span><span class="auto-style27"><span class="auto-style12"><span class="auto-style3"><span class="auto-style48"><br class="auto-style43">
+		</span><span class="auto-style11">
+		<span class="auto-style75">
+		&nbsp;</span><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.co.uk/Books-Rupert-Gethin/s?rh=n%3A266239%2Cp_27%3ARupert+Gethin" target="_blank">Rupert 
+		Gethin</a></span><br class="auto-style43">
+	</span><span class="auto-style83">&nbsp;</span><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/S.-N.-Goenka/author/B001K7P5HU?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">S. 
+		N. Goenka</a></span><br class="auto-style43">
+	</span></span><span class="auto-style48">
+	<span class="auto-style43">&nbsp;</span></span><span class="auto-style11"><span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/stores/Thanissaro-Bhikkhu/author/B00JFNO2HK?ref=dbs_a_mng_rwt_scns_share&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Thanissaro 
+		Thera</a></span></span></span><span class="auto-style48"><br class="auto-style43">
+		</span><span class="auto-style11">
+		<span class="auto-style75">&nbsp;</span><span class="auto-style45"><span class="auto-style75"><a class="auto-style65" href="https://www.bookfinder.com/author/t-w-rhys-davids/4/" target="_blank">T.W. Rhys 
+		Davids</a><br class="auto-style44">&nbsp;<a class="auto-style65" href="https://www.amazon.com/Books-Mrs-Rhys-Davids/s?rh=n%3A283155%2Cp_27%3AMrs.+Rhys+Davids" target="_blank">C.A.F. 
+		Rhys Davids</a></span><br class="auto-style43">
+	</span></span><span class="auto-style48">
+	<span class="auto-style43">&nbsp;U</span></span><span class="auto-style11"><span class="auto-style45"><span class="auto-style75"> Thittila Sayadaw
+		<a href="https://www.buddhanet.net/pdf_file/thittila.pdf" target="_blank" class="auto-style44">
+		1</a>&nbsp;
+		<a href="https://www.holybooks.com/wp-content/uploads/Consciousness-Enlarged.pdf" target="_blank" class="auto-style44">
+		2</a>&nbsp;
+		<a href="https://www.discoveringbuddha.org/wp-content/uploads/2016/08/PTS-Book-of-Analysis-Vibhanga-U-Thittila1969.pdf" target="_blank" class="auto-style44">
+		3</a></span></span><span class="auto-style48"><br class="auto-style43"></span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.thriftbooks.com/a/sayadaw-u-pandita/492604/" target="_blank">U 
+		Pandita Sayadaw</a></span></span><span class="auto-style48"><br class="auto-style43"></span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.accesstoinsight.org/lib/authors/webu/index.html" target="_blank">Webu 
+		Sayadaw</a></span></span><span class="auto-style48"><br class="auto-style43"></span>&nbsp;<span class="auto-style45"><span class="auto-style37"><a class="auto-style65" href="https://www.amazon.com/Books-Wilhelm-Geiger/s?rh=n%3A283155%2Cp_27%3AWilhelm+Geiger" target="_blank">Wilhelm 
+		Geiger</a></span></span></span></span></span></span><span class="auto-style18"><span class="auto-style45"><br class="auto-style37"></span></span><span class="auto-style11">
+	<span class="auto-style3"><span class="auto-style12">
+	<span class="auto-style27"><span class="auto-style48">
+	&nbsp;<span class="auto-style43">Y. 
+		Karunadasa&nbsp; </span>
+		</span><span class="auto-style45">
+	<span class="auto-style37">
+		<a href="https://www.bps.lk/bookshop-search.php?styp=l&amp;d=bp438s" target="_blank" class="auto-style44">
+		1</a></span></span><span class="auto-style48"><span class="auto-style43">&nbsp;
+		</span>
+		</span><span class="auto-style18">
+	<span class="auto-style45"><span class="auto-style37">
+		<a href="https://www.amazon.com/stores/Y.-Karunadasa/author/B086VM3DSR?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">
+		2</a></span></span></span></span></span></span></span></span><span class="auto-style75"><strong> </strong></span><strong>
+	<span class="auto-style45"><br class="auto-style37"></span>
+	<span class="auto-style11"><span class="auto-style74">&nbsp; </span></span></strong>
+	<span class="auto-style18"><span class="auto-style45">
+<span class="auto-style86">
+	<div class="auto-style49" style="height: 60px; width: 137px;">
+		<span class="auto-style66">&nbsp;</span></span><strong><span class="auto-style86"><span class="auto-style66">Mah&#257;y&#257;na /</span></span><span class="auto-style74"><br class="auto-style66">
+		<span class="auto-style66">&nbsp;&nbsp; </span> </span>
+		</strong> 
+</span></span>
+			<span class="auto-style3">
+	<span class="auto-style11">
+<span class="auto-style12">
+		<span class="auto-style18"><br>&nbsp;&nbsp; </span>
+		<strong>
+			<span class="auto-style11">&nbsp;<span class="auto-style28">&nbsp;&nbsp;</span>Mah&#257;y&#257;na /<br> </span>
+			<span class="auto-style18">&nbsp; &nbsp;</span>
+		&nbsp;&nbsp;&nbsp;
+		<span class="auto-style48"><span class="auto-style47">
+		&nbsp;&nbsp;
+		Vajra</span></span><span class="auto-style47"><span class="auto-style11">y&#257;na</span></span></strong></span></span></span><strong><span class="auto-style47"><span class="auto-style45"><span class="auto-style18"><br class="auto-style48"></span>
+		<span class="auto-style11">&nbsp;&nbsp; </span>
+</span></span></strong> 
+<span class="auto-style45"><span class="auto-style18">
+		<span class="auto-style11">&nbsp;&nbsp; 
+</div>
+</span></span> </span><span class="auto-style44"><span class="auto-style45">
+	<span class="auto-style37">
+	&nbsp;</span><span class="auto-style18">14th </span><span class="auto-style45">
+	Dalai Lama&nbsp;
+		<a href="https://www.dalailama.com/books" target="_blank">1</a>&nbsp;
+		<a href="https://www.thriftbooks.com/a/dalai-lama-xiv/196357/" target="_blank">
+		2</a><br>&nbsp;Alan Wallace&nbsp;
+	<a href="https://www.alanwallace.org/writings/books/" target="_blank">1</a>&nbsp;
+	<a href="https://www.thriftbooks.com/a/b-alan-wallace/258354/" target="_blank">
+	2</a><br>&nbsp;Alan Watts&nbsp;
+		<span class="auto-style39"><a href="https://alanwatts.org/books/" target="_blank">
+		1</a></span>&nbsp; <span class="auto-style39">
+		<a href="https://www.amazon.com/stores/Alan-Watts/author/B000AP9KWO?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">
+		2</a></span><br>&nbsp;<a class="auto-style10" href="https://www.bethjacobsbooks.com/index.html" target="_blank">Beth 
+	Jacobs</a><br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/burton-watson/209045/" target="_blank">Burton 
+		Watson</a><br>&nbsp;<a class="auto-style10" href="https://www.abtemple.org/index.php?route=jstp/jstp&amp;jstp_type_id=1&amp;jstp_id=48&amp;page=2" target="_blank">Cheng 
+		Kuan Bhik&#7779;u</a><br></span></span>
+	<span class="auto-style45">
+	<span class="auto-style21">
+	<span class="auto-style27">
+	<span class="auto-style3"><span class="auto-style12">
+	<span class="auto-style48"><span class="auto-style79">&nbsp;</span></span></span></span></span></span><span class="auto-style37"><a class="auto-style10" href="https://www.thriftbooks.com/a/thubten-chodron/202983/" target="_blank">Chodron, 
+	Thubten</a><br></span>
+	<span class="auto-style21">
+	&nbsp;<span class="auto-style37"><a class="auto-style10" href="https://www.amazon.com/stores/Damien-Keown/author/B001IQXDHM?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Damien 
+		Keown</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/stores/author/B001ICKGQ2" target="_blank">David 
+		Ross Komito</a></span></span></span><br class="auto-style75">
+	<span class="auto-style45"><span class="auto-style37">&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/dilgo-khyentse/259725/" target="_blank">Dilgo 
+	Khyentse, Rinpoche</a></span></span><span class="auto-style12"><span class="auto-style3"><span class="auto-style27"><span class="auto-style48"><br class="auto-style37">
+		</span></span></span></span><span class="auto-style45">
+	<span class="auto-style37">
+		&nbsp;</span><span class="auto-style75"><a class="auto-style10" href="https://www.amazon.com/s?i=digital-text&amp;rh=p_27%3ADonald+S.+Lopez+Jr.&amp;s=relevancerank&amp;text=Donald+S.+Lopez+Jr.&amp;ref=dp_byline_sr_ebooks_1" target="_blank">Donald 
+		S. Lopez</a></span></span><span class="auto-style27"><span class="auto-style3"><span class="auto-style12"><span class="auto-style48"><br class="auto-style37"></span><span class="auto-style11">
+	<span class="auto-style75">&nbsp;</span></span><span class="auto-style18"><span class="auto-style45"><span class="auto-style75"><a class="auto-style10" href="https://www.amazon.com/stores/author/B000AQ6TYU" target="_blank">D.T.
+		Suzuki</a></span></span></span></span></span></span><span class="auto-style45"><span class="auto-style37"><br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/dwight-goddard/297748/" target="_blank">Dwight 
+		Goddard</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/stores/author/B001HCZMNA" target="_blank">Edward 
+		Conze</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.in/Books-Bhikkhuni-Gioi-Huong/s?rh=n%3A976389031%2Cp_27%3ABhikkhuni+Gioi+Huong" target="_blank">Gioi 
+		Huong Bhikhuni</a><br></span><span class="auto-style12">
+	<span class="auto-style3"><span class="auto-style27">
+	<span class="auto-style37">
+	&nbsp;Hsuan 
+		Hua Bhik&#7779;u&nbsp;
+		<a href="https://www.buddhisttexts.org/collections/english-books" target="_blank">
+		1</a>&nbsp;
+		<a href="https://www.amazon.com/stores/Venerable-Master-Hsuan-Hua/author/B08465C9LP?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">
+		2</a> <br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/jack-kornfield/199654/" target="_blank">Jack 
+	Kornfield</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/stores/John-Powers/author/B001IQWJPO?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">John 
+	Powers</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.co.uk/stores/Ken-McLeod/author/B001H6NVWA?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Ken 
+	McLeod</a><br>&nbsp;<a class="auto-style10" href="https://www.buddhism.hku.hk/research/publications/" target="_blank">K. 
+		L. Dhammajoti Bhik&#7779;u</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/Books-Kogen-Mizuno/s?rh=n%3A283155%2Cp_27%3AKogen+Mizuno" target="_blank">Kogen 
+		Mizuno</a><br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/padmasambhava/225697/" target="_blank">Padmasambhava</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/Buddhism-Paul-Harrison-Religion-Spirituality/s?rh=n%3A12279%2Cp_27%3APaul+Harrison" target="_blank">Paul 
+		M. Harrison</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/stores/Paul-Williams/author/B001IQX8J0?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Paul 
+	Williams</a><br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/pema-chdrn/197422/" target="_blank">Pema 
+	Chodron</a><br>&nbsp;P. B. Tan</span></span></span></span></span><span class="auto-style12"><span class="auto-style3"><span class="auto-style27"><span class="auto-style11"><span class="auto-style83">&nbsp;
+		<a href="https://independentresearcher.academia.edu/PBTan" target="_blank">
+		1</a>&nbsp;
+		<a href="https://www.amazon.com/stores/author/B0BQC9JDYD" target="_blank">
+		2</a></span></span></span></span></span><span class="auto-style45"><br class="auto-style37"><span class="auto-style12">
+	<span class="auto-style3"><span class="auto-style27">
+	<span class="auto-style75">&nbsp;</span></span></span></span><span class="auto-style75"><a class="auto-style10" href="https://www.amazon.com/Robert-Thurman-Books/s?k=Robert+Thurman&amp;rh=n%3A283155" target="_blank">Robert 
+		Thurman</a><br>&nbsp;<a class="auto-style65" href="https://www.amazon.com/stores/Red-Pine/author/B001JP86Q0?ref=ap_rdr&amp;isDramIntegrated=true&amp;shoppingPortalEnabled=true" target="_blank">Redpine 
+	(Bill Porter)</a><br></span></span>
+	<span class="auto-style27">
+	<span class="auto-style3"><span class="auto-style12">
+	<span class="auto-style48"><span class="auto-style75">&nbsp;Sharon Salzberg&nbsp;
+	<a href="https://www.sharonsalzberg.com/books" target="_blank">1</a>&nbsp;
+	<a href="https://www.thriftbooks.com/a/sharon-salzberg/214230/" target="_blank">
+	2</a><br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/shunryu-suzuki/202370/" target="_blank">Shunryu 
+	Suzuki</a><br>&nbsp;<a class="auto-style10" href="https://www.thriftbooks.com/a/sylvia-boorstein/206755/" target="_blank">Sylvia 
+	Boorstein</a><br>&nbsp;<a class="auto-style10" href="https://www.amazon.com/s?i=stripbooks&amp;rh=p_27%3ATheodore+Stcherbatsky&amp;s=relevancerank&amp;text=Theodore+Stcherbatsky&amp;ref=dp_byline_sr_book_1" target="_blank">Theodore 
+		Stcherbatsky</a><br>&nbsp;Thich Nhat Hanh&nbsp; 
+		<a href="https://plumvillage.org/about/thich-nhat-hanh/key-books" target="_blank">
+		1</a>&nbsp;
+		<a href="https://www.amazon.com/Books-Thich-Nhat-Hanh/s?rh=n%3A283155%2Cp_27%3AThich+Nhat+Hanh" target="_blank">
+		2</a></span></span></span></span></span></span><span class="auto-style45"><span class="auto-style75"><br class="auto-style44">&nbsp;<a class="auto-style65" href="https://www.amazon.com/Books-Walpola-Rahula/s?rh=n%3A283155%2Cp_27%3AWalpola+Rahula" target="_blank">Walpola 
+		Rahula</a></span></span><br class="auto-style75"><span class="auto-style44"><span class="auto-style45"><span class="auto-style12">
+	<span class="auto-style3"><span class="auto-style27">
+	<span class="auto-style37">
+	&nbsp;Yeshe, Thubten&nbsp;
+	<a href="https://www.lamayeshe.com/" target="_blank">1</a>&nbsp;
+	<a href="https://www.amazon.com/Buddhism-Thubten-Zopa-Rinpoche-Religion-Spirituality/s?rh=n%3A12279%2Cp_27%3AThubten+Zopa+Rinpoche" target="_blank">
+	2</a><br></span></span></span></span></span></span>
+	<span class="auto-style75"><span class="auto-style44">
+	<span class="auto-style45"><span class="auto-style12">
+	<span class="auto-style3"><span class="auto-style27">
+	<span class="auto-style21">
+	&nbsp;</span></span></span></span><a class="auto-style10" href="https://www.thriftbooks.com/a/lama-zopa/317410/" target="_blank">Zopa,Thubten</a><span class="auto-style21"><span class="auto-style27"><span class="auto-style3"><span class="auto-style12">
+	</span></span></span></span></span></span></span></div>
+</td>
+</tr>
+
+<td valign="top" style="border-left: 4px double #008000; border-top: 4px double #008000; width: 859px; height: 453px;" bgcolor="#FFFFCC" class="auto-style63">
+	<p align="center"><span class="auto-style2"><br></span>
+	<span class="auto-style54">Hello ! W</span><font class="auto-style37"><span class="auto-style53">elcome 
+	to my site ! </span> </font></p>
+	<p class="auto-style52"><font class="auto-style21">This site contains many 
+	materials and examples on Microsoft Excel and Access Programming, Master 
+	Scheduling, Inventory Management and Forecasting Methods, to work with Visual Basic 
+	programs and formulas. VBA, 
+	ADO 
+	&amp; SQL especially, provides you the automation and infallible solution to all sorts of routine 
+	or complex office tasks, data mining and statistical analysis, for which 
+	recording macros,&nbsp;standard spreadsheet functions and standard Access queries 
+	simply aren't enough to help. Here you
+	will find many source codes and examples. I hope you will find this 
+	site useful for your works or in your studies.</font></p>
+	<p>
+	<table cellpadding="0" cellspacing="0" style="width: 100%">
+		<tr>
+			<td style="width: 288px">
+			<p><font face="Verdana" style="font-size: 9pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+			</font><font class="auto-style37"> <span class="auto-style60"> 
+
+
+   		   <a href="javascript:fbShare('http://tan-william.github.io/VBautomation/', 'Fb Share', 'Facebook share popup', 'http://goo.gl/dS52U', 520, 350)" class="auto-style10">
+			Share on </a> 
+
+
+   		   <a href="javascript:fbShare('http://tan-william.github.io/VBautomation/', 'Fb Share', 'Facebook share popup', 'http://goo.gl/dS52U', 520, 350)">
+			Facebook</a></span></font></p>
+
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	</p>
+
+
+
+	<table border="0" width="101%" cellspacing="0" cellpadding="0" id="table6">
+		<tr>
+			<td align="left" valign="top" style="width: 255px">
+			<font face="arial">
+			<table border="0" id="table7" height="23" style="width: 95%;" class="auto-style1">
+				<tr>
+					<td valign="top" align="left" bgcolor="#D5E9BE" height="23">
+					<p>
+					<a style="text-decoration: none" href="VBA/beginner_basic.htm">
+					<span style="text-decoration: none" class="auto-style51">Excel 
+					VB6.0 Programming</span></a></td>
+				</tr>
+			</table>
+			<p class="cell" lastupdate="2003-02-03T00:00:00">
+	<font face="Tahoma" class="auto-style32">VBA Beginner's Basic<br>
+	Excel Main Objects <br>Rows, Columns, Range, Cells... <br>Working around your Worksheet... 
+	<br>Statements<br>Functions <br>Looping Methods &amp; Conditional Decisions<br>Errors Debugging and Handling 
+	<br>UserForms and Dialogs <br>Pivot Tables <br>Charting <br>AutoFilters, Advanced Filters 
+	<br>ADO and DAO - integrating Excel/Access <br>Tips and fun staff for Excel VBA</font></p>
+			</font>
+			<font face="Tahoma" style="font-size: 80%">
+			<p class="cell" lastupdate="2003-02-03T00:00:00">
+	</font><font face="arial"><font face="Tahoma" class="auto-style32">and&nbsp;<a href="VBA/beginner_basic.htm" class="auto-style10">more...</a></font></font><span class="auto-style57">
+			</span>
+			<font face="arial">
+	<p class="cell" lastupdate="2003-02-03T00:00:00">
+	<font face="Tahoma" class="auto-style32">Last Updated: March 2008</font></p>
+	</td>
+			
+			<td align="left" valign="top" style="width: 304px">
+			<table border="0" cellspacing="0" cellpadding="0" id="table8" bgcolor="#D5E9BE" style="width: 294px">
+				<tr>
+					<td align="center" width="288">
+					<p align="left"><font face="Arial"><b>
+					<a style="text-decoration: none" href="INVENTORY%20MGMT/index_inv_mgmt.htm">
+					<span style="text-decoration: none" class="auto-style37">Materials Management</span></a><i><sub><font size="3">&nbsp;</font></sub></i></b><i><sub><font size="3">&nbsp; w</font>ith Excel &amp; VBA</sub></i></font>
+					</td>
+				</tr>
+			</table>
+	<p><font face="Tahoma" class="auto-style32">Effective Inventory 
+	Management<br>
+	What is the &quot;Right&quot; amount of inventory?<br>
+	Reorder Point (ROP) and Safety Stock<br>
+	More on Safety Stock...<br>
+	Order Quantity techniques<br>
+	Pareto &quot;80/20&quot; rule<br>
+	Inventory Attributes and Classifications<br>
+	Material Requirement Planning (MRP)<br>
+	Problems with Inventory Turns<br>
+	Measuring Customer Service<br>
+	Vendor Managed Inventory (VMI)<br>
+	Managing Suppliers<br>
+	Key Performance Indicators (KPI)<br>
+	Just-in-time (JIT) system<br>
+	SAP Transaction Codes, Tables, Reports<br>
+	Six-Sigma Methods and Tools</font></p>
+			<p><font face="Tahoma" class="auto-style32">and&nbsp;<span style="text-decoration: none"><a href="INVENTORY%20MGMT/index_inv_mgmt.htm" class="auto-style10">more....</a></span></font></p>
+			</td>
+			
+			<td>
+			<div align="left">
+				<table border="0" cellspacing="0" cellpadding="0" id="table9" bgcolor="#D5E9BE" style="width: 258px">
+					<tr>
+						<td align="left" valign="top" width="269">
+						<p style="width: 273px">
+						<font face="Arial">
+						<a style="text-decoration: none" href="INVENTORY%20MGMT/production_planning.htm">
+						<span style="text-decoration: none" class="auto-style51">Master Scheduling</span></a><span style="text-decoration: none"><sub><i><font size="3">&nbsp;&nbsp;&nbsp;
+						</font><span class="auto-style25">with Excel &amp; VBA</span></i></sub></span></font></td>
+					</tr>
+				</table>
+			</div>
+			<p><font face="Tahoma" class="auto-style26">
+	C<span class="auto-style32">lose-Loop Production Planning<br>
+	Master Production Scheduling<br>
+	Master Scheduling in Make-To-Order Environment<br>
+	Rough-Cut Capacity Planning<br>
+	Capacity Requirements Planning&nbsp;</span></font></p>
+			<p><font face="Tahoma" class="auto-style32">
+			and&nbsp;<span style="text-decoration: none"><a href="INVENTORY%20MGMT/index_inv_mgmt.htm" class="auto-style10">more....</a></span></font></p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;<p><br>
+&nbsp;<p>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="left" valign="top" style="width: 255px">
+			<div align="left">
+				<table border="0" cellspacing="0" cellpadding="0" id="table10" style="width: 95%">
+					<tr>
+						<td align="left" valign="top" bgcolor="#D5E9BE">
+						<p><font face="Arial">
+						<a style="text-decoration: none" href="ACCESS/beginner_basic_Acc.htm">
+						<span style="text-decoration: none" class="auto-style51">Access 
+						Programming</span></a><span class="auto-style55">&nbsp; 
+						</span><span class="auto-style58">&nbsp; (1997 
+						to 2003)</span></font></td>
+					</tr>
+				</table>
+			</div>
+			<p class="cell">
+	<font face="Tahoma" class="auto-style32">Access database basic<span style="font-weight: 400">s<br>
+	</span>Access Collections and Objects<br>
+	Forms, Controls and Events Procedures<br>
+	Methods, Properties and examples<br>
+	DoCmd Objects and examples<br>
+	ADO, ADOX and SQL examples<br>
+	Reports<br>
+	Strings manipulation<br>
+	Integrating Access with Excel<br>
+	Access Automation</font></p>
+			<p class="cell">
+	<font face="Tahoma" class="auto-style32">and&nbsp;<span style="text-decoration: none"><a href="ACCESS/beginner_basic_Acc.htm" class="auto-style10">more...</a></span></font></p>
+	<p class="cell">
+	<font face="Tahoma" class="auto-style32">Last Updated: March 2008</font><sub><font face="Tahoma"><span class="auto-style32">&nbsp;&nbsp; 
+	</span> </font>
+	</sub></p></td>
+			<td align="left" valign="top" style="width: 304px">
+			<div align="left">
+				<table border="0" cellspacing="0" cellpadding="0" id="table11" style="width: 295px">
+					<tr>
+						<td valign="top" bgcolor="#D5E9BE" width="281">
+						<p align="left"><font face="Arial">
+						<a style="text-decoration: none" href="EXCEL/excel_worksheet_functions.htm">
+						<span style="text-decoration: none" class="auto-style51">Excel 
+						Spreadsheet Functions</span></a><sub><i><font size="3">&nbsp; 
+						</font> </i>
+						</sub></font></td>
+					</tr>
+				</table>
+			</div>
+	<p class="cell" lastupdate="2003-02-03T00:00:00">
+	<font face="Tahoma" class="auto-style32">Lookup and reference 
+	functions<br>
+	Text functions<br>
+	Date and time functions<br>
+	Information functions<br>
+	Logical functions<br>
+	Database functions<br>
+	Examples of commonly used formulas<br>
+	Complex formulas for workplace solutions</font></p>
+			<p class="cell" lastupdate="2003-02-03T00:00:00">
+	<font face="Tahoma" class="auto-style32">and&nbsp;<span style="text-decoration: none"><a href="EXCEL/excel_worksheet_functions.htm" class="auto-style10">more...</a></span></font></p>
+	<p class="cell" lastupdate="2003-02-03T00:00:00">
+	<font face="Tahoma" class="auto-style32">Last Updated: March 2008</font></p></td>
+			<td align="left" valign="top">
+			<div align="left">
+			<table border="0" cellspacing="0" cellpadding="0" id="table12" style="height: 47px; width: 95%;">
+				<tr>
+					<td align="left" valign="top" bgcolor="#D5E9BE">
+					<font face="Arial">
+					<a style="text-decoration: none" href="FORECASTING/forecasting_fundamental.htm"><b>
+					<font size="3">Forecasting Methods &amp; 
+					Techniques</font></b></a><span style="text-decoration: none" class="auto-style51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+						<sub>
+						<span style="text-decoration: none" class="auto-style56">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</span><span style="text-decoration: none" class="auto-style58">with Excel &amp; VBA</span></sub></font></td>
+				</tr>
+				</table>
+			</div>
+			<p><font face="Tahoma" class="auto-style32">Single &amp; Multiple 
+			Moving Averages<br>
+			Single &amp; Multiple-Parameters Exponential<br>&nbsp; Smoothing<br>
+			Exponential Smoothing with Seasonality<br>&nbsp; Methods<br>
+			Decomposition Methods<br>
+			Linear, Nonlinear and
+			Multiple Regression<br>&nbsp; Analysis<br>
+	Box-Jenkins (ARIMA) Time-Series Models <br>
+			Multivariate Data Analysis</font></p>
+			<p><font face="Tahoma" style="font-size: 80%">
+			<span class="auto-style32">and&nbsp;
+			</span>
+			<span style="text-decoration: none">
+			<a href="FORECASTING/forecasting_fundamental.htm" class="auto-style10">
+			<span class="auto-style32">more....</span></a>
+			</span></font><br>
+			&nbsp;<p>&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="width: 255px">&nbsp;</td>
+			<td style="width: 304px">&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+
+
+	<p class="auto-style62" style="height: 324px">
+    <span class="auto-style60">Note: <br><span class="auto-style36">&nbsp;
+	</span><br>The expositive modules on MS Office Excel formulas, Inventory 
+	management, Forecasting techniques - these are still very much applicable to 
+	modern days as the processes hardly vary, albeit these modules 
+	were 
+	written more than a decade or so ago. The only drawback is concerning the 
+	detailed works for Excel VBA and Access Database applications, as some of 
+	these codes were written at that time based on Office 32 bit version and you 
+	may run into some problems if you are using MS Office 64-bit Excel and 
+	Access database applications. If you are able to modify some of the VBA codes 
+	to run in your 64-bit MS Office Excel, they should work just as fine. Enjoy 
+	using them ! <br><br>Jun-19-2024.<br> <br><br><br> </span>
+ <br class="auto-style60">
+    <span class="auto-style60">
+
+   <!-- Histats.com  START  -->   
+ <script  type="text/javascript" language="javascript">   
+ var s_sid = 279773;var st_dominio = 4; 
+ var cimg = 408;var cwi =270;var che =55; 
+ </script> 
+ 
+ <script  type="text/javascript" language="javascript" src="http://s10.histats.com/js9.js"></script> 
+ <noscript><a href="http://www.histats.com" target="_blank"> 
+ <img  src="http://s4.histats.com/stats/0.gif?279773&1" alt="counter stats" border="0"></a> 
+ </noscript> 
+  <!-- Histats.com  END  -->  
+ <br>
+ 
+ 
+    <a href="http://s05.flagcounter.com/more/RvMZ" target="_blank">
+	<img src="http://s05.flagcounter.com/count/RvMZ/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=48/viewers=0/labels=1/" alt="Flag Counter" border="0" style="float: right"></a>
+<!--<font face="Verdana"><span style="font-size: 72%"><br>
+	&nbsp;</span></font> -->
+
+	
+
+
+	</span></font></span>
+	<p style="height: 160px" class="auto-style9">
+
+    &nbsp;<p style="height: 41px" class="auto-style9">
+
+    <font class="auto-style78"><span class="auto-style81">This website 
+	was created
+	by William&nbsp;Tan in February, 2007.<br>This single front page was updated 
+	in June 2024.</span></font></td>
+	</tbody></table>
+	
+	</body>
+</html>
